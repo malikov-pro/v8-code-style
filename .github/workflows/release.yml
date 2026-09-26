@@ -55,9 +55,21 @@ jobs:
             echo "bom/pom.xml: не удалось проставить версию ${TAG}"; exit 1
           }
 
-      # оба профиля, без itests (тесты гоняются локально перед тегом — ~35 мин)
+      # оба профиля, без itests (тесты гоняются локально перед тегом — ~35 мин).
+      # edt.1c.ru обрывает отдачу крупных нативок раннерам GitHub (Premature EOF
+      # на natives.library) — каждая сборка с ретраями (p2-кэш докачивает).
       - name: Сборка EDT 2026.1 (основная)
-        run: mvn -B clean verify -DskipTests -Dtycho.localArtifacts=ignore -Dtycho.p2.httptransport.type=JavaUrl
+        run: |
+          for i in 1 2 3; do
+            echo "=== Попытка $i ==="
+            if mvn -B clean verify -DskipTests -Dtycho.localArtifacts=ignore -Dtycho.p2.httptransport.type=JavaUrl; then
+              break
+            elif [ "$i" = "3" ]; then
+              exit 1
+            else
+              sleep 30
+            fi
+          done
 
       - name: Zip EDT 2026.1
         run: |
@@ -66,7 +78,17 @@ jobs:
              dist/v8codestyle-edt2026.1-${GITHUB_REF_NAME}.zip
 
       - name: Сборка EDT 2026.2 (пре-релиз)
-        run: mvn -B clean verify -DskipTests -Dtycho.localArtifacts=ignore -Dtycho.p2.httptransport.type=JavaUrl -Pedt-2026.2
+        run: |
+          for i in 1 2 3; do
+            echo "=== Попытка $i ==="
+            if mvn -B clean verify -DskipTests -Dtycho.localArtifacts=ignore -Dtycho.p2.httptransport.type=JavaUrl -Pedt-2026.2; then
+              break
+            elif [ "$i" = "3" ]; then
+              exit 1
+            else
+              sleep 30
+            fi
+          done
 
       - name: Zip EDT 2026.2
         run: |

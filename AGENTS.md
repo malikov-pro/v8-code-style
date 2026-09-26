@@ -32,11 +32,30 @@
 - v8-cs **поставляется в комплекте EDT**: деплой тем же IU-именем обновляет
   комплектную копию (наш квалификатор `v<дата>` всегда свежее). Откат —
   только переустановка/восстановление комплектной версии.
-- В EDT 2026.1 стоит комплектный 0.7.0 (check-фреймворк 6.0.101 после
-  сентябрьского обновления — диапазоны master'а удовлетворяются); в 2026.2 —
-  комплектный 0.8.0.
+- **EDT 2026.2 требует полную Java 25 (JDK + JavaFX + jshell)**: подходит
+  `/usr/lib/jvm/axiomjdk-java25-pro-full-amd64`. На неполных JVM ломаются
+  карточки замечаний ВСЕХ провайдеров (AI-плагин `com.e1c.edt.ai.ui` строит
+  их через Guice и падает: без FX — `NoClassDefFoundError javafx/scene/Node`,
+  на JRE без jshell — `jdk/jshell/spi/ExecutionControlProvider`; исключение
+  из contributor'а рвёт построение карточки — try/catch в bsl.ui 24.0.0 нет).
+  Запуск: `1cedt -vm /usr/lib/jvm/axiomjdk-java25-pro-full-amd64/bin/java`.
+  На EDT 2026.1 — axiom-jdk-full-17 из комплекта.
 - Не удалять jar из `~/.p2/pool` при работающей EDT (CNFE в рантайме).
-- Стенды: EDT 2026.1 → `~/edt/rt_test`; EDT 2026.2 → `~/edt/2026_test`.
+- Стенды: EDT 2026.1 → `~/edt/rt_test`; EDT 2026.2 → `~/edt/2026_test`
+  (пользователь разрешил рестартовать EDT на стендах без спроса).
+
+## Доставка (update site)
+
+- http-update-site: **https://malikov-pro.github.io/v8-code-style/** (GitHub
+  Pages, build_type=workflow). Workflow'и: `release.yml` (тег X.Y.Z → сборка
+  обоих профилей → GitHub Release с двумя p2-zip) и `deploy-update-site.yml`
+  (release/тег/dispatch → сборка → Pages).
+- Для публикации тегом: в среде `github-pages` добавлено правило `0.*`
+  (deployment tag policy) — без него director-деплой тега отклоняется.
+- Апстримные `ci-build.yml`/`fork-pull.yml` на форке отключены (не адаптированы
+  под наш пайплайн); `release.yml` апстрима ЗАМЕНЁН нашим — это дифф форка.
+- Версия таргет-артефакта в bom/tests — `${project.version}` (не пинить:
+  после релизного `set-version` резолв таргета ломается).
 
 ## Особенности репозитория
 
