@@ -20,8 +20,10 @@ common-module-type
 configuration-data-lock-mode
 constructor-function-return-section
 data-composition-conditional-appearance-use
+data-composition-variant-name-default
 data-exchange-load
 db-object-anyref-type
+db-object-max-number-length
 db-object-ref-non-ref-type
 deprecated-procedure-outside-deprecated-region
 doc-comment-collection-item-type
@@ -42,6 +44,7 @@ doc-comment-return-section-type
 doc-comment-type
 doc-comment-use-minus
 document-post-in-privileged-mode
+dont-use-modality-mode
 dynamic-access-method-not-found
 empty-except-statement
 event-handler-boolean-param
@@ -49,6 +52,7 @@ export-method-in-command-form-module
 export-procedure-missing-comment
 extension-md-object-prefix
 extension-method-prefix
+extension-method-visible-mode
 extension-variable-prefix
 form-commands-single-action-handler
 form-dynamic-list-item-title
@@ -65,6 +69,7 @@ functional-option-privileged-get-mode
 input-field-list-choice-mode
 invocation-form-event-handler
 invocation-parameter-type-intersect
+link-part-comment-space
 lock-out-of-try
 manager-module-named-self-reference
 md-list-object-presentation
@@ -77,6 +82,7 @@ mdo-scheduled-job-description
 method-isinrole-role-exist
 method-optional-parameter-before-required
 method-param-value-type
+method-semicolon-extra
 method-too-many-params
 missing-temporary-file-deletion
 module-accessibility-at-client
@@ -98,6 +104,7 @@ module-unused-local-variable
 module-unused-method
 new-color
 new-font
+not-support-goto-operator-webclient
 notify-description-to-server-procedure
 object-module-export-variable
 optional-form-parameter-access
@@ -115,6 +122,8 @@ query-in-loop
 reading-attribute-from-database
 redundant-export-method
 register-resource-precision
+restriction-execute-external-code
+restriction-execute-external-component-code
 right-active-users
 right-administration
 right-all-functions-mode
@@ -141,10 +150,16 @@ right-view-event-log
 role-right-has-rls
 rollback-transaction
 scheduled-job-periodicity-too-short
+secure-password-storage
+security-software-call
+self-assign
+semicolon-missing
 server-execution-safe-mode
 statement-type-change
+string-literal-type-annotation-invalid-place
 structure-constructor-too-many-keys
 structure-constructor-value-type
+structure-key-modification
 subsystem-synonym-too-long
 typed-value-adding-to-untyped-collection
 unknown-form-parameter-access

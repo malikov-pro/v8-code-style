@@ -63,7 +63,9 @@
                   </requirement>
                   <requirement>
                     <type>eclipse-plugin</type>
-                    <id>org.eclipse.swt.svg</id>
+                    <!-- org.eclipse.swt.svg существует только в платформе 2025-12+;
+                         значение свойства — по профилю (bom): 2026.1 → org.eclipse.swt -->
+                    <id>${extra.requirement.swt.svg}</id>
                     <versionRange>0.0.0</versionRange>
                   </requirement>
                   <requirement>
