@@ -1,0 +1,85 @@
+name: Deploy Update Site
+
+on:
+  release:
+    types: [published]
+  # релиз создаётся workflow'ом с GITHUB_TOKEN, и его событие "release published"
+  # не триггерит другие workflow — поэтому дублируем триггером по пушу тега
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Актуализация
+        uses: actions/checkout@v4
+        # событие release чекаутит default-ветку — собираем именно тег релиза
+        ref: ${{ github.event.release.tag_name || github.ref }}
+
+      - name: Установка JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '25'
+          distribution: 'temurin'
+          architecture: x64
+
+      - name: Кеширование m2
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}-${{ hashFiles('targets/edt-2026.1/edt-2026.1.target') }}
+          restore-keys: ${{ runner.os }}-m2-
+
+      # p2-репозиторий одинаков для обоих профилей (бандлы одни), собираем основную
+      - name: Сборка EDT 2026.1
+        run: mvn -B clean verify -DskipTests -Dtycho.localArtifacts=ignore -Dtycho.p2.httptransport.type=JavaUrl
+
+      - name: Формирование сайта
+        run: |
+          REPO=repositories/com.e1c.v8codestyle.repository/target/repository
+          # p2 в корень Pages → короткий URL установки
+          mkdir -p _site
+          cp -r "$REPO"/. _site/
+          QUALIFIER=$(basename "$(ls _site/plugins/com.e1c.v8codestyle_*.jar | head -n 1)" .jar)
+          cat > _site/index.html <<EOF
+          <!DOCTYPE html>
+          <html lang="ru">
+          <head><meta charset="utf-8"><title>1C:Code style V8 (форк) — update site</title></head>
+          <body>
+            <h1>1C:Code style V8 — проверки «Стандартов разработки» для 1C:EDT</h1>
+            <p>Собранный квалификатор: <strong>${QUALIFIER#*v8codestyle_}</strong></p>
+            <p>Обновляет комплектную поставку v8-code-style в EDT (те же IU-имена).</p>
+            <p>URL для установки (Справка → Установить новое ПО):</p>
+            <pre>https://malikov-pro.github.io/v8-code-style/</pre>
+            <p><a href="https://github.com/malikov-pro/v8-code-style">Репозиторий</a></p>
+          </body>
+          </html>
+          EOF
+
+      - name: Настройка Pages
+        uses: actions/configure-pages@v6
+
+      - name: Публикация артефакта
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+      - name: Деплой
+        id: deployment
+        uses: actions/deploy-pages@v5
