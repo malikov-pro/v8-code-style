@@ -10,15 +10,15 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.20.0,4.0.0)",
  org.eclipse.core.resources;bundle-version="[3.14.0,4.0.0)",
  com.google.inject;bundle-version="[7.0.0,8.0.0)",
  org.eclipse.xtext;bundle-version="[2.26.0,3.0.0)"
-Bundle-RequiredExecutionEnvironment: JavaSE-25
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Automatic-Module-Name: com.e1c.v8codestyle.form
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
 Import-Package: com._1c.g5.v8.bm.core;version="[9.0.0,10.0.0)",
  com._1c.g5.v8.bm.core.event;version="[3.0.0,4.0.0)",
- com._1c.g5.v8.bm.integration;version="[12.0.0,13.0.0)",
+ com._1c.g5.v8.bm.integration;version="[11.0.0,13.0.0)",
  com._1c.g5.v8.dt.common;version="[6.0.0,7.0.0)",
- com._1c.g5.v8.dt.core.platform;version="[13.0.0,14.0.0)",
+ com._1c.g5.v8.dt.core.platform;version="[12.0.0,14.0.0)",
  com._1c.g5.v8.dt.dcs.model.core;version="[2.6.0,3.0.0)",
  com._1c.g5.v8.dt.dcs.model.schema;version="[2.2.0,3.0.0)",
  com._1c.g5.v8.dt.dcs.model.settings;version="[3.2.0,4.0.0)",
@@ -44,4 +44,4 @@ Import-Package: com._1c.g5.v8.bm.core;version="[9.0.0,10.0.0)",
  com.e1c.g5.v8.dt.check.qfix.components;version="[1.0.0,2.0.0)",
  com.e1c.g5.v8.dt.check.settings;version="[4.0.0,5.0.0)",
  com.e1c.v8codestyle.check;version="[0.8.0,0.9.0)",
- com.google.common.base;version="[33.5.0,34.0.0)"
+ com.google.common.base;version="[32.1.0,34.0.0)"

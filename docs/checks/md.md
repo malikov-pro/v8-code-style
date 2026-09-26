@@ -1,34 +1,35 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 27
+Общее количество проверок: 28
 
 | Код проверки | Наименование |
 |--------------|--------------|
-| [common-module-name-cached](../../bundles/com.e1c.v8codestyle.md/markdown/ru/common-module-name-cached.md) | Общий модуль с повторно используемыми значениями |
-| [common-module-name-client](../../bundles/com.e1c.v8codestyle.md/markdown/ru/common-module-name-client.md) | Клиентский общий модуль должен оканчиваться на суффикс Клиент |
-| [common-module-name-client-cached](../../bundles/com.e1c.v8codestyle.md/markdown/ru/common-module-name-client-cached.md) | Клиентский общий модуль с повторно используемыми значениями |
-| [common-module-name-client-server](../../bundles/com.e1c.v8codestyle.md/markdown/ru/common-module-name-client-server.md) | Клиент-серверный общий модуль должен оканчиваться на суффикс КлиентСервер |
-| [common-module-name-full-access](../../bundles/com.e1c.v8codestyle.md/markdown/ru/common-module-name-full-access.md) | Привилегированный общий модуль должен оканчиваться на суффикс ПолныеПрава |
-| [common-module-name-global](../../bundles/com.e1c.v8codestyle.md/markdown/ru/common-module-name-global.md) | Глобальный общий модуль должен оканчиваться на суффикс Глобальный |
-| [common-module-name-global-client](../../bundles/com.e1c.v8codestyle.md/markdown/ru/common-module-name-global-client.md) | Глобальный клиентский общий модуль должен оканчиваться на суффикс Глобальный без суффикса Клиент |
-| [common-module-name-server-call](../../bundles/com.e1c.v8codestyle.md/markdown/ru/common-module-name-server-call.md) | Общий модуль, для которого предусмотрен вызов сервера |
-| [common-module-name-server-call-cached](../../bundles/com.e1c.v8codestyle.md/markdown/ru/common-module-name-server-call-cached.md) | Общий модуль с повторно используемыми значениями |
-| [common-module-type](../../bundles/com.e1c.v8codestyle.md/markdown/ru/common-module-type.md) | Общий модуль имеет некорректный тип |
-| [configuration-data-lock-mode](../../bundles/com.e1c.v8codestyle.md/markdown/ru/configuration-data-lock-mode.md) | Режим блокировки данных конфигурации |
-| [db-object-anyref-type](../../bundles/com.e1c.v8codestyle.md/markdown/ru/db-object-anyref-type.md) | Реквизиты составного типа, такие как ЛюбаяСсылка и аналогичные |
-| [db-object-ref-non-ref-type](../../bundles/com.e1c.v8codestyle.md/markdown/ru/db-object-ref-non-ref-type.md) | Реквизиты составного типа |
-| [document-post-in-privileged-mode](../../bundles/com.e1c.v8codestyle.md/markdown/ru/document-post-in-privileged-mode.md) | В документе, предполагающем проведение, не установлен флаг "Привилегированный режим при проведении / отмене проведения" |
-| [extension-md-object-prefix](../../bundles/com.e1c.v8codestyle.md/markdown/ru/extension-md-object-prefix.md) | У имени объекта отсутствует префикс расширения |
-| [functional-option-privileged-get-mode](../../bundles/com.e1c.v8codestyle.md/markdown/ru/functional-option-privileged-get-mode.md) | В функциональной опции не установлен флаг "Привилегированный режим при получении" |
-| [md-list-object-presentation](../../bundles/com.e1c.v8codestyle.md/markdown/ru/md-list-object-presentation.md) | Не заполнено ни представление объекта, ни представление списка |
-| [md-object-attribute-comment-incorrect-type](../../bundles/com.e1c.v8codestyle.md/markdown/ru/md-object-attribute-comment-incorrect-type.md) | Реквизит «Комментарий» у документов |
-| [md-object-attribute-comment-not-exist](../../bundles/com.e1c.v8codestyle.md/markdown/ru/md-object-attribute-comment-not-exist.md) | Документ не имеет реквизита "Комментарий" |
-| [md-standard-attribute-synonym-empty](../../bundles/com.e1c.v8codestyle.md/markdown/ru/md-standard-attribute-synonym-empty.md) | Не задан синоним стандартного реквизита "Родитель" или "Владелец". |
-| [mdo-name-length](../../bundles/com.e1c.v8codestyle.md/markdown/ru/mdo-name-length.md) | Длина имени объекта метаданных |
-| [mdo-ru-name-unallowed-letter](../../bundles/com.e1c.v8codestyle.md/markdown/ru/mdo-ru-name-unallowed-letter.md) | Проверка наличия буквы "ё" в имени, синониме или комментарии объекта метаданных |
-| [mdo-scheduled-job-description](../../bundles/com.e1c.v8codestyle.md/markdown/ru/mdo-scheduled-job-description.md) | Задано наименование предопределенного регламентного задания |
-| [register-resource-precision](../../bundles/com.e1c.v8codestyle.md/markdown/ru/register-resource-precision.md) | Длина ресурса регистра накопления или бухгалтерии |
-| [scheduled-job-periodicity-too-short](../../bundles/com.e1c.v8codestyle.md/markdown/ru/scheduled-job-periodicity-too-short.md) | Периодичность выполнения регламентного задания меньше одной минуты. |
-| [subsystem-synonym-too-long](../../bundles/com.e1c.v8codestyle.md/markdown/ru/subsystem-synonym-too-long.md) | Длина названия раздела превышает 35 символов |
-| [unsafe-password-ib-storage](../../bundles/com.e1c.v8codestyle.md/markdown/ru/unsafe-password-ib-storage.md) | Небезопасное хранение паролей в информационной базе |
+| [common-module-name-cached](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-cached.html) | Общий модуль с повторно используемыми значениями |
+| [common-module-name-client](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-client.html) | Клиентский общий модуль должен оканчиваться на суффикс Клиент |
+| [common-module-name-client-cached](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-client-cached.html) | Клиентский общий модуль с повторно используемыми значениями |
+| [common-module-name-client-server](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-client-server.html) | Клиент-серверный общий модуль должен оканчиваться на суффикс КлиентСервер |
+| [common-module-name-full-access](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-full-access.html) | Привилегированный общий модуль должен оканчиваться на суффикс ПолныеПрава |
+| [common-module-name-global](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-global.html) | Глобальный общий модуль должен оканчиваться на суффикс Глобальный |
+| [common-module-name-global-client](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-global-client.html) | Глобальный клиентский общий модуль должен оканчиваться на суффикс Глобальный без суффикса Клиент |
+| [common-module-name-server-call](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-server-call.html) | Общий модуль, для которого предусмотрен вызов сервера |
+| [common-module-name-server-call-cached](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-server-call-cached.html) | Общий модуль с повторно используемыми значениями |
+| [common-module-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-type.html) | Общий модуль имеет некорректный тип |
+| [configuration-data-lock-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/configuration-data-lock-mode.html) | Режим блокировки данных конфигурации |
+| [db-object-anyref-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-anyref-type.html) | Реквизиты составного типа, такие как ЛюбаяСсылка и аналогичные |
+| [db-object-max-number-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-max-number-length.html) | Превышена максимальная длина числовых данных (31 знак) |
+| [db-object-ref-non-ref-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-ref-non-ref-type.html) | Реквизиты составного типа |
+| [document-post-in-privileged-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/document-post-in-privileged-mode.html) | В документе, предполагающем проведение, не установлен флаг "Привилегированный режим при проведении / отмене проведения" |
+| [extension-md-object-prefix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/extension-md-object-prefix.html) | У имени объекта отсутствует префикс расширения |
+| [functional-option-privileged-get-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/functional-option-privileged-get-mode.html) | В функциональной опции не установлен флаг "Привилегированный режим при получении" |
+| [md-list-object-presentation](../../../com.e1c.v8codestyle.md/check.descriptions/ru/md-list-object-presentation.html) | Не заполнено ни представление объекта, ни представление списка |
+| [md-object-attribute-comment-incorrect-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/md-object-attribute-comment-incorrect-type.html) | Реквизит «Комментарий» у документов |
+| [md-object-attribute-comment-not-exist](../../../com.e1c.v8codestyle.md/check.descriptions/ru/md-object-attribute-comment-not-exist.html) | Документ не имеет реквизита "Комментарий" |
+| [md-standard-attribute-synonym-empty](../../../com.e1c.v8codestyle.md/check.descriptions/ru/md-standard-attribute-synonym-empty.html) | Не задан синоним стандартного реквизита "Родитель" или "Владелец". |
+| [mdo-name-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/mdo-name-length.html) | Длина имени объекта метаданных |
+| [mdo-ru-name-unallowed-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/mdo-ru-name-unallowed-letter.html) | Проверка наличия буквы "ё" в имени, синониме или комментарии объекта метаданных |
+| [mdo-scheduled-job-description](../../../com.e1c.v8codestyle.md/check.descriptions/ru/mdo-scheduled-job-description.html) | Задано наименование предопределенного регламентного задания |
+| [register-resource-precision](../../../com.e1c.v8codestyle.md/check.descriptions/ru/register-resource-precision.html) | Длина ресурса регистра накопления или бухгалтерии |
+| [scheduled-job-periodicity-too-short](../../../com.e1c.v8codestyle.md/check.descriptions/ru/scheduled-job-periodicity-too-short.html) | Периодичность выполнения регламентного задания меньше одной минуты. |
+| [subsystem-synonym-too-long](../../../com.e1c.v8codestyle.md/check.descriptions/ru/subsystem-synonym-too-long.html) | Длина названия раздела превышает 35 символов |
+| [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |

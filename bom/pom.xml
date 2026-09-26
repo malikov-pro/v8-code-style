@@ -40,9 +40,19 @@
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>25</maven.compiler.target>
-    <maven.compiler.release>25</maven.compiler.release>
+    <!-- Единый исходник на обе платформы: JavaSE-17 (EDT 2026.1 = JVM 17, EDT 2026.2 = JVM 25) -->
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.release>17</maven.compiler.release>
+
+    <!-- Профиль платформы: default = EDT 2026.1 (основная);
+         пре-релиз EDT 2026.2 — через -Pedt-2026.2 (таргет targets/default) -->
+    <edt.target.artifact>edt-2026.1</edt.target.artifact>
+    <!-- extraRequirement вместо org.eclipse.swt.svg (появился в платформе 2025-12) -->
+    <extra.requirement.swt.svg>org.eclipse.swt</extra.requirement.swt.svg>
+    <!-- EE резолва: 2026.1 резолвится на 17 (платформа JVM 17);
+         2026.2 — на 25 (свежие bm.* в ruby/2026.2 требуют JavaSE-25) -->
+    <edt.ee>JavaSE-17</edt.ee>
 
     <maven.build.timestamp.format>'v'yyyyMMdd-HHmm</maven.build.timestamp.format>
     <qualifier>${maven.build.timestamp}</qualifier>
@@ -98,11 +108,11 @@
           <artifactId>target-platform-configuration</artifactId>
           <version>${tycho.version}</version>
           <configuration>
-            <executionEnvironment>JavaSE-25</executionEnvironment>
+            <executionEnvironment>${edt.ee}</executionEnvironment>
             <target>
               <artifact>
                 <groupId>com.e1c.v8codestyle</groupId>
-                <artifactId>default</artifactId>
+                <artifactId>${edt.target.artifact}</artifactId>
                 <version>0.8.0-SNAPSHOT</version>
               </artifact>
             </target>
@@ -371,6 +381,15 @@
   </build>
 
   <profiles>
+    <profile>
+      <id>edt-2026.2</id>
+      <properties>
+        <!-- Пре-релиз EDT 2026.2: таргет targets/default (ruby/2026.2) -->
+        <edt.target.artifact>default</edt.target.artifact>
+        <extra.requirement.swt.svg>org.eclipse.swt.svg</extra.requirement.swt.svg>
+        <edt.ee>JavaSE-25</edt.ee>
+      </properties>
+    </profile>
     <profile>
   	  <id>find-bugs</id>
   	  <build>
