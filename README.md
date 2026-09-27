@@ -1,9 +1,6 @@
-[![Build](https://github.com/1C-Company/v8-code-style/workflows/CI/badge.svg)](https://github.com/1C-Company/v8-code-style/actions)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=1C-Company_v8-code-style&metric=coverage)](https://sonarcloud.io/dashboard?id=1C-Company_v8-code-style)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=1C-Company_v8-code-style&metric=ncloc)](https://sonarcloud.io/dashboard?id=1C-Company_v8-code-style)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=1C-Company_v8-code-style&metric=bugs)](https://sonarcloud.io/dashboard?id=1C-Company_v8-code-style)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=1C-Company_v8-code-style&metric=code_smells)](https://sonarcloud.io/dashboard?id=1C-Company_v8-code-style)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=1C-Company_v8-code-style&metric=sqale_index)](https://sonarcloud.io/dashboard?id=1C-Company_v8-code-style)
+[![Релиз](https://github.com/malikov-pro/v8-code-style/actions/workflows/release.yml/badge.svg)](https://github.com/malikov-pro/v8-code-style/actions/workflows/release.yml)
+[![Update Site](https://github.com/malikov-pro/v8-code-style/actions/workflows/deploy-update-site.yml/badge.svg)](https://github.com/malikov-pro/v8-code-style/actions/workflows/deploy-update-site.yml)
+[![Версия](https://img.shields.io/github/v/release/malikov-pro/v8-code-style)](https://github.com/malikov-pro/v8-code-style/releases)
 
 # 1С:Стандарты разработки V8
 
@@ -81,10 +78,12 @@
 
 ## Участие в проекте
 
-Добро пожаловать! [См. правила](CONTRIBUTING.md) в соответствующем разделе.
-- [Помочь с документацией](docs/contributing/documentation.md) см. [задачи](https://github.com/1C-Company/v8-code-style/labels/documentation)
-- [Добавить свою проверку](docs/contributing/readme.md) см. [задачи](https://github.com/1C-Company/v8-code-style/labels/good%20first%20issue)
-- Сообщить нам о [ложном срабатывании проверки](https://github.com/1C-Company/v8-code-style/issues/new?assignees=&labels=standards,bug&template=check_false.md&title=Ложное+срабатывание+проверки%3A+%3Cкод+проверки%3E) или о [не нахождении существующей ошибки](https://github.com/1C-Company/v8-code-style/issues/new?assignees=&labels=standards,bug&template=check_not_found.md&title=Проверка%3A+%3Cкод+проверки%3E+не+находит+ошибку).
+Добро пожаловать! Правила — [CONTRIBUTING.md](CONTRIBUTING.md) (унаследованы от апстрима).
+- [Добавить свою проверку](docs/contributing/readme.md) — туториал и [соглашение](docs/contributing/Check_Convention.md)
+- [Помочь с документацией](docs/contributing/documentation.md)
+- Сообщить нам о [ложном срабатывании проверки](https://github.com/malikov-pro/v8-code-style/issues/new?template=check_false.md&title=Ложное+срабатывание+проверки%3A+%3Cкод+проверки%3E) или о [не нахождении существующей ошибки](https://github.com/malikov-pro/v8-code-style/issues/new?template=check_not_found.md&title=Проверка%3A+%3Cкод+проверки%3E+не+находит+ошибку).
+
+> Вопросы апстриму (официальной версии расширения) — в трекер [1C-Company/v8-code-style](https://github.com/1C-Company/v8-code-style/issues). Синхронизация форка с апстримом не выполняется.
 
 
 ## Лицензия
