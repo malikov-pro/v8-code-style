@@ -72,10 +72,55 @@
 - itests поднимают OSGi-рантайм с тестовым проектом (база — `CheckTestBase`
   из EDT); при сборке под 2026.1 следить, чтобы тестовая фича EDT резолвилась.
 
-## Дубли с BSL LS (открытый вопрос)
+## Управление проверками из кода (API настроек, EDT 2026.2)
 
-Часть проверок v8-cs пересекается по смыслу с диагностиками BSL LS (канал
-коннектора). Точка сведения нормативки — `../_ext_src/v8std` (статьи стандарта,
-оттуда же генерируется каталог коннектора). Политика дедупликации не выбрана;
-до того — не добавлять проверки, дублирующие существующие с обеих сторон,
-без сверки по каталогам.
+Фреймворк `com.e1c.g5.v8.dt.check.settings` даёт полный цикл **программного**
+управления проверками на уровне проекта (декомпиляция 6.0.102):
+
+| Операция | API |
+|---|---|
+| Чтение настройки | `getSettings(CheckUid, IProject)` → `ICheckSettings`: `isEnabled()`, `setEnabled(bool)`, `setSeverity`, параметры |
+| Запись | `applyChanges(Collection<ICheckSettings>, IProject)` — сохраняет и перезапускает валидацию |
+| id ↔ UID | `getCheckUidForCheckId("id", project)` / `getUidForShortUid` / `toUid` (UID = plugin id + check id) |
+| События | `addChangeListener(ICheckSettingsChangeListener)` / `removeChangeListener` |
+| Профили валидации | `getAvailableSettingsProfiles`, `getActiveSettingsProfile`, `setActiveSettingsProfile`, `import/export/duplicate/rename/deleteSettingsProfile` — настройки живут профилями, applyChanges пишет в активный |
+| Массовые правки | `setMassiveCheckProcessDisabled(true, project)` → пачка правок → `false` |
+| Динамические проверки | `registerChecks/unregisterChecks(ICheckProvider)` (+ `CheckInfo`) — кодом, без extension point |
+
+**Дедупликация** («включили точную — погасить грубую»), принципы:
+
+1. По событию `addChangeListener`, НЕ «при старте»: при старте проекты не
+   загружены; ранний вызов — «не знаю» без кэширования, дефолт = прежнее
+   поведение (образец — `LsProjectGate` коннектора, issue #26).
+2. Однонаправленно: гасим грубую при включении точной; обратно никогда
+   не включаем (пользователь мог выключить сознательно).
+3. Опционально и прозрачно: выключатель в настройках, дефолт — ничего не
+   трогаем; каждое автогашение — INFO в журнал.
+4. Анти-пинг-понг: игнорировать изменения, порождённые самим дедупликатором.
+5. Таблица пересечений: статья v8std → проверка v8-cs ↔ код LS ↔ (будущее)
+   проверка АПК. Каталоги обеих сторон уже есть.
+
+## Роль проекта: сборщик проверок
+
+Форк — единый дом проверок: сюда переносятся проверки BSL LS (при этом
+коннектор станет не нужен) и проверки АПК; сюда же собираются зависшие
+задачи апстрима (1C-Company/v8-code-style issues) как бэклог. Карта
+пересечений с нормативкой — `_ext_src/v8std`.
+
+## Sonar-конвейер (направление, 27.09)
+
+Цель: на хосте с EDT — сборка из git-проекта по коммиту с отправкой списка
+замечаний в Sonar (связки git↔EDT↔sonar и ключи — в json-конфиге).
+
+Опорные блоки (все уже есть):
+- MCP `edt-rt-test-malikov` — агент над живой EDT: `list_projects`,
+  `import_configuration_from_xml`, `get_project_errors` (ошибки валидации!),
+  git-ветки, `get_check_description` (описание проверки → маппинг на v8std).
+- `1cedtcli` (в инсталляциях) — headless: import → validate → результат.
+- Логика stebi (`_jenkins/PUBID_1117485-Scripts`) — конвертация
+  `edt-result.out` → Sonar generic-issue JSON + фильтры (поддержка, файл
+  настроек правил). Переносится в плагин, чтобы не зависеть от oscript.
+- Отправка — sonar-scanner с generic-issue отчётом.
+
+Схема: `git pull/checkout <commit>` → проект в воркспейсе (1cedtcli/MCP) →
+валидация → выгрузка замечаний в Sonar-JSON (силами плагина) → sonar-scanner.
