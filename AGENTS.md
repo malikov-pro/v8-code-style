@@ -53,12 +53,9 @@
 - Workflow'и: `release.yml` (тег X.Y.Z → сборка обоих профилей **с ретраями
   ×3** — edt.1c.ru рвёт отдачу natives.library раннерам GitHub → GitHub
   Release) и `deploy-update-site.yml` (release/тег/dispatch → сборка → Pages).
-- **ХВОСТ**: теговые деплои в среду `github-pages` отклоняются protection
-  rules. Через API добавляется только branch-политика (`0.*`, добавлена);
-  теговые правила — только в UI: Settings → Environments → github-pages →
-  Deployment branches and tags → Add deployment tag or branch rule → Tags →
-  `0.*`. После этого сайт обновляется из релиза автоматически (сейчас сайт
-  публикуется dispatch'ем с master — не блокирует).
+- Теговые деплои: в среде `github-pages` добавлены правила `0.*` (и для
+  branch, и для Tags через UI) — деплой из тега работает. Через API теговые
+  политики недоступны, branch-правило теги не покрывало.
 - Апстримные `ci-build.yml`/`fork-pull.yml` на форке ОТКЛЮЧЕНЫ (не адаптированы
   под наш пайплайн); апстримный `release.yml` ЗАМЕНЁН нашим — дифф форка.
 - Версия таргет-артефакта в bom/tests — `${project.version}` (не пинить:
