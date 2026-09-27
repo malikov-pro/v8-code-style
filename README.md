@@ -27,38 +27,56 @@
 
 ## Установка
 
-> **Внимание!** Расширение включается в дистрибутив `1C:EDT 2021.3+` и не требует дополнительной установки.
+> **Внимание!** Расширение включается в дистрибутив `1C:EDT` и не требует установки по умолчанию. Этот репозиторий — форк со своим конвейером сборки и доставки: профили **EDT 2026.1** (основная) и **EDT 2026.2** (пре-релиз), единый билд JavaSE-17 на обе платформы. Установка форка **обновляет комплектную копию на месте** (те же IU-имена, квалификатор сборки свежее комплектного).
 
+### Из update site форка (рекомендуется)
 
-Плагин `1С:Стандарты разработки V8` поставляется в виде репозитория Eclipse (P2-репозиторий). Установка расширения может выполняться следующими способами:
+Репозиторий обновляется автоматически при выпуске релиза форка:
 
-- непосредственно из p2-репозитория, опубликованного на серверах фирмы 1С.
-- из локальной копии p2-репозитория, распакованного в локальную папку из предварительно скачанного zip-архива.
+| Версия | 1C:EDT | Update site |
+|--------|--------|-------------|
+| 0.8.0+ | 2026.1, 2026.2 | `https://malikov-pro.github.io/v8-code-style/` |
 
-В строку выбора репозитория  для установки (`Work with`) вставьте адрес репозитория:
+Установка: `Справка – Установить новое ПО` → `Add…` → вставить URL → отметить компонент `1C:Code style V8` → `Next >` → принять лицензию → `Finish` → перезапустить EDT.
 
-| Версия | 1C:EDT | JDT для разработки | P2-репозиторий |
-|--------|--------|--------------------|----------------|
-| 0.8.0  | 2026.2 | 2025-12 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2026.2/0.8.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2026.2/0.8.0/repo.zip) |
-| 0.7.0  | 2023.3 | 2022-03 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.3/0.7.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.3/0.7.0/repo.zip) |
-| 0.6.0  | 2023.2 | 2022-03 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.2/0.6.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.2/0.6.0/repo.zip) |
-| 0.5.0  | 2023.1 | 2022-03 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.1/0.5.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.1/0.5.0/repo.zip) |
-| 0.4.0  | 2022.2 | 2022-03 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2022.2/0.4.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2022.2/0.4.0/repo.zip) |
-| 0.3.0  | 2022.1 | 2022-03 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2022.1/0.3.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2022.1/0.3.0/repo.zip) |
-| 0.2.0  | 2021.3 | 2020-12 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2021.3/0.2.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2021.3/0.2.0/repo.zip) |
-| 0.1.0  | 2021.2 | 2020-12 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2021.2/0.1.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2021.2/0.1.0/repo.zip) |
+Последующие обновления: `Справка – Проверить обновления` (сайт должен оставаться в списке «Доступных сайтов обновления»).
 
+Проверка установленного: `Справка – О платформе – Установленное ПО` → `com.e1c.v8codestyle.feature` с квалификатором вида `0.8.0.v<дата-время>` (свежее комплектного).
 
-Далее для установки нужно выполнить следующие действия:
+### Из zip релиза
 
-- В среде разработки 1C:Enterprise Development Tools (EDT) выберите пункт меню `Help – Install New Software` (`Справка – Установить новое ПО`).
-- В открывшемся окне мастера установки в строке `Work with` воспользуйтесь кнопкой `Add…` и укажите расположение репозитория.
-- Если установка производится непосредственно из репозитория, опубликованного на серверах фирмы 1С, то скопируйте указанный адрес репозитория
-- Если установка производится из локальной папки, то воспользуйтесь кнопкой `Local..` и далее по кнопке `Local` укажите папку, в которую распакован репозиторий.
-- Отметьте компонент `1C:Code style V8` и нажмите кнопку `Next>`
-- На следующем шаге система определит зависимости и сформирует окончательный список библиотек к установке, после этого нажмите кнопку `Next>`
-- Прочитайте и примите условия лицензионного соглашения и нажмите кнопку `Finish`
-- Дождитесь окончания установки и перезапустите среду `1C:Enterprise Development Tools`. Установка завершена.
+Архивы — в [релизах](https://github.com/malikov-pro/v8-code-style/releases), по одному на профиль:
+
+- `v8codestyle-edt2026.1-X.Y.Z.zip` — для EDT 2026.1;
+- `v8codestyle-edt2026.2-X.Y.Z.zip` — для EDT 2026.2.
+
+Установка: `Справка – Установить новое ПО` → `Add…` → `Archive…` → выбрать скачанный zip (флажок «Обращаться во время инсталляции ко всем сайтам…» можно снять) → далее как выше.
+
+### Требования к Java
+
+| Профиль | 1C:EDT | JVM | Примечание |
+|---------|--------|-----|------------|
+| edt-2026.1 | 2026.1.x | Java 17 (комплектная) | — |
+| edt-2026.2 | 2026.2.x | **полная Java 25**: JDK с JavaFX и jshell (например, Axiom `axiomjdk-java25-pro-full`) | На неполной JVM (JRE или без JavaFX) ломаются карточки замечаний **всех** провайдеров — их строит AI-плагин EDT. Запуск: `1cedt -vm <путь-к-java25>/bin/java -data <воркспейс>` |
+
+### Откат к комплектной версии
+
+Деплой форка заменяет комплектную копию (те же IU-имена). Откат выполняется восстановлением комплектной версии из дистрибутива EDT (или переустановкой EDT); «Проверить обновления» комплектную версию не вернёт.
+
+### Официальные поставки 1С (апстрим)
+
+Официальные p2-репозитории апстрима [1C-Company/v8-code-style](https://github.com/1C-Company/v8-code-style) — см. таблицу ниже и [релизы апстрима](https://github.com/1C-Company/v8-code-style/releases). Форк собирается независимо; синхронизация с апстримом не выполняется.
+
+| Версия | 1C:EDT | P2-репозиторий |
+|--------|--------|----------------|
+| 0.8.0  | 2026.2 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2026.2/0.8.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2026.2/0.8.0/repo.zip) |
+| 0.7.0  | 2023.3 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.3/0.7.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.3/0.7.0/repo.zip) |
+| 0.6.0  | 2023.2 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.2/0.6.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.2/0.6.0/repo.zip) |
+| 0.5.0  | 2023.1 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.1/0.5.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2023.1/0.5.0/repo.zip) |
+| 0.4.0  | 2022.2 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2022.2/0.4.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2022.2/0.4.0/repo.zip) |
+| 0.3.0  | 2022.1 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2022.1/0.3.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2022.1/0.3.0/repo.zip) |
+| 0.2.0  | 2021.3 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2021.3/0.2.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2021.3/0.2.0/repo.zip) |
+| 0.1.0  | 2021.2 | [p2-link](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2021.2/0.1.0/repo/), [p2-zip](https://edt.1c.ru/downloads/releases/plugins/v8-code-style/edt-2021.2/0.1.0/repo.zip) |
 
 
 ## Участие в проекте
