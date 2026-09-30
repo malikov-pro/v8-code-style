@@ -72,6 +72,31 @@ SELECT article, rule, name FROM backlog
 различает. Конфликты git между исполнителями маловероятны (разные файлы),
 но сборку гоняет тот, кто мержит последним.
 
+## Скрипты конвейера (не формировать руками)
+
+- `python3 scripts/port-apk-check.py --apk АПК_NNNNN --slug <slug> --channel bsl --article NNN`
+  — каркас: java-класс (TODO-тело), константы Messages (en/ru, в правильный
+  check-подпакет), карточки ru/en, itest-класс + оба ресурса; печатает
+  plugin.xml-фрагмент. `--print-sql` — готовый запрос Алгоритма.
+- `bash scripts/test-check.sh <TestClassName>` — точечный прогон теста
+  (полный список модулей реактора уже внутри; без полного suite).
+- Обновление снапшота — `python3 build_db.py` (скилл `v8cs-apk-db`).
+
+## Quick fix (если переносим с фиксом)
+
+- Паттерн: `@QuickFix(checkId=..., supplierId=BslPlugin.PLUGIN_ID)` класс
+  в `<pkg>/qfix/`, extends `SingleVariantXtextBslModuleFix`;
+  `configureFix` (description/details, interactive) + `fixIssue(state, model)`
+  → `TextEdit` (MultiTextEdit + ReplaceEdit/DeleteEdit), `null` если нечего
+  чинить. Образец — `ConsecutiveEmptyLinesFix`.
+- Messages фикса — в qfix-пакете (свой Messages/properties).
+- Регистрация — EP `com.e1c.g5.v8.dt.check.fixes` (рядом с существующими fix).
+- itest-инфры для qfix нет — smoke руками на стенде (деплой, «быстрое
+  исправление» у замечания), честно отмечать в `ported.notes`.
+- Для этой задачи: простой заменимо-механический фикс (как замена ё→е)
+  делаем сразу; где исправление «только пользователем» — фикс не делаем,
+  в карточке пишем рекомендацию.
+
 ## Чего не делать
 
 - Не переносить «вслепую» без чтения Алгоритма (название правила врёт).
