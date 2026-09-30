@@ -39,6 +39,12 @@ final class Messages
 
     public static String AccessibilityAtClientInObjectModuleCheck_title;
 
+    public static String ApkFrenchQuotesCheck_title;
+
+    public static String ApkFrenchQuotesCheck_description;
+
+    public static String ApkFrenchQuotesCheck_French_quotes_are_not_allowed_in_interface_text;
+
     public static String ApkYoLetterCheck_title;
 
     public static String ApkYoLetterCheck_description;

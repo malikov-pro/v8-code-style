@@ -22,6 +22,9 @@ final class Messages
     extends NLS
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
+    public static String ApkFrenchQuotesFix_Description;
+    public static String ApkFrenchQuotesFix_Details;
+
     public static String ApkYoLetterFix_Description;
     public static String ApkYoLetterFix_Details;
 

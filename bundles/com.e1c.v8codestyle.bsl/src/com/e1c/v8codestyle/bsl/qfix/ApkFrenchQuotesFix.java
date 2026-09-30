@@ -7,8 +7,11 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  *
+ * SPDX-FileCopyrightText: 1C-Soft LLC
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors:
- *     malikov-pro - port of the APK check АПК_00260
+ *     malikov-pro - port of the APK check АПК_01194
  *******************************************************************************/
 package com.e1c.v8codestyle.bsl.qfix;
 
@@ -24,27 +27,33 @@ import com.e1c.g5.v8.dt.check.qfix.components.QuickFix;
 import com.e1c.v8codestyle.internal.bsl.BslPlugin;
 
 /**
- * Quick fix для проверки «Буква ё не допускается в текстах модулей»:
- * заменяет ТОЛЬКО вхождение буквы «ё»/«Ё», на которое указано замечание.
- * Точечно, потому что в комментариях и строковых литералах «ё» может быть
- * осмысленной (имена собственные, цитаты). Перенос АПК_00260.
+ * Quick fix для проверки «Французские кавычки не допускаются в интерфейсных
+ * текстах»: заменяет ТОЛЬКО кавычку « или », на которую указано замечание,
+ * на прямую двойную кавычку. Внутри строкового литерала BSL прямая кавычка
+ * экранируется удвоением ({@code ""}). Перенос АПК_01194.
  *
  * @author malikov-pro
  */
-@QuickFix(checkId = "apk-00260-no-yo-letter", supplierId = BslPlugin.PLUGIN_ID)
-public class ApkYoLetterFix
+@QuickFix(checkId = "apk-01194-no-french-quotes", supplierId = BslPlugin.PLUGIN_ID)
+public class ApkFrenchQuotesFix
     extends SingleVariantXtextBslModuleFix
 {
+
+    /**
+     * Instantiates a new fix.
+     */
+    public ApkFrenchQuotesFix()
+    {
+        super();
+    }
 
     @Override
     protected void configureFix(FixConfigurer configurer)
     {
-        // interactive(false) не поддерживается фреймворком: FixConfigurer
-        // бросает IllegalArgumentException уже при регистрации фикса,
-        // что роняет старт проектного контекста (находка 30.09.2026).
+        // interactive(false) не поддерживается фреймворком (см. ApkYoLetterFix)
         configurer.interactive(true)
-            .description(Messages.ApkYoLetterFix_Description)
-            .details(Messages.ApkYoLetterFix_Details);
+            .description(Messages.ApkFrenchQuotesFix_Description)
+            .details(Messages.ApkFrenchQuotesFix_Details);
     }
 
     @Override
@@ -58,15 +67,12 @@ public class ApkYoLetterFix
         int offset = issue.getOffset();
         int length = Math.max(1, issue.getLength());
         String current = model.getDocument().get(offset, length);
-        if ("ё".equals(current))
+        if ("«".equals(current) || "»".equals(current))
         {
-            return new ReplaceEdit(offset, length, "е");
+            // прямая кавычка внутри строкового литерала BSL экранируется удвоением
+            return new ReplaceEdit(offset, length, "\"\"");
         }
-        if ("Ё".equals(current))
-        {
-            return new ReplaceEdit(offset, length, "Е");
-        }
-        // на позиции уже не «ё» (маркер устарел после правок) — фикс недоступен
+        // на позиции уже не «ёлочка» (маркер устарел после правок) — фикс недоступен
         return null;
     }
 }
