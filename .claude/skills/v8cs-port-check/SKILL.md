@@ -78,3 +78,24 @@ SELECT article, rule, name FROM backlog
 - Не заменять id конвенции `apk-NNNNN-slug` на свободный текст.
 - Не забыть itest: проверка без теста не считается перенесённой.
 - Не трогать `StandardCheckExtension` без сверки с cross-map.json.
+
+## Находки первого прогона (АПК_00260 → apk-00260-no-yo-letter)
+
+- **Текст модуля**: `NodeModelUtils.findActualNodeFor(module)` → `getLeafNodes()`
+  (листья включают комментарии и строковые литералы — текстовые проверки
+  обходят именно листья); позиция вхождения → `BslDirectLocationIssue`
+  с `DirectLocation(offset, 1, line, module)`. Образец —
+  `ConsecutiveEmptyLinesCheck`. line 1-based: `leaf.getStartLine() + число
+  '\n' до вхождения`.
+- **`Marker` не имеет номера строки** — itest проверяет число замечаний
+  (по вхождениям) и не сравнивает текст сообщения (локаль рантайма
+  неопределённа).
+- Конструктор проверки — **public** (ExecutableExtensionFactory в другом
+  пакете; private → InstantiationException).
+- При удалении «неиспользуемых» импортов не удалить нужный (EcoreUtil) —
+  ошибка компиляции ловится `--skip-tests` прогоном.
+- `mvn verify -pl <модули>`: реактор НЕ подтягивает таргет-модуль по -am —
+  перечислять цепочку явно (targets/edt-2026.1, все bundles, docs В КОРНЕ
+  репо — не bundles/, feature, repository, itests-фрагмент).
+- Точечный тест: `-Dtest=ApkYoLetterCheckTest -DfailIfNoTests=false`.
+- INSERT/UPDATE в apk.db — только с абсолютным путём (cwd бывает другим).
