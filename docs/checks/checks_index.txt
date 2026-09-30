@@ -67,6 +67,7 @@ form-module-missing-pragma
 form-module-pragma
 form-self-reference
 function-return-value-type
+function-should-have-return
 functional-option-privileged-get-mode
 input-field-list-choice-mode
 invocation-form-event-handler
