@@ -45,6 +45,12 @@ final class Messages
 
     public static String ApkFrenchQuotesCheck_French_quotes_are_not_allowed_in_interface_text;
 
+    public static String FunctionShouldHaveReturnCheck_title;
+
+    public static String FunctionShouldHaveReturnCheck_description;
+
+    public static String FunctionShouldHaveReturnCheck_Function_has_no_Return_statement;
+
     public static String ApkYoLetterCheck_title;
 
     public static String ApkYoLetterCheck_description;
