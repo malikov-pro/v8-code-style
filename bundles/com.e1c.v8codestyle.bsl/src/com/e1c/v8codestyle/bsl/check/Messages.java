@@ -39,6 +39,12 @@ final class Messages
 
     public static String AccessibilityAtClientInObjectModuleCheck_title;
 
+    public static String ApkYoLetterCheck_title;
+
+    public static String ApkYoLetterCheck_description;
+
+    public static String ApkYoLetterCheck_Yo_letter_is_not_allowed_in_module_text;
+
     public static String CachedPublicCheck_Description;
 
     public static String CachedPublicCheck_Issue;
