@@ -12,19 +12,12 @@
  *******************************************************************************/
 package com.e1c.v8codestyle.bsl.qfix;
 
-import java.text.MessageFormat;
-
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.BadLocationException;
-import org.eclipse.text.edits.MultiTextEdit;
 import org.eclipse.text.edits.ReplaceEdit;
 import org.eclipse.text.edits.TextEdit;
-import org.eclipse.xtext.nodemodel.ILeafNode;
-import org.eclipse.xtext.nodemodel.INode;
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.validation.Issue;
 
-import com._1c.g5.v8.dt.bsl.model.Module;
 import com.e1c.g5.v8.dt.bsl.check.qfix.IXtextBslModuleFixModel;
 import com.e1c.g5.v8.dt.bsl.check.qfix.SingleVariantXtextBslModuleFix;
 import com.e1c.g5.v8.dt.check.qfix.components.QuickFix;
@@ -32,8 +25,9 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
 
 /**
  * Quick fix для проверки «Буква ё не допускается в текстах модулей»:
- * заменяет каждое вхождение «ё»/«Ё» на «е»/«Е» во всём модуле
- * (код, строковые литералы, комментарии). Перенос АПК_00260.
+ * заменяет ТОЛЬКО вхождение буквы «ё»/«Ё», на которое указано замечание.
+ * Точечно, потому что в комментариях и строковых литералах «ё» может быть
+ * осмысленной (имена собственные, цитаты). Перенос АПК_00260.
  *
  * @author malikov-pro
  */
@@ -45,7 +39,7 @@ public class ApkYoLetterFix
     @Override
     protected void configureFix(FixConfigurer configurer)
     {
-        configurer.interactive(true)
+        configurer.interactive(false)
             .description(Messages.ApkYoLetterFix_Description)
             .details(Messages.ApkYoLetterFix_Details);
     }
@@ -53,38 +47,23 @@ public class ApkYoLetterFix
     @Override
     protected TextEdit fixIssue(XtextResource state, IXtextBslModuleFixModel model) throws BadLocationException
     {
-        EObject element = model.getElement();
-        Module module = (element instanceof Module m) ? m : null;
-        if (module == null)
+        Issue issue = model.getIssue();
+        if (issue == null || issue.getOffset() == null || issue.getLength() == null)
         {
             return null;
         }
-        INode node = NodeModelUtils.findActualNodeFor(module);
-        if (node == null)
+        int offset = issue.getOffset();
+        int length = Math.max(1, issue.getLength());
+        String current = model.getDocument().get(offset, length);
+        if ("ё".equals(current))
         {
-            return null;
+            return new ReplaceEdit(offset, length, "е");
         }
-        MultiTextEdit result = new MultiTextEdit();
-        for (ILeafNode leafNode : node.getLeafNodes())
+        if ("Ё".equals(current))
         {
-            String text = leafNode.getText();
-            for (int i = 0; i < text.length(); i++)
-            {
-                char ch = text.charAt(i);
-                if (ch == 'ё')
-                {
-                    result.addChild(new ReplaceEdit(leafNode.getOffset() + i, 1, "е")); //$NON-NLS-1$
-                }
-                else if (ch == 'Ё')
-                {
-                    result.addChild(new ReplaceEdit(leafNode.getOffset() + i, 1, "Е")); //$NON-NLS-1$
-                }
-            }
+            return new ReplaceEdit(offset, length, "Е");
         }
-        if (result.getChildrenSize() > 0)
-        {
-            return result;
-        }
+        // на позиции уже не «ё» (маркер устарел после правок) — фикс недоступен
         return null;
     }
 }
