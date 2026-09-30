@@ -124,3 +124,23 @@ SELECT article, rule, name FROM backlog
   репо — не bundles/, feature, repository, itests-фрагмент).
 - Точечный тест: `-Dtest=ApkYoLetterCheckTest -DfailIfNoTests=false`.
 - INSERT/UPDATE в apk.db — только с абсолютным путём (cwd бывает другим).
+
+## Quick fix: грабли реализации (АПК_00260, итерация 2)
+
+- **Два разных бандла qfix**: `com._1c.g5.v8.dt.bsl.check.qfix` (платформенный,
+  НЕ в Import-Package форка — импорт оттуда = «cannot be resolved» каскадом)
+  и `com.e1c.g5.v8.dt.bsl.check.qfix` (нужный: `SingleVariantXtextBslModuleFix`,
+  `IXtextBslModuleFixModel`, `FixConfigurer`). Перепутать легко — javap-вывод
+  был из _1c-jar.
+- Позиция замечания в фиксе — `model.getIssue().getOffset()/getLength()`
+  (xtext Issue); текст — через `model.getDocument().get(offset, length)`
+  (`XtextResource.get` не существует).
+- Точечный фикс = замена по `getIssue().getOffset()`; на позиции без ожидаемого
+  символа (устаревший маркер) возвращать `null` — фикс просто не предложится.
+- `Marker` не имеет номера строки → itest по числу замечаний, позицию
+  проверять смоуком.
+- `git checkout -- <bundle>/...` откатывает и СВОИ незафиксированные вставки
+  (qfix/Messages) — вставки констант в Messages делать ПОСЛЕ экспериментов
+  с checkout, либо перезапускать вставку.
+- Точечные `-pl`-прогоны Tycho создают `.tycho-consumer-pom.xml` по модулям —
+  в .gitignore, не коммитить.
