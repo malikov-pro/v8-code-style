@@ -50,7 +50,9 @@ SELECT article, rule, name FROM backlog
 - `tests/<bundle>.itests`: `resources/<id>.bsl` — минимальный код с нарушением
   И чистой вариант; тест наследует `AbstractSingleModuleTestBase`, проверяет
   количество и строки замечаний (паттерн существующих тестов).
-- Локально: `bash compile.sh` (полный itests своего бандла) — зелёный.
+- Локально: точечный прогон своего теста —
+  `bash scripts/test-check.sh <TestClassName>` (цепочка реактора внутри,
+  минуты, не весь suite).
 
 ## 3.5. Пример в расширение АПК.ОшибкиДляПроверки
 
@@ -67,9 +69,21 @@ SELECT article, rule, name FROM backlog
 
 ## 5. Сдача
 
-- `bash compile.sh` (полный itests) → push master → smoke на стенде
-  (скилл `v8cs-deploy`) → при накоплении пачки: тег `X.Y.(Z+1)` → Release+сайт
-  (скилл `v8cs-release`).
+- Ветки (как у всего каталога): фича/пачка живёт в `feature/apk-ports`
+  (или `feature/<тема>`) **от `develop`**; merge `--no-ff` в `develop`
+  после зелёного прогона. `master` — только под релиз: merge из `develop`
+  + тег `X.Y.Z` **по явной команде пользователя** (release.yml соберёт
+  Release+сайт).
+- Верификация — по радиусу поражения (полный прогон НЕ на каждый чек):
+  | Сценарий | Прогон | Время |
+  |---|---|---|
+  | итерация над чеком | `bash scripts/test-check.sh <TestClass>` | ~5–7 мин |
+  | перед merge | та же цепочка, itests-модуль своего бандла целиком
+    (bsl включает `CheckDescriptionTest` — синк карточек/доков) | ~10–15 мин |
+  | полный `bash compile.sh` (все itests-модули) | перед релизом/тегом,
+    правки общих мест (bom/targets/manifests), раз в пачку | ~35 мин |
+- Merge → smoke на стенде (скилл `v8cs-deploy`) → релиз по команде
+  пользователя (скилл `v8cs-release`: merge `develop`→`master` + тег).
 
 ## Параллелизация
 
@@ -152,6 +166,12 @@ SELECT article, rule, name FROM backlog
 - `mvn verify -pl <модули>`: реактор НЕ подтягивает таргет-модуль по -am —
   перечислять цепочку явно (targets/edt-2026.1, все bundles, docs В КОРНЕ
   репо — не bundles/, feature, repository, itests-фрагмент).
+- **`-pl` без `clean` после пересборки бандлов = каскад падений itests**:
+  в `tests/*/target/work/data` остаётся воркспейс прежних квалификаторов —
+  с первых тестов «Cannot get bundle project with name CommonModule» /
+  NPE `getProject()==null` (0.1 сек на тест) и ханг в
+  `TestingProjectLifecycleSupport.waitForProjectStart`. Лечение: `clean`
+  (вытирает тестовый воркспейс), `test-check.sh` делает это всегда.
 - Точечный тест: `-Dtest=ApkYoLetterCheckTest -DfailIfNoTests=false`.
 - INSERT/UPDATE в apk.db — только с абсолютным путём (cwd бывает другим).
 
@@ -162,6 +182,13 @@ SELECT article, rule, name FROM backlog
   и `com.e1c.g5.v8.dt.bsl.check.qfix` (нужный: `SingleVariantXtextBslModuleFix`,
   `IXtextBslModuleFixModel`, `FixConfigurer`). Перепутать легко — javap-вывод
   был из _1c-jar.
+- **`interactive(false)` НЕ поддерживается фреймворком**: FixConfigurer бросает
+  `IllegalArgumentException: Non-interactive quick fix mode is not supported
+  yet` — но не в UI, а при РЕГИСТРАЦИИ фикса (FixRepository.init на старте
+  бандла). Пока фикс не зарегистрирован в EP, сломанный configureFix не
+  вызывается и выглядит рабочим. Регистрация + interactive(false) = падение
+  LINKING-фазы проектного контекста = ВСЕ itests бандла висят/падают.
+  Только `interactive(true)` (как в апстримных фикса).
 - Позиция замечания в фиксе — `model.getIssue().getOffset()/getLength()`
   (xtext Issue); текст — через `model.getDocument().get(offset, length)`
   (`XtextResource.get` не существует).
@@ -174,3 +201,18 @@ SELECT article, rule, name FROM backlog
   с checkout, либо перезапускать вставку.
 - Точечные `-pl`-прогоны Tycho создают `.tycho-consumer-pom.xml` по модулям —
   в .gitignore, не коммитить.
+
+## itests: JVM тестов — только через useJDK=BREE (находка 30.09.2026)
+
+- Сборка идёт на JDK 25 (Tycho 5 требует 21+), но тестовая JVM должна быть
+  **JDK 17** (BREE 2026.1): `tests/pom.xml` → tycho-surefire
+  `<useJDK>BREE</useJDK>` + `~/.m2/toolchains.xml` (jdk 17 → axiom-jdk-full-17,
+  jdk 25 → tools/jdk-25). SYSTEM-JVM (JDK 25) роняет itests: spifly 1.3.7
+  при витье классов (ServiceLoader-детекция на старте бандлов) читает файлы
+  JDK 25 (major 69) ASM'ом 9.6 — `Unsupported class file major version 69` →
+  `ClassFormatError` → LINKING-фаза падает → старт проектного контекста
+  не завершается → `waitForProjectStart`/`waitForDD` висят сотни секунд.
+- Симптомы отличить: NPE `getProject()==null` / «Cannot get bundle project»
+  каскадом с первых тестов — тоже из этой семьи (воркспейс не стартовал).
+- При синке с апстримом tests/pom.xml: useJDK сохранить (апстрим на 2026.2
+  с JDK 25 — там SYSTEM работает, у нас 2026.1 — нет).
