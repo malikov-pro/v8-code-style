@@ -614,6 +614,31 @@ final class Messages
     public static String VariableNameInvalidCheck_variable_name_must_start_with_a_capital_letter;
     public static String VariableNameInvalidCheck_variable_name_starts_with_an_underline;
 
+    public static String EmptyStatementCheck_title;
+    public static String EmptyStatementCheck_description;
+    public static String EmptyStatementCheck_Remove_empty_statement;
+
+    public static String UselessTernaryOperatorCheck_title;
+    public static String UselessTernaryOperatorCheck_description;
+    public static String UselessTernaryOperatorCheck_Useless_ternary_operator;
+
+    public static String TernaryOperatorUsageCheck_title;
+    public static String TernaryOperatorUsageCheck_description;
+    public static String TernaryOperatorUsageCheck_Use_if_instead_of_ternary_operator;
+
+    public static String NestedTernaryOperatorCheck_title;
+    public static String NestedTernaryOperatorCheck_description;
+    public static String NestedTernaryOperatorCheck_Nested_ternary_operator;
+
+    public static String IfElseDuplicatedCodeBlockCheck_title;
+    public static String IfElseDuplicatedCodeBlockCheck_description;
+    public static String IfElseDuplicatedCodeBlockCheck_Duplicated_code_block;
+
+    public static String IdenticalExpressionsCheck_title;
+    public static String IdenticalExpressionsCheck_description;
+    public static String IdenticalExpressionsCheck_Identical_expressions;
+    public static String IdenticalExpressionsCheck_Popular_divisors;
+
     static
     {
         // initialize resource bundle

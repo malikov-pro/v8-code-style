@@ -28,6 +28,12 @@ final class Messages
     public static String ApkYoLetterFix_Description;
     public static String ApkYoLetterFix_Details;
 
+    public static String EmptyStatementFix_Description;
+    public static String EmptyStatementFix_Details;
+
+    public static String UselessTernaryFix_Description;
+    public static String UselessTernaryFix_Details;
+
     public static String ConsecutiveEmptyLinesFix_Description;
     public static String ConsecutiveEmptyLinesFix_Details;
     public static String RemoveExportFix_Remove_export_keyword_des;
