@@ -71,6 +71,7 @@ form-self-reference
 function-return-value-type
 function-should-have-return
 functional-option-privileged-get-mode
+if-else-duplicated-condition
 input-field-list-choice-mode
 invocation-form-event-handler
 invocation-parameter-type-intersect
@@ -88,6 +89,7 @@ method-isinrole-role-exist
 method-optional-parameter-before-required
 method-param-value-type
 method-semicolon-extra
+method-size
 method-too-many-params
 missing-temporary-file-deletion
 module-accessibility-at-client

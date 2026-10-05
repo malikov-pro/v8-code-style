@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 107
+Общее количество проверок: 109
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -52,6 +52,7 @@
 | [form-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-self-reference.html) | Использование устаревшего псевдонима |
 | [function-return-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-return-value-type.html) | Функция возвращает типизированное значение |
 | [function-should-have-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-should-have-return.html) | Функция должна содержать возврат |
+| [if-else-duplicated-condition](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/if-else-duplicated-condition.html) | Повторяющееся условие в операторе «Если» |
 | [invocation-form-event-handler](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/invocation-form-event-handler.html) | Программный вызов обработчика события формы |
 | [invocation-parameter-type-intersect](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/invocation-parameter-type-intersect.html) | Вызываемый тип пересекается с типом параметра |
 | [link-part-comment-space](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/link-part-comment-space.html) | Пробел в описании метода перед ссылкой |
@@ -61,6 +62,7 @@
 | [method-optional-parameter-before-required](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/method-optional-parameter-before-required.html) | Необязательные параметры процедуры/функции расположены перед обязательными |
 | [method-param-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/method-param-value-type.html) | Параметр метода имеет тип |
 | [method-semicolon-extra](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/method-semicolon-extra.html) | Лишняя точка с запятой в конце объявления метода |
+| [method-size](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/method-size.html) | Размер метода |
 | [method-too-many-params](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/method-too-many-params.html) | Метод содержит слишком много параметров |
 | [missing-temporary-file-deletion](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missing-temporary-file-deletion.html) | Отсутствует удаление временного файла после использования. |
 | [module-accessibility-at-client](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/module-accessibility-at-client.html) | Метод или переменная доступны НаКлиенте |

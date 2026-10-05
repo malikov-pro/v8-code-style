@@ -57,6 +57,20 @@ final class Messages
 
     public static String SelfInsertionCheck_Remove_self_insertion;
 
+    public static String IfElseDuplicatedConditionCheck_title;
+
+    public static String IfElseDuplicatedConditionCheck_description;
+
+    public static String IfElseDuplicatedConditionCheck_Duplicate_condition_of_If_statement;
+
+    public static String MethodSizeCheck_title;
+
+    public static String MethodSizeCheck_description;
+
+    public static String MethodSizeCheck_Method_is_too_large;
+
+    public static String MethodSizeCheck_Maximum_method_size;
+
     public static String FunctionShouldHaveReturnCheck_title;
 
     public static String FunctionShouldHaveReturnCheck_description;
