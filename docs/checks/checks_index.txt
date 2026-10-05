@@ -51,6 +51,7 @@ dont-use-modality-mode
 dynamic-access-method-not-found
 empty-code-block
 empty-except-statement
+empty-statement
 event-handler-boolean-param
 export-method-in-command-form-module
 export-procedure-missing-comment
@@ -71,6 +72,8 @@ form-self-reference
 function-return-value-type
 function-should-have-return
 functional-option-privileged-get-mode
+identical-expressions
+if-else-duplicated-code-block
 if-else-duplicated-condition
 input-field-list-choice-mode
 invocation-form-event-handler
@@ -110,6 +113,7 @@ module-undefined-method
 module-undefined-variable
 module-unused-local-variable
 module-unused-method
+nested-ternary-operator
 new-color
 new-font
 not-support-goto-operator-webclient
@@ -170,11 +174,13 @@ structure-constructor-too-many-keys
 structure-constructor-value-type
 structure-key-modification
 subsystem-synonym-too-long
+ternary-operator-usage
 typed-value-adding-to-untyped-collection
 unknown-form-parameter-access
 unsafe-password-ib-storage
 use-goto-operator
 use-non-recommended-method
+useless-ternary-operator
 using-form-data-to-value
 using-isinrole
 variable-value-type
