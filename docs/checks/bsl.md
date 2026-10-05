@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 104
+Общее количество проверок: 105
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -38,6 +38,7 @@
 | [doc-comment-use-minus](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-use-minus.html) | Использование только дефис-минуса в документирующем комментарии |
 | [dont-use-modality-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/dont-use-modality-mode.html) | Checks dont use modality call in dont use modality mode. |
 | [dynamic-access-method-not-found](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/dynamic-access-method-not-found.html) | Метод в объекте не найден |
+| [empty-code-block](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/empty-code-block.html) | Пустой блок кода |
 | [empty-except-statement](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/empty-except-statement.html) | Конструкция "Попытка...Исключение...КонецПопытки" не содержит кода в исключении |
 | [event-handler-boolean-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/event-handler-boolean-param.html) | Использование булевого параметра обработчика события |
 | [export-method-in-command-form-module](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/export-method-in-command-form-module.html) | Ограничения на использование экспортных процедур и функций в модуле команд и форм |

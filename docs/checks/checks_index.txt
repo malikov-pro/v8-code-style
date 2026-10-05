@@ -48,6 +48,7 @@ doc-comment-use-minus
 document-post-in-privileged-mode
 dont-use-modality-mode
 dynamic-access-method-not-found
+empty-code-block
 empty-except-statement
 event-handler-boolean-param
 export-method-in-command-form-module

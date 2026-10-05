@@ -51,6 +51,22 @@ final class Messages
 
     public static String FunctionShouldHaveReturnCheck_Function_has_no_Return_statement;
 
+    public static String EmptyCodeBlockCheck_title;
+
+    public static String EmptyCodeBlockCheck_description;
+
+    public static String EmptyCodeBlockCheck_Empty_code_block;
+
+    public static String EmptyCodeBlockCheck_If_condition;
+
+    public static String EmptyCodeBlockCheck_ElsIf_condition;
+
+    public static String EmptyCodeBlockCheck_Else_section;
+
+    public static String EmptyCodeBlockCheck_Loop_body;
+
+    public static String EmptyCodeBlockCheck_Treat_comments_as_code;
+
     public static String ApkYoLetterCheck_title;
 
     public static String ApkYoLetterCheck_description;
