@@ -45,6 +45,18 @@ final class Messages
 
     public static String ApkFrenchQuotesCheck_French_quotes_are_not_allowed_in_interface_text;
 
+    public static String DeletingCollectionItemCheck_title;
+
+    public static String DeletingCollectionItemCheck_description;
+
+    public static String DeletingCollectionItemCheck_Do_not_delete_collection_items_while_iterating;
+
+    public static String SelfInsertionCheck_title;
+
+    public static String SelfInsertionCheck_description;
+
+    public static String SelfInsertionCheck_Remove_self_insertion;
+
     public static String FunctionShouldHaveReturnCheck_title;
 
     public static String FunctionShouldHaveReturnCheck_description;

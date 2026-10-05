@@ -27,6 +27,7 @@ data-exchange-load
 db-object-anyref-type
 db-object-max-number-length
 db-object-ref-non-ref-type
+deleting-collection-item
 deprecated-procedure-outside-deprecated-region
 doc-comment-collection-item-type
 doc-comment-complex-type-with-link
@@ -157,6 +158,7 @@ scheduled-job-periodicity-too-short
 secure-password-storage
 security-software-call
 self-assign
+self-insertion
 semicolon-missing
 server-execution-safe-mode
 statement-type-change

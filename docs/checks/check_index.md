@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 175
+Общее количество проверок 1С:Стандарты разработки V8: 177
 
 - form: 10
 - md: 28
-- bsl: 105
+- bsl: 107
 - ql: 8
 - right: 24
 
@@ -42,6 +42,7 @@
 | [db-object-anyref-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-anyref-type.html) | Реквизиты составного типа, такие как ЛюбаяСсылка и аналогичные |
 | [db-object-max-number-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-max-number-length.html) | Превышена максимальная длина числовых данных (31 знак) |
 | [db-object-ref-non-ref-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-ref-non-ref-type.html) | Реквизиты составного типа |
+| [deleting-collection-item](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deleting-collection-item.html) | Удаление элемента при обходе коллекции |
 | [deprecated-procedure-outside-deprecated-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-procedure-outside-deprecated-region.html) | Устаревшая процедура (функция) расположена вне области "УстаревшиеПроцедурыИФункции" |
 | [doc-comment-collection-item-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-collection-item-type.html) | Тип коллекций в документирующем комментарии содержит тип элемента коллекции |
 | [doc-comment-complex-type-with-link](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-complex-type-with-link.html) | Поле документирующего комментария использует объявление сложного типа вместо ссылки на тип |
@@ -172,6 +173,7 @@
 | [secure-password-storage](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/secure-password-storage.html) | Проверка использования безопасного хранилища для паролей |
 | [security-software-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/security-software-call.html) | Безопасность программного обеспечения, вызываемого через открытые интерфейсы |
 | [self-assign](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/self-assign.html) | Присвоение переменной самой себе |
+| [self-insertion](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/self-insertion.html) | Вставка коллекции в саму себя |
 | [semicolon-missing](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/semicolon-missing.html) | Отсутствие точки с запятой в конце оператора |
 | [server-execution-safe-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/server-execution-safe-mode.html) | Отсутствует включение безопасного режима перед вызовом метода "Выполнить" или "Вычислить" |
 | [statement-type-change](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/statement-type-change.html) | Утверждение меняет тип |
