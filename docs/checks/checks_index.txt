@@ -75,6 +75,7 @@ if-else-duplicated-condition
 input-field-list-choice-mode
 invocation-form-event-handler
 invocation-parameter-type-intersect
+line-length
 link-part-comment-space
 lock-out-of-try
 manager-module-named-self-reference

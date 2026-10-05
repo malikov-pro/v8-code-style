@@ -71,6 +71,14 @@ final class Messages
 
     public static String MethodSizeCheck_Maximum_method_size;
 
+    public static String LineLengthCheck_title;
+
+    public static String LineLengthCheck_description;
+
+    public static String LineLengthCheck_Line_is_too_long;
+
+    public static String LineLengthCheck_Maximum_line_length;
+
     public static String FunctionShouldHaveReturnCheck_title;
 
     public static String FunctionShouldHaveReturnCheck_description;
