@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 191
+Общее количество проверок 1С:Стандарты разработки V8: 193
 
 - form: 10
 - md: 28
-- bsl: 121
+- bsl: 123
 - ql: 8
 - right: 24
 
@@ -43,6 +43,8 @@
 | [db-object-max-number-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-max-number-length.html) | Превышена максимальная длина числовых данных (31 знак) |
 | [db-object-ref-non-ref-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-ref-non-ref-type.html) | Реквизиты составного типа |
 | [deleting-collection-item](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deleting-collection-item.html) | Удаление элемента при обходе коллекции |
+| [deprecated-current-date](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-current-date.html) | Использование устаревшего метода «ТекущаяДата» |
+| [deprecated-find](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-find.html) | Использование устаревшего метода «Найти» |
 | [deprecated-procedure-outside-deprecated-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-procedure-outside-deprecated-region.html) | Устаревшая процедура (функция) расположена вне области "УстаревшиеПроцедурыИФункции" |
 | [doc-comment-collection-item-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-collection-item-type.html) | Тип коллекций в документирующем комментарии содержит тип элемента коллекции |
 | [doc-comment-complex-type-with-link](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-complex-type-with-link.html) | Поле документирующего комментария использует объявление сложного типа вместо ссылки на тип |

@@ -664,6 +664,14 @@ final class Messages
     public static String UsingHardcodeSecretInformationCheck_Hardcode_secret_in_connection;
     public static String UsingHardcodeSecretInformationCheck_Search_words;
 
+    public static String DeprecatedFindCheck_title;
+    public static String DeprecatedFindCheck_description;
+    public static String DeprecatedFindCheck_Use_StrFind_instead_of_Find;
+
+    public static String DeprecatedCurrentDateCheck_title;
+    public static String DeprecatedCurrentDateCheck_description;
+    public static String DeprecatedCurrentDateCheck_Use_CurrentSessionDate_instead_of_CurrentDate;
+
     static
     {
         // initialize resource bundle
