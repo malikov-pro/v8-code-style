@@ -37,6 +37,12 @@ final class Messages
     public static String OneStatementPerLineFix_Description;
     public static String OneStatementPerLineFix_Details;
 
+    public static String SpaceAtStartCommentFix_Description;
+    public static String SpaceAtStartCommentFix_Details;
+
+    public static String CommentedCodeFix_Description;
+    public static String CommentedCodeFix_Details;
+
     public static String ConsecutiveEmptyLinesFix_Description;
     public static String ConsecutiveEmptyLinesFix_Details;
     public static String RemoveExportFix_Remove_export_keyword_des;
