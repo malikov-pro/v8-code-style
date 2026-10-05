@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 193
+Общее количество проверок 1С:Стандарты разработки V8: 197
 
 - form: 10
 - md: 28
-- bsl: 123
+- bsl: 127
 - ql: 8
 - right: 24
 
@@ -21,6 +21,7 @@
 | [bsl-variable-name-invalid](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-variable-name-invalid.html) | Правила образования имен переменных |
 | [change-and-validate-instead-of-around](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/change-and-validate-instead-of-around.html) | Используется аннотация &ИзменениеИКонтроль вместо &Вместо |
 | [code-after-async-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/code-after-async-call.html) | Код расположен после асинхронного вызова |
+| [commented-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/commented-code.html) | Закомментированный фрагмент кода |
 | [commit-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/commit-transaction.html) | Проверка нарушения схемы работы с транзакциями |
 | [common-module-missing-api](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-missing-api.html) | Общий модуль должен иметь хотя бы один экспортный метод |
 | [common-module-name-cached](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-cached.html) | Общий модуль с повторно используемыми значениями |
@@ -135,6 +136,7 @@
 | [new-font](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/new-font.html) | Использование конструкции "Новый Шрифт" |
 | [not-support-goto-operator-webclient](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/not-support-goto-operator-webclient.html) | Ограничение на использование оператора Перейти |
 | [notify-description-to-server-procedure](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/notify-description-to-server-procedure.html) | Описание оповещения на серверную процедуру |
+| [o-s-users-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/o-s-users-method.html) | Использование метода ПользователиОС |
 | [object-module-export-variable](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/object-module-export-variable.html) | Использование переменных в программных модулях |
 | [one-statement-per-line](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/one-statement-per-line.html) | Одно выражение в одной строке |
 | [optional-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/optional-form-parameter-access.html) | Обращение к опциональному параметру формы |
@@ -187,6 +189,7 @@
 | [self-insertion](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/self-insertion.html) | Вставка коллекции в саму себя |
 | [semicolon-missing](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/semicolon-missing.html) | Отсутствие точки с запятой в конце оператора |
 | [server-execution-safe-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/server-execution-safe-mode.html) | Отсутствует включение безопасного режима перед вызовом метода "Выполнить" или "Вычислить" |
+| [space-at-start-comment](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/space-at-start-comment.html) | Пробел в начале комментария |
 | [statement-type-change](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/statement-type-change.html) | Утверждение меняет тип |
 | [string-literal-type-annotation-invalid-place](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/string-literal-type-annotation-invalid-place.html) | Теги размещены неправильно, внутри конструкции языка |
 | [structure-constructor-too-many-keys](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/structure-constructor-too-many-keys.html) | Конструктор структуры содержит слишком много ключей |
@@ -194,6 +197,7 @@
 | [structure-key-modification](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/structure-key-modification.html) | Модификация ключа структуры вне функции-конструктора |
 | [subsystem-synonym-too-long](../../../com.e1c.v8codestyle.md/check.descriptions/ru/subsystem-synonym-too-long.html) | Длина названия раздела превышает 35 символов |
 | [ternary-operator-usage](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/ternary-operator-usage.html) | Использование тернарного оператора |
+| [timeouts-in-external-resources](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/timeouts-in-external-resources.html) | Таймауты при работе с внешними ресурсами |
 | [typed-value-adding-to-untyped-collection](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/typed-value-adding-to-untyped-collection.html) | Добавление типизированного значения в не типизированную коллекцию |
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
 | [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |

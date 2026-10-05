@@ -672,6 +672,26 @@ final class Messages
     public static String DeprecatedCurrentDateCheck_description;
     public static String DeprecatedCurrentDateCheck_Use_CurrentSessionDate_instead_of_CurrentDate;
 
+    public static String SpaceAtStartCommentCheck_title;
+    public static String SpaceAtStartCommentCheck_description;
+    public static String SpaceAtStartCommentCheck_Space_at_comment_start;
+    public static String SpaceAtStartCommentCheck_Comments_annotation;
+
+    public static String CommentedCodeCheck_title;
+    public static String CommentedCodeCheck_description;
+    public static String CommentedCodeCheck_Commented_out_code;
+    public static String CommentedCodeCheck_Threshold;
+    public static String CommentedCodeCheck_Exclusion_prefixes;
+
+    public static String OSUsersMethodCheck_title;
+    public static String OSUsersMethodCheck_description;
+    public static String OSUsersMethodCheck_Check_potentially_malicious_use_of_OS_users_method;
+
+    public static String TimeoutsInExternalResourcesCheck_title;
+    public static String TimeoutsInExternalResourcesCheck_description;
+    public static String TimeoutsInExternalResourcesCheck_Timeout_not_specified;
+    public static String TimeoutsInExternalResourcesCheck_Analyze_mail;
+
     static
     {
         // initialize resource bundle

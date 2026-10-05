@@ -6,6 +6,7 @@ bsl-nstr-string-literal-format
 bsl-variable-name-invalid
 change-and-validate-instead-of-around
 code-after-async-call
+commented-code
 commit-transaction
 common-module-missing-api
 common-module-name-cached
@@ -120,6 +121,7 @@ new-color
 new-font
 not-support-goto-operator-webclient
 notify-description-to-server-procedure
+o-s-users-method
 object-module-export-variable
 one-statement-per-line
 optional-form-parameter-access
@@ -172,6 +174,7 @@ self-assign
 self-insertion
 semicolon-missing
 server-execution-safe-mode
+space-at-start-comment
 statement-type-change
 string-literal-type-annotation-invalid-place
 structure-constructor-too-many-keys
@@ -179,6 +182,7 @@ structure-constructor-value-type
 structure-key-modification
 subsystem-synonym-too-long
 ternary-operator-usage
+timeouts-in-external-resources
 typed-value-adding-to-untyped-collection
 unknown-form-parameter-access
 unsafe-password-ib-storage
