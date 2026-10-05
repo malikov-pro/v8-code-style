@@ -34,6 +34,9 @@ final class Messages
     public static String UselessTernaryFix_Description;
     public static String UselessTernaryFix_Details;
 
+    public static String OneStatementPerLineFix_Description;
+    public static String OneStatementPerLineFix_Details;
+
     public static String ConsecutiveEmptyLinesFix_Description;
     public static String ConsecutiveEmptyLinesFix_Details;
     public static String RemoveExportFix_Remove_export_keyword_des;

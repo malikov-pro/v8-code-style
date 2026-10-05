@@ -639,6 +639,14 @@ final class Messages
     public static String IdenticalExpressionsCheck_Identical_expressions;
     public static String IdenticalExpressionsCheck_Popular_divisors;
 
+    public static String RewriteMethodParameterCheck_title;
+    public static String RewriteMethodParameterCheck_description;
+    public static String RewriteMethodParameterCheck_Parameter_rewrite_without_use;
+
+    public static String OneStatementPerLineCheck_title;
+    public static String OneStatementPerLineCheck_description;
+    public static String OneStatementPerLineCheck_Move_to_new_line;
+
     static
     {
         // initialize resource bundle

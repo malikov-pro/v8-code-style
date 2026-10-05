@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 186
+Общее количество проверок 1С:Стандарты разработки V8: 188
 
 - form: 10
 - md: 28
-- bsl: 116
+- bsl: 118
 - ql: 8
 - right: 24
 
@@ -134,6 +134,7 @@
 | [not-support-goto-operator-webclient](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/not-support-goto-operator-webclient.html) | Ограничение на использование оператора Перейти |
 | [notify-description-to-server-procedure](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/notify-description-to-server-procedure.html) | Описание оповещения на серверную процедуру |
 | [object-module-export-variable](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/object-module-export-variable.html) | Использование переменных в программных модулях |
+| [one-statement-per-line](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/one-statement-per-line.html) | Одно выражение в одной строке |
 | [optional-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/optional-form-parameter-access.html) | Обращение к опциональному параметру формы |
 | [property-return-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/property-return-type.html) | Свойство объекта имеет тип возвращаемого значения |
 | [public-method-caching](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/public-method-caching.html) | Проверка кэширования программного интерфейса |
@@ -151,6 +152,7 @@
 | [register-resource-precision](../../../com.e1c.v8codestyle.md/check.descriptions/ru/register-resource-precision.html) | Длина ресурса регистра накопления или бухгалтерии |
 | [restriction-execute-external-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/restriction-execute-external-code.html) | Ограничение на выполнение «внешнего» кода |
 | [restriction-execute-external-component-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/restriction-execute-external-component-code.html) | Ограничение на выполнение «внешнего» кода |
+| [rewrite-method-parameter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/rewrite-method-parameter.html) | Перезапись параметров метода |
 | [right-active-users](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-active-users.html) | Право установлено: Активные пользователи |
 | [right-administration](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-administration.html) | Право установлено: Администрирование |
 | [right-all-functions-mode](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-all-functions-mode.html) | Право установлено: Режим "Все функции" |

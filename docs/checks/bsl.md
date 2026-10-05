@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 116
+Общее количество проверок: 118
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -92,6 +92,7 @@
 | [not-support-goto-operator-webclient](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/not-support-goto-operator-webclient.html) | Ограничение на использование оператора Перейти |
 | [notify-description-to-server-procedure](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/notify-description-to-server-procedure.html) | Описание оповещения на серверную процедуру |
 | [object-module-export-variable](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/object-module-export-variable.html) | Использование переменных в программных модулях |
+| [one-statement-per-line](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/one-statement-per-line.html) | Одно выражение в одной строке |
 | [optional-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/optional-form-parameter-access.html) | Обращение к опциональному параметру формы |
 | [property-return-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/property-return-type.html) | Свойство объекта имеет тип возвращаемого значения |
 | [public-method-caching](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/public-method-caching.html) | Проверка кэширования программного интерфейса |
@@ -100,6 +101,7 @@
 | [redundant-export-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/redundant-export-method.html) | Тексты модулей конфигурации не должны содержать неиспользуемые экспортные процедуры и функции. |
 | [restriction-execute-external-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/restriction-execute-external-code.html) | Ограничение на выполнение «внешнего» кода |
 | [restriction-execute-external-component-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/restriction-execute-external-component-code.html) | Ограничение на выполнение «внешнего» кода |
+| [rewrite-method-parameter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/rewrite-method-parameter.html) | Перезапись параметров метода |
 | [rollback-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/rollback-transaction.html) | Проверка нарушения схемы работы с транзакциями |
 | [secure-password-storage](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/secure-password-storage.html) | Проверка использования безопасного хранилища для паролей |
 | [security-software-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/security-software-call.html) | Безопасность программного обеспечения, вызываемого через открытые интерфейсы |
