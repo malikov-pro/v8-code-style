@@ -122,14 +122,16 @@
 задачи апстрима (1C-Company/v8-code-style issues) как бэклог. Карта
 пересечений с нормативкой — `_ext_src/v8std`.
 
-**Прогресс портов (05.10, вечер)**: 17 своих проверок — 2 АПК (apk-00260,
-apk-01194, с qfix) + 15 BSL LS (function-should-have-return, empty-code-block,
+**Прогресс портов (05.10, ночь)**: 20 своих проверок — 2 АПК (apk-00260,
+apk-01194, с qfix) + 18 BSL LS (function-should-have-return, empty-code-block,
 deleting-collection-item, self-insertion, if-else-duplicated-condition,
 method-size, line-length, empty-statement, useless-ternary-operator,
-one-statement-per-line — три последних с qfix, ternary-operator-usage (выкл.
-по умолчанию), nested-ternary-operator, if-else-duplicated-code-block,
-identical-expressions, rewrite-method-parameter). Батчи №2/№3 — merge develop
-`006e2205`/`19c3237e`, гейт bsl.itests 330/0.
+one-statement-per-line — с qfix; ternary-operator-usage (выкл. по умолчанию),
+nested-ternary-operator, if-else-duplicated-code-block, identical-expressions,
+rewrite-method-parameter, using-hardcode-path, using-hardcode-network-address,
+using-hardcode-secret-information). Батчи №2/№3/№4 — merge develop
+`006e2205`/`19c3237e`/`0465eac3`, гейт bsl.itests 336/0.
+deprecated-find/current-date НЕ портируются — покрыты use-non-recommended-method.
 Гэп-лист и дедупликация — `_notes/ls-port-gap.md`;
 регламенты — скиллы `v8cs-port-check` (АПК) и `v8cs-port-ls` (BSL LS).
 

@@ -7,7 +7,7 @@ description: Конвейер переноса диагностики BSL Langua
 
 Смежный регламент: `v8cs-port-check` (общие правила, quick fix, верификация,
 ветки). Статус портов и гэп-лист: `_notes/ls-port-gap.md`.
-Перенесено: 2 АПК + 15 LS (состояние — в файле). Источник: 
+Перенесено: 2 АПК + 18 LS (состояние — в файле). Источник: 
 `_ext_src/bsl-language-server` — ТОЛЬКО чтение; правки LS — апстрим/форк LS.
 Батч №2 (05.10, merge develop 006e2205): empty-statement (+qfix),
 useless-ternary-operator (+qfix), ternary-operator-usage (OptIn — выкл. по
@@ -15,6 +15,10 @@ useless-ternary-operator (+qfix), ternary-operator-usage (OptIn — выкл. п
 identical-expressions (упрощённый).
 Батч №3 (05.10 вечер, merge develop 19c3237e): rewrite-method-parameter
 (упрощённый), one-statement-per-line (+qfix перенос на новую строку).
+Батч №4 (05.10 ночь, merge develop 0465eac3): using-hardcode-path,
+using-hardcode-network-address, using-hardcode-secret-information
+(без qfix по дизайну). Дедуп: deprecated-find/current-date покрыты
+use-non-recommended-method.
 
 ## 0. Выбор кандидата
 
@@ -70,6 +74,15 @@ identical-expressions (упрощённый).
 - Логика «переприсваивание до первого чтения» (rewrite-method-parameter):
   в usedParams добавлять ИМЕНА, ПРОЧИТАННЫЕ В RIGHT (все StaticFeatureAccess
   правой части), а не имя левой части — иначе clean-тест ловит ложный флаг.
+- **Узел строкового литерала включает скрытый whitespace** (пробел после «=»):
+  literalContent — `.trim()` ДО срезания кавычек, иначе кавычки остаются и
+  регексы/URL-фильтр молча не работают (поймано тестами хардкодов, 05.10).
+- `OperatorStyleCreator.getType().getName()` — английское имя типа
+  (Structure/Map/FTPConnection); тип не разрешился — фолбэк: имя из текста
+  «Новый <Тип>» регекспой. mcore.TypeItem extends DuallyNamedElement (есть
+  getNameRu). ECJ-загадка: `mcoreType instanceof DuallyNamedElement` в
+  bsl-бандле НЕ компилируется («cannot be a subtype of the Pattern type»),
+  хотя иерархия верна — вызывать getName() прямо на Type.
 - Тернарник = Invocation, `methodAccess instanceof StaticFeatureAccess` с
   name «?» (грамматика: `name = Question`); EClass Ternary НЕ существует.
   Ветви/условие — `Invocation.getParams()`; булев литерал = BooleanLiteral.isIsTrue().
