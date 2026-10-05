@@ -48,12 +48,13 @@ public class UseNonRecommendedMethodCheck
 
     private static final String PARAM_METHODS_LIST = "nonRecommendedMethods"; //$NON-NLS-1$
 
-    private static final Set<String> NON_RECOMENDED_METHODS_LIST = Set.of("CurrentDate", //$NON-NLS-1$
-        "ТекущаяДата", //$NON-NLS-1$
-        "Message", //$NON-NLS-1$
+    // С 05.10.2026 методы Найти/Find и ТекущаяДата/CurrentDate замещены
+    // целевыми проверками deprecated-find и deprecated-current-date (порт BSL LS:
+    // выше серьёзность для ТекущаяДата, конкретные рекомендации замены, ловят
+    // неразрешённые вызовы) и из дефолтного списка убраны. Сообщить и
+    // ПолучитьФорму остаются здесь. Список параметром расширяется вручную.
+    private static final Set<String> NON_RECOMENDED_METHODS_LIST = Set.of("Message", //$NON-NLS-1$
         "Сообщить", //$NON-NLS-1$
-        "Find", //$NON-NLS-1$
-        "Найти", //$NON-NLS-1$
         "ПолучитьФорму", //$NON-NLS-1$
         "GetForm"); //$NON-NLS-1$
 

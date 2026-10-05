@@ -28,6 +28,8 @@ db-object-anyref-type
 db-object-max-number-length
 db-object-ref-non-ref-type
 deleting-collection-item
+deprecated-current-date
+deprecated-find
 deprecated-procedure-outside-deprecated-region
 doc-comment-collection-item-type
 doc-comment-complex-type-with-link

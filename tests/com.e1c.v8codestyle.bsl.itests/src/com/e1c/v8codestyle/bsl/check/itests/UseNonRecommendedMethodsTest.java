@@ -49,12 +49,12 @@ public class UseNonRecommendedMethodsTest
         updateModule(FOLDER_RESOURCE + "use-non-recommended-methods.bsl");
 
         List<Marker> markers = getModuleMarkers();
-        assertEquals(3, markers.size());
+        assertEquals(2, markers.size());
         List<Integer> errorLines = markers.stream()
             .map(marker -> marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE))
             .map(Integer.class::cast)
             .sorted()
             .collect(Collectors.toList());
-        assertEquals(List.of(2, 3, 4), errorLines);
+        assertEquals(List.of(2, 3), errorLines);
     }
 }
