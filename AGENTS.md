@@ -6,7 +6,7 @@
 соседний `bslls-connector-for-edt` (канал диагностик BSL LS). Общие правила
 каталога — в `../AGENTS.md`.
 
-## Процесс (изменено 30.09)
+## Процесс (изменено 05.10)
 
 - **Ветки**: `develop` — интеграция; фичи/пачки — `feature/*` от `develop`;
   merge `--no-ff` в `develop` после зелёного прогона. `master` — только под
@@ -121,6 +121,12 @@
 коннектор станет не нужен) и проверки АПК; сюда же собираются зависшие
 задачи апстрима (1C-Company/v8-code-style issues) как бэклог. Карта
 пересечений с нормативкой — `_ext_src/v8std`.
+
+**Прогресс портов (05.10)**: 9 своих проверок — 2 АПК (apk-00260, apk-01194,
+с qfix) + 7 BSL LS (function-should-have-return, empty-code-block,
+deleting-collection-item, self-insertion, if-else-duplicated-condition,
+method-size, line-length). Гэп-лист и дедупликация — `_notes/ls-port-gap.md`;
+регламенты — скиллы `v8cs-port-check` (АПК) и `v8cs-port-ls` (BSL LS).
 
 **Схема работы с АПК**: база АПК (`onec-apk-data`) — ТОЛЬКО источник правил
 (запросы: реестр, алгоритмы, описания). Прогоны/проверка детекции — в EDT

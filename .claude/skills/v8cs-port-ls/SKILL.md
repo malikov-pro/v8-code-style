@@ -1,0 +1,91 @@
+---
+name: v8cs-port-ls
+description: Конвейер переноса диагностики BSL Language Server в форк v8-code-style — выбор кандидата из гэп-листа, дедупликация, реализация BasicCheck, itests, сдача. Использовать при переносе диагностик LS, поиске свободных диагностик, учёте прогресса портов.
+---
+
+# Конвейер: перенос диагностики BSL LS → проверка форка
+
+Смежный регламент: `v8cs-port-check` (общие правила, quick fix, верификация,
+ветки). Статус портов и гэп-лист: `_notes/ls-port-gap.md`.
+Перенесено: 2 АПК + 7 LS (состояние — в файле). Источник: 
+`_ext_src/bsl-language-server` — ТОЛЬКО чтение; правки LS — апстрим/форк LS.
+
+## 0. Выбор кандидата
+
+- Из гэп-листа («Кандидаты на следующие порты») или новый разбор.
+- Дедуп руками: `grep -ri <имя>` по `bundles/*/markdown/` + `docs/checks/`.
+  Token-overlap матчёр врёт в обе стороны (см. гэп-лист).
+- ❌ НЕ переносимы (проверено):
+  - ловит компилятор 1С (procedure-returns-value — значение в процедуре);
+  - unreachable-code — требует CFG (ControlFlowGraphIndex), нет в фреймворке;
+  - **double-negatives — битый AST EDT-парсера**: «Не Сумма <> 0» →
+    `Unary(НЕ, operand=NULL)`, «Не Не А» → внешний НЕ с operand=Binary.
+    Проверено дампами AST в itest-рантайме 05.10;
+  - typo/bad-words — словари; query-* — нужен query-канал (отдельная работа).
+
+## 1. Спецификация из источника
+
+- `docs/diagnostics/<Name>.md` (RU+EN), `<Name>Diagnostic.java`,
+  `<Name>Diagnostic_ru.properties` (точные тексты сообщений).
+- Инвариант = что ищется (не название!); severity/type; параметры; qfix в LS
+  (QuickFixProvider) — оценить по критерию «механическая замена vs решение
+  пользователя» (решение пользователя → фикса нет, описать в карточке).
+
+## 2. Реализация
+
+- id = ключ LS в kebab-case (= имя md-дока, например `empty-code-block`).
+- Класс `<Name>Check extends BasicCheck` в check-пакете канала
+  (bsl → `com.e1c.v8codestyle.bsl`). Референсы-шаблоны: 
+  `FunctionShouldHaveReturnCheck` (EClass-объект), `EmptyCodeBlockCheck`
+  (module-скан + параметр), `LineLengthCheck` (DirectLocation на строку).
+- Маппинг severity: BLOCKER→CRITICAL, CRITICAL→CRITICAL/MAJOR, MAJOR→MAJOR,
+  MINOR→MINOR, INFO→TRIVIAL. Маппинг type: ERROR→IssueType.ERROR,
+  CODE_SMELL→WARNING/CODE_STYLE, SUSPICIOUS→ERROR/WARNING.
+- Extension — `CommonSenseCheckExtension(getCheckId(), BslPlugin.PLUGIN_ID)`.
+- plugin.xml: `<check category="com.e1c.v8codestyle.bsl" class=
+  "com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:<FQCN>">`.
+- Карточки ОБЕ: `markdown/<id>.md` (EN, корень) **и** `markdown/ru/<id>.md` —
+  CheckDescriptionTest требует наличие для языков "" и "ru".
+
+## 3. API-грабли EDT-модели (все проверены 05.10)
+
+- Функции/процедуры — разные EClass: `Function`, `Procedure` (нет
+  `Method.getKind()`). `checkedObjectType(METHOD)` ловит оба (фреймворк
+  матчит супертипы — доказано ModuleStructureMethodInRegionCheck).
+- Имя метода/объекта: `McorePackage.Literals.NAMED_ELEMENT__NAME`
+  (не METHOD__NAME — его не существует).
+- `CheckComplexity` = {NORMAL, COMPLEX} — TRIVIAL нет.
+- `IssueType` = {ERROR, WARNING, SECURITY, PERFORMANCE, PORTABILITY,
+  LIBRARY_DEVELOPMENT_AND_USAGE, CODE_STYLE, UI_STYLE, SPELLING,
+  CRITICAL_DATA_INTEGRITY} — SUSPICIOUS нет.
+- `ICheckParameters.getInt(String)` — single-arg, throws WrongParameterException.
+- IfStatement: `getIfPart()`/`getElsIfParts()` → Conditional (predicate +
+  statements), `getElseStatements()`. **Пустой список else означает и «нет
+  Иначе», и «пустое Иначе»** — наличие «Иначе» проверять по Keyword-листьям
+  узла (текст «Иначе»/«Else», grammar element instanceof Keyword).
+- Циклы: WhileStatement extends LoopStatement; ForToStatement/ForEachStatement
+  extends ForStatement; ForStatement extends LoopStatement. Тело —
+  LoopStatement.getStatements().
+- ReturnStatement.getExpression() != null → возврат со значением.
+- Текст узла: `NodeModelUtils.findActualNodeFor(obj).getText()`.
+
+## 4. Тест
+
+- Один объединённый тест-метод: clean-ресурс → 0, violating → N.
+  FixMethodOrder/MethodSorters в p2-junit ЗАПРЕЩЕНЫ (Access restriction).
+- Отладка счётчиков: дамп `Marker::getMessage` в сообщение assertTrue.
+- Ресурсы itest — синтаксически валидный BSL! Ошибка в ресурсе даёт пустые
+  AST-фрагменты и фантомные маркеры (реальный кейс: «Пока … Делать» вместо
+  «Цикл» = пустой WhileStatement из ниоткуда).
+- Прогон: `bash scripts/test-check.sh <TestClass[,TestClass2]>` (всегда clean).
+
+## 5. Сдача
+
+- Полный гейт (цепочка реактора + bsl.itests целиком, `~15 мин`) → merge
+  develop → push. Серия портов: коммит на каждый чек, гейт — периодически
+  (договорённость 05.10: порты подряд, тесты сам, UI-проверка при ~50 наших
+  портах; полный itests-гейт — перед merge партии в develop).
+- Смоук в EDT: `scripts/smoke-edt.sh` (сборка+установка+запуск EDT) →
+  MCP `clean_project` + `get_project_errors` (new checks живут только после
+  clean build — revalidate недостаточно). Пример-модуль в
+  АПК.ОшибкиДляПроверки — по желанию (для АПК-портов обязателен).
