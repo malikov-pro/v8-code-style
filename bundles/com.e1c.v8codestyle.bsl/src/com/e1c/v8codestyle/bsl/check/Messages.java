@@ -647,6 +647,23 @@ final class Messages
     public static String OneStatementPerLineCheck_description;
     public static String OneStatementPerLineCheck_Move_to_new_line;
 
+    public static String UsingHardcodePathCheck_title;
+    public static String UsingHardcodePathCheck_description;
+    public static String UsingHardcodePathCheck_Hardcode_path;
+    public static String UsingHardcodePathCheck_Std_paths_unix;
+
+    public static String UsingHardcodeNetworkAddressCheck_title;
+    public static String UsingHardcodeNetworkAddressCheck_description;
+    public static String UsingHardcodeNetworkAddressCheck_Hardcode_ip_address;
+    public static String UsingHardcodeNetworkAddressCheck_Exclusion_words;
+    public static String UsingHardcodeNetworkAddressCheck_Popular_version_exclusion;
+
+    public static String UsingHardcodeSecretInformationCheck_title;
+    public static String UsingHardcodeSecretInformationCheck_description;
+    public static String UsingHardcodeSecretInformationCheck_Hardcode_secret;
+    public static String UsingHardcodeSecretInformationCheck_Hardcode_secret_in_connection;
+    public static String UsingHardcodeSecretInformationCheck_Search_words;
+
     static
     {
         // initialize resource bundle

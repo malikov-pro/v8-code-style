@@ -184,5 +184,8 @@ use-goto-operator
 use-non-recommended-method
 useless-ternary-operator
 using-form-data-to-value
+using-hardcode-network-address
+using-hardcode-path
+using-hardcode-secret-information
 using-isinrole
 variable-value-type
