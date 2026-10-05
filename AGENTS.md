@@ -122,16 +122,19 @@
 задачи апстрима (1C-Company/v8-code-style issues) как бэклог. Карта
 пересечений с нормативкой — `_ext_src/v8std`.
 
-**Прогресс портов (05.10, ночь)**: 20 своих проверок — 2 АПК (apk-00260,
-apk-01194, с qfix) + 18 BSL LS (function-should-have-return, empty-code-block,
-deleting-collection-item, self-insertion, if-else-duplicated-condition,
-method-size, line-length, empty-statement, useless-ternary-operator,
-one-statement-per-line — с qfix; ternary-operator-usage (выкл. по умолчанию),
-nested-ternary-operator, if-else-duplicated-code-block, identical-expressions,
-rewrite-method-parameter, using-hardcode-path, using-hardcode-network-address,
-using-hardcode-secret-information). Батчи №2/№3/№4 — merge develop
-`006e2205`/`19c3237e`/`0465eac3`, гейт bsl.itests 336/0.
-deprecated-find/current-date НЕ портируются — покрыты use-non-recommended-method.
+**Прогресс портов (06.10)**: 22 своих проверок — 2 АПК (apk-00260,
+apk-01194, с qfix) + 20 BSL LS. Батчи №2-№5 (merge develop `006e2205`/
+`19c3237e`/`0465eac3`/`9c992af6`), гейт bsl.itests 340/0.
+**Замещение (политика 05.10): если диагностика LS точнее существующей —
+портируем и убираем замещённое из грубой**: deprecated-find/current-date
+перенесены, Найти/ТекущаяДата убраны из дефолта use-non-recommended-method
+(Сообщить/ПолучитьФорму остаются); пересмотр остальных дедуп-вердиктов —
+`_notes/ls-port-gap.md`.
+**Деплой + смоук (06.10)**: v8-cs 0.8.0.v20261005-1814 установлен в EDT 2026.1
+(АПК-воркспейс ~/edt/apk); примеры ош_ПримерХардкод и ош_ПримерСтруктура в
+apk.ПроверкаОшибки детектятся всеми новыми проверками (живая сверка строк/
+количеств через MCP), qfix зарегистрированы, журнал без ошибок
+com.e1c.v8codestyle. Ограничение «50 портов до деплоя» СНЯТО пользователем.
 Гэп-лист и дедупликация — `_notes/ls-port-gap.md`;
 регламенты — скиллы `v8cs-port-check` (АПК) и `v8cs-port-ls` (BSL LS).
 
