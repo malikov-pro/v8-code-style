@@ -122,10 +122,14 @@
 задачи апстрима (1C-Company/v8-code-style issues) как бэклог. Карта
 пересечений с нормативкой — `_ext_src/v8std`.
 
-**Прогресс портов (05.10)**: 9 своих проверок — 2 АПК (apk-00260, apk-01194,
-с qfix) + 7 BSL LS (function-should-have-return, empty-code-block,
+**Прогресс портов (05.10, вечер)**: 15 своих проверок — 2 АПК (apk-00260,
+apk-01194, с qfix) + 13 BSL LS (function-should-have-return, empty-code-block,
 deleting-collection-item, self-insertion, if-else-duplicated-condition,
-method-size, line-length). Гэп-лист и дедупликация — `_notes/ls-port-gap.md`;
+method-size, line-length, empty-statement, useless-ternary-operator — два
+последних с qfix, ternary-operator-usage (выкл. по умолчанию),
+nested-ternary-operator, if-else-duplicated-code-block, identical-expressions).
+Батч №2 — merge develop `006e2205`, гейт bsl.itests 326/0.
+Гэп-лист и дедупликация — `_notes/ls-port-gap.md`;
 регламенты — скиллы `v8cs-port-check` (АПК) и `v8cs-port-ls` (BSL LS).
 
 **Схема работы с АПК**: база АПК (`onec-apk-data`) — ТОЛЬКО источник правил

@@ -7,8 +7,12 @@ description: Конвейер переноса диагностики BSL Langua
 
 Смежный регламент: `v8cs-port-check` (общие правила, quick fix, верификация,
 ветки). Статус портов и гэп-лист: `_notes/ls-port-gap.md`.
-Перенесено: 2 АПК + 7 LS (состояние — в файле). Источник: 
+Перенесено: 2 АПК + 13 LS (состояние — в файле). Источник: 
 `_ext_src/bsl-language-server` — ТОЛЬКО чтение; правки LS — апстрим/форк LS.
+Батч №2 (05.10, merge develop 006e2205): empty-statement (+qfix),
+useless-ternary-operator (+qfix), ternary-operator-usage (OptIn — выкл. по
+умолчанию), nested-ternary-operator, if-else-duplicated-code-block,
+identical-expressions (упрощённый).
 
 ## 0. Выбор кандидата
 
@@ -49,6 +53,21 @@ description: Конвейер переноса диагностики BSL Langua
 
 ## 3. API-грабли EDT-модели (все проверены 05.10)
 
+- **EmptyStatement (и, вероятно, другие «пустые» EObject) НЕ доставляется
+  через checkedObjectType** — не попадает в BM-модель. Только якорь METHOD +
+  `EcoreUtil2.getAllContentsOfType(method, EmptyStatement.class)`.
+- **Правило грамматики EmptyStatement не потребляет текст** («;» — снаружи,
+  соседний лист): узел EObject нулевой длины, якорить DirectLocation на
+  лист «;» (образец — наш EmptyStatementCheck); Marker от addIssue(msg, obj)
+  на таком EObject не работает.
+- «Выкл. по умолчанию» = IBasicCheckExtension с `definition.setEnabled(false)`
+  (наш OptInCheckExtension в com.e1c.v8codestyle.check); НЕ регистрировать в
+  CommonCheckRegistry, чтобы не включался групповым переключателем.
+- Тернарник = Invocation, `methodAccess instanceof StaticFeatureAccess` с
+  name «?» (грамматика: `name = Question`); EClass Ternary НЕ существует.
+  Ветви/условие — `Invocation.getParams()`; булев литерал = BooleanLiteral.isIsTrue().
+- `Method.eAll()` недоступен в компиляции Tycho-бандла — использовать
+  `org.eclipse.xtext.EcoreUtil2` (НЕ `org.eclipse.xtext.util.EcoreUtil2`).
 - Функции/процедуры — разные EClass: `Function`, `Procedure` (нет
   `Method.getKind()`). `checkedObjectType(METHOD)` ловит оба (фреймворк
   матчит супертипы — доказано ModuleStructureMethodInRegionCheck).
@@ -58,7 +77,8 @@ description: Конвейер переноса диагностики BSL Langua
 - `IssueType` = {ERROR, WARNING, SECURITY, PERFORMANCE, PORTABILITY,
   LIBRARY_DEVELOPMENT_AND_USAGE, CODE_STYLE, UI_STYLE, SPELLING,
   CRITICAL_DATA_INTEGRITY} — SUSPICIOUS нет.
-- `ICheckParameters.getInt(String)` — single-arg, throws WrongParameterException.
+- `ICheckParameters.getInt(String)` — single-arg, throws WrongParameterException
+  (есть и getString для строковых параметров).
 - IfStatement: `getIfPart()`/`getElsIfParts()` → Conditional (predicate +
   statements), `getElseStatements()`. **Пустой список else означает и «нет
   Иначе», и «пустое Иначе»** — наличие «Иначе» проверять по Keyword-листьям
