@@ -499,6 +499,14 @@
             category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.IdenticalExpressionsCheck">
       </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.RewriteMethodParameterCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.OneStatementPerLineCheck">
+      </check>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
@@ -531,6 +539,9 @@
       </fix>
       <fix
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.qfix.UselessTernaryFix">
+      </fix>
+      <fix
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.qfix.OneStatementPerLineFix">
       </fix>
    </extension>
 

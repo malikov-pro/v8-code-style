@@ -119,6 +119,7 @@ new-font
 not-support-goto-operator-webclient
 notify-description-to-server-procedure
 object-module-export-variable
+one-statement-per-line
 optional-form-parameter-access
 property-return-type
 public-method-caching
@@ -136,6 +137,7 @@ redundant-export-method
 register-resource-precision
 restriction-execute-external-code
 restriction-execute-external-component-code
+rewrite-method-parameter
 right-active-users
 right-administration
 right-all-functions-mode
