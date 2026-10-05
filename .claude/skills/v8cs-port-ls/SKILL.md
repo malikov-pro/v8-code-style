@@ -7,12 +7,14 @@ description: Конвейер переноса диагностики BSL Langua
 
 Смежный регламент: `v8cs-port-check` (общие правила, quick fix, верификация,
 ветки). Статус портов и гэп-лист: `_notes/ls-port-gap.md`.
-Перенесено: 2 АПК + 13 LS (состояние — в файле). Источник: 
+Перенесено: 2 АПК + 15 LS (состояние — в файле). Источник: 
 `_ext_src/bsl-language-server` — ТОЛЬКО чтение; правки LS — апстрим/форк LS.
 Батч №2 (05.10, merge develop 006e2205): empty-statement (+qfix),
 useless-ternary-operator (+qfix), ternary-operator-usage (OptIn — выкл. по
 умолчанию), nested-ternary-operator, if-else-duplicated-code-block,
 identical-expressions (упрощённый).
+Батч №3 (05.10 вечер, merge develop 19c3237e): rewrite-method-parameter
+(упрощённый), one-statement-per-line (+qfix перенос на новую строку).
 
 ## 0. Выбор кандидата
 
@@ -63,6 +65,11 @@ identical-expressions (упрощённый).
 - «Выкл. по умолчанию» = IBasicCheckExtension с `definition.setEnabled(false)`
   (наш OptInCheckExtension в com.e1c.v8codestyle.check); НЕ регистрировать в
   CommonCheckRegistry, чтобы не включался групповым переключателем.
+- `IDocument.getDefaultLineDelimiter()` НЕ существует в таргете 2026.1 —
+  `TextUtilities.getDefaultLineDelimiter(document)` (qfix-переносы строк).
+- Логика «переприсваивание до первого чтения» (rewrite-method-parameter):
+  в usedParams добавлять ИМЕНА, ПРОЧИТАННЫЕ В RIGHT (все StaticFeatureAccess
+  правой части), а не имя левой части — иначе clean-тест ловит ложный флаг.
 - Тернарник = Invocation, `methodAccess instanceof StaticFeatureAccess` с
   name «?» (грамматика: `name = Question`); EClass Ternary НЕ существует.
   Ветви/условие — `Invocation.getParams()`; булев литерал = BooleanLiteral.isIsTrue().
