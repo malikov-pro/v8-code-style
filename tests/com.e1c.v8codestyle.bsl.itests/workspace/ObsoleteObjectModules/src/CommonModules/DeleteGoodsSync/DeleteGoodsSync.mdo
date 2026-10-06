@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6a1b7c2e-0012-4a01-9c10-0f4d3a11b112">
+  <name>DeleteGoodsSync</name>
+  <synonym>
+    <key>en</key>
+    <value>Obsolete goods sync</value>
+  </synonym>
+  <server>true</server>
+  <externalConnection>true</externalConnection>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
+</mdclass:CommonModule>

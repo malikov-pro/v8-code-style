@@ -761,6 +761,21 @@ final class Messages
     public static String ApkSessionParamInitCheck_title;
     public static String ApkSessionParamInitCheck_description;
     public static String ApkSessionParamInitCheck_Session_parameter_assignment;
+    public static String ObsoleteObjectModuleCheck_title;
+    public static String ObsoleteObjectModuleCheck_description;
+    public static String ObsoleteObjectModuleCheck_Module_has_code;
+
+    public static String OverridableModuleNonExportMethodCheck_title;
+    public static String OverridableModuleNonExportMethodCheck_description;
+    public static String OverridableModuleNonExportMethodCheck_Method_is_not_export;
+
+    public static String OverridableModuleNonDeprecatedFunctionCheck_title;
+    public static String OverridableModuleNonDeprecatedFunctionCheck_description;
+    public static String OverridableModuleNonDeprecatedFunctionCheck_Function_is_not_deprecated;
+
+    public static String OverridableModuleTopRegionCheck_title;
+    public static String OverridableModuleTopRegionCheck_description;
+    public static String OverridableModuleTopRegionCheck_Region_is_not_allowed;
 
     static
     {
