@@ -41,6 +41,13 @@ final class Messages
     public static String JoinToSubQuery_description;
     public static String JoinToSubQuery_Query_join_to_sub_query_not_allowed;
     public static String JoinToSubQuery_title;
+    public static String QueryArithmeticCastCheck_Average_function_result_should_be_cast_to_number;
+    public static String QueryArithmeticCastCheck_description;
+    public static String QueryArithmeticCastCheck_Division_result_should_be_cast_to_number;
+    public static String QueryArithmeticCastCheck_title;
+    public static String QueryCastStringCheck_Cast_to_limited_string_usage_should_be_verified;
+    public static String QueryCastStringCheck_description;
+    public static String QueryCastStringCheck_title;
     public static String TempTableHasIndex_description;
     public static String TempTableHasIndex_Exclude_table_name_pattern;
     public static String TempTableHasIndex_New_temporary_table_should_have_indexes;
