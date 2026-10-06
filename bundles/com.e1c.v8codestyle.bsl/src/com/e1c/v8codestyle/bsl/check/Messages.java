@@ -819,6 +819,10 @@ final class Messages
     public static String ApkFileGlobalMethodsCheck_Global_file_method;
     public static String ApkFileGlobalMethodsCheck_File_dialog_show;
 
+    public static String ApkRegistrarAccessCheck_title;
+    public static String ApkRegistrarAccessCheck_description;
+    public static String ApkRegistrarAccessCheck_Registrar_access_breaks_self_sufficiency;
+
     static
     {
         // initialize resource bundle

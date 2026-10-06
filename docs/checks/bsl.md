@@ -1,11 +1,12 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 154
+Общее количество проверок: 155
 
 | Код проверки | Наименование |
 |--------------|--------------|
 | [apk-00074-session-params-init](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00074-session-params-init.html) | Инициализацию параметров сеанса следует выполнять в модуле сеанса |
+| [apk-00150-registrar-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00150-registrar-access.html) | Самодостаточность регистров: обращение к реквизиту «Регистратор» |
 | [apk-00184-scheduled-jobs-manager](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00184-scheduled-jobs-manager.html) | Обращение в программном коде к менеджеру регламентных заданий |
 | [apk-00205-query-empty-result](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00205-query-empty-result.html) | Пустота результата запроса проверяется выборкой вместо метода Пустой |
 | [apk-00260-no-yo-letter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00260-no-yo-letter.html) | Буква «ё» в текстах модулей |
