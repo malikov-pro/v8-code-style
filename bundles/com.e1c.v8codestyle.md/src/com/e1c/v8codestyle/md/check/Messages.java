@@ -72,6 +72,9 @@ final class Messages
     public static String DbObjectStringAllowedLengthCheck_description;
     public static String DbObjectStringAllowedLengthCheck_message;
     public static String DbObjectStringAllowedLengthCheck_title;
+    public static String DbObjectUnlimitedStringCheck_description;
+    public static String DbObjectUnlimitedStringCheck_message;
+    public static String DbObjectUnlimitedStringCheck_title;
     static
     {
         // initialize resource bundle
