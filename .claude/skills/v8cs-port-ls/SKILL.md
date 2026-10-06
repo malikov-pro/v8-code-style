@@ -7,13 +7,15 @@ description: Конвейер переноса диагностики BSL Langua
 
 Смежный регламент: `v8cs-port-check` (общие правила, quick fix, верификация,
 ветки). Статус портов и гэп-лист: `_notes/ls-port-gap.md`.
-Перенесено: 2 АПК + 24 LS (состояние — в файле). Источник: 
+Перенесено: 2 АПК + 34 LS (состояние — в файле). Источник: 
 `_ext_src/bsl-language-server` — ТОЛЬКО чтение; правки LS — апстрим/форк LS.
-Батчи №2-№6: merge develop 006e2205 / 19c3237e / 0465eac3 / 9c992af6 /
-5b0db929. Батч №6 (06.10): commented-code (+qfix), space-at-start-comment
-(+qfix), o-s-users-method, timeouts-in-external-resources;
-CodeRecognizer/BSLFootprint LS → CommentCodeRecognizer.
-Деплой v20261005-2021 в EDT 2026.1 + живой смоук партий 2-6 — пройден.
+Батчи №2-№7: merge develop 006e2205 / 19c3237e / 0465eac3 / 9c992af6 /
+5b0db929 / 27ca921b. Батч №7 (06.10, 10 проверек): missing-space,
+magic-number, magic-date, if-condition-complexity, nested-statements,
+cyclomatic-complexity, cognitive-complexity (упрощённая формула),
+using-modal-windows, missing-temp-storage-deletion (упрощённая),
+unused-parameters.
+Деплой v20261005-2021+ в EDT 2026.1 + живой смоук партий 2-7 — пройден.
 
 ## 0. Выбор кандидата
 
@@ -78,6 +80,12 @@ CodeRecognizer/BSLFootprint LS → CommentCodeRecognizer.
 - CodeRecognizer/BSLFootprint LS перенесены как CommentCodeRecognizer
   (check-пакет bsl-бандла): детекторы с весами (contains/keywords/camelCase/
   endsWith/голова процедуры), вероятность `1-Π(1-p)`, threshold 0.9.
+- **EcoreUtil2.getAllContentsOfType НЕ включает корень**: если ищете узлы
+  типа T, начиная с узла, который сам T — считайте его отдельно
+  (if-condition-complexity: предикат-AND не считался, 06.10).
+- Форматирование-чеки (missing-space): xtext-листы — оператор отдельный
+  лист, ws-листы между; «пробел есть» = соседний лист blank или сосед
+  начинается/заканчивается переводом строки.
 - `OperatorStyleCreator.getType().getName()` — английское имя типа
   (Structure/Map/FTPConnection); тип не разрешился — фолбэк: имя из текста
   «Новый <Тип>» регекспой. mcore.TypeItem extends DuallyNamedElement (есть
