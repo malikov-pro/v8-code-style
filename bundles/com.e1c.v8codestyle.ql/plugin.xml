@@ -58,6 +58,14 @@
             category="com.e1c.v8codestyle.ql"
             class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.UsingAllowedKeywordCheck">
       </check>
+      <check
+            category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.QueryArithmeticCastCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.QueryCastStringCheck">
+      </check>
 </extension>
 
 </plugin>

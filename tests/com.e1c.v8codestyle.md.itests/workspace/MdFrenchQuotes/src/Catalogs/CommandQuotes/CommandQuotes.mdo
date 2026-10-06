@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="71240e3a-5e6f-4cb6-8a90-3db2f4c1e8d7">
+  <producedTypes>
+    <objectType typeId="b8a4f1c2-7d93-4e06-a5b8-2c9e1f3d6a70" valueTypeId="34e6c9b0-51f2-4a7d-9c83-6e0b8a2f5d10"/>
+    <refType typeId="5c2d8e7f-93a1-4b6c-8d40-7f1e2b9c3a50" valueTypeId="82b7f3d1-6a04-4c9e-b715-9d3c5e8f2a60"/>
+    <selectionType typeId="d93b1f6a-2c75-4e8d-b0a7-5f8c1e2d9b30" valueTypeId="61a8c4e9-7b30-4d25-8f16-2b5d9e7c4a80"/>
+    <listType typeId="a72c5d08-6b14-4f39-9e27-8d4b1c6f5e90" valueTypeId="47e1b8c6-9d50-4ab3-8702-3f6a9c1e5b40"/>
+    <managerType typeId="39b4e7a1-c682-4d50-8bf3-1e7a5c9d2b60" valueTypeId="d5a1f8c3-2704-46b9-9e48-6c2b7f1e3a90"/>
+  </producedTypes>
+  <name>CommandQuotes</name>
+  <synonym>
+    <key>en</key>
+    <value>Command quotes</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.CommandQuotes.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.CommandQuotes.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <commands uuid="9c1d4b6e-8a25-4f07-9b63-5e2c7d1f8a40">
+    <name>BadCmd</name>
+    <synonym>
+      <key>en</key>
+      <value>Bad command</value>
+    </synonym>
+    <toolTip>
+      <key>ru</key>
+      <value>Кнопка «выполнить»</value>
+    </toolTip>
+    <group>ActionsPanelTools</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Catalog>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3ad67de8-52ac-4997-99e5-33c2a915fcfc">
+  <producedTypes>
+    <objectType typeId="c3cbb9b6-d018-47e3-abb4-2621879da6af" valueTypeId="31ed3943-855e-46b3-a0bf-75c870b2bb20"/>
+    <refType typeId="0a8609d6-22db-499e-bf6b-934467c74d06" valueTypeId="b8fe2373-f9c4-43f2-83c2-dfad05a512d8"/>
+    <selectionType typeId="d466a7d9-60dd-4dc2-b0f0-9cca9879037d" valueTypeId="f0a3f6af-37ab-4b77-9115-4f5897fbce8e"/>
+    <listType typeId="67cc130a-c729-4b3e-924f-16644f86f8d3" valueTypeId="590f906c-62c4-49ab-bb46-9c6ee84c36e1"/>
+    <managerType typeId="cf8514b5-1ce4-4911-8bb9-23202b75ad80" valueTypeId="41aa9eca-7191-41f2-90fb-982f19df031a"/>
+  </producedTypes>
+  <name>HiddenCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>Hidden catalog</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.HiddenCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.HiddenCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="cc8c703a-32c8-475f-a812-6bd331c3471a">
+    <name>MatchHiddenAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Secret</value>
+    </synonym>
+    <toolTip>
+      <key>en</key>
+      <value>Secret</value>
+    </toolTip>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

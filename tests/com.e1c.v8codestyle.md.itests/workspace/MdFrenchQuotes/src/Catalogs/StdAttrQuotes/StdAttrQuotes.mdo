@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e6b7c3d2-91f4-4a58-8d06-b7c4e2f9a150">
+  <producedTypes>
+    <objectType typeId="4d8c2f7a-b615-49e3-8a70-c9d3b1e6f420" valueTypeId="f7029a5c-8d31-4b64-a917-3c6e8b2d5f70"/>
+    <refType typeId="28f5b6c3-7e40-4d19-9b82-a4c6d8f1e350" valueTypeId="63d1e8b4-9a72-4c05-8f36-b7d2c5a9e480"/>
+    <selectionType typeId="b54c9d2e-3067-48fa-8c14-5d8b3e6f9a70" valueTypeId="92a6f1c8-45b3-4d70-9e25-8c3f6b9d1e50"/>
+    <listType typeId="6c9f3e7a-58d2-4b16-9d84-e1a7c4b2f690" valueTypeId="17b4d8a6-c920-4e57-8b63-2f5a9d7c3e10"/>
+    <managerType typeId="a1d8f4b7-26c3-4e59-8d70-9b5c3e6f1a80" valueTypeId="5e7c2b9d-8341-4fa6-9b02-c6d8a1f4e5b0"/>
+  </producedTypes>
+  <name>StdAttrQuotes</name>
+  <synonym>
+    <key>en</key>
+    <value>Std attr quotes</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.StdAttrQuotes.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.StdAttrQuotes.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Description</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование «полное»</value>
+    </synonym>
+    <fullTextSearch>Use</fullTextSearch>
+  </standardAttributes>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

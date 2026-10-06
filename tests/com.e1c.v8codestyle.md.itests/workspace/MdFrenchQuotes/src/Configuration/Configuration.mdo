@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6696845f-9059-4835-b891-b03b82ac3fc6">
+  <name>MdFrenchQuotes</name>
+  <synonym>
+    <key>en</key>
+    <value>Md french quotes</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="906eb531-3346-4c21-be8d-9e08cad75125"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="ef5df1ed-32aa-46bf-8305-8aeb3880337b"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="fd81c61a-6dbf-4833-93c9-2df81d9fc6fd"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="b6c053e8-9fc5-43a1-98fb-4a1d17969ca1"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="03e5cee3-8746-4555-93b7-8f79a27fbdea"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="49cb4fc9-39a8-422e-bfe1-ffe6ba01a256"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="b7713d8b-c3c8-40b9-9d67-6a113c1126fb"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="c8179112-1225-4195-a983-7dc196b5e99f">
+    <name>English</name>
+    <synonym>
+      <key>en</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>en</languageCode>
+  </languages>
+  <languages uuid="ca39e9fd-530d-44b8-accf-97b23ea13878">
+    <name>Russian</name>
+    <synonym>
+      <key>en</key>
+      <value>Russian</value>
+    </synonym>
+    <languageCode>ru</languageCode>
+  </languages>
+  <catalogs>Catalog.SynonymQuotes</catalogs>
+  <catalogs>Catalog.CommentQuotes</catalogs>
+  <catalogs>Catalog.AttrQuotes</catalogs>
+  <catalogs>Catalog.DetailQuotes</catalogs>
+  <catalogs>Catalog.CommandQuotes</catalogs>
+  <catalogs>Catalog.StdAttrQuotes</catalogs>
+  <catalogs>Catalog.OkQuotes</catalogs>
+</mdclass:Configuration>

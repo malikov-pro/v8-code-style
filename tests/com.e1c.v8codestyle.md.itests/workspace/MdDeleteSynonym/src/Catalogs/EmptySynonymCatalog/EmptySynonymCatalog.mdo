@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1dfe6ae3-bf63-436e-a76c-d30ead137ec4">
+  <producedTypes>
+    <objectType typeId="f2794560-0f40-4677-8ad2-e2ba9e3017df" valueTypeId="c2dc22e3-724b-43dc-a823-e10e17076c8e"/>
+    <refType typeId="5e92731f-155b-40a6-8a6c-0a19a9fb7d73" valueTypeId="8ec3faaa-1811-4987-b0b1-a661888001ec"/>
+    <selectionType typeId="d20e8ddc-9d38-4c80-ab8d-7e542fa8e373" valueTypeId="d8fa8338-7bc0-478d-ac2b-f29e87fbafd3"/>
+    <listType typeId="30c487cf-a846-4d92-b2be-87b85b614e76" valueTypeId="1338e2c6-d65d-41c7-a454-1d5bbabecf5f"/>
+    <managerType typeId="c3dbbb65-52ad-4ffb-b148-47c7fd0e6169" valueTypeId="734a1437-f3bc-4326-b490-1e23a050e260"/>
+  </producedTypes>
+  <name>EmptySynonymCatalog</name>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.EmptySynonymCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.EmptySynonymCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

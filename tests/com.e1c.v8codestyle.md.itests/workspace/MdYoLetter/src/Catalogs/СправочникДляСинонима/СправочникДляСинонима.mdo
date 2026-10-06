@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c6a7f44b-001e-4168-84a8-4a27fb6efd60">
+  <producedTypes>
+    <objectType typeId="16053437-8892-45d3-bb30-35b10b9cddfa" valueTypeId="a2580e0c-5c30-416e-a672-59c21723a3a8"/>
+    <refType typeId="508e4686-3630-400f-9820-5b52e79ecb48" valueTypeId="2c182a6d-4ac8-42c8-acc2-f80470b155e3"/>
+    <selectionType typeId="23a04b75-c59c-42eb-a0a9-8d971f78836a" valueTypeId="1eb3b19c-6447-42bd-94f7-18dc56cc9fb7"/>
+    <listType typeId="fe89de18-5414-4aec-8c79-93cf939dd2b8" valueTypeId="999f0178-e886-44f3-929e-57107d46b713"/>
+    <managerType typeId="905bd8ea-9b1e-41e2-897a-116beb447479" valueTypeId="95465d52-37d2-4b28-9fc5-a08e19ffe5fa"/>
+  </producedTypes>
+  <name>СправочникДляСинонима</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ёлка зелёная</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.СправочникДляСинонима.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.СправочникДляСинонима.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

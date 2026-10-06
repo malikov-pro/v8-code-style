@@ -1,10 +1,11 @@
 # Проверки Форм 1С
 
 
-Общее количество проверок: 10
+Общее количество проверок: 11
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [apk-01195-french-quotes-form](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01195-french-quotes-form.html) | Французские кавычки «ёлочки» в элементах форм |
 | [data-composition-conditional-appearance-use](../../../com.e1c.v8codestyle.form/check.descriptions/ru/data-composition-conditional-appearance-use.html) | Условное оформление в формах |
 | [data-composition-variant-name-default](../../../com.e1c.v8codestyle.form/check.descriptions/ru/data-composition-variant-name-default.html) | Проверка имени варианта отчета |
 | [form-commands-single-action-handler](../../../com.e1c.v8codestyle.form/check.descriptions/ru/form-commands-single-action-handler.html) | У каждого действия команды должна быть назначена своя процедура-обработчик |

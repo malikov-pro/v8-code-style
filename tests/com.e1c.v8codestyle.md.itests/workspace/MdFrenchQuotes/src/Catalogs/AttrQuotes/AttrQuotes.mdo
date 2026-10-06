@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c057563d-2ae6-4189-9ec8-933633eb657e">
+  <producedTypes>
+    <objectType typeId="5adcbf11-22bc-4544-99ea-a44a1c6755bd" valueTypeId="8279d1c0-216d-4b16-a9ae-2300469d827c"/>
+    <refType typeId="bc6793da-f32d-42af-b645-23bca49e8bd8" valueTypeId="4c1a818e-6a84-46e3-8a98-b095967be8e8"/>
+    <selectionType typeId="614dde4c-983a-4e7f-b95f-269b31ef623a" valueTypeId="e9d7db6d-e6f8-40f3-8c76-3b2e82612355"/>
+    <listType typeId="bf3df500-64a8-4549-9f2c-b988fdb3eb83" valueTypeId="98d6e0fc-37d7-4f71-b657-4b5f0be10bd7"/>
+    <managerType typeId="7840e4b6-64af-4556-bc79-1e2fe6a2b8f1" valueTypeId="1c24bfa1-52a8-4684-a4b7-53c12c8e40bc"/>
+  </producedTypes>
+  <name>AttrQuotes</name>
+  <synonym>
+    <key>en</key>
+    <value>Attr quotes</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.AttrQuotes.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.AttrQuotes.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="a09a674c-1b32-4b0b-9f28-e4ef9ecb7f7d">
+    <name>BadAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Bad attribute</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Реквизит «Х»</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2f36e4f0-9935-4762-9dc1-0de9e0e12a1b">
+    <name>OkAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Ok attribute</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

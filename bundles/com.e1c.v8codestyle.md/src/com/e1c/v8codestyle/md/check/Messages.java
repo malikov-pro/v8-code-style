@@ -78,6 +78,24 @@ final class Messages
     public static String DbObjectUnlimitedStringCheck_description;
     public static String DbObjectUnlimitedStringCheck_message;
     public static String DbObjectUnlimitedStringCheck_title;
+    public static String MdObjectDeleteSynonymPrefixCheck_title;
+    public static String MdObjectDeleteSynonymPrefixCheck_description;
+    public static String MdObjectDeleteSynonymPrefixCheck_Name_prefix_without_synonym_prefix;
+    public static String MdObjectDeleteSynonymPrefixCheck_Synonym_prefix_without_name_prefix;
+    public static String MdObjectYoLetterCheck_title;
+    public static String MdObjectYoLetterCheck_description;
+    public static String MdObjectYoLetterCheck_Name_contains_yo;
+    public static String MdObjectYoLetterCheck_Synonym_contains_yo;
+    public static String MdObjectYoLetterCheck_Comment_contains_yo;
+    public static String MdObjectFrenchQuotesCheck_title;
+    public static String MdObjectFrenchQuotesCheck_description;
+    public static String MdObjectFrenchQuotesCheck_message;
+    public static String MdObjectFrenchQuotesCheck_Synonym;
+    public static String MdObjectFrenchQuotesCheck_Comment;
+    public static String MdObjectFrenchQuotesCheck_Tooltip;
+    public static String MdAttributeHintMatchSynonymCheck_description;
+    public static String MdAttributeHintMatchSynonymCheck_message;
+    public static String MdAttributeHintMatchSynonymCheck_title;
     static
     {
         // initialize resource bundle

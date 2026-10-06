@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8424c23f-4269-45cb-94d4-1f6822605456">
+  <producedTypes>
+    <objectType typeId="bbdc0ba5-83b0-4ed6-bee6-040f98da9186" valueTypeId="35deed5d-3622-44aa-8fe5-400e87177ae3"/>
+    <refType typeId="fe42a530-725a-4c13-92b5-dfeb2ccaf980" valueTypeId="ab7e071c-6777-4c7c-aff3-1a4f910a0f37"/>
+    <selectionType typeId="9f0676d3-a8fe-42a1-ad3d-f05e8dd705b1" valueTypeId="8353464d-2539-45c5-b2b2-73a762f37e4a"/>
+    <listType typeId="96aeca4d-4e1b-4616-a06c-94ee41d60597" valueTypeId="29390a2e-af33-4e8f-91b9-0f331ef2030f"/>
+    <managerType typeId="85e835b9-576b-465f-bec3-a08887830e48" valueTypeId="1eab0028-3c30-472e-b520-af1d80521fe8"/>
+  </producedTypes>
+  <name>DeleteOldCatalog</name>
+  <synonym>
+    <key>ru</key>
+    <value>Старый справочник</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.DeleteOldCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.DeleteOldCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>
