@@ -45,6 +45,18 @@ final class Messages
 
     public static String ApkFrenchQuotesCheck_French_quotes_are_not_allowed_in_interface_text;
 
+    public static String ApkMetadataViaObjectCheck_title;
+
+    public static String ApkMetadataViaObjectCheck_description;
+
+    public static String ApkMetadataViaObjectCheck_Use_object_Metadata_method;
+
+    public static String ApkQueryEmptyResultCheck_title;
+
+    public static String ApkQueryEmptyResultCheck_description;
+
+    public static String ApkQueryEmptyResultCheck_Use_query_result_Empty_method;
+
     public static String DeletingCollectionItemCheck_title;
 
     public static String DeletingCollectionItemCheck_description;
