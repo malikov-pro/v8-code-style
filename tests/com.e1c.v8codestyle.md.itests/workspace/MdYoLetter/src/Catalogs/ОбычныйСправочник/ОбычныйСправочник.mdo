@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5701c389-a0eb-4a88-9fec-3c0c78d29762">
+  <producedTypes>
+    <objectType typeId="143e68ef-84ed-4d7e-8111-ee1325f4380e" valueTypeId="bfab7a2f-75e8-4222-9dd8-87ae74478666"/>
+    <refType typeId="cc8fb30f-35fe-4a1d-8940-855b62c1544f" valueTypeId="e330514b-f046-4739-a9e5-74e6d67a3937"/>
+    <selectionType typeId="b16da387-46b7-4978-a3e4-1eee0b1e8894" valueTypeId="a4eea0ab-37aa-48da-8fc8-93e7e73e4fe4"/>
+    <listType typeId="6d0052c6-fba1-4fef-8717-6fb192e4b333" valueTypeId="def6ea56-0712-41b2-a0e4-204bb5351333"/>
+    <managerType typeId="f96ccd13-50ef-47e8-84fe-9edad14919be" valueTypeId="ec2795db-a1d5-4f55-ac8b-62a6e842d9ef"/>
+  </producedTypes>
+  <name>ОбычныйСправочник</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обычный справочник</value>
+  </synonym>
+  <comment>Обычный комментарий</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ОбычныйСправочник.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.ОбычныйСправочник.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="9708cb33-c871-419e-8328-bb3fc9c771c9">
+    <name>РеквизитДляСинонима</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ёлочный реквизит</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d0ab720d-cd3c-4418-b99c-236075b803c1">
+    <name>ОбычныйРеквизит</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обычный реквизит</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="52e86721-7175-4da5-8dd5-26275e9601eb">
+    <name>РеквизитСЁвИмени</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обычный реквизит</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

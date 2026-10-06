@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="562684d5-42f5-497d-8edf-70f364417dfb">
+  <producedTypes>
+    <objectType typeId="baf130c2-079c-4885-978b-9270e72da43c" valueTypeId="455d9395-8ef7-4324-bdae-d4eadf1cc015"/>
+    <refType typeId="303d6aa8-a825-4be1-9d75-68cbf3625d44" valueTypeId="9fff5e5b-969b-4731-ba78-b6576a51f835"/>
+    <selectionType typeId="59fab820-20f4-450f-a7f4-765eccfdcc00" valueTypeId="88c4e358-b7d0-49ba-b3ce-3ae95875930c"/>
+    <listType typeId="71c6747c-3302-4896-8e11-789df35bba76" valueTypeId="f1a7301a-c85c-40ac-8815-7a7e4273d79c"/>
+    <managerType typeId="1c6cfaad-a7a8-4833-95a1-0be55bb80281" valueTypeId="4ac7a983-5334-45ff-92e4-fcf5d154f1bf"/>
+  </producedTypes>
+  <name>OkPlainCatalog</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обычный справочник</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.OkPlainCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.OkPlainCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="1cb37a8e-c6ae-42d7-a8bd-2d609080c46c">
+    <name>УдалитьСтарыйРеквизит</name>
+    <synonym>
+      <key>ru</key>
+      <value>Старый реквизит</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0a0fa3bc-368b-44f3-8a7c-88327b03beaf">
+    <name>ХорошийРеквизит</name>
+    <synonym>
+      <key>ru</key>
+      <value>Хороший реквизит</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="7980c3fa-9300-44bf-9f38-edcc3b524ec4">
+    <producedTypes>
+      <objectType typeId="2c562200-0e96-4034-ad20-19751a4d2e68" valueTypeId="35e1eb54-74c5-40f9-9fb2-234b9c1ce904"/>
+      <rowType typeId="b9984e68-075e-4d9c-8370-68bf31f9231c" valueTypeId="ecbb54bd-e5dd-4b35-b9cf-13f05258bf3d"/>
+    </producedTypes>
+    <name>Детали</name>
+    <synonym>
+      <key>ru</key>
+      <value>Детали</value>
+    </synonym>
+  <attributes uuid="e1f91ae3-6fa1-4338-8cc0-0b90fa7e3c78">
+    <name>УдалитьСтараяДеталь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Старая деталь</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  </tabularSections>
+</mdclass:Catalog>

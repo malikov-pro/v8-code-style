@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1493fd4e-8ef4-4f10-9bff-3f3be6220a4c">
+  <producedTypes>
+    <objectType typeId="ba80beec-7bf0-44a7-9272-7b916a7f5347" valueTypeId="18b729c9-431b-48ff-9035-78a287d66903"/>
+    <refType typeId="eb229442-f367-4788-b842-88da0caccef4" valueTypeId="16baa1ec-1850-42e8-8d11-78892135bce2"/>
+    <selectionType typeId="408afb8b-8d2c-4ef7-85f6-5b5e5213cf44" valueTypeId="ed81bba7-abad-437f-9754-90be75895702"/>
+    <listType typeId="72c87a36-f6c8-43c7-af25-9941fca68719" valueTypeId="6317d681-fc81-4364-bc4e-fc21f31fcee8"/>
+    <managerType typeId="2fc800b3-3c18-463d-82f6-cb6e019bd9a0" valueTypeId="71940ad6-c959-40a0-ad98-945a8b71f034"/>
+  </producedTypes>
+  <name>СправочникДляПрописной</name>
+  <synonym>
+    <key>ru</key>
+    <value>ЁЖИК В ТУМАНЕ</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.СправочникДляПрописной.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.СправочникДляПрописной.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

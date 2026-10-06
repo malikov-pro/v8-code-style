@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a51e0fca-b524-4dd3-819e-7489914916f9">
+  <producedTypes>
+    <objectType typeId="25682f87-2ade-408b-a2e7-1be4153f1cc4" valueTypeId="c944fa79-70ae-4bfc-8a3a-93739da88d28"/>
+    <refType typeId="203f1e96-bce1-4e6f-9ce2-f4239a4fbd54" valueTypeId="9c46f991-6826-40d1-a229-515544edbdd3"/>
+    <selectionType typeId="8566d293-9ff7-487b-874f-bd7dde03e9cc" valueTypeId="79d587aa-d726-4146-b137-1d318be295cc"/>
+    <listType typeId="1984a20d-083b-47f3-b0d7-dcdf165a88aa" valueTypeId="2a67179c-9659-44bc-88cd-f0f8f3abf21f"/>
+    <managerType typeId="3e0c69fa-feca-4704-8e13-99b642491daf" valueTypeId="c7c7baaa-ca19-44f4-8538-04ed6bc1d289"/>
+  </producedTypes>
+  <name>УдалитьАрхивныйСправочник</name>
+  <synonym>
+    <key>ru</key>
+    <value>(не используется) Архивный справочник</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.УдалитьАрхивныйСправочник.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.УдалитьАрхивныйСправочник.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>
