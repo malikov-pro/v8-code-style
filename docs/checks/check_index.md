@@ -1,12 +1,12 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 207
+Общее количество проверок 1С:Стандарты разработки V8: 209
 
 - form: 10
 - md: 28
-- bsl: 137
-- ql: 8
+- bsl: 138
+- ql: 9
 - right: 24
 
 
@@ -14,6 +14,8 @@
 | Код проверки | Наименование |
 |--------------|--------------|
 | [apk-00260-no-yo-letter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00260-no-yo-letter.html) | Буква «ё» в текстах модулей |
+| [apk-00305-type-by-metadata-name](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00305-type-by-metadata-name.html) | Тип значения переменной следует определять сравнением с типом |
+| [apk-00429-query-allowed-keyword](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00429-query-allowed-keyword.html) | Использование ключевого слова РАЗРЕШЕННЫЕ в запросах |
 | [apk-01194-no-french-quotes](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01194-no-french-quotes.html) | Французские кавычки «ёлочки» в интерфейсных текстах |
 | [begin-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/begin-transaction.html) | После начала транзакции отсуствует блок Попытка-Исключение |
 | [bsl-canonical-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-canonical-pragma.html) | Аннотация написана канонически |

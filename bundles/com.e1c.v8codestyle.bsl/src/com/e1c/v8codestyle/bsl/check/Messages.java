@@ -741,6 +741,10 @@ final class Messages
     public static String UnusedParametersCheck_description;
     public static String UnusedParametersCheck_Unused_parameter;
 
+    public static String TypeByMetadataNameCheck_title;
+    public static String TypeByMetadataNameCheck_description;
+    public static String TypeByMetadataNameCheck_Type_determined_by_metadata_name;
+
     static
     {
         // initialize resource bundle

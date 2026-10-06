@@ -1,4 +1,6 @@
 apk-00260-no-yo-letter
+apk-00305-type-by-metadata-name
+apk-00429-query-allowed-keyword
 apk-01194-no-french-quotes
 begin-transaction
 bsl-canonical-pragma
