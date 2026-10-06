@@ -1,5 +1,8 @@
+apk-00137-code-length
 apk-00260-no-yo-letter
+apk-01192-summa-in-query
 apk-01194-no-french-quotes
+apk-01216-query-field-alias
 begin-transaction
 bsl-canonical-pragma
 bsl-nstr-string-literal-format
@@ -204,4 +207,5 @@ using-hardcode-path
 using-hardcode-secret-information
 using-isinrole
 using-modal-windows
+using-synchronous-calls
 variable-value-type

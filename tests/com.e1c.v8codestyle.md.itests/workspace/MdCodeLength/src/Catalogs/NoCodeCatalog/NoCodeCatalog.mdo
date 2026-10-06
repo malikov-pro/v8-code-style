@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="28f46b15-6743-4d28-ac00-bbebebfac97e">
+  <producedTypes>
+    <objectType typeId="d90acd4d-583e-47df-955d-0c4a3caca0d8" valueTypeId="e16b3e37-2277-4f69-947b-24c24e37d15a"/>
+    <refType typeId="0dd2f2b9-d5ab-4b11-89de-bb218add54da" valueTypeId="007a59ec-43a6-4167-9ebb-1b59ad4aee2e"/>
+    <selectionType typeId="99bb149e-a7c7-4882-8681-9dc07d0c3596" valueTypeId="be17fcd9-1827-4e74-942a-9705f7b1efb3"/>
+    <listType typeId="fd6a11c9-2366-4455-a08d-9505e9cd3b38" valueTypeId="e8f717cd-688d-404c-aeda-f9bda9d64340"/>
+    <managerType typeId="48c044cd-1ee8-43f9-bf70-f4791d8beb67" valueTypeId="bf72344e-826f-47bb-a260-33e960822f27"/>
+  </producedTypes>
+  <name>NoCodeCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>NoCodeCatalog</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.NoCodeCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.NoCodeCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>0</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

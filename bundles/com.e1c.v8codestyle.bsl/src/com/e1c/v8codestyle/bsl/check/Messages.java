@@ -107,6 +107,18 @@ final class Messages
 
     public static String ApkYoLetterCheck_Yo_letter_is_not_allowed_in_module_text;
 
+    public static String ApkSumInQueryCheck_title;
+
+    public static String ApkSumInQueryCheck_description;
+
+    public static String ApkSumInQueryCheck_Sum_with_constant_operand_in_query;
+
+    public static String ApkQueryFieldAliasCheck_title;
+
+    public static String ApkQueryFieldAliasCheck_description;
+
+    public static String ApkQueryFieldAliasCheck_Alias_matches_metadata_class_name;
+
     public static String CachedPublicCheck_Description;
 
     public static String CachedPublicCheck_Issue;
@@ -733,6 +745,10 @@ final class Messages
     public static String UsingModalWindowsCheck_description;
     public static String UsingModalWindowsCheck_Do_not_use_modal_windows;
 
+    public static String UsingSynchronousCallsCheck_title;
+    public static String UsingSynchronousCallsCheck_description;
+    public static String UsingSynchronousCallsCheck_message;
+
     public static String MissingTempStorageDeletionCheck_title;
     public static String MissingTempStorageDeletionCheck_description;
     public static String MissingTempStorageDeletionCheck_Missing_temp_storage_deletion;
@@ -740,6 +756,33 @@ final class Messages
     public static String UnusedParametersCheck_title;
     public static String UnusedParametersCheck_description;
     public static String UnusedParametersCheck_Unused_parameter;
+
+    public static String ApkReuseModuleReturnCheck_title;
+    public static String ApkReuseModuleReturnCheck_description;
+    public static String ApkReuseModuleReturnCheck_Export_procedure_is_meaningless;
+    public static String ApkReuseModuleReturnCheck_Function_returns_constant;
+
+    public static String ApkSessionParamInitCheck_title;
+    public static String ApkSessionParamInitCheck_description;
+    public static String ApkSessionParamInitCheck_Session_parameter_assignment;
+    public static String ObsoleteObjectModuleCheck_title;
+    public static String ObsoleteObjectModuleCheck_description;
+    public static String ObsoleteObjectModuleCheck_Module_has_code;
+
+    public static String OverridableModuleNonExportMethodCheck_title;
+    public static String OverridableModuleNonExportMethodCheck_description;
+    public static String OverridableModuleNonExportMethodCheck_Method_is_not_export;
+
+    public static String OverridableModuleNonDeprecatedFunctionCheck_title;
+    public static String OverridableModuleNonDeprecatedFunctionCheck_description;
+    public static String OverridableModuleNonDeprecatedFunctionCheck_Function_is_not_deprecated;
+
+    public static String OverridableModuleTopRegionCheck_title;
+    public static String OverridableModuleTopRegionCheck_description;
+    public static String OverridableModuleTopRegionCheck_Region_is_not_allowed;
+    public static String TypeByMetadataNameCheck_title;
+    public static String TypeByMetadataNameCheck_description;
+    public static String TypeByMetadataNameCheck_Type_determined_by_metadata_name;
 
     static
     {
