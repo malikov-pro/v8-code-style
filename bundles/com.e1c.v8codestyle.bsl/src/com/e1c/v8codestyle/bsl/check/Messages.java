@@ -45,6 +45,23 @@ final class Messages
 
     public static String ApkFrenchQuotesCheck_French_quotes_are_not_allowed_in_interface_text;
 
+    public static String ApkMetadataViaObjectCheck_title;
+
+    public static String ApkMetadataViaObjectCheck_description;
+
+    public static String ApkMetadataViaObjectCheck_Use_object_Metadata_method;
+
+    public static String ApkQueryEmptyResultCheck_title;
+
+    public static String ApkQueryEmptyResultCheck_description;
+
+    public static String ApkQueryEmptyResultCheck_Use_query_result_Empty_method;
+    public static String ApkPostingsWriteOrderCheck_title;
+
+    public static String ApkPostingsWriteOrderCheck_description;
+
+    public static String ApkPostingsWriteOrderCheck_Explicit_postings_write;
+
     public static String DeletingCollectionItemCheck_title;
 
     public static String DeletingCollectionItemCheck_description;
@@ -783,6 +800,24 @@ final class Messages
     public static String TypeByMetadataNameCheck_title;
     public static String TypeByMetadataNameCheck_description;
     public static String TypeByMetadataNameCheck_Type_determined_by_metadata_name;
+    public static String ApkCutCommentsFormatCheck_title;
+    public static String ApkCutCommentsFormatCheck_description;
+    public static String ApkCutCommentsFormatCheck_Wrong_comment_format;
+    public static String ApkCutCommentsFormatCheck_Comment_not_allowed;
+    public static String ApkCutCommentsFormatCheck_Localization_module_missing_comment;
+    public static String ApkCutCommentsFormatCheck_Missing_pair;
+
+    public static String ApkStringConcatInLoopCheck_title;
+    public static String ApkStringConcatInLoopCheck_description;
+    public static String ApkStringConcatInLoopCheck_String_concatenation_in_loop;
+    public static String ApkScheduledJobsManagerCheck_title;
+    public static String ApkScheduledJobsManagerCheck_description;
+    public static String ApkScheduledJobsManagerCheck_Direct_manager_access;
+
+    public static String ApkFileGlobalMethodsCheck_title;
+    public static String ApkFileGlobalMethodsCheck_description;
+    public static String ApkFileGlobalMethodsCheck_Global_file_method;
+    public static String ApkFileGlobalMethodsCheck_File_dialog_show;
 
     static
     {

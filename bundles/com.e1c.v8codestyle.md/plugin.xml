@@ -138,6 +138,14 @@
             category="com.e1c.v8codestyle.md"
             class="com.e1c.v8codestyle.md.functionoption.check.FunctionalOptionPrivilegedGetModeCheck">
       </check>
+      <check
+            category="com.e1c.v8codestyle.md"
+            class="com.e1c.v8codestyle.md.check.DbObjectStringAllowedLengthCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.md"
+            class="com.e1c.v8codestyle.md.check.DbObjectUnlimitedStringCheck">
+      </check>
    </extension>
    
 </plugin>
