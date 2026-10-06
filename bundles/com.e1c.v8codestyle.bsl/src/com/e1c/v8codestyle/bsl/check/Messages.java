@@ -768,6 +768,14 @@ final class Messages
     public static String ApkStringConcatInLoopCheck_title;
     public static String ApkStringConcatInLoopCheck_description;
     public static String ApkStringConcatInLoopCheck_String_concatenation_in_loop;
+    public static String ApkScheduledJobsManagerCheck_title;
+    public static String ApkScheduledJobsManagerCheck_description;
+    public static String ApkScheduledJobsManagerCheck_Direct_manager_access;
+
+    public static String ApkFileGlobalMethodsCheck_title;
+    public static String ApkFileGlobalMethodsCheck_description;
+    public static String ApkFileGlobalMethodsCheck_Global_file_method;
+    public static String ApkFileGlobalMethodsCheck_File_dialog_show;
 
     static
     {
