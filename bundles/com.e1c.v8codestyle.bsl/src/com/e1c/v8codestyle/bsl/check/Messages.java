@@ -748,6 +748,10 @@ final class Messages
     public static String ApkCutCommentsFormatCheck_Localization_module_missing_comment;
     public static String ApkCutCommentsFormatCheck_Missing_pair;
 
+    public static String ApkStringConcatInLoopCheck_title;
+    public static String ApkStringConcatInLoopCheck_description;
+    public static String ApkStringConcatInLoopCheck_String_concatenation_in_loop;
+
     static
     {
         // initialize resource bundle
