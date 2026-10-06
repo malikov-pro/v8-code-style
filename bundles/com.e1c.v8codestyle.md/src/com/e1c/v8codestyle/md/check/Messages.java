@@ -93,6 +93,9 @@ final class Messages
     public static String MdObjectFrenchQuotesCheck_Synonym;
     public static String MdObjectFrenchQuotesCheck_Comment;
     public static String MdObjectFrenchQuotesCheck_Tooltip;
+    public static String MdAttributeHintMatchSynonymCheck_description;
+    public static String MdAttributeHintMatchSynonymCheck_message;
+    public static String MdAttributeHintMatchSynonymCheck_title;
     static
     {
         // initialize resource bundle
