@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f45a7767-4b7f-46d9-8c59-335858e6d731">
+  <producedTypes>
+    <objectType typeId="a86d821b-a654-403b-aa8f-80094ccb5ad1" valueTypeId="caf17629-41ae-410f-8d6d-00db7370b76a"/>
+    <refType typeId="2f6419e7-276b-4ba2-9b5d-b728a256ca16" valueTypeId="8c8c4bd7-078e-4929-a36e-4958de5faa9a"/>
+    <selectionType typeId="5fd8abac-8904-44cc-8530-6467f9a19b9e" valueTypeId="1f575cf6-c395-4fd0-a962-cded54e073c4"/>
+    <listType typeId="7c611637-f9d6-4047-9f72-969f5d3d9dd0" valueTypeId="1af2d83e-b04e-435e-a9b4-3747267cb1e2"/>
+    <managerType typeId="94f12b06-4113-44cb-82d8-80d85727bf21" valueTypeId="024cd31a-3015-476e-a56a-51c1f8562be9"/>
+  </producedTypes>
+  <name>SynonymQuotes</name>
+  <synonym>
+    <key>en</key>
+    <value>Synonym quotes</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Товары «склад»</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.SynonymQuotes.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.SynonymQuotes.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

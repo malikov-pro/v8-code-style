@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonForm xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fa3a10f4-372c-4d6a-b3c4-557c17163f7a">
+  <name>FrenchQuotesForm</name>
+  <synonym>
+    <key>en</key>
+    <value>French quotes form</value>
+  </synonym>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usePurposes>MobileDevice</usePurposes>
+</mdclass:CommonForm>

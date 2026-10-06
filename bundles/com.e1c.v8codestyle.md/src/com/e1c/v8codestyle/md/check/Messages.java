@@ -87,6 +87,12 @@ final class Messages
     public static String MdObjectYoLetterCheck_Name_contains_yo;
     public static String MdObjectYoLetterCheck_Synonym_contains_yo;
     public static String MdObjectYoLetterCheck_Comment_contains_yo;
+    public static String MdObjectFrenchQuotesCheck_title;
+    public static String MdObjectFrenchQuotesCheck_description;
+    public static String MdObjectFrenchQuotesCheck_message;
+    public static String MdObjectFrenchQuotesCheck_Synonym;
+    public static String MdObjectFrenchQuotesCheck_Comment;
+    public static String MdObjectFrenchQuotesCheck_Tooltip;
     static
     {
         // initialize resource bundle

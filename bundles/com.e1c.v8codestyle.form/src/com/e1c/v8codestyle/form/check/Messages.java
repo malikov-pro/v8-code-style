@@ -59,6 +59,15 @@ final class Messages
     public static String InputFieldListChoiceMode_description;
     public static String InputFieldListChoiceMode_Form_input_field_the_list_choice_mode_not_set_with_filled_choice_list;
     public static String InputFieldListChoiceMode_title;
+    public static String FormItemFrenchQuotesCheck_title;
+    public static String FormItemFrenchQuotesCheck_description;
+    public static String FormItemFrenchQuotesCheck_message;
+    public static String FormItemFrenchQuotesCheck_Form;
+    public static String FormItemFrenchQuotesCheck_Items;
+    public static String FormItemFrenchQuotesCheck_Attributes;
+    public static String FormItemFrenchQuotesCheck_Commands;
+    public static String FormItemFrenchQuotesCheck_Title;
+    public static String FormItemFrenchQuotesCheck_Tooltip;
     static
     {
         // initialize resource bundle
