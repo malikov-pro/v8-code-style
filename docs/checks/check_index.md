@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 207
+Общее количество проверок 1С:Стандарты разработки V8: 209
 
 - form: 10
 - md: 28
-- bsl: 137
+- bsl: 139
 - ql: 8
 - right: 24
 
@@ -13,7 +13,9 @@
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [apk-00205-query-empty-result](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00205-query-empty-result.html) | Пустота результата запроса проверяется выборкой вместо метода Пустой |
 | [apk-00260-no-yo-letter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00260-no-yo-letter.html) | Буква «ё» в текстах модулей |
+| [apk-00306-metadata-via-object](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00306-metadata-via-object.html) | Метаданные объекта получаются через свойство глобального контекста Метаданные |
 | [apk-01194-no-french-quotes](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01194-no-french-quotes.html) | Французские кавычки «ёлочки» в интерфейсных текстах |
 | [begin-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/begin-transaction.html) | После начала транзакции отсуствует блок Попытка-Исключение |
 | [bsl-canonical-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-canonical-pragma.html) | Аннотация написана канонически |

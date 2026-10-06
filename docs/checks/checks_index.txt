@@ -1,4 +1,6 @@
+apk-00205-query-empty-result
 apk-00260-no-yo-letter
+apk-00306-metadata-via-object
 apk-01194-no-french-quotes
 begin-transaction
 bsl-canonical-pragma
