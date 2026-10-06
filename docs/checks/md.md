@@ -1,10 +1,11 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 31
+Общее количество проверок: 32
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [apk-00134-attribute-hint](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00134-attribute-hint.html) | Подсказка реквизита совпадает с синонимом |
 | [apk-00137-code-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00137-code-length.html) | Длина кода (номера) объектов конфигурации |
 | [apk-00139-string-attr-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00139-string-attr-length.html) | У реквизита строкового типа допустимая длина фиксированная |
 | [apk-00141-unlimited-string](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00141-unlimited-string.html) | Реквизит строкового типа неограниченной длины |

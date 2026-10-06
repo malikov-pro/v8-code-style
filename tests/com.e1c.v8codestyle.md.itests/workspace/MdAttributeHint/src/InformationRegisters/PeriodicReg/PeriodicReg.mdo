@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a990fe73-ab32-4499-8ddc-adcba49678d5">
+  <producedTypes>
+    <selectionType typeId="b7f2423d-5b86-46bf-aa31-00a37f948023" valueTypeId="dd02ce66-b235-423c-b104-33520c70ec78"/>
+    <listType typeId="9ee7eccf-22d6-43b2-b6b0-b5798dfb6c22" valueTypeId="503e0f4b-27b5-4af4-bb45-0d054641d82c"/>
+    <managerType typeId="0741cb1e-5b5c-46ab-9e51-70287ddc343f" valueTypeId="bb28924f-bec7-4eca-96c3-5ed0a78aafbc"/>
+    <recordSetType typeId="8cfc4528-c0c7-487a-ac59-d8240523cc01" valueTypeId="c7916a12-37e9-4ec6-afce-05e06e0c7a27"/>
+    <recordKeyType typeId="21918977-db24-49f2-89fb-83647d39f4d1" valueTypeId="be523162-aa7d-4d37-979e-00b80d7dc7b3"/>
+    <recordType typeId="bf1305fe-130e-460b-872a-735bc0327549" valueTypeId="d5b7c85c-44ea-45a8-9b8d-d5b263edb03f"/>
+    <recordManagerType typeId="32fe10e0-e994-4fca-a3f4-185cadf47ed6" valueTypeId="d2eb5b67-f2ad-457b-ad35-bae9e4e2eea6"/>
+  </producedTypes>
+  <name>PeriodicReg</name>
+  <synonym>
+    <key>en</key>
+    <value>Periodic register</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>en</key>
+      <value>Period</value>
+    </synonym>
+    <toolTip>
+      <key>en</key>
+      <value>Period</value>
+    </toolTip>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="407fdd1f-947d-4049-8c7d-18ac498b606d">
+    <name>Measure</name>
+    <synonym>
+      <key>en</key>
+      <value>Measure</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

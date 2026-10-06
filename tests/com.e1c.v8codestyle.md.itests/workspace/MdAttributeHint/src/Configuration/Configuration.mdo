@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="369ae82e-dbed-421f-b060-080c8a57b742">
+  <name>MdAttributeHint</name>
+  <synonym>
+    <key>en</key>
+    <value>Md attribute hint</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="4b337e20-cec1-4194-b761-04c4b211450f"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="ed424ccc-0223-41ce-8017-7c56b0f4bdc0"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="440d76d5-9a61-4b59-ae4a-7c3d5488b15a"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="81f44651-eed8-4547-8dec-da408e7ad037"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="d459cd21-0dfe-44ad-8612-a4e8023fbc75"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="7ec5a60e-8317-43d2-bfbd-7c72e0822d41"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="d64711ac-11a7-4967-afab-330579f1c217"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="429772d7-83a2-4bb4-8d1f-78f50e0484d5">
+    <name>English</name>
+    <synonym>
+      <key>en</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>en</languageCode>
+  </languages>
+  <subsystems>Subsystem.CiSubsystem</subsystems>
+  <subsystems>Subsystem.HiddenSubsystem</subsystems>
+  <catalogs>Catalog.HintCatalog</catalogs>
+  <catalogs>Catalog.HiddenCatalog</catalogs>
+  <informationRegisters>InformationRegister.PeriodicReg</informationRegisters>
+  <informationRegisters>InformationRegister.NonPeriodicReg</informationRegisters>
+</mdclass:Configuration>

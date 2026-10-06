@@ -78,6 +78,9 @@ final class Messages
     public static String DbObjectUnlimitedStringCheck_description;
     public static String DbObjectUnlimitedStringCheck_message;
     public static String DbObjectUnlimitedStringCheck_title;
+    public static String MdAttributeHintMatchSynonymCheck_description;
+    public static String MdAttributeHintMatchSynonymCheck_message;
+    public static String MdAttributeHintMatchSynonymCheck_title;
     static
     {
         // initialize resource bundle
