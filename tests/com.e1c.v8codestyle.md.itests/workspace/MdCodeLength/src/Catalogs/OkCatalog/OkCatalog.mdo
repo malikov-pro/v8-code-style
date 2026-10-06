@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ab08266c-4e00-47d8-a2dd-2518bc58d07e">
+  <producedTypes>
+    <objectType typeId="911e02df-9ce5-4b38-8cc8-640e69e3a338" valueTypeId="65e5a7c9-b5be-48c4-b5c8-6f2f0742f44f"/>
+    <refType typeId="9cedd002-b512-4f62-a014-05906164ecce" valueTypeId="62fc410e-dcaf-4cf3-a948-327a21e8d5db"/>
+    <selectionType typeId="b1241dc7-ad76-462e-ae29-b0f85e711964" valueTypeId="d9ea0411-dcd2-4acb-bd92-7f5e8c1c8197"/>
+    <listType typeId="8dd191b8-27f9-4c68-b2c1-cd774f40bdec" valueTypeId="e11e9104-e086-4b51-8fa6-b3fc1c8e7b13"/>
+    <managerType typeId="42562ea1-d0dd-4761-853d-ca0020a19772" valueTypeId="f89a6a49-00ae-4ce8-8cd6-599f15302b74"/>
+  </producedTypes>
+  <name>OkCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>OkCatalog</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.OkCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.OkCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

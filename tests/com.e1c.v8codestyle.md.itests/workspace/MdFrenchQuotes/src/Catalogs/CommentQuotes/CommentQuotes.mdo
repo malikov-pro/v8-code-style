@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="84af0eff-aa06-4553-8cda-13323451e6b4">
+  <producedTypes>
+    <objectType typeId="60ec4e25-016f-4d5a-9adb-1636ee4170c9" valueTypeId="a3fadeea-bbf5-4d35-ad66-3eecb8299ba7"/>
+    <refType typeId="a04c6cd4-75f6-4670-a437-0c22dd0a763d" valueTypeId="eccd8a05-b51a-482d-9de1-03d8d627ebf5"/>
+    <selectionType typeId="85f85ed0-f2be-4e0c-b4d0-e9937e290148" valueTypeId="0167ec65-6196-42fa-a206-0eb2ee2e5fed"/>
+    <listType typeId="1b622b3c-5207-4272-bf7b-809effaaec02" valueTypeId="41a38b02-3e94-423a-b902-dfa1b83d2b50"/>
+    <managerType typeId="ba862128-c9e0-4598-bf43-0ff90fb9d4f9" valueTypeId="2d586811-b931-4b8a-aa70-70f667ac3f01"/>
+  </producedTypes>
+  <name>CommentQuotes</name>
+  <synonym>
+    <key>en</key>
+    <value>Comment quotes</value>
+  </synonym>
+  <comment>Комментарий «особый»</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.CommentQuotes.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.CommentQuotes.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

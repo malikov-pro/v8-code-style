@@ -39,11 +39,102 @@ final class Messages
 
     public static String AccessibilityAtClientInObjectModuleCheck_title;
 
+    public static String ApkFrenchQuotesCheck_title;
+
+    public static String ApkFrenchQuotesCheck_description;
+
+    public static String ApkFrenchQuotesCheck_French_quotes_are_not_allowed_in_interface_text;
+
+    public static String ApkMetadataViaObjectCheck_title;
+
+    public static String ApkMetadataViaObjectCheck_description;
+
+    public static String ApkMetadataViaObjectCheck_Use_object_Metadata_method;
+
+    public static String ApkQueryEmptyResultCheck_title;
+
+    public static String ApkQueryEmptyResultCheck_description;
+
+    public static String ApkQueryEmptyResultCheck_Use_query_result_Empty_method;
+    public static String ApkPostingsWriteOrderCheck_title;
+
+    public static String ApkPostingsWriteOrderCheck_description;
+
+    public static String ApkPostingsWriteOrderCheck_Explicit_postings_write;
+
+    public static String DeletingCollectionItemCheck_title;
+
+    public static String DeletingCollectionItemCheck_description;
+
+    public static String DeletingCollectionItemCheck_Do_not_delete_collection_items_while_iterating;
+
+    public static String SelfInsertionCheck_title;
+
+    public static String SelfInsertionCheck_description;
+
+    public static String SelfInsertionCheck_Remove_self_insertion;
+
+    public static String IfElseDuplicatedConditionCheck_title;
+
+    public static String IfElseDuplicatedConditionCheck_description;
+
+    public static String IfElseDuplicatedConditionCheck_Duplicate_condition_of_If_statement;
+
+    public static String MethodSizeCheck_title;
+
+    public static String MethodSizeCheck_description;
+
+    public static String MethodSizeCheck_Method_is_too_large;
+
+    public static String MethodSizeCheck_Maximum_method_size;
+
+    public static String LineLengthCheck_title;
+
+    public static String LineLengthCheck_description;
+
+    public static String LineLengthCheck_Line_is_too_long;
+
+    public static String LineLengthCheck_Maximum_line_length;
+
+    public static String FunctionShouldHaveReturnCheck_title;
+
+    public static String FunctionShouldHaveReturnCheck_description;
+
+    public static String FunctionShouldHaveReturnCheck_Function_has_no_Return_statement;
+
+    public static String EmptyCodeBlockCheck_title;
+
+    public static String EmptyCodeBlockCheck_description;
+
+    public static String EmptyCodeBlockCheck_Empty_code_block;
+
+    public static String EmptyCodeBlockCheck_If_condition;
+
+    public static String EmptyCodeBlockCheck_ElsIf_condition;
+
+    public static String EmptyCodeBlockCheck_Else_section;
+
+    public static String EmptyCodeBlockCheck_Loop_body;
+
+    public static String EmptyCodeBlockCheck_Treat_comments_as_code;
+
     public static String ApkYoLetterCheck_title;
 
     public static String ApkYoLetterCheck_description;
 
     public static String ApkYoLetterCheck_Yo_letter_is_not_allowed_in_module_text;
+
+    public static String ApkSumInQueryCheck_title;
+
+    public static String ApkSumInQueryCheck_description;
+
+    public static String ApkSumInQueryCheck_Sum_with_constant_operand_in_query;
+
+    public static String ApkQueryFieldAliasCheck_title;
+
+    public static String ApkQueryFieldAliasCheck_description;
+
+    public static String ApkQueryFieldAliasCheck_Alias_matches_metadata_class_name;
 
     public static String CachedPublicCheck_Description;
 
@@ -551,6 +642,193 @@ final class Messages
     public static String VariableNameInvalidCheck_variable_name_is_invalid;
     public static String VariableNameInvalidCheck_variable_name_must_start_with_a_capital_letter;
     public static String VariableNameInvalidCheck_variable_name_starts_with_an_underline;
+
+    public static String EmptyStatementCheck_title;
+    public static String EmptyStatementCheck_description;
+    public static String EmptyStatementCheck_Remove_empty_statement;
+
+    public static String UselessTernaryOperatorCheck_title;
+    public static String UselessTernaryOperatorCheck_description;
+    public static String UselessTernaryOperatorCheck_Useless_ternary_operator;
+
+    public static String TernaryOperatorUsageCheck_title;
+    public static String TernaryOperatorUsageCheck_description;
+    public static String TernaryOperatorUsageCheck_Use_if_instead_of_ternary_operator;
+
+    public static String NestedTernaryOperatorCheck_title;
+    public static String NestedTernaryOperatorCheck_description;
+    public static String NestedTernaryOperatorCheck_Nested_ternary_operator;
+
+    public static String IfElseDuplicatedCodeBlockCheck_title;
+    public static String IfElseDuplicatedCodeBlockCheck_description;
+    public static String IfElseDuplicatedCodeBlockCheck_Duplicated_code_block;
+
+    public static String IdenticalExpressionsCheck_title;
+    public static String IdenticalExpressionsCheck_description;
+    public static String IdenticalExpressionsCheck_Identical_expressions;
+    public static String IdenticalExpressionsCheck_Popular_divisors;
+
+    public static String RewriteMethodParameterCheck_title;
+    public static String RewriteMethodParameterCheck_description;
+    public static String RewriteMethodParameterCheck_Parameter_rewrite_without_use;
+
+    public static String OneStatementPerLineCheck_title;
+    public static String OneStatementPerLineCheck_description;
+    public static String OneStatementPerLineCheck_Move_to_new_line;
+
+    public static String UsingHardcodePathCheck_title;
+    public static String UsingHardcodePathCheck_description;
+    public static String UsingHardcodePathCheck_Hardcode_path;
+    public static String UsingHardcodePathCheck_Std_paths_unix;
+
+    public static String UsingHardcodeNetworkAddressCheck_title;
+    public static String UsingHardcodeNetworkAddressCheck_description;
+    public static String UsingHardcodeNetworkAddressCheck_Hardcode_ip_address;
+    public static String UsingHardcodeNetworkAddressCheck_Exclusion_words;
+    public static String UsingHardcodeNetworkAddressCheck_Popular_version_exclusion;
+
+    public static String UsingHardcodeSecretInformationCheck_title;
+    public static String UsingHardcodeSecretInformationCheck_description;
+    public static String UsingHardcodeSecretInformationCheck_Hardcode_secret;
+    public static String UsingHardcodeSecretInformationCheck_Hardcode_secret_in_connection;
+    public static String UsingHardcodeSecretInformationCheck_Search_words;
+
+    public static String DeprecatedFindCheck_title;
+    public static String DeprecatedFindCheck_description;
+    public static String DeprecatedFindCheck_Use_StrFind_instead_of_Find;
+
+    public static String DeprecatedCurrentDateCheck_title;
+    public static String DeprecatedCurrentDateCheck_description;
+    public static String DeprecatedCurrentDateCheck_Use_CurrentSessionDate_instead_of_CurrentDate;
+
+    public static String SpaceAtStartCommentCheck_title;
+    public static String SpaceAtStartCommentCheck_description;
+    public static String SpaceAtStartCommentCheck_Space_at_comment_start;
+    public static String SpaceAtStartCommentCheck_Comments_annotation;
+
+    public static String CommentedCodeCheck_title;
+    public static String CommentedCodeCheck_description;
+    public static String CommentedCodeCheck_Commented_out_code;
+    public static String CommentedCodeCheck_Threshold;
+    public static String CommentedCodeCheck_Exclusion_prefixes;
+
+    public static String OSUsersMethodCheck_title;
+    public static String OSUsersMethodCheck_description;
+    public static String OSUsersMethodCheck_Check_potentially_malicious_use_of_OS_users_method;
+
+    public static String TimeoutsInExternalResourcesCheck_title;
+    public static String TimeoutsInExternalResourcesCheck_description;
+    public static String TimeoutsInExternalResourcesCheck_Timeout_not_specified;
+    public static String TimeoutsInExternalResourcesCheck_Analyze_mail;
+
+    public static String MissingSpaceCheck_title;
+    public static String MissingSpaceCheck_description;
+    public static String MissingSpaceCheck_Missing_space;
+    public static String MissingSpaceCheck_Left;
+    public static String MissingSpaceCheck_Right;
+
+    public static String MagicNumberCheck_title;
+    public static String MagicNumberCheck_description;
+    public static String MagicNumberCheck_Magic_number;
+    public static String MagicNumberCheck_Authorized_numbers;
+    public static String MagicNumberCheck_Allow_magic_indexes;
+
+    public static String MagicDateCheck_title;
+    public static String MagicDateCheck_description;
+    public static String MagicDateCheck_Magic_date;
+    public static String MagicDateCheck_Authorized_dates;
+
+    public static String IfConditionComplexityCheck_title;
+    public static String IfConditionComplexityCheck_description;
+    public static String IfConditionComplexityCheck_Too_many_conditions;
+    public static String IfConditionComplexityCheck_Max_condition_complexity;
+
+    public static String NestedStatementsCheck_title;
+    public static String NestedStatementsCheck_description;
+    public static String NestedStatementsCheck_Too_many_nested_statements;
+    public static String NestedStatementsCheck_Max_allowed_level;
+
+    public static String CyclomaticComplexityCheck_title;
+    public static String CyclomaticComplexityCheck_description;
+    public static String CyclomaticComplexityCheck_Cyclomatic_complexity;
+    public static String CyclomaticComplexityCheck_Complexity_threshold;
+
+    public static String CognitiveComplexityCheck_title;
+    public static String CognitiveComplexityCheck_description;
+    public static String CognitiveComplexityCheck_Cognitive_complexity;
+    public static String CognitiveComplexityCheck_Complexity_threshold;
+
+    public static String UsingModalWindowsCheck_title;
+    public static String UsingModalWindowsCheck_description;
+    public static String UsingModalWindowsCheck_Do_not_use_modal_windows;
+
+    public static String UsingSynchronousCallsCheck_title;
+    public static String UsingSynchronousCallsCheck_description;
+    public static String UsingSynchronousCallsCheck_message;
+
+    public static String MissingTempStorageDeletionCheck_title;
+    public static String MissingTempStorageDeletionCheck_description;
+    public static String MissingTempStorageDeletionCheck_Missing_temp_storage_deletion;
+
+    public static String UnusedParametersCheck_title;
+    public static String UnusedParametersCheck_description;
+    public static String UnusedParametersCheck_Unused_parameter;
+
+    public static String ApkReuseModuleReturnCheck_title;
+    public static String ApkReuseModuleReturnCheck_description;
+    public static String ApkReuseModuleReturnCheck_Export_procedure_is_meaningless;
+    public static String ApkReuseModuleReturnCheck_Function_returns_constant;
+
+    public static String ApkSessionParamInitCheck_title;
+    public static String ApkSessionParamInitCheck_description;
+    public static String ApkSessionParamInitCheck_Session_parameter_assignment;
+    public static String ObsoleteObjectModuleCheck_title;
+    public static String ObsoleteObjectModuleCheck_description;
+    public static String ObsoleteObjectModuleCheck_Module_has_code;
+
+    public static String OverridableModuleNonExportMethodCheck_title;
+    public static String OverridableModuleNonExportMethodCheck_description;
+    public static String OverridableModuleNonExportMethodCheck_Method_is_not_export;
+
+    public static String OverridableModuleNonDeprecatedFunctionCheck_title;
+    public static String OverridableModuleNonDeprecatedFunctionCheck_description;
+    public static String OverridableModuleNonDeprecatedFunctionCheck_Function_is_not_deprecated;
+
+    public static String OverridableModuleTopRegionCheck_title;
+    public static String OverridableModuleTopRegionCheck_description;
+    public static String OverridableModuleTopRegionCheck_Region_is_not_allowed;
+    public static String TypeByMetadataNameCheck_title;
+    public static String TypeByMetadataNameCheck_description;
+    public static String TypeByMetadataNameCheck_Type_determined_by_metadata_name;
+    public static String ApkCutCommentsFormatCheck_title;
+    public static String ApkCutCommentsFormatCheck_description;
+    public static String ApkCutCommentsFormatCheck_Wrong_comment_format;
+    public static String ApkCutCommentsFormatCheck_Comment_not_allowed;
+    public static String ApkCutCommentsFormatCheck_Localization_module_missing_comment;
+    public static String ApkCutCommentsFormatCheck_Missing_pair;
+
+    public static String ApkStringConcatInLoopCheck_title;
+    public static String ApkStringConcatInLoopCheck_description;
+    public static String ApkStringConcatInLoopCheck_String_concatenation_in_loop;
+    public static String ApkScheduledJobsManagerCheck_title;
+    public static String ApkScheduledJobsManagerCheck_description;
+    public static String ApkScheduledJobsManagerCheck_Direct_manager_access;
+
+    public static String ApkFileGlobalMethodsCheck_title;
+    public static String ApkFileGlobalMethodsCheck_description;
+    public static String ApkFileGlobalMethodsCheck_Global_file_method;
+    public static String ApkFileGlobalMethodsCheck_File_dialog_show;
+
+    public static String ApkRegistrarAccessCheck_title;
+    public static String ApkRegistrarAccessCheck_description;
+    public static String ApkRegistrarAccessCheck_Registrar_access_breaks_self_sufficiency;
+    public static String ApkNoYouPronounCheck_title;
+    public static String ApkNoYouPronounCheck_description;
+    public static String ApkNoYouPronounCheck_Message_addresses_user_with_pronoun;
+
+    public static String ApkNoExclamationMarkCheck_title;
+    public static String ApkNoExclamationMarkCheck_description;
+    public static String ApkNoExclamationMarkCheck_Message_contains_exclamation_mark;
 
     static
     {

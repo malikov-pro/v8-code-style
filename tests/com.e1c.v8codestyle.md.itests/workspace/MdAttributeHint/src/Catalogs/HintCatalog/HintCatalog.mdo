@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2fcde3c8-677c-408e-b829-034225339ea8">
+  <producedTypes>
+    <objectType typeId="27d12bbe-6ca4-4457-a7ca-0f735da1146d" valueTypeId="f4b909d6-e8d8-4446-8f3b-229bd4e60b28"/>
+    <refType typeId="aa0ce4bb-053c-468c-8b3d-56e183cd829c" valueTypeId="71453066-f91b-4a53-a6b0-50378b931c68"/>
+    <selectionType typeId="273d7552-820d-4c55-8996-5e542b26d0f1" valueTypeId="daae96d1-7afc-41d6-be5b-9d0eaf7d0567"/>
+    <listType typeId="1cff113b-6012-418a-b2c3-90c1cf496c77" valueTypeId="3d50680f-bb80-4860-b2c3-c1d4e87a3e89"/>
+    <managerType typeId="cfd51445-ae8c-40c9-9027-647af1ec43e4" valueTypeId="adceb345-f464-48dd-bdf1-dbc3caab4c47"/>
+  </producedTypes>
+  <name>HintCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>Hint catalog</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.HintCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.HintCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Code</name>
+    <synonym>
+      <key>en</key>
+      <value>Code</value>
+    </synonym>
+    <toolTip>
+      <key>en</key>
+      <value>Code</value>
+    </toolTip>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Description</name>
+    <synonym>
+      <key>en</key>
+      <value>Description</value>
+    </synonym>
+    <toolTip>
+      <key>en</key>
+      <value>Name of the item for the user</value>
+    </toolTip>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <synonym>
+      <key>en</key>
+      <value>Ref</value>
+    </synonym>
+    <toolTip>
+      <key>en</key>
+      <value>Ref</value>
+    </toolTip>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <attributes uuid="d38a0be7-c2c5-4370-b7f5-e5cf1865b8f5">
+    <name>MatchAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Exchange rate</value>
+    </synonym>
+    <toolTip>
+      <key>en</key>
+      <value>Exchange rate</value>
+    </toolTip>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ab9a11ef-2700-4358-b56f-72960f3e3686">
+    <name>DifferentHintAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Exchange rate</value>
+    </synonym>
+    <toolTip>
+      <key>en</key>
+      <value>Official exchange rate</value>
+    </toolTip>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="de1070d7-8a02-4c3b-9ad8-313ee5720064">
+    <name>EmptyHintAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Exchange rate</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="40e47291-2b13-465f-b977-b729b281976b">
+    <name>CaseAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Rate</value>
+    </synonym>
+    <toolTip>
+      <key>en</key>
+      <value>rate</value>
+    </toolTip>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="3d6815c1-72f5-4588-ae41-9f3e71b5d457">
+    <producedTypes>
+      <objectType typeId="fdbf4844-b415-4e18-b5cd-1cec846e3831" valueTypeId="d871354e-84fa-4d73-bd05-f58016f446b2"/>
+      <rowType typeId="253ac8d3-d99f-405b-ba77-bc6603818fea" valueTypeId="38172cd9-2472-4171-8378-42b142009573"/>
+    </producedTypes>
+    <name>Goods</name>
+    <synonym>
+      <key>en</key>
+      <value>Goods</value>
+    </synonym>
+    <attributes uuid="e8a2a997-e6f6-43ae-b87d-ade1537eabd5">
+      <name>MatchDetail</name>
+      <synonym>
+        <key>en</key>
+        <value>Price</value>
+      </synonym>
+      <toolTip>
+        <key>en</key>
+        <value>Price</value>
+      </toolTip>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>

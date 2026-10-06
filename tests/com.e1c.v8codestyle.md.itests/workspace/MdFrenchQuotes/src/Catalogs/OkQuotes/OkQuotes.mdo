@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1f2e3d4c-5b6a-4978-8a90-c1d2e3f4a5b6">
+  <producedTypes>
+    <objectType typeId="9a8b7c6d-5e4f-4321-8a90-b1c2d3e4f5a6" valueTypeId="6f5e4d3c-2b1a-4879-8a90-f1e2d3c4b5a6"/>
+    <refType typeId="c2b3a4d5-e6f7-4891-8a90-2b3c4d5e6f70" valueTypeId="7e8f9a0b-1c2d-4e3f-8a90-4b5c6d7e8f90"/>
+    <selectionType typeId="0a1b2c3d-4e5f-4678-8a90-8b9c0d1e2f30" valueTypeId="4d5e6f70-8a9b-4c0d-8a90-1e2f3a4b5c60"/>
+    <listType typeId="b5c6d7e8-f9a0-4b1c-8a90-6d7e8f9a0b1c" valueTypeId="2e3f4a5b-6c7d-48e9-8a90-9a0b1c2d3e4f"/>
+    <managerType typeId="8f9a0b1c-2d3e-4f5a-8a90-7c8d9e0f1a2b" valueTypeId="5a6b7c8d-9e0f-4a1b-8a90-3c4d5e6f7a8b"/>
+  </producedTypes>
+  <name>OkQuotes</name>
+  <synonym>
+    <key>en</key>
+    <value>Ok quotes</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Прямые "кавычки" допустимы</value>
+  </synonym>
+  <comment>Комментарий без кавычек-ёлочек</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.OkQuotes.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.OkQuotes.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="c3d4e5f6-a7b8-4c9d-8a90-0e1f2a3b4c5d">
+    <name>OkAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Ok attribute</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Реквизит "обычный"</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

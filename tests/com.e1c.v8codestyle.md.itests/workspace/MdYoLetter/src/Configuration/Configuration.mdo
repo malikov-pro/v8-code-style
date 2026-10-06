@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e5e24278-153c-46a6-80d9-5351383303bd">
+  <name>MdYoLetter</name>
+  <synonym>
+    <key>en</key>
+    <value>MdYoLetter configuration</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="0115c93b-d644-4222-aab2-42a7c072ef08"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="ee53db9a-db2c-4316-b6eb-64631595fe9b"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="bb0236a5-9105-45a6-940e-8ad455389ba7"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="c96d30be-dec6-48bf-b7ef-fdb4bd49803a"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="a51c4889-9c74-4f1a-b0ec-b8ffbe30b042"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="b315619c-8256-4d6b-ac35-f9ff610e7217"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="d72341ea-fe60-49eb-8288-7c2514f45b30"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="822b2e3f-3052-40c0-be37-f0fab47188d9">
+    <name>English</name>
+    <synonym>
+      <key>ru</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>ru</languageCode>
+  </languages>
+  <catalogs>Catalog.СправочникСЁвИмени</catalogs>
+  <catalogs>Catalog.СправочникДляСинонима</catalogs>
+  <catalogs>Catalog.СправочникДляПрописной</catalogs>
+  <catalogs>Catalog.CatalogYoInEnglish</catalogs>
+  <catalogs>Catalog.СправочникДляКомментария</catalogs>
+  <catalogs>Catalog.ОбычныйСправочник</catalogs>
+</mdclass:Configuration>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b09e02ac-4d0e-4db4-a377-407a1e4dd23f">
+  <producedTypes>
+    <objectType typeId="41df4fac-2a7b-4831-86c7-1a43e27a5839" valueTypeId="7910ed36-9a2f-462e-b373-19ce4f1e83d1"/>
+    <refType typeId="6f30b41a-e022-4cd5-89dc-b06d59f0e8e2" valueTypeId="23e7e11b-cf47-46d2-a1e6-4168d1bf1c58"/>
+    <selectionType typeId="9b9d48a4-17d6-4b5b-88c3-718fa15b3a72" valueTypeId="09c78679-63d9-4ca0-9913-b1a3a89b8b98"/>
+    <listType typeId="79938a24-a3ad-49af-a421-4d9ee2e64d52" valueTypeId="7d7f66a8-1b65-4e78-a3e1-706ff42c1a3a"/>
+    <managerType typeId="6f6b2d69-40dc-4d4d-89ee-fd8f974fa4dc" valueTypeId="1da6ba9e-8788-4b60-a6ad-9a1b73be1db2"/>
+  </producedTypes>
+  <name>DetailQuotes</name>
+  <synonym>
+    <key>en</key>
+    <value>Detail quotes</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.DetailQuotes.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.DetailQuotes.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <tabularSections uuid="7c6b3a29-8f2d-4e0c-9b4a-2d6e35c5e21b">
+    <producedTypes>
+      <objectType typeId="e2a13c5d-9b6c-4b0e-8f4d-3e5a7c1b9d20" valueTypeId="53f7a3a2-8c41-4d4e-b2f7-1e6d9c8a4b30"/>
+      <rowType typeId="29f6c7b8-4e35-4f2a-9d13-6b8c5e2f7a40" valueTypeId="91c4d8e2-3b75-4f6d-8a29-c5e1f7b3d640"/>
+    </producedTypes>
+    <name>Parts</name>
+    <synonym>
+      <key>en</key>
+      <value>Parts</value>
+    </synonym>
+    <attributes uuid="a4e9d1c7-5f83-4b62-9d07-8e3b2c6f1a50">
+      <name>BadPart</name>
+      <synonym>
+        <key>en</key>
+        <value>Bad part</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Цена «в тыс. руб.»</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>

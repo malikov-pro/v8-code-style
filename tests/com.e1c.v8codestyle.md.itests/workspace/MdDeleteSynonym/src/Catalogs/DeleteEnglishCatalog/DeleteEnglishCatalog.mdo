@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6b52dfdd-5c1f-4099-bc9f-2e809ec57c16">
+  <producedTypes>
+    <objectType typeId="1c6597d7-652b-451c-9d96-cc96b8d44e7b" valueTypeId="8d8f306b-d637-4bc5-9d1e-cbd6525988dc"/>
+    <refType typeId="d129c654-0421-4d0c-94a4-f5da59d0b4bf" valueTypeId="4bbc02a6-4945-4b91-803e-eadc2a1e1170"/>
+    <selectionType typeId="74e1833d-1169-4672-843d-ed4d3d6424e3" valueTypeId="8703d6b6-a433-47ba-b342-0ba7a0f8b650"/>
+    <listType typeId="7e44a6ea-ab41-4c85-ac75-8d651ee50390" valueTypeId="061f04ee-e14b-432c-b723-3528e34b1d2e"/>
+    <managerType typeId="5a601971-d215-48de-a583-cf3a79b46fe4" valueTypeId="42e565a7-622a-4c73-9de6-f29b5bd4b35b"/>
+  </producedTypes>
+  <name>DeleteEnglishCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>Old catalog</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.DeleteEnglishCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.DeleteEnglishCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

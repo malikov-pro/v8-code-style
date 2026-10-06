@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="394648c2-dce4-4b8a-b38a-644f3a7f571d">
+  <producedTypes>
+    <objectType typeId="2d813653-fe61-4afb-abd3-824fe095278f" valueTypeId="cd8b4b39-5ca4-495f-b3a6-41a51d96acde"/>
+    <refType typeId="b96a18ff-3d0a-447f-a868-bfae450c51d6" valueTypeId="81db9bbf-6a1e-421f-a198-5a96fe884968"/>
+    <selectionType typeId="19ff2c83-aaeb-4fab-9e63-b9a52ffd753e" valueTypeId="b86be167-7dda-4597-aa6d-70a2b3c063a5"/>
+    <listType typeId="d660b18d-9765-49b0-8d61-95f5f6c2d358" valueTypeId="3f6ae6fd-36e0-4336-a669-640ab41d9bfe"/>
+    <managerType typeId="20130997-c330-4515-a5a4-929fc1d071ff" valueTypeId="6f62e995-96a1-442f-9658-96e2b2f3b113"/>
+  </producedTypes>
+  <name>SynonymPrefixOnlyCatalog</name>
+  <synonym>
+    <key>ru</key>
+    <value>(не используется) Старый справочник</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.SynonymPrefixOnlyCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.SynonymPrefixOnlyCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a91c915a-b894-410f-95c3-3b013e37d911">
+  <name>CiSubsystem</name>
+  <synonym>
+    <key>en</key>
+    <value>Command interface subsystem</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <content>Catalog.HintCatalog</content>
+  <content>InformationRegister.PeriodicReg</content>
+  <content>InformationRegister.NonPeriodicReg</content>
+</mdclass:Subsystem>

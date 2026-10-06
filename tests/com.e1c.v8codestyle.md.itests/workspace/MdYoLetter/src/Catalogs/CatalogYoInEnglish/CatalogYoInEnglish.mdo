@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="416ea67f-e4e9-4691-9ae8-366e4c582ddd">
+  <producedTypes>
+    <objectType typeId="ae174976-0d3a-4d44-832a-45e717546a71" valueTypeId="5361466a-6681-45ab-98cd-f429cc77c01c"/>
+    <refType typeId="6965f040-a40d-4e76-aa06-2b1e7a0d36df" valueTypeId="8a0eace4-13f6-411c-8dbe-85b772fe3c0a"/>
+    <selectionType typeId="f17d228d-4858-4279-962e-7425b647c27a" valueTypeId="96ee08f3-c4e0-4375-a74a-2d040a8142bf"/>
+    <listType typeId="1b071c82-fc9e-47e3-8bbe-dd7bd258ebff" valueTypeId="9779a9c4-b487-44c3-abf6-02174f02e584"/>
+    <managerType typeId="0e35ffe9-476a-4b03-a071-694d17ae930b" valueTypeId="82d27b1d-26ef-4d75-bf25-eb5a93748b41"/>
+  </producedTypes>
+  <name>CatalogYoInEnglish</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обычный синоним</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Tree with ё letter</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.CatalogYoInEnglish.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.CatalogYoInEnglish.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

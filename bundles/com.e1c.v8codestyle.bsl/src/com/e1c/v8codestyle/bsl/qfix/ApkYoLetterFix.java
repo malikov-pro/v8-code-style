@@ -39,7 +39,10 @@ public class ApkYoLetterFix
     @Override
     protected void configureFix(FixConfigurer configurer)
     {
-        configurer.interactive(false)
+        // interactive(false) не поддерживается фреймворком: FixConfigurer
+        // бросает IllegalArgumentException уже при регистрации фикса,
+        // что роняет старт проектного контекста (находка 30.09.2026).
+        configurer.interactive(true)
             .description(Messages.ApkYoLetterFix_Description)
             .details(Messages.ApkYoLetterFix_Details);
     }
