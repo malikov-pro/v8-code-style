@@ -819,6 +819,10 @@ final class Messages
     public static String ApkFileGlobalMethodsCheck_Global_file_method;
     public static String ApkFileGlobalMethodsCheck_File_dialog_show;
 
+    public static String ApkNoYouPronounCheck_title;
+    public static String ApkNoYouPronounCheck_description;
+    public static String ApkNoYouPronounCheck_Message_addresses_user_with_pronoun;
+
     static
     {
         // initialize resource bundle

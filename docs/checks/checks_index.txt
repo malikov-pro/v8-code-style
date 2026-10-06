@@ -13,6 +13,7 @@ apk-00429-query-allowed-keyword
 apk-00460-non-deprecated-functions
 apk-00460-non-export-methods
 apk-00460-top-region
+apk-00714-no-you-pronoun
 apk-01149-file-global-methods
 apk-01171-string-concat-in-loop
 apk-01179-obsolete-object-module

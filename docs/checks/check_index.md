@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 228
+Общее количество проверок 1С:Стандарты разработки V8: 229
 
 - form: 10
 - md: 31
-- bsl: 154
+- bsl: 155
 - ql: 9
 - right: 24
 
@@ -28,6 +28,7 @@
 | [apk-00460-non-deprecated-functions](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-deprecated-functions.html) | Неустаревшая функция в переопределяемом общем модуле |
 | [apk-00460-non-export-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-export-methods.html) | Неэкспортный метод в переопределяемом общем модуле |
 | [apk-00460-top-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-top-region.html) | Внешняя область, кроме «ПрограммныйИнтерфейс», в переопределяемом общем модуле |
+| [apk-00714-no-you-pronoun](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00714-no-you-pronoun.html) | В сообщениях не употребляются местоимения «Вы», «Вас» и пр. |
 | [apk-01149-file-global-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01149-file-global-methods.html) | Использование методов глобального контекста для работы с файлами |
 | [apk-01171-string-concat-in-loop](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01171-string-concat-in-loop.html) | Массовая конкатенация строк в цикле |
 | [apk-01179-obsolete-object-module](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01179-obsolete-object-module.html) | Код в модуле устаревшего объекта метаданных |
