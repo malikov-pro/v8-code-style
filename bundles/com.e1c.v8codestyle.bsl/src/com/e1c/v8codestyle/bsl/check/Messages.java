@@ -741,6 +741,13 @@ final class Messages
     public static String UnusedParametersCheck_description;
     public static String UnusedParametersCheck_Unused_parameter;
 
+    public static String ApkCutCommentsFormatCheck_title;
+    public static String ApkCutCommentsFormatCheck_description;
+    public static String ApkCutCommentsFormatCheck_Wrong_comment_format;
+    public static String ApkCutCommentsFormatCheck_Comment_not_allowed;
+    public static String ApkCutCommentsFormatCheck_Localization_module_missing_comment;
+    public static String ApkCutCommentsFormatCheck_Missing_pair;
+
     static
     {
         // initialize resource bundle

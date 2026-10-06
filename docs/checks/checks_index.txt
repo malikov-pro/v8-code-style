@@ -1,5 +1,6 @@
 apk-00260-no-yo-letter
 apk-01194-no-french-quotes
+apk-01219-cut-comments-format
 begin-transaction
 bsl-canonical-pragma
 bsl-nstr-string-literal-format
