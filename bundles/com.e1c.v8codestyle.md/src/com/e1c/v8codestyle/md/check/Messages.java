@@ -78,6 +78,10 @@ final class Messages
     public static String DbObjectUnlimitedStringCheck_description;
     public static String DbObjectUnlimitedStringCheck_message;
     public static String DbObjectUnlimitedStringCheck_title;
+    public static String MdObjectDeleteSynonymPrefixCheck_title;
+    public static String MdObjectDeleteSynonymPrefixCheck_description;
+    public static String MdObjectDeleteSynonymPrefixCheck_Name_prefix_without_synonym_prefix;
+    public static String MdObjectDeleteSynonymPrefixCheck_Synonym_prefix_without_name_prefix;
     static
     {
         // initialize resource bundle

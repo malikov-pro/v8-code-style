@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ec292c88-fc36-426b-bbb5-b295fde9e89e">
+  <name>MdDeleteSynonym</name>
+  <synonym>
+    <key>en</key>
+    <value>MdDeleteSynonym configuration</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="d2edadd0-6db0-4f42-8483-bdbe4e4b086c"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="10c70042-809a-4855-bf78-415b5e8e1719"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="0ab71671-c7c6-440e-8d89-662a747fa50a"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="1c313f74-d109-441c-adf6-1379ac33cc28"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="9bd619d1-9006-4a25-82f6-9e7ee7272526"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="589894d2-da0c-4cef-b826-e1424e2d04f8"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="18dd0877-f4b5-4250-ae30-39d43c5e2f9b"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="fcd6fc44-a348-41f7-a546-54495ed616a8">
+    <name>English</name>
+    <synonym>
+      <key>ru</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>ru</languageCode>
+  </languages>
+  <catalogs>Catalog.DeleteOldCatalog</catalogs>
+  <catalogs>Catalog.SynonymPrefixOnlyCatalog</catalogs>
+  <catalogs>Catalog.УдалитьАрхивныйСправочник</catalogs>
+  <catalogs>Catalog.DeleteEnglishCatalog</catalogs>
+  <catalogs>Catalog.EmptySynonymCatalog</catalogs>
+  <catalogs>Catalog.OkPlainCatalog</catalogs>
+</mdclass:Configuration>

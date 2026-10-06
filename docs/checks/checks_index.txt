@@ -2,6 +2,7 @@ apk-00074-session-params-init
 apk-00137-code-length
 apk-00139-string-attr-length
 apk-00141-unlimited-string
+apk-00156-delete-synonym-prefix
 apk-00184-scheduled-jobs-manager
 apk-00205-query-empty-result
 apk-00260-no-yo-letter
