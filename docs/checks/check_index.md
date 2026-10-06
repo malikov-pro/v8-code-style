@@ -1,12 +1,12 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 229
+Общее количество проверок 1С:Стандарты разработки V8: 230
 
 - form: 10
 - md: 31
 - bsl: 154
-- ql: 10
+- ql: 11
 - right: 24
 
 
@@ -17,6 +17,7 @@
 | [apk-00137-code-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00137-code-length.html) | Длина кода (номера) объектов конфигурации |
 | [apk-00139-string-attr-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00139-string-attr-length.html) | У реквизита строкового типа допустимая длина фиксированная |
 | [apk-00141-unlimited-string](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00141-unlimited-string.html) | Реквизит строкового типа неограниченной длины |
+| [apk-00142-query-cast-string](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00142-query-cast-string.html) | Использование ВЫРАЗИТЬ(... КАК СТРОКА(N)) в запросах |
 | [apk-00184-scheduled-jobs-manager](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00184-scheduled-jobs-manager.html) | Обращение в программном коде к менеджеру регламентных заданий |
 | [apk-00205-query-empty-result](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00205-query-empty-result.html) | Пустота результата запроса проверяется выборкой вместо метода Пустой |
 | [apk-00212-query-arithmetic-cast](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00212-query-arithmetic-cast.html) | Округление результатов арифметических операций в запросах |
