@@ -745,6 +745,11 @@ final class Messages
     public static String ApkScheduledJobsManagerCheck_description;
     public static String ApkScheduledJobsManagerCheck_Direct_manager_access;
 
+    public static String ApkFileGlobalMethodsCheck_title;
+    public static String ApkFileGlobalMethodsCheck_description;
+    public static String ApkFileGlobalMethodsCheck_Global_file_method;
+    public static String ApkFileGlobalMethodsCheck_File_dialog_show;
+
     static
     {
         // initialize resource bundle
