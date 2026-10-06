@@ -1,12 +1,12 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 230
+Общее количество проверок 1С:Стандарты разработки V8: 238
 
-- form: 10
-- md: 33
-- bsl: 154
-- ql: 9
+- form: 11
+- md: 35
+- bsl: 157
+- ql: 11
 - right: 24
 
 
@@ -15,12 +15,16 @@
 |--------------|--------------|
 | [apk-00074-session-params-init](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00074-session-params-init.html) | Инициализацию параметров сеанса следует выполнять в модуле сеанса |
 | [apk-00126-md-no-yo-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00126-md-no-yo-letter.html) | Буква «ё» в имени, синониме или комментарии объекта метаданных |
+| [apk-00134-attribute-hint](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00134-attribute-hint.html) | Подсказка реквизита совпадает с синонимом |
 | [apk-00137-code-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00137-code-length.html) | Длина кода (номера) объектов конфигурации |
 | [apk-00139-string-attr-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00139-string-attr-length.html) | У реквизита строкового типа допустимая длина фиксированная |
 | [apk-00141-unlimited-string](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00141-unlimited-string.html) | Реквизит строкового типа неограниченной длины |
+| [apk-00142-query-cast-string](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00142-query-cast-string.html) | Использование ВЫРАЗИТЬ(... КАК СТРОКА(N)) в запросах |
+| [apk-00150-registrar-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00150-registrar-access.html) | Самодостаточность регистров: обращение к реквизиту «Регистратор» |
 | [apk-00156-delete-synonym-prefix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00156-delete-synonym-prefix.html) | Префикс «Удалить» в имени устаревшего объекта не согласован с префиксом «(не используется)» в синониме |
 | [apk-00184-scheduled-jobs-manager](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00184-scheduled-jobs-manager.html) | Обращение в программном коде к менеджеру регламентных заданий |
 | [apk-00205-query-empty-result](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00205-query-empty-result.html) | Пустота результата запроса проверяется выборкой вместо метода Пустой |
+| [apk-00212-query-arithmetic-cast](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00212-query-arithmetic-cast.html) | Округление результатов арифметических операций в запросах |
 | [apk-00260-no-yo-letter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00260-no-yo-letter.html) | Буква «ё» в текстах модулей |
 | [apk-00305-type-by-metadata-name](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00305-type-by-metadata-name.html) | Тип значения переменной следует определять сравнением с типом |
 | [apk-00306-metadata-via-object](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00306-metadata-via-object.html) | Метаданные объекта получаются через свойство глобального контекста Метаданные |
@@ -30,11 +34,15 @@
 | [apk-00460-non-deprecated-functions](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-deprecated-functions.html) | Неустаревшая функция в переопределяемом общем модуле |
 | [apk-00460-non-export-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-export-methods.html) | Неэкспортный метод в переопределяемом общем модуле |
 | [apk-00460-top-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-top-region.html) | Внешняя область, кроме «ПрограммныйИнтерфейс», в переопределяемом общем модуле |
+| [apk-00714-no-you-pronoun](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00714-no-you-pronoun.html) | В сообщениях не употребляются местоимения «Вы», «Вас» и пр. |
+| [apk-00715-no-exclamation-mark](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00715-no-exclamation-mark.html) | Сообщения не должны содержать восклицательных знаков |
 | [apk-01149-file-global-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01149-file-global-methods.html) | Использование методов глобального контекста для работы с файлами |
 | [apk-01171-string-concat-in-loop](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01171-string-concat-in-loop.html) | Массовая конкатенация строк в цикле |
 | [apk-01179-obsolete-object-module](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01179-obsolete-object-module.html) | Код в модуле устаревшего объекта метаданных |
 | [apk-01192-summa-in-query](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01192-summa-in-query.html) | Функция СУММА() с числовым операндом в запросах в текстах модулей |
 | [apk-01194-no-french-quotes](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01194-no-french-quotes.html) | Французские кавычки «ёлочки» в интерфейсных текстах |
+| [apk-01195-french-quotes-form](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01195-french-quotes-form.html) | Французские кавычки «ёлочки» в элементах форм |
+| [apk-01196-french-quotes-md](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-01196-french-quotes-md.html) | Французские кавычки «ёлочки» в свойствах объектов метаданных |
 | [apk-01216-query-field-alias](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01216-query-field-alias.html) | Псевдоним в тексте запроса совпадает с именем класса объектов метаданных |
 | [apk-01219-cut-comments-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01219-cut-comments-format.html) | Оформление вырезаемых служебных комментариев |
 | [begin-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/begin-transaction.html) | После начала транзакции отсуствует блок Попытка-Исключение |
