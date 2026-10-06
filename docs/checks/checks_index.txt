@@ -18,6 +18,7 @@ apk-01171-string-concat-in-loop
 apk-01179-obsolete-object-module
 apk-01192-summa-in-query
 apk-01194-no-french-quotes
+apk-01196-french-quotes-md
 apk-01216-query-field-alias
 apk-01219-cut-comments-format
 begin-transaction
