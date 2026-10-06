@@ -69,6 +69,12 @@ final class Messages
     public static String UnsafePasswordStorageCheck_Avoid_storing_password_in_infobase;
     public static String UnsafePasswordStorageCheck_Avoid_storing_password_in_infobase_description;
     public static String UnsafePasswordStorageCheck_Avoid_storing_password_in_infobase_error;
+    public static String DbObjectStringAllowedLengthCheck_description;
+    public static String DbObjectStringAllowedLengthCheck_message;
+    public static String DbObjectStringAllowedLengthCheck_title;
+    public static String DbObjectUnlimitedStringCheck_description;
+    public static String DbObjectUnlimitedStringCheck_message;
+    public static String DbObjectUnlimitedStringCheck_title;
     static
     {
         // initialize resource bundle

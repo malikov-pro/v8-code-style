@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="229e51d2-70fd-4c37-9399-2591b210993d">
+  <producedTypes>
+    <objectType typeId="5dfc83f7-6655-431b-b432-f303ef0b1693" valueTypeId="50bdd2a1-5186-4562-b1be-4a3adc6b6fdd"/>
+    <refType typeId="59040c6a-71b2-4eeb-8439-89b207f2d85f" valueTypeId="1ef6207a-b205-40f7-a123-e87bb33ad3d3"/>
+    <selectionType typeId="34512a33-d67b-4c5d-8e46-215a2fcb5ddd" valueTypeId="9843fa00-6ec2-425d-8bc5-f4f7c825c9e9"/>
+    <listType typeId="2d6d6b8f-4f47-4cfd-b30c-939db9ef6244" valueTypeId="aa626076-e369-4b8f-969f-7c1f93aa4812"/>
+    <managerType typeId="ff2c5a48-ee4f-46b5-94c8-90b9ae513966" valueTypeId="a30d30d8-cd08-4e2a-90fe-6644a8f98c37"/>
+  </producedTypes>
+  <name>Test</name>
+  <synonym>
+    <key>en</key>
+    <value>Test</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Test.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.Test.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="85eaa293-ae27-4979-b3ca-858d00e6563a">
+    <name>FixedString</name>
+    <synonym>
+      <key>en</key>
+      <value>Fixed string</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+        <fixed>true</fixed>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a2d2bbc5-7118-4114-90f3-922c7a474159">
+    <name>VariableString</name>
+    <synonym>
+      <key>en</key>
+      <value>Variable string</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="05dbc61b-634e-42ce-b072-cad5e7eb891a">
+    <name>UnlimitedString</name>
+    <synonym>
+      <key>en</key>
+      <value>Unlimited string</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="03597e27-b27f-46e6-a2f1-5d06171a4475">
+    <name>UnlimitedStringExplicit</name>
+    <synonym>
+      <key>en</key>
+      <value>Unlimited string explicit</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>0</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9a035bb4-30e7-4851-96ef-a53a4e8c8c53">
+    <name>NumberAttribute</name>
+    <synonym>
+      <key>en</key>
+      <value>Number attribute</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="dbbc1dbc-c021-4da4-82b6-2c9b2c7cae3d">
+    <producedTypes>
+      <objectType typeId="de1b47e2-06d8-4cb3-a8eb-a044e3eadaa7" valueTypeId="ed79a263-cd68-4ef4-a057-51b8ad27cd66"/>
+      <rowType typeId="f0e8d6d8-3482-46ee-aa78-fa48f399c5a0" valueTypeId="f1591bb1-52e7-4daf-9f0c-173231488c8c"/>
+    </producedTypes>
+    <name>Details</name>
+    <synonym>
+      <key>en</key>
+      <value>Details</value>
+    </synonym>
+    <attributes uuid="d51c7088-557e-4e2a-824e-34f0949ce745">
+      <name>FixedDetail</name>
+      <synonym>
+        <key>en</key>
+        <value>Fixed detail</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>5</length>
+          <fixed>true</fixed>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+    <attributes uuid="874d3a41-7a09-4fbf-bcb6-94daf1e16027">
+      <name>UnlimitedDetail</name>
+      <synonym>
+        <key>en</key>
+        <value>Unlimited detail</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+    <attributes uuid="4bb33b6b-8866-4eb7-92af-d015df0ac7c6">
+      <name>VariableDetail</name>
+      <synonym>
+        <key>en</key>
+        <value>Variable detail</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>

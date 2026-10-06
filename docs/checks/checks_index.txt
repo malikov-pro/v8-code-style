@@ -1,3 +1,5 @@
+apk-00139-string-attr-length
+apk-00141-unlimited-string
 apk-00260-no-yo-letter
 apk-01171-string-concat-in-loop
 apk-01194-no-french-quotes
