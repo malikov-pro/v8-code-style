@@ -107,6 +107,18 @@ final class Messages
 
     public static String ApkYoLetterCheck_Yo_letter_is_not_allowed_in_module_text;
 
+    public static String ApkSumInQueryCheck_title;
+
+    public static String ApkSumInQueryCheck_description;
+
+    public static String ApkSumInQueryCheck_Sum_with_constant_operand_in_query;
+
+    public static String ApkQueryFieldAliasCheck_title;
+
+    public static String ApkQueryFieldAliasCheck_description;
+
+    public static String ApkQueryFieldAliasCheck_Alias_matches_metadata_class_name;
+
     public static String CachedPublicCheck_Description;
 
     public static String CachedPublicCheck_Issue;

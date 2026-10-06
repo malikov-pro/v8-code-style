@@ -365,6 +365,14 @@
       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ApkSumInQueryCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ApkQueryFieldAliasCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.FunctionShouldHaveReturnCheck">
       </check>
       <check
