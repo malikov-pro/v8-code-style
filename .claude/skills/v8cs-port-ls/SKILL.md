@@ -7,7 +7,7 @@ description: Конвейер переноса диагностики BSL Langua
 
 Смежный регламент: `v8cs-port-check` (общие правила, quick fix, верификация,
 ветки). Статус портов и гэп-лист: `_notes/ls-port-gap.md`.
-Перенесено: 2 АПК + 34 LS (состояние — в файле). Источник: 
+Перенесено: 2 АПК + **35 LS** (состояние — в файле). Источник: 
 `_ext_src/bsl-language-server` — ТОЛЬКО чтение; правки LS — апстрим/форк LS.
 Батчи №2-№7: merge develop 006e2205 / 19c3237e / 0465eac3 / 9c992af6 /
 5b0db929 / 27ca921b. Батч №7 (06.10, 10 проверек): missing-space,
@@ -15,6 +15,10 @@ magic-number, magic-date, if-condition-complexity, nested-statements,
 cyclomatic-complexity, cognitive-complexity (упрощённая формула),
 using-modal-windows, missing-temp-storage-deletion (упрощённая),
 unused-parameters.
+**Пачка №8 (06.10, вечер)**: + using-synchronous-calls (клиентские модули,
+52 метода из MODALITY_METHODS LS, гейт по synchronousPlatformExtensionAndAddInCallUseMode).
+**Простые LS-переносы ИСЧЕРПАНЫ**; осталось: create-query-in-cycle
+(data-flow, большая), query-* (ql-канал), typo/bad-words (❌ словари).
 Деплой v20261005-2021+ в EDT 2026.1 + живой смоук партий 2-7 — пройден.
 
 ## 0. Выбор кандидата
