@@ -822,6 +822,13 @@ final class Messages
     public static String ApkRegistrarAccessCheck_title;
     public static String ApkRegistrarAccessCheck_description;
     public static String ApkRegistrarAccessCheck_Registrar_access_breaks_self_sufficiency;
+    public static String ApkNoYouPronounCheck_title;
+    public static String ApkNoYouPronounCheck_description;
+    public static String ApkNoYouPronounCheck_Message_addresses_user_with_pronoun;
+
+    public static String ApkNoExclamationMarkCheck_title;
+    public static String ApkNoExclamationMarkCheck_description;
+    public static String ApkNoExclamationMarkCheck_Message_contains_exclamation_mark;
 
     static
     {
