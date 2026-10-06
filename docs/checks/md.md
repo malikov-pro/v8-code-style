@@ -1,10 +1,11 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 28
+Общее количество проверок: 29
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [apk-00137-code-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00137-code-length.html) | Длина кода (номера) объектов конфигурации |
 | [common-module-name-cached](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-cached.html) | Общий модуль с повторно используемыми значениями |
 | [common-module-name-client](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-client.html) | Клиентский общий модуль должен оканчиваться на суффикс Клиент |
 | [common-module-name-client-cached](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-client-cached.html) | Клиентский общий модуль с повторно используемыми значениями |
