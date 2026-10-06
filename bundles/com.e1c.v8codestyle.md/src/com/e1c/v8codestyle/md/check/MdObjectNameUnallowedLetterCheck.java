@@ -26,6 +26,7 @@ import com.e1c.g5.v8.dt.check.components.BasicCheck;
 import com.e1c.g5.v8.dt.check.components.TopObjectFilterExtension;
 import com.e1c.g5.v8.dt.check.settings.IssueSeverity;
 import com.e1c.g5.v8.dt.check.settings.IssueType;
+import com.e1c.v8codestyle.check.OptInCheckExtension;
 import com.e1c.v8codestyle.check.StandardCheckExtension;
 import com.e1c.v8codestyle.internal.md.CorePlugin;
 
@@ -59,6 +60,10 @@ public class MdObjectNameUnallowedLetterCheck
             .extension(new TopObjectFilterExtension())
             .issueType(IssueType.UI_STYLE)
             .extension(new StandardCheckExtension(474, getCheckId(), CorePlugin.PLUGIN_ID))
+            // Замещение (06.10): apk-00126-md-no-yo-letter покрывает этот инвариант
+            // шире (Ё/ё, все языки, вложенные объекты) — по политике замещения
+            // эта проверка выключена по умолчанию (см. карточку apk-00126).
+            .extension(new OptInCheckExtension())
             .extension(new SkipAdoptedInExtensionMdObjectExtension())
             .topObject(MD_OBJECT)
             .features(MD_OBJECT__NAME, MD_OBJECT__SYNONYM, MD_OBJECT__COMMENT);
