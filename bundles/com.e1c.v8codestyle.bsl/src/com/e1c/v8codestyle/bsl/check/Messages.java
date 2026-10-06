@@ -733,6 +733,10 @@ final class Messages
     public static String UsingModalWindowsCheck_description;
     public static String UsingModalWindowsCheck_Do_not_use_modal_windows;
 
+    public static String UsingSynchronousCallsCheck_title;
+    public static String UsingSynchronousCallsCheck_description;
+    public static String UsingSynchronousCallsCheck_message;
+
     public static String MissingTempStorageDeletionCheck_title;
     public static String MissingTempStorageDeletionCheck_description;
     public static String MissingTempStorageDeletionCheck_Missing_temp_storage_deletion;
