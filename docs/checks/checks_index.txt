@@ -1,4 +1,8 @@
 apk-00260-no-yo-letter
+apk-00460-non-deprecated-functions
+apk-00460-non-export-methods
+apk-00460-top-region
+apk-01179-obsolete-object-module
 apk-01194-no-french-quotes
 begin-transaction
 bsl-canonical-pragma

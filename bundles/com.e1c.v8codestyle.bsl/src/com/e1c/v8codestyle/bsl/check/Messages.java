@@ -745,6 +745,18 @@ final class Messages
     public static String ObsoleteObjectModuleCheck_description;
     public static String ObsoleteObjectModuleCheck_Module_has_code;
 
+    public static String OverridableModuleNonExportMethodCheck_title;
+    public static String OverridableModuleNonExportMethodCheck_description;
+    public static String OverridableModuleNonExportMethodCheck_Method_is_not_export;
+
+    public static String OverridableModuleNonDeprecatedFunctionCheck_title;
+    public static String OverridableModuleNonDeprecatedFunctionCheck_description;
+    public static String OverridableModuleNonDeprecatedFunctionCheck_Function_is_not_deprecated;
+
+    public static String OverridableModuleTopRegionCheck_title;
+    public static String OverridableModuleTopRegionCheck_description;
+    public static String OverridableModuleTopRegionCheck_Region_is_not_allowed;
+
     static
     {
         // initialize resource bundle
