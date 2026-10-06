@@ -54,10 +54,10 @@
             category="com.e1c.v8codestyle.ql"
             class="com.e1c.v8codestyle.ql.check.ConstantsInBinaryOperationCheck">
       </check>
-      <check
+         <check
             category="com.e1c.v8codestyle.ql"
             class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.UsingAllowedKeywordCheck">
       </check>
-   </extension>
+</extension>
 
 </plugin>
