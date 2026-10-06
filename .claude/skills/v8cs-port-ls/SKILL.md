@@ -7,14 +7,13 @@ description: Конвейер переноса диагностики BSL Langua
 
 Смежный регламент: `v8cs-port-check` (общие правила, quick fix, верификация,
 ветки). Статус портов и гэп-лист: `_notes/ls-port-gap.md`.
-Перенесено: 2 АПК + 20 LS (состояние — в файле). Источник: 
+Перенесено: 2 АПК + 24 LS (состояние — в файле). Источник: 
 `_ext_src/bsl-language-server` — ТОЛЬКО чтение; правки LS — апстрим/форк LS.
-Батчи №2-№5: merge develop 006e2205 / 19c3237e / 0465eac3 / 9c992af6.
-Батч №5 (06.10): deprecated-find, deprecated-current-date + ЗАМЕЩЕНИЕ —
-Найти/ТекущаяДата убраны из дефолтного списка use-non-recommended-method
-(политика: LS точнее → портируем и замещаем, решение пользователя 05.10).
-Деплой v20261005-1814 в EDT 2026.1 + живой смоук всех новых проверок —
-пройден (примеры ош_ПримерХардкод/ош_ПримерСтруктура в apk.ПроверкаОшибок).
+Батчи №2-№6: merge develop 006e2205 / 19c3237e / 0465eac3 / 9c992af6 /
+5b0db929. Батч №6 (06.10): commented-code (+qfix), space-at-start-comment
+(+qfix), o-s-users-method, timeouts-in-external-resources;
+CodeRecognizer/BSLFootprint LS → CommentCodeRecognizer.
+Деплой v20261005-2021 в EDT 2026.1 + живой смоук партий 2-6 — пройден.
 
 ## 0. Выбор кандидата
 
@@ -73,6 +72,12 @@ description: Конвейер переноса диагностики BSL Langua
 - **Узел строкового литерала включает скрытый whitespace** (пробел после «=»):
   literalContent — `.trim()` ДО срезания кавычек, иначе кавычки остаются и
   регексы/URL-фильтр молча не работают (поймано тестами хардкодов, 05.10).
+- **Лист комментария включает завершающий \n** (и возможный \r): проверки
+  good/annotation-паттернами через matches() — сначала `text.strip()`
+  (поймано дампом маркеров в space-at-start-comment, 06.10).
+- CodeRecognizer/BSLFootprint LS перенесены как CommentCodeRecognizer
+  (check-пакет bsl-бандла): детекторы с весами (contains/keywords/camelCase/
+  endsWith/голова процедуры), вероятность `1-Π(1-p)`, threshold 0.9.
 - `OperatorStyleCreator.getType().getName()` — английское имя типа
   (Structure/Map/FTPConnection); тип не разрешился — фолбэк: имя из текста
   «Новый <Тип>» регекспой. mcore.TypeItem extends DuallyNamedElement (есть
