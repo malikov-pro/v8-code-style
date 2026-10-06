@@ -1,4 +1,5 @@
 apk-00260-no-yo-letter
+apk-00334-postings-write-order
 apk-01194-no-french-quotes
 begin-transaction
 bsl-canonical-pragma

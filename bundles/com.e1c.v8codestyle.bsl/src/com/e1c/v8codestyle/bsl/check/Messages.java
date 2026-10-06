@@ -45,6 +45,12 @@ final class Messages
 
     public static String ApkFrenchQuotesCheck_French_quotes_are_not_allowed_in_interface_text;
 
+    public static String ApkPostingsWriteOrderCheck_title;
+
+    public static String ApkPostingsWriteOrderCheck_description;
+
+    public static String ApkPostingsWriteOrderCheck_Explicit_postings_write;
+
     public static String DeletingCollectionItemCheck_title;
 
     public static String DeletingCollectionItemCheck_description;
