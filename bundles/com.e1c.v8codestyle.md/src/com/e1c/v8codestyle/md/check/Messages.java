@@ -49,6 +49,9 @@ final class Messages
     public static String DbObjectMaxNumberLengthCheck_message;
     public static String DbObjectMaxNumberLengthCheck_parameter;
     public static String DbObjectMaxNumberLengthCheck_title;
+    public static String DbObjectCodeLengthCheck_description;
+    public static String DbObjectCodeLengthCheck_message;
+    public static String DbObjectCodeLengthCheck_title;
     public static String ExtensionMdObjectNamePrefixCheck_Description;
     public static String ExtensionMdObjectNamePrefixCheck_Object_0_should_have_1_prefix;
     public static String ExtensionMdObjectNamePrefixCheck_Title;

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cac19a25-88c9-4c64-91d1-7fcf18f86772">
+  <producedTypes>
+    <objectType typeId="0b4524e6-9470-4d6e-9f19-8e94b58df6a3" valueTypeId="0627623b-3594-4dde-89b4-04fe1ae36fb8"/>
+    <refType typeId="3f3e7042-19da-44ee-a894-36301eb392ee" valueTypeId="23ef79d5-5249-471b-bdc9-f61ba793c2f5"/>
+    <selectionType typeId="8e2a6c94-1a97-4e33-b3a8-a2aa8b647c18" valueTypeId="cbb418d8-4ee0-4c3f-8949-db68f0888b8b"/>
+    <listType typeId="410fffa9-67a5-46a0-999b-90c523fbb7ba" valueTypeId="09093cfd-36a5-430a-9bb3-bac1d9c0db5a"/>
+    <managerType typeId="2540926c-95e1-4bc9-9bcd-7dcf60530d34" valueTypeId="29eae570-2c8b-4c11-9003-b14189501b3a"/>
+  </producedTypes>
+  <name>BadDocument</name>
+  <synonym>
+    <key>en</key>
+    <value>BadDocument</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.BadDocument.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>8</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+</mdclass:Document>

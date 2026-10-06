@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:BusinessProcess xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e6435076-f38f-4c15-b318-50188ab4cf5b">
+  <producedTypes>
+    <objectType typeId="028450eb-9d40-4c3f-a94b-169ce412d2cf" valueTypeId="761bd46c-14d7-47ff-8901-7e1dde02abb0"/>
+    <refType typeId="bcee15a6-79dd-4457-b7ac-978c4fe3e2d9" valueTypeId="67210c21-e6d2-4b10-9f21-6c6c13311a17"/>
+    <selectionType typeId="1b00290a-23e1-4b51-bf14-cd368b219277" valueTypeId="43512317-f82b-4a54-a94f-6de950bcc282"/>
+    <listType typeId="d68e3ed3-dfe9-4689-8b72-dcf046c1e42b" valueTypeId="263916a0-c304-47e8-8af9-01cdb5bce166"/>
+    <managerType typeId="a63c99a8-6c4e-432f-964d-6f7d9172682b" valueTypeId="f551c1b0-3ab5-4ba7-899b-18b85c657484"/>
+  </producedTypes>
+  <name>BadProcess</name>
+  <synonym>
+    <key>en</key>
+    <value>BadProcess</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>BusinessProcess.BadProcess.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>4</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:BusinessProcess>
