@@ -6,6 +6,7 @@ bsl-nstr-string-literal-format
 bsl-variable-name-invalid
 change-and-validate-instead-of-around
 code-after-async-call
+cognitive-complexity
 commented-code
 commit-transaction
 common-module-missing-api
@@ -22,6 +23,7 @@ common-module-named-self-reference
 common-module-type
 configuration-data-lock-mode
 constructor-function-return-section
+cyclomatic-complexity
 data-composition-conditional-appearance-use
 data-composition-variant-name-default
 data-exchange-load
@@ -76,6 +78,7 @@ function-return-value-type
 function-should-have-return
 functional-option-privileged-get-mode
 identical-expressions
+if-condition-complexity
 if-else-duplicated-code-block
 if-else-duplicated-condition
 input-field-list-choice-mode
@@ -84,6 +87,8 @@ invocation-parameter-type-intersect
 line-length
 link-part-comment-space
 lock-out-of-try
+magic-date
+magic-number
 manager-module-named-self-reference
 md-list-object-presentation
 md-object-attribute-comment-incorrect-type
@@ -98,6 +103,8 @@ method-param-value-type
 method-semicolon-extra
 method-size
 method-too-many-params
+missing-space
+missing-temp-storage-deletion
 missing-temporary-file-deletion
 module-accessibility-at-client
 module-attachable-event-handler-name
@@ -116,6 +123,7 @@ module-undefined-method
 module-undefined-variable
 module-unused-local-variable
 module-unused-method
+nested-statements
 nested-ternary-operator
 new-color
 new-font
@@ -186,6 +194,7 @@ timeouts-in-external-resources
 typed-value-adding-to-untyped-collection
 unknown-form-parameter-access
 unsafe-password-ib-storage
+unused-parameters
 use-goto-operator
 use-non-recommended-method
 useless-ternary-operator
@@ -194,4 +203,5 @@ using-hardcode-network-address
 using-hardcode-path
 using-hardcode-secret-information
 using-isinrole
+using-modal-windows
 variable-value-type

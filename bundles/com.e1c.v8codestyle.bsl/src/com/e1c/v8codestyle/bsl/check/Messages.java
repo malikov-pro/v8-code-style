@@ -692,6 +692,55 @@ final class Messages
     public static String TimeoutsInExternalResourcesCheck_Timeout_not_specified;
     public static String TimeoutsInExternalResourcesCheck_Analyze_mail;
 
+    public static String MissingSpaceCheck_title;
+    public static String MissingSpaceCheck_description;
+    public static String MissingSpaceCheck_Missing_space;
+    public static String MissingSpaceCheck_Left;
+    public static String MissingSpaceCheck_Right;
+
+    public static String MagicNumberCheck_title;
+    public static String MagicNumberCheck_description;
+    public static String MagicNumberCheck_Magic_number;
+    public static String MagicNumberCheck_Authorized_numbers;
+    public static String MagicNumberCheck_Allow_magic_indexes;
+
+    public static String MagicDateCheck_title;
+    public static String MagicDateCheck_description;
+    public static String MagicDateCheck_Magic_date;
+    public static String MagicDateCheck_Authorized_dates;
+
+    public static String IfConditionComplexityCheck_title;
+    public static String IfConditionComplexityCheck_description;
+    public static String IfConditionComplexityCheck_Too_many_conditions;
+    public static String IfConditionComplexityCheck_Max_condition_complexity;
+
+    public static String NestedStatementsCheck_title;
+    public static String NestedStatementsCheck_description;
+    public static String NestedStatementsCheck_Too_many_nested_statements;
+    public static String NestedStatementsCheck_Max_allowed_level;
+
+    public static String CyclomaticComplexityCheck_title;
+    public static String CyclomaticComplexityCheck_description;
+    public static String CyclomaticComplexityCheck_Cyclomatic_complexity;
+    public static String CyclomaticComplexityCheck_Complexity_threshold;
+
+    public static String CognitiveComplexityCheck_title;
+    public static String CognitiveComplexityCheck_description;
+    public static String CognitiveComplexityCheck_Cognitive_complexity;
+    public static String CognitiveComplexityCheck_Complexity_threshold;
+
+    public static String UsingModalWindowsCheck_title;
+    public static String UsingModalWindowsCheck_description;
+    public static String UsingModalWindowsCheck_Do_not_use_modal_windows;
+
+    public static String MissingTempStorageDeletionCheck_title;
+    public static String MissingTempStorageDeletionCheck_description;
+    public static String MissingTempStorageDeletionCheck_Missing_temp_storage_deletion;
+
+    public static String UnusedParametersCheck_title;
+    public static String UnusedParametersCheck_description;
+    public static String UnusedParametersCheck_Unused_parameter;
+
     static
     {
         // initialize resource bundle
