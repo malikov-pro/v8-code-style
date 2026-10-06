@@ -48,6 +48,9 @@ final class Messages
     public static String TempTableHasIndex_title;
     public static String UsingForUpdateCheck_description;
     public static String UsingForUpdateCheck_title;
+    public static String UsingAllowedKeywordCheck_title;
+    public static String UsingAllowedKeywordCheck_description;
+    public static String UsingAllowedKeywordCheck_Allowed_keyword_usage_should_be_verified;
     public static String VirtualTableFiltersCheck_description;
     public static String VirtualTableFiltersCheck_Filter__0_for_virtual_table__1__should_be_in_parameters;
     public static String VirtualTableFiltersCheck_title;
