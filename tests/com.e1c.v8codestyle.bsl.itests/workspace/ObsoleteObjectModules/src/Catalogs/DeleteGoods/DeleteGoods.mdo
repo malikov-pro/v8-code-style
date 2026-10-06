@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6a1b7c2e-0021-4a01-9c10-0f4d3a11b121">
+  <producedTypes>
+    <objectType typeId="6a1b7c2e-0022-4a01-9c10-0f4d3a11b122" valueTypeId="6a1b7c2e-0023-4a01-9c10-0f4d3a11b123"/>
+    <refType typeId="6a1b7c2e-0024-4a01-9c10-0f4d3a11b124" valueTypeId="6a1b7c2e-0025-4a01-9c10-0f4d3a11b125"/>
+    <selectionType typeId="6a1b7c2e-0026-4a01-9c10-0f4d3a11b126" valueTypeId="6a1b7c2e-0027-4a01-9c10-0f4d3a11b127"/>
+    <listType typeId="6a1b7c2e-0028-4a01-9c10-0f4d3a11b128" valueTypeId="6a1b7c2e-0029-4a01-9c10-0f4d3a11b129"/>
+    <managerType typeId="6a1b7c2e-002a-4a01-9c10-0f4d3a11b12a" valueTypeId="6a1b7c2e-002b-4a01-9c10-0f4d3a11b12b"/>
+  </producedTypes>
+  <name>DeleteGoods</name>
+  <synonym>
+    <key>en</key>
+    <value>Obsolete goods</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.DeleteGoods.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.DeleteGoods.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

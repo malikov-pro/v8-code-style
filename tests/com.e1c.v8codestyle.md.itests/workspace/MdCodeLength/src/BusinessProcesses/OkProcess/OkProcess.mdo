@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:BusinessProcess xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4880e716-83ed-439a-a589-8c0c588f41c7">
+  <producedTypes>
+    <objectType typeId="dc574b43-efb0-4314-a723-118fcd5025e5" valueTypeId="e8ac731e-f1c8-4149-a935-e76641760668"/>
+    <refType typeId="c19bb539-e4d5-476a-b7c0-82d93abb622b" valueTypeId="4cf6278e-4137-42fd-a592-97479bff55e0"/>
+    <selectionType typeId="edc5e93f-aee5-4cdc-a4d6-b1d662dc4bed" valueTypeId="f8a08930-0828-41c1-a645-39d5878e2eb3"/>
+    <listType typeId="5e387873-0061-4441-82a2-5c3fa6dd28a4" valueTypeId="b8f2a921-d8cb-456c-afa4-a95dc084b5a0"/>
+    <managerType typeId="594a4849-99fd-4f51-b8e0-9aba5e9fe81e" valueTypeId="842ceb85-196f-44b8-86e0-c0a85a6dfad8"/>
+  </producedTypes>
+  <name>OkProcess</name>
+  <synonym>
+    <key>en</key>
+    <value>OkProcess</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>BusinessProcess.OkProcess.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:BusinessProcess>

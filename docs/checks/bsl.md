@@ -1,12 +1,28 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 137
+Общее количество проверок: 154
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [apk-00074-session-params-init](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00074-session-params-init.html) | Инициализацию параметров сеанса следует выполнять в модуле сеанса |
+| [apk-00184-scheduled-jobs-manager](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00184-scheduled-jobs-manager.html) | Обращение в программном коде к менеджеру регламентных заданий |
+| [apk-00205-query-empty-result](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00205-query-empty-result.html) | Пустота результата запроса проверяется выборкой вместо метода Пустой |
 | [apk-00260-no-yo-letter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00260-no-yo-letter.html) | Буква «ё» в текстах модулей |
+| [apk-00305-type-by-metadata-name](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00305-type-by-metadata-name.html) | Тип значения переменной следует определять сравнением с типом |
+| [apk-00306-metadata-via-object](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00306-metadata-via-object.html) | Метаданные объекта получаются через свойство глобального контекста Метаданные |
+| [apk-00334-postings-write-order](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00334-postings-write-order.html) | Явная запись движений документа в обработчике проведения |
+| [apk-00350-reuse-module-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00350-reuse-module-return.html) | Бессмысленные методы в общем модуле с повторным использованием |
+| [apk-00460-non-deprecated-functions](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-deprecated-functions.html) | Неустаревшая функция в переопределяемом общем модуле |
+| [apk-00460-non-export-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-export-methods.html) | Неэкспортный метод в переопределяемом общем модуле |
+| [apk-00460-top-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-top-region.html) | Внешняя область, кроме «ПрограммныйИнтерфейс», в переопределяемом общем модуле |
+| [apk-01149-file-global-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01149-file-global-methods.html) | Использование методов глобального контекста для работы с файлами |
+| [apk-01171-string-concat-in-loop](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01171-string-concat-in-loop.html) | Массовая конкатенация строк в цикле |
+| [apk-01179-obsolete-object-module](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01179-obsolete-object-module.html) | Код в модуле устаревшего объекта метаданных |
+| [apk-01192-summa-in-query](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01192-summa-in-query.html) | Функция СУММА() с числовым операндом в запросах в текстах модулей |
 | [apk-01194-no-french-quotes](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01194-no-french-quotes.html) | Французские кавычки «ёлочки» в интерфейсных текстах |
+| [apk-01216-query-field-alias](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01216-query-field-alias.html) | Псевдоним в тексте запроса совпадает с именем класса объектов метаданных |
+| [apk-01219-cut-comments-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01219-cut-comments-format.html) | Оформление вырезаемых служебных комментариев |
 | [begin-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/begin-transaction.html) | После начала транзакции отсуствует блок Попытка-Исключение |
 | [bsl-canonical-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-canonical-pragma.html) | Аннотация написана канонически |
 | [bsl-nstr-string-literal-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-nstr-string-literal-format.html) | НСтр формат строкового литерала |
@@ -141,4 +157,5 @@
 | [using-hardcode-secret-information](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-hardcode-secret-information.html) | Хранение конфиденциальной информации в коде |
 | [using-isinrole](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-isinrole.html) | Использован метод "РольДоступна" |
 | [using-modal-windows](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-modal-windows.html) | Использование модальных окон |
+| [using-synchronous-calls](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-synchronous-calls.html) | Использование синхронных вызовов |
 | [variable-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/variable-value-type.html) | Переменная имеет тип значения |
