@@ -741,6 +741,10 @@ final class Messages
     public static String UnusedParametersCheck_description;
     public static String UnusedParametersCheck_Unused_parameter;
 
+    public static String ApkScheduledJobsManagerCheck_title;
+    public static String ApkScheduledJobsManagerCheck_description;
+    public static String ApkScheduledJobsManagerCheck_Direct_manager_access;
+
     static
     {
         // initialize resource bundle
