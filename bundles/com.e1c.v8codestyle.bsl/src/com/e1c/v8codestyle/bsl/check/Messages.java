@@ -753,6 +753,15 @@ final class Messages
     public static String UnusedParametersCheck_description;
     public static String UnusedParametersCheck_Unused_parameter;
 
+    public static String ApkReuseModuleReturnCheck_title;
+    public static String ApkReuseModuleReturnCheck_description;
+    public static String ApkReuseModuleReturnCheck_Export_procedure_is_meaningless;
+    public static String ApkReuseModuleReturnCheck_Function_returns_constant;
+
+    public static String ApkSessionParamInitCheck_title;
+    public static String ApkSessionParamInitCheck_description;
+    public static String ApkSessionParamInitCheck_Session_parameter_assignment;
+
     static
     {
         // initialize resource bundle
