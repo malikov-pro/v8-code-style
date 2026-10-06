@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="396f8c37-f7e8-4e77-a512-f7d9caa68a30">
+  <producedTypes>
+    <objectType typeId="1621eac3-ada2-4a30-baa0-efd9b9bc24c9" valueTypeId="fef4ba93-9008-4c67-8c77-93a8e1699770"/>
+    <refType typeId="2b3bd2c6-550c-43dc-9337-e1f37d4a607e" valueTypeId="9bd42f5b-ea56-4eac-bb6d-1ad13699db2b"/>
+    <selectionType typeId="d14bdc5c-1cb5-4417-80d6-54914db0820c" valueTypeId="de10e148-50e6-4037-a543-f17833158a60"/>
+    <listType typeId="2378aae4-4db8-4eeb-abcf-fcc9dcbcc25f" valueTypeId="ccd15a9a-56e0-47b2-bacc-43b9ec41b377"/>
+    <managerType typeId="bbeeb11f-b159-42b4-bc9c-d942132b2b69" valueTypeId="a38138ef-acb8-4cfd-a41f-90dd05ce9aad"/>
+  </producedTypes>
+  <name>СправочникДляКомментария</name>
+  <synonym>
+    <key>ru</key>
+    <value>Справочник с комментарием</value>
+  </synonym>
+  <comment>Хранит список ёлок</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.СправочникДляКомментария.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.СправочникДляКомментария.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

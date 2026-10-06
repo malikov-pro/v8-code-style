@@ -1,10 +1,11 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 32
+Общее количество проверок: 33
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [apk-00126-md-no-yo-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00126-md-no-yo-letter.html) | Буква «ё» в имени, синониме или комментарии объекта метаданных |
 | [apk-00137-code-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00137-code-length.html) | Длина кода (номера) объектов конфигурации |
 | [apk-00139-string-attr-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00139-string-attr-length.html) | У реквизита строкового типа допустимая длина фиксированная |
 | [apk-00141-unlimited-string](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00141-unlimited-string.html) | Реквизит строкового типа неограниченной длины |

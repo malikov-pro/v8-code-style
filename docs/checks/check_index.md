@@ -1,10 +1,10 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 229
+Общее количество проверок 1С:Стандарты разработки V8: 230
 
 - form: 10
-- md: 32
+- md: 33
 - bsl: 154
 - ql: 9
 - right: 24
@@ -14,6 +14,7 @@
 | Код проверки | Наименование |
 |--------------|--------------|
 | [apk-00074-session-params-init](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00074-session-params-init.html) | Инициализацию параметров сеанса следует выполнять в модуле сеанса |
+| [apk-00126-md-no-yo-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00126-md-no-yo-letter.html) | Буква «ё» в имени, синониме или комментарии объекта метаданных |
 | [apk-00137-code-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00137-code-length.html) | Длина кода (номера) объектов конфигурации |
 | [apk-00139-string-attr-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00139-string-attr-length.html) | У реквизита строкового типа допустимая длина фиксированная |
 | [apk-00141-unlimited-string](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00141-unlimited-string.html) | Реквизит строкового типа неограниченной длины |

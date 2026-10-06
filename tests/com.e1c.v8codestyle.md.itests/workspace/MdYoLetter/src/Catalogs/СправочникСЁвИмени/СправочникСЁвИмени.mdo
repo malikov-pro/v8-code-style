@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c05f7cb9-8123-4e21-a192-cc342026cb3d">
+  <producedTypes>
+    <objectType typeId="a1de8629-6602-49a8-a70a-c91637095f1c" valueTypeId="7124d8e0-2ebc-47e4-a9e1-ed3766e209fe"/>
+    <refType typeId="cffcf0a7-a804-466f-b46f-352897dc8fbc" valueTypeId="decc3412-4fa3-4f6e-8073-a32245c44d70"/>
+    <selectionType typeId="93d2aa1e-8fd7-4c3a-a0fd-fc64dd9c1cec" valueTypeId="244ed5d0-d26e-4b0d-b8cf-f7ef8c985431"/>
+    <listType typeId="9e57de05-9e22-4342-8049-49c43a4cba51" valueTypeId="a7c352a2-6689-404b-8a37-ee5e27f41c5c"/>
+    <managerType typeId="ae161572-7114-46c9-9a77-817c2cbdaa4a" valueTypeId="478fd247-0fac-4086-b7f1-207e4f8eb1eb"/>
+  </producedTypes>
+  <name>СправочникСЁвИмени</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обычный синоним</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.СправочникСЁвИмени.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.СправочникСЁвИмени.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

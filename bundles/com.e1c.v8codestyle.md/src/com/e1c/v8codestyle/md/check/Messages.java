@@ -82,6 +82,11 @@ final class Messages
     public static String MdObjectDeleteSynonymPrefixCheck_description;
     public static String MdObjectDeleteSynonymPrefixCheck_Name_prefix_without_synonym_prefix;
     public static String MdObjectDeleteSynonymPrefixCheck_Synonym_prefix_without_name_prefix;
+    public static String MdObjectYoLetterCheck_title;
+    public static String MdObjectYoLetterCheck_description;
+    public static String MdObjectYoLetterCheck_Name_contains_yo;
+    public static String MdObjectYoLetterCheck_Synonym_contains_yo;
+    public static String MdObjectYoLetterCheck_Comment_contains_yo;
     static
     {
         // initialize resource bundle
