@@ -741,6 +741,10 @@ final class Messages
     public static String UnusedParametersCheck_description;
     public static String UnusedParametersCheck_Unused_parameter;
 
+    public static String ObsoleteObjectModuleCheck_title;
+    public static String ObsoleteObjectModuleCheck_description;
+    public static String ObsoleteObjectModuleCheck_Module_has_code;
+
     static
     {
         // initialize resource bundle
