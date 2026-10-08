@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4d5e6f7a-8b9c-4d0e-1f2a-3b4c5d6e7f80">
+  <name>SubsystemMembership</name>
+  <synonym>
+    <key>en</key>
+    <value>Subsystem membership</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="5e6f7a8b-9c0d-4e1f-a2b3-c4d5e6f7a8b9"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="6f7a8b9c-0d1e-4f2a-b3c4-d5e6f7a8b9c0"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="7a8b9c0d-1e2f-4a3b-c4d5-e6f7a8b9c0d1"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="8b9c0d1e-2f3a-4b4c-d5e6-f7a8b9c0d1e2"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="9c0d1e2f-3a4b-4c5d-e6f7-a8b9c0d1e2f3"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="0d1e2f3a-4b5c-4d6e-f7a8-b9c0d1e2f3a4"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="1e2f3a4b-5c6d-4e7f-8a9b-0c1d2e3f4a5b"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="2f3a4b5c-6d7e-4f8a-9b0c-1d2e3f4a5b6c">
+    <name>English</name>
+    <synonym>
+      <key>en</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>en</languageCode>
+  </languages>
+  <subsystems>Subsystem.Ci</subsystems>
+  <subsystems>Subsystem.NoCi</subsystems>
+  <catalogs>Catalog.InSubsystemCatalog</catalogs>
+  <catalogs>Catalog.LonelyCatalog</catalogs>
+  <catalogs>Catalog.InNestedCatalog</catalogs>
+  <catalogs>Catalog.InNoCiCatalog</catalogs>
+  <documents>Document.InSubsystemDocument</documents>
+  <documents>Document.LonelyDocument</documents>
+  <reports>Report.InSubsystemReport</reports>
+  <reports>Report.LonelyReport</reports>
+  <commonModules>CommonModule.InSubsystemModule</commonModules>
+  <commonModules>CommonModule.LonelyModule</commonModules>
+  <commonCommands>CommonCommand.InSubsystemCommand</commonCommands>
+  <commonCommands>CommonCommand.LonelyCommonCommand</commonCommands>
+  <eventSubscriptions>EventSubscription.LonelySubscription</eventSubscriptions>
+  <commonPictures>CommonPicture.LonelyPicture</commonPictures>
+  <sessionParameters>SessionParameter.LonelyParameter</sessionParameters>
+  <xDTOPackages>XDTOPackage.LonelyPackage</xDTOPackages>
+  <commandGroups>CommandGroup.LonelyGroup</commandGroups>
+</mdclass:Configuration>

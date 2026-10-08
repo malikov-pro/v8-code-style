@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d">
+  <name>Ci</name>
+  <synonym>
+    <key>en</key>
+    <value>Section with subsystems</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <content>Catalog.InSubsystemCatalog</content>
+  <content>Document.InSubsystemDocument</content>
+  <content>CommonModule.InSubsystemModule</content>
+  <content>CommonCommand.InSubsystemCommand</content>
+  <content>Report.InSubsystemReport</content>
+  <subsystems>Nested</subsystems>
+</mdclass:Subsystem>

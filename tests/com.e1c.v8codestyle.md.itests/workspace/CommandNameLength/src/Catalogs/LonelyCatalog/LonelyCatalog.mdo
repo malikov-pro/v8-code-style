@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="57288d25-57af-4a3d-bc95-faa17792ab63">
+  <producedTypes>
+    <objectType typeId="bcf228b0-0bc0-4a17-9701-7efe75670ccb" valueTypeId="640a1ba7-95c1-4ff7-9462-8f2e14e9392b"/>
+    <refType typeId="b845f572-436e-4d0f-b7f5-dd5d64a78eff" valueTypeId="1493273c-b395-44e0-8fc5-fe40849c6aa6"/>
+    <selectionType typeId="adcd939e-2299-41a4-b311-2df3963afa24" valueTypeId="8be2e362-15f0-4b3e-ba29-fcc9d87bfc4f"/>
+    <listType typeId="ee3366d9-98aa-4a82-8b83-e2acc09396ce" valueTypeId="5ab4f06e-eed1-401d-89bc-bd5ece97e560"/>
+    <managerType typeId="2d60de62-523f-4314-8468-64be8e104499" valueTypeId="1f6b8d37-6fed-4e7f-bd0f-388b13adbf82"/>
+  </producedTypes>
+  <name>LonelyCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>Lonely catalog</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+  <inputByString>Catalog.LonelyCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.LonelyCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <commands uuid="737e98b4-3934-4e45-8cf4-b3aa0fd290b3">
+    <name>LongLonelyCommand</name>
+    <synonym>
+      <key>en</key>
+      <value>A very long command synonym that is longer than thirty eight characters</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Catalog>

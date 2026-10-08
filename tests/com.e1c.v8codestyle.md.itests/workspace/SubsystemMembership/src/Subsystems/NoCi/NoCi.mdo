@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3c4d5e6f-7a8b-4c9d-0e1f-2a3b4c5d6e7f">
+  <name>NoCi</name>
+  <synonym>
+    <key>en</key>
+    <value>Section without command interface</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>false</includeInCommandInterface>
+  <content>Catalog.InNoCiCatalog</content>
+</mdclass:Subsystem>

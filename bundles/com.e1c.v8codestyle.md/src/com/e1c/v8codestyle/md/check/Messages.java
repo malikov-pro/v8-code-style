@@ -102,6 +102,13 @@ final class Messages
     public static String MdTemplateEncodingCheck_title;
     public static String MdTemplateEncodingCheck_description;
     public static String MdTemplateEncodingCheck_Non_utf8_encoding;
+    public static String MdCommandNameLengthCheck_title;
+    public static String MdCommandNameLengthCheck_description;
+    public static String MdCommandNameLengthCheck_message;
+    public static String MdCommandNameLengthCheck_parameter;
+    public static String MdSubsystemMembershipCheck_title;
+    public static String MdSubsystemMembershipCheck_description;
+    public static String MdSubsystemMembershipCheck_message;
     static
     {
         // initialize resource bundle

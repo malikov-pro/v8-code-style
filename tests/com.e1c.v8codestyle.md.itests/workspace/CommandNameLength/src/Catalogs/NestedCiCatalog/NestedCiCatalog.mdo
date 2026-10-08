@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9f8872ff-f2eb-4dc1-aa25-dd45d7755648">
+  <producedTypes>
+    <objectType typeId="7ddbbb25-0601-42c4-8b3c-92c1324e0bb8" valueTypeId="021a22c5-889b-4ae6-b566-a94b7f35683c"/>
+    <refType typeId="1c275e3f-7f43-48f9-b3d9-c27657ff0e52" valueTypeId="824c01a8-98b1-4345-8f40-d60039250e20"/>
+    <selectionType typeId="a324de55-f09a-4250-8107-4ef052d0505d" valueTypeId="65176725-aa2c-40d0-b03d-7b4cd99fe966"/>
+    <listType typeId="aa424f19-964f-4f5f-b4a5-1ac9ba3ba3b7" valueTypeId="44e4ded3-a263-4ad0-b870-35ad1c2b066d"/>
+    <managerType typeId="8f8d6673-d92e-4c2c-816b-1a88249405b8" valueTypeId="c045072a-1f60-4076-bfbb-30444ed15215"/>
+  </producedTypes>
+  <name>NestedCiCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>Nested ci catalog</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+  <inputByString>Catalog.NestedCiCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.NestedCiCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <commands uuid="a83efa22-3176-4627-a7df-ac74d6fe7835">
+    <name>LongNestedCiCommand</name>
+    <synonym>
+      <key>en</key>
+      <value>A very long command synonym that is longer than thirty eight characters</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Catalog>
