@@ -830,6 +830,10 @@ final class Messages
     public static String ApkNoExclamationMarkCheck_description;
     public static String ApkNoExclamationMarkCheck_Message_contains_exclamation_mark;
 
+    public static String ApkConstantWriteInTransactionCheck_title;
+    public static String ApkConstantWriteInTransactionCheck_description;
+    public static String ApkConstantWriteInTransactionCheck_Constant_write_in_transaction;
+
     static
     {
         // initialize resource bundle

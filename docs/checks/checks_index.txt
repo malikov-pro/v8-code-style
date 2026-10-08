@@ -7,6 +7,7 @@ apk-00141-unlimited-string
 apk-00142-query-cast-string
 apk-00150-registrar-access
 apk-00156-delete-synonym-prefix
+apk-00157-constants-write-in-txn
 apk-00184-scheduled-jobs-manager
 apk-00205-query-empty-result
 apk-00212-query-arithmetic-cast
@@ -19,6 +20,7 @@ apk-00429-query-allowed-keyword
 apk-00460-non-deprecated-functions
 apk-00460-non-export-methods
 apk-00460-top-region
+apk-00616-input-history-dont-use
 apk-00714-no-you-pronoun
 apk-00715-no-exclamation-mark
 apk-01149-file-global-methods
