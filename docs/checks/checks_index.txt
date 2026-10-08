@@ -30,6 +30,7 @@ apk-01195-french-quotes-form
 apk-01196-french-quotes-md
 apk-01216-query-field-alias
 apk-01219-cut-comments-format
+apk-01364-linux-unsupported
 begin-transaction
 bsl-canonical-pragma
 bsl-nstr-string-literal-format
