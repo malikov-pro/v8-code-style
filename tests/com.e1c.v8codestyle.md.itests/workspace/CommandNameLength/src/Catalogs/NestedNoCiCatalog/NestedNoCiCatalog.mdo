@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="18119dcf-dc81-4d4f-a1aa-d0271a7e7a1f">
+  <producedTypes>
+    <objectType typeId="9b4b8d91-e625-49a1-ab49-6301a4acebed" valueTypeId="0a54acd8-d2e4-4aa8-b507-082a7159b5fb"/>
+    <refType typeId="e1e753c5-d845-45c5-a84c-7d96a35007fb" valueTypeId="3333f6a1-eed1-434c-8d1e-c8dd3a17cad2"/>
+    <selectionType typeId="5fe8de1c-c515-488e-86b9-f474a832c76a" valueTypeId="9de06b88-fd30-40bc-840e-0f8aee5cf91a"/>
+    <listType typeId="2cb37cdd-7a38-4c05-80de-13a06e618309" valueTypeId="2d439ae7-e01e-4bb4-8797-58197df89d69"/>
+    <managerType typeId="0b38bb42-622c-4855-b4c7-75c53ba25bce" valueTypeId="060add50-700c-484c-8e93-3252ca2c66f5"/>
+  </producedTypes>
+  <name>NestedNoCiCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>Nested no ci catalog</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+  <inputByString>Catalog.NestedNoCiCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.NestedNoCiCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <commands uuid="d48df387-ddfa-4a14-8613-4884086a0061">
+    <name>LongNestedNoCiCommand</name>
+    <synonym>
+      <key>en</key>
+      <value>A very long command synonym that is longer than thirty eight characters</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Catalog>

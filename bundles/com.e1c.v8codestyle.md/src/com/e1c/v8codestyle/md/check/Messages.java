@@ -96,6 +96,10 @@ final class Messages
     public static String MdAttributeHintMatchSynonymCheck_description;
     public static String MdAttributeHintMatchSynonymCheck_message;
     public static String MdAttributeHintMatchSynonymCheck_title;
+    public static String MdCommandNameLengthCheck_title;
+    public static String MdCommandNameLengthCheck_description;
+    public static String MdCommandNameLengthCheck_message;
+    public static String MdCommandNameLengthCheck_parameter;
     static
     {
         // initialize resource bundle

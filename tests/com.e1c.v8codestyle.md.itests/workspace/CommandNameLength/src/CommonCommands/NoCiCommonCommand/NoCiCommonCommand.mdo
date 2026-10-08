@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonCommand xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b83a5e42-1c9d-4f6a-a4d1-52e09b7c66a3">
+  <name>NoCiCommonCommand</name>
+  <synonym>
+    <key>en</key>
+    <value>Another very long synonym of the command that exceeds the limit</value>
+  </synonym>
+  <group>ActionsPanelTools</group>
+  <representation>Auto</representation>
+</mdclass:CommonCommand>
