@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="298d011e-1d13-4539-854d-4454d1580b15">
+  <producedTypes>
+    <objectType typeId="ce93b5fb-042c-44e2-b2f9-9e65b3e6b1d0" valueTypeId="61c49464-a5a7-461a-84ec-87463c1b7392"/>
+    <refType typeId="73b1ebb5-00a7-46b1-a4c0-adf8ec678fd2" valueTypeId="b97daa9e-3e6e-47cf-88d5-16b4c648fdb0"/>
+    <selectionType typeId="357a8c6e-46c6-4f70-8c2a-be6844ff6bde" valueTypeId="d852c00b-2e51-464b-a596-1a2e2d71d089"/>
+    <listType typeId="aceed69f-1160-4453-a62b-b0e4ff8268e5" valueTypeId="bdba7ad9-fe48-4aa0-a675-6f22c6cbae24"/>
+    <managerType typeId="8842b8e4-265e-42ed-9ed2-7a0ac408bee6" valueTypeId="c00e5d41-9f74-4e10-a4a7-1e2c9ad63b14"/>
+  </producedTypes>
+  <name>КаталогСОбработчикомПорядок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Каталог с обработчиком, история Не использовать</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.КаталогСОбработчикомПорядок.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+</mdclass:Catalog>

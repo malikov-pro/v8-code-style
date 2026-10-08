@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a6d48db1-94ad-4ad3-9708-00644e80a5be">
+  <name>InputHistoryOnInput</name>
+  <synonym>
+    <key>en</key>
+    <value>Input history on input configuration</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="62de0c53-b134-40ab-b5c0-452fd7597e3e"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="9102f974-fb0d-4dde-8fad-eee1d9e6047e"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="3bb6ee84-edc5-483d-bc13-9f80f2517ce1"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="42ba0e8a-ec28-48c5-9208-a8b1bd31ef34"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="05b0c3d6-e3ee-471f-862d-d026661560f4"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="e482a34e-1e9a-4377-ba8c-30c4fdc7c08b"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="f805fffd-7dac-4304-b74a-534a7c1112d7"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="d3ef62d8-1445-481e-a2cf-789ea706a4ec">
+    <name>English</name>
+    <synonym>
+      <key>ru</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>ru</languageCode>
+  </languages>
+  <catalogs>Catalog.КаталогСОбработчикомАвто</catalogs>
+  <catalogs>Catalog.КаталогСОбработчикомПорядок</catalogs>
+  <catalogs>Catalog.КаталогБезОбработчикаАвто</catalogs>
+  <documents>Document.ДокументАвто</documents>
+  <documents>Document.ДокументПорядок</documents>
+  <documents>Document.ДокументСОбработчикомАвто</documents>
+  <documents>Document.ДокументСОбработчикомПорядок</documents>
+</mdclass:Configuration>
