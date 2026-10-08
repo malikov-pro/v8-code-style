@@ -460,12 +460,18 @@ final class OverridableModuleUtil
         {
             return null;
         }
+        return findCommonModule(configuration, literalText(literal));
+    }
+
+    private static String literalText(StringLiteral literal)
+    {
         StringBuilder moduleName = new StringBuilder();
         for (String line : literal.getLines())
         {
             moduleName.append(line);
         }
-        return findCommonModule(configuration, moduleName.toString().strip());
+        // Строки литерала включают кавычки — убираем их, как в алгоритме АПК
+        return moduleName.toString().replace("\"", "").strip();
     }
 
     /**

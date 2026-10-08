@@ -802,6 +802,10 @@ final class Messages
     public static String OverridableModuleRedundantCodeCheck_description;
     public static String OverridableModuleRedundantCodeCheck_Redundant_code;
 
+    public static String OverridableModuleProcedureNameCheck_title;
+    public static String OverridableModuleProcedureNameCheck_description;
+    public static String OverridableModuleProcedureNameCheck_Method_name_does_not_match;
+
     public static String TypeByMetadataNameCheck_title;
     public static String TypeByMetadataNameCheck_description;
     public static String TypeByMetadataNameCheck_Type_determined_by_metadata_name;
