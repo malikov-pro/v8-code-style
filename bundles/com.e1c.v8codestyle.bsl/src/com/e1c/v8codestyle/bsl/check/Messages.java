@@ -811,6 +811,10 @@ final class Messages
     public static String OverridableModuleParametersCheck_Parameters_count_does_not_match;
     public static String OverridableModuleParametersCheck_Parameters_order_does_not_match;
 
+    public static String OverridableModuleSeeCommentCheck_title;
+    public static String OverridableModuleSeeCommentCheck_description;
+    public static String OverridableModuleSeeCommentCheck_Missing_see_comment;
+
     public static String TypeByMetadataNameCheck_title;
     public static String TypeByMetadataNameCheck_description;
     public static String TypeByMetadataNameCheck_Type_determined_by_metadata_name;

@@ -515,7 +515,9 @@ final class OverridableModuleUtil
             return null;
         }
         String moduleText = moduleNode.getText();
-        int methodLine = lineByOffset(moduleText, methodNode.getTotalOffset());
+        // Узел метода включает ведущие скрытые лексемы (комментарии) — берём
+        // первый содержательный лист (ключевое слово объявления)
+        int methodLine = lineByOffset(moduleText, getFirstContentOffset(methodNode));
         if (methodLine <= 0)
         {
             return null;
