@@ -96,6 +96,12 @@ final class Messages
     public static String MdAttributeHintMatchSynonymCheck_description;
     public static String MdAttributeHintMatchSynonymCheck_message;
     public static String MdAttributeHintMatchSynonymCheck_title;
+
+    public static String MdObjectChoiceHistoryOnInputCheck_title;
+    public static String MdObjectChoiceHistoryOnInputCheck_description;
+    public static String MdObjectChoiceHistoryOnInputCheck_History_is_not_dont_use;
+    public static String MdObjectChoiceHistoryOnInputCheck_Handler_requires_dont_use;
+
     static
     {
         // initialize resource bundle

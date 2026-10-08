@@ -1,7 +1,7 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 35
+Общее количество проверок: 36
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -11,6 +11,7 @@
 | [apk-00139-string-attr-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00139-string-attr-length.html) | У реквизита строкового типа допустимая длина фиксированная |
 | [apk-00141-unlimited-string](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00141-unlimited-string.html) | Реквизит строкового типа неограниченной длины |
 | [apk-00156-delete-synonym-prefix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00156-delete-synonym-prefix.html) | Префикс «Удалить» в имени устаревшего объекта не согласован с префиксом «(не используется)» в синониме |
+| [apk-00616-input-history-dont-use](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00616-input-history-dont-use.html) | Свойство «История выбора при вводе» не равно «Не использовать» |
 | [apk-01196-french-quotes-md](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-01196-french-quotes-md.html) | Французские кавычки «ёлочки» в свойствах объектов метаданных |
 | [common-module-name-cached](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-cached.html) | Общий модуль с повторно используемыми значениями |
 | [common-module-name-client](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-client.html) | Клиентский общий модуль должен оканчиваться на суффикс Клиент |
