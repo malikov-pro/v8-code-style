@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonCommand xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="97ea9c25-58a2-4a8e-b0e6-a17d4a15e8e1">
+  <name>LongCommonCommand</name>
+  <synonym>
+    <key>en</key>
+    <value>A very long command synonym that is longer than thirty eight characters</value>
+  </synonym>
+  <group>ActionsPanelTools</group>
+  <representation>Auto</representation>
+</mdclass:CommonCommand>

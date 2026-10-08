@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonTemplate xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bbf1e6aa-ea42-4299-a3d1-b5605be97a76">
+  <name>БинарныйМакет</name>
+  <synonym>
+    <key>ru</key>
+    <value>БинарныйМакет</value>
+  </synonym>
+  <templateType>BinaryData</templateType>
+</mdclass:CommonTemplate>

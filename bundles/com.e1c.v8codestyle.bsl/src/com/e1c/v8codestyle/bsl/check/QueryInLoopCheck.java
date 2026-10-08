@@ -61,6 +61,7 @@ import com.e1c.g5.v8.dt.check.ICheckParameters;
 import com.e1c.g5.v8.dt.check.components.BasicCheck;
 import com.e1c.g5.v8.dt.check.settings.IssueSeverity;
 import com.e1c.g5.v8.dt.check.settings.IssueType;
+import com.e1c.v8codestyle.check.OptInCheckExtension;
 import com.e1c.v8codestyle.check.StandardCheckExtension;
 import com.e1c.v8codestyle.internal.bsl.BslPlugin;
 import com.google.inject.Inject;
@@ -117,6 +118,11 @@ public class QueryInLoopCheck
             .severity(IssueSeverity.CRITICAL)
             .issueType(IssueType.PERFORMANCE)
             .extension(new StandardCheckExtension(436, getCheckId(), BslPlugin.PLUGIN_ID))
+            // Замещение (09.10): create-query-in-cycle покрывает основной инвариант
+            // шире (построители запроса/отчёта, вложенные циклы, предикат «Пока») —
+            // по политике замещения эта проверка выключена по умолчанию
+            // (см. карточку create-query-in-cycle).
+            .extension(new OptInCheckExtension())
             .module()
             .checkedObjectType(MODULE)
             .parameter(PARAM_CHECK_QUERIY_IN_INFINITE_LOOP, Boolean.class, DEFAULT_CHECK_QUERY_IN_INFINITE_LOOP,

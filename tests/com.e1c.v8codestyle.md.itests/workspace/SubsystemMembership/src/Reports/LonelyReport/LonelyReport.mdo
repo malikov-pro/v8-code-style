@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="000f8237-5425-4728-8ff9-1c83442d6dc8">
+  <name>LonelyReport</name>
+  <synonym>
+    <key>en</key>
+    <value>LonelyReport</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+</mdclass:Report>

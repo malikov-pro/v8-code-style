@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f0795fb4-ba7f-4ee9-b06b-93395e97e03a">
+  <name>DsFieldAlias</name>
+  <synonym>
+    <key>en</key>
+    <value>Ds field alias</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="a2dbe25f-d3fc-4ef6-bc5d-e92ffaf46de2"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="1b5a9da5-fe2b-443b-80dd-77e2d0d8ecfa"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="0be4f2aa-489e-4f84-88c1-cc9dedc1c97b"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="384926ed-14bb-4f6d-9ce8-c848fb5c1ded"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="693a2031-234d-46bc-ba3e-85a0bac47d74"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="88910403-600d-44a7-8fcf-4f3089e6568e"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="8f8115ee-e047-4730-a406-3b289e461b88"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="ee41bdea-3582-4622-ab19-75ef155b43f9">
+    <name>English</name>
+    <synonym>
+      <key>en</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>en</languageCode>
+  </languages>
+  <languages uuid="0ef16457-df58-4c7e-95f6-3692def5f739">
+    <name>Russian</name>
+    <synonym>
+      <key>en</key>
+      <value>Russian</value>
+    </synonym>
+    <languageCode>ru</languageCode>
+  </languages>
+  <catalogs>Catalog.Products</catalogs>
+  <commonForms>CommonForm.DsAliasForm</commonForms>
+</mdclass:Configuration>

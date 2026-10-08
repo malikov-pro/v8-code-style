@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <horizontalAlign>Left</horizontalAlign>
+    <autoFill>true</autoFill>
+  </autoCommandBar>
+  <autoTitle>true</autoTitle>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>BadList</name>
+    <title>
+      <key>en</key>
+      <value>Bad list</value>
+    </title>
+    <id>1</id>
+    <valueType>
+      <types>DynamicList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:DynamicListExtInfo">
+      <queryText>ВЫБРАТЬ
+	Товары.Ссылка КАК Справочник
+ИЗ
+	Справочник.Products КАК Товары</queryText>
+      <autoFillAvailableFields>true</autoFillAvailableFields>
+      <customQuery>true</customQuery>
+      <autoSaveUserSettings>true</autoSaveUserSettings>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>MixedList</name>
+    <title>
+      <key>en</key>
+      <value>Mixed list</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>DynamicList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:DynamicListExtInfo">
+      <queryText>SELECT
+	Товары.Ref AS Document,
+	Товары.Description AS Description
+FROM
+	Catalog.Products AS Товары</queryText>
+      <autoFillAvailableFields>true</autoFillAvailableFields>
+      <customQuery>true</customQuery>
+      <autoSaveUserSettings>true</autoSaveUserSettings>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>OkList</name>
+    <title>
+      <key>en</key>
+      <value>Ok list</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>DynamicList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:DynamicListExtInfo">
+      <queryText>ВЫБРАТЬ
+	// псевдоним КАК Справочник в комментарии не учитывается
+	Товары.Ссылка КАК Ссылка
+ИЗ
+	Справочник.Products КАК Товары</queryText>
+      <autoFillAvailableFields>true</autoFillAvailableFields>
+      <customQuery>true</customQuery>
+      <autoSaveUserSettings>true</autoSaveUserSettings>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>EmptyList</name>
+    <title>
+      <key>en</key>
+      <value>Empty list</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>DynamicList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:DynamicListExtInfo">
+      <mainTable>Catalog.Products</mainTable>
+      <autoFillAvailableFields>true</autoFillAvailableFields>
+      <autoSaveUserSettings>true</autoSaveUserSettings>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>PlainAttribute</name>
+    <title>
+      <key>en</key>
+      <value>Plain attribute</value>
+    </title>
+    <id>5</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>

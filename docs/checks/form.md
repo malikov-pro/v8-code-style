@@ -1,11 +1,12 @@
 # Проверки Форм 1С
 
 
-Общее количество проверок: 11
+Общее количество проверок: 12
 
 | Код проверки | Наименование |
 |--------------|--------------|
 | [apk-01195-french-quotes-form](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01195-french-quotes-form.html) | Французские кавычки «ёлочки» в элементах форм |
+| [apk-01214-ds-field-alias](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01214-ds-field-alias.html) | Псевдоним поля запроса динамического списка совпадает с именем класса объектов метаданных |
 | [data-composition-conditional-appearance-use](../../../com.e1c.v8codestyle.form/check.descriptions/ru/data-composition-conditional-appearance-use.html) | Условное оформление в формах |
 | [data-composition-variant-name-default](../../../com.e1c.v8codestyle.form/check.descriptions/ru/data-composition-variant-name-default.html) | Проверка имени варианта отчета |
 | [form-commands-single-action-handler](../../../com.e1c.v8codestyle.form/check.descriptions/ru/form-commands-single-action-handler.html) | У каждого действия команды должна быть назначена своя процедура-обработчик |

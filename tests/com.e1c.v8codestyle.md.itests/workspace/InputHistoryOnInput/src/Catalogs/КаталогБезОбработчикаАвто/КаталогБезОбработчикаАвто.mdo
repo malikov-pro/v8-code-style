@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b8796c11-e1d6-4c1b-a21f-e0d97d3a8a35">
+  <producedTypes>
+    <objectType typeId="6b8f5bd2-9a4b-49e7-a8c6-e26ba14ad22c" valueTypeId="41b8c0de-5f3a-4f0a-8cbe-0a4c9b32a6da"/>
+    <refType typeId="963ea2b5-63c1-4f6d-8bda-f53cbdbde020" valueTypeId="70fc951c-fd90-4b71-97d9-63a4d9eb695a"/>
+    <selectionType typeId="b21a49b9-95f8-4125-a78c-4a9c281a341e" valueTypeId="77790a97-a2ae-4464-a6f3-8cbf0ec6ef75"/>
+    <listType typeId="92457cbe-93cb-471e-847a-1f37e69b98cf" valueTypeId="cbe0f81d-52dc-4a3c-9c4c-482ad1d3be5c"/>
+    <managerType typeId="02fa528c-dcbf-4ed7-a4df-11ab1c0f6537" valueTypeId="b8bd1c93-fb70-4b11-a9f5-e08b0c8ab38d"/>
+  </producedTypes>
+  <name>КаталогБезОбработчикаАвто</name>
+  <synonym>
+    <key>ru</key>
+    <value>Каталог без обработчика, история Авто</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.КаталогБезОбработчикаАвто.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <choiceHistoryOnInput>Auto</choiceHistoryOnInput>
+</mdclass:Catalog>

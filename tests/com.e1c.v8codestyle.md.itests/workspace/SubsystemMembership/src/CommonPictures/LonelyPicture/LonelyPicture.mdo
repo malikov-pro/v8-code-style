@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonPicture xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c9629cf5-e5d7-4e11-be85-ff7823bb2f30">
+  <name>LonelyPicture</name>
+  <synonym>
+    <key>en</key>
+    <value>LonelyPicture</value>
+  </synonym>
+</mdclass:CommonPicture>

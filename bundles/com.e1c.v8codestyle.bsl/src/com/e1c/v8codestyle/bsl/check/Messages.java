@@ -420,6 +420,12 @@ final class Messages
     public static String QueryInLoop_Loop_has_query;
     public static String QueryInLoop_title;
 
+    public static String CreateQueryInCycle_title;
+
+    public static String CreateQueryInCycle_description;
+
+    public static String CreateQueryInCycle_execute_query_in_loop;
+
     public static String SelfAssignCheck_Title;
 
     public static String SelfAssignCheck_Description;
@@ -797,6 +803,24 @@ final class Messages
     public static String OverridableModuleTopRegionCheck_title;
     public static String OverridableModuleTopRegionCheck_description;
     public static String OverridableModuleTopRegionCheck_Region_is_not_allowed;
+
+    public static String OverridableModuleRedundantCodeCheck_title;
+    public static String OverridableModuleRedundantCodeCheck_description;
+    public static String OverridableModuleRedundantCodeCheck_Redundant_code;
+
+    public static String OverridableModuleProcedureNameCheck_title;
+    public static String OverridableModuleProcedureNameCheck_description;
+    public static String OverridableModuleProcedureNameCheck_Method_name_does_not_match;
+
+    public static String OverridableModuleParametersCheck_title;
+    public static String OverridableModuleParametersCheck_description;
+    public static String OverridableModuleParametersCheck_Parameters_count_does_not_match;
+    public static String OverridableModuleParametersCheck_Parameters_order_does_not_match;
+
+    public static String OverridableModuleSeeCommentCheck_title;
+    public static String OverridableModuleSeeCommentCheck_description;
+    public static String OverridableModuleSeeCommentCheck_Missing_see_comment;
+
     public static String TypeByMetadataNameCheck_title;
     public static String TypeByMetadataNameCheck_description;
     public static String TypeByMetadataNameCheck_Type_determined_by_metadata_name;
@@ -829,6 +853,25 @@ final class Messages
     public static String ApkNoExclamationMarkCheck_title;
     public static String ApkNoExclamationMarkCheck_description;
     public static String ApkNoExclamationMarkCheck_Message_contains_exclamation_mark;
+
+    public static String ApkLinuxUnsupportedCheck_title;
+    public static String ApkLinuxUnsupportedCheck_description;
+    public static String ApkLinuxUnsupportedCheck_Unsupported_construct;
+
+    public static String ApkPathSeparatorMaskCheck_title;
+    public static String ApkPathSeparatorMaskCheck_description;
+    public static String ApkPathSeparatorMaskCheck_Manual_path_separator;
+    public static String ApkPathSeparatorMaskCheck_Manual_all_files_mask;
+    public static String ApkMainLanguageCodeCheck_title;
+    public static String ApkMainLanguageCodeCheck_description;
+    public static String ApkMainLanguageCodeCheck_Use_MainLanguageCode_function;
+
+    public static String ApkUpdateHandlerVersionFormatCheck_title;
+    public static String ApkUpdateHandlerVersionFormatCheck_description;
+    public static String ApkUpdateHandlerVersionFormatCheck_Invalid_version_format;
+    public static String ApkConstantWriteInTransactionCheck_title;
+    public static String ApkConstantWriteInTransactionCheck_description;
+    public static String ApkConstantWriteInTransactionCheck_Constant_write_in_transaction;
 
     static
     {

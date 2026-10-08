@@ -663,6 +663,46 @@
             category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ApkRegistrarAccessCheck">
       </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ApkLinuxUnsupportedCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ApkPathSeparatorMaskCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ApkMainLanguageCodeCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ApkUpdateHandlerVersionFormatCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ApkConstantWriteInTransactionCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.CreateQueryInCycleCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.OverridableModuleRedundantCodeCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.OverridableModuleProcedureNameCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.OverridableModuleParametersCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.OverridableModuleSeeCommentCheck">
+      </check>
 </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonTemplate xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9892eec1-e062-44f4-8162-f4771449b088">
+  <name>МакетWindows1251</name>
+  <synonym>
+    <key>ru</key>
+    <value>МакетWindows1251</value>
+  </synonym>
+  <templateType>TextDocument</templateType>
+</mdclass:CommonTemplate>

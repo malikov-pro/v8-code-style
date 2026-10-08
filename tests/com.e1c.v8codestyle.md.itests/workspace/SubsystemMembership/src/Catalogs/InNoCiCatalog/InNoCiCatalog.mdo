@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b86537e3-570c-4e72-9d7b-ec0a3761c445">
+  <producedTypes>
+    <objectType typeId="84c3711d-941c-4bb6-9020-a88446cda993" valueTypeId="670856ae-bcf9-48b3-b064-e9e02f050915"/>
+    <refType typeId="cc521d25-54de-420d-ae47-4a36fdb135b1" valueTypeId="96ecc779-40ee-4a95-8ebd-365be57589bc"/>
+    <selectionType typeId="cc3a838c-ea2e-494c-8cf9-4eff02a25c15" valueTypeId="e05f47b4-8944-4e78-a679-dd53e7dadd69"/>
+    <listType typeId="ef81ffc9-6887-4255-b411-79ba2fc9da02" valueTypeId="a824eea6-f953-48a5-b5b8-f4b33d4710d9"/>
+    <managerType typeId="c21d625c-546c-4e0e-b409-e51502ef72f0" valueTypeId="cfb46e9f-81bd-4b60-bed3-bfc37ae633aa"/>
+  </producedTypes>
+  <name>InNoCiCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>InNoCiCatalog</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+  <inputByString>Catalog.InNoCiCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.InNoCiCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>
