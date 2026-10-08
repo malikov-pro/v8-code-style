@@ -18,6 +18,10 @@ apk-00350-reuse-module-return
 apk-00429-query-allowed-keyword
 apk-00460-non-deprecated-functions
 apk-00460-non-export-methods
+apk-00460-parameters-match
+apk-00460-procedure-name-match
+apk-00460-redundant-code
+apk-00460-see-comment
 apk-00460-top-region
 apk-00505-template-lang-postfix
 apk-00506-template-encoding

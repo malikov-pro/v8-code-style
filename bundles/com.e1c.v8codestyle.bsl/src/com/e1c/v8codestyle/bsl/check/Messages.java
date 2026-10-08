@@ -797,6 +797,24 @@ final class Messages
     public static String OverridableModuleTopRegionCheck_title;
     public static String OverridableModuleTopRegionCheck_description;
     public static String OverridableModuleTopRegionCheck_Region_is_not_allowed;
+
+    public static String OverridableModuleRedundantCodeCheck_title;
+    public static String OverridableModuleRedundantCodeCheck_description;
+    public static String OverridableModuleRedundantCodeCheck_Redundant_code;
+
+    public static String OverridableModuleProcedureNameCheck_title;
+    public static String OverridableModuleProcedureNameCheck_description;
+    public static String OverridableModuleProcedureNameCheck_Method_name_does_not_match;
+
+    public static String OverridableModuleParametersCheck_title;
+    public static String OverridableModuleParametersCheck_description;
+    public static String OverridableModuleParametersCheck_Parameters_count_does_not_match;
+    public static String OverridableModuleParametersCheck_Parameters_order_does_not_match;
+
+    public static String OverridableModuleSeeCommentCheck_title;
+    public static String OverridableModuleSeeCommentCheck_description;
+    public static String OverridableModuleSeeCommentCheck_Missing_see_comment;
+
     public static String TypeByMetadataNameCheck_title;
     public static String TypeByMetadataNameCheck_description;
     public static String TypeByMetadataNameCheck_Type_determined_by_metadata_name;
