@@ -20,6 +20,7 @@ apk-00460-non-deprecated-functions
 apk-00460-non-export-methods
 apk-00460-top-region
 apk-00505-template-lang-postfix
+apk-00506-template-encoding
 apk-00714-no-you-pronoun
 apk-00715-no-exclamation-mark
 apk-01149-file-global-methods

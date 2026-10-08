@@ -166,6 +166,10 @@
             category="com.e1c.v8codestyle.md"
             class="com.e1c.v8codestyle.internal.md.ExecutableExtensionFactory:com.e1c.v8codestyle.md.check.MdTemplateLangPostfixCheck">
       </check>
+      <check
+            category="com.e1c.v8codestyle.md"
+            class="com.e1c.v8codestyle.internal.md.ExecutableExtensionFactory:com.e1c.v8codestyle.md.check.MdTemplateEncodingCheck">
+      </check>
 </extension>
    
 </plugin>

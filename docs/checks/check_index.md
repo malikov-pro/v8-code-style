@@ -1,10 +1,10 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 239
+Общее количество проверок 1С:Стандарты разработки V8: 240
 
 - form: 11
-- md: 36
+- md: 37
 - bsl: 157
 - ql: 11
 - right: 24
@@ -35,6 +35,7 @@
 | [apk-00460-non-export-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-export-methods.html) | Неэкспортный метод в переопределяемом общем модуле |
 | [apk-00460-top-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-top-region.html) | Внешняя область, кроме «ПрограммныйИнтерфейс», в переопределяемом общем модуле |
 | [apk-00505-template-lang-postfix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00505-template-lang-postfix.html) | Постфикс кода основного языка в имени двоичного макета или HTML-макета |
+| [apk-00506-template-encoding](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00506-template-encoding.html) | Кодировка, отличная от utf-8, в текстовом или HTML-макете |
 | [apk-00714-no-you-pronoun](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00714-no-you-pronoun.html) | В сообщениях не употребляются местоимения «Вы», «Вас» и пр. |
 | [apk-00715-no-exclamation-mark](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00715-no-exclamation-mark.html) | Сообщения не должны содержать восклицательных знаков |
 | [apk-01149-file-global-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01149-file-global-methods.html) | Использование методов глобального контекста для работы с файлами |
