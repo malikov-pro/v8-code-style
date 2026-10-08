@@ -797,6 +797,11 @@ final class Messages
     public static String OverridableModuleTopRegionCheck_title;
     public static String OverridableModuleTopRegionCheck_description;
     public static String OverridableModuleTopRegionCheck_Region_is_not_allowed;
+
+    public static String OverridableModuleRedundantCodeCheck_title;
+    public static String OverridableModuleRedundantCodeCheck_description;
+    public static String OverridableModuleRedundantCodeCheck_Redundant_code;
+
     public static String TypeByMetadataNameCheck_title;
     public static String TypeByMetadataNameCheck_description;
     public static String TypeByMetadataNameCheck_Type_determined_by_metadata_name;
