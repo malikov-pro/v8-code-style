@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a94bd0d6-68fc-43cb-a09e-ff6c64671af4">
+  <name>ВладелецМакетов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Владелец макетов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ВладелецМакетов.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.ВладелецМакетов.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <templates uuid="014a03c9-1bf4-4d1e-801b-75c2e0efa125">
+    <name>МакетКаталога</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет каталога</value>
+    </synonym>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="ef3b0378-29e0-4cf6-9f5e-91a54a5ff45d">
+    <name>МакетКаталога_ru</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет каталога ru</value>
+    </synonym>
+    <templateType>BinaryData</templateType>
+  </templates>
+</mdclass:Catalog>
