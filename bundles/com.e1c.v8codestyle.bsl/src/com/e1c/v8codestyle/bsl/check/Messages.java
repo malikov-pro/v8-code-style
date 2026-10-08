@@ -838,6 +838,13 @@ final class Messages
     public static String ApkPathSeparatorMaskCheck_description;
     public static String ApkPathSeparatorMaskCheck_Manual_path_separator;
     public static String ApkPathSeparatorMaskCheck_Manual_all_files_mask;
+    public static String ApkMainLanguageCodeCheck_title;
+    public static String ApkMainLanguageCodeCheck_description;
+    public static String ApkMainLanguageCodeCheck_Use_MainLanguageCode_function;
+
+    public static String ApkUpdateHandlerVersionFormatCheck_title;
+    public static String ApkUpdateHandlerVersionFormatCheck_description;
+    public static String ApkUpdateHandlerVersionFormatCheck_Invalid_version_format;
 
     static
     {
