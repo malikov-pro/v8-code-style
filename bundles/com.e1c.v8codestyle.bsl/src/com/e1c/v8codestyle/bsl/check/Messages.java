@@ -420,6 +420,12 @@ final class Messages
     public static String QueryInLoop_Loop_has_query;
     public static String QueryInLoop_title;
 
+    public static String CreateQueryInCycle_title;
+
+    public static String CreateQueryInCycle_description;
+
+    public static String CreateQueryInCycle_execute_query_in_loop;
+
     public static String SelfAssignCheck_Title;
 
     public static String SelfAssignCheck_Description;

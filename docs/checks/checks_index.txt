@@ -63,6 +63,7 @@ common-module-named-self-reference
 common-module-type
 configuration-data-lock-mode
 constructor-function-return-section
+create-query-in-cycle
 cyclomatic-complexity
 data-composition-conditional-appearance-use
 data-composition-variant-name-default
