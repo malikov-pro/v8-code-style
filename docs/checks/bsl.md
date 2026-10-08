@@ -1,12 +1,13 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 159
+Общее количество проверок: 167
 
 | Код проверки | Наименование |
 |--------------|--------------|
 | [apk-00074-session-params-init](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00074-session-params-init.html) | Инициализацию параметров сеанса следует выполнять в модуле сеанса |
 | [apk-00150-registrar-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00150-registrar-access.html) | Самодостаточность регистров: обращение к реквизиту «Регистратор» |
+| [apk-00157-constants-write-in-txn](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00157-constants-write-in-txn.html) | Запись константы выполняется в транзакции |
 | [apk-00184-scheduled-jobs-manager](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00184-scheduled-jobs-manager.html) | Обращение в программном коде к менеджеру регламентных заданий |
 | [apk-00205-query-empty-result](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00205-query-empty-result.html) | Пустота результата запроса проверяется выборкой вместо метода Пустой |
 | [apk-00260-no-yo-letter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00260-no-yo-letter.html) | Буква «ё» в текстах модулей |
@@ -16,6 +17,10 @@
 | [apk-00350-reuse-module-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00350-reuse-module-return.html) | Бессмысленные методы в общем модуле с повторным использованием |
 | [apk-00460-non-deprecated-functions](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-deprecated-functions.html) | Неустаревшая функция в переопределяемом общем модуле |
 | [apk-00460-non-export-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-export-methods.html) | Неэкспортный метод в переопределяемом общем модуле |
+| [apk-00460-parameters-match](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-parameters-match.html) | Параметры вызываемого метода не совпадают с параметрами переопределяемой процедуры |
+| [apk-00460-procedure-name-match](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-procedure-name-match.html) | Имя вызываемого метода не совпадает с именем переопределяемой процедуры |
+| [apk-00460-redundant-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-redundant-code.html) | Лишний код в процедуре переопределяемого общего модуля |
+| [apk-00460-see-comment](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-see-comment.html) | У вызываемого метода нет комментария «См. Модуль.Процедура» |
 | [apk-00460-top-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-top-region.html) | Внешняя область, кроме «ПрограммныйИнтерфейс», в переопределяемом общем модуле |
 | [apk-00714-no-you-pronoun](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00714-no-you-pronoun.html) | В сообщениях не употребляются местоимения «Вы», «Вас» и пр. |
 | [apk-00715-no-exclamation-mark](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00715-no-exclamation-mark.html) | Сообщения не должны содержать восклицательных знаков |
@@ -42,6 +47,7 @@
 | [common-module-missing-api](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-missing-api.html) | Общий модуль должен иметь хотя бы один экспортный метод |
 | [common-module-named-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-named-self-reference.html) | Избыточное обращение по собственному имени внутри общего модуля |
 | [constructor-function-return-section](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/constructor-function-return-section.html) | Секция возвращаемого значения функции-конструктора данных |
+| [create-query-in-cycle](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/create-query-in-cycle.html) | Создание или выполнение запроса в цикле |
 | [cyclomatic-complexity](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/cyclomatic-complexity.html) | Цикломатическая сложность метода выше допустимой |
 | [data-exchange-load](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/data-exchange-load.html) | Проверка ОбменДанными.Загрузка в обработчике события |
 | [deleting-collection-item](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deleting-collection-item.html) | Удаление элемента при обходе коллекции |

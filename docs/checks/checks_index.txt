@@ -7,6 +7,7 @@ apk-00141-unlimited-string
 apk-00142-query-cast-string
 apk-00150-registrar-access
 apk-00156-delete-synonym-prefix
+apk-00157-constants-write-in-txn
 apk-00184-scheduled-jobs-manager
 apk-00205-query-empty-result
 apk-00212-query-arithmetic-cast
@@ -16,6 +17,7 @@ apk-00306-metadata-via-object
 apk-00334-postings-write-order
 apk-00350-reuse-module-return
 apk-00429-query-allowed-keyword
+apk-00458-subsystem-membership
 apk-00460-non-deprecated-functions
 apk-00460-non-export-methods
 apk-00460-parameters-match
@@ -25,6 +27,8 @@ apk-00460-see-comment
 apk-00460-top-region
 apk-00505-template-lang-postfix
 apk-00506-template-encoding
+apk-00528-command-name-length
+apk-00616-input-history-dont-use
 apk-00714-no-you-pronoun
 apk-00715-no-exclamation-mark
 apk-01149-file-global-methods
@@ -37,6 +41,7 @@ apk-01194-no-french-quotes
 apk-01195-french-quotes-form
 apk-01196-french-quotes-md
 apk-01205-main-language-code
+apk-01214-ds-field-alias
 apk-01216-query-field-alias
 apk-01219-cut-comments-format
 apk-01364-linux-unsupported
