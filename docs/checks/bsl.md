@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 157
+Общее количество проверок: 158
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -38,6 +38,7 @@
 | [common-module-missing-api](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-missing-api.html) | Общий модуль должен иметь хотя бы один экспортный метод |
 | [common-module-named-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-named-self-reference.html) | Избыточное обращение по собственному имени внутри общего модуля |
 | [constructor-function-return-section](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/constructor-function-return-section.html) | Секция возвращаемого значения функции-конструктора данных |
+| [create-query-in-cycle](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/create-query-in-cycle.html) | Создание или выполнение запроса в цикле |
 | [cyclomatic-complexity](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/cyclomatic-complexity.html) | Цикломатическая сложность метода выше допустимой |
 | [data-exchange-load](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/data-exchange-load.html) | Проверка ОбменДанными.Загрузка в обработчике события |
 | [deleting-collection-item](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deleting-collection-item.html) | Удаление элемента при обходе коллекции |
