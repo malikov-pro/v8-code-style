@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 157
+Общее количество проверок: 161
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -16,6 +16,10 @@
 | [apk-00350-reuse-module-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00350-reuse-module-return.html) | Бессмысленные методы в общем модуле с повторным использованием |
 | [apk-00460-non-deprecated-functions](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-deprecated-functions.html) | Неустаревшая функция в переопределяемом общем модуле |
 | [apk-00460-non-export-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-export-methods.html) | Неэкспортный метод в переопределяемом общем модуле |
+| [apk-00460-parameters-match](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-parameters-match.html) | Параметры вызываемого метода не совпадают с параметрами переопределяемой процедуры |
+| [apk-00460-procedure-name-match](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-procedure-name-match.html) | Имя вызываемого метода не совпадает с именем переопределяемой процедуры |
+| [apk-00460-redundant-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-redundant-code.html) | Лишний код в процедуре переопределяемого общего модуля |
+| [apk-00460-see-comment](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-see-comment.html) | У вызываемого метода нет комментария «См. Модуль.Процедура» |
 | [apk-00460-top-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-top-region.html) | Внешняя область, кроме «ПрограммныйИнтерфейс», в переопределяемом общем модуле |
 | [apk-00714-no-you-pronoun](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00714-no-you-pronoun.html) | В сообщениях не употребляются местоимения «Вы», «Вас» и пр. |
 | [apk-00715-no-exclamation-mark](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00715-no-exclamation-mark.html) | Сообщения не должны содержать восклицательных знаков |
