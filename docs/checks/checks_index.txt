@@ -22,6 +22,7 @@ apk-00460-top-region
 apk-00714-no-you-pronoun
 apk-00715-no-exclamation-mark
 apk-01149-file-global-methods
+apk-01167-path-separator-mask
 apk-01171-string-concat-in-loop
 apk-01179-obsolete-object-module
 apk-01192-summa-in-query
