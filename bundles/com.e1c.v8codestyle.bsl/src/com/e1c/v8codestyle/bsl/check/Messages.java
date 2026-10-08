@@ -830,6 +830,10 @@ final class Messages
     public static String ApkNoExclamationMarkCheck_description;
     public static String ApkNoExclamationMarkCheck_Message_contains_exclamation_mark;
 
+    public static String ApkMainLanguageCodeCheck_title;
+    public static String ApkMainLanguageCodeCheck_description;
+    public static String ApkMainLanguageCodeCheck_Use_MainLanguageCode_function;
+
     static
     {
         // initialize resource bundle
