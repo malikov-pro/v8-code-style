@@ -16,6 +16,7 @@ apk-00306-metadata-via-object
 apk-00334-postings-write-order
 apk-00350-reuse-module-return
 apk-00429-query-allowed-keyword
+apk-00458-subsystem-membership
 apk-00460-non-deprecated-functions
 apk-00460-non-export-methods
 apk-00460-top-region

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e7bb7f19-f135-4885-a892-4e4099828b50">
+  <name>InSubsystemReport</name>
+  <synonym>
+    <key>en</key>
+    <value>InSubsystemReport</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+</mdclass:Report>

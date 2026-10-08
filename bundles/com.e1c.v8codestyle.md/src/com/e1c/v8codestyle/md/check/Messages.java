@@ -100,6 +100,9 @@ final class Messages
     public static String MdCommandNameLengthCheck_description;
     public static String MdCommandNameLengthCheck_message;
     public static String MdCommandNameLengthCheck_parameter;
+    public static String MdSubsystemMembershipCheck_title;
+    public static String MdSubsystemMembershipCheck_description;
+    public static String MdSubsystemMembershipCheck_message;
     static
     {
         // initialize resource bundle

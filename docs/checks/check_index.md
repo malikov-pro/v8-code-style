@@ -1,10 +1,10 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 239
+Общее количество проверок 1С:Стандарты разработки V8: 240
 
 - form: 11
-- md: 36
+- md: 37
 - bsl: 157
 - ql: 11
 - right: 24
@@ -31,6 +31,7 @@
 | [apk-00334-postings-write-order](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00334-postings-write-order.html) | Явная запись движений документа в обработчике проведения |
 | [apk-00350-reuse-module-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00350-reuse-module-return.html) | Бессмысленные методы в общем модуле с повторным использованием |
 | [apk-00429-query-allowed-keyword](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00429-query-allowed-keyword.html) | Использование ключевого слова РАЗРЕШЕННЫЕ в запросах |
+| [apk-00458-subsystem-membership](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00458-subsystem-membership.html) | Объект не входит ни в одну подсистему |
 | [apk-00460-non-deprecated-functions](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-deprecated-functions.html) | Неустаревшая функция в переопределяемом общем модуле |
 | [apk-00460-non-export-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-export-methods.html) | Неэкспортный метод в переопределяемом общем модуле |
 | [apk-00460-top-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-top-region.html) | Внешняя область, кроме «ПрограммныйИнтерфейс», в переопределяемом общем модуле |

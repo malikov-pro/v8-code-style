@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="161a54d7-77df-4520-b3c3-9048a0bf149b">
+  <producedTypes>
+    <objectType typeId="ea0d5122-dc46-4407-a80f-965c90c33f0d" valueTypeId="00c17de4-dfe7-4118-81a9-87ac2e2af55e"/>
+    <refType typeId="70ce09a6-adf4-434a-a6e5-2432ec523167" valueTypeId="10e3ec16-090d-4e11-8e24-d0370ae06264"/>
+    <selectionType typeId="d648dc30-d154-4265-a025-9ce442bd1d16" valueTypeId="a1cb4d3a-a136-4ea8-b0aa-3de5468824dd"/>
+    <listType typeId="b3d4577c-8b61-462e-8e7b-c5292d508cbd" valueTypeId="c971095a-e9d6-48d2-90c5-3c2ced2558e8"/>
+    <managerType typeId="cea589f1-83c9-4faf-b458-3244ca37eefb" valueTypeId="4a84f39e-1d80-4712-b3cb-a60ea88c5586"/>
+  </producedTypes>
+  <name>LonelyCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>LonelyCatalog</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+  <inputByString>Catalog.LonelyCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.LonelyCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>
