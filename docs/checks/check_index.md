@@ -1,9 +1,9 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 238
+Общее количество проверок 1С:Стандарты разработки V8: 239
 
-- form: 11
+- form: 12
 - md: 35
 - bsl: 157
 - ql: 11
@@ -43,6 +43,7 @@
 | [apk-01194-no-french-quotes](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01194-no-french-quotes.html) | Французские кавычки «ёлочки» в интерфейсных текстах |
 | [apk-01195-french-quotes-form](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01195-french-quotes-form.html) | Французские кавычки «ёлочки» в элементах форм |
 | [apk-01196-french-quotes-md](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-01196-french-quotes-md.html) | Французские кавычки «ёлочки» в свойствах объектов метаданных |
+| [apk-01214-ds-field-alias](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01214-ds-field-alias.html) | Псевдоним поля запроса динамического списка совпадает с именем класса объектов метаданных |
 | [apk-01216-query-field-alias](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01216-query-field-alias.html) | Псевдоним в тексте запроса совпадает с именем класса объектов метаданных |
 | [apk-01219-cut-comments-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01219-cut-comments-format.html) | Оформление вырезаемых служебных комментариев |
 | [begin-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/begin-transaction.html) | После начала транзакции отсуствует блок Попытка-Исключение |

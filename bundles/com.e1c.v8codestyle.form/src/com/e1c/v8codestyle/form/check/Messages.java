@@ -23,6 +23,9 @@ final class Messages
     extends NLS
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
+    public static String ApkDsFieldAliasCheck_Alias_matches_metadata_class_name;
+    public static String ApkDsFieldAliasCheck_description;
+    public static String ApkDsFieldAliasCheck_title;
     public static String DataCompositionConditionalAppearanceUseCheck_description;
     public static String DataCompositionConditionalAppearanceUseCheck_Form;
     public static String DataCompositionConditionalAppearanceUseCheck_Form_attribute;
