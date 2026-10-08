@@ -96,6 +96,9 @@ final class Messages
     public static String MdAttributeHintMatchSynonymCheck_description;
     public static String MdAttributeHintMatchSynonymCheck_message;
     public static String MdAttributeHintMatchSynonymCheck_title;
+    public static String MdTemplateLangPostfixCheck_title;
+    public static String MdTemplateLangPostfixCheck_description;
+    public static String MdTemplateLangPostfixCheck_Template_name_without_language_postfix;
     static
     {
         // initialize resource bundle
