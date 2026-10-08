@@ -834,6 +834,10 @@ final class Messages
     public static String ApkMainLanguageCodeCheck_description;
     public static String ApkMainLanguageCodeCheck_Use_MainLanguageCode_function;
 
+    public static String ApkUpdateHandlerVersionFormatCheck_title;
+    public static String ApkUpdateHandlerVersionFormatCheck_description;
+    public static String ApkUpdateHandlerVersionFormatCheck_Invalid_version_format;
+
     static
     {
         // initialize resource bundle
