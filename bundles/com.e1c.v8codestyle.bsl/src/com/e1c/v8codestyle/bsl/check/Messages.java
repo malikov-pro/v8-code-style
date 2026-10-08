@@ -830,6 +830,15 @@ final class Messages
     public static String ApkNoExclamationMarkCheck_description;
     public static String ApkNoExclamationMarkCheck_Message_contains_exclamation_mark;
 
+    public static String ApkLinuxUnsupportedCheck_title;
+    public static String ApkLinuxUnsupportedCheck_description;
+    public static String ApkLinuxUnsupportedCheck_Unsupported_construct;
+
+    public static String ApkPathSeparatorMaskCheck_title;
+    public static String ApkPathSeparatorMaskCheck_description;
+    public static String ApkPathSeparatorMaskCheck_Manual_path_separator;
+    public static String ApkPathSeparatorMaskCheck_Manual_all_files_mask;
+
     static
     {
         // initialize resource bundle
