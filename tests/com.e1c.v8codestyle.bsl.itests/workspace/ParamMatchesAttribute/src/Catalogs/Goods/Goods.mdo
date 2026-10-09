@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4b60db1e-b6bb-44f6-9edb-4f015da96c5a">
+  <producedTypes>
+    <objectType typeId="1aa73587-c6db-410d-a3c9-9cfda43f979b" valueTypeId="c180f865-9669-4dae-b17a-c24c0761dc26"/>
+    <refType typeId="7f3d957d-9e8a-4a2c-9d75-a0f8d28e1077" valueTypeId="f6279357-c2fc-4198-bba2-32ade51ca617"/>
+    <selectionType typeId="7b9543bb-3747-4b25-bd88-23d83b761259" valueTypeId="5d59f7e3-574a-4d2d-bc23-7183783e8e69"/>
+    <listType typeId="c2ac2a7d-7e29-4d3a-9f0e-2bbf4a1f2d64" valueTypeId="8f5db476-1f3e-4a2c-a1d7-9c2f0b3e6a85"/>
+    <managerType typeId="d0b1e4f2-9c3a-4b7d-8e26-5a0c1d9f7b34" valueTypeId="a6c3f821-4d7b-4e0a-b8f5-3e2c7a1d6b90"/>
+  </producedTypes>
+  <name>Goods</name>
+  <synonym>
+    <key>en</key>
+    <value>Goods</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Goods.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.Goods.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="0f4e7a9b-2c3d-4e8f-9a1b-6d5c8e7f2a34">
+    <name>Barcode</name>
+    <synonym>
+      <key>en</key>
+      <value>Barcode</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>13</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d">
+    <producedTypes>
+      <objectType typeId="2f3e4d5c-6b7a-4c89-9d0e-1f2a3b4c5d6e" valueTypeId="7a8b9c0d-1e2f-4a3b-8c4d-5e6f7a8b9c0d"/>
+      <rowType typeId="b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e" valueTypeId="6f7a8b9c-0d1e-4f2a-3b4c-5d6e7f8a9b0c"/>
+    </producedTypes>
+    <name>Remains</name>
+    <synonym>
+      <key>en</key>
+      <value>Remains</value>
+    </synonym>
+    <attributes uuid="1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d">
+      <name>Quantity</name>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>

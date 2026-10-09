@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 255
+Общее количество проверок 1С:Стандарты разработки V8: 256
 
 - form: 12
 - md: 40
-- bsl: 168
+- bsl: 169
 - ql: 11
 - right: 24
 
@@ -257,6 +257,7 @@
 | [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |
 | [unused-parameters](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unused-parameters.html) | Неиспользуемый параметр метода |
 | [up-1353-form-parameters-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1353-form-parameters-param.html) | Параметр метода модуля формы имеет имя «Параметры» |
+| [up-1354-param-matches-attribute](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1354-param-matches-attribute.html) | Имя параметра метода модуля объекта совпадает с именем реквизита или табличной части |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |

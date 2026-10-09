@@ -242,6 +242,7 @@ unknown-form-parameter-access
 unsafe-password-ib-storage
 unused-parameters
 up-1353-form-parameters-param
+up-1354-param-matches-attribute
 use-goto-operator
 use-non-recommended-method
 useless-ternary-operator

@@ -707,6 +707,10 @@
             category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.FormModuleParametersParameterCheck">
       </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ObjectModuleParameterMatchesAttributeCheck">
+      </check>
 </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
