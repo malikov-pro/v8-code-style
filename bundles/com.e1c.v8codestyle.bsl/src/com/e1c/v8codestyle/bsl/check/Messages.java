@@ -905,6 +905,23 @@ final class Messages
     public static String DeprecatedMethodReferencesMissingCheck_title;
     public static String DeprecatedMethodReferencesMissingCheck_description;
     public static String DeprecatedMethodReferencesMissingCheck_Deprecated_references_missing;
+    public static String DfioNonExistentSubsystemCheck_title;
+
+    public static String DfioNonExistentSubsystemCheck_description;
+
+    public static String DfioNonExistentSubsystemCheck_Subsystem_does_not_exist;
+
+    public static String DfioNoConsumerCheck_title;
+
+    public static String DfioNoConsumerCheck_description;
+
+    public static String DfioNoConsumerCheck_No_consumer_comment;
+
+    public static String DfioNotInPublicRegionCheck_title;
+
+    public static String DfioNotInPublicRegionCheck_description;
+
+    public static String DfioNotInPublicRegionCheck_Region_is_not_inside_public;
 
     static
     {
