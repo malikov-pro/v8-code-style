@@ -873,6 +873,12 @@ final class Messages
     public static String ApkConstantWriteInTransactionCheck_description;
     public static String ApkConstantWriteInTransactionCheck_Constant_write_in_transaction;
 
+    public static String UnreachableCodeLiteCheck_title;
+
+    public static String UnreachableCodeLiteCheck_description;
+
+    public static String UnreachableCodeLiteCheck_Unreachable_code;
+
     static
     {
         // initialize resource bundle

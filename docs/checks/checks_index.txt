@@ -241,6 +241,7 @@ typed-value-adding-to-untyped-collection
 unknown-form-parameter-access
 unsafe-password-ib-storage
 unused-parameters
+up-1068-unreachable-code
 use-goto-operator
 use-non-recommended-method
 useless-ternary-operator
