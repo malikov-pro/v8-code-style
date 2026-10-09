@@ -41,6 +41,18 @@ final class Messages
     public static String JoinToSubQuery_description;
     public static String JoinToSubQuery_Query_join_to_sub_query_not_allowed;
     public static String JoinToSubQuery_title;
+    public static String FullOuterJoinCheck_description;
+    public static String FullOuterJoinCheck_Full_outer_join_not_allowed;
+    public static String FullOuterJoinCheck_title;
+    public static String LogicalOrInJoinCheck_description;
+    public static String LogicalOrInJoinCheck_Logical_OR_in_join_condition_not_allowed;
+    public static String LogicalOrInJoinCheck_title;
+    public static String LogicalOrInWhereCheck_description;
+    public static String LogicalOrInWhereCheck_Logical_OR_in_where_section_not_allowed;
+    public static String LogicalOrInWhereCheck_title;
+    public static String AssignAliasFieldsCheck_description;
+    public static String AssignAliasFieldsCheck_Select_field_must_have_an_alias;
+    public static String AssignAliasFieldsCheck_title;
     public static String QueryArithmeticCastCheck_Average_function_result_should_be_cast_to_number;
     public static String QueryArithmeticCastCheck_description;
     public static String QueryArithmeticCastCheck_Division_result_should_be_cast_to_number;
