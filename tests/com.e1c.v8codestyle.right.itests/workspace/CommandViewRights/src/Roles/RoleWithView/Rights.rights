@@ -38,4 +38,18 @@
 			<value>false</value>
 		</right>
 	</object>
+	<object>
+		<name>Catalog.ViewNoReadCatalog</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ViewNoReadCatalog.Command.ViewNoReadCommand</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
 </Rights>

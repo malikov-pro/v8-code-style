@@ -12,4 +12,5 @@
   <content>Catalog.ReadNoViewCatalog</content>
   <content>Catalog.NoCmdViewCatalog</content>
   <content>Catalog.FullCmdCatalog</content>
+  <content>Catalog.ViewNoReadCatalog</content>
 </mdclass:Subsystem>

@@ -41,6 +41,7 @@
   <roles>Role.RoleWithView</roles>
   <roles>Role.RoleWithoutView</roles>
   <roles>Role.RoleWithRead</roles>
+  <roles>Role.RoleCmdOnly</roles>
   <subsystems>Subsystem.Ci</subsystems>
   <subsystems>Subsystem.NoCi</subsystems>
   <catalogs>Catalog.GrantedCatalog</catalogs>
@@ -49,4 +50,5 @@
   <catalogs>Catalog.ReadNoViewCatalog</catalogs>
   <catalogs>Catalog.NoCmdViewCatalog</catalogs>
   <catalogs>Catalog.FullCmdCatalog</catalogs>
+  <catalogs>Catalog.ViewNoReadCatalog</catalogs>
 </mdclass:Configuration>
