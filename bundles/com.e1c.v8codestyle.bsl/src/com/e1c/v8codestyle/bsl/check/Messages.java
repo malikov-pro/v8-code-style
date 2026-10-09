@@ -897,6 +897,12 @@ final class Messages
     public static String UnreachableCodeLiteCheck_description;
 
     public static String UnreachableCodeLiteCheck_Unreachable_code;
+    public static String NstrUnprintableCharsCheck_title;
+    public static String NstrUnprintableCharsCheck_description;
+    public static String NstrUnprintableCharsCheck_Unprintable_character_at_edge;
+    public static String NotifyChangedHandlerExistCheck_title;
+    public static String NotifyChangedHandlerExistCheck_description;
+    public static String NotifyChangedHandlerExistCheck_Handler_does_not_exist;
 
     public static String DeprecatedMethodReferencesObsoleteCheck_title;
     public static String DeprecatedMethodReferencesObsoleteCheck_description;
