@@ -245,6 +245,7 @@ unused-parameters
 up-1068-unreachable-code
 up-1353-form-parameters-param
 up-1354-param-matches-attribute
+up-633-dfio-no-consumer
 up-634-dfio-nonexistent-subsystem
 up-644-command-view-rights
 up-746-nstr-syntax

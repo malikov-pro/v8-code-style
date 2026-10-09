@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 263
+Общее количество проверок 1С:Стандарты разработки V8: 264
 
 - form: 13
 - md: 40
-- bsl: 174
+- bsl: 175
 - ql: 11
 - right: 25
 
@@ -260,6 +260,7 @@
 | [up-1068-unreachable-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1068-unreachable-code.html) | Недостижимый код |
 | [up-1353-form-parameters-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1353-form-parameters-param.html) | Параметр метода модуля формы имеет имя «Параметры» |
 | [up-1354-param-matches-attribute](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1354-param-matches-attribute.html) | Имя параметра метода модуля объекта совпадает с именем реквизита или табличной части |
+| [up-633-dfio-no-consumer](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-633-dfio-no-consumer.html) | В области «ДляВызоваИзДругихПодсистем» не указана подсистема-потребитель |
 | [up-634-dfio-nonexistent-subsystem](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-634-dfio-nonexistent-subsystem.html) | Несуществующая подсистема в комментарии области «ДляВызоваИзДругихПодсистем» |
 | [up-644-command-view-rights](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-644-command-view-rights.html) | Ни в одной роли нет права на просмотр команды |
 | [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |

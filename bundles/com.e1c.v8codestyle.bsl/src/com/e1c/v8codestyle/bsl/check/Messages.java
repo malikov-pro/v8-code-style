@@ -904,6 +904,12 @@ final class Messages
 
     public static String DfioNonExistentSubsystemCheck_Subsystem_does_not_exist;
 
+    public static String DfioNoConsumerCheck_title;
+
+    public static String DfioNoConsumerCheck_description;
+
+    public static String DfioNoConsumerCheck_No_consumer_comment;
+
     static
     {
         // initialize resource bundle

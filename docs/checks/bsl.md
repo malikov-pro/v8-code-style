@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 174
+Общее количество проверок: 175
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -165,6 +165,7 @@
 | [up-1068-unreachable-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1068-unreachable-code.html) | Недостижимый код |
 | [up-1353-form-parameters-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1353-form-parameters-param.html) | Параметр метода модуля формы имеет имя «Параметры» |
 | [up-1354-param-matches-attribute](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1354-param-matches-attribute.html) | Имя параметра метода модуля объекта совпадает с именем реквизита или табличной части |
+| [up-633-dfio-no-consumer](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-633-dfio-no-consumer.html) | В области «ДляВызоваИзДругихПодсистем» не указана подсистема-потребитель |
 | [up-634-dfio-nonexistent-subsystem](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-634-dfio-nonexistent-subsystem.html) | Несуществующая подсистема в комментарии области «ДляВызоваИзДругихПодсистем» |
 | [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |
 | [up-757-lock-without-lock-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-757-lock-without-lock-call.html) | Блокировка данных создана, но не заблокирована |
