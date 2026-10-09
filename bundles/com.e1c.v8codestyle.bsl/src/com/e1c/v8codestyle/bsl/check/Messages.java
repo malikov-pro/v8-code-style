@@ -898,6 +898,12 @@ final class Messages
 
     public static String UnreachableCodeLiteCheck_Unreachable_code;
 
+    public static String DfioNonExistentSubsystemCheck_title;
+
+    public static String DfioNonExistentSubsystemCheck_description;
+
+    public static String DfioNonExistentSubsystemCheck_Subsystem_does_not_exist;
+
     static
     {
         // initialize resource bundle
