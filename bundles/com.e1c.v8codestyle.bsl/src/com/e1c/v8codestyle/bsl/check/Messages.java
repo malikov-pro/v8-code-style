@@ -873,6 +873,10 @@ final class Messages
     public static String ApkConstantWriteInTransactionCheck_description;
     public static String ApkConstantWriteInTransactionCheck_Constant_write_in_transaction;
 
+    public static String LockWithoutLockCall_title;
+    public static String LockWithoutLockCall_description;
+    public static String LockWithoutLockCall_Lock_method_is_not_called;
+
     static
     {
         // initialize resource bundle
