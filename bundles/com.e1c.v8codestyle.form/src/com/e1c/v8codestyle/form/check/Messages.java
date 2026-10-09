@@ -71,6 +71,9 @@ final class Messages
     public static String FormItemFrenchQuotesCheck_Commands;
     public static String FormItemFrenchQuotesCheck_Title;
     public static String FormItemFrenchQuotesCheck_Tooltip;
+    public static String FormItemExplicitColorCheck_title;
+    public static String FormItemExplicitColorCheck_description;
+    public static String FormItemExplicitColorCheck_message;
     static
     {
         // initialize resource bundle

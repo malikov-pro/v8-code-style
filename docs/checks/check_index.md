@@ -1,9 +1,9 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 254
+Общее количество проверок 1С:Стандарты разработки V8: 255
 
-- form: 12
+- form: 13
 - md: 40
 - bsl: 167
 - ql: 11
@@ -256,6 +256,7 @@
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
 | [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |
 | [unused-parameters](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unused-parameters.html) | Неиспользуемый параметр метода |
+| [up-765-explicit-color](../../../com.e1c.v8codestyle.form/check.descriptions/ru/up-765-explicit-color.html) | Конкретное значение цвета в элементах формы |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |

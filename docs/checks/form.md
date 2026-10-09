@@ -1,7 +1,7 @@
 # Проверки Форм 1С
 
 
-Общее количество проверок: 12
+Общее количество проверок: 13
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -17,3 +17,4 @@
 | [form-list-ref-use-always-flag-disabled](../../../com.e1c.v8codestyle.form/check.descriptions/ru/form-list-ref-use-always-flag-disabled.html) | У реквизита "Ссылка" динамического списка выключен признак "Использовать всегда" |
 | [form-list-ref-user-visibility-enabled](../../../com.e1c.v8codestyle.form/check.descriptions/ru/form-list-ref-user-visibility-enabled.html) | У поля "Ссылка" таблицы динамического списка не отключена пользовательская видимость |
 | [input-field-list-choice-mode](../../../com.e1c.v8codestyle.form/check.descriptions/ru/input-field-list-choice-mode.html) | В полях форм со списками выбора следует всегда устанавливать свойство **РежимВыбораИзСписка** в значение Истина |
+| [up-765-explicit-color](../../../com.e1c.v8codestyle.form/check.descriptions/ru/up-765-explicit-color.html) | Конкретное значение цвета в элементах формы |
