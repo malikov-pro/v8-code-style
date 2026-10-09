@@ -250,6 +250,7 @@ up-746-nstr-syntax
 up-747-nstr-unprintable-chars
 up-757-lock-without-lock-call
 up-765-explicit-color
+up-781-notify-handler-nonexistent
 use-goto-operator
 use-non-recommended-method
 useless-ternary-operator

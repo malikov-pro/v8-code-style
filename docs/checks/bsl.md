@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 174
+Общее количество проверок: 175
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -168,6 +168,7 @@
 | [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |
 | [up-747-nstr-unprintable-chars](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-747-nstr-unprintable-chars.html) | Локализуемая строка начинается или заканчивается непечатаемым символом |
 | [up-757-lock-without-lock-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-757-lock-without-lock-call.html) | Блокировка данных создана, но не заблокирована |
+| [up-781-notify-handler-nonexistent](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-781-notify-handler-nonexistent.html) | Несуществующая процедура в параметре обработчика оповещения |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |
