@@ -873,6 +873,10 @@ final class Messages
     public static String ApkConstantWriteInTransactionCheck_description;
     public static String ApkConstantWriteInTransactionCheck_Constant_write_in_transaction;
 
+    public static String FormModuleParametersParameterCheck_title;
+    public static String FormModuleParametersParameterCheck_description;
+    public static String FormModuleParametersParameterCheck_Parameter_named_Parameters;
+
     static
     {
         // initialize resource bundle
