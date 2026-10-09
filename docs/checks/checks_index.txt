@@ -247,6 +247,7 @@ up-1353-form-parameters-param
 up-1354-param-matches-attribute
 up-644-command-view-rights
 up-746-nstr-syntax
+up-747-nstr-unprintable-chars
 up-757-lock-without-lock-call
 up-765-explicit-color
 use-goto-operator

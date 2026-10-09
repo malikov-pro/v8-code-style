@@ -897,6 +897,9 @@ final class Messages
     public static String UnreachableCodeLiteCheck_description;
 
     public static String UnreachableCodeLiteCheck_Unreachable_code;
+    public static String NstrUnprintableCharsCheck_title;
+    public static String NstrUnprintableCharsCheck_description;
+    public static String NstrUnprintableCharsCheck_Unprintable_character_at_edge;
 
     static
     {
