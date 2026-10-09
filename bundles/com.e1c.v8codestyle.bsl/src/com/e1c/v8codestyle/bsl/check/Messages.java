@@ -889,6 +889,9 @@ final class Messages
     public static String ObjectModuleParameterMatchesAttributeCheck_title;
     public static String ObjectModuleParameterMatchesAttributeCheck_description;
     public static String ObjectModuleParameterMatchesAttributeCheck_Parameter_matches_attribute;
+    public static String NstrSyntaxCheck_title;
+    public static String NstrSyntaxCheck_description;
+    public static String NstrSyntaxCheck_String_does_not_match_pattern;
 
     static
     {
