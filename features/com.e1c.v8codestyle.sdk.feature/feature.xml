@@ -10,7 +10,7 @@
    
     Contributors:
         1C-Soft LLC - initial API and implementation
- --><feature id="com.e1c.v8codestyle.sdk" label="%featureName" license-feature="org.eclipse.license" license-feature-version="2.0.2.qualifier" provider-name="%providerName" version="0.8.1.qualifier">
+ --><feature id="com.e1c.v8codestyle.sdk" label="%featureName" license-feature="org.eclipse.license" license-feature-version="2.0.2.qualifier" provider-name="%providerName" version="0.9.0.qualifier">
   <description>
       %description
    </description>
@@ -21,5 +21,5 @@
       %license
    </license>
   <includes id="com.e1c.v8codestyle.feature.source" optional="true" version="0.8.0.qualifier"/>
-  <includes id="com.e1c.v8codestyle.feature" version="0.8.1.qualifier"/>
+  <includes id="com.e1c.v8codestyle.feature" version="0.9.0.qualifier"/>
 </feature>

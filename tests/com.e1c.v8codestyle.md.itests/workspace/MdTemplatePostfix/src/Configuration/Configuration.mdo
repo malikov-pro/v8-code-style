@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4a71c03c-91c9-423b-a13d-51a2645a826c">
+  <name>MdTemplatePostfix</name>
+  <synonym>
+    <key>en</key>
+    <value>MdTemplatePostfix configuration</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="34afad48-1f3f-45da-abe3-8b220406b392"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="02d6d505-f57a-4a9c-a3a9-8ed18c9d7d79"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="38b32177-ae6e-4fb2-90a3-faf3e26fefd2"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="49565194-6a6b-409d-ad69-1b8b8853021d"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="cc331ca6-1c8d-4bac-89f7-3e6cdb6f51f0"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="7fc9a49f-7452-454d-b709-2f0fe25cdd5d"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="bd078cf6-d2a0-49b8-a89d-33e3089a4f8d"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="83aa3f0e-d98d-4b0f-9822-968b1b4a9a90">
+    <name>English</name>
+    <synonym>
+      <key>ru</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>ru</languageCode>
+  </languages>
+  <commonTemplates>CommonTemplate.БинарныйМакет</commonTemplates>
+  <commonTemplates>CommonTemplate.БинарныйМакет_ru</commonTemplates>
+  <commonTemplates>CommonTemplate.HtmlМакет</commonTemplates>
+  <commonTemplates>CommonTemplate.HtmlМакет_ru</commonTemplates>
+  <commonTemplates>CommonTemplate.ТекстовыйМакет</commonTemplates>
+  <catalogs>Catalog.ВладелецМакетов</catalogs>
+</mdclass:Configuration>

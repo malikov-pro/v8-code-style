@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="49f70b9c-d0c0-4b3c-87fb-0606ed496c4c">
+  <name>NestedRoot</name>
+  <synonym>
+    <key>en</key>
+    <value>Nested root section</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <subsystems>NestedCi</subsystems>
+  <subsystems>NestedNoCi</subsystems>
+</mdclass:Subsystem>

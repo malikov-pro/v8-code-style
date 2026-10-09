@@ -18,15 +18,20 @@ import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.PROCEDURE;
 import static com._1c.g5.v8.dt.mcore.McorePackage.Literals.NAMED_ELEMENT__NAME;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.StringJoiner;
 import java.util.TreeSet;
+import java.util.regex.Pattern;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 import com._1c.g5.v8.dt.bsl.model.BinaryExpression;
 import com._1c.g5.v8.dt.bsl.model.BinaryOperation;
@@ -134,6 +139,7 @@ public class EventDataExchangeLoadCheck
         final boolean checkAtBeginning = parameters.getBoolean(PARAM_CHECK_AT_BEGINNING);
 
         Set<String> checkCalls = getCheckCalls(parameters);
+        Pattern loadTextPattern = buildLoadTextPattern(checkCalls);
         for (Statement methodStatement : statements)
         {
             if (monitor.isCanceled())
@@ -141,18 +147,28 @@ public class EventDataExchangeLoadCheck
                 return;
             }
 
-            if (methodStatement instanceof IfStatement
-                && isDataExchangeLoadChecking((IfStatement)methodStatement, checkCalls))
+            if (methodStatement instanceof IfStatement)
             {
-                if (hasReturnStatement((IfStatement)methodStatement, monitor))
+                IfStatement ifStatement = (IfStatement)methodStatement;
+                if (isDataExchangeLoadChecking(ifStatement, checkCalls))
                 {
+                    if (hasReturnStatement(ifStatement, monitor))
+                    {
+                        return;
+                    }
+
+                    resultAceptor.addIssue(Messages.EventDataExchangeLoadCheck_No_return_in__DataExchange_Load__checking,
+                        ifStatement.getIfPart(), CONDITIONAL__PREDICATE);
+
                     return;
                 }
-
-                resultAceptor.addIssue(Messages.EventDataExchangeLoadCheck_No_return_in__DataExchange_Load__checking,
-                    ((IfStatement)methodStatement).getIfPart(), CONDITIONAL__PREDICATE);
-
-                return;
+                if (containsDataExchangeLoadChecking(ifStatement, checkCalls, loadTextPattern))
+                {
+                    // Обращение к "ОбменДанными.Загрузка" в любом условии
+                    // (отрицание, часть сложного выражения, ветка ИначеЕсли)
+                    // считается проверкой (issue #791)
+                    return;
+                }
             }
             if (checkAtBeginning)
             {
@@ -224,6 +240,68 @@ public class EventDataExchangeLoadCheck
         }
 
         return false;
+    }
+
+    /**
+     * Обращение к «ОбменДанными.Загрузка» (или к функции из списка параметра)
+     * встречается в предикате любого условия «Если»/«ИначеЕсли» — в любой
+     * форме: прямое обращение, отрицание, часть сложного выражения
+     * (issue #791). Разрешённое по AST обращение проверяется по имени;
+     * дополнительно предикат проверяется по тексту, так как у отрицания
+     * «Не ...» операнд может не разрешиться в модели.
+     */
+    private boolean containsDataExchangeLoadChecking(IfStatement statement, Set<String> checkCalls,
+        Pattern loadTextPattern)
+    {
+        List<Conditional> conditionals = new ArrayList<>(statement.getElsIfParts());
+        conditionals.add(statement.getIfPart());
+        for (Conditional conditional : conditionals)
+        {
+            Expression predicate = conditional.getPredicate();
+            if (predicate == null)
+            {
+                continue;
+            }
+            for (DynamicFeatureAccess featureAccess : EcoreUtil2.getAllContentsOfType(predicate,
+                DynamicFeatureAccess.class))
+            {
+                if (checkDynamicFeatureAccess(featureAccess, checkCalls))
+                {
+                    return true;
+                }
+            }
+            if (loadTextPattern.matcher(textOf(predicate)).find())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Регулярное выражение по списку проверяемых обращений
+     * («ОбменДанными.Загрузка», «DataExchange.Load», функции из параметра):
+     * пробелы вокруг точки допускаются, регистр не значим.
+     */
+    private static Pattern buildLoadTextPattern(Set<String> checkCalls)
+    {
+        StringJoiner alternatives = new StringJoiner("|"); //$NON-NLS-1$
+        for (String checkCall : checkCalls)
+        {
+            String[] parts = checkCall.split("\\.", -1); //$NON-NLS-1$
+            StringJoiner partsJoiner = new StringJoiner("\\s*\\.\\s*"); //$NON-NLS-1$
+            for (String part : parts)
+            {
+                partsJoiner.add(Pattern.quote(part));
+            }
+            alternatives.add(partsJoiner.toString());
+        }
+        return Pattern.compile(alternatives.toString(), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+    }
+
+    private static String textOf(Expression expression)
+    {
+        return NodeModelUtils.findActualNodeFor(expression).getText();
     }
 
     private boolean hasReturnStatement(IfStatement statement, IProgressMonitor monitor)

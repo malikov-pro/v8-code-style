@@ -96,6 +96,29 @@ final class Messages
     public static String MdAttributeHintMatchSynonymCheck_description;
     public static String MdAttributeHintMatchSynonymCheck_message;
     public static String MdAttributeHintMatchSynonymCheck_title;
+    public static String MdTemplateLangPostfixCheck_title;
+    public static String MdTemplateLangPostfixCheck_description;
+    public static String MdTemplateLangPostfixCheck_Template_name_without_language_postfix;
+    public static String MdTemplateEncodingCheck_title;
+    public static String MdTemplateEncodingCheck_description;
+    public static String MdTemplateEncodingCheck_Non_utf8_encoding;
+    public static String MdCommandNameLengthCheck_title;
+    public static String MdCommandNameLengthCheck_description;
+    public static String MdCommandNameLengthCheck_message;
+    public static String MdCommandNameLengthCheck_parameter;
+    public static String MdSubsystemMembershipCheck_title;
+    public static String MdSubsystemMembershipCheck_description;
+    public static String MdSubsystemMembershipCheck_message;
+
+    public static String MdObjectChoiceHistoryOnInputCheck_title;
+    public static String MdObjectChoiceHistoryOnInputCheck_description;
+    public static String MdObjectChoiceHistoryOnInputCheck_History_is_not_dont_use;
+    public static String MdObjectChoiceHistoryOnInputCheck_Handler_requires_dont_use;
+
+    public static String CommonPictureDuplicateCheck_title;
+    public static String CommonPictureDuplicateCheck_description;
+    public static String CommonPictureDuplicateCheck_Duplicate_pictures;
+
     static
     {
         // initialize resource bundle

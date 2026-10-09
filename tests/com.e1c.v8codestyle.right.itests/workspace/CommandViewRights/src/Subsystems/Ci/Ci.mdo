@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3fbd9c7e-30ae-4e2d-8f34-4621ecb0f70d">
+  <name>Ci</name>
+  <synonym>
+    <key>en</key>
+    <value>Command interface section</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <content>Catalog.GrantedCatalog</content>
+  <content>Catalog.OrphanCatalog</content>
+  <content>Catalog.ReadNoViewCatalog</content>
+  <content>Catalog.NoCmdViewCatalog</content>
+  <content>Catalog.FullCmdCatalog</content>
+  <content>Catalog.ViewNoReadCatalog</content>
+</mdclass:Subsystem>

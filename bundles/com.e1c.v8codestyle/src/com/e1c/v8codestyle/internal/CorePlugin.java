@@ -20,6 +20,8 @@ import org.osgi.framework.BundleContext;
 import com._1c.g5.wiring.InjectorAwareServiceRegistrator;
 import com._1c.g5.wiring.ServiceInitialization;
 import com.e1c.v8codestyle.IProjectOptionManager;
+import com.e1c.v8codestyle.check.CheckSettingsDeduplicator;
+import com.e1c.v8codestyle.check.QlHubAutoEnabler;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -39,6 +41,10 @@ public class CorePlugin
     private Injector injector;
 
     private InjectorAwareServiceRegistrator registrator;
+
+    private volatile CheckSettingsDeduplicator checkSettingsDeduplicator;
+
+    private volatile QlHubAutoEnabler qlHubAutoEnabler;
 
     /**
      * Returns the shared instance
@@ -126,6 +132,31 @@ public class CorePlugin
             {
                 logError(e);
             }
+            try
+            {
+                CheckSettingsDeduplicator deduplicator = getInjector()
+                    .getInstance(CheckSettingsDeduplicator.class);
+                deduplicator.start();
+                checkSettingsDeduplicator = deduplicator;
+            }
+            catch (Exception e)
+            {
+                // Check repository service is not available: deduplication
+                // stays off, the previous behaviour is kept.
+                logError(e);
+            }
+            try
+            {
+                QlHubAutoEnabler hubEnabler = getInjector().getInstance(QlHubAutoEnabler.class);
+                hubEnabler.start(bundleContext);
+                qlHubAutoEnabler = hubEnabler;
+            }
+            catch (Exception e)
+            {
+                // Check repository service is not available: the hub stays
+                // disabled, the previous behaviour is kept.
+                logError(e);
+            }
         });
     }
 
@@ -136,6 +167,34 @@ public class CorePlugin
     @Override
     public void stop(BundleContext bundleContext) throws Exception
     {
+        CheckSettingsDeduplicator deduplicator = checkSettingsDeduplicator;
+        checkSettingsDeduplicator = null;
+        if (deduplicator != null)
+        {
+            try
+            {
+                deduplicator.stop();
+            }
+            catch (Exception e)
+            {
+                logError(e);
+            }
+        }
+
+        QlHubAutoEnabler hubEnabler = qlHubAutoEnabler;
+        qlHubAutoEnabler = null;
+        if (hubEnabler != null)
+        {
+            try
+            {
+                hubEnabler.stop();
+            }
+            catch (Exception e)
+            {
+                logError(e);
+            }
+        }
+
         registrator.deactivateManagedServices(this);
         registrator.unregisterServices();
 

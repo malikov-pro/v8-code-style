@@ -124,6 +124,12 @@ final class Messages
 
     public static String ApkYoLetterCheck_Yo_letter_is_not_allowed_in_module_text;
 
+    public static String ApkZeroDocumentFieldsCheck_title;
+
+    public static String ApkZeroDocumentFieldsCheck_description;
+
+    public static String ApkZeroDocumentFieldsCheck_Zero_document_field;
+
     public static String ApkSumInQueryCheck_title;
 
     public static String ApkSumInQueryCheck_description;
@@ -419,6 +425,12 @@ final class Messages
     public static String QueryInLoop_Loop_has_method_with_query__0;
     public static String QueryInLoop_Loop_has_query;
     public static String QueryInLoop_title;
+
+    public static String CreateQueryInCycle_title;
+
+    public static String CreateQueryInCycle_description;
+
+    public static String CreateQueryInCycle_execute_query_in_loop;
 
     public static String SelfAssignCheck_Title;
 
@@ -797,6 +809,24 @@ final class Messages
     public static String OverridableModuleTopRegionCheck_title;
     public static String OverridableModuleTopRegionCheck_description;
     public static String OverridableModuleTopRegionCheck_Region_is_not_allowed;
+
+    public static String OverridableModuleRedundantCodeCheck_title;
+    public static String OverridableModuleRedundantCodeCheck_description;
+    public static String OverridableModuleRedundantCodeCheck_Redundant_code;
+
+    public static String OverridableModuleProcedureNameCheck_title;
+    public static String OverridableModuleProcedureNameCheck_description;
+    public static String OverridableModuleProcedureNameCheck_Method_name_does_not_match;
+
+    public static String OverridableModuleParametersCheck_title;
+    public static String OverridableModuleParametersCheck_description;
+    public static String OverridableModuleParametersCheck_Parameters_count_does_not_match;
+    public static String OverridableModuleParametersCheck_Parameters_order_does_not_match;
+
+    public static String OverridableModuleSeeCommentCheck_title;
+    public static String OverridableModuleSeeCommentCheck_description;
+    public static String OverridableModuleSeeCommentCheck_Missing_see_comment;
+
     public static String TypeByMetadataNameCheck_title;
     public static String TypeByMetadataNameCheck_description;
     public static String TypeByMetadataNameCheck_Type_determined_by_metadata_name;
@@ -829,6 +859,75 @@ final class Messages
     public static String ApkNoExclamationMarkCheck_title;
     public static String ApkNoExclamationMarkCheck_description;
     public static String ApkNoExclamationMarkCheck_Message_contains_exclamation_mark;
+
+    public static String ApkLinuxUnsupportedCheck_title;
+    public static String ApkLinuxUnsupportedCheck_description;
+    public static String ApkLinuxUnsupportedCheck_Unsupported_construct;
+
+    public static String ApkPathSeparatorMaskCheck_title;
+    public static String ApkPathSeparatorMaskCheck_description;
+    public static String ApkPathSeparatorMaskCheck_Manual_path_separator;
+    public static String ApkPathSeparatorMaskCheck_Manual_all_files_mask;
+    public static String ApkMainLanguageCodeCheck_title;
+    public static String ApkMainLanguageCodeCheck_description;
+    public static String ApkMainLanguageCodeCheck_Use_MainLanguageCode_function;
+
+    public static String ApkUpdateHandlerVersionFormatCheck_title;
+    public static String ApkUpdateHandlerVersionFormatCheck_description;
+    public static String ApkUpdateHandlerVersionFormatCheck_Invalid_version_format;
+    public static String ApkConstantWriteInTransactionCheck_title;
+    public static String ApkConstantWriteInTransactionCheck_description;
+    public static String ApkConstantWriteInTransactionCheck_Constant_write_in_transaction;
+
+    public static String LockWithoutLockCall_title;
+    public static String LockWithoutLockCall_description;
+    public static String LockWithoutLockCall_Lock_method_is_not_called;
+    public static String FormModuleParametersParameterCheck_title;
+    public static String FormModuleParametersParameterCheck_description;
+    public static String FormModuleParametersParameterCheck_Parameter_named_Parameters;
+
+    public static String ObjectModuleParameterMatchesAttributeCheck_title;
+    public static String ObjectModuleParameterMatchesAttributeCheck_description;
+    public static String ObjectModuleParameterMatchesAttributeCheck_Parameter_matches_attribute;
+    public static String NstrSyntaxCheck_title;
+    public static String NstrSyntaxCheck_description;
+    public static String NstrSyntaxCheck_String_does_not_match_pattern;
+    public static String UnreachableCodeLiteCheck_title;
+
+    public static String UnreachableCodeLiteCheck_description;
+
+    public static String UnreachableCodeLiteCheck_Unreachable_code;
+    public static String NstrUnprintableCharsCheck_title;
+    public static String NstrUnprintableCharsCheck_description;
+    public static String NstrUnprintableCharsCheck_Unprintable_character_at_edge;
+    public static String NotifyChangedHandlerExistCheck_title;
+    public static String NotifyChangedHandlerExistCheck_description;
+    public static String NotifyChangedHandlerExistCheck_Handler_does_not_exist;
+
+    public static String DeprecatedMethodReferencesObsoleteCheck_title;
+    public static String DeprecatedMethodReferencesObsoleteCheck_description;
+    public static String DeprecatedMethodReferencesObsoleteCheck_Deprecated_references_deprecated;
+
+    public static String DeprecatedMethodReferencesMissingCheck_title;
+    public static String DeprecatedMethodReferencesMissingCheck_description;
+    public static String DeprecatedMethodReferencesMissingCheck_Deprecated_references_missing;
+    public static String DfioNonExistentSubsystemCheck_title;
+
+    public static String DfioNonExistentSubsystemCheck_description;
+
+    public static String DfioNonExistentSubsystemCheck_Subsystem_does_not_exist;
+
+    public static String DfioNoConsumerCheck_title;
+
+    public static String DfioNoConsumerCheck_description;
+
+    public static String DfioNoConsumerCheck_No_consumer_comment;
+
+    public static String DfioNotInPublicRegionCheck_title;
+
+    public static String DfioNotInPublicRegionCheck_description;
+
+    public static String DfioNotInPublicRegionCheck_Region_is_not_inside_public;
 
     static
     {

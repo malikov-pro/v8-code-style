@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:SessionParameter xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6a55de75-56b5-4a9a-8d1a-21cce9658970">
+  <name>LonelyParameter</name>
+  <synonym>
+    <key>en</key>
+    <value>LonelyParameter</value>
+  </synonym>
+</mdclass:SessionParameter>

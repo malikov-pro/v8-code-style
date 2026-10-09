@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5e08a6db-b5cd-499d-a9e6-6d7be6f7b8e0">
+  <producedTypes>
+    <objectType typeId="274c60f5-9d99-4a51-8ca8-1ac27e94c34a" valueTypeId="293a95a2-7b3e-4d4c-9d5a-4bfa6ab0d3f1"/>
+    <refType typeId="d1c10f4a-0d54-4d09-a51e-6b25e6b3a6df" valueTypeId="86282a14-cbe3-4562-8f47-e7c2c9a86cc5"/>
+    <selectionType typeId="a2996c1b-e4aa-4e93-b477-0b8ad8ef18ac" valueTypeId="9dcd0f74-0d18-4ea6-b1ba-91e89fc9e21a"/>
+    <listType typeId="d81a6ac8-e10e-46ee-9e15-48e21cb10c19" valueTypeId="b1a38f52-876e-4fe2-a39e-973c9b64d5c7"/>
+    <managerType typeId="d19b956f-93bb-4d3c-86a5-c10b8b0a7d28" valueTypeId="99a08a92-fd68-4c00-92be-cf2d1ab28a30"/>
+  </producedTypes>
+  <name>NoCiCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>No ci catalog</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+  <inputByString>Catalog.NoCiCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.NoCiCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <commands uuid="2e6d1d7d-a51c-4795-8a2f-37b26a4a2df5">
+    <name>HiddenCommand</name>
+    <synonym>
+      <key>en</key>
+      <value>Hidden command</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Catalog>

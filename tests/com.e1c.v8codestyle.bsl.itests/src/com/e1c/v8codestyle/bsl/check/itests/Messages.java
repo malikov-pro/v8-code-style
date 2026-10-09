@@ -470,6 +470,8 @@ final class Messages
 
     public static String LockOutOfTry_Method_lock_out_of_try;
 
+    public static String LockWithoutLockCall_Lock_method_is_not_called;
+
     public static String OptionalFormParameterAccessCheck_description;
 
     public static String OptionalFormParameterAccessCheck_Optional_form_parameter_access;

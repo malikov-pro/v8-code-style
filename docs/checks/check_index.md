@@ -1,13 +1,13 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 238
+Общее количество проверок 1С:Стандарты разработки V8: 274
 
-- form: 11
-- md: 35
-- bsl: 157
+- form: 14
+- md: 42
+- bsl: 180
 - ql: 11
-- right: 24
+- right: 27
 
 
 
@@ -22,6 +22,7 @@
 | [apk-00142-query-cast-string](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00142-query-cast-string.html) | Использование ВЫРАЗИТЬ(... КАК СТРОКА(N)) в запросах |
 | [apk-00150-registrar-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00150-registrar-access.html) | Самодостаточность регистров: обращение к реквизиту «Регистратор» |
 | [apk-00156-delete-synonym-prefix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00156-delete-synonym-prefix.html) | Префикс «Удалить» в имени устаревшего объекта не согласован с префиксом «(не используется)» в синониме |
+| [apk-00157-constants-write-in-txn](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00157-constants-write-in-txn.html) | Запись константы выполняется в транзакции |
 | [apk-00184-scheduled-jobs-manager](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00184-scheduled-jobs-manager.html) | Обращение в программном коде к менеджеру регламентных заданий |
 | [apk-00205-query-empty-result](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00205-query-empty-result.html) | Пустота результата запроса проверяется выборкой вместо метода Пустой |
 | [apk-00212-query-arithmetic-cast](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00212-query-arithmetic-cast.html) | Округление результатов арифметических операций в запросах |
@@ -31,20 +32,37 @@
 | [apk-00334-postings-write-order](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00334-postings-write-order.html) | Явная запись движений документа в обработчике проведения |
 | [apk-00350-reuse-module-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00350-reuse-module-return.html) | Бессмысленные методы в общем модуле с повторным использованием |
 | [apk-00429-query-allowed-keyword](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00429-query-allowed-keyword.html) | Использование ключевого слова РАЗРЕШЕННЫЕ в запросах |
+| [apk-00458-subsystem-membership](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00458-subsystem-membership.html) | Объект не входит ни в одну подсистему |
 | [apk-00460-non-deprecated-functions](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-deprecated-functions.html) | Неустаревшая функция в переопределяемом общем модуле |
 | [apk-00460-non-export-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-non-export-methods.html) | Неэкспортный метод в переопределяемом общем модуле |
+| [apk-00460-parameters-match](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-parameters-match.html) | Параметры вызываемого метода не совпадают с параметрами переопределяемой процедуры |
+| [apk-00460-procedure-name-match](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-procedure-name-match.html) | Имя вызываемого метода не совпадает с именем переопределяемой процедуры |
+| [apk-00460-redundant-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-redundant-code.html) | Лишний код в процедуре переопределяемого общего модуля |
+| [apk-00460-see-comment](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-see-comment.html) | У вызываемого метода нет комментария «См. Модуль.Процедура» |
 | [apk-00460-top-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00460-top-region.html) | Внешняя область, кроме «ПрограммныйИнтерфейс», в переопределяемом общем модуле |
+| [apk-00505-template-lang-postfix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00505-template-lang-postfix.html) | Постфикс кода основного языка в имени двоичного макета или HTML-макета |
+| [apk-00506-template-encoding](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00506-template-encoding.html) | Кодировка, отличная от utf-8, в текстовом или HTML-макете |
+| [apk-00528-command-name-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00528-command-name-length.html) | Длина названия команды больше 38 символов |
+| [apk-00576-zero-document-fields](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00576-zero-document-fields.html) | Нулевые поля табличного документа |
+| [apk-00616-input-history-dont-use](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00616-input-history-dont-use.html) | Свойство «История выбора при вводе» не равно «Не использовать» |
+| [apk-00617-form-readonly-elements](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-00617-form-readonly-elements.html) | Свойства поля формы для объектов с отключённой историей выбора при вводе |
 | [apk-00714-no-you-pronoun](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00714-no-you-pronoun.html) | В сообщениях не употребляются местоимения «Вы», «Вас» и пр. |
 | [apk-00715-no-exclamation-mark](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00715-no-exclamation-mark.html) | Сообщения не должны содержать восклицательных знаков |
+| [apk-01146-duplicate-pictures](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-01146-duplicate-pictures.html) | Общие картинки с одинаковым содержимым |
 | [apk-01149-file-global-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01149-file-global-methods.html) | Использование методов глобального контекста для работы с файлами |
+| [apk-01167-path-separator-mask](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01167-path-separator-mask.html) | Разделитель пути и маска всех файлов указаны вручную |
 | [apk-01171-string-concat-in-loop](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01171-string-concat-in-loop.html) | Массовая конкатенация строк в цикле |
 | [apk-01179-obsolete-object-module](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01179-obsolete-object-module.html) | Код в модуле устаревшего объекта метаданных |
+| [apk-01190-update-version-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01190-update-version-format.html) | Неверный формат версии в обработчике обновления ИБ |
 | [apk-01192-summa-in-query](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01192-summa-in-query.html) | Функция СУММА() с числовым операндом в запросах в текстах модулей |
 | [apk-01194-no-french-quotes](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01194-no-french-quotes.html) | Французские кавычки «ёлочки» в интерфейсных текстах |
 | [apk-01195-french-quotes-form](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01195-french-quotes-form.html) | Французские кавычки «ёлочки» в элементах форм |
 | [apk-01196-french-quotes-md](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-01196-french-quotes-md.html) | Французские кавычки «ёлочки» в свойствах объектов метаданных |
+| [apk-01205-main-language-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01205-main-language-code.html) | Код основного языка получается через Метаданные.ОсновнойЯзык |
+| [apk-01214-ds-field-alias](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01214-ds-field-alias.html) | Псевдоним поля запроса динамического списка совпадает с именем класса объектов метаданных |
 | [apk-01216-query-field-alias](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01216-query-field-alias.html) | Псевдоним в тексте запроса совпадает с именем класса объектов метаданных |
 | [apk-01219-cut-comments-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01219-cut-comments-format.html) | Оформление вырезаемых служебных комментариев |
+| [apk-01364-linux-unsupported](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01364-linux-unsupported.html) | Методы и объекты, не поддерживаемые ОС Linux |
 | [begin-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/begin-transaction.html) | После начала транзакции отсуствует блок Попытка-Исключение |
 | [bsl-canonical-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-canonical-pragma.html) | Аннотация написана канонически |
 | [bsl-nstr-string-literal-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-nstr-string-literal-format.html) | НСтр формат строкового литерала |
@@ -68,6 +86,7 @@
 | [common-module-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-type.html) | Общий модуль имеет некорректный тип |
 | [configuration-data-lock-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/configuration-data-lock-mode.html) | Режим блокировки данных конфигурации |
 | [constructor-function-return-section](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/constructor-function-return-section.html) | Секция возвращаемого значения функции-конструктора данных |
+| [create-query-in-cycle](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/create-query-in-cycle.html) | Создание или выполнение запроса в цикле |
 | [cyclomatic-complexity](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/cyclomatic-complexity.html) | Цикломатическая сложность метода выше допустимой |
 | [data-composition-conditional-appearance-use](../../../com.e1c.v8codestyle.form/check.descriptions/ru/data-composition-conditional-appearance-use.html) | Условное оформление в формах |
 | [data-composition-variant-name-default](../../../com.e1c.v8codestyle.form/check.descriptions/ru/data-composition-variant-name-default.html) | Проверка имени варианта отчета |
@@ -240,6 +259,23 @@
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
 | [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |
 | [unused-parameters](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unused-parameters.html) | Неиспользуемый параметр метода |
+| [up-1068-unreachable-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1068-unreachable-code.html) | Недостижимый код |
+| [up-1353-form-parameters-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1353-form-parameters-param.html) | Параметр метода модуля формы имеет имя «Параметры» |
+| [up-1354-param-matches-attribute](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1354-param-matches-attribute.html) | Имя параметра метода модуля объекта совпадает с именем реквизита или табличной части |
+| [up-632-dfio-not-in-public](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-632-dfio-not-in-public.html) | Область «ДляВызоваИзДругихПодсистем» не входит в область «ПрограммныйИнтерфейс» |
+| [up-633-dfio-no-consumer](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-633-dfio-no-consumer.html) | В области «ДляВызоваИзДругихПодсистем» не указана подсистема-потребитель |
+| [up-634-dfio-nonexistent-subsystem](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-634-dfio-nonexistent-subsystem.html) | Несуществующая подсистема в комментарии области «ДляВызоваИзДругихПодсистем» |
+| [up-644-command-view-rights](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-644-command-view-rights.html) | Ни в одной роли нет права на просмотр команды |
+| [up-645-command-view-without-read](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-645-command-view-without-read.html) | Есть право на просмотр команды, но нет прав на чтение или просмотр объекта |
+| [up-646-command-read-without-view](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-646-command-read-without-view.html) | Есть право на чтение или просмотр объекта, но нет права на просмотр команды |
+| [up-701-required-roles](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-701-required-roles.html) | Отсутствует обязательная роль |
+| [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |
+| [up-747-nstr-unprintable-chars](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-747-nstr-unprintable-chars.html) | Локализуемая строка начинается или заканчивается непечатаемым символом |
+| [up-757-lock-without-lock-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-757-lock-without-lock-call.html) | Блокировка данных создана, но не заблокирована |
+| [up-765-explicit-color](../../../com.e1c.v8codestyle.form/check.descriptions/ru/up-765-explicit-color.html) | Конкретное значение цвета в элементах формы |
+| [up-768-obsolete-refs-missing](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-768-obsolete-refs-missing.html) | Устаревшая процедура (функция) ссылается на несуществующую процедуру (функцию) |
+| [up-769-obsolete-refs-obsolete](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-769-obsolete-refs-obsolete.html) | Устаревшая процедура (функция) ссылается на другую устаревшую процедуру (функцию) |
+| [up-781-notify-handler-nonexistent](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-781-notify-handler-nonexistent.html) | Несуществующая процедура в параметре обработчика оповещения |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |

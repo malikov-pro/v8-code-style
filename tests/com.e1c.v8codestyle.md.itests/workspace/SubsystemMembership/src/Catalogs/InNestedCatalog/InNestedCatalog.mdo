@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="58362e08-3961-4733-9d3f-1f4e44b7bb19">
+  <producedTypes>
+    <objectType typeId="f623bef0-82ab-479f-94d8-942976ddf9d1" valueTypeId="4bba06b9-13c7-4251-b737-2219bab094c3"/>
+    <refType typeId="a66921c1-cfbd-4aa6-a32a-e5dd16d69f22" valueTypeId="3443f565-ef3e-4e89-8477-2ab5ed29c4ac"/>
+    <selectionType typeId="f96305e1-e7ef-4714-94b8-7a0b7c7f7797" valueTypeId="94d78560-436e-4764-ba1f-0886da004a6e"/>
+    <listType typeId="bffd9170-9992-4dc5-a9df-501fd42bff10" valueTypeId="d91135ce-31b6-45c2-8e89-61aad14fdddd"/>
+    <managerType typeId="bd36efd5-1ce2-4792-965d-b941b3c9bf15" valueTypeId="8e269f95-5b64-4331-8840-7af52f781152"/>
+  </producedTypes>
+  <name>InNestedCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>InNestedCatalog</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+  <inputByString>Catalog.InNestedCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.InNestedCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

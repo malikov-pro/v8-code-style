@@ -66,6 +66,18 @@
             category="com.e1c.v8codestyle.form"
             class="com.e1c.v8codestyle.internal.form.ExecutableExtensionFactory:com.e1c.v8codestyle.form.check.FormItemFrenchQuotesCheck">
       </check>
+      <check
+            category="com.e1c.v8codestyle.form"
+            class="com.e1c.v8codestyle.internal.form.ExecutableExtensionFactory:com.e1c.v8codestyle.form.check.ApkDsFieldAliasCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.form"
+            class="com.e1c.v8codestyle.internal.form.ExecutableExtensionFactory:com.e1c.v8codestyle.form.check.FormItemExplicitColorCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.form"
+            class="com.e1c.v8codestyle.internal.form.ExecutableExtensionFactory:com.e1c.v8codestyle.form.check.ApkChoiceHistoryFieldButtonsCheck">
+      </check>
    </extension>
    <extension
          point="com.e1c.g5.v8.dt.check.fixes">

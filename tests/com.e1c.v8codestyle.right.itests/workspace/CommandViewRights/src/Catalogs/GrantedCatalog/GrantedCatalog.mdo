@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4ac53e42-cb33-4b17-9ffe-e8e8ad5b05ae">
+  <producedTypes>
+    <objectType typeId="c1e97a52-4bd1-4b02-9d0f-1a4d903fb0c1" valueTypeId="6e14b96e-3574-4e07-9a46-3f2c3e02a1c1"/>
+    <refType typeId="f02a3b7a-4a46-4a26-8fa4-3ad1c74f0d0a" valueTypeId="ba939e79-77d2-497f-8f0a-4e39fa4b93b0"/>
+    <selectionType typeId="8b60ee2c-9f6f-44a0-8714-92e63da42135" valueTypeId="dd96b47d-4c98-4a6e-b6a5-c89da44b7d21"/>
+    <listType typeId="a2b1a30e-6e6a-4f3f-9ea2-8b9056c7b3a2" valueTypeId="07e2b83a-04d7-4525-8b1a-4e3a44a90bb5"/>
+    <managerType typeId="2d95c40c-3a4c-4f28-a55a-90e10f4a4c40" valueTypeId="5a30c1ad-3ac5-4ea8-8c1e-1c67f57e2b60"/>
+  </producedTypes>
+  <name>GrantedCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>Granted catalog</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+  <inputByString>Catalog.GrantedCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.GrantedCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <commands uuid="9a30c9c1-4a44-4d35-a33e-59e4dd99a9a2">
+    <name>GrantedCommand</name>
+    <synonym>
+      <key>en</key>
+      <value>Granted command</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Catalog>

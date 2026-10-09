@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4d1e7244-20e1-4958-a2c5-f169affd9a00">
+  <name>RootNoCi</name>
+  <synonym>
+    <key>en</key>
+    <value>Root no command interface section</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>false</includeInCommandInterface>
+  <content>Catalog.RootNoCiCatalog</content>
+</mdclass:Subsystem>

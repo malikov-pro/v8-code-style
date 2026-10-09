@@ -39,4 +39,8 @@
     <languageCode>en</languageCode>
   </languages>
   <commonModules>CommonModule.OverridableModule</commonModules>
+  <commonModules>CommonModule.BaseLibraryModule</commonModules>
+  <commonModules>CommonModule.DocumentedLibraryModule</commonModules>
+  <commonModules>CommonModule.WrongCommentLibraryModule</commonModules>
+  <commonModules>CommonModule.Common</commonModules>
 </mdclass:Configuration>

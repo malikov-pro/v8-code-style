@@ -1,7 +1,7 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 35
+Общее количество проверок: 42
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -11,6 +11,12 @@
 | [apk-00139-string-attr-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00139-string-attr-length.html) | У реквизита строкового типа допустимая длина фиксированная |
 | [apk-00141-unlimited-string](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00141-unlimited-string.html) | Реквизит строкового типа неограниченной длины |
 | [apk-00156-delete-synonym-prefix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00156-delete-synonym-prefix.html) | Префикс «Удалить» в имени устаревшего объекта не согласован с префиксом «(не используется)» в синониме |
+| [apk-00458-subsystem-membership](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00458-subsystem-membership.html) | Объект не входит ни в одну подсистему |
+| [apk-00505-template-lang-postfix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00505-template-lang-postfix.html) | Постфикс кода основного языка в имени двоичного макета или HTML-макета |
+| [apk-00506-template-encoding](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00506-template-encoding.html) | Кодировка, отличная от utf-8, в текстовом или HTML-макете |
+| [apk-00528-command-name-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00528-command-name-length.html) | Длина названия команды больше 38 символов |
+| [apk-00616-input-history-dont-use](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00616-input-history-dont-use.html) | Свойство «История выбора при вводе» не равно «Не использовать» |
+| [apk-01146-duplicate-pictures](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-01146-duplicate-pictures.html) | Общие картинки с одинаковым содержимым |
 | [apk-01196-french-quotes-md](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-01196-french-quotes-md.html) | Французские кавычки «ёлочки» в свойствах объектов метаданных |
 | [common-module-name-cached](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-cached.html) | Общий модуль с повторно используемыми значениями |
 | [common-module-name-client](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-client.html) | Клиентский общий модуль должен оканчиваться на суффикс Клиент |
@@ -40,3 +46,4 @@
 | [scheduled-job-periodicity-too-short](../../../com.e1c.v8codestyle.md/check.descriptions/ru/scheduled-job-periodicity-too-short.html) | Периодичность выполнения регламентного задания меньше одной минуты. |
 | [subsystem-synonym-too-long](../../../com.e1c.v8codestyle.md/check.descriptions/ru/subsystem-synonym-too-long.html) | Длина названия раздела превышает 35 символов |
 | [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |
+| [up-701-required-roles](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-701-required-roles.html) | Отсутствует обязательная роль |

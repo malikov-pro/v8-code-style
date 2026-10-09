@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fc6704e3-747a-41ea-95f9-8bc3b010f779">
+  <name>CommandNameLength</name>
+  <synonym>
+    <key>en</key>
+    <value>Command name length</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="63199552-d7ff-4dd2-8ec0-9c671d767389"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="fe7740ae-2828-41de-9763-9de9738be4c5"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="0a5d9358-80ee-4e08-945d-37d577dd1c57"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="074fcb65-b8eb-46b1-8ecb-5f67221b1285"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="7b3be413-6ac8-44c9-861b-ba8b07883e4d"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="e6a4e1c6-b6fa-403d-a0ca-cdc2839537fc"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="0a56e919-b1a7-49b6-9d4d-b0ec7897a236"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="393f37c6-2ac6-47ac-b944-a479b39aecb7">
+    <name>English</name>
+    <synonym>
+      <key>en</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>en</languageCode>
+  </languages>
+  <subsystems>Subsystem.Ci</subsystems>
+  <subsystems>Subsystem.NoCi</subsystems>
+  <subsystems>Subsystem.RootNoCi</subsystems>
+  <subsystems>Subsystem.NestedRoot</subsystems>
+  <catalogs>Catalog.CiCatalog</catalogs>
+  <catalogs>Catalog.NoCiCatalog</catalogs>
+  <catalogs>Catalog.NestedCiCatalog</catalogs>
+  <catalogs>Catalog.NestedNoCiCatalog</catalogs>
+  <catalogs>Catalog.RootNoCiCatalog</catalogs>
+  <catalogs>Catalog.LonelyCatalog</catalogs>
+  <commonCommands>CommonCommand.LongCommonCommand</commonCommands>
+  <commonCommands>CommonCommand.NoCiCommonCommand</commonCommands>
+  <commonCommands>CommonCommand.CommonCommandWithAVeryLongNameWithoutSynonym</commonCommands>
+</mdclass:Configuration>
