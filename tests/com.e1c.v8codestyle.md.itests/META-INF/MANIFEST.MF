@@ -15,4 +15,5 @@ Import-Package: com._1c.g5.v8.bm.integration;version="[11.0.0,13.0.0)",
  com.e1c.g5.v8.dt.check.settings;version="[4.0.0,5.0.0)",
  com.e1c.g5.v8.dt.testing.check;version="[1.0.0,2.0.0)",
  org.junit;version="[4.13.0,5.0.0)"
-Require-Bundle: org.eclipse.core.resources;bundle-version="[3.13.0,4.0.0)"
+Require-Bundle: org.eclipse.core.resources;bundle-version="[3.13.0,4.0.0)",
+ com.e1c.v8codestyle;bundle-version="[0.8.1,1.0.0)"

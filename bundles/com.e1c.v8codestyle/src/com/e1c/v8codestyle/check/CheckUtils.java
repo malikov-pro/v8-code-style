@@ -47,6 +47,54 @@ public final class CheckUtils
     /** The default value of enable all common sense check. */
     public static final boolean PREF_DEFAULT_COMMON_CHECKS = true;
 
+    /** The key for preferences store the state of auto-disabling checks superseded by finer substituting checks. */
+    public static final String PREF_KEY_DEDUP_SUBSTITUTED_CHECKS = "dedupSubstitutedChecks"; //$NON-NLS-1$
+
+    /** The default value of the deduplication: off, check settings are never changed implicitly. */
+    public static final boolean PREF_DEFAULT_DEDUP_SUBSTITUTED_CHECKS = false;
+
+    /**
+     * Checks if auto-disabling of checks superseded by finer substituting
+     * checks (deduplication, see {@link CheckSettingsDeduplicator}) is
+     * enabled for the project.
+     *
+     * @param project the project, cannot be {@code null}.
+     * @return true, if the deduplication is enabled
+     */
+    public static boolean isDedupSubstitutedChecksEnable(IProject project)
+    {
+        ProjectScope scope = new ProjectScope(project);
+        IScopeContext[] contexts =
+            new IScopeContext[] { scope, InstanceScope.INSTANCE, ConfigurationScope.INSTANCE, DefaultScope.INSTANCE };
+
+        return Platform.getPreferencesService()
+            .getBoolean(PREF_QUALIFIER, PREF_KEY_DEDUP_SUBSTITUTED_CHECKS, PREF_DEFAULT_DEDUP_SUBSTITUTED_CHECKS,
+                contexts);
+    }
+
+    /**
+     * Sets whether auto-disabling of checks superseded by finer substituting
+     * checks (deduplication) is enabled for the project.
+     *
+     * @param project the project, cannot be {@code null}.
+     * @param value the value
+     */
+    public static void setDedupSubstitutedChecksEnable(IProject project, boolean value)
+    {
+        ProjectScope projectScope = new ProjectScope(project);
+        IEclipsePreferences prefs = projectScope.getNode(PREF_QUALIFIER);
+
+        prefs.putBoolean(PREF_KEY_DEDUP_SUBSTITUTED_CHECKS, value);
+        try
+        {
+            prefs.flush();
+        }
+        catch (BackingStoreException e)
+        {
+            CorePlugin.logError(e);
+        }
+    }
+
     /**
      * Checks if the standard checks enable by default for the installation.
      *

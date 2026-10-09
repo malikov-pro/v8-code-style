@@ -115,6 +115,21 @@
 5. Таблица пересечений: статья v8std → проверка v8-cs ↔ код LS ↔ (будущее)
    проверка АПК. Каталоги обеих сторон уже есть.
 
+**Реализация дедупликации (09.10)**: `CheckSettingsDeduplicator` +
+`CheckSubstitutionRegistry` в `com.e1c.v8codestyle.check`. Слушатель
+`ICheckSettingsChangeListener` стартует из `CorePlugin` в фазе
+`ServiceInitialization` (после готовности сервисов). Триггер — событие, где
+изменился UID **точной** проверки пары; состояния обеих проверок
+перечитываются из репозитория (событию не доверяем). Гейт — преференс
+проекта `dedupSubstitutedChecks` (`CheckUtils.PREF_KEY_DEDUP_SUBSTITUTED_CHECKS`,
+дефолт off; страница настроек НЕ сделана — включать программно, UI в бэклог).
+Пары: apk-00126-md-no-yo-letter → mdo-ru-name-unallowed-letter;
+create-query-in-cycle → query-in-loop. Событие только по грубой проверке
+(включили сознательно) ничего не делает. Itest:
+`CheckSettingsDeduplicatorTest` (md.itests) — прямой вызов `onChange`
+против реального репозитория (события фреймворка асинхронны — file-watcher
+профиля, ждать их в тесте флакочно).
+
 ## Роль проекта: сборщик проверок
 
 Форк — единый дом проверок: сюда переносятся проверки BSL LS (при этом

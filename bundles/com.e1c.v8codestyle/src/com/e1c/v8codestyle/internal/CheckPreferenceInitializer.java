@@ -32,6 +32,8 @@ public class CheckPreferenceInitializer
         DefaultScope.INSTANCE.getNode(CheckUtils.PREF_QUALIFIER)
             .putBoolean(CheckUtils.PREF_KEY_COMMON_CHECKS, CheckUtils.PREF_DEFAULT_COMMON_CHECKS);
         DefaultScope.INSTANCE.getNode(CheckUtils.PREF_QUALIFIER)
+            .putBoolean(CheckUtils.PREF_KEY_DEDUP_SUBSTITUTED_CHECKS, CheckUtils.PREF_DEFAULT_DEDUP_SUBSTITUTED_CHECKS);
+        DefaultScope.INSTANCE.getNode(CheckUtils.PREF_QUALIFIER)
             .putBoolean(CheckUtils.PREF_KEY_STANDARD_CHECKS, CheckUtils.PREF_DEFAULT_STANDARD_CHECKS);
     }
 
