@@ -43,6 +43,8 @@ public class CorePlugin
 
     private volatile CheckSettingsDeduplicator checkSettingsDeduplicator;
 
+    private volatile QlHubAutoEnabler qlHubAutoEnabler;
+
     /**
      * Returns the shared instance
      *
@@ -142,6 +144,18 @@ public class CorePlugin
                 // stays off, the previous behaviour is kept.
                 logError(e);
             }
+            try
+            {
+                QlHubAutoEnabler hubEnabler = getInjector().getInstance(QlHubAutoEnabler.class);
+                hubEnabler.start(bundleContext);
+                qlHubAutoEnabler = hubEnabler;
+            }
+            catch (Exception e)
+            {
+                // Check repository service is not available: the hub stays
+                // disabled, the previous behaviour is kept.
+                logError(e);
+            }
         });
     }
 
@@ -159,6 +173,20 @@ public class CorePlugin
             try
             {
                 deduplicator.stop();
+            }
+            catch (Exception e)
+            {
+                logError(e);
+            }
+        }
+
+        QlHubAutoEnabler hubEnabler = qlHubAutoEnabler;
+        qlHubAutoEnabler = null;
+        if (hubEnabler != null)
+        {
+            try
+            {
+                hubEnabler.stop();
             }
             catch (Exception e)
             {

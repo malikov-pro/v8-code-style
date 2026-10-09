@@ -26,6 +26,7 @@ final class Messages
     public static String CommonChecksProjectOptionProvider_presentation;
     public static String StandardChecksProjectOptionProvider_description;
     public static String StandardChecksProjectOptionProvider_presentation;
+    public static String QlHubAutoEnabler_sweep_job_name;
     static
     {
         // initialize resource bundle
