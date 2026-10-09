@@ -876,6 +876,13 @@ final class Messages
     public static String LockWithoutLockCall_title;
     public static String LockWithoutLockCall_description;
     public static String LockWithoutLockCall_Lock_method_is_not_called;
+    public static String FormModuleParametersParameterCheck_title;
+    public static String FormModuleParametersParameterCheck_description;
+    public static String FormModuleParametersParameterCheck_Parameter_named_Parameters;
+
+    public static String ObjectModuleParameterMatchesAttributeCheck_title;
+    public static String ObjectModuleParameterMatchesAttributeCheck_description;
+    public static String ObjectModuleParameterMatchesAttributeCheck_Parameter_matches_attribute;
 
     static
     {
