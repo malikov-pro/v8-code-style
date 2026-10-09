@@ -1,13 +1,13 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 254
+Общее количество проверок 1С:Стандарты разработки V8: 256
 
 - form: 12
 - md: 40
-- bsl: 167
+- bsl: 168
 - ql: 11
-- right: 24
+- right: 25
 
 
 
@@ -256,6 +256,8 @@
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
 | [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |
 | [unused-parameters](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unused-parameters.html) | Неиспользуемый параметр метода |
+| [up-644-command-view-rights](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-644-command-view-rights.html) | Ни в одной роли нет права на просмотр команды |
+| [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |

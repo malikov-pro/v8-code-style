@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f7a5df51-5bcf-4a95-9c9e-4b26a4e1a1e3">
+  <producedTypes>
+    <objectType typeId="7f5f5b56-4bf6-4a24-8ad1-4d33b1e2c2f1" valueTypeId="4ba4c9a7-7ec5-4096-9b25-11e39f4ea0e1"/>
+    <refType typeId="bbd8e5ae-35e0-4b6c-8fb4-1a11a3e09b70" valueTypeId="9b8e1c73-30cd-49f1-a1aa-08a06f047d55"/>
+    <selectionType typeId="0a03df3f-61e2-4dcb-bd84-8e21d566f42c" valueTypeId="f12e8b1c-57f1-4ef0-8e20-c2ba61a4d5d5"/>
+    <listType typeId="e6ba19d4-6e02-4bb4-92e6-2f528ce4a34a" valueTypeId="6bd59a3b-55f8-4a10-89e2-8ee2ee21c9ba"/>
+    <managerType typeId="f2b41521-70e2-4d1a-9d0e-1b2abf6acfa1" valueTypeId="f28a8ec0-0d9c-4925-92e4-77c40171a95e"/>
+  </producedTypes>
+  <name>OrphanCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>Orphan catalog</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+  <inputByString>Catalog.OrphanCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.OrphanCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <commands uuid="603e6363-c4db-4035-944a-1a5db6ba6ca2">
+    <name>OrphanCommand</name>
+    <synonym>
+      <key>en</key>
+      <value>Orphan command</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Catalog>

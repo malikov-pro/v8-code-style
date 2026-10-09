@@ -241,6 +241,8 @@ typed-value-adding-to-untyped-collection
 unknown-form-parameter-access
 unsafe-password-ib-storage
 unused-parameters
+up-644-command-view-rights
+up-746-nstr-syntax
 use-goto-operator
 use-non-recommended-method
 useless-ternary-operator
