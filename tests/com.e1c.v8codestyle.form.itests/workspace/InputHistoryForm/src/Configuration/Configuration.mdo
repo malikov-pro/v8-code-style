@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7e0051f0-9bc9-4b4d-ad30-294e41ecc7f5">
+  <name>InputHistoryForm</name>
+  <synonym>
+    <key>en</key>
+    <value>Input history form</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="78565fe6-5d53-4450-b213-6ec0664c9a2e"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="085b5a6a-617a-4044-afb7-bb637577cc50"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="24afaa20-d41f-4272-a5f2-3677de8779ea"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="33e4c434-66c4-4b46-a8b1-1648f4abdecc"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="88b51979-091d-4125-a5ea-b0827d2b1624"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="29e8a78a-3513-4c49-ab1d-25a01777a4df"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="156f1f8b-0ae2-41d4-9c40-4437b44f64f2"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="ae33aa10-48b4-4e2e-bf45-5a1327fcb3fb"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="2e62be5e-af6b-4659-9e3f-0b179c2f1277"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="d2e2f82e-ebc3-405f-871f-214be7b4440e">
+    <name>English</name>
+    <synonym>
+      <key>en</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>en</languageCode>
+  </languages>
+  <languages uuid="85b0066a-aad1-45d6-8462-4c2c6bfcf4d4">
+    <name>Russian</name>
+    <synonym>
+      <key>en</key>
+      <value>Russian</value>
+    </synonym>
+    <languageCode>ru</languageCode>
+  </languages>
+  <catalogs>Catalog.Goods</catalogs>
+  <catalogs>Catalog.Partners</catalogs>
+  <catalogs>Catalog.Storages</catalogs>
+  <commonForms>CommonForm.HistoryForm</commonForms>
+</mdclass:Configuration>

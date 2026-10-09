@@ -1,9 +1,9 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 262
+Общее количество проверок 1С:Стандарты разработки V8: 263
 
-- form: 13
+- form: 14
 - md: 40
 - bsl: 173
 - ql: 11
@@ -45,6 +45,7 @@
 | [apk-00528-command-name-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00528-command-name-length.html) | Длина названия команды больше 38 символов |
 | [apk-00576-zero-document-fields](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00576-zero-document-fields.html) | Нулевые поля табличного документа |
 | [apk-00616-input-history-dont-use](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00616-input-history-dont-use.html) | Свойство «История выбора при вводе» не равно «Не использовать» |
+| [apk-00617-form-readonly-elements](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-00617-form-readonly-elements.html) | Свойства поля формы для объектов с отключённой историей выбора при вводе |
 | [apk-00714-no-you-pronoun](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00714-no-you-pronoun.html) | В сообщениях не употребляются местоимения «Вы», «Вас» и пр. |
 | [apk-00715-no-exclamation-mark](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00715-no-exclamation-mark.html) | Сообщения не должны содержать восклицательных знаков |
 | [apk-01149-file-global-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01149-file-global-methods.html) | Использование методов глобального контекста для работы с файлами |

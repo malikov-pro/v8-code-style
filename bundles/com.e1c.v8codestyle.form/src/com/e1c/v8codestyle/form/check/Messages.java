@@ -74,6 +74,9 @@ final class Messages
     public static String FormItemExplicitColorCheck_title;
     public static String FormItemExplicitColorCheck_description;
     public static String FormItemExplicitColorCheck_message;
+    public static String ApkChoiceHistoryFieldButtonsCheck_title;
+    public static String ApkChoiceHistoryFieldButtonsCheck_description;
+    public static String ApkChoiceHistoryFieldButtonsCheck_message;
     static
     {
         // initialize resource bundle
