@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 262
+Общее количество проверок 1С:Стандарты разработки V8: 263
 
 - form: 13
 - md: 40
-- bsl: 173
+- bsl: 174
 - ql: 11
 - right: 25
 
@@ -264,6 +264,7 @@
 | [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |
 | [up-757-lock-without-lock-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-757-lock-without-lock-call.html) | Блокировка данных создана, но не заблокирована |
 | [up-765-explicit-color](../../../com.e1c.v8codestyle.form/check.descriptions/ru/up-765-explicit-color.html) | Конкретное значение цвета в элементах формы |
+| [up-769-obsolete-refs-obsolete](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-769-obsolete-refs-obsolete.html) | Устаревшая процедура (функция) ссылается на другую устаревшую процедуру (функцию) |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |

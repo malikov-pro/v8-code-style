@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 173
+Общее количество проверок: 174
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -167,6 +167,7 @@
 | [up-1354-param-matches-attribute](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1354-param-matches-attribute.html) | Имя параметра метода модуля объекта совпадает с именем реквизита или табличной части |
 | [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |
 | [up-757-lock-without-lock-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-757-lock-without-lock-call.html) | Блокировка данных создана, но не заблокирована |
+| [up-769-obsolete-refs-obsolete](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-769-obsolete-refs-obsolete.html) | Устаревшая процедура (функция) ссылается на другую устаревшую процедуру (функцию) |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |
