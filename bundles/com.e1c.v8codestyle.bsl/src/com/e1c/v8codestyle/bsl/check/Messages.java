@@ -892,6 +892,11 @@ final class Messages
     public static String NstrSyntaxCheck_title;
     public static String NstrSyntaxCheck_description;
     public static String NstrSyntaxCheck_String_does_not_match_pattern;
+    public static String UnreachableCodeLiteCheck_title;
+
+    public static String UnreachableCodeLiteCheck_description;
+
+    public static String UnreachableCodeLiteCheck_Unreachable_code;
 
     static
     {
