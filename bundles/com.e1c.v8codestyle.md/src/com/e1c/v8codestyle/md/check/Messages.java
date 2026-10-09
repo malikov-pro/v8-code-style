@@ -118,6 +118,15 @@ final class Messages
     public static String CommonPictureDuplicateCheck_title;
     public static String CommonPictureDuplicateCheck_description;
     public static String CommonPictureDuplicateCheck_Duplicate_pictures;
+    public static String MdExtendedListPresentationEqualsCheck_title;
+    public static String MdExtendedListPresentationEqualsCheck_description;
+    public static String MdExtendedListPresentationEqualsCheck_message;
+    public static String MdExtendedObjectPresentationEqualsCheck_title;
+    public static String MdExtendedObjectPresentationEqualsCheck_description;
+    public static String MdExtendedObjectPresentationEqualsCheck_message;
+    public static String MdToolTipEmptyCheck_title;
+    public static String MdToolTipEmptyCheck_description;
+    public static String MdToolTipEmptyCheck_message;
 
     static
     {
