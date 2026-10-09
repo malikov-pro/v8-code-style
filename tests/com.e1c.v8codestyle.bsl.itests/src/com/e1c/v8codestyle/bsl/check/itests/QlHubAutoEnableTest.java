@@ -17,7 +17,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.eclipse.core.resources.IProject;
 import org.junit.Test;
@@ -26,11 +25,19 @@ import com._1c.g5.v8.dt.core.platform.IDtProject;
 import com.e1c.g5.v8.dt.check.settings.CheckUid;
 import com.e1c.g5.v8.dt.check.settings.ICheckSettings;
 import com.e1c.g5.v8.dt.testing.check.CheckTestBase;
+import com.e1c.v8codestyle.check.QlHubAutoEnabler;
 
 /**
- * Tests that the EDT {@code bsl-ql-hub} check is enabled automatically
- * for a project with untouched settings, and that an explicitly disabled
- * setting is never re-enabled (see {@code QlHubAutoEnabler}).
+ * Tests for {@link QlHubAutoEnabler} logic against the real check
+ * repository: {@link QlHubAutoEnabler#ensureEnabled(IProject)} enables the
+ * EDT {@code bsl-ql-hub} check for a project with untouched settings, and
+ * does not re-enable it after the user disables it explicitly (the
+ * once-per-project preference marker).
+ * <p>
+ * The background triggers of the enabler are disabled in test runtimes
+ * (system property {@code v8codestyle.qlHubAutoEnableDisabled}, see
+ * tests/pom.xml): their asynchronous enablement restarts project validation
+ * and races tests reading markers.
  *
  * @author malikov-pro
  */
@@ -44,87 +51,48 @@ public class QlHubAutoEnableTest
 
     private static final String HUB_PLUGIN_ID = "com.e1c.g5.v8.dt.bsl.check"; //$NON-NLS-1$
 
-    private static final long WAIT_MILLIS = TimeUnit.SECONDS.toMillis(90);
-
     /**
-     * A fresh project gets {@code bsl-ql-hub} enabled automatically; after
-     * the user disables it explicitly and reopens the project, the setting
-     * stays disabled.
+     * The enabler enables the hub for untouched settings once; an explicit
+     * user disable afterwards is never reverted.
      *
      * @throws Exception the exception
      */
     @Test
-    public void testHubAutoEnabledAndExplicitDisableRespected() throws Exception
-    {
-        IProject project = openProject();
-
-        long deadline = System.currentTimeMillis() + WAIT_MILLIS;
-        while (System.currentTimeMillis() < deadline)
-        {
-            ICheckSettings settings = hubSettings(project);
-            if (settings != null && settings.isEnabled())
-            {
-                break;
-            }
-            Thread.sleep(500);
-        }
-        ICheckSettings enabled = hubSettings(project);
-        assertNotNull("bsl-ql-hub settings must be available", enabled); //$NON-NLS-1$
-        assertTrue("bsl-ql-hub must be enabled automatically for untouched settings", enabled.isEnabled()); //$NON-NLS-1$
-
-        disableHub(project);
-        deadline = System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(15);
-        ICheckSettings afterDisable = hubSettings(project);
-        while (System.currentTimeMillis() < deadline && afterDisable != null && afterDisable.isEnabled())
-        {
-            Thread.sleep(500);
-            afterDisable = hubSettings(project);
-        }
-        assertNotNull("Settings must be available after explicit disable", afterDisable); //$NON-NLS-1$
-        assertFalse("Explicit disable must be applied", afterDisable.isEnabled()); //$NON-NLS-1$
-
-        // The explicit disable itself emits check settings events (profile
-        // store file change): the enabler must not revert the user choice.
-        // Give all async triggers their window before asserting.
-        deadline = System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(25);
-        ICheckSettings afterEvents = hubSettings(project);
-        while (System.currentTimeMillis() < deadline)
-        {
-            Thread.sleep(500);
-            afterEvents = hubSettings(project);
-            if (afterEvents != null && afterEvents.isEnabled())
-            {
-                break;
-            }
-        }
-        assertNotNull("bsl-ql-hub settings must be available", afterEvents); //$NON-NLS-1$
-        assertFalse("Explicitly disabled bsl-ql-hub must stay disabled", afterEvents.isEnabled()); //$NON-NLS-1$
-    }
-
-    private IProject openProject() throws Exception
-    {
-        IDtProject dtProject = openProjectAndWaitForValidationFinish(PROJECT_NAME);
+    public void testEnableOnceThenRespectExplicitDisable() throws Exception
+    {        IDtProject dtProject = openProjectAndWaitForValidationFinish(PROJECT_NAME);
         assertNotNull(dtProject);
-        return dtProject.getWorkspaceProject();
+        IProject project = dtProject.getWorkspaceProject();
+
+        QlHubAutoEnabler enabler = new QlHubAutoEnabler(checkRepository);
+        assertTrue("Fresh settings: the hub must be enabled", hubSettings(project).isDefault()); //$NON-NLS-1$
+        assertFalse(hubSettings(project).isEnabled());
+
+        enabler.ensureEnabled(project);
+        assertTrue("ensureEnabled must enable the hub for untouched settings", hubSettings(project).isEnabled()); //$NON-NLS-1$
+
+        // Idempotent: a repeated call changes nothing.
+        enabler.ensureEnabled(project);
+        assertTrue(hubSettings(project).isEnabled());
+
+        ICheckSettings settings = hubSettings(project);
+        settings.setEnabled(false);
+        checkRepository.applyChanges(List.of(settings), project);
+
+        // applyChanges updates the settings cache asynchronously.
+        long deadline = System.currentTimeMillis() + 15_000;
+        while (System.currentTimeMillis() < deadline && hubSettings(project).isEnabled())
+        {
+            Thread.sleep(500);
+        }
+        assertFalse("Explicit disable must be applied", hubSettings(project).isEnabled()); //$NON-NLS-1$
+
+        enabler.ensureEnabled(project);
+        assertFalse("Explicit user disable must never be reverted", hubSettings(project).isEnabled()); //$NON-NLS-1$
     }
 
     private ICheckSettings hubSettings(IProject project)
     {
-        try
-        {
-            return checkRepository.getSettings(new CheckUid(HUB_CHECK_ID, HUB_PLUGIN_ID), project);
-        }
-        catch (Exception e)
-        {
-            return null; // registry not ready yet
-        }
-    }
-
-    private void disableHub(IProject project)
-    {
-        ICheckSettings settings = hubSettings(project);
-        settings.setEnabled(false);
-        checkRepository.applyChanges(List.of(settings), project);
+        return checkRepository.getSettings(new CheckUid(HUB_CHECK_ID, HUB_PLUGIN_ID), project);
     }
 
 }
