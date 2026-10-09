@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="01283bd4-8c03-409a-9c22-465ba924cfae">
+  <producedTypes>
+    <objectType typeId="32830de4-f763-4524-b3c3-6d730b8a0a34" valueTypeId="79a9dbc4-71d9-4a3a-89f5-4e0244466f05"/>
+    <refType typeId="86611572-689c-42c1-a696-0053da10846b" valueTypeId="db249282-3184-4850-b045-864b6eaf806d"/>
+    <selectionType typeId="2b3081b4-4bea-4388-83fc-aef28a8b677f" valueTypeId="75b6f704-e058-4dfd-b0f8-aef26261fd1f"/>
+    <listType typeId="c28021ad-21e8-4b91-88fe-a73a87b350cd" valueTypeId="73af59e9-6f84-4110-879c-a7dae307ef6c"/>
+    <managerType typeId="5df34393-35e0-4127-8c73-96de6ab7aefc" valueTypeId="3b1cbbb7-d07b-4af0-8204-68d0f1f24909"/>
+  </producedTypes>
+  <name>TooltipCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>Tooltip catalog</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.TooltipCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.TooltipCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Code</name>
+    <synonym>
+      <key>en</key>
+      <value>Code</value>
+    </synonym>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Description</name>
+    <synonym>
+      <key>en</key>
+      <value>Description</value>
+    </synonym>
+    <toolTip>
+      <key>en</key>
+      <value>Name of the item for the user</value>
+    </toolTip>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <synonym>
+      <key>en</key>
+      <value>Ref</value>
+    </synonym>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <attributes uuid="17704a04-7f10-4d66-8b43-f493f44940c2">
+    <name>NoToolTipAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Exchange rate</value>
+    </synonym>
+  <type>
+    <types>String</types>
+    <stringQualifiers>
+      <length>10</length>
+    </stringQualifiers>
+  </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3559b038-34de-4eed-ac27-1b66d3790ef7">
+    <name>WithToolTipAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Official rate</value>
+    </synonym>
+    <toolTip>
+      <key>en</key>
+      <value>Official exchange rate</value>
+    </toolTip>
+  <type>
+    <types>String</types>
+    <stringQualifiers>
+      <length>10</length>
+    </stringQualifiers>
+  </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6758a359-ce6a-4aba-af8e-03040490387e">
+    <name>NoSynonymAttr</name>
+  <type>
+    <types>String</types>
+    <stringQualifiers>
+      <length>10</length>
+    </stringQualifiers>
+  </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="4c493914-056f-451d-bc18-7b020acd77ba">
+    <producedTypes>
+      <objectType typeId="377a1cf9-9e85-4c3d-910a-5a0a879fc9f4" valueTypeId="a386e020-d9c3-43c8-9f53-407e92260528"/>
+      <rowType typeId="a36b0673-3836-4915-9025-f1e5af2a5935" valueTypeId="2727a2c2-5189-4a40-8816-c48cdb3e7dd6"/>
+    </producedTypes>
+    <name>Goods</name>
+    <synonym>
+      <key>en</key>
+      <value>Goods</value>
+    </synonym>
+    <attributes uuid="d51f9b75-126c-43f4-b53d-fa3757933dd2">
+      <name>TsNoToolTipAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Price</value>
+    </synonym>
+  <type>
+    <types>String</types>
+    <stringQualifiers>
+      <length>10</length>
+    </stringQualifiers>
+  </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <dataHistory>Use</dataHistory>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>
