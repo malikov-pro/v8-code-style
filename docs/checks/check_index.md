@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 255
+Общее количество проверок 1С:Стандарты разработки V8: 256
 
 - form: 13
 - md: 40
-- bsl: 167
+- bsl: 168
 - ql: 11
 - right: 24
 
@@ -43,6 +43,7 @@
 | [apk-00505-template-lang-postfix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00505-template-lang-postfix.html) | Постфикс кода основного языка в имени двоичного макета или HTML-макета |
 | [apk-00506-template-encoding](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00506-template-encoding.html) | Кодировка, отличная от utf-8, в текстовом или HTML-макете |
 | [apk-00528-command-name-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00528-command-name-length.html) | Длина названия команды больше 38 символов |
+| [apk-00576-zero-document-fields](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00576-zero-document-fields.html) | Нулевые поля табличного документа |
 | [apk-00616-input-history-dont-use](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00616-input-history-dont-use.html) | Свойство «История выбора при вводе» не равно «Не использовать» |
 | [apk-00714-no-you-pronoun](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00714-no-you-pronoun.html) | В сообщениях не употребляются местоимения «Вы», «Вас» и пр. |
 | [apk-00715-no-exclamation-mark](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00715-no-exclamation-mark.html) | Сообщения не должны содержать восклицательных знаков |

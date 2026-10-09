@@ -28,6 +28,7 @@ apk-00460-top-region
 apk-00505-template-lang-postfix
 apk-00506-template-encoding
 apk-00528-command-name-length
+apk-00576-zero-document-fields
 apk-00616-input-history-dont-use
 apk-00714-no-you-pronoun
 apk-00715-no-exclamation-mark

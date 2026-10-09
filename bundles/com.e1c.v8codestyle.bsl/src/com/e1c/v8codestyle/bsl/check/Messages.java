@@ -124,6 +124,12 @@ final class Messages
 
     public static String ApkYoLetterCheck_Yo_letter_is_not_allowed_in_module_text;
 
+    public static String ApkZeroDocumentFieldsCheck_title;
+
+    public static String ApkZeroDocumentFieldsCheck_description;
+
+    public static String ApkZeroDocumentFieldsCheck_Zero_document_field;
+
     public static String ApkSumInQueryCheck_title;
 
     public static String ApkSumInQueryCheck_description;
