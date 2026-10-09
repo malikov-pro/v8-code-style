@@ -115,7 +115,7 @@
 5. Таблица пересечений: статья v8std → проверка v8-cs ↔ код LS ↔ (будущее)
    проверка АПК. Каталоги обеих сторон уже есть.
 
-**Реализация дедупликации (09.10)**: `CheckSettingsDeduplicator` +
+## Реализация дедупликации (09.10)**: `CheckSettingsDeduplicator` +
 `CheckSubstitutionRegistry` в `com.e1c.v8codestyle.check`. Слушатель
 `ICheckSettingsChangeListener` стартует из `CorePlugin` в фазе
 `ServiceInitialization` (после готовности сервисов). Триггер — событие, где
@@ -129,6 +129,23 @@ create-query-in-cycle → query-in-loop. Событие только по гру
 `CheckSettingsDeduplicatorTest` (md.itests) — прямой вызов `onChange`
 против реального репозитория (события фреймворка асинхронны — file-watcher
 профиля, ждать их в тесте флакочно).
+
+**Авто-включение bsl-ql-hub (09.10, решение пользователя «включаем»)**:
+`QlHubAutoEnabler` (com.e1c.v8codestyle.check). Хаб — EDT-мост «литералы
+запросов модулей → QL-модель → ql-делегаты», зарегистрирован **выключенным**
+(`.disable()`); enabler включает его для проектов с нетронутыми настройками.
+Триггеры: sweep через 30 с после старта, ретрай 15 с на открытие проекта,
+события настроек. Однократность — маркер-преференс
+(`qlHubAutoEnabled.<project>` в InstanceScope): дефолт хаба «выключен», явное
+отключение пользователя value-равно дефолту (customization удаляется) и без
+маркера возвращалось бы. `isDefault()==false` до включения — не трогаем.
+Каждое включение — INFO. **Itest-рантаймы**: property
+`v8codestyle.qlHubAutoEnableDisabled` (tests/pom.xml vmargs) глушит фоновые
+триггеры — асинхронное включение рестартует валидацию и гонит тесты, читающие
+маркеры после waitForDD (флейк DbObjectUnlimitedStringCheckTest); тест зовёт
+`ensureEnabled` напрямую. Грабли: `getSettings` для неготового профиля
+возвращает ДЕФОЛТЫ (не бросает); `POST_OPEN` не существует — только
+`POST_CHANGE`+флаг OPEN; Guice требует `@Inject`.
 
 ## Роль проекта: сборщик проверок
 
