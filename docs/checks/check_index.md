@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 264
+Общее количество проверок 1С:Стандарты разработки V8: 274
 
-- form: 13
-- md: 40
-- bsl: 175
+- form: 14
+- md: 42
+- bsl: 180
 - ql: 11
 - right: 27
 
@@ -45,8 +45,10 @@
 | [apk-00528-command-name-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00528-command-name-length.html) | Длина названия команды больше 38 символов |
 | [apk-00576-zero-document-fields](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00576-zero-document-fields.html) | Нулевые поля табличного документа |
 | [apk-00616-input-history-dont-use](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00616-input-history-dont-use.html) | Свойство «История выбора при вводе» не равно «Не использовать» |
+| [apk-00617-form-readonly-elements](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-00617-form-readonly-elements.html) | Свойства поля формы для объектов с отключённой историей выбора при вводе |
 | [apk-00714-no-you-pronoun](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00714-no-you-pronoun.html) | В сообщениях не употребляются местоимения «Вы», «Вас» и пр. |
 | [apk-00715-no-exclamation-mark](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00715-no-exclamation-mark.html) | Сообщения не должны содержать восклицательных знаков |
+| [apk-01146-duplicate-pictures](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-01146-duplicate-pictures.html) | Общие картинки с одинаковым содержимым |
 | [apk-01149-file-global-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01149-file-global-methods.html) | Использование методов глобального контекста для работы с файлами |
 | [apk-01167-path-separator-mask](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01167-path-separator-mask.html) | Разделитель пути и маска всех файлов указаны вручную |
 | [apk-01171-string-concat-in-loop](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01171-string-concat-in-loop.html) | Массовая конкатенация строк в цикле |
@@ -260,14 +262,20 @@
 | [up-1068-unreachable-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1068-unreachable-code.html) | Недостижимый код |
 | [up-1353-form-parameters-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1353-form-parameters-param.html) | Параметр метода модуля формы имеет имя «Параметры» |
 | [up-1354-param-matches-attribute](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1354-param-matches-attribute.html) | Имя параметра метода модуля объекта совпадает с именем реквизита или табличной части |
+| [up-632-dfio-not-in-public](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-632-dfio-not-in-public.html) | Область «ДляВызоваИзДругихПодсистем» не входит в область «ПрограммныйИнтерфейс» |
+| [up-633-dfio-no-consumer](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-633-dfio-no-consumer.html) | В области «ДляВызоваИзДругихПодсистем» не указана подсистема-потребитель |
+| [up-634-dfio-nonexistent-subsystem](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-634-dfio-nonexistent-subsystem.html) | Несуществующая подсистема в комментарии области «ДляВызоваИзДругихПодсистем» |
 | [up-644-command-view-rights](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-644-command-view-rights.html) | Ни в одной роли нет права на просмотр команды |
 | [up-645-command-view-without-read](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-645-command-view-without-read.html) | Есть право на просмотр команды, но нет прав на чтение или просмотр объекта |
 | [up-646-command-read-without-view](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-646-command-read-without-view.html) | Есть право на чтение или просмотр объекта, но нет права на просмотр команды |
+| [up-701-required-roles](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-701-required-roles.html) | Отсутствует обязательная роль |
 | [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |
+| [up-747-nstr-unprintable-chars](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-747-nstr-unprintable-chars.html) | Локализуемая строка начинается или заканчивается непечатаемым символом |
 | [up-757-lock-without-lock-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-757-lock-without-lock-call.html) | Блокировка данных создана, но не заблокирована |
 | [up-765-explicit-color](../../../com.e1c.v8codestyle.form/check.descriptions/ru/up-765-explicit-color.html) | Конкретное значение цвета в элементах формы |
 | [up-768-obsolete-refs-missing](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-768-obsolete-refs-missing.html) | Устаревшая процедура (функция) ссылается на несуществующую процедуру (функцию) |
 | [up-769-obsolete-refs-obsolete](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-769-obsolete-refs-obsolete.html) | Устаревшая процедура (функция) ссылается на другую устаревшую процедуру (функцию) |
+| [up-781-notify-handler-nonexistent](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-781-notify-handler-nonexistent.html) | Несуществующая процедура в параметре обработчика оповещения |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |
