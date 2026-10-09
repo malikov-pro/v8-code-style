@@ -873,6 +873,10 @@ final class Messages
     public static String ApkConstantWriteInTransactionCheck_description;
     public static String ApkConstantWriteInTransactionCheck_Constant_write_in_transaction;
 
+    public static String NstrSyntaxCheck_title;
+    public static String NstrSyntaxCheck_description;
+    public static String NstrSyntaxCheck_String_does_not_match_pattern;
+
     static
     {
         // initialize resource bundle
