@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonForm xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c7d2e5a9-4f83-4b16-9e0d-2a6f8c3b5e41">
+  <name>HistoryForm</name>
+  <synonym>
+    <key>en</key>
+    <value>History form</value>
+  </synonym>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usePurposes>MobileDevice</usePurposes>
+</mdclass:CommonForm>
