@@ -74,10 +74,6 @@
       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
-            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.NstrSyntaxCheck">
-      </check>
-      <check
-            category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.FormModulePragmaCheck">
       </check>
       <check
@@ -286,10 +282,6 @@
       <check
             category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.LockOutOfTryCheck">
-      </check>
-      <check
-            category="com.e1c.v8codestyle.bsl"
-            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.LockWithoutLockCallCheck">
       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
@@ -677,10 +669,6 @@
       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
-            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ApkZeroDocumentFieldsCheck">
-      </check>
-      <check
-            category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ApkPathSeparatorMaskCheck">
       </check>
       <check
@@ -717,11 +705,22 @@
       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.LockWithoutLockCallCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.FormModuleParametersParameterCheck">
       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ObjectModuleParameterMatchesAttributeCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.NstrSyntaxCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UnreachableCodeLiteCheck">
       </check>
 </extension>
