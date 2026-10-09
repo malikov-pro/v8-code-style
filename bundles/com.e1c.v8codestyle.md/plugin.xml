@@ -184,6 +184,10 @@
       </check>
       <check
             category="com.e1c.v8codestyle.md"
+            class="com.e1c.v8codestyle.internal.md.ExecutableExtensionFactory:com.e1c.v8codestyle.md.check.CommonPictureDuplicateCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.md"
             class="com.e1c.v8codestyle.internal.md.ExecutableExtensionFactory:com.e1c.v8codestyle.md.configuration.check.ConfigurationRequiredRolesCheck">
       </check>
 </extension>

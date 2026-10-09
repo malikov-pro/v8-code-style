@@ -32,6 +32,7 @@ apk-00576-zero-document-fields
 apk-00616-input-history-dont-use
 apk-00714-no-you-pronoun
 apk-00715-no-exclamation-mark
+apk-01146-duplicate-pictures
 apk-01149-file-global-methods
 apk-01167-path-separator-mask
 apk-01171-string-concat-in-loop
@@ -246,6 +247,7 @@ up-1068-unreachable-code
 up-1353-form-parameters-param
 up-1354-param-matches-attribute
 up-644-command-view-rights
+up-701-required-roles
 up-746-nstr-syntax
 up-757-lock-without-lock-call
 up-765-explicit-color

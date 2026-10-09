@@ -115,6 +115,10 @@ final class Messages
     public static String MdObjectChoiceHistoryOnInputCheck_History_is_not_dont_use;
     public static String MdObjectChoiceHistoryOnInputCheck_Handler_requires_dont_use;
 
+    public static String CommonPictureDuplicateCheck_title;
+    public static String CommonPictureDuplicateCheck_description;
+    public static String CommonPictureDuplicateCheck_Duplicate_pictures;
+
     static
     {
         // initialize resource bundle

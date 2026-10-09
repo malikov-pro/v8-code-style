@@ -1,10 +1,10 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 262
+Общее количество проверок 1С:Стандарты разработки V8: 264
 
 - form: 13
-- md: 40
+- md: 42
 - bsl: 173
 - ql: 11
 - right: 25
@@ -47,6 +47,7 @@
 | [apk-00616-input-history-dont-use](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00616-input-history-dont-use.html) | Свойство «История выбора при вводе» не равно «Не использовать» |
 | [apk-00714-no-you-pronoun](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00714-no-you-pronoun.html) | В сообщениях не употребляются местоимения «Вы», «Вас» и пр. |
 | [apk-00715-no-exclamation-mark](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00715-no-exclamation-mark.html) | Сообщения не должны содержать восклицательных знаков |
+| [apk-01146-duplicate-pictures](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-01146-duplicate-pictures.html) | Общие картинки с одинаковым содержимым |
 | [apk-01149-file-global-methods](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01149-file-global-methods.html) | Использование методов глобального контекста для работы с файлами |
 | [apk-01167-path-separator-mask](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01167-path-separator-mask.html) | Разделитель пути и маска всех файлов указаны вручную |
 | [apk-01171-string-concat-in-loop](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01171-string-concat-in-loop.html) | Массовая конкатенация строк в цикле |
@@ -261,6 +262,7 @@
 | [up-1353-form-parameters-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1353-form-parameters-param.html) | Параметр метода модуля формы имеет имя «Параметры» |
 | [up-1354-param-matches-attribute](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1354-param-matches-attribute.html) | Имя параметра метода модуля объекта совпадает с именем реквизита или табличной части |
 | [up-644-command-view-rights](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-644-command-view-rights.html) | Ни в одной роли нет права на просмотр команды |
+| [up-701-required-roles](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-701-required-roles.html) | Отсутствует обязательная роль |
 | [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |
 | [up-757-lock-without-lock-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-757-lock-without-lock-call.html) | Блокировка данных создана, но не заблокирована |
 | [up-765-explicit-color](../../../com.e1c.v8codestyle.form/check.descriptions/ru/up-765-explicit-color.html) | Конкретное значение цвета в элементах формы |
