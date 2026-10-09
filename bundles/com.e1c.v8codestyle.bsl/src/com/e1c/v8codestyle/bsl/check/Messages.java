@@ -910,6 +910,12 @@ final class Messages
 
     public static String DfioNoConsumerCheck_No_consumer_comment;
 
+    public static String DfioNotInPublicRegionCheck_title;
+
+    public static String DfioNotInPublicRegionCheck_description;
+
+    public static String DfioNotInPublicRegionCheck_Region_is_not_inside_public;
+
     static
     {
         // initialize resource bundle
