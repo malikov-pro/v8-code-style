@@ -1,7 +1,7 @@
 # Проверки прав ролей 1С
 
 
-Общее количество проверок: 25
+Общее количество проверок: 26
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -30,3 +30,4 @@
 | [right-view-event-log](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-view-event-log.html) | Право установлено: Журнал регистрации |
 | [role-right-has-rls](../../../com.e1c.v8codestyle.right/check.descriptions/ru/role-right-has-rls.html) | Право роли содержит текст ограничения доступа (RLS) |
 | [up-644-command-view-rights](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-644-command-view-rights.html) | Ни в одной роли нет права на просмотр команды |
+| [up-646-command-read-without-view](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-646-command-read-without-view.html) | Есть право на чтение или просмотр объекта, но нет права на просмотр команды |

@@ -246,6 +246,7 @@ up-1068-unreachable-code
 up-1353-form-parameters-param
 up-1354-param-matches-attribute
 up-644-command-view-rights
+up-646-command-read-without-view
 up-746-nstr-syntax
 up-757-lock-without-lock-call
 up-765-explicit-color

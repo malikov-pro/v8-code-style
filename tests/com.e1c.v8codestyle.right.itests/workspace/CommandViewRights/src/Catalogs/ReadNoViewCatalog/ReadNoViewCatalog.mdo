@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="34cb64ba-ba7b-40bc-b496-a026cc349543">
+  <producedTypes>
+    <objectType typeId="f5042646-2c1d-4757-89a9-ae57183f40b5" valueTypeId="d0998faf-044e-4b8f-877a-30d2d02d16b1"/>
+    <refType typeId="4e6fe437-1cf0-45f5-8077-1a5983ad59de" valueTypeId="f29b7494-cdc0-4193-a13c-68d94509e186"/>
+    <selectionType typeId="409a4d53-0b20-4a6a-9a4d-45baac5d8ed2" valueTypeId="a5bd6096-c84e-4f5f-8157-02e62e634234"/>
+    <listType typeId="9470e3cf-ec1d-4988-aede-4feddeabaec9" valueTypeId="3c28fd56-74e1-40f1-85a2-6de85c69c554"/>
+    <managerType typeId="eef7085e-7414-43d0-998f-d44c9d4ff5bc" valueTypeId="460ff232-e2e9-4ce2-98f2-f795696d9284"/>
+  </producedTypes>
+  <name>ReadNoViewCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>Read no view catalog</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+  <inputByString>Catalog.ReadNoViewCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.ReadNoViewCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <commands uuid="34ee8f06-6aef-4188-bf8c-3ae59661bd4b">
+    <name>ReadCommand</name>
+    <synonym>
+      <key>en</key>
+      <value>Read command</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Catalog>

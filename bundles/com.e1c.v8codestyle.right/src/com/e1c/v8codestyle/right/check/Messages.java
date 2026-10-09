@@ -28,6 +28,10 @@ final class Messages
     public static String CommandViewRightsCheck_description;
     public static String CommandViewRightsCheck_No_role_has_view_right;
 
+    public static String CommandReadWithoutViewRightsCheck_title;
+    public static String CommandReadWithoutViewRightsCheck_description;
+    public static String CommandReadWithoutViewRightsCheck_Role_access_to_object_without_command_view;
+
     public static String RightActiveUsers_description;
     public static String RightActiveUsers_title;
     public static String RightAdministration_description;

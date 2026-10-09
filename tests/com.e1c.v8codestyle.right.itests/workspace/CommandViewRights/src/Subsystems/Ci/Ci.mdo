@@ -9,4 +9,7 @@
   <includeInCommandInterface>true</includeInCommandInterface>
   <content>Catalog.GrantedCatalog</content>
   <content>Catalog.OrphanCatalog</content>
+  <content>Catalog.ReadNoViewCatalog</content>
+  <content>Catalog.NoCmdViewCatalog</content>
+  <content>Catalog.FullCmdCatalog</content>
 </mdclass:Subsystem>

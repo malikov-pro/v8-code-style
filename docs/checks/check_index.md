@@ -1,13 +1,13 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 262
+Общее количество проверок 1С:Стандарты разработки V8: 263
 
 - form: 13
 - md: 40
 - bsl: 173
 - ql: 11
-- right: 25
+- right: 26
 
 
 
@@ -261,6 +261,7 @@
 | [up-1353-form-parameters-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1353-form-parameters-param.html) | Параметр метода модуля формы имеет имя «Параметры» |
 | [up-1354-param-matches-attribute](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1354-param-matches-attribute.html) | Имя параметра метода модуля объекта совпадает с именем реквизита или табличной части |
 | [up-644-command-view-rights](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-644-command-view-rights.html) | Ни в одной роли нет права на просмотр команды |
+| [up-646-command-read-without-view](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-646-command-read-without-view.html) | Есть право на чтение или просмотр объекта, но нет права на просмотр команды |
 | [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |
 | [up-757-lock-without-lock-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-757-lock-without-lock-call.html) | Блокировка данных создана, но не заблокирована |
 | [up-765-explicit-color](../../../com.e1c.v8codestyle.form/check.descriptions/ru/up-765-explicit-color.html) | Конкретное значение цвета в элементах формы |
