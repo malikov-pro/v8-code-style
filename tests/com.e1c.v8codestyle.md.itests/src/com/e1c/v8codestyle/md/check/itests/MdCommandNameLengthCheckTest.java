@@ -131,7 +131,25 @@ public class MdCommandNameLengthCheckTest
 
     private void assertSingleMarker(String name, EObject command)
     {
-        List<?> markers = getMarkersByCheckIds(Set.of(CHECK_ID), command, getProject());
+        Set<String> ids = Set.of(CHECK_ID);
+        List<?> markers = getMarkersByCheckIds(ids, command, getProject());
+        // DD создаёт два контекста для команд объектов: кратковременно виден
+        // двойной маркер, финальное состояние сходится к одному (находка
+        // 00528/00458). Ждём сходимость, затем утверждаем.
+        long deadline = System.currentTimeMillis() + 60_000;
+        while (markers.size() != 1 && System.currentTimeMillis() < deadline)
+        {
+            try
+            {
+                Thread.sleep(1000);
+            }
+            catch (InterruptedException e)
+            {
+                Thread.currentThread().interrupt();
+                break;
+            }
+            markers = getMarkersByCheckIds(ids, command, getProject());
+        }
         assertEquals(name, 1, markers.size());
     }
 
