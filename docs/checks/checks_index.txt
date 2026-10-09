@@ -184,11 +184,15 @@ one-statement-per-line
 optional-form-parameter-access
 property-return-type
 public-method-caching
+ql-assign-alias-fields
 ql-camel-case-string-literal
 ql-cast-to-max-number
 ql-constants-in-binary-operation
+ql-full-outer-join
 ql-join-to-sub-query
 ql-like-expression-with-field
+ql-logical-or-in-join
+ql-logical-or-in-where
 ql-temp-table-index
 ql-using-for-update
 ql-virtual-table-filters

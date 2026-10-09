@@ -48,6 +48,22 @@
       </check>
       <check
             category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.FullOuterJoinCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.LogicalOrInJoinCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.LogicalOrInWhereCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.AssignAliasFieldsCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.ql"
             class="com.e1c.v8codestyle.ql.check.LikeExpressionWithFieldCheck">
       </check>
       <check
