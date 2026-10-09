@@ -49,6 +49,8 @@ public class EventDataExchangeLoadCheckTest
 {
     private static final String FQN_CATALOG_PRODUCTS = "Catalog.Products";
 
+    private static final String FQN_CATALOG_SERVICES = "Catalog.Services";
+
     private static final String CHECK_ID = "data-exchange-load";
 
     private static final String PARAM_CHECK_AT_BEGINNING = "checkAtBeginning"; //$NON-NLS-1$
@@ -127,5 +129,31 @@ public class EventDataExchangeLoadCheckTest
         marker = getFirstMarker(CHECK_ID, ((IfStatement)statement).getIfPart(), dtProject);
         assertNull(marker);
 
+    }
+
+    /**
+     * Issue #791: the {@code DataExchange.Load} checking in ANY If condition
+     * (negation, complex expression, ElsIf branch) counts as checked —
+     * no issue for such handlers.
+     */
+    @Test
+    public void testDataExchangeLoadInAnyIfCondition() throws Exception
+    {
+        IDtProject dtProject = openProjectAndWaitForValidationFinish(PROJECT_NAME);
+        assertNotNull(dtProject);
+
+        IBmObject mdObject = getTopObjectByFqn(FQN_CATALOG_SERVICES, dtProject);
+        assertTrue(mdObject instanceof Catalog);
+        Module module = ((Catalog)mdObject).getObjectModule();
+        assertNotNull(module);
+
+        List<Method> methods = module.allMethods();
+        assertEquals(2, methods.size());
+
+        for (Method method : methods)
+        {
+            Marker marker = getFirstMarker(CHECK_ID, method, dtProject);
+            assertNull(marker);
+        }
     }
 }
