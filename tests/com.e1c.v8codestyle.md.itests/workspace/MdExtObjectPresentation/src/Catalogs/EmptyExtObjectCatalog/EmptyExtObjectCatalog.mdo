@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="158a9341-bc3a-45fd-a9f7-04ff78111a26">
+  <producedTypes>
+    <objectType typeId="f2d9fb40-bb06-4037-93e8-fb63e6182680" valueTypeId="340fb6a5-bd94-4345-9219-65d873fe7694"/>
+    <refType typeId="7528e10f-5aa6-4331-8f33-ebc0a1495275" valueTypeId="764d8833-ffbf-4ec2-808e-2f152be6b312"/>
+    <selectionType typeId="3588cde3-fe3c-4742-b87d-32d0fc6045a2" valueTypeId="b643ad3b-bbf2-48f9-81ac-56ef7de0ca22"/>
+    <listType typeId="95db0a4b-1cc6-402b-872e-4cb6831c525f" valueTypeId="700bdd65-7e38-43a5-b8a3-0b74e2830c6b"/>
+    <managerType typeId="780aa63c-8d32-4858-8af1-2fb54fb14a12" valueTypeId="f6b0eae1-27d9-43d9-b3ff-01e74854c4f6"/>
+  </producedTypes>
+  <name>EmptyExtObjectCatalog</name>
+  <synonym>
+    <key>ru</key>
+    <value>Реализация</value>
+  </synonym>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Реализация</value>
+  </objectPresentation>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.EmptyExtObjectCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.EmptyExtObjectCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>
