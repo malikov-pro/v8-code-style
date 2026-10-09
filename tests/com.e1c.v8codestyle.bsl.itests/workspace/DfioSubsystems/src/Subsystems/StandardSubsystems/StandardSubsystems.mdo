@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ad155da2-9f51-4f0c-9317-4a63e37c4c1a">
+  <name>StandardSubsystems</name>
+  <synonym>
+    <key>en</key>
+    <value>Standard subsystems</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Стандартные подсистемы</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <subsystems>BatchObjectModification</subsystems>
+</mdclass:Subsystem>

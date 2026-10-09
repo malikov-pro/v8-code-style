@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b2ac1b54-79db-43d0-a653-b1fcebff7f27">
+  <name>BatchObjectModification</name>
+  <synonym>
+    <key>en</key>
+    <value>Batch object modification</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Групповое изменение объектов</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <parentSubsystem>Subsystem.StandardSubsystems</parentSubsystem>
+</mdclass:Subsystem>

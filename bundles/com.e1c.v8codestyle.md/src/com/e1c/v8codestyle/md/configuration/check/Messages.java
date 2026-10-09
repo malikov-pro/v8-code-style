@@ -26,6 +26,9 @@ final class Messages
     public static String ConfigurationDataLock_description;
     public static String ConfigurationDataLock_message;
     public static String ConfigurationDataLock_title;
+    public static String ConfigurationRequiredRolesCheck_Role_is_missing;
+    public static String ConfigurationRequiredRolesCheck_description;
+    public static String ConfigurationRequiredRolesCheck_title;
     static
     {
         // initialize resource bundle

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7b576ef6-71ec-4563-b561-ca1d9ff9611e">
+  <producedTypes>
+    <objectType typeId="b672d834-69c7-40a4-93c1-cb1f67912a43" valueTypeId="207871e8-b997-4c04-9a81-f0ef422f4579"/>
+    <refType typeId="e29340b6-4981-4cf5-8dd1-4cd782e07666" valueTypeId="7beff464-fd2d-40d2-8c4e-cce9c7fa1734"/>
+    <selectionType typeId="f36f0ba0-0e12-46b5-8e78-26008efffe33" valueTypeId="ceebc789-67be-4211-a94b-73e2cdf02a32"/>
+    <listType typeId="b3634eed-0221-4065-a3ad-e4f6add96359" valueTypeId="1b543cca-76a4-4b2b-a6af-16d8fdad04a8"/>
+    <managerType typeId="e83f8df0-37d9-4168-b513-6d6580c007e7" valueTypeId="95b4db1c-4e3e-4005-902b-3c5fe3118f6d"/>
+  </producedTypes>
+  <name>Goods</name>
+  <synonym>
+    <key>en</key>
+    <value>Goods</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Goods.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.Goods.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+  <defaultObjectForm>Catalog.Goods.Form.ItemForm</defaultObjectForm>
+  <forms uuid="27a39895-73c5-43cf-a8be-3a6a67e9e849">
+    <name>ItemForm</name>
+    <synonym>
+      <key>en</key>
+      <value>Item form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <attributes uuid="f35c8a2f-e076-470f-856c-5d0ea0a5b799">
+    <name>Partner</name>
+    <synonym>
+      <key>en</key>
+      <value>Partner</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Partners</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

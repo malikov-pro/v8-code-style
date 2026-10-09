@@ -897,6 +897,37 @@ final class Messages
     public static String UnreachableCodeLiteCheck_description;
 
     public static String UnreachableCodeLiteCheck_Unreachable_code;
+    public static String NstrUnprintableCharsCheck_title;
+    public static String NstrUnprintableCharsCheck_description;
+    public static String NstrUnprintableCharsCheck_Unprintable_character_at_edge;
+    public static String NotifyChangedHandlerExistCheck_title;
+    public static String NotifyChangedHandlerExistCheck_description;
+    public static String NotifyChangedHandlerExistCheck_Handler_does_not_exist;
+
+    public static String DeprecatedMethodReferencesObsoleteCheck_title;
+    public static String DeprecatedMethodReferencesObsoleteCheck_description;
+    public static String DeprecatedMethodReferencesObsoleteCheck_Deprecated_references_deprecated;
+
+    public static String DeprecatedMethodReferencesMissingCheck_title;
+    public static String DeprecatedMethodReferencesMissingCheck_description;
+    public static String DeprecatedMethodReferencesMissingCheck_Deprecated_references_missing;
+    public static String DfioNonExistentSubsystemCheck_title;
+
+    public static String DfioNonExistentSubsystemCheck_description;
+
+    public static String DfioNonExistentSubsystemCheck_Subsystem_does_not_exist;
+
+    public static String DfioNoConsumerCheck_title;
+
+    public static String DfioNoConsumerCheck_description;
+
+    public static String DfioNoConsumerCheck_No_consumer_comment;
+
+    public static String DfioNotInPublicRegionCheck_title;
+
+    public static String DfioNotInPublicRegionCheck_description;
+
+    public static String DfioNotInPublicRegionCheck_Region_is_not_inside_public;
 
     static
     {

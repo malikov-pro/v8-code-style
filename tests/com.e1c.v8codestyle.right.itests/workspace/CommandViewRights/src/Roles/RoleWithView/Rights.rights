@@ -10,4 +10,46 @@
 			<value>true</value>
 		</right>
 	</object>
+	<object>
+		<name>Catalog.FullCmdCatalog</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.FullCmdCatalog.Command.FullCommand</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.NoCmdViewCatalog</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.NoCmdViewCatalog.Command.NoCmdViewCommand</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ViewNoReadCatalog</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ViewNoReadCatalog.Command.ViewNoReadCommand</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
 </Rights>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="25c3e3c4-8ef8-48e1-a48c-319917255b8f">
+  <name>DfioSubsystems</name>
+  <synonym>
+    <key>en</key>
+    <value>Dfio subsystems</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="42efb07f-18a3-4dc9-88b5-dd9b0b9beb5e"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="5ceb8134-ca0f-4da3-a740-469f41743620"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="8b6d3bab-bdee-4845-a9cd-d0ae80c5d217"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="755c3349-370d-43af-ab6d-b7193c765708"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="cb927b08-00fe-499f-98d4-242e7ed7a365"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="f4a1a7f4-2b6a-4a1a-8f2e-3f0f5f7f8c1d">
+    <name>English</name>
+    <synonym>
+      <key>en</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>en</languageCode>
+  </languages>
+  <subsystems>Subsystem.StandardSubsystems</subsystems>
+  <commonModules>CommonModule.CommonModule</commonModules>
+</mdclass:Configuration>

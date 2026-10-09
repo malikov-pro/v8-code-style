@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="81ab2993-4d3f-465d-933b-811156a5e05e">
+  <producedTypes>
+    <objectType typeId="0605f2c7-aba7-4c91-8aab-333c848c133a" valueTypeId="f970923c-1ad4-434b-bdff-05376b60f74e"/>
+    <refType typeId="738a90a7-837f-4f19-8a70-e2a58e6ab616" valueTypeId="fe9d7b02-5538-4aa3-a11d-0dd2a81b678e"/>
+    <selectionType typeId="b74c9e17-4756-4d25-bc1d-4e59a621ab21" valueTypeId="6d1b7a9c-f334-4b7b-8475-c3748227828b"/>
+    <listType typeId="3d78ea67-e0c9-4b70-b481-497f1c691db6" valueTypeId="ff504a9b-1341-4a78-8860-3474309819d5"/>
+    <managerType typeId="98efd361-c19b-48ce-84f2-fda7233aa1a1" valueTypeId="4921e3f3-bce5-4e0b-8406-427c4a01918c"/>
+  </producedTypes>
+  <name>NoCmdViewCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>No command view catalog</value>
+  </synonym>
+  <useStandardCommands>false</useStandardCommands>
+  <inputByString>Catalog.NoCmdViewCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.NoCmdViewCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <commands uuid="b35a344c-883b-4d65-8538-bdb867eafdff">
+    <name>NoCmdViewCommand</name>
+    <synonym>
+      <key>en</key>
+      <value>No command view</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Catalog>
