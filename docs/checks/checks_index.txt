@@ -249,6 +249,8 @@ up-632-dfio-not-in-public
 up-633-dfio-no-consumer
 up-634-dfio-nonexistent-subsystem
 up-644-command-view-rights
+up-645-command-view-without-read
+up-646-command-read-without-view
 up-746-nstr-syntax
 up-757-lock-without-lock-call
 up-765-explicit-color

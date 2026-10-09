@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Role xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4e573517-c3c4-4db6-a6ba-1cfd263b7d20">
+  <name>RoleWithRead</name>
+  <synonym>
+    <key>en</key>
+    <value>Role with read</value>
+  </synonym>
+</mdclass:Role>
