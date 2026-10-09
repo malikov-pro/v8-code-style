@@ -21,6 +21,7 @@ import com._1c.g5.wiring.InjectorAwareServiceRegistrator;
 import com._1c.g5.wiring.ServiceInitialization;
 import com.e1c.v8codestyle.IProjectOptionManager;
 import com.e1c.v8codestyle.check.CheckSettingsDeduplicator;
+import com.e1c.v8codestyle.check.QlHubAutoEnabler;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 

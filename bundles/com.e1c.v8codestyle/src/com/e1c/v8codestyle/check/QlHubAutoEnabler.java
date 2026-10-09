@@ -10,12 +10,11 @@
  * Contributors:
  *     malikov-pro - initial API and implementation
  *******************************************************************************/
-package com.e1c.v8codestyle.internal;
+package com.e1c.v8codestyle.check;
 
 import java.text.MessageFormat;
 import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResourceChangeEvent;
@@ -26,8 +25,8 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
-import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.osgi.framework.BundleContext;
 
 import com.e1c.g5.v8.dt.check.settings.CheckSettingsChange;
@@ -35,6 +34,7 @@ import com.e1c.g5.v8.dt.check.settings.CheckUid;
 import com.e1c.g5.v8.dt.check.settings.ICheckRepository;
 import com.e1c.g5.v8.dt.check.settings.ICheckSettings;
 import com.e1c.g5.v8.dt.check.settings.ICheckSettingsChangeListener;
+import com.e1c.v8codestyle.internal.CorePlugin;
 import com.google.inject.Inject;
 
 /**
@@ -101,15 +101,23 @@ public class QlHubAutoEnabler
 
     /**
      * Starts listening to workspace and check settings events and schedules
-     * the initial sweep.
+     * the initial sweep. Does nothing when the system property
+     * {@code v8codestyle.qlHubAutoEnableDisabled} is set (integration test
+     * runtimes drive {@link #ensureEnabled(IProject)} manually: background
+     * enablement restarts project validation and races tests reading
+     * markers).
      *
      * @param bundleContext the bundle context, cannot be {@code null}
      */
     public void start(BundleContext bundleContext)
     {
+        if (System.getProperty("v8codestyle.qlHubAutoEnableDisabled") != null) //$NON-NLS-1$
+        {
+            return;
+        }
         checkRepository.addChangeListener(this);
         ResourcesPlugin.getWorkspace().addResourceChangeListener(this, IResourceChangeEvent.POST_CHANGE);
-        Job sweep = new Job(Messages.QlHubAutoEnabler_sweep_job_name)
+        Job sweep = new Job("Enabling the bsl-ql-hub check for workspace projects") //$NON-NLS-1$
         {
             @Override
             protected IStatus run(IProgressMonitor monitor)
@@ -180,7 +188,7 @@ public class QlHubAutoEnabler
     private void scheduleEnsure(IProject project, long delayMillis)
     {
         String projectName = project.getName();
-        Job retry = new Job(MessageFormat.format(Messages.QlHubAutoEnabler_sweep_job_name + ": {0}", projectName)) //$NON-NLS-1$
+        Job retry = new Job("Enabling the bsl-ql-hub check: " + projectName) //$NON-NLS-1$
         {
             @Override
             protected IStatus run(IProgressMonitor monitor)
@@ -193,7 +201,14 @@ public class QlHubAutoEnabler
         retry.schedule(delayMillis);
     }
 
-    private void ensureEnabled(IProject project)
+    /**
+     * Enables the hub check for the project if its setting is untouched
+     * and the hub was not enabled by this enabler before. Safe to call
+     * repeatedly; acts only when the project settings are readable.
+     *
+     * @param project the project, cannot be {@code null}
+     */
+    public void ensureEnabled(IProject project)
     {
         if (project == null || !project.isAccessible())
         {
