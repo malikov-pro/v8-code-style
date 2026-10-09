@@ -898,6 +898,14 @@ final class Messages
 
     public static String UnreachableCodeLiteCheck_Unreachable_code;
 
+    public static String DeprecatedMethodReferencesObsoleteCheck_title;
+    public static String DeprecatedMethodReferencesObsoleteCheck_description;
+    public static String DeprecatedMethodReferencesObsoleteCheck_Deprecated_references_deprecated;
+
+    public static String DeprecatedMethodReferencesMissingCheck_title;
+    public static String DeprecatedMethodReferencesMissingCheck_description;
+    public static String DeprecatedMethodReferencesMissingCheck_Deprecated_references_missing;
+
     static
     {
         // initialize resource bundle
