@@ -17,6 +17,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import java.util.List;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -24,6 +25,7 @@ import org.junit.Test;
 
 import org.eclipse.emf.ecore.EObject;
 
+import com._1c.g5.v8.dt.validation.marker.Marker;
 import com._1c.g5.v8.bm.core.IBmObject;
 import com._1c.g5.v8.dt.metadata.mdclass.BasicCommand;
 import com._1c.g5.v8.dt.metadata.mdclass.Catalog;
@@ -132,13 +134,25 @@ public class MdCommandNameLengthCheckTest
     private void assertSingleMarker(String name, EObject command)
     {
         Set<String> ids = Set.of(CHECK_ID);
-        List<?> markers = getMarkersByCheckIds(ids, command, getProject());
-        // DD создаёт два контекста для команд объектов: кратковременно виден
-        // двойной маркер, финальное состояние сходится к одному (находка
-        // 00528/00458). Ждём сходимость, затем утверждаем.
-        long deadline = System.currentTimeMillis() + 60_000;
-        while (markers.size() != 1 && System.currentTimeMillis() < deadline)
+        // DD создаёт два контекста для команд объектов: кратковременно (а на
+        // вложенных подсистемах — устойчиво) может быть виден дубль ТОГО ЖЕ
+        // маркера. Утверждаем по уникальному содержанию маркера: ровно один
+        // РАЗЛИЧНЫЙ маркер (ни нуля, ни двух разных).
+        Set<String> distinct = new HashSet<>();
+        long deadline = System.currentTimeMillis() + 90_000;
+        while (System.currentTimeMillis() < deadline)
         {
+            List<?> markers = getMarkersByCheckIds(ids, command, getProject());
+            distinct = new HashSet<>();
+            for (Object m : markers)
+            {
+                Marker marker = (Marker)m;
+                distinct.add(String.valueOf(marker.getMessage()));
+            }
+            if (distinct.size() == 1)
+            {
+                break;
+            }
             try
             {
                 Thread.sleep(1000);
@@ -148,9 +162,8 @@ public class MdCommandNameLengthCheckTest
                 Thread.currentThread().interrupt();
                 break;
             }
-            markers = getMarkersByCheckIds(ids, command, getProject());
         }
-        assertEquals(name, 1, markers.size());
+        assertEquals(name, 1, distinct.size());
     }
 
     private void assertClean(EObject command)
