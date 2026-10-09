@@ -24,6 +24,10 @@ final class Messages
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
 
+    public static String CommandViewRightsCheck_title;
+    public static String CommandViewRightsCheck_description;
+    public static String CommandViewRightsCheck_No_role_has_view_right;
+
     public static String RightActiveUsers_description;
     public static String RightActiveUsers_title;
     public static String RightAdministration_description;

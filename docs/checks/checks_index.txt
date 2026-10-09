@@ -28,6 +28,7 @@ apk-00460-top-region
 apk-00505-template-lang-postfix
 apk-00506-template-encoding
 apk-00528-command-name-length
+apk-00576-zero-document-fields
 apk-00616-input-history-dont-use
 apk-00714-no-you-pronoun
 apk-00715-no-exclamation-mark
@@ -241,6 +242,13 @@ typed-value-adding-to-untyped-collection
 unknown-form-parameter-access
 unsafe-password-ib-storage
 unused-parameters
+up-1068-unreachable-code
+up-1353-form-parameters-param
+up-1354-param-matches-attribute
+up-644-command-view-rights
+up-746-nstr-syntax
+up-757-lock-without-lock-call
+up-765-explicit-color
 use-goto-operator
 use-non-recommended-method
 useless-ternary-operator

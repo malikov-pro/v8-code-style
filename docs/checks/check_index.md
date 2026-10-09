@@ -1,13 +1,13 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 254
+Общее количество проверок 1С:Стандарты разработки V8: 262
 
-- form: 12
+- form: 13
 - md: 40
-- bsl: 167
+- bsl: 173
 - ql: 11
-- right: 24
+- right: 25
 
 
 
@@ -43,6 +43,7 @@
 | [apk-00505-template-lang-postfix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00505-template-lang-postfix.html) | Постфикс кода основного языка в имени двоичного макета или HTML-макета |
 | [apk-00506-template-encoding](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00506-template-encoding.html) | Кодировка, отличная от utf-8, в текстовом или HTML-макете |
 | [apk-00528-command-name-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00528-command-name-length.html) | Длина названия команды больше 38 символов |
+| [apk-00576-zero-document-fields](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00576-zero-document-fields.html) | Нулевые поля табличного документа |
 | [apk-00616-input-history-dont-use](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00616-input-history-dont-use.html) | Свойство «История выбора при вводе» не равно «Не использовать» |
 | [apk-00714-no-you-pronoun](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00714-no-you-pronoun.html) | В сообщениях не употребляются местоимения «Вы», «Вас» и пр. |
 | [apk-00715-no-exclamation-mark](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00715-no-exclamation-mark.html) | Сообщения не должны содержать восклицательных знаков |
@@ -256,6 +257,13 @@
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
 | [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |
 | [unused-parameters](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unused-parameters.html) | Неиспользуемый параметр метода |
+| [up-1068-unreachable-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1068-unreachable-code.html) | Недостижимый код |
+| [up-1353-form-parameters-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1353-form-parameters-param.html) | Параметр метода модуля формы имеет имя «Параметры» |
+| [up-1354-param-matches-attribute](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1354-param-matches-attribute.html) | Имя параметра метода модуля объекта совпадает с именем реквизита или табличной части |
+| [up-644-command-view-rights](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-644-command-view-rights.html) | Ни в одной роли нет права на просмотр команды |
+| [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |
+| [up-757-lock-without-lock-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-757-lock-without-lock-call.html) | Блокировка данных создана, но не заблокирована |
+| [up-765-explicit-color](../../../com.e1c.v8codestyle.form/check.descriptions/ru/up-765-explicit-color.html) | Конкретное значение цвета в элементах формы |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |

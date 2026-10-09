@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Role xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7fbdbf0b-b4ef-461f-a0a5-d3ac2bb7d1a3">
+  <name>RoleWithoutView</name>
+  <synonym>
+    <key>en</key>
+    <value>Role without view</value>
+  </synonym>
+</mdclass:Role>

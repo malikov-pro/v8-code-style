@@ -124,6 +124,12 @@ final class Messages
 
     public static String ApkYoLetterCheck_Yo_letter_is_not_allowed_in_module_text;
 
+    public static String ApkZeroDocumentFieldsCheck_title;
+
+    public static String ApkZeroDocumentFieldsCheck_description;
+
+    public static String ApkZeroDocumentFieldsCheck_Zero_document_field;
+
     public static String ApkSumInQueryCheck_title;
 
     public static String ApkSumInQueryCheck_description;
@@ -872,6 +878,25 @@ final class Messages
     public static String ApkConstantWriteInTransactionCheck_title;
     public static String ApkConstantWriteInTransactionCheck_description;
     public static String ApkConstantWriteInTransactionCheck_Constant_write_in_transaction;
+
+    public static String LockWithoutLockCall_title;
+    public static String LockWithoutLockCall_description;
+    public static String LockWithoutLockCall_Lock_method_is_not_called;
+    public static String FormModuleParametersParameterCheck_title;
+    public static String FormModuleParametersParameterCheck_description;
+    public static String FormModuleParametersParameterCheck_Parameter_named_Parameters;
+
+    public static String ObjectModuleParameterMatchesAttributeCheck_title;
+    public static String ObjectModuleParameterMatchesAttributeCheck_description;
+    public static String ObjectModuleParameterMatchesAttributeCheck_Parameter_matches_attribute;
+    public static String NstrSyntaxCheck_title;
+    public static String NstrSyntaxCheck_description;
+    public static String NstrSyntaxCheck_String_does_not_match_pattern;
+    public static String UnreachableCodeLiteCheck_title;
+
+    public static String UnreachableCodeLiteCheck_description;
+
+    public static String UnreachableCodeLiteCheck_Unreachable_code;
 
     static
     {
