@@ -110,4 +110,11 @@
       <types>CatalogRef</types>
     </type>
   </attributes>
+  <attributes uuid="a7f2c007-9582-443f-b1be-ec3123db6101">
+    <name>OverlappingTarget</name>
+    <type>
+      <types>CatalogRef</types>
+      <types>CatalogRef.Products</types>
+    </type>
+  </attributes>
 </mdclass:Catalog>
