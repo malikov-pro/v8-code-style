@@ -74,7 +74,8 @@ public class LogicalOrInJoinCheck
         QuerySchemaQuerySourceJoin join = EcoreUtil2.getContainerOfType(object, QuerySchemaQuerySourceJoin.class);
         if (join != null)
         {
-            resultAceptor.addIssue(Messages.LogicalOrInJoinCheck_Logical_OR_in_join_condition_not_allowed);
+            LogicalOrIssueLocation.addIssue(Messages.LogicalOrInJoinCheck_Logical_OR_in_join_condition_not_allowed,
+                object, resultAceptor);
         }
     }
 

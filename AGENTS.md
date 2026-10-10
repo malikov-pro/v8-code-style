@@ -101,6 +101,15 @@
 - Версия 0.8.0-SNAPSHOT; квалификатор `vyyyyMMdd-HHmm` из времени сборки.
 - itests поднимают OSGi-рантайм с тестовым проектом (база — `CheckTestBase`
   из EDT); при сборке под 2026.1 следить, чтобы тестовая фича EDT резолвилась.
+- QL-itests на `AbstractQueryTestBase` использовать с `QlFullDemo`:
+  его `enableCleanUp=false` оставляет проект; `QlEmptyProject` затем
+  конфликтует с `SingleProjectReadOnlyCheckTestBase` (resource already
+  exists). Точечный зелёный тест этого не ловит — нужен весь ql-модуль.
+- QL `IQlResultAcceptor.addIssue(message)` якорится на начале запроса,
+  не на текущем delegate-объекте. Для точной позиции — EObject+feature
+  или `addIssue(message, line, offset, length)` по QL node model;
+  модульный мост сам переносит координаты. OR без собственной фичи
+  якорить на Keyword ИЛИ/OR (LogicalOrIssueLocation, smoke 10.10).
 
 ## Управление проверками из кода (API настроек, EDT 2026.2)
 

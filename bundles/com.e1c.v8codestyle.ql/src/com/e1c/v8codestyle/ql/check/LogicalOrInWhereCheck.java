@@ -85,7 +85,8 @@ public class LogicalOrInWhereCheck
         {
             return;
         }
-        resultAceptor.addIssue(Messages.LogicalOrInWhereCheck_Logical_OR_in_where_section_not_allowed);
+        LogicalOrIssueLocation.addIssue(Messages.LogicalOrInWhereCheck_Logical_OR_in_where_section_not_allowed,
+            object, resultAceptor);
     }
 
     private boolean isInFilter(QuerySchemaOperator operator, EObject object)
