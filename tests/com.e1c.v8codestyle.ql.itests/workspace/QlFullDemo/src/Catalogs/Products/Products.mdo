@@ -104,4 +104,10 @@
       <types>AnyRef</types>
     </type>
   </attributes>
+  <attributes uuid="a7f2c006-9582-443f-b1be-ec3123db6101">
+    <name>AnyCatalogTarget</name>
+    <type>
+      <types>CatalogRef</types>
+    </type>
+  </attributes>
 </mdclass:Catalog>

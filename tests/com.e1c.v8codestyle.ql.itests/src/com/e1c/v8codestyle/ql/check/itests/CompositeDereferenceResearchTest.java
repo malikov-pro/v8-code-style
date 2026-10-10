@@ -28,6 +28,7 @@ import org.junit.Test;
 
 import com._1c.g5.v8.dt.core.platform.IDtProject;
 import com._1c.g5.v8.dt.dcs.util.DcsUtil;
+import com._1c.g5.v8.dt.mcore.TypeSet;
 import com._1c.g5.v8.dt.metadata.dbview.DbViewElement;
 import com._1c.g5.v8.dt.metadata.dbview.DbViewFieldDef;
 import com._1c.g5.v8.dt.ql.model.CastOperationExpression;
@@ -188,5 +189,43 @@ public class CompositeDereferenceResearchTest
         assertNotNull(query.eResource());
         assertTrue(query.eResource().getErrors().toString(), query.eResource().getErrors().isEmpty());
         return query;
+    }
+
+    /** @throws Exception if the EDT project cannot be loaded */
+    @Test
+    public void testBroadReferencesExpandInQueryContext() throws Exception
+    {
+        QuerySchema query = parse("SELECT P.AnyTarget.Description, P.AnyCatalogTarget.Description " //$NON-NLS-1$
+            + "FROM Catalog.Products AS P"); //$NON-NLS-1$
+        Map<String, List<String>> expanded = new HashMap<>();
+        for (MultiPartCommonExpression expression : EcoreUtil2.getAllContentsOfType(query,
+            MultiPartCommonExpression.class))
+        {
+            if (!"Description".equals(expression.getContent())) //$NON-NLS-1$
+            {
+                continue;
+            }
+            DbViewElement source = computer().computeDbView(expression.getSourceTable());
+            assertTrue(source instanceof DbViewFieldDef);
+            var items = ((DbViewFieldDef)source).getType().getTypes();
+            assertEquals(1, items.size());
+            var item = items.get(0);
+            assertTrue("Broad reference must resolve", !item.eIsProxy()); //$NON-NLS-1$
+            System.out.println("QL broad implementation: " + item.getName() + " -> " + item.eClass().getName()); //$NON-NLS-1$ //$NON-NLS-2$
+            assertTrue("Broad reference supports public TypeSet API: " + item.getName(), item instanceof TypeSet); //$NON-NLS-1$
+            TypeSet set = (TypeSet)item;
+            var types = set.types(expression.getSourceTable());
+            for (var type : types)
+            {
+                assertTrue("Expanded type must resolve", !type.eIsProxy()); //$NON-NLS-1$
+            }
+            List<String> names = types.stream().map(type -> type.getName()).sorted().toList();
+            expanded.put(expression.getSourceTable().getContent(), names);
+            System.out.println("QL broad expanded: " + item.getName() + " -> " + names); //$NON-NLS-1$ //$NON-NLS-2$
+        }
+        List<String> catalogs = List.of("CatalogRef.Products", "CatalogRef.TargetsA", "CatalogRef.TargetsB"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        assertEquals(catalogs, expanded.get("AnyCatalogTarget")); //$NON-NLS-1$
+        assertEquals(List.of("CatalogRef.Products", "CatalogRef.TargetsA", "CatalogRef.TargetsB", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+            "DocumentRef.ProductArraival", "EnumRef.ProductType"), expanded.get("AnyTarget")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
     }
 }
