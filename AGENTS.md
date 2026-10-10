@@ -101,6 +101,15 @@
 - Версия 0.8.0-SNAPSHOT; квалификатор `vyyyyMMdd-HHmm` из времени сборки.
 - itests поднимают OSGi-рантайм с тестовым проектом (база — `CheckTestBase`
   из EDT); при сборке под 2026.1 следить, чтобы тестовая фича EDT резолвилась.
+- **AST-вердикты перепроверять на чистом синтаксисе**: отдельно проверять
+  syntax errors node model, отдельно recovery-кейсы. 10.10 прежний отказ
+  DoubleNegatives опровергнут AstNegationResearchTest на обеих платформах:
+  NOT(NE)/NOT(NOT) со скобками корректны; NOT NOT без скобок — syntax error.
+  Исследовательский тест не заменяет tests продуктовой диагностики.
+- data-exchange-load: не засчитывать текстовое упоминание обращения внутри
+  строк/комментариев как проверку. NOT(load) доступен в AST обеих платформ;
+  regex-fallback удалён после красного regression (expected2/actual0).
+  Case-insensitive TreeSet нельзя копировать Set.copyOf — comparator теряется.
 - QL-itests на `AbstractQueryTestBase` использовать с `QlFullDemo`:
   его `enableCleanUp=false` оставляет проект; `QlEmptyProject` затем
   конфликтует с `SingleProjectReadOnlyCheckTestBase` (resource already

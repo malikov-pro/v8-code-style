@@ -29,10 +29,12 @@ unused-parameters.
 - ❌ НЕ переносимы (проверено):
   - ловит компилятор 1С (procedure-returns-value — значение в процедуре);
   - unreachable-code — требует CFG (ControlFlowGraphIndex), нет в фреймворке;
-  - **double-negatives — битый AST EDT-парсера**: «Не Сумма <> 0» →
-    `Unary(НЕ, operand=NULL)`, «Не Не А» → внешний НЕ с operand=Binary.
-    Проверено дампами AST в itest-рантайме 05.10;
-  - typo/bad-words — словари; query-* — нужен query-канал (отдельная работа).
+  - typo — орфографическая зависимость, не AST-блокер.
+- **double-negatives — отказ ПЕРЕСМОТРЕН 10.10**: NOT(NE)/NOT(NOT) со
+  скобками корректны на обеих платформах; NOT NOT без скобок — syntax error.
+  DoubleNegativesCheck реализован в feature/ast-blockers-recheck, ещё не
+  в develop; `~/edt-plugins/_notes/negation-ports-2026-10-10.md`.
+- bad-words уже в develop 98e2bfe1; QL-канал открыт bsl-ql-hub.
 
 ## 1. Спецификация из источника
 
