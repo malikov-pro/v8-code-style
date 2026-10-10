@@ -103,6 +103,7 @@ doc-comment-type
 doc-comment-use-minus
 document-post-in-privileged-mode
 dont-use-modality-mode
+double-negatives
 dynamic-access-method-not-found
 empty-code-block
 empty-except-statement
