@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a7f2b001-9582-443f-b1be-ec3123db6101">
+  <producedTypes>
+    <objectType typeId="a7f2b002-9582-443f-b1be-ec3123db6101" valueTypeId="a7f2b003-9582-443f-b1be-ec3123db6101"/>
+    <refType typeId="a7f2b004-9582-443f-b1be-ec3123db6101" valueTypeId="a7f2b005-9582-443f-b1be-ec3123db6101"/>
+    <selectionType typeId="a7f2b006-9582-443f-b1be-ec3123db6101" valueTypeId="a7f2b007-9582-443f-b1be-ec3123db6101"/>
+    <listType typeId="a7f2b008-9582-443f-b1be-ec3123db6101" valueTypeId="a7f2b009-9582-443f-b1be-ec3123db6101"/>
+    <managerType typeId="a7f2b010-9582-443f-b1be-ec3123db6101" valueTypeId="a7f2b011-9582-443f-b1be-ec3123db6101"/>
+  </producedTypes>
+  <name>TargetsB</name>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+</mdclass:Catalog>

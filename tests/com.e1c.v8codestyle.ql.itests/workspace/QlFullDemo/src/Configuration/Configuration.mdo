@@ -39,6 +39,8 @@
     <languageCode>en</languageCode>
   </languages>
   <catalogs>Catalog.Products</catalogs>
+  <catalogs>Catalog.TargetsA</catalogs>
+  <catalogs>Catalog.TargetsB</catalogs>
   <documents>Document.ProductArraival</documents>
   <enums>Enum.ProductType</enums>
   <reports>Report.QueryTestReport</reports>
