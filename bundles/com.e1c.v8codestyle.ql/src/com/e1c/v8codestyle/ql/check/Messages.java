@@ -73,6 +73,11 @@ final class Messages
     public static String VirtualTableFiltersCheck_description;
     public static String VirtualTableFiltersCheck_Filter__0_for_virtual_table__1__should_be_in_parameters;
     public static String VirtualTableFiltersCheck_title;
+    public static String CompositeReferenceDereferenceCheck_title;
+    public static String CompositeReferenceDereferenceCheck_description;
+    public static String CompositeReferenceDereferenceCheck_min_types;
+    public static String CompositeReferenceDereferenceCheck_message;
+
     static
     {
         // initialize resource bundle

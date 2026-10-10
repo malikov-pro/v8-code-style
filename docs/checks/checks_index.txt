@@ -189,6 +189,7 @@ public-method-caching
 ql-assign-alias-fields
 ql-camel-case-string-literal
 ql-cast-to-max-number
+ql-composite-reference-dereference
 ql-constants-in-binary-operation
 ql-full-outer-join
 ql-join-to-sub-query

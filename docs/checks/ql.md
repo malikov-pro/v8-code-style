@@ -1,7 +1,7 @@
 # Проверки языка запросов 1С
 
 
-Общее количество проверок: 15
+Общее количество проверок: 16
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -11,6 +11,7 @@
 | [ql-assign-alias-fields](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-assign-alias-fields.html) | ql-assign-alias-fields |
 | [ql-camel-case-string-literal](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-camel-case-string-literal.html) | Строковый литерал в запросе содержит не КемелКейс контент |
 | [ql-cast-to-max-number](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-cast-to-max-number.html) | Выражение к максимальному числу в запросе |
+| [ql-composite-reference-dereference](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-composite-reference-dereference.html) | Разыменование составной ссылки в запросе |
 | [ql-constants-in-binary-operation](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-constants-in-binary-operation.html) | В запросе в бинарной операции используются константные значения или параметры. |
 | [ql-full-outer-join](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-full-outer-join.html) | ql-full-outer-join |
 | [ql-join-to-sub-query](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-join-to-sub-query.html) | Соединение запроса с подзапросом |

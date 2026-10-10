@@ -83,5 +83,9 @@
             class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.QueryCastStringCheck">
       </check>
 </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.CompositeReferenceDereferenceCheck"/>
+   </extension>
 
 </plugin>
