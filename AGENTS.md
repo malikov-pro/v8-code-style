@@ -106,6 +106,10 @@
   DoubleNegatives опровергнут AstNegationResearchTest на обеих платформах:
   NOT(NE)/NOT(NOT) со скобками корректны; NOT NOT без скобок — syntax error.
   Исследовательский тест не заменяет tests продуктовой диагностики.
+- data-exchange-load: не засчитывать текстовое упоминание обращения внутри
+  строк/комментариев как проверку. NOT(load) доступен в AST обеих платформ;
+  regex-fallback удалён после красного regression (expected2/actual0).
+  Case-insensitive TreeSet нельзя копировать Set.copyOf — comparator теряется.
 - QL-itests на `AbstractQueryTestBase` использовать с `QlFullDemo`:
   его `enableCleanUp=false` оставляет проект; `QlEmptyProject` затем
   конфликтует с `SingleProjectReadOnlyCheckTestBase` (resource already

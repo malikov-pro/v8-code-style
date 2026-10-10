@@ -29,12 +29,12 @@ unused-parameters.
 - ❌ НЕ переносимы (проверено):
   - ловит компилятор 1С (procedure-returns-value — значение в процедуре);
   - unreachable-code — требует CFG (ControlFlowGraphIndex), нет в фреймворке;
-  - **double-negatives — отказ ПЕРЕСМОТРЕН 10.10**: на текущих EDT 2026.1
-    и 2026.2 NOT(NE) и NOT(NOT) со скобками корректны, AstNegationResearchTest
-    2/0 на каждой. NOT NOT без скобок имеет явные syntax errors и operand=null;
-    нельзя переносить результат recovery-парсинга на корректный код.
-    Кандидат возвращён в очередь — `~/edt-plugins/_notes/ast-blockers-recheck-2026-10-10.md`;
-  - typo/bad-words — словари; query-* — нужен query-канал (отдельная работа).
+  - typo — орфографическая зависимость, не AST-блокер.
+- **double-negatives — отказ ПЕРЕСМОТРЕН 10.10**: NOT(NE)/NOT(NOT) со
+  скобками корректны на обеих платформах; NOT NOT без скобок — syntax error.
+  DoubleNegativesCheck реализован в feature/ast-blockers-recheck, ещё не
+  в develop; `~/edt-plugins/_notes/negation-ports-2026-10-10.md`.
+- bad-words уже в develop 98e2bfe1; QL-канал открыт bsl-ql-hub.
 
 ## 1. Спецификация из источника
 

@@ -936,6 +936,10 @@ final class Messages
 
     public static String BadWordsCheck_Words;
 
+    public static String DoubleNegativesCheck_title;
+    public static String DoubleNegativesCheck_description;
+    public static String DoubleNegativesCheck_message;
+
     static
     {
         // initialize resource bundle
