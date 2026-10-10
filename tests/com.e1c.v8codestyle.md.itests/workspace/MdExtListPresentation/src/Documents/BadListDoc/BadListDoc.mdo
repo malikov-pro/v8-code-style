@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8c5f6361-5b42-49a9-bd0b-91cb26ecb814">
+  <producedTypes>
+    <objectType typeId="a020cb2c-b858-41a5-afd4-af746df305f5" valueTypeId="30b08b00-da74-4169-9ef8-dc691e3407fd"/>
+    <refType typeId="b6658298-402e-46fe-b217-c1c976548b25" valueTypeId="8fa6201f-5f28-45f1-b425-f058e666d960"/>
+    <selectionType typeId="62c561df-cd26-4c83-b33f-ac6ff383c8b3" valueTypeId="47f4dae6-d31e-4787-bd9a-d7f8f291dd25"/>
+    <listType typeId="1d132dd1-d534-41f8-b5f9-025f10f3ae16" valueTypeId="82c99c9a-56b9-4e2c-a22c-1b41a3aeeba6"/>
+    <managerType typeId="a59aec39-4f36-4091-bb9f-0a0af40ac478" valueTypeId="6de70687-d255-4e6c-a42f-6bdd0593abf5"/>
+  </producedTypes>
+  <name>BadListDoc</name>
+  <synonym>
+    <key>en</key>
+    <value>Bank statement</value>
+  </synonym>
+  <listPresentation>
+    <key>en</key>
+    <value>Bank statements</value>
+  </listPresentation>
+  <extendedListPresentation>
+    <key>en</key>
+    <value>bank statements</value>
+  </extendedListPresentation>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.BadListDoc.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+</mdclass:Document>

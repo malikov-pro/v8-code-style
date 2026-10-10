@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="eeb6bfe2-5495-44ba-a7b3-deb71841a078">
+  <producedTypes>
+    <objectType typeId="12295bb2-c5bf-4619-813a-51a4ac0d6727" valueTypeId="827b7b22-2f9b-4ddc-b4ed-56742cce7eff"/>
+    <refType typeId="98cc4a8f-26ab-4385-819b-4990d814c80d" valueTypeId="d496b385-c898-4297-aabd-0aaa41537550"/>
+    <selectionType typeId="4acdac0d-8447-45c5-a923-f72fb0dc272c" valueTypeId="b54948c8-a52f-4878-b203-d7f515029f2c"/>
+    <listType typeId="2d57f49c-f8ba-40e4-a059-69bc433ee1e5" valueTypeId="475a2f21-7f53-42de-a852-b70fbc010e8a"/>
+    <managerType typeId="8a7685bc-f66d-4ff0-9f3b-289f4499d5e3" valueTypeId="14109e9b-2815-40e4-8c3b-7cc9725f8e8d"/>
+  </producedTypes>
+  <name>OkObjectCatalog</name>
+  <synonym>
+    <key>ru</key>
+    <value>Реализация</value>
+  </synonym>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Реализация</value>
+  </objectPresentation>
+  <extendedObjectPresentation>
+    <key>ru</key>
+    <value>Реализация товаров и услуг</value>
+  </extendedObjectPresentation>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.OkObjectCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.OkObjectCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

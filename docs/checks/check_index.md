@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 278
+Общее количество проверок 1С:Стандарты разработки V8: 282
 
 - form: 14
-- md: 42
-- bsl: 180
+- md: 45
+- bsl: 181
 - ql: 15
 - right: 27
 
@@ -63,6 +63,7 @@
 | [apk-01216-query-field-alias](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01216-query-field-alias.html) | Псевдоним в тексте запроса совпадает с именем класса объектов метаданных |
 | [apk-01219-cut-comments-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01219-cut-comments-format.html) | Оформление вырезаемых служебных комментариев |
 | [apk-01364-linux-unsupported](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01364-linux-unsupported.html) | Методы и объекты, не поддерживаемые ОС Linux |
+| [bad-words](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bad-words.html) | Запрещённые слова |
 | [begin-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/begin-transaction.html) | После начала транзакции отсуствует блок Попытка-Исключение |
 | [bsl-canonical-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-canonical-pragma.html) | Аннотация написана канонически |
 | [bsl-nstr-string-literal-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-nstr-string-literal-format.html) | НСтр формат строкового литерала |
@@ -273,6 +274,9 @@
 | [up-645-command-view-without-read](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-645-command-view-without-read.html) | Есть право на просмотр команды, но нет прав на чтение или просмотр объекта |
 | [up-646-command-read-without-view](../../../com.e1c.v8codestyle.right/check.descriptions/ru/up-646-command-read-without-view.html) | Есть право на чтение или просмотр объекта, но нет права на просмотр команды |
 | [up-701-required-roles](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-701-required-roles.html) | Отсутствует обязательная роль |
+| [up-710-empty-tooltip](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-710-empty-tooltip.html) | Не заполнена всплывающая подсказка |
+| [up-722-ext-presentation-equals-object](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-722-ext-presentation-equals-object.html) | Расширенное представление объекта совпадает с представлением объекта |
+| [up-725-ext-presentation-equals-list](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-725-ext-presentation-equals-list.html) | Расширенное представление списка совпадает с представлением списка |
 | [up-746-nstr-syntax](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-746-nstr-syntax.html) | Синтаксис локализованной строки функции НСтр |
 | [up-747-nstr-unprintable-chars](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-747-nstr-unprintable-chars.html) | Локализуемая строка начинается или заканчивается непечатаемым символом |
 | [up-757-lock-without-lock-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-757-lock-without-lock-call.html) | Блокировка данных создана, но не заблокирована |

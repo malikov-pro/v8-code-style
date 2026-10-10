@@ -928,6 +928,13 @@ final class Messages
     public static String DfioNotInPublicRegionCheck_description;
 
     public static String DfioNotInPublicRegionCheck_Region_is_not_inside_public;
+    public static String BadWordsCheck_title;
+
+    public static String BadWordsCheck_description;
+
+    public static String BadWordsCheck_Prohibited_word_found;
+
+    public static String BadWordsCheck_Words;
 
     static
     {

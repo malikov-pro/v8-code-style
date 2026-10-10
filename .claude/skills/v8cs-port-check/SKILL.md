@@ -86,6 +86,12 @@ SELECT article, rule, name FROM backlog
     правки общих мест (bom/targets/manifests), раз в пачку | ~35 мин |
 - Merge → smoke на стенде (скилл `v8cs-deploy`) → релиз по команде
   пользователя (скилл `v8cs-release`: merge `develop`→`master` + тег).
+- Перед merge пачки — **гейт полноты** по каждому feature-коммиту:
+  `python3 scripts/audit-check-integration.py --source-commit <sha> ...`.
+  Проверяет фактические классы и регистрацию, не только ancestry (порты
+  могут быть cherry-pick). Прецедент 10.10: up-725/up-722/up-710/bad-words
+  были готовы в ветках, но отсутствовали в develop несмотря на зелёный
+  гейт и tracking «ГОТОВО». Generated docs не заменяют этот контроль.
 
 ## Параллелизация
 

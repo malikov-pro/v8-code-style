@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f1ea809c-e3d5-48eb-9606-2415a80e7790">
+  <producedTypes>
+    <selectionType typeId="74ac272d-452f-47b3-a32b-b22b9bee8548" valueTypeId="ac797de0-0a70-4501-a195-d11704aae2ff"/>
+    <listType typeId="289d1373-1368-4a3a-911b-42516ae6a94e" valueTypeId="dafd3711-2347-4693-83db-99065cd25b7d"/>
+    <managerType typeId="bd268621-b834-4d34-bfb0-493c94a10f95" valueTypeId="0c5d538c-2487-4206-83b2-b02c3329d39e"/>
+    <recordSetType typeId="5e7f1fa1-bf45-42b1-aa84-b0cd0cd0a457" valueTypeId="13d7b63c-1676-4282-b88f-c3a043e601b4"/>
+    <recordKeyType typeId="0ca27459-e4ab-4088-bf64-b7186a8491c4" valueTypeId="c44e383a-0596-49d0-9952-691093524238"/>
+    <recordType typeId="a737800b-e253-4821-8f7e-9bd54b25eac7" valueTypeId="def6c15b-1d50-4de5-b2ef-fd3c19c27e10"/>
+    <recordManagerType typeId="c9d07a42-6251-47bb-b2ef-bffba1e366f9" valueTypeId="2a8e3b41-8098-4378-a762-06cb5fbfcd13"/>
+  </producedTypes>
+  <name>BadInfoReg</name>
+  <synonym>
+    <key>ru</key>
+    <value>Курсы валют</value>
+  </synonym>
+  <listPresentation>
+    <key>ru</key>
+    <value>Курсы валют</value>
+  </listPresentation>
+  <extendedListPresentation>
+    <key>ru</key>
+    <value>Курсы валют</value>
+  </extendedListPresentation>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+</mdclass:InformationRegister>

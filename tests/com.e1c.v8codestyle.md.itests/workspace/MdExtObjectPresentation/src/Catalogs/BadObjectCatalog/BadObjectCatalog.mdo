@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="46aa778b-6696-4c5d-b008-1a31200753b7">
+  <producedTypes>
+    <objectType typeId="173998cd-177d-4ef0-b618-640b2f04d66d" valueTypeId="fe86f621-1d18-462c-b869-de6880606aa3"/>
+    <refType typeId="84193b26-2193-440f-a68d-9cb97123ddff" valueTypeId="04d4d9cb-e8db-4e5f-acd6-edbceb4ae7bc"/>
+    <selectionType typeId="709b6715-d3a6-4075-832b-e58c885297da" valueTypeId="c3ca1b88-823a-4960-8f20-2cdc552880fe"/>
+    <listType typeId="74cf0008-11f7-4c67-832c-f0e57a50b1d2" valueTypeId="a922a0f0-5cd9-4b09-987a-de336c770222"/>
+    <managerType typeId="24b4217d-8673-4d29-8851-482cd1f22aff" valueTypeId="06c99f1c-78cc-4fff-bedf-d2a305848f17"/>
+  </producedTypes>
+  <name>BadObjectCatalog</name>
+  <synonym>
+    <key>ru</key>
+    <value>Реализация</value>
+  </synonym>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Реализация</value>
+  </objectPresentation>
+  <extendedObjectPresentation>
+    <key>ru</key>
+    <value>реализация </value>
+  </extendedObjectPresentation>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.BadObjectCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.BadObjectCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

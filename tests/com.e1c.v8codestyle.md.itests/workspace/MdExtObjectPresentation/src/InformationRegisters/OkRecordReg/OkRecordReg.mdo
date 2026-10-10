@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2603d526-2b7c-47eb-ac2d-97968750daf6">
+  <producedTypes>
+    <selectionType typeId="13b51476-253e-4cbb-b9bc-2121d6c06adb" valueTypeId="ee7260b4-b15d-402a-a01a-454cfdc63980"/>
+    <listType typeId="6f5b68a2-283c-4b08-a871-e5365d0eb5a7" valueTypeId="b5789314-84de-446a-a63a-29e386d2db1e"/>
+    <managerType typeId="711df326-2da1-4243-94cd-e2021b803652" valueTypeId="43296df4-0375-4165-b300-526865dbb5c3"/>
+    <recordSetType typeId="e6b27259-6467-463d-8682-9ed1add8f4c4" valueTypeId="dbf5ac8b-1ffc-4a2a-b753-e8147eb01634"/>
+    <recordKeyType typeId="3b373b3d-762d-4d3a-9645-c2a487191b70" valueTypeId="23732466-5a31-4d95-a81a-55cbc3cdc8cf"/>
+    <recordType typeId="0bbc0dab-259b-45c0-8b31-f166a8ed7361" valueTypeId="0254c960-8338-4d98-b88d-352c29f6e995"/>
+    <recordManagerType typeId="55271b74-84c2-4fdb-855d-218f597371ef" valueTypeId="55815345-9927-4775-994b-63ca34300198"/>
+  </producedTypes>
+  <name>OkRecordReg</name>
+  <synonym>
+    <key>ru</key>
+    <value>Курсы валют</value>
+  </synonym>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Курс</value>
+  </recordPresentation>
+  <extendedRecordPresentation>
+    <key>ru</key>
+    <value>Курс валюты ЦБ РФ</value>
+  </extendedRecordPresentation>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+</mdclass:InformationRegister>

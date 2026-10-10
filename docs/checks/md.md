@@ -1,7 +1,7 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 42
+Общее количество проверок: 45
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -47,3 +47,6 @@
 | [subsystem-synonym-too-long](../../../com.e1c.v8codestyle.md/check.descriptions/ru/subsystem-synonym-too-long.html) | Длина названия раздела превышает 35 символов |
 | [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |
 | [up-701-required-roles](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-701-required-roles.html) | Отсутствует обязательная роль |
+| [up-710-empty-tooltip](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-710-empty-tooltip.html) | Не заполнена всплывающая подсказка |
+| [up-722-ext-presentation-equals-object](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-722-ext-presentation-equals-object.html) | Расширенное представление объекта совпадает с представлением объекта |
+| [up-725-ext-presentation-equals-list](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-725-ext-presentation-equals-list.html) | Расширенное представление списка совпадает с представлением списка |

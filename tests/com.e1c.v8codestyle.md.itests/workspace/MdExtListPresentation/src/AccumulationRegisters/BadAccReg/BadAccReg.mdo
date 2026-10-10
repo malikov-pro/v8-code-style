@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cc8fa4a7-feab-404d-a402-7c9fce82eaec">
+  <producedTypes>
+    <selectionType typeId="da42ddc0-764f-4bf7-88f8-295432ca9101" valueTypeId="1ae7f7d3-d820-4fc1-ad7e-a36fdad61ae1"/>
+    <listType typeId="200176d3-4817-42a7-91e9-aa1af65add57" valueTypeId="c7f8f78f-2ac9-4cbc-9b40-5f41fd575adb"/>
+    <managerType typeId="3f96debb-c707-4196-976e-68d86b2de715" valueTypeId="a7df79be-1b21-467c-ad8a-0b4181fb9ae9"/>
+    <recordSetType typeId="63d31e5d-7195-450b-a82b-0253b6aee8ba" valueTypeId="2f5ae595-44ac-4a61-97e2-abaecc7d5d24"/>
+    <recordKeyType typeId="291a9a8f-469d-430d-86c9-ae487cd57e49" valueTypeId="4301ba41-88a6-4473-bd09-3c97cec27e16"/>
+    <recordType typeId="ffbbddd2-0792-4e34-b4ca-8bd1e37e7a11" valueTypeId="c0615327-39b8-46ad-92bd-82fb7b1e853e"/>
+  </producedTypes>
+  <name>BadAccReg</name>
+  <synonym>
+    <key>ru</key>
+    <value>Остатки товаров</value>
+  </synonym>
+  <listPresentation>
+    <key>ru</key>
+    <value>Остатки товаров</value>
+  </listPresentation>
+  <extendedListPresentation>
+    <key>ru</key>
+    <value>остатки товаров</value>
+  </extendedListPresentation>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+</mdclass:AccumulationRegister>
