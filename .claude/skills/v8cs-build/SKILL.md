@@ -53,3 +53,4 @@ description: Сборка форка v8-code-style через compile.sh — п�
 | `org.osgi.service.http.whiteboard not found` | Расщеплённые IU появились после 2023-12; из таргета edt-2026.1 убраны (пакеты отдаёт osgi.services) |
 | `com._1c.g5.v8.dt.bm.common ... requires JavaSE-25` | В ruby/2026.1 смешаны поколения; таргет edt-2026.1 + EE 17 выбирает совместимые версии |
 | ECF `httpclientjava` требует `org.eclipse.ecf 3.12.0` exact | Сайт rt/ecf/3.15.7 рассинхронизирован; ECF берётся из releases/2023-12 |
+| `Invalid Collect Request: null` с classifier `lib/*.jar` | Maven 3.10/Resolver 2 несовместим с вложенными JAR Tycho 5.0.2 (eclipse-tycho/tycho#6399); использовать фиксированный Maven 3.9.9 как в compile.sh, не системный mvn из ubuntu-latest |

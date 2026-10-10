@@ -32,6 +32,8 @@ description: Релиз и доставка форка v8-code-style — тег 
 | «workflow file issue», прогон падает за 0–3 с | Файл не принят парсером GitHub: pyYAML не валидатор. Прецедент — `ref:` на уровне шага вместо `with:`. Сверять структуру с рабочим файлом |
 | Резолв таргет-артефакта `…:target:X.Y.Z-SNAPSHOT` не найден после «Версия из тега» | Пинить нечего: в bom/tests должно быть `${project.version}` (set-version снимает SNAPSHOT у всех модулей) |
 | `Premature EOF` на `natives.library.*` с edt.1c.ru | Флак сети 1С→раннеры; в release.yml ретраи ×3 на каждый профиль. Локально — просто перезапустить |
+| `Invalid Collect Request: null` на первом eclipse-plugin, вложенные `lib/*.jar` в списке | Maven 3.10/Resolver 2 отвергает classifier с `/`, инжектируемый Tycho 5.0.2 (eclipse-tycho/tycho#6399). Доказано A/B на теге 0.9.0: Maven 3.10 — failure, 3.9.9 — success. CI фиксирует Maven 3.9.9; чистка кэша и ретраи это не исправляют |
+| Исправлен workflow, но rerun тега по-прежнему падает | Rerun использует старый workflow. После отдельного разрешения на CI-правку master: `gh workflow run release.yml --ref master -f tag=X.Y.Z`, затем `gh workflow run deploy-update-site.yml --ref master -f tag=X.Y.Z`. Оба checkout'ят существующий тег, не HEAD master; тег не пересоздавать |
 | Прогон «in_progress» часами, счётчик замер | «Зомби»-раннер: `gh run cancel` → `gh run rerun` (rerun может проигнорировать свежую защиту среды — лучше новый dispatch/тег) |
 
 ## Инфраструктура Pages
