@@ -1,10 +1,10 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 284
+Общее количество проверок 1С:Стандарты разработки V8: 285
 
 - form: 14
-- md: 45
+- md: 46
 - bsl: 182
 - ql: 16
 - right: 27
@@ -13,6 +13,7 @@
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [apk-00073-functional-option-parameters-limit](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00073-functional-option-parameters-limit.html) | Ограничения на использование параметров функциональных опций |
 | [apk-00074-session-params-init](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00074-session-params-init.html) | Инициализацию параметров сеанса следует выполнять в модуле сеанса |
 | [apk-00126-md-no-yo-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00126-md-no-yo-letter.html) | Буква «ё» в имени, синониме или комментарии объекта метаданных |
 | [apk-00134-attribute-hint](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00134-attribute-hint.html) | Подсказка реквизита совпадает с синонимом |

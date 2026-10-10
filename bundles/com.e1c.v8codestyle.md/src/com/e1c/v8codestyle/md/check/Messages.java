@@ -127,6 +127,9 @@ final class Messages
     public static String MdToolTipEmptyCheck_title;
     public static String MdToolTipEmptyCheck_description;
     public static String MdToolTipEmptyCheck_message;
+    public static String FunctionalOptionParametersLimitCheck_title;
+    public static String FunctionalOptionParametersLimitCheck_description;
+    public static String FunctionalOptionParametersLimitCheck_too_many;
 
     static
     {
