@@ -110,6 +110,15 @@
   строк/комментариев как проверку. NOT(load) доступен в AST обеих платформ;
   regex-fallback удалён после красного regression (expected2/actual0).
   Case-insensitive TreeSet нельзя копировать Set.copyOf — comparator теряется.
+- **10.10: живой дедуп проверен через настоящий applyChanges** в EDT2026.1:
+  fine off→on при dedup=true выключает coarse с INFO, после clean fine1/coarse0.
+  Явное coarse on уважается, fine off не включает coarse обратно, dedup off
+  не вмешивается. Прямой onChange в itest не заменял этот smoke.
+- **AT-SPI automation опасна для SWT этой EDT**: обход pyatspi спровоцировал
+  native crash в gtk_widget_is_sensitive/AccessibleObject.atkObject_ref_state_set
+  одновременно в живой и тестовой JVM. Не смешивать AT-SPI/UI automation с
+  itests; для восстановления прогонов использован NO_AT_BRIDGE=1. Не путать
+  crash платформы с assertion failure, сохранять hs_err.
 - QL-itests на `AbstractQueryTestBase` использовать с `QlFullDemo`:
   его `enableCleanUp=false` оставляет проект; `QlEmptyProject` затем
   конфликтует с `SingleProjectReadOnlyCheckTestBase` (resource already
