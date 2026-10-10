@@ -1,10 +1,11 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 45
+Общее количество проверок: 46
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [apk-00073-functional-option-parameters-limit](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00073-functional-option-parameters-limit.html) | Ограничения на использование параметров функциональных опций |
 | [apk-00126-md-no-yo-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00126-md-no-yo-letter.html) | Буква «ё» в имени, синониме или комментарии объекта метаданных |
 | [apk-00134-attribute-hint](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00134-attribute-hint.html) | Подсказка реквизита совпадает с синонимом |
 | [apk-00137-code-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00137-code-length.html) | Длина кода (номера) объектов конфигурации |
