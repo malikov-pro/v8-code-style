@@ -78,6 +78,14 @@
 - Прочие грабли CI: «зомби»-прогоны (in_progress навечно) — cancel + rerun;
   `pgrep -f` в inline-командах с путями стенда — самострел, пути собирать
   конкатенацией.
+- **10.10: Maven в release/Pages фиксирован на 3.9.9**, как локально.
+  Maven 3.10 из ubuntu-latest с Resolver 2 отвергает classifier `lib/*.jar`,
+  инжектируемый Tycho 5.0.2: `Invalid Collect Request: null`
+  (eclipse-tycho/tycho#6399). A/B на теге 0.9.0: 3.10 — failure,
+  3.9.9 — BUILD SUCCESS обоих профилей; кэш невиновен.
+  Исправленный workflow можно вызвать из master с `-f tag=X.Y.Z`
+  (`release.yml`, затем `deploy-update-site.yml`): checkout существующего
+  тега, без пересоздания. Rerun старого запуска исправление не подхватывает.
 
 ## Особенности репозитория
 

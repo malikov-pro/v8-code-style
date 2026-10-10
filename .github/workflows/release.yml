@@ -8,6 +8,12 @@ on:
   push:
     tags:
       - '[0-9]+.[0-9]+.[0-9]+'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Существующий тег релиза X.Y.Z (повторная публикация без изменения тега)'
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -15,10 +21,20 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
 
     steps:
+      - name: Проверка тега
+        run: |
+          if ! [[ "${RELEASE_TAG}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Тег «${RELEASE_TAG}» не вида X.Y.Z"; exit 1
+          fi
+
       - name: Актуализация
         uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ env.RELEASE_TAG }}
 
       - name: Установка JDK
         uses: actions/setup-java@v4
@@ -26,6 +42,16 @@ jobs:
           java-version: '25'
           distribution: 'temurin'
           architecture: x64
+
+      # Maven 3.10 отвергает classifier lib/*.jar, который инжектирует Tycho.
+      # Совпадает с локальным compile.sh; eclipse-tycho/tycho#6399.
+      - name: Установка Maven 3.9.9
+        uses: stCarolas/setup-maven@12eb41b233df95d49b0c11fc1b5bc8312e5d4ce0 # v5.1
+        with:
+          maven-version: '3.9.9'
+
+      - name: Версии тулчейна
+        run: mvn --version
 
       - name: Кеширование m2
         uses: actions/cache@v4
@@ -38,7 +64,7 @@ jobs:
       # (только в рабочем дереве, коммит не делаем)
       - name: Версия из тега
         run: |
-          TAG="${GITHUB_REF_NAME}"
+          TAG="${RELEASE_TAG}"
           if ! [[ "${TAG}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "Тег «${TAG}» не вида X.Y.Z"; exit 1
           fi
@@ -75,7 +101,7 @@ jobs:
         run: |
           mkdir -p dist
           cp repositories/com.e1c.v8codestyle.repository/target/*.zip \
-             dist/v8codestyle-edt2026.1-${GITHUB_REF_NAME}.zip
+             dist/v8codestyle-edt2026.1-${RELEASE_TAG}.zip
 
       - name: Сборка EDT 2026.2 (пре-релиз)
         run: |
@@ -93,12 +119,13 @@ jobs:
       - name: Zip EDT 2026.2
         run: |
           cp repositories/com.e1c.v8codestyle.repository/target/*.zip \
-             dist/v8codestyle-edt2026.2-${GITHUB_REF_NAME}.zip
+             dist/v8codestyle-edt2026.2-${RELEASE_TAG}.zip
 
       - name: Публикация релиза
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "${GITHUB_REF_NAME}" dist/*.zip \
-            --title "${GITHUB_REF_NAME}" \
+          gh release create "${RELEASE_TAG}" dist/*.zip \
+            --verify-tag \
+            --title "${RELEASE_TAG}" \
             --generate-notes
