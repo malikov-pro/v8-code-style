@@ -63,4 +63,45 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="a7f2c001-9582-443f-b1be-ec3123db6101">
+    <name>SingleTarget</name>
+    <type>
+      <types>CatalogRef.Products</types>
+    </type>
+  </attributes>
+  <attributes uuid="a7f2c002-9582-443f-b1be-ec3123db6101">
+    <name>DoubleTarget</name>
+    <type>
+      <types>CatalogRef.Products</types>
+      <types>CatalogRef.TargetsA</types>
+    </type>
+  </attributes>
+  <attributes uuid="a7f2c003-9582-443f-b1be-ec3123db6101">
+    <name>TripleTarget</name>
+    <type>
+      <types>CatalogRef.Products</types>
+      <types>CatalogRef.TargetsA</types>
+      <types>CatalogRef.TargetsB</types>
+    </type>
+  </attributes>
+  <attributes uuid="a7f2c004-9582-443f-b1be-ec3123db6101">
+    <name>MixedTarget</name>
+    <type>
+      <types>CatalogRef.Products</types>
+      <types>String</types>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+  </attributes>
+  <attributes uuid="a7f2c005-9582-443f-b1be-ec3123db6101">
+    <name>AnyTarget</name>
+    <type>
+      <types>AnyRef</types>
+    </type>
+  </attributes>
 </mdclass:Catalog>
