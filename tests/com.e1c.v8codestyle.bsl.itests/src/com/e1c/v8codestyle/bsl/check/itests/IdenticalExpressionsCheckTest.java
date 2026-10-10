@@ -16,12 +16,16 @@
 package com.e1c.v8codestyle.bsl.check.itests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.junit.Test;
 
 import com._1c.g5.v8.dt.validation.marker.Marker;
+import com._1c.g5.v8.dt.validation.marker.StandardExtraInfo;
 import com.e1c.v8codestyle.bsl.check.IdenticalExpressionsCheck;
 
 /**
@@ -68,5 +72,21 @@ public class IdenticalExpressionsCheckTest
 
         List<Marker> markers = getModuleMarkers();
         assertEquals(0, markers.size());
+    }
+
+    /** Nested negation must not hide a binary expression from validation. */
+    @Test
+    public void testNegatedExpressions() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "identical-expressions-negation.bsl"); //$NON-NLS-1$
+        for (INode leaf : NodeModelUtils.findActualNodeFor(getModule()).getLeafNodes())
+        {
+            assertNull(leaf.getSyntaxErrorMessage());
+        }
+        List<Integer> lines = getModuleMarkers().stream().map(marker -> {
+            Integer line = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE);
+            return line;
+        }).sorted().toList();
+        assertEquals(List.of(2, 3, 4, 5, 6), lines);
     }
 }

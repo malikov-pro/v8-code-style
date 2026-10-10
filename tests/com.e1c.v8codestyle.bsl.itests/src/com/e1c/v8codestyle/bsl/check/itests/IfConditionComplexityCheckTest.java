@@ -16,13 +16,17 @@
 package com.e1c.v8codestyle.bsl.check.itests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.junit.Test;
 
 import com._1c.g5.v8.dt.validation.marker.Marker;
+import com._1c.g5.v8.dt.validation.marker.StandardExtraInfo;
 import com.e1c.v8codestyle.bsl.check.IfConditionComplexityCheck;
 
 /**
@@ -67,5 +71,21 @@ public class IfConditionComplexityCheckTest
 
         List<Marker> markers = getModuleMarkers();
         assertEquals(markers.stream().map(Marker::getMessage).collect(Collectors.joining("; ")), 0, markers.size());
+    }
+
+    /** NOT preserves the AND/OR count, including ElsIf and the clean threshold. */
+    @Test
+    public void testNegatedConditions() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "if-condition-complexity-negation.bsl"); //$NON-NLS-1$
+        for (INode leaf : NodeModelUtils.findActualNodeFor(getModule()).getLeafNodes())
+        {
+            assertNull(leaf.getSyntaxErrorMessage());
+        }
+        List<Integer> lines = getModuleMarkers().stream().map(marker -> {
+            Integer line = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE);
+            return line;
+        }).sorted().toList();
+        assertEquals(List.of(2, 4, 7), lines);
     }
 }
