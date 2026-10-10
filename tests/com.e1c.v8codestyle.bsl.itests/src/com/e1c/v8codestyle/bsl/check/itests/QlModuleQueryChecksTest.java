@@ -33,6 +33,7 @@ import org.junit.Test;
 
 import com._1c.g5.v8.dt.core.platform.IDtProject;
 import com._1c.g5.v8.dt.validation.marker.Marker;
+import com._1c.g5.v8.dt.validation.marker.StandardExtraInfo;
 import com.e1c.g5.v8.dt.check.settings.CheckUid;
 import com.e1c.g5.v8.dt.check.settings.ICheckSettings;
 import com.e1c.g5.v8.dt.testing.check.CheckTestBase;
@@ -91,6 +92,8 @@ public class QlModuleQueryChecksTest
         {
             assertEquals("Markers of " + entry.getKey(), entry.getValue(), counts.get(entry.getKey())); //$NON-NLS-1$
         }
+        assertMarkerLine(LOGICAL_OR_IN_JOIN, 37);
+        assertMarkerLine(LOGICAL_OR_IN_WHERE, 54);
     }
 
     /**
@@ -162,6 +165,19 @@ public class QlModuleQueryChecksTest
         return markers.stream()
             .filter(m -> checkUid.equals(checkRepository.getUidForShortUid(m.getCheckId(), project)))
             .count();
+    }
+
+    private void assertMarkerLine(String checkId, int expectedLine)
+    {
+        IProject project = dtProject.getWorkspaceProject();
+        String moduleId = Path.ROOT.append(PROJECT_NAME).append(MODULE_FILE).toString();
+        CheckUid checkUid = new CheckUid(checkId, CHECK_CONTRIBUTOR);
+        Marker marker = List.of(markerManager.getMarkers(project, moduleId)).stream()
+            .filter(m -> checkUid.equals(checkRepository.getUidForShortUid(m.getCheckId(), project)))
+            .findFirst().orElseThrow();
+        assertNotNull(marker.getExtraInfo());
+        Integer actualLine = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE);
+        assertEquals("Marker line of " + checkId, Integer.valueOf(expectedLine), actualLine); //$NON-NLS-1$
     }
 
     private void updateModule(String pathToResource) throws Exception
