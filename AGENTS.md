@@ -119,6 +119,12 @@
   одновременно в живой и тестовой JVM. Не смешивать AT-SPI/UI automation с
   itests; для восстановления прогонов использован NO_AT_BRIDGE=1. Не путать
   crash платформы с assertion failure, сохранять hs_err.
+- Form-itests: `getMarkers(formId)` читает только маркеры самой формы;
+  для замечаний групп нужен `getNestedMarkers` с фильтром CheckUid.
+  Не совмещать обход формы с containment-якорем групп: появляются дубли.
+  Для зависимостей от родительских свойств использовать generic context
+  collector с явным FORM top-filter: обычный collector молча отбрасывается,
+  если его EClass не входит в supported top/containment (00136, 10.10).
 - QL-itests на `AbstractQueryTestBase` использовать с `QlFullDemo`:
   его `enableCleanUp=false` оставляет проект; `QlEmptyProject` затем
   конфликтует с `SingleProjectReadOnlyCheckTestBase` (resource already
