@@ -212,7 +212,7 @@ public class AbstractQueryTestBase
      */
     private void validateQuery(QuerySchema querySchema) throws Exception
     {
-        QlBasicDelegateCheck.setOwner(new QueryOwner(querySchema, null));
+        QlBasicDelegateCheck.setOwner(getQueryOwner(querySchema));
 
         ICheckParameters checkParametes = getCheckParameters();
 
@@ -243,6 +243,12 @@ public class AbstractQueryTestBase
     protected List<QueryMarker> getQueryMarkers()
     {
         return qlResultAcceptor.getMarkers();
+    }
+
+    /** Override to exercise checks restricted to a specific query owner. */
+    protected QueryOwner getQueryOwner(QuerySchema querySchema)
+    {
+        return new QueryOwner(querySchema, null);
     }
 
     private ICheckDefinition createCheckDefinition() throws Exception

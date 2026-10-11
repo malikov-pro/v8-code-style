@@ -77,6 +77,9 @@ final class Messages
     public static String CompositeReferenceDereferenceCheck_description;
     public static String CompositeReferenceDereferenceCheck_min_types;
     public static String CompositeReferenceDereferenceCheck_message;
+    public static String DcsSumLiteralCheck_title;
+    public static String DcsSumLiteralCheck_description;
+    public static String DcsSumLiteralCheck_message;
 
     static
     {

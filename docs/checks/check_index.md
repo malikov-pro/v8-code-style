@@ -1,12 +1,12 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 286
+Общее количество проверок 1С:Стандарты разработки V8: 287
 
 - form: 15
 - md: 46
 - bsl: 182
-- ql: 16
+- ql: 17
 - right: 27
 
 
@@ -57,6 +57,7 @@
 | [apk-01179-obsolete-object-module](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01179-obsolete-object-module.html) | Код в модуле устаревшего объекта метаданных |
 | [apk-01190-update-version-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01190-update-version-format.html) | Неверный формат версии в обработчике обновления ИБ |
 | [apk-01192-summa-in-query](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01192-summa-in-query.html) | Функция СУММА() с числовым операндом в запросах в текстах модулей |
+| [apk-01193-dcs-sum-literal](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-01193-dcs-sum-literal.html) | Поиск функции "СУММА()" в запросах в макетах СКД |
 | [apk-01194-no-french-quotes](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01194-no-french-quotes.html) | Французские кавычки «ёлочки» в интерфейсных текстах |
 | [apk-01195-french-quotes-form](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01195-french-quotes-form.html) | Французские кавычки «ёлочки» в элементах форм |
 | [apk-01196-french-quotes-md](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-01196-french-quotes-md.html) | Французские кавычки «ёлочки» в свойствах объектов метаданных |
