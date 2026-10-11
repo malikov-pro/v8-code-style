@@ -92,8 +92,8 @@ public class QlModuleQueryChecksTest
         {
             assertEquals("Markers of " + entry.getKey(), entry.getValue(), counts.get(entry.getKey())); //$NON-NLS-1$
         }
-        assertMarkerLine(LOGICAL_OR_IN_JOIN, 37);
-        assertMarkerLine(LOGICAL_OR_IN_WHERE, 54);
+        assertMarkerLine(LOGICAL_OR_IN_JOIN, 37, 18);
+        assertMarkerLine(LOGICAL_OR_IN_WHERE, 54, 17);
     }
 
     /**
@@ -115,6 +115,24 @@ public class QlModuleQueryChecksTest
         {
             assertEquals("Markers of " + entry.getKey(), entry.getValue(), counts.get(entry.getKey())); //$NON-NLS-1$
         }
+    }
+
+    /** Existing literal changes must remove and restore the precise JOIN marker without clean. */
+    @Test
+    public void testJoinOrSameFieldIncremental() throws Exception
+    {
+        Map<String, Long> bad = Map.of(FULL_OUTER_JOIN, 0L, LOGICAL_OR_IN_JOIN, 1L, LOGICAL_OR_IN_WHERE, 0L,
+            ASSIGN_ALIAS_FIELDS, 0L);
+        Map<String, Long> clean = Map.of(FULL_OUTER_JOIN, 0L, LOGICAL_OR_IN_JOIN, 0L, LOGICAL_OR_IN_WHERE, 0L,
+            ASSIGN_ALIAS_FIELDS, 0L);
+        updateModule("/resources/ql-module-join-or-multiple-fields.bsl"); //$NON-NLS-1$
+        assertEquals(bad, pollCounts(bad));
+        assertMarkerLine(LOGICAL_OR_IN_JOIN, 10, 29);
+        updateModule("/resources/ql-module-join-or-same-field.bsl"); //$NON-NLS-1$
+        assertEquals(clean, pollSettled(clean));
+        updateModule("/resources/ql-module-join-or-multiple-fields.bsl"); //$NON-NLS-1$
+        assertEquals(bad, pollCounts(bad));
+        assertMarkerLine(LOGICAL_OR_IN_JOIN, 10, 29);
     }
 
     private Map<String, Long> pollCounts(Map<String, Long> expected) throws InterruptedException
@@ -167,7 +185,7 @@ public class QlModuleQueryChecksTest
             .count();
     }
 
-    private void assertMarkerLine(String checkId, int expectedLine)
+    private void assertMarkerLine(String checkId, int expectedLine, int expectedLength)
     {
         IProject project = dtProject.getWorkspaceProject();
         String moduleId = Path.ROOT.append(PROJECT_NAME).append(MODULE_FILE).toString();
@@ -178,11 +196,17 @@ public class QlModuleQueryChecksTest
         assertNotNull(marker.getExtraInfo());
         Integer actualLine = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE);
         assertEquals("Marker line of " + checkId, Integer.valueOf(expectedLine), actualLine); //$NON-NLS-1$
+        Integer length = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LENGTH);
+        // BslQlDelegatingCheck maps QL coordinates to a StringLiteral line and
+        // discards the QL offset/length. Keyword ranges are asserted in QL tests.
+        assertEquals("BSL literal line length", Integer.valueOf(expectedLength), length); //$NON-NLS-1$
     }
 
     private void updateModule(String pathToResource) throws Exception
     {
-        IDtProject dtProject = openProjectAndWaitForValidationFinish(PROJECT_NAME);
+        IProject existing = ResourcesPlugin.getWorkspace().getRoot().getProject(PROJECT_NAME);
+        IDtProject dtProject = existing.exists() && existing.isAccessible()
+            ? dtProjectManager.getDtProject(existing) : openProjectAndWaitForValidationFinish(PROJECT_NAME);
         assertNotNull(dtProject);
         this.dtProject = dtProject;
         IProject project = dtProject.getWorkspaceProject();

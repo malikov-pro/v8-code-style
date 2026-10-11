@@ -179,6 +179,18 @@
   или `addIssue(message, line, offset, length)` по QL node model;
   модульный мост сам переносит координаты. OR без собственной фичи
   якорить на Keyword ИЛИ/OR (LogicalOrIssueLocation, smoke 10.10).
+  Штатный BSL `BslQlDelegatingCheck.addIssue(message,line,offset,length)`
+  сохраняет только line (StringLiteral feature index), offset/length теряет:
+  QL keyword range и BSL whole-line range — разные гарантии, проверять отдельно.
+- QL-скобки не имеют отдельного EObject: границу логической группы искать
+  в CST по RuleCall `LogicalExpression`, иначе соседнее AND-равенство
+  загрязняет same-field OR. Multipart-поле считать целиком, не его alias-prefix.
+  Начинать с `NodeModelUtils.getNode`: `findActualNodeFor` расширяет узел
+  через unassigned rule calls и может перескочить нужную внутреннюю группу.
+  Проверять синтаксис fixture: алиас `В` конфликтует с оператором IN.
+- Несколько incremental-записей в одном `CheckTestBase`-тесте не должны
+  повторно вызывать `openProjectAndWaitForValidationFinish`: уже открытый
+  проект брать через `dtProjectManager`, иначе Resource «уже существует».
 
 ## Управление проверками из кода (API настроек, EDT 2026.2)
 
