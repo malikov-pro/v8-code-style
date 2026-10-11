@@ -27,7 +27,10 @@ import org.junit.Test;
 
 import com._1c.g5.v8.dt.validation.marker.Marker;
 import com._1c.g5.v8.dt.validation.marker.StandardExtraInfo;
+import com.e1c.g5.v8.dt.check.settings.CheckUid;
+import com.e1c.g5.v8.dt.check.settings.ICheckSettings;
 import com.e1c.v8codestyle.bsl.check.IfConditionComplexityCheck;
+import com.e1c.v8codestyle.internal.bsl.BslPlugin;
 
 /**
  * Tests for {@link IfConditionComplexityCheck} — port of the BSL Language Server diagnostic IfConditionComplexityCheck.
@@ -50,7 +53,7 @@ public class IfConditionComplexityCheckTest
     }
 
     /**
-     * A condition with 4 And operations (max 3) is reported.
+     * A condition with 5 conditions (max 3) is reported.
      */
     @Test
     public void testViolationsReported() throws Exception
@@ -73,6 +76,54 @@ public class IfConditionComplexityCheckTest
         assertEquals(markers.stream().map(Marker::getMessage).collect(Collectors.joining("; ")), 0, markers.size());
     }
 
+    /** The LS threshold counts conditions (AND/OR operations plus one), not operations. */
+    @Test
+    public void testBoundaryAndIncrementalUpdates() throws Exception
+    {
+        ICheckSettings settings = checkRepository.getSettings(
+            new CheckUid(getCheckId(), BslPlugin.PLUGIN_ID), getProject().getWorkspaceProject());
+        String parameter = "maxIfConditionComplexity"; //$NON-NLS-1$
+        String original = settings.getParameters().get(parameter).getValue();
+        assertEquals("3", original); //$NON-NLS-1$
+        try
+        {
+            updateModule(RESOURCE_CLEAN);
+            assertEquals(0, getModuleMarkers().size());
+            updateModule(FOLDER_RESOURCE + "if-condition-complexity-boundary.bsl"); //$NON-NLS-1$
+            assertEquals(List.of(5, 7), markerLines());
+            settings.getParameters().get(parameter).setValue("4"); //$NON-NLS-1$
+            checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+            waitForDD(getProject());
+            assertEquals(0, getModuleMarkers().size());
+            settings.getParameters().get(parameter).setValue("3"); //$NON-NLS-1$
+            checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+            waitForDD(getProject());
+            assertEquals(List.of(5, 7), markerLines());
+            updateModule(RESOURCE_CLEAN);
+            assertEquals(0, getModuleMarkers().size());
+            updateModule(FOLDER_RESOURCE + "if-condition-complexity-boundary.bsl"); //$NON-NLS-1$
+            assertEquals(List.of(5, 7), markerLines());
+        }
+        finally
+        {
+            settings.getParameters().get(parameter).setValue(original);
+            checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+            waitForDD(getProject());
+        }
+    }
+
+    private List<Integer> markerLines()
+    {
+        for (INode leaf : NodeModelUtils.findActualNodeFor(getModule()).getLeafNodes())
+        {
+            assertNull(leaf.getSyntaxErrorMessage());
+        }
+        return getModuleMarkers().stream().map(marker -> {
+            Integer line = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE);
+            return line;
+        }).sorted().toList();
+    }
+
     /** NOT preserves the AND/OR count, including ElsIf and the clean threshold. */
     @Test
     public void testNegatedConditions() throws Exception
@@ -86,6 +137,6 @@ public class IfConditionComplexityCheckTest
             Integer line = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE);
             return line;
         }).sorted().toList();
-        assertEquals(List.of(2, 4, 7), lines);
+        assertEquals(List.of(2, 4, 7, 10, 13), lines);
     }
 }

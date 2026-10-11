@@ -39,11 +39,11 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
 
 /**
  * Проверка: сложное условие «Если»/«ИначеЕсли» — количество операций
- * «И»/«ИЛИ» в одном условии превышает максимум.
+ * «И»/«ИЛИ» плюс один в одном условии превышает максимум.
  * <p>
  * Перенос диагностики BSL Language Server IfConditionComplexity
  * (тип CODE_SMELL, серьёзность MINOR). Порог — параметр (по умолчанию 3
- * операции, как в LS). Quick fix не предусмотрен: разбиение условия —
+ * условия, как в LS). Quick fix не предусмотрен: разбиение условия —
  * решение пользователя.
  *
  * @author malikov-pro
@@ -120,10 +120,11 @@ public class IfConditionComplexityCheck
         {
             operations++;
         }
-        if (operations > max)
+        int conditions = operations + 1;
+        if (conditions > max)
         {
             String message = MessageFormat.format(Messages.IfConditionComplexityCheck_Too_many_conditions,
-                Integer.valueOf(operations), Integer.valueOf(max));
+                Integer.valueOf(conditions), Integer.valueOf(max));
             resultAceptor.addIssue(message, conditional, CONDITIONAL__PREDICATE);
         }
     }

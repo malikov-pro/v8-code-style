@@ -1,6 +1,6 @@
 # Complex condition in If statement
 
-Checks that a condition of If/ElsIf has no more logical And/Or operations than the maximum (parameter, default 3, as in BSL LS). Split a complex condition into intermediate variables or separate statements. The check has no quick fix.
+Checks the number of conditions in If/ElsIf: the number of logical And/Or operations plus one, as in BSL LS. The `maxIfConditionComplexity` parameter defaults to 3: three conditions joined by two operations are allowed; four conditions joined by three operations are reported. Parentheses and Not do not increase the count. Split a complex condition into intermediate variables or separate statements. The check has no quick fix.
 
 ## See
 
