@@ -1,13 +1,14 @@
 # Проверки языка запросов 1С
 
 
-Общее количество проверок: 16
+Общее количество проверок: 17
 
 | Код проверки | Наименование |
 |--------------|--------------|
 | [apk-00142-query-cast-string](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00142-query-cast-string.html) | Использование ВЫРАЗИТЬ(... КАК СТРОКА(N)) в запросах |
 | [apk-00212-query-arithmetic-cast](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00212-query-arithmetic-cast.html) | Округление результатов арифметических операций в запросах |
 | [apk-00429-query-allowed-keyword](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00429-query-allowed-keyword.html) | Использование ключевого слова РАЗРЕШЕННЫЕ в запросах |
+| [apk-01193-dcs-sum-literal](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-01193-dcs-sum-literal.html) | Поиск функции "СУММА()" в запросах в макетах СКД |
 | [ql-assign-alias-fields](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-assign-alias-fields.html) | ql-assign-alias-fields |
 | [ql-camel-case-string-literal](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-camel-case-string-literal.html) | Строковый литерал в запросе содержит не КемелКейс контент |
 | [ql-cast-to-max-number](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-cast-to-max-number.html) | Выражение к максимальному числу в запросе |
