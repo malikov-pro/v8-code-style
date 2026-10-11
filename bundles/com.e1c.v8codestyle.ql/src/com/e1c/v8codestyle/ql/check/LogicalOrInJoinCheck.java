@@ -12,12 +12,21 @@
  *******************************************************************************/
 package com.e1c.v8codestyle.ql.check;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.nodemodel.ILeafNode;
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
+import com._1c.g5.v8.dt.ql.model.CommonExpression;
 import com._1c.g5.v8.dt.ql.model.LogicalOROperatorExpression;
+import com._1c.g5.v8.dt.ql.model.MultiPartCommonExpression;
 import com._1c.g5.v8.dt.ql.model.QuerySchemaQuerySourceJoin;
+import com._1c.g5.v8.dt.ql.model.QuerySchemaSelectQuery;
 import com.e1c.g5.v8.dt.check.CheckComplexity;
 import com.e1c.g5.v8.dt.check.ICheckParameters;
 import com.e1c.g5.v8.dt.check.settings.IssueSeverity;
@@ -71,12 +80,68 @@ public class LogicalOrInJoinCheck
     protected void checkQlObject(EObject object, QueryOwner owner, IQlResultAcceptor resultAceptor,
         ICheckParameters parameters, IProgressMonitor monitor)
     {
-        QuerySchemaQuerySourceJoin join = EcoreUtil2.getContainerOfType(object, QuerySchemaQuerySourceJoin.class);
-        if (join != null)
+        if (isJoinCondition(object) && hasMultipleFields(object))
         {
             LogicalOrIssueLocation.addIssue(Messages.LogicalOrInJoinCheck_Logical_OR_in_join_condition_not_allowed,
                 object, resultAceptor);
         }
+    }
+
+    private boolean isJoinCondition(EObject object)
+    {
+        EObject child = object;
+        for (EObject parent = child.eContainer(); parent != null; parent = child.eContainer())
+        {
+            if (parent instanceof QuerySchemaSelectQuery)
+            {
+                return false;
+            }
+            if (parent instanceof QuerySchemaQuerySourceJoin join)
+            {
+                return child == join.getCondition();
+            }
+            child = parent;
+        }
+        return false;
+    }
+
+    private boolean hasMultipleFields(EObject object)
+    {
+        INode group = NodeModelUtils.getNode(object);
+        // Parentheses have no EObject in QL. The CST preserves the logical group,
+        // including all ORs in a chain but excluding adjacent AND predicates.
+        while (group != null && !(group.getGrammarElement() instanceof RuleCall call
+            && "LogicalExpression".equals(call.getRule().getName()))) //$NON-NLS-1$
+        {
+            group = group.getParent();
+        }
+        if (group == null)
+        {
+            group = NodeModelUtils.findActualNodeFor(object);
+        }
+        if (group == null)
+        {
+            return false;
+        }
+        Set<String> fields = new HashSet<>();
+        for (ILeafNode leaf : group.getLeafNodes())
+        {
+            if (leaf.isHidden() || !(leaf.getSemanticElement() instanceof CommonExpression field))
+            {
+                continue;
+            }
+            while (field.eContainer() instanceof MultiPartCommonExpression parent)
+            {
+                field = parent;
+            }
+            fields.add(field instanceof MultiPartCommonExpression multipart
+                ? multipart.getFullContent() : field.getContent());
+            if (fields.size() > 1)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
