@@ -11,6 +11,8 @@ description: Установка собранного v8-cs в тестовые E
 
 ```bash
 bash scripts/deploy-edt.sh --edt "<инсталляция>/1cedt" --workspace "<ws>"
+# Если второй профиль уже пересобрал target — использовать сохранённый p2:
+bash scripts/deploy-edt.sh --repo "<сохранённый-p2>" --edt "<инсталляция>/1cedt" --workspace "<ws>"
 ```
 
 - Скрипт сам: снимает прежнюю копию (или p2 делает update), ставит
@@ -29,16 +31,20 @@ bash scripts/deploy-edt.sh --edt "<инсталляция>/1cedt" --workspace "<
   трюк `[1]cedt` защищает только сам паттерн; **пути собирать конкатенацией**:
   `P="1C_EDT 202""6.2/1cedt"; pgrep -f "$P"`. Деплой-скрипт безопасен (паттерн
   в файле), опасны именно inline-команды.
-- Рестартовать EDT на стендах можно без спроса (разрешено пользователем);
-  отличать свою инсталляцию от чужой — по пути в `pgrep -af`, а не по имени
-  процесса (`1cedt` у всех инсталляций одинаков).
+- Разрешение рестарта привязано к экземпляру/стенду, не всем EDT. Пользователь
+  разрешил агентские deploy/smoke в `~/edt/apk`; сверять PID/время запуска/
+  installation с известной сессией. Чужую открытую сессию не закрывать,
+  незаписанные данные не считать сохранёнными. Предпочитать штатное закрытие.
+- Перед deploy сохранить журнал в уникальный `/tmp/opencode`-файл: скрипт
+  чистит исходный log. Сохранённый p2/source snapshot и установленный qualifier
+  должны совпадать; «последний target» после другого clean не доказательство.
 
 ## Запуск EDT (критично: правильная JVM)
 
 | Инсталляция | -vm |
 |---|---|
-| EDT 2026.1 (`~/edt/rt_test`) | комплектная `axiom-jdk-full-17` (Java 17) |
-| EDT 2026.2 (`~/edt/2026_test`) | **`/usr/lib/jvm/axiomjdk-java25-pro-full-amd64`** (полная Java 25: JavaFX + jshell) |
+| EDT 2026.1 (`~/edt/apk`, действующий стенд) | комплектная `axiom-jdk-full-17` (Java 17) |
+| EDT 2026.2 (workspace согласовать; старые rt_test/2026_test удалены) | **`/usr/lib/jvm/axiomjdk-java25-pro-full-amd64`** (полная Java 25: JavaFX + jshell) |
 
 Запуск: `1cedt -vm <путь>/bin/java -data <ws> -nosplash`. Прямой запуск без
 `-vm` подхватывает системную java → EDT сыплет чужими ошибками (ai.ui,
@@ -52,11 +58,28 @@ workbench, JavaFX) — не путать с нашими.
 
 ## Триаж после smoke
 
+Сценарий приёмки для конкретного нового/изменённого чека:
+1. Initial `clean_project` после установки новой регистрации. Проверить
+   expected bad/clean objects, count и ranges; не общий project «без ошибок».
+2. Изменить уже существующее значение **без clean**: bad→fix→исчез,
+   clean→bad→появился. Отдельно parent flags/localized entry/reference types
+   если они влияют на алгоритм. `modify_metadata` stale выдача ещё не pass —
+   перечитать markers и проверить фактический результат.
+3. Финальный clean и журнал. Если incremental failed, нельзя засчитать
+   clean0 как замену: красная regression→fix→source gate→новый артефакт→повтор.
+4. Если заявлено несколько owners (module/DCS/dynamic list), каждый проверить
+   своим примером; synthetic owner в test не заменяет native bridge dispatch.
+
+Для SWT/AT-SPI crash известного стенда использовать `NO_AT_BRIDGE=1` при
+запуске приложения/тестов; pyatspi automation не совмещать с itests.
+
 1. Квалификатор в `bundles.info` инсталляции = свежесобранный.
 2. Журнал: `tr -d '\r' < <ws>/.metadata/.log | grep -c '^!ENTRY .* 4 '`,
    затем агрегат: `grep -A1 '^!ENTRY .* 4 ' | grep '^!MESSAGE' | sort | uniq -c | sort -rn`.
-3. Триаж по зонам: OURS-real (v8codestyle — чинить) / noise (платформа, способ
-   запуска) / PLATFORM (записать, идти дальше). У нас норма — **0 упоминаний
-   v8codestyle** в журнале.
+3. Триаж: OURS-real (чинить) / OURS-noise (правильный уровень/logging) /
+   PLATFORM (записать, идти дальше). Требование — нет новых наших ошибок,
+   не «0 упоминаний v8codestyle»: ожидаемые INFO hub/dedup допустимы.
+   Startup Unknown check id сохранять, не маскировать: restart+clean,
+   latest session с0 повторений; продолжение исключений — реальный блокер.
 4. GUI-минимум: «Установленное ПО» → свежий квалификатор; «Свойства проекта →
    Проверки» — список на месте; карточка замечания открывается с текстом.
