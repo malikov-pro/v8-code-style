@@ -191,6 +191,11 @@
 - Несколько incremental-записей в одном `CheckTestBase`-тесте не должны
   повторно вызывать `openProjectAndWaitForValidationFinish`: уже открытый
   проект брать через `dtProjectManager`, иначе Resource «уже существует».
+- RewriteMethodParameter: чтения параметров бывают не только в RHS
+  SimpleStatement, но и в аргументах вызова, predicates, receivers property-LHS.
+  Обход по исходным offset; имя метода Invocation.methodAccess не является
+  чтением переменной. RHS-root учитывать отдельно; П=П не считать чтением,
+  иначе оно скрывает последующую перезапись (LS corpus cases6/7).
 
 ## Управление проверками из кода (API настроек, EDT 2026.2)
 

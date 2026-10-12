@@ -18,6 +18,7 @@ package com.e1c.v8codestyle.bsl.check;
 import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.METHOD;
 
 import java.text.MessageFormat;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
@@ -25,8 +26,11 @@ import java.util.Set;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 import com._1c.g5.v8.dt.bsl.model.FormalParam;
+import com._1c.g5.v8.dt.bsl.model.Invocation;
 import com._1c.g5.v8.dt.bsl.model.Method;
 import com._1c.g5.v8.dt.bsl.model.SimpleStatement;
 import com._1c.g5.v8.dt.bsl.model.StaticFeatureAccess;
@@ -49,6 +53,9 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
  * которого параметр нигде не использовался; модификация
  * {@code Параметр = Параметр + 1} не является переписыванием. Параметры
  * без Знач (по ссылке) не проверяются — как в LS.
+ * Самоприсваивания {@code Параметр = Параметр} не учитываются ни как
+ * чтение, ни как перезапись. Обращения проверяются в порядке исходного текста,
+ * без анализа достижимости и ветвей.
  *
  * @author malikov-pro
  */
@@ -109,17 +116,30 @@ public class RewriteMethodParameterCheck
         Set<String> usedParams = new HashSet<>();
         Set<String> flaggedParams = new HashSet<>();
 
-        for (SimpleStatement statement : EcoreUtil2.getAllContentsOfType(method, SimpleStatement.class))
+        for (StaticFeatureAccess access : EcoreUtil2.getAllContentsOfType(method, StaticFeatureAccess.class).stream()
+            .sorted(Comparator.comparingInt(RewriteMethodParameterCheck::offset)).toList())
         {
-            if (!(statement.getLeft() instanceof StaticFeatureAccess left))
+            if (progressMonitor.isCanceled())
+            {
+                return;
+            }
+            if (isMethodName(access))
             {
                 continue;
             }
-            String name = left.getName();
+            SimpleStatement statement = EcoreUtil2.getContainerOfType(access, SimpleStatement.class);
+            if (statement != null && isIdentityAssignment(statement))
+            {
+                continue;
+            }
+            String name = access.getName();
             String lowerName = name.toLowerCase(Locale.ROOT);
-
-            Set<String> readNames = statement.getRight() == null
-                ? Set.of() : readNames(statement.getRight());
+            if (statement == null || statement.getLeft() != access || statement.getRight() == null)
+            {
+                usedParams.add(lowerName);
+                continue;
+            }
+            Set<String> readNames = readNames(statement.getRight());
             boolean rightReadsParam = readNames.contains(lowerName);
 
             if (!rightReadsParam && byValueParams.contains(lowerName) && !usedParams.contains(lowerName)
@@ -144,10 +164,35 @@ public class RewriteMethodParameterCheck
     private static Set<String> readNames(EObject expression)
     {
         Set<String> names = new HashSet<>();
-        for (StaticFeatureAccess access : EcoreUtil2.getAllContentsOfType(expression, StaticFeatureAccess.class))
+        if (expression instanceof StaticFeatureAccess access && !isMethodName(access))
         {
             names.add(access.getName().toLowerCase(Locale.ROOT));
         }
+        for (StaticFeatureAccess access : EcoreUtil2.getAllContentsOfType(expression, StaticFeatureAccess.class))
+        {
+            if (!isMethodName(access))
+            {
+                names.add(access.getName().toLowerCase(Locale.ROOT));
+            }
+        }
         return names;
+    }
+
+    private static boolean isMethodName(StaticFeatureAccess access)
+    {
+        return access.eContainer() instanceof Invocation invocation && invocation.getMethodAccess() == access;
+    }
+
+    private static boolean isIdentityAssignment(SimpleStatement statement)
+    {
+        return statement.getLeft() instanceof StaticFeatureAccess left
+            && statement.getRight() instanceof StaticFeatureAccess right
+            && left.getName().equalsIgnoreCase(right.getName());
+    }
+
+    private static int offset(EObject object)
+    {
+        INode node = NodeModelUtils.getNode(object);
+        return node == null ? Integer.MAX_VALUE : node.getOffset();
     }
 }
