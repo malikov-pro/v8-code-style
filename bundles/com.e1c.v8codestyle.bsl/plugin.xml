@@ -44,6 +44,10 @@
              category="com.e1c.v8codestyle.bsl"
              class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UnaryPlusInConcatenationCheck">
        </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.IncorrectUseOfStrTemplateCheck">
+       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.StructureCtorTooManyKeysCheck">

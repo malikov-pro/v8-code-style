@@ -938,6 +938,9 @@ final class Messages
 
     public static String DoubleNegativesCheck_title;
     public static String UnaryPlusInConcatenationCheck_title;
+    public static String IncorrectUseOfStrTemplateCheck_title;
+    public static String IncorrectUseOfStrTemplateCheck_description;
+    public static String IncorrectUseOfStrTemplateCheck_message;
     public static String UnaryPlusInConcatenationCheck_description;
     public static String UnaryPlusInConcatenationCheck_message;
     public static String DoubleNegativesCheck_description;
