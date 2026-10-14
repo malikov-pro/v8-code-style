@@ -50,8 +50,8 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
  * проверка не находит ничего;</li>
  * <li>сканируется каждая строка текста модуля — комментарии и строковые
  * литералы включаются (в LS это поведение параметра {@code findInComments},
- * по умолчанию {@code true}); отдельный параметр «искать в комментариях»
- * не переносился;</li>
+ * по умолчанию {@code true}); при {@code false} пропускаются строки только
+ * с комментариями, но inline-комментарий на строке кода остаётся в поиске;</li>
  * <li>каждое вхождение на строке — отдельное замечание на позицию вхождения,
  * совпадения внутри идентификаторов тоже учитываются.</li>
  * </ul>
@@ -69,6 +69,7 @@ public class BadWordsCheck
 
     /** Имя параметра проверки со списком запрещённых слов (регулярное выражение). */
     public static final String PARAM_BAD_WORDS = "badWords"; //$NON-NLS-1$
+    public static final String PARAM_FIND_IN_COMMENTS = "findInComments"; //$NON-NLS-1$
 
     private static final String DEFAULT_BAD_WORDS = ""; //$NON-NLS-1$
 
@@ -96,7 +97,8 @@ public class BadWordsCheck
             .extension(new OptInCheckExtension())
             .module()
             .checkedObjectType(MODULE)
-            .parameter(PARAM_BAD_WORDS, String.class, DEFAULT_BAD_WORDS, Messages.BadWordsCheck_Words);
+            .parameter(PARAM_BAD_WORDS, String.class, DEFAULT_BAD_WORDS, Messages.BadWordsCheck_Words)
+            .parameter(PARAM_FIND_IN_COMMENTS, Boolean.class, "true", Messages.BadWordsCheck_Find_in_comments); //$NON-NLS-1$
     }
 
     @Override
@@ -133,12 +135,32 @@ public class BadWordsCheck
             return;
         }
 
-        String text = NodeModelUtils.findActualNodeFor(module).getText();
+        var moduleNode = NodeModelUtils.findActualNodeFor(module);
+        boolean findInComments = parameters.getBoolean(PARAM_FIND_IN_COMMENTS);
+        java.util.Set<Integer> codeLines = new java.util.HashSet<>();
+        if (!findInComments)
+        {
+            for (var leaf : moduleNode.getLeafNodes())
+            {
+                if (!leaf.isHidden())
+                {
+                    for (int codeLine = leaf.getStartLine(); codeLine <= leaf.getEndLine(); codeLine++)
+                    {
+                        codeLines.add(codeLine);
+                    }
+                }
+            }
+        }
+        String text = moduleNode.getText();
         int line = 1;
         int lineStart = 0;
         int index = 0;
         while (index <= text.length())
         {
+            if (progressMonitor.isCanceled())
+            {
+                return;
+            }
             int newLinePos = text.indexOf('\n', index);
             int end = newLinePos < 0 ? text.length() : newLinePos;
             String lineText = text.substring(lineStart, end);
@@ -146,6 +168,10 @@ public class BadWordsCheck
             Matcher matcher = pattern.matcher(lineText);
             while (matcher.find())
             {
+                if (!findInComments && !codeLines.contains(line))
+                {
+                    break;
+                }
                 int offset = lineStart + matcher.start();
                 int length = matcher.end() - matcher.start();
                 String message =

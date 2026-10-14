@@ -12,7 +12,7 @@ Parameter example: `лотус|шмотус` — two words separated by `|`; arb
 
 Port of the BSL Language Server diagnostic `BadWords` (in LS the diagnostic is also disabled by default with an empty word list).
 
-Compared to LS, the separate "find in comments" parameter is not ported: the port always scans the whole module text, which matches the LS default behavior.
+`findInComments=true` is the default. When false, only lines containing non-comment code tokens are scanned, matching LS's NCLOC-row policy. The complete text of such a line is still searched, including an inline comment. Continuation lines of multiline string literals count as code. This is not a removal of comment substrings. Invalid regular expressions are ignored with a warning rather than aborting validation.
 
 No quick fix is provided: rewording the text is a user decision.
 

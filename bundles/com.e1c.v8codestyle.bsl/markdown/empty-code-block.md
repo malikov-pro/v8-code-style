@@ -1,10 +1,10 @@
 # Empty code block
 
-Checks that conditional and loop code blocks are not empty. An empty block is a sign of a forgotten implementation or deleted content: the block should be filled in or removed.
+Checks that conditional, loop and Try code blocks are not empty. An empty block is a sign of a forgotten implementation or deleted content: the block should be filled in or removed.
 
 Not checked: method bodies (see "Empty method" check), "Except" blocks (see "Empty except statement" check) and the module file block.
 
-Parameter **Treat comments as code** (off by default): a block containing comments is not considered empty.
+Parameter **Treat comments as code** (`commentAsCode`, false by default): a block containing a comment in that specific section is not considered empty. Comments in another branch or the Except section do not fill the empty block; text resembling a comment within a string is not a comment. An empty Try highlights the Try keyword. Existing conditional/loop anchors differ from LS's full terminal-line ranges; exact range parity is not claimed.
 
 ## Noncompliant Code Example
 

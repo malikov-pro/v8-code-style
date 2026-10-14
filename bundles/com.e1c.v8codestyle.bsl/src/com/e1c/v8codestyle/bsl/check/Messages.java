@@ -931,6 +931,8 @@ final class Messages
 
     public static String DfioNotInPublicRegionCheck_Region_is_not_inside_public;
     public static String BadWordsCheck_title;
+    public static String BadWordsCheck_Find_in_comments;
+    public static String EmptyCodeBlockCheck_Try_block;
 
     public static String BadWordsCheck_description;
 
