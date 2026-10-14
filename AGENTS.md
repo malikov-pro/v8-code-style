@@ -201,6 +201,12 @@
   строго больше get.endLine; аргументы сравнивать tokenwise (strings exact,
   identifiers case-insensitive,hidden ignored). WSProxyidx5,не WSDidx4;
   LScomplexIdentifier допускает вызов/свойство в качестве timeout.
+- TypesComputer для BSL: `getModule()` вне контекста валидации, даже внутри
+  обычного BM-task, может вернуть AST без связанных FeatureEntries/types.
+  Research проверять через настоящий check context: подтвердить soleBoolean,
+  unknown и union отдельно; пустой набор не считать доказанным типом.
+  Прецедент CompareWithBoolean: validation дал Boolean/[]/Boolean+String,
+  прежние прямые чтения давали только [].
 
 ## Управление проверками из кода (API настроек, EDT 2026.2)
 

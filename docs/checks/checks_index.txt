@@ -73,6 +73,7 @@ common-module-name-server-call
 common-module-name-server-call-cached
 common-module-named-self-reference
 common-module-type
+compare-with-boolean
 configuration-data-lock-mode
 constructor-function-return-section
 create-query-in-cycle
@@ -132,6 +133,7 @@ form-module-pragma
 form-self-reference
 function-out-parameter
 function-return-value-type
+function-returns-same-primitive
 function-should-have-return
 functional-option-privileged-get-mode
 identical-expressions
