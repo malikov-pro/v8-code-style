@@ -15,22 +15,29 @@
  *******************************************************************************/
 package com.e1c.v8codestyle.bsl.check;
 
-import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.METHOD;
+import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.MODULE;
 
 import java.text.MessageFormat;
 import java.util.List;
 
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.nodemodel.ILeafNode;
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 import com._1c.g5.v8.dt.bsl.model.Conditional;
 import com._1c.g5.v8.dt.bsl.model.ForStatement;
 import com._1c.g5.v8.dt.bsl.model.IfStatement;
+import com._1c.g5.v8.dt.bsl.model.LabeledStatement;
 import com._1c.g5.v8.dt.bsl.model.Method;
+import com._1c.g5.v8.dt.bsl.model.Module;
 import com._1c.g5.v8.dt.bsl.model.Statement;
 import com._1c.g5.v8.dt.bsl.model.TryExceptStatement;
 import com._1c.g5.v8.dt.bsl.model.WhileStatement;
+import com.e1c.g5.v8.dt.check.BslDirectLocationIssue;
 import com.e1c.g5.v8.dt.check.CheckComplexity;
+import com.e1c.g5.v8.dt.check.DirectLocation;
 import com.e1c.g5.v8.dt.check.ICheckParameters;
 import com.e1c.g5.v8.dt.check.WrongParameterException;
 import com.e1c.g5.v8.dt.check.components.BasicCheck;
@@ -45,7 +52,8 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
  * <p>
  * Перенос диагностики BSL Language Server NestedStatements
  * (тип CODE_SMELL, серьёзность CRITICAL). Порог — параметр (по умолчанию 4,
- * как в LS); фиксируются операторы на уровнях глубже порога.
+ * как в LS); отмечаются конечные составные блоки глубже порога в методах
+ * и теле модуля. Родительские диапазоны LS не переносятся.
  *
  * @author malikov-pro
  */
@@ -84,7 +92,7 @@ public class NestedStatementsCheck
             .issueType(IssueType.WARNING)
             .extension(new CommonSenseCheckExtension(getCheckId(), BslPlugin.PLUGIN_ID))
             .module()
-            .checkedObjectType(METHOD)
+            .checkedObjectType(MODULE)
             .parameter(PARAM_MAX_LEVEL, Integer.class, String.valueOf(DEFAULT_MAX_LEVEL),
                 Messages.NestedStatementsCheck_Max_allowed_level);
     }
@@ -93,26 +101,51 @@ public class NestedStatementsCheck
     protected void check(Object object, ResultAcceptor resultAceptor, ICheckParameters parameters,
         IProgressMonitor progressMonitor)
     {
-        Method method = (Method)object;
+        Module module = (Module)object;
         int maxLevel = maxLevel(parameters);
-        walk(method.allStatements(), 1, maxLevel, resultAceptor);
+        for (Method method : EcoreUtil2.getAllContentsOfType(module, Method.class))
+        {
+            walk(method.allStatements(), 1, maxLevel, resultAceptor, progressMonitor, module);
+        }
+        walk(module.allStatements(), 1, maxLevel, resultAceptor, progressMonitor, module);
     }
 
-    private void walk(List<Statement> statements, int depth, int maxLevel, ResultAcceptor resultAceptor)
+    private void walk(List<Statement> statements, int depth, int maxLevel, ResultAcceptor resultAceptor,
+        IProgressMonitor monitor, Module module)
     {
         for (Statement statement : statements)
         {
+            statement = effectiveStatement(statement);
+            if (monitor.isCanceled())
+            {
+                return;
+            }
             if (!isCompound(statement))
             {
                 continue;
             }
-            if (depth > maxLevel)
+            List<Statement> nested = nestedStatements(statement);
+            boolean hasNestedCompound = nested.stream().map(NestedStatementsCheck::effectiveStatement)
+                .anyMatch(NestedStatementsCheck::isCompound);
+            if (depth > maxLevel && !hasNestedCompound)
             {
                 String message = MessageFormat.format(Messages.NestedStatementsCheck_Too_many_nested_statements,
                     Integer.valueOf(depth), Integer.valueOf(maxLevel));
-                resultAceptor.addIssue(message, statement);
+                INode node = NodeModelUtils.getNode(statement);
+                if (node != null)
+                {
+                    for (ILeafNode leaf : node.getLeafNodes())
+                    {
+                        if (!leaf.isHidden())
+                        {
+                            resultAceptor.addIssue(new BslDirectLocationIssue(message,
+                                new DirectLocation(leaf.getOffset(), leaf.getLength(), leaf.getStartLine(), module)));
+                            break;
+                        }
+                    }
+                }
             }
-            walk(nestedStatements(statement), depth + 1, maxLevel, resultAceptor);
+            walk(nested, depth + 1, maxLevel, resultAceptor, monitor, module);
         }
     }
 
@@ -120,6 +153,16 @@ public class NestedStatementsCheck
     {
         return statement instanceof IfStatement || statement instanceof ForStatement
             || statement instanceof TryExceptStatement || statement instanceof WhileStatement;
+    }
+
+    private static Statement effectiveStatement(Statement statement)
+    {
+        Statement result = statement;
+        while (result instanceof LabeledStatement labeled)
+        {
+            result = labeled.getStatement();
+        }
+        return result;
     }
 
     private static List<Statement> nestedStatements(Statement statement)

@@ -5,6 +5,8 @@ while there should not be many parameters with default values (you need to focus
 Otherwise, the readability of the calling code is greatly reduced. 
 For example, you can easily make a mistake in the number of commas when passing optional parameters.
 
+`maxParams` defaults to 7: the eighth parameter is the first excessive one and is highlighted, as are any subsequent parameters. `maxDefaultValueParams` independently defaults to 3: the fourth parameter with a default value is the first excessive optional parameter. A value below 1 disables that limit. A parameter may receive one issue from each independent limit. Unlike the LS NumberOfParams/NumberOfOptionalParams diagnostics, which highlight the entire parameter list, this existing EDT check highlights individual excessive parameter names; no new diagnostic ID is added.
+
 ## Noncompliant Code Example
 
 ```bsl
