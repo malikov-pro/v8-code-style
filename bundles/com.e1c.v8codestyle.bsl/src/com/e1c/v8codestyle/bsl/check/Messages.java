@@ -963,6 +963,14 @@ final class Messages
     public static String TooManyReturnsCheck_message;
     public static String TooManyReturnsCheck_parameter;
     public static String DuplicateStringLiteralCheck_title;
+    public static String CompareWithBooleanCheck_title;
+    public static String CompareWithBooleanCheck_description;
+    public static String CompareWithBooleanCheck_message;
+    public static String FunctionReturnsSamePrimitiveCheck_title;
+    public static String FunctionReturnsSamePrimitiveCheck_description;
+    public static String FunctionReturnsSamePrimitiveCheck_message;
+    public static String FunctionReturnsSamePrimitiveCheck_attachable;
+    public static String FunctionReturnsSamePrimitiveCheck_case;
     public static String DuplicateStringLiteralCheck_description;
     public static String DuplicateStringLiteralCheck_message;
     public static String DuplicateStringLiteralCheck_copies;

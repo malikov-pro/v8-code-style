@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 193
+Общее количество проверок: 195
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -48,6 +48,7 @@
 | [commit-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/commit-transaction.html) | Проверка нарушения схемы работы с транзакциями |
 | [common-module-missing-api](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-missing-api.html) | Общий модуль должен иметь хотя бы один экспортный метод |
 | [common-module-named-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-named-self-reference.html) | Избыточное обращение по собственному имени внутри общего модуля |
+| [compare-with-boolean](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/compare-with-boolean.html) | Избыточное сравнение с булевым литералом |
 | [constructor-function-return-section](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/constructor-function-return-section.html) | Секция возвращаемого значения функции-конструктора данных |
 | [create-query-in-cycle](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/create-query-in-cycle.html) | Создание или выполнение запроса в цикле |
 | [cyclomatic-complexity](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/cyclomatic-complexity.html) | Цикломатическая сложность метода выше допустимой |
@@ -92,6 +93,7 @@
 | [form-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-self-reference.html) | Использование устаревшего псевдонима |
 | [function-out-parameter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-out-parameter.html) | Выходные параметры функций |
 | [function-return-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-return-value-type.html) | Функция возвращает типизированное значение |
+| [function-returns-same-primitive](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-returns-same-primitive.html) | Функция возвращает один примитив |
 | [function-should-have-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-should-have-return.html) | Функция должна содержать возврат |
 | [identical-expressions](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/identical-expressions.html) | Одинаковые выражения слева и справа от оператора |
 | [if-condition-complexity](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/if-condition-complexity.html) | Сложное условие в операторе «Если» |

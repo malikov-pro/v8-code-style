@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 298
+Общее количество проверок 1С:Стандарты разработки V8: 300
 
 - form: 15
 - md: 46
-- bsl: 193
+- bsl: 195
 - ql: 17
 - right: 27
 
@@ -88,6 +88,7 @@
 | [common-module-name-server-call-cached](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-server-call-cached.html) | Общий модуль с повторно используемыми значениями |
 | [common-module-named-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-named-self-reference.html) | Избыточное обращение по собственному имени внутри общего модуля |
 | [common-module-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-type.html) | Общий модуль имеет некорректный тип |
+| [compare-with-boolean](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/compare-with-boolean.html) | Избыточное сравнение с булевым литералом |
 | [configuration-data-lock-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/configuration-data-lock-mode.html) | Режим блокировки данных конфигурации |
 | [constructor-function-return-section](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/constructor-function-return-section.html) | Секция возвращаемого значения функции-конструктора данных |
 | [create-query-in-cycle](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/create-query-in-cycle.html) | Создание или выполнение запроса в цикле |
@@ -147,6 +148,7 @@
 | [form-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-self-reference.html) | Использование устаревшего псевдонима |
 | [function-out-parameter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-out-parameter.html) | Выходные параметры функций |
 | [function-return-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-return-value-type.html) | Функция возвращает типизированное значение |
+| [function-returns-same-primitive](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-returns-same-primitive.html) | Функция возвращает один примитив |
 | [function-should-have-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-should-have-return.html) | Функция должна содержать возврат |
 | [functional-option-privileged-get-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/functional-option-privileged-get-mode.html) | В функциональной опции не установлен флаг "Привилегированный режим при получении" |
 | [identical-expressions](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/identical-expressions.html) | Одинаковые выражения слева и справа от оператора |
