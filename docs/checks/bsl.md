@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 182
+Общее количество проверок: 183
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -162,6 +162,7 @@
 | [ternary-operator-usage](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/ternary-operator-usage.html) | Использование тернарного оператора |
 | [timeouts-in-external-resources](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/timeouts-in-external-resources.html) | Таймауты при работе с внешними ресурсами |
 | [typed-value-adding-to-untyped-collection](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/typed-value-adding-to-untyped-collection.html) | Добавление типизированного значения в не типизированную коллекцию |
+| [unary-plus-in-concatenation](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unary-plus-in-concatenation.html) | Унарный плюс в конкатенации |
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
 | [unused-parameters](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unused-parameters.html) | Неиспользуемый параметр метода |
 | [up-1068-unreachable-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1068-unreachable-code.html) | Недостижимый код |

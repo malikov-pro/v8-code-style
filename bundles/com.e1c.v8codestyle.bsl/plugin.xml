@@ -36,10 +36,14 @@
             id="com.e1c.v8codestyle.bsl.strict"
             title="%category.bsl.strict.title">
       </category>
-      <check
-            category="com.e1c.v8codestyle.bsl"
-            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.AccessibilityAtClientInObjectModuleCheck">
-      </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.AccessibilityAtClientInObjectModuleCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UnaryPlusInConcatenationCheck">
+       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.StructureCtorTooManyKeysCheck">
