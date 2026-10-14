@@ -26,7 +26,10 @@ import org.junit.Test;
 
 import com._1c.g5.v8.dt.validation.marker.Marker;
 import com._1c.g5.v8.dt.validation.marker.StandardExtraInfo;
+import com.e1c.g5.v8.dt.check.settings.CheckUid;
+import com.e1c.g5.v8.dt.check.settings.ICheckSettings;
 import com.e1c.v8codestyle.bsl.check.IdenticalExpressionsCheck;
+import com.e1c.v8codestyle.internal.bsl.BslPlugin;
 
 /**
  * Tests for {@link IdenticalExpressionsCheck} — port of the BSL Language
@@ -88,5 +91,61 @@ public class IdenticalExpressionsCheckTest
             return line;
         }).sorted().toList();
         assertEquals(List.of(2, 3, 4, 5, 6), lines);
+    }
+
+    @Test
+    public void testTokenAndStringEquality() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "identical-expression-tokens.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of(4, 5, 6, 8));
+    }
+
+    @Test
+    public void testIncrementalStringCase() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "identical-token-bad.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of(2));
+        updateModule(FOLDER_RESOURCE + "identical-token-clean.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of());
+        updateModule(FOLDER_RESOURCE + "identical-token-bad.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of(2));
+    }
+
+    private void assertMarkerLines(List<Integer> expected)
+    {
+        for (INode leaf : NodeModelUtils.findActualNodeFor(getModule()).getLeafNodes())
+        {
+            assertNull("Syntax at line " + leaf.getStartLine(), leaf.getSyntaxErrorMessage()); //$NON-NLS-1$
+        }
+        assertEquals(expected, getModuleMarkers().stream().map(marker -> {
+            Integer line = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE);
+            return line;
+        }).sorted().toList());
+    }
+
+    @Test
+    public void testLiteralAndDivisorBoundaries() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "expression-token-boundaries.bsl"); //$NON-NLS-1$
+        ICheckSettings settings = checkRepository.getSettings(new CheckUid(getCheckId(), BslPlugin.PLUGIN_ID),
+            getProject().getWorkspaceProject());
+        String key = "popularDivisors"; //$NON-NLS-1$
+        String original = settings.getParameters().get(key).getValue();
+        assertEquals("60, 1024", original); //$NON-NLS-1$
+        try
+        {
+            // Redundant parentheses are not ignored by this token comparer.
+            assertMarkerLines(List.of(2, 7, 14));
+            settings.getParameters().get(key).setValue(""); //$NON-NLS-1$
+            checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+            waitForDD(getProject());
+            assertMarkerLines(List.of(2, 7, 11, 14));
+        }
+        finally
+        {
+            settings.getParameters().get(key).setValue(original);
+            checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+            waitForDD(getProject());
+        }
     }
 }
