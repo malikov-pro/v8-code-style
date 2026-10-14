@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 184
+Общее количество проверок: 187
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -56,6 +56,7 @@
 | [deprecated-current-date](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-current-date.html) | Использование устаревшего метода «ТекущаяДата» |
 | [deprecated-find](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-find.html) | Использование устаревшего метода «Найти» |
 | [deprecated-procedure-outside-deprecated-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-procedure-outside-deprecated-region.html) | Устаревшая процедура (функция) расположена вне области "УстаревшиеПроцедурыИФункции" |
+| [disable-safe-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/disable-safe-mode.html) | Отключение безопасного режима |
 | [doc-comment-collection-item-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-collection-item-type.html) | Тип коллекций в документирующем комментарии содержит тип элемента коллекции |
 | [doc-comment-complex-type-with-link](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-complex-type-with-link.html) | Поле документирующего комментария использует объявление сложного типа вместо ссылки на тип |
 | [doc-comment-description-ends-on-dot](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-description-ends-on-dot.html) | Многострочное описание документирующего комментария оканчивается на точку |
@@ -88,6 +89,7 @@
 | [form-module-missing-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-module-missing-pragma.html) | Всегда использовать директивы компиляции в модуле формы |
 | [form-module-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-module-pragma.html) | Использование директив компиляции модуля формы |
 | [form-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-self-reference.html) | Использование устаревшего псевдонима |
+| [function-out-parameter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-out-parameter.html) | Выходные параметры функций |
 | [function-return-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-return-value-type.html) | Функция возвращает типизированное значение |
 | [function-should-have-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-should-have-return.html) | Функция должна содержать возврат |
 | [identical-expressions](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/identical-expressions.html) | Одинаковые выражения слева и справа от оператора |
@@ -179,6 +181,7 @@
 | [up-769-obsolete-refs-obsolete](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-769-obsolete-refs-obsolete.html) | Устаревшая процедура (функция) ссылается на другую устаревшую процедуру (функцию) |
 | [up-781-notify-handler-nonexistent](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-781-notify-handler-nonexistent.html) | Несуществующая процедура в параметре обработчика оповещения |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
+| [use-less-for-each](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-less-for-each.html) | Неиспользуемый итератор Для Каждого |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |
 | [using-form-data-to-value](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-form-data-to-value.html) | Использование РеквизитФормыВЗначение и ДанныеФормыВЗначение |

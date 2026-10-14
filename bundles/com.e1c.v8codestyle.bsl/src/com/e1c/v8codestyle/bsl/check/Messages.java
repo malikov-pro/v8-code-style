@@ -939,6 +939,15 @@ final class Messages
     public static String DoubleNegativesCheck_title;
     public static String UnaryPlusInConcatenationCheck_title;
     public static String IncorrectUseOfStrTemplateCheck_title;
+    public static String DisableSafeModeCheck_title;
+    public static String DisableSafeModeCheck_description;
+    public static String DisableSafeModeCheck_message;
+    public static String FunctionOutParameterCheck_title;
+    public static String FunctionOutParameterCheck_description;
+    public static String FunctionOutParameterCheck_message;
+    public static String UseLessForEachCheck_title;
+    public static String UseLessForEachCheck_description;
+    public static String UseLessForEachCheck_message;
     public static String IncorrectUseOfStrTemplateCheck_description;
     public static String IncorrectUseOfStrTemplateCheck_message;
     public static String UnaryPlusInConcatenationCheck_description;

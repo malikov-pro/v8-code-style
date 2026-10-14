@@ -87,6 +87,7 @@ deleting-collection-item
 deprecated-current-date
 deprecated-find
 deprecated-procedure-outside-deprecated-region
+disable-safe-mode
 doc-comment-collection-item-type
 doc-comment-complex-type-with-link
 doc-comment-description-ends-on-dot
@@ -128,6 +129,7 @@ form-list-ref-user-visibility-enabled
 form-module-missing-pragma
 form-module-pragma
 form-self-reference
+function-out-parameter
 function-return-value-type
 function-should-have-return
 functional-option-privileged-get-mode
@@ -277,6 +279,7 @@ up-768-obsolete-refs-missing
 up-769-obsolete-refs-obsolete
 up-781-notify-handler-nonexistent
 use-goto-operator
+use-less-for-each
 use-non-recommended-method
 useless-ternary-operator
 using-form-data-to-value
