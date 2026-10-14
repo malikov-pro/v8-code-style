@@ -946,6 +946,16 @@ final class Messages
     public static String FunctionOutParameterCheck_description;
     public static String FunctionOutParameterCheck_message;
     public static String UseLessForEachCheck_title;
+    public static String IfElseIfEndsWithElseCheck_title;
+    public static String IfElseIfEndsWithElseCheck_description;
+    public static String IfElseIfEndsWithElseCheck_message;
+    public static String ReservedParameterNamesCheck_title;
+    public static String ReservedParameterNamesCheck_description;
+    public static String ReservedParameterNamesCheck_message;
+    public static String ReservedParameterNamesCheck_parameter;
+    public static String NestedConstructorsInStructureDeclarationCheck_title;
+    public static String NestedConstructorsInStructureDeclarationCheck_description;
+    public static String NestedConstructorsInStructureDeclarationCheck_message;
     public static String UseLessForEachCheck_description;
     public static String UseLessForEachCheck_message;
     public static String IncorrectUseOfStrTemplateCheck_description;
