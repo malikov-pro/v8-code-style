@@ -72,6 +72,18 @@
              category="com.e1c.v8codestyle.bsl"
              class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.NestedConstructorsInStructureDeclarationCheck">
        </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UsingServiceTagCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.TooManyReturnsCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DuplicateStringLiteralCheck">
+       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.StructureCtorTooManyKeysCheck">
