@@ -251,6 +251,7 @@ subsystem-synonym-too-long
 ternary-operator-usage
 timeouts-in-external-resources
 typed-value-adding-to-untyped-collection
+unary-plus-in-concatenation
 unknown-form-parameter-access
 unsafe-password-ib-storage
 unused-parameters
