@@ -108,6 +108,7 @@ doc-comment-use-minus
 document-post-in-privileged-mode
 dont-use-modality-mode
 double-negatives
+duplicate-string-literal
 dynamic-access-method-not-found
 empty-code-block
 empty-except-statement
@@ -256,6 +257,7 @@ structure-key-modification
 subsystem-synonym-too-long
 ternary-operator-usage
 timeouts-in-external-resources
+too-many-returns
 typed-value-adding-to-untyped-collection
 unary-plus-in-concatenation
 unknown-form-parameter-access
@@ -291,5 +293,6 @@ using-hardcode-path
 using-hardcode-secret-information
 using-isinrole
 using-modal-windows
+using-service-tag
 using-synchronous-calls
 variable-value-type
