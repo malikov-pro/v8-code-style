@@ -766,6 +766,8 @@ final class Messages
     public static String CyclomaticComplexityCheck_Complexity_threshold;
 
     public static String CognitiveComplexityCheck_title;
+    public static String CognitiveComplexityCheck_Check_module_body;
+    public static String CyclomaticComplexityCheck_Check_module_body;
     public static String CognitiveComplexityCheck_description;
     public static String CognitiveComplexityCheck_Cognitive_complexity;
     public static String CognitiveComplexityCheck_Complexity_threshold;

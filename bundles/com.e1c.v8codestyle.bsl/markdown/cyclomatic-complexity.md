@@ -1,6 +1,8 @@
 # Cyclomatic complexity of method is too high
 
-Checks the cyclomatic complexity of a method: 1 plus the number of If/ElsIf branches, loops, And/Or operations and ternary operators (parameter, default 20, as in BSL LS). Split a complex method into several. The check has no quick fix.
+Checks cyclomatic complexity of methods and module-level code. Defaults: `complexityThreshold=20`, `checkModuleBody=true`. Methods start at one, module-level code at zero. If/ElsIf/Else, loops, Except, ternaries, Goto, direct recursive calls and each And/Or operation add one. Try, Return and ordinary calls add nothing. No reachability analysis is performed.
+
+Method issues highlight the method name; module-body issues highlight the first statement token. Numeric regression tests include the adapted pinned LS computer corpus. Secondary locations are not provided; full differential parity, especially nested grammar/preprocessor edge cases, is not certified. Split complex code into smaller methods. No quick fix is provided.
 
 ## See
 
