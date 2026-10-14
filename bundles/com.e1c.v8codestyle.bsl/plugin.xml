@@ -48,6 +48,18 @@
              category="com.e1c.v8codestyle.bsl"
              class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.IncorrectUseOfStrTemplateCheck">
        </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DisableSafeModeCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.FunctionOutParameterCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UseLessForEachCheck">
+       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.StructureCtorTooManyKeysCheck">
