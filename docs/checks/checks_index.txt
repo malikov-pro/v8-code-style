@@ -137,6 +137,7 @@ identical-expressions
 if-condition-complexity
 if-else-duplicated-code-block
 if-else-duplicated-condition
+if-else-if-ends-with-else
 incorrect-use-of-str-template
 input-field-list-choice-mode
 invocation-form-event-handler
@@ -180,6 +181,7 @@ module-undefined-method
 module-undefined-variable
 module-unused-local-variable
 module-unused-method
+nested-constructors-in-structure-declaration
 nested-statements
 nested-ternary-operator
 new-color
@@ -209,6 +211,7 @@ query-in-loop
 reading-attribute-from-database
 redundant-export-method
 register-resource-precision
+reserved-parameter-names
 restriction-execute-external-code
 restriction-execute-external-component-code
 rewrite-method-parameter
