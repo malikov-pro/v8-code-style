@@ -16,13 +16,17 @@
 package com.e1c.v8codestyle.bsl.check.itests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.junit.Test;
 
 import com._1c.g5.v8.dt.validation.marker.Marker;
+import com._1c.g5.v8.dt.validation.marker.StandardExtraInfo;
 import com.e1c.v8codestyle.bsl.check.MissingTempStorageDeletionCheck;
 
 /**
@@ -67,5 +71,45 @@ public class MissingTempStorageDeletionCheckTest
 
         List<Marker> markers = getModuleMarkers();
         assertEquals(markers.stream().map(Marker::getMessage).collect(Collectors.joining("; ")), 0, markers.size());
+    }
+
+    /** Deletion must match the call arguments and start on a later line, as in pinned LS. */
+    @Test
+    public void testAddressAndOrder() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "temp-storage-address-order.bsl"); //$NON-NLS-1$
+        assertEquals(List.of(2, 8, 13, 20, 24), markerLines());
+    }
+
+    /** Changing the existing deletion argument updates the marker without clean. */
+    @Test
+    public void testIncrementalAddressUpdates() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "temp-storage-incremental-bad.bsl"); //$NON-NLS-1$
+        assertEquals(List.of(2), markerLines());
+        updateModule(FOLDER_RESOURCE + "temp-storage-incremental-clean.bsl"); //$NON-NLS-1$
+        assertEquals(List.of(), markerLines());
+        updateModule(FOLDER_RESOURCE + "temp-storage-incremental-bad.bsl"); //$NON-NLS-1$
+        assertEquals(List.of(2), markerLines());
+    }
+
+    /** String addresses remain case-sensitive; identifiers ignore case and hidden tokens. */
+    @Test
+    public void testTokenBoundaries() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "temp-storage-token-boundaries.bsl"); //$NON-NLS-1$
+        assertEquals(List.of(2, 14), markerLines());
+    }
+
+    private List<Integer> markerLines()
+    {
+        for (INode leaf : NodeModelUtils.findActualNodeFor(getModule()).getLeafNodes())
+        {
+            assertNull(leaf.getSyntaxErrorMessage());
+        }
+        return getModuleMarkers().stream().map(marker -> {
+            Integer line = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE);
+            return line;
+        }).sorted().toList();
     }
 }

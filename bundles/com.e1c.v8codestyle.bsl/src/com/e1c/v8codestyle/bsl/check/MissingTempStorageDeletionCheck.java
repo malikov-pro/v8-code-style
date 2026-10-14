@@ -17,13 +17,18 @@ package com.e1c.v8codestyle.bsl.check;
 
 import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.METHOD;
 
+import java.util.List;
 import java.util.Locale;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
+import com._1c.g5.v8.dt.bsl.model.Expression;
 import com._1c.g5.v8.dt.bsl.model.Invocation;
 import com._1c.g5.v8.dt.bsl.model.Method;
+import com._1c.g5.v8.dt.bsl.model.Statement;
 import com._1c.g5.v8.dt.bsl.model.StaticFeatureAccess;
 import com.e1c.g5.v8.dt.check.CheckComplexity;
 import com.e1c.g5.v8.dt.check.ICheckParameters;
@@ -39,9 +44,9 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
  * <p>
  * Перенос диагностики BSL Language Server MissingTempStorageDeletion
  * (тип CODE_SMELL, серьёзность CRITICAL). Упрощение относительно LS
- * (там анализируются операторы позже по строкам в том же блоке): если в
- * методе есть «ПолучитьИзВременногоХранилища», но ни одного
- * «УдалитьИзВременногоХранилища», каждое получение фиксируется.
+ * Анализируются последующие по строкам операторы метода, включая вложенные.
+ * Удаление должно иметь те же аргументы; пути выполнения не анализируются.
+ * В отличие от LS, тело модуля не проверяется, прежний default включён сохранён.
  * Quick fix не предусмотрен: момент удаления определяется логикой метода.
  *
  * @author malikov-pro
@@ -91,44 +96,62 @@ public class MissingTempStorageDeletionCheck
     {
         Method method = (Method)object;
 
-        boolean hasDeletion = false;
-        int getCount = 0;
-        Invocation firstGet = null;
-        for (Invocation invocation : EcoreUtil2.getAllContentsOfType(method, Invocation.class))
+        List<Invocation> calls = EcoreUtil2.getAllContentsOfType(method, Invocation.class);
+        List<Invocation> deletions = calls.stream().filter(call -> isCall(call, DELETE_RU, DELETE_EN)).toList();
+        for (Invocation invocation : calls)
         {
-            if (!(invocation.getMethodAccess() instanceof StaticFeatureAccess methodAccess))
+            if (progressMonitor.isCanceled())
             {
-                continue;
+                return;
             }
-            String name = methodAccess.getName().toLowerCase(Locale.ROOT);
-            if (GET_RU.equals(name) || GET_EN.equals(name))
+            if (isCall(invocation, GET_RU, GET_EN)
+                && deletions.stream().noneMatch(deletion -> isMatchingLaterDeletion(invocation, deletion)))
             {
-                getCount++;
-                if (firstGet == null)
-                {
-                    firstGet = invocation;
-                }
-            }
-            else if (DELETE_RU.equals(name) || DELETE_EN.equals(name))
-            {
-                hasDeletion = true;
+                resultAceptor.addIssue(
+                    Messages.MissingTempStorageDeletionCheck_Missing_temp_storage_deletion, invocation);
             }
         }
-        if (getCount == 0 || hasDeletion || firstGet == null)
+    }
+
+    private static boolean isCall(Invocation call, String ru, String en)
+    {
+        return call.getMethodAccess() instanceof StaticFeatureAccess access
+            && (ru.equalsIgnoreCase(access.getName()) || en.equalsIgnoreCase(access.getName()));
+    }
+
+    private static boolean isMatchingLaterDeletion(Invocation get, Invocation delete)
+    {
+        INode getNode = NodeModelUtils.findActualNodeFor(get);
+        Statement statement = EcoreUtil2.getContainerOfType(delete, Statement.class);
+        INode deleteNode = NodeModelUtils.findActualNodeFor(statement);
+        if (getNode == null || deleteNode == null || deleteNode.getStartLine() <= getNode.getEndLine()
+            || get.getParams().size() != delete.getParams().size())
         {
-            return;
+            return false;
         }
-        for (Invocation invocation : EcoreUtil2.getAllContentsOfType(method, Invocation.class))
+        for (int i = 0; i < get.getParams().size(); i++)
         {
-            if (invocation.getMethodAccess() instanceof StaticFeatureAccess methodAccess)
+            Expression left = get.getParams().get(i);
+            Expression right = delete.getParams().get(i);
+            if (left.eClass() != right.eClass() || !tokens(left).equals(tokens(right)))
             {
-                String name = methodAccess.getName().toLowerCase(Locale.ROOT);
-                if (GET_RU.equals(name) || GET_EN.equals(name))
-                {
-                    resultAceptor.addIssue(
-                        Messages.MissingTempStorageDeletionCheck_Missing_temp_storage_deletion, invocation);
-                }
+                return false;
             }
         }
+        return true;
+    }
+
+    private static List<String> tokens(Expression expression)
+    {
+        INode node = NodeModelUtils.findActualNodeFor(expression);
+        if (node == null)
+        {
+            return List.of();
+        }
+        return java.util.stream.StreamSupport.stream(node.getLeafNodes().spliterator(), false)
+            .filter(leaf -> !leaf.isHidden())
+            .map(leaf -> leaf.getText().startsWith("\"") ? leaf.getText() //$NON-NLS-1$
+                : leaf.getText().toLowerCase(Locale.ROOT))
+            .toList();
     }
 }

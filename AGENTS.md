@@ -196,6 +196,11 @@
   Обход по исходным offset; имя метода Invocation.methodAccess не является
   чтением переменной. RHS-root учитывать отдельно; П=П не считать чтением,
   иначе оно скрывает последующую перезапись (LS corpus cases6/7).
+- LS storage/timeout: `findAllRuleNodes` включает вложенные statements;
+  не приписывать upstream CFG/same-branch гарантии. Storagedelete.startLine
+  строго больше get.endLine; аргументы сравнивать tokenwise (strings exact,
+  identifiers case-insensitive,hidden ignored). WSProxyidx5,не WSDidx4;
+  LScomplexIdentifier допускает вызов/свойство в качестве timeout.
 
 ## Управление проверками из кода (API настроек, EDT 2026.2)
 

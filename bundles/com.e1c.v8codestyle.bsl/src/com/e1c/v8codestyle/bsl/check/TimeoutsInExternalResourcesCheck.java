@@ -30,6 +30,7 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import com._1c.g5.v8.dt.bsl.model.DynamicFeatureAccess;
 import com._1c.g5.v8.dt.bsl.model.EmptyExpression;
 import com._1c.g5.v8.dt.bsl.model.Expression;
+import com._1c.g5.v8.dt.bsl.model.Invocation;
 import com._1c.g5.v8.dt.bsl.model.Method;
 import com._1c.g5.v8.dt.bsl.model.NumberLiteral;
 import com._1c.g5.v8.dt.bsl.model.OperatorStyleCreator;
@@ -54,8 +55,9 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
  * (тип ERROR, серьёзность CRITICAL). Таймаут считается заданным, если в
  * конструкторе заполнен параметр таймаута (индексы как в LS: WSОпределения —
  * 4, FTPСоединение — 6, остальные — 5) ИЛИ ниже по коду той же переменной
- * присвоено свойство «Таймаут» числом/переменной (упрощение: поиск ниже —
- * по всему методу, в LS — в том же блоке кода). Параметр
+ * присвоено свойство «Таймаут» числом, переменной, обращением к свойству или
+ * вызовом. Поиск — по всему методу, включая вложенные блоки, без CFG.
+ * Индексы для старых режимов совместимости LS не перенесены. Параметр
  * analyzeInternetMailProfileZeroTimeout включает анализ
  * ИнтернетПочтовыйПрофиль (по умолчанию включён). Quick fix не предусмотрен.
  *
@@ -179,7 +181,7 @@ public class TimeoutsInExternalResourcesCheck
     private static int timeoutIndex(String typeName)
     {
         String lower = typeName.toLowerCase(Locale.ROOT);
-        if (lower.startsWith("ws"))
+        if (lower.equals("wsdefinitions") || lower.equals("wsопределения")) //$NON-NLS-1$ //$NON-NLS-2$
         {
             return TIMEOUT_INDEX_WSD;
         }
@@ -196,7 +198,7 @@ public class TimeoutsInExternalResourcesCheck
 
     /**
      * Таймаут задан в конструкторе: параметр по индексу — число или
-     * переменная (как isNumberOrVariable в LS; строка/булево/пусто — не задан).
+     * переменная, обращение к свойству или вызов (строка/булево/пусто — не задан).
      */
     private static boolean isTimeoutSetInConstructor(OperatorStyleCreator creator, int timeoutIndex)
     {
@@ -210,7 +212,7 @@ public class TimeoutsInExternalResourcesCheck
         {
             return false;
         }
-        return timeoutParam instanceof NumberLiteral || timeoutParam instanceof StaticFeatureAccess;
+        return isTimeoutExpression(timeoutParam);
     }
 
     /**
@@ -233,13 +235,13 @@ public class TimeoutsInExternalResourcesCheck
 
     /**
      * Ниже по коду метода той же переменной присваивается свойство
-     * «Таймаут» числом или переменной
+     * «Таймаут» допустимым выражением
      * ({@code Соединение.Таймаут = 60;}).
      */
     private static boolean isTimeoutAssignedBelow(List<SimpleStatement> statements, OperatorStyleCreator creator,
         String variableName)
     {
-        int creatorOffset = NodeModelUtils.findActualNodeFor(creator).getTotalOffset();
+        int creatorLine = NodeModelUtils.findActualNodeFor(creator).getStartLine();
         for (SimpleStatement statement : statements)
         {
             if (!(statement.getLeft() instanceof DynamicFeatureAccess property))
@@ -247,7 +249,7 @@ public class TimeoutsInExternalResourcesCheck
                 continue;
             }
             INode node = NodeModelUtils.findActualNodeFor(statement);
-            if (node == null || node.getTotalOffset() <= creatorOffset)
+            if (node == null || node.getStartLine() <= creatorLine)
             {
                 continue;
             }
@@ -261,11 +263,17 @@ public class TimeoutsInExternalResourcesCheck
                 continue;
             }
             Expression right = statement.getRight();
-            if (right instanceof NumberLiteral || right instanceof StaticFeatureAccess)
+            if (isTimeoutExpression(right))
             {
                 return true;
             }
         }
         return false;
+    }
+
+    private static boolean isTimeoutExpression(Expression expression)
+    {
+        return expression instanceof NumberLiteral || expression instanceof StaticFeatureAccess
+            || expression instanceof DynamicFeatureAccess || expression instanceof Invocation;
     }
 }
