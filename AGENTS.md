@@ -207,6 +207,11 @@
   unknown и union отдельно; пустой набор не считать доказанным типом.
   Прецедент CompareWithBoolean: validation дал Boolean/[]/Boolean+String,
   прежние прямые чтения давали только [].
+- Метрики LS не требуют CFG: Else/Except/recursion/Goto входят в обе,
+  Try не увеличивает вложенность. Cognitive считает серии AND/OR, а не все
+  операции; NOT(логическое выражение) разделяет серии. Формулу проверять
+  численно на pinned computer corpus. Цель маркера метода — имя; body — первый
+  значимый токен. EMF containment order не заменяет source order.
 
 ## Управление проверками из кода (API настроек, EDT 2026.2)
 
