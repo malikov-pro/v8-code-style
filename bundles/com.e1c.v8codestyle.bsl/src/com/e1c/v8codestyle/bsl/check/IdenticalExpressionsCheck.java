@@ -19,7 +19,6 @@ import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.BINARY_EXPRESSION;
 
 import java.text.MessageFormat;
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -46,8 +45,8 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
  * <p>
  * Перенос диагностики BSL Language Server IdenticalExpressions
  * (тип ERROR, серьёзность MAJOR). Упрощение относительно LS (expression tree):
- * сравнивается текст левого и правого операнда каждого бинарного выражения
- * (без учёта регистра и пробелов); цепочки вида {@code А = Б ИЛИ А <> Б}
+ * сравниваются значимые токены операндов, строки точно, прочие токены без регистра;
+ * транзитивность и цепочки вида {@code А = Б ИЛИ А <> Б}
  * не анализируются. Как и в LS, повтор операнда в сложении и умножении
  * ({@code А + А}) допустим; деление на популярные делители (параметр,
  * по умолчанию «60, 1024») ошибкой не считается.
@@ -99,6 +98,10 @@ public class IdenticalExpressionsCheck
         IProgressMonitor progressMonitor)
     {
         BinaryExpression expression = (BinaryExpression)object;
+        if (progressMonitor.isCanceled())
+        {
+            return;
+        }
         BinaryOperation operation = expression.getOperation();
         // повтор операнда в сложении/умножении (А + А — удвоение) допустим, как и в LS
         if (operation == BinaryOperation.PLUS || operation == BinaryOperation.MULTIPLY)
@@ -117,7 +120,7 @@ public class IdenticalExpressionsCheck
         {
             return;
         }
-        if (!normalize(leftText).equals(normalize(rightText)))
+        if (!BslExpressionTokens.equal(left, right))
         {
             return;
         }
@@ -183,9 +186,4 @@ public class IdenticalExpressionsCheck
         return node == null ? "" : node.getText().trim(); //$NON-NLS-1$
     }
 
-    private static String normalize(String text)
-    {
-        return text.trim().replaceAll("\\s+", " ") //$NON-NLS-1$ //$NON-NLS-2$
-            .toLowerCase(Locale.ROOT);
-    }
 }

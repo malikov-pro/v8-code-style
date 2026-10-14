@@ -7,7 +7,7 @@ Allowed (as in BSL Language Server):
 - repeating an operand in addition and multiplication (`A + A` is doubling);
 - division by popular divisors — the `popularDivisors` parameter, by default `60, 1024` (scaling of time and bytes).
 
-Compared by text (case-insensitive, whitespace-insensitive); chains like `A = B Or A <> B` are not analyzed.
+Operands must have the same root AST kind and matching significant source tokens. Comments and whitespace outside literals are ignored; non-string tokens ignore case, while string case, internal whitespace and escaped quotes are preserved exactly. Methods and module-level expressions are checked. Redundant parentheses, reordered operands and transitive logical chains are not normalized as in LS's expression-tree comparer; marker scope also remains the current binary expression rather than the complete LS expression context. These differences remain explicit; full LS equivalence is not certified.
 
 ## Noncompliant Code Example
 
