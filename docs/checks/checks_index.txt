@@ -135,6 +135,7 @@ identical-expressions
 if-condition-complexity
 if-else-duplicated-code-block
 if-else-duplicated-condition
+incorrect-use-of-str-template
 input-field-list-choice-mode
 invocation-form-event-handler
 invocation-parameter-type-intersect
