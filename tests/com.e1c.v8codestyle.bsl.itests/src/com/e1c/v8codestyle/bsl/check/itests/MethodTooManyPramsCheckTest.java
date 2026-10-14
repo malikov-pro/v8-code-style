@@ -14,6 +14,7 @@ package com.e1c.v8codestyle.bsl.check.itests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 
 import java.text.MessageFormat;
 import java.util.HashSet;
@@ -21,10 +22,15 @@ import java.util.List;
 import java.util.Set;
 
 import org.junit.Test;
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 import com._1c.g5.v8.dt.validation.marker.Marker;
 import com._1c.g5.v8.dt.validation.marker.StandardExtraInfo;
 import com.e1c.v8codestyle.bsl.check.MethodTooManyPramsCheck;
+import com.e1c.g5.v8.dt.check.settings.CheckUid;
+import com.e1c.g5.v8.dt.check.settings.ICheckSettings;
+import com.e1c.v8codestyle.internal.bsl.BslPlugin;
 
 /**
  * The test of {@link MethodTooManyPramsCheck} check.
@@ -51,7 +57,7 @@ public class MethodTooManyPramsCheckTest
         updateModule(FOLDER_RESOURCE + "method-too-many-params.bsl");
 
         List<Marker> markers = getModuleMarkers();
-        assertEquals(12, markers.size());
+        assertEquals(14, markers.size());
 
         Set<Integer> errorLines = new HashSet<>();
         for (Marker marker : markers)
@@ -82,10 +88,76 @@ public class MethodTooManyPramsCheckTest
                 break;
             }
         }
-
         // check found all errors
-        assertEquals(8, errorLines.size());
-
+        assertEquals(Set.of(7, 8, 9, 10, 11, 12, 13, 24, 40), errorLines);
     }
 
+    @Test
+    public void testSevenEightNineAndOptionalBoundaries() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "parameter-count-boundaries.bsl"); //$NON-NLS-1$
+        ICheckSettings settings = checkRepository.getSettings(new CheckUid(getCheckId(), BslPlugin.PLUGIN_ID),
+            getProject().getWorkspaceProject());
+        String originalMax = settings.getParameters().get("maxParams").getValue(); //$NON-NLS-1$
+        String originalDefault = settings.getParameters().get("maxDefaultValueParams").getValue(); //$NON-NLS-1$
+        assertEquals("7", originalMax); //$NON-NLS-1$
+        assertEquals("3", originalDefault); //$NON-NLS-1$
+        try
+        {
+            assertLines(List.of(4, 7, 7, 14));
+            setParameter(settings, "maxParams", "8"); //$NON-NLS-1$ //$NON-NLS-2$
+            assertLines(List.of(7, 14));
+            setParameter(settings, "maxParams", "7"); //$NON-NLS-1$ //$NON-NLS-2$
+            setParameter(settings, "maxDefaultValueParams", "0"); //$NON-NLS-1$ //$NON-NLS-2$
+            assertLines(List.of(4, 7, 7));
+            setParameter(settings, "maxParams", "0"); //$NON-NLS-1$ //$NON-NLS-2$
+            assertLines(List.of());
+            setParameter(settings, "maxDefaultValueParams", "3"); //$NON-NLS-1$ //$NON-NLS-2$
+            assertLines(List.of(14));
+        }
+        finally
+        {
+            settings.getParameters().get("maxParams").setValue(originalMax); //$NON-NLS-1$
+            settings.getParameters().get("maxDefaultValueParams").setValue(originalDefault); //$NON-NLS-1$
+            checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+            waitForDD(getProject());
+        }
+    }
+
+    private void setParameter(ICheckSettings settings, String key, String value)
+    {
+        settings.getParameters().get(key).setValue(value);
+        checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+        waitForDD(getProject());
+    }
+
+    @Test
+    public void testIncrementalParameterCount() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "parameter-count-bad.bsl"); //$NON-NLS-1$
+        assertLines(List.of(1));
+        updateModule(FOLDER_RESOURCE + "parameter-count-clean.bsl"); //$NON-NLS-1$
+        assertLines(List.of());
+        updateModule(FOLDER_RESOURCE + "parameter-count-bad.bsl"); //$NON-NLS-1$
+        assertLines(List.of(1));
+    }
+
+    private void assertLines(List<Integer> expected)
+    {
+        INode node = NodeModelUtils.findActualNodeFor(getModule());
+        for (INode leaf : node.getLeafNodes())
+        {
+            assertNull(leaf.getSyntaxErrorMessage());
+        }
+        assertEquals(expected, getModuleMarkers().stream().map(marker -> {
+            Integer line = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE);
+            return line;
+        }).sorted().toList());
+        for (var marker : getModuleMarkers())
+        {
+            Integer offset = marker.getExtraInfo().get(StandardExtraInfo.TEXT_OFFSET);
+            Integer length = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LENGTH);
+            assertEquals(true, node.getRootNode().getText().substring(offset, offset + length).matches("П[1-9]")); //$NON-NLS-1$
+        }
+    }
 }
