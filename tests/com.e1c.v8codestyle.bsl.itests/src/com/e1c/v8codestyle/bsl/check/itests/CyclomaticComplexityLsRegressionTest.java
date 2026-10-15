@@ -81,4 +81,38 @@ public class CyclomaticComplexityLsRegressionTest extends AbstractLsMetricTestBa
             setParameter(settings, "complexityThreshold", original); //$NON-NLS-1$
         }
     }
+
+    @Test
+    public void testPreprocessorAndLabeledStructure() throws Exception
+    {
+        var settings = settings();
+        String original = settings.getParameters().get("complexityThreshold").getValue(); //$NON-NLS-1$
+        try
+        {
+            setParameter(settings, "complexityThreshold", "0"); //$NON-NLS-1$ //$NON-NLS-2$
+            updateModule(FOLDER_RESOURCE + "metrics-preprocessor-corpus.bsl"); //$NON-NLS-1$
+            assertMetricValues(Map.of(1, 4, 15, 3, 24, 1));
+        }
+        finally
+        {
+            setParameter(settings, "complexityThreshold", original); //$NON-NLS-1$
+        }
+    }
+
+    @Test
+    public void testNestedCallArgumentsAndIndexExpression() throws Exception
+    {
+        var settings = settings();
+        String original = settings.getParameters().get("complexityThreshold").getValue(); //$NON-NLS-1$
+        try
+        {
+            setParameter(settings, "complexityThreshold", "0"); //$NON-NLS-1$ //$NON-NLS-2$
+            updateModule(FOLDER_RESOURCE + "metrics-nested-call-corpus.bsl"); //$NON-NLS-1$
+            assertMetricValues(Map.of(1, 5, 6, 3, 10, 3, 14, 3));
+        }
+        finally
+        {
+            setParameter(settings, "complexityThreshold", original); //$NON-NLS-1$
+        }
+    }
 }
