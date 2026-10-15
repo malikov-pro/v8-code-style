@@ -168,4 +168,41 @@ public class NestedStatementsCheckTest
             waitForDD(getProject());
         }
     }
+
+    @Test
+    public void testDeepNestingAcrossPreprocessorBranch() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "nesting-preprocessor-deep.bsl"); //$NON-NLS-1$
+        assertLines(List.of(7));
+        updateModule(FOLDER_RESOURCE + "nesting-preprocessor-clean.bsl"); //$NON-NLS-1$
+        assertLines(List.of());
+        updateModule(FOLDER_RESOURCE + "nesting-preprocessor-deep.bsl"); //$NON-NLS-1$
+        assertLines(List.of(7));
+    }
+
+    @Test
+    public void testRegionBranchesAndFollowingStatements() throws Exception
+    {
+        var settings = checkRepository.getSettings(new CheckUid(getCheckId(), BslPlugin.PLUGIN_ID),
+            getProject().getWorkspaceProject());
+        String original = settings.getParameters().get("maxAllowedLevel").getValue(); //$NON-NLS-1$
+        try
+        {
+            settings.getParameters().get("maxAllowedLevel").setValue("1"); //$NON-NLS-1$ //$NON-NLS-2$
+            checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+            waitForDD(getProject());
+            updateModule(FOLDER_RESOURCE + "nesting-preprocessor-boundaries.bsl"); //$NON-NLS-1$
+            assertLines(List.of(4, 8, 12, 16, 20));
+            settings.getParameters().get("maxAllowedLevel").setValue("2"); //$NON-NLS-1$ //$NON-NLS-2$
+            checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+            waitForDD(getProject());
+            assertLines(List.of());
+        }
+        finally
+        {
+            settings.getParameters().get("maxAllowedLevel").setValue(original); //$NON-NLS-1$
+            checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+            waitForDD(getProject());
+        }
+    }
 }

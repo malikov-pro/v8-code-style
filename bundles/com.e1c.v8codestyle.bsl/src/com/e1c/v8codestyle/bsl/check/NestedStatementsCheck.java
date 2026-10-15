@@ -18,9 +18,11 @@ package com.e1c.v8codestyle.bsl.check;
 import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.MODULE;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.nodemodel.INode;
@@ -29,9 +31,11 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import com._1c.g5.v8.dt.bsl.model.Conditional;
 import com._1c.g5.v8.dt.bsl.model.ForStatement;
 import com._1c.g5.v8.dt.bsl.model.IfStatement;
+import com._1c.g5.v8.dt.bsl.model.IfPreprocessorStatement;
 import com._1c.g5.v8.dt.bsl.model.LabeledStatement;
 import com._1c.g5.v8.dt.bsl.model.Method;
 import com._1c.g5.v8.dt.bsl.model.Module;
+import com._1c.g5.v8.dt.bsl.model.RegionPreprocessorStatement;
 import com._1c.g5.v8.dt.bsl.model.Statement;
 import com._1c.g5.v8.dt.bsl.model.TryExceptStatement;
 import com._1c.g5.v8.dt.bsl.model.WhileStatement;
@@ -113,7 +117,7 @@ public class NestedStatementsCheck
     private void walk(List<Statement> statements, int depth, int maxLevel, ResultAcceptor resultAceptor,
         IProgressMonitor monitor, Module module)
     {
-        for (Statement statement : statements)
+        for (Statement statement : expandPreprocessor(statements))
         {
             statement = effectiveStatement(statement);
             if (monitor.isCanceled())
@@ -124,7 +128,7 @@ public class NestedStatementsCheck
             {
                 continue;
             }
-            List<Statement> nested = nestedStatements(statement);
+            List<Statement> nested = expandPreprocessor(nestedStatements(statement));
             boolean hasNestedCompound = nested.stream().map(NestedStatementsCheck::effectiveStatement)
                 .anyMatch(NestedStatementsCheck::isCompound);
             if (depth > maxLevel && !hasNestedCompound)
@@ -153,6 +157,40 @@ public class NestedStatementsCheck
     {
         return statement instanceof IfStatement || statement instanceof ForStatement
             || statement instanceof TryExceptStatement || statement instanceof WhileStatement;
+    }
+
+    /** Preprocessor containers do not add runtime nesting depth. */
+    private static List<Statement> expandPreprocessor(List<Statement> statements)
+    {
+        List<Statement> result = new ArrayList<>();
+        for (Statement statement : statements)
+        {
+            Statement effective = effectiveStatement(statement);
+            if (effective instanceof IfPreprocessorStatement || effective instanceof RegionPreprocessorStatement)
+            {
+                collectWrappedStatements(effective, result);
+            }
+            else if (effective != null)
+            {
+                result.add(effective);
+            }
+        }
+        return result;
+    }
+
+    private static void collectWrappedStatements(EObject wrapper, List<Statement> result)
+    {
+        for (EObject child : wrapper.eContents())
+        {
+            if (child instanceof Statement statement)
+            {
+                result.addAll(expandPreprocessor(List.of(statement)));
+            }
+            else if (!(child instanceof Method))
+            {
+                collectWrappedStatements(child, result);
+            }
+        }
     }
 
     private static Statement effectiveStatement(Statement statement)
