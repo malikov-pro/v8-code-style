@@ -260,10 +260,12 @@ subsystem-synonym-too-long
 ternary-operator-usage
 timeouts-in-external-resources
 too-many-returns
+try-number
 typed-value-adding-to-untyped-collection
 unary-plus-in-concatenation
 unknown-form-parameter-access
 unsafe-password-ib-storage
+unsafe-safe-mode-method-call
 unused-parameters
 up-1068-unreachable-code
 up-1353-form-parameters-param
@@ -289,6 +291,7 @@ use-goto-operator
 use-less-for-each
 use-non-recommended-method
 useless-ternary-operator
+using-find-element-by-string
 using-form-data-to-value
 using-hardcode-network-address
 using-hardcode-path

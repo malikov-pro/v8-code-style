@@ -522,6 +522,15 @@ final class Messages
     public static String UseGotoOperatorCheck_description;
 
     public static String UseGotoOperatorCheck_title;
+    public static String TryNumberCheck_title;
+    public static String TryNumberCheck_description;
+    public static String TryNumberCheck_message;
+    public static String UnsafeSafeModeMethodCallCheck_title;
+    public static String UnsafeSafeModeMethodCallCheck_description;
+    public static String UnsafeSafeModeMethodCallCheck_message;
+    public static String UsingFindElementByStringCheck_title;
+    public static String UsingFindElementByStringCheck_description;
+    public static String UsingFindElementByStringCheck_message;
 
     public static String UseGotoOperatorCheck_Use_Goto_operator;
 
