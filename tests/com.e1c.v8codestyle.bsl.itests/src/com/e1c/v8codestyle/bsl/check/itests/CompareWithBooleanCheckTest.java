@@ -50,6 +50,24 @@ public class CompareWithBooleanCheckTest
         assertLines(List.of(2, 5));
     }
 
+    @Test
+    public void testProviderReturnTypeChanges() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "compare-boolean-provider-bad.bsl"); //$NON-NLS-1$
+        assertLines(List.of(6));
+        updateModule(FOLDER_RESOURCE + "compare-boolean-provider-clean.bsl"); //$NON-NLS-1$
+        assertLines(List.of());
+        updateModule(FOLDER_RESOURCE + "compare-boolean-provider-bad.bsl"); //$NON-NLS-1$
+        assertLines(List.of(6));
+    }
+
+    @Test
+    public void testTypedReceiverAndUnknownProperty() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "compare-boolean-properties.bsl"); //$NON-NLS-1$
+        assertLines(List.of(4));
+    }
+
     private void assertLines(List<Integer> expected)
     {
         INode node = NodeModelUtils.findActualNodeFor(getModule());
