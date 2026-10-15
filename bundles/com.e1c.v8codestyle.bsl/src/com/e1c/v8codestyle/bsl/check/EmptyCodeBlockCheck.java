@@ -22,6 +22,8 @@ import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.MODULE;
 import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.TRY_EXCEPT_STATEMENT__TRY_STATEMENTS;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
@@ -33,6 +35,7 @@ import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 import com._1c.g5.v8.dt.bsl.model.Conditional;
+import com._1c.g5.v8.dt.bsl.model.ForStatement;
 import com._1c.g5.v8.dt.bsl.model.IfStatement;
 import com._1c.g5.v8.dt.bsl.model.LoopStatement;
 import com._1c.g5.v8.dt.bsl.model.Module;
@@ -124,8 +127,8 @@ public class EmptyCodeBlockCheck
             if (hasElseSection(ifStatement) && ifStatement.getElseStatements().isEmpty()
                 && !hasComment(ifStatement, IF_STATEMENT__ELSE_STATEMENTS, commentAsCode))
             {
-                resultAceptor.addIssue(emptyBlockMessage(Messages.EmptyCodeBlockCheck_Else_section), ifStatement,
-                    IF_STATEMENT__ELSE_STATEMENTS);
+                addHeaderIssue(ifStatement, "Иначе", "Else", //$NON-NLS-1$ //$NON-NLS-2$
+                    Messages.EmptyCodeBlockCheck_Else_section, resultAceptor);
             }
         }
 
@@ -133,8 +136,7 @@ public class EmptyCodeBlockCheck
         {
             if (loop.getStatements().isEmpty() && !hasComment(loop, LOOP_STATEMENT__STATEMENTS, commentAsCode))
             {
-                resultAceptor.addIssue(emptyBlockMessage(Messages.EmptyCodeBlockCheck_Loop_body), loop,
-                    LOOP_STATEMENT__STATEMENTS);
+                addHeaderIssue(loop, "Цикл", "Do", Messages.EmptyCodeBlockCheck_Loop_body, resultAceptor); //$NON-NLS-1$ //$NON-NLS-2$
             }
         }
     }
@@ -153,21 +155,7 @@ public class EmptyCodeBlockCheck
             {
                 continue;
             }
-            INode node = NodeModelUtils.getNode(statement);
-            if (node == null)
-            {
-                continue;
-            }
-            for (ILeafNode leaf : node.getLeafNodes())
-            {
-                if (!leaf.isHidden() && leaf.getGrammarElement() instanceof Keyword keyword
-                    && matches(keyword.getValue(), "Попытка", "Try")) //$NON-NLS-1$ //$NON-NLS-2$
-                {
-                    resultAcceptor.addIssue(new BslDirectLocationIssue(emptyBlockMessage(Messages.EmptyCodeBlockCheck_Try_block),
-                        new DirectLocation(leaf.getOffset(), leaf.getLength(), leaf.getStartLine(), module)));
-                    break;
-                }
-            }
+            addHeaderIssue(statement, "Попытка", "Try", Messages.EmptyCodeBlockCheck_Try_block, resultAcceptor); //$NON-NLS-1$ //$NON-NLS-2$
         }
     }
 
@@ -191,7 +179,89 @@ public class EmptyCodeBlockCheck
         if (conditional != null && conditional.getStatements().isEmpty()
             && !hasComment(conditional, CONDITIONAL__STATEMENTS, commentAsCode))
         {
-            resultAceptor.addIssue(emptyBlockMessage(sectionName), conditional, CONDITIONAL__STATEMENTS);
+            addHeaderIssue(conditional, "Тогда", "Then", sectionName, resultAceptor); //$NON-NLS-1$ //$NON-NLS-2$
+        }
+    }
+
+    /** Match LS's direct parent terminals on the final line of an empty block header. */
+    private void addHeaderIssue(EObject owner, String ruEnd, String enEnd, String sectionName,
+        ResultAcceptor acceptor)
+    {
+        EObject scanOwner = owner instanceof Conditional ? owner.eContainer() : owner;
+        // ForTo/ForEach are created by an unassigned grammar rule after the For keyword.
+        INode node = owner instanceof ForStatement ? NodeModelUtils.findActualNodeFor(scanOwner)
+            : NodeModelUtils.getNode(scanOwner);
+        if (node == null)
+        {
+            return;
+        }
+        List<ILeafNode> terminals = new ArrayList<>();
+        if (owner instanceof Conditional)
+        {
+            // If/ElsIf belongs to IfStatement, not to its Conditional child.
+            ILeafNode opener = null;
+            INode conditionalNode = NodeModelUtils.getNode(owner);
+            if (conditionalNode == null)
+            {
+                return;
+            }
+            for (ILeafNode leaf : node.getLeafNodes())
+            {
+                if (leaf.getOffset() >= conditionalNode.getOffset())
+                {
+                    break;
+                }
+                if (!leaf.isHidden() && leaf.getSemanticElement() == scanOwner
+                    && leaf.getGrammarElement() instanceof Keyword keyword
+                    && (matches(keyword.getValue(), "Если", "If") //$NON-NLS-1$ //$NON-NLS-2$
+                        || matches(keyword.getValue(), "ИначеЕсли", "ElsIf"))) //$NON-NLS-1$ //$NON-NLS-2$
+                {
+                    opener = leaf;
+                }
+            }
+            if (opener != null)
+            {
+                terminals.add(opener);
+            }
+        }
+        for (ILeafNode leaf : node.getLeafNodes())
+        {
+            if (owner instanceof ForStatement && !leaf.isHidden()
+                && leaf.getGrammarElement() instanceof Keyword opener
+                && matches(opener.getValue(), "Для", "For")) //$NON-NLS-1$ //$NON-NLS-2$
+            {
+                terminals.add(leaf);
+                continue;
+            }
+            if (!leaf.isHidden() && leaf.getSemanticElement() == owner
+                && leaf.getGrammarElement() instanceof Keyword keyword)
+            {
+                terminals.add(leaf);
+                if (matches(keyword.getValue(), ruEnd, enEnd))
+                {
+                    int line = leaf.getStartLine();
+                    ILeafNode first = terminals.stream().filter(item -> item.getStartLine() == line)
+                        .findFirst().orElse(leaf);
+                    ILeafNode last = leaf;
+                    if (owner instanceof LoopStatement)
+                    {
+                        for (ILeafNode closing : node.getLeafNodes())
+                        {
+                            if (closing.getOffset() > leaf.getOffset() && closing.getStartLine() == line
+                                && !closing.isHidden() && closing.getSemanticElement() == owner
+                                && closing.getGrammarElement() instanceof Keyword end
+                                && matches(end.getValue(), "КонецЦикла", "EndDo")) //$NON-NLS-1$ //$NON-NLS-2$
+                            {
+                                last = closing;
+                                break;
+                            }
+                        }
+                    }
+                    acceptor.addIssue(new BslDirectLocationIssue(emptyBlockMessage(sectionName),
+                        new DirectLocation(first.getOffset(), last.getEndOffset() - first.getOffset(), line, owner)));
+                    return;
+                }
+            }
         }
     }
 
