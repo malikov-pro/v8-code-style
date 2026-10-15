@@ -18,7 +18,9 @@ package com.e1c.v8codestyle.bsl.check;
 import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.BINARY_EXPRESSION;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -29,6 +31,7 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import com._1c.g5.v8.dt.bsl.model.BinaryExpression;
 import com._1c.g5.v8.dt.bsl.model.BinaryOperation;
 import com._1c.g5.v8.dt.bsl.model.Expression;
+import com._1c.g5.v8.dt.bsl.model.NumberLiteral;
 import com.e1c.g5.v8.dt.check.CheckComplexity;
 import com.e1c.g5.v8.dt.check.ICheckParameters;
 import com.e1c.g5.v8.dt.check.WrongParameterException;
@@ -44,10 +47,11 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
  * ошибка: оператор не делает то, что ожидал автор.
  * <p>
  * Перенос диагностики BSL Language Server IdenticalExpressions
- * (тип ERROR, серьёзность MAJOR). Упрощение относительно LS (expression tree):
- * сравниваются значимые токены операндов, строки точно, прочие токены без регистра;
- * транзитивность и цепочки вида {@code А = Б ИЛИ А <> Б}
- * не анализируются. Как и в LS, повтор операнда в сложении и умножении
+ * (тип ERROR, серьёзность MAJOR). Структурное сравнение учитывает допустимую
+ * перестановку операндов и повтор в цепочке одинаковых логических операций.
+ * Строки сравниваются точно; свойства и индексные обращения исключены как в LS.
+ * Полная эквивалентность дерева LS и диапазонов не заявляется.
+ * Как и в LS, повтор операнда в сложении и умножении
  * ({@code А + А}) допустим; деление на популярные делители (параметр,
  * по умолчанию «60, 1024») ошибкой не считается.
  *
@@ -108,6 +112,35 @@ public class IdenticalExpressionsCheck
         {
             return;
         }
+        if (operation == BinaryOperation.AND || operation == BinaryOperation.OR)
+        {
+            // LS builds equal-priority logical chains to the right, EDT to the left.
+            // Only normalize an unparenthesized chain; explicit groups remain operands.
+            if (expression.eContainer() instanceof BinaryExpression parent
+                && parent.getOperation() == operation && !LsExpressionEquality.parenthesized(expression))
+            {
+                return;
+            }
+            List<Expression> terms = new ArrayList<>();
+            collectLogicalTerms(expression, operation, terms, true);
+            if (terms.size() > 2)
+            {
+                for (int i = 0; i < terms.size() - 1; i++)
+                {
+                    for (int j = i + 1; j < terms.size(); j++)
+                    {
+                        if (LsExpressionEquality.equal(terms.get(i), terms.get(j)))
+                        {
+                            String message = MessageFormat.format(Messages.IdenticalExpressionsCheck_Identical_expressions,
+                                operation.getName(), expressionText(terms.get(i)));
+                            resultAceptor.addIssue(message, expression);
+                            break;
+                        }
+                    }
+                }
+                return;
+            }
+        }
         Expression left = expression.getLeft();
         Expression right = expression.getRight();
         if (left == null || right == null)
@@ -120,11 +153,11 @@ public class IdenticalExpressionsCheck
         {
             return;
         }
-        if (!BslExpressionTokens.equal(left, right))
+        if (!LsExpressionEquality.equal(left, right) && !repeatsInRightChain(expression))
         {
             return;
         }
-        if (operation == BinaryOperation.DIVIDE && isPopularDivisor(leftText, parameters))
+        if (operation == BinaryOperation.DIVIDE && isPopularDivisor(left, parameters))
         {
             return;
         }
@@ -134,8 +167,60 @@ public class IdenticalExpressionsCheck
         resultAceptor.addIssue(message, expression);
     }
 
-    private static boolean isPopularDivisor(String leftText, ICheckParameters parameters)
+    private static boolean repeatsInRightChain(BinaryExpression expression)
     {
+        BinaryOperation operation = expression.getOperation();
+        if (operation != BinaryOperation.AND && operation != BinaryOperation.OR)
+        {
+            return false;
+        }
+        Expression right = expression.getRight();
+        while (right instanceof BinaryExpression next && next.getOperation() == operation)
+        {
+            if (LsExpressionEquality.equal(expression.getLeft(), next.getLeft())
+                || LsExpressionEquality.equal(expression.getLeft(), next.getRight()))
+            {
+                return true;
+            }
+            right = next.getRight();
+        }
+        return false;
+    }
+
+    private static void collectLogicalTerms(Expression expression, BinaryOperation operation,
+        List<Expression> terms, boolean root)
+    {
+        if (expression instanceof BinaryExpression binary && binary.getOperation() == operation
+            && (root || !LsExpressionEquality.parenthesized(expression)))
+        {
+            collectLogicalTerms(binary.getLeft(), operation, terms, false);
+            collectLogicalTerms(binary.getRight(), operation, terms, false);
+        }
+        else
+        {
+            terms.add(expression);
+        }
+    }
+
+    private static boolean isPopularDivisor(Expression left, ICheckParameters parameters)
+    {
+        if (!(left instanceof NumberLiteral))
+        {
+            return false;
+        }
+        var node = NodeModelUtils.findActualNodeFor(left);
+        if (node == null)
+        {
+            return false;
+        }
+        StringBuilder number = new StringBuilder();
+        for (var leaf : node.getLeafNodes())
+        {
+            if (!leaf.isHidden() && !"(".equals(leaf.getText()) && !")".equals(leaf.getText())) //$NON-NLS-1$ //$NON-NLS-2$
+            {
+                number.append(leaf.getText());
+            }
+        }
         String value;
         try
         {
@@ -152,7 +237,7 @@ public class IdenticalExpressionsCheck
         Set<String> divisors = Arrays.stream(value.split(",")) //$NON-NLS-1$
             .map(String::trim)
             .collect(Collectors.toSet());
-        return divisors.contains(leftText);
+        return divisors.contains(number.toString());
     }
 
     /**

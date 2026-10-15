@@ -124,6 +124,48 @@ public class IdenticalExpressionsCheckTest
     }
 
     @Test
+    public void testPinnedTreeEqualityRules() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "identical-tree-parity.bsl"); //$NON-NLS-1$
+        // LS excludes dereference/index equality even when the text is identical.
+        assertMarkerLines(List.of(2, 3, 4, 5, 10, 11, 12));
+    }
+
+    @Test
+    public void testIncrementalOperandOperation() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "identical-tree-bad.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of(2));
+        updateModule(FOLDER_RESOURCE + "identical-tree-clean.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of());
+        updateModule(FOLDER_RESOURCE + "identical-tree-bad.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of(2));
+    }
+
+    @Test
+    public void testTreeComparisonBoundaries() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "identical-tree-boundaries.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of(2, 4, 7, 8, 9, 12, 13));
+    }
+
+    @Test
+    public void testPinnedLsLinearCorpus() throws Exception
+    {
+        // Adapted from LS's fixture, retaining all cases before the preprocessor sections.
+        updateModule(FOLDER_RESOURCE + "identical-ls-linear-corpus.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of(3, 4, 7, 8, 9, 11, 12, 14, 15, 17, 24, 25, 27, 29, 31, 33, 36, 37));
+    }
+
+    @Test
+    public void testDistinctRepeatedGroupsAndMixedOperators() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "identical-chain-groups.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of(2, 2));
+        assertEquals(2, getModuleMarkers().stream().map(Marker::getMessage).distinct().count());
+    }
+
+    @Test
     public void testLiteralAndDivisorBoundaries() throws Exception
     {
         updateModule(FOLDER_RESOURCE + "expression-token-boundaries.bsl"); //$NON-NLS-1$
@@ -134,12 +176,12 @@ public class IdenticalExpressionsCheckTest
         assertEquals("60, 1024", original); //$NON-NLS-1$
         try
         {
-            // Redundant parentheses are not ignored by this token comparer.
-            assertMarkerLines(List.of(2, 7, 14));
+            // Structural comparison ignores redundant parentheses, preserving string contents.
+            assertMarkerLines(List.of(2, 7, 10, 14));
             settings.getParameters().get(key).setValue(""); //$NON-NLS-1$
             checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
             waitForDD(getProject());
-            assertMarkerLines(List.of(2, 7, 11, 14));
+            assertMarkerLines(List.of(2, 7, 10, 11, 14));
         }
         finally
         {
