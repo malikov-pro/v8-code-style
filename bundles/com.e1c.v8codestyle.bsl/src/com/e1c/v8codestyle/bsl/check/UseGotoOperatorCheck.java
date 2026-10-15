@@ -55,7 +55,7 @@ public class UseGotoOperatorCheck
         builder.title(Messages.UseGotoOperatorCheck_title)
             .description(Messages.UseGotoOperatorCheck_description)
             .complexity(CheckComplexity.NORMAL)
-            .severity(IssueSeverity.MAJOR)
+            .severity(IssueSeverity.BLOCKER)
             .issueType(IssueType.CODE_STYLE)
             .extension(new StandardCheckExtension(547, getCheckId(), BslPlugin.PLUGIN_ID))
             .module()
