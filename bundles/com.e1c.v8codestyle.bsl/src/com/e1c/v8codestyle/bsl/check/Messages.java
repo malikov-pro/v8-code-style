@@ -523,6 +523,9 @@ final class Messages
 
     public static String UseGotoOperatorCheck_title;
     public static String TryNumberCheck_title;
+    public static String MissedRequiredParameterCheck_title;
+    public static String MissedRequiredParameterCheck_description;
+    public static String MissedRequiredParameterCheck_message;
     public static String TryNumberCheck_description;
     public static String TryNumberCheck_message;
     public static String UnsafeSafeModeMethodCallCheck_title;
