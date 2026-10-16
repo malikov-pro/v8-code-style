@@ -10,6 +10,8 @@
     <extInfo xsi:type="form:DynamicListTableExtInfo"/>
   </items>
   <autoCommandBar><name>FormCommandBar</name><id>-1</id><autoFill>true</autoFill></autoCommandBar>
+  <handlers><event>OnOpen</event><name>InitialOpen</name></handlers>
+  <handlers><event>BeforeClose</event><name>InitialClose</name></handlers>
   <items xsi:type="form:Table">
     <name>RowsTable</name>
     <id>3</id>
