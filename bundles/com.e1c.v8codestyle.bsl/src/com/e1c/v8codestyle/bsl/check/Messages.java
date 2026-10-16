@@ -526,6 +526,9 @@ final class Messages
     public static String MissedRequiredParameterCheck_title;
     public static String BadExceptionCategoryCheck_title;
     public static String UnsafeFindByCodeCheck_title;
+    public static String CurrentRowAccessCheck_title;
+    public static String CurrentRowAccessCheck_description;
+    public static String CurrentRowAccessCheck_message;
     public static String UnsafeFindByCodeCheck_description;
     public static String UnsafeFindByCodeCheck_message;
     public static String BadExceptionCategoryCheck_description;

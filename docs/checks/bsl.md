@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 201
+Общее количество проверок: 202
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -52,6 +52,7 @@
 | [compare-with-boolean](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/compare-with-boolean.html) | Избыточное сравнение с булевым литералом |
 | [constructor-function-return-section](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/constructor-function-return-section.html) | Секция возвращаемого значения функции-конструктора данных |
 | [create-query-in-cycle](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/create-query-in-cycle.html) | Создание или выполнение запроса в цикле |
+| [current-row-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/current-row-access.html) | Обращение к текущей строке динамического списка |
 | [cyclomatic-complexity](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/cyclomatic-complexity.html) | Цикломатическая сложность метода выше допустимой |
 | [data-exchange-load](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/data-exchange-load.html) | Проверка ОбменДанными.Загрузка в обработчике события |
 | [deleting-collection-item](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deleting-collection-item.html) | Удаление элемента при обходе коллекции |

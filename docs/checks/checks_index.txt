@@ -78,6 +78,7 @@ compare-with-boolean
 configuration-data-lock-mode
 constructor-function-return-section
 create-query-in-cycle
+current-row-access
 cyclomatic-complexity
 data-composition-conditional-appearance-use
 data-composition-variant-name-default

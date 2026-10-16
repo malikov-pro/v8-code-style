@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 306
+Общее количество проверок 1С:Стандарты разработки V8: 307
 
 - form: 15
 - md: 46
-- bsl: 201
+- bsl: 202
 - ql: 17
 - right: 27
 
@@ -93,6 +93,7 @@
 | [configuration-data-lock-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/configuration-data-lock-mode.html) | Режим блокировки данных конфигурации |
 | [constructor-function-return-section](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/constructor-function-return-section.html) | Секция возвращаемого значения функции-конструктора данных |
 | [create-query-in-cycle](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/create-query-in-cycle.html) | Создание или выполнение запроса в цикле |
+| [current-row-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/current-row-access.html) | Обращение к текущей строке динамического списка |
 | [cyclomatic-complexity](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/cyclomatic-complexity.html) | Цикломатическая сложность метода выше допустимой |
 | [data-composition-conditional-appearance-use](../../../com.e1c.v8codestyle.form/check.descriptions/ru/data-composition-conditional-appearance-use.html) | Условное оформление в формах |
 | [data-composition-variant-name-default](../../../com.e1c.v8codestyle.form/check.descriptions/ru/data-composition-variant-name-default.html) | Проверка имени варианта отчета |

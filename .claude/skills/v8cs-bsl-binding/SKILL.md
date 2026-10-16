@@ -66,6 +66,29 @@ description: Типовые и межмодульные BSL-проверки EDT
 
 ## Границы доказательства
 
+- Таблицы формы: TypesComputer даёт общий FormTable. Для scope DynamicList
+  связывать обращение через DerivedProperty.source с конкретным Table, затем
+  проверять актуальный источник данных и valueType реквизита, не имя элемента.
+  IDataSourceInfoAssociationService требует package import и отдельного
+  `bind(...).toService()` в BSL ExternalDependenciesModule (пример form-бандла).
+- После изменения существующего dataPath.segments коллекция dataPath.objects
+  может ещё описывать старую привязку; isRelatedDynamicList доверяет ей. Проверенный
+  путь — findPropertyInfo(form, path, 0) по текущим сегментам → фактический
+  FormAttribute → extInfo и valueType. Это не универсальное правило для nested
+  путей: сертифицировать нужный scope, не разбирать имена вручную.
+- Form-only регрессии разделять: замена пути, изменение сегмента того же пути,
+  вид таблицы и вложенный TypeDescription.types. Collector с top-filter FORM
+  нужен на конкретных Table/FormAttribute/DataPath/TypeDescription; одной
+  подписки на замену dataPath/valueType недостаточно для вложенной мутации.
+  Readiness/live гейты обязательны и для новой wiring-зависимости; targeted
+  Guice MissingImplementation — BLOCKED, не FAIL детекции.
+- BM-мутация и синхронизация Form.form с диска — разные сценарии. CurrentRowAccess
+  прошёл полные 7 модулей, но live-файловая смена пути оставила маркеры:
+  EDT обновила модель без события segments/dataPath, затем прислала изменение
+  `AbstractDataPath.objects`. Нужна отдельная файловая regression и адресный
+  пересчёт по этому событию. Association-подписка сама по себе дефект не исправила.
+  Если live расходится с зелёными itests, остановить merge, добавить red, повторить
+  gate и live новым артефактом. Clean/ручной revalidate не заменяют пересчёт.
 - Менеджер метаданных: в настоящем check context TypesComputer возвращает
   TypeItem с containment к фактическому MdObject (пример CatalogManager.Products,
   URI bm://Project/Catalog.Products#/producedTypes/managerType/type). Проверять
