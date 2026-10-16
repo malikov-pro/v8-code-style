@@ -266,6 +266,7 @@ try-number
 typed-value-adding-to-untyped-collection
 unary-plus-in-concatenation
 unknown-form-parameter-access
+unsafe-find-by-code
 unsafe-password-ib-storage
 unsafe-safe-mode-method-call
 unused-parameters

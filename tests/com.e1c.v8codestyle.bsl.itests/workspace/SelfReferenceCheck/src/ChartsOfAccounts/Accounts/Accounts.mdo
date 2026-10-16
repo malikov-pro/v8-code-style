@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfAccounts xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="db346d5a-2c4a-48fd-aa93-63ec0827d105">
+  <producedTypes>
+    <objectType typeId="48d6d132-d7a2-42a9-98da-de27395d718d" valueTypeId="7172ac97-a832-4a3d-88cb-9f31c0894fbf"/>
+    <refType typeId="c577b23c-1cec-4441-89c3-85bb23010dfe" valueTypeId="e981b2c8-f880-4466-ac16-cf05933f6dcc"/>
+    <selectionType typeId="9b5326a1-d99a-47d6-bdcb-7109658db026" valueTypeId="8e39f610-d629-4b8f-af60-a79e78235a07"/>
+    <listType typeId="062360eb-e135-4c29-bf31-94a919b26c6d" valueTypeId="f0b86b07-3fcb-45d7-be5c-421fa623c491"/>
+    <managerType typeId="de4f5211-1363-4416-8f42-62a8b647a9cb" valueTypeId="17c5980e-d1e5-45a7-99fd-e0999d80aab5"/>
+    <extDimensionTypes typeId="b11f5675-1a0a-4bd2-8c12-0fc79358621e" valueTypeId="667cdcb7-e50c-4bc3-98f3-e3fe9ced8689"/>
+    <extDimensionTypesRow typeId="5733226a-7aaf-4a71-b6c4-64e0348d2729" valueTypeId="c5980704-4390-4471-a42a-d900c7acfef7"/>
+  </producedTypes>
+  <name>Accounts</name>
+  <useStandardCommands>true</useStandardCommands>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <checkUnique>true</checkUnique>
+</mdclass:ChartOfAccounts>

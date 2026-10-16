@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 200
+Общее количество проверок: 201
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -177,6 +177,7 @@
 | [typed-value-adding-to-untyped-collection](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/typed-value-adding-to-untyped-collection.html) | Добавление типизированного значения в не типизированную коллекцию |
 | [unary-plus-in-concatenation](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unary-plus-in-concatenation.html) | Унарный плюс в конкатенации |
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
+| [unsafe-find-by-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unsafe-find-by-code.html) | Небезопасный поиск по коду |
 | [unsafe-safe-mode-method-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unsafe-safe-mode-method-call.html) | Небезопасное булево использование БезопасныйРежим |
 | [unused-parameters](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unused-parameters.html) | Неиспользуемый параметр метода |
 | [up-1068-unreachable-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1068-unreachable-code.html) | Недостижимый код |
