@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 304
+Общее количество проверок 1С:Стандарты разработки V8: 305
 
 - form: 15
 - md: 46
-- bsl: 199
+- bsl: 200
 - ql: 17
 - right: 27
 
@@ -66,6 +66,7 @@
 | [apk-01216-query-field-alias](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01216-query-field-alias.html) | Псевдоним в тексте запроса совпадает с именем класса объектов метаданных |
 | [apk-01219-cut-comments-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01219-cut-comments-format.html) | Оформление вырезаемых служебных комментариев |
 | [apk-01364-linux-unsupported](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01364-linux-unsupported.html) | Методы и объекты, не поддерживаемые ОС Linux |
+| [bad-exception-category](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bad-exception-category.html) | Недопустимая категория исключений |
 | [bad-words](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bad-words.html) | Запрещённые слова |
 | [begin-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/begin-transaction.html) | После начала транзакции отсуствует блок Попытка-Исключение |
 | [bsl-canonical-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-canonical-pragma.html) | Аннотация написана канонически |

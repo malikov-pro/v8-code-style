@@ -66,6 +66,14 @@ description: Типовые и межмодульные BSL-проверки EDT
 
 ## Границы доказательства
 
+- Платформенное script-имя не всегда имя Type: для `ErrorCategory` подтверждён
+  владелец `EnumErrorCategory` / `ПеречислениеКатегорияОшибки`, sysEnum=true.
+  Связанный member — Property внутри ContextDef этого Type. Не выбирать имя
+  владельца из документации вместо исследования реального check context.
+- У parenthesized DynamicFeatureAccess `getNode` может вернуть только внутренний
+  доступ, без скобок. Для LS last-token guard исследовать `findActualNodeFor`:
+  в BadExceptionCategory он сохраняет закрывающую скобку и исключение срабатывает.
+  Это не универсальная замена getNode (см. QL-ловушки в AGENTS).
 - Native coverage классифицировать по подслучаю. Strict annotation, compatibility,
   unknown/union/metadata receiver и недостающие platform signatures — разные случаи.
 - FAIL детекции отличать от BLOCKED стартом тестового проекта/компиляцией/средой.

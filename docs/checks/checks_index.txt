@@ -51,6 +51,7 @@ apk-01214-ds-field-alias
 apk-01216-query-field-alias
 apk-01219-cut-comments-format
 apk-01364-linux-unsupported
+bad-exception-category
 bad-words
 begin-transaction
 bsl-canonical-pragma
