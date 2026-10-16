@@ -66,6 +66,20 @@ description: Типовые и межмодульные BSL-проверки EDT
 
 ## Границы доказательства
 
+- Менеджер метаданных: в настоящем check context TypesComputer возвращает
+  TypeItem с containment к фактическому MdObject (пример CatalogManager.Products,
+  URI bm://Project/Catalog.Products#/producedTypes/managerType/type). Проверять
+  resolved owner + `McoreUtil.getTypeCategory`, не извлекать имя объекта из текста.
+  Класс MdManagerType виден через javap, но без объявленного package import
+  компилятор таргета отвергает доступ: javap не доказывает classpath/API-контракт.
+  Не подавлять restriction вместо проверки MANIFEST/публичной альтернативы.
+- CheckUnique/CodeSeries не гарантируют штатную перевалидацию BSL-потребителя.
+  В UnsafeFindByCode подтверждён generic BM feature collector на трёх владельцах:
+  persisted `IResourceDescription.getImportedNames()` содержит managerType;
+  по этому индексу планируются использующие тип модули того же проекта.
+  Initial-unsafe→sourceupdate и metadata-only cycle проверять отдельно;
+  alias-scope определять pinned LS-кодом, а не расширять только потому, что EDT
+  умеет вывести тип переменной. Текущий индексный обход линейный, не benchmark.
 - Платформенное script-имя не всегда имя Type: для `ErrorCategory` подтверждён
   владелец `EnumErrorCategory` / `ПеречислениеКатегорияОшибки`, sysEnum=true.
   Связанный member — Property внутри ContextDef этого Type. Не выбирать имя

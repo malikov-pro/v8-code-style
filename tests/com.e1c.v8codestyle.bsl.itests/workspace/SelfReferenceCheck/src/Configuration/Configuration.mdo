@@ -41,4 +41,6 @@
   <commonModules>CommonModule.MyCommonModule</commonModules>
   <commonForms>CommonForm.MyForm</commonForms>
   <catalogs>Catalog.Products</catalogs>
+  <chartsOfAccounts>ChartOfAccounts.Accounts</chartsOfAccounts>
+  <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.Kinds</chartsOfCharacteristicTypes>
 </mdclass:Configuration>
