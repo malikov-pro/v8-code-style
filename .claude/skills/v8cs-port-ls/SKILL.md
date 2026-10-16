@@ -6,7 +6,8 @@ description: Конвейер переноса диагностики BSL Langua
 # Конвейер: перенос диагностики BSL LS → проверка форка
 
 Смежный регламент: `v8cs-port-check`, сборки — `v8cs-build`, приёмка —
-`v8cs-deploy`. Правила приоритетов/стабильного снимка — AGENTS.md.
+`v8cs-deploy`, binding/типовые зависимости — `v8cs-bsl-binding`.
+Правила приоритетов/стабильного снимка — AGENTS.md.
 Источники и реестры относительно корня проекта:
 - `../_ext_src/bsl-language-server` — ТОЛЬКО чтение, фиксировать commit;
 - `../_notes/ls-registry.md` / `ls-registry.json` — поштучный актуальный учёт;
@@ -155,8 +156,8 @@ actual `plugin.xml`. Прямой порт !=полная эквивалентн
 - Рабочая мини-пачка2–3 связанных одного канала; каждому свои tests/commit/
   строка реестра. First vertical slice неизвестного канала до live, потом
   группировать. Итерация targeted, перед integration весь затронутый
-  itests-модуль обеих платформ. Fullcompile обеих — раз в основную пачку,
-  при общих dependencies и перед release (v8cs-build).
+  itests-модуль на 2026.1. Fullcompile2026.1 — раз в основную пачку и при общих
+  dependencies; обе платформы обязательны перед release (решение15.10, v8cs-build).
 - Только markdown/messages-text правки: CheckDescriptionTest +generated
   index, не новый fullsuite. EP/ключи/parameters/MANIFEST — runtime изменения.
 - Сохранить p2 профиля перед следующим clean; выполнить own live smoke:

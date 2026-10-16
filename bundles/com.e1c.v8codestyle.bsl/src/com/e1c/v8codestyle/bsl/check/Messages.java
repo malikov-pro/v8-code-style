@@ -524,6 +524,9 @@ final class Messages
     public static String UseGotoOperatorCheck_title;
     public static String TryNumberCheck_title;
     public static String MissedRequiredParameterCheck_title;
+    public static String BadExceptionCategoryCheck_title;
+    public static String BadExceptionCategoryCheck_description;
+    public static String BadExceptionCategoryCheck_message;
     public static String MissedRequiredParameterCheck_description;
     public static String MissedRequiredParameterCheck_message;
     public static String TryNumberCheck_description;
