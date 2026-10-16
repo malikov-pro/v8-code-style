@@ -40,6 +40,7 @@
   </languages>
   <commonModules>CommonModule.MyCommonModule</commonModules>
   <commonForms>CommonForm.MyForm</commonForms>
+  <commonForms>CommonForm.DynamicRows</commonForms>
   <catalogs>Catalog.Products</catalogs>
   <chartsOfAccounts>ChartOfAccounts.Accounts</chartsOfAccounts>
   <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.Kinds</chartsOfCharacteristicTypes>
