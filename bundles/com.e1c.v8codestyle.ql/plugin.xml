@@ -28,6 +28,8 @@
       </check>
       <check category="com.e1c.v8codestyle.ql"
             class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.UnionAllCheck"/>
+      <check category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.SelectTopWithoutOrderByCheck"/>
       <check
             category="com.e1c.v8codestyle.ql"
             class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.JoinToSubQuery">

@@ -10,6 +10,15 @@ description: Типовые и межмодульные BSL-проверки EDT
 
 ## Сначала доказательства
 
+Native-инвариант устанавливается маркером EDT, не отказом MCP в записи.
+`modify_metadata` может запретить nonexport/nonserver/missing handler ещё до
+изменения модели. Для пробы создать валидное назначение, затем изменить своего
+поставщика или собственный metadata-файл; подтвердить фактическую модель и
+маркеры после завершения валидации. Guard инструмента записывать отдельно.
+Pinned-код приоритетнее формулировки: Web handler message «функция» не означает
+проверку Function, а subscription rule не проверяет параметры. Native-покрытие
+пустоты метода не сертифицирует всю LS ReferenceIndex-семантику пустого тела.
+
 1. Прочитать pinned LS-код, параметры, defaults и корпус. Идентичный текст
    обращения не доказывает тип/владельца. Сначала native probe на своём объекте,
    затем положительные и отрицательные случаи в настоящем check context.
@@ -66,6 +75,18 @@ description: Типовые и межмодульные BSL-проверки EDT
 
 ## Границы доказательства
 
+- QL параметры: прямой delegate-test с новыми ICheckParameters не доказывает
+  автоматический пересчёт потребителя. TOP skipSelectTopOne true→false→true
+  в BSL пересчитывается штатно; СКД на EDT2026.1 требовала отдельного планирования.
+  Проверенный публичный ICheckScheduler требует BOTH shortUID: dcs-ql-hub и
+  delegate, плюс реальные DCS container IDs. Только hub UID отфильтровал делегат.
+  Product listener реагирует на settingsChanged TOP, не меняет query/settings,
+  уважает disabled hub/check; тестовый listener после research удалить и повторить
+  исходную строгую регрессию. Новые DI/lifecycle/пакеты требуют полного2026.1.
+- QL UNION: enum UNION имеет и первый SELECT без объединения; использовать
+  flagUnionType && !flagUnionTypeAll, а keyword брать из owned semantic leaf.
+  QL keyword-range и BSL строка с продолжением `|` различаются: для `|UNION`
+  native bridge вернул length6, не keyword length5. Не «чинить» это угадыванием.
 - HTTP/Web metadata checks: изменение BSL не обязано менять HTTPService.module
   или WebService.module. Для неэкспортного HTTP-метода проверено событие
   `ModuleContextDefIndex.contextDef`, не только methods: URI из BslContextDef

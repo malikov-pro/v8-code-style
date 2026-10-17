@@ -24,6 +24,10 @@ final class Messages
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
     public static String CamelCaseStringLiteral_description;
     public static String UnionAllCheck_title;
+    public static String SelectTopWithoutOrderByCheck_title;
+    public static String SelectTopWithoutOrderByCheck_description;
+    public static String SelectTopWithoutOrderByCheck_message;
+    public static String SelectTopWithoutOrderByCheck_skipOne;
     public static String UnionAllCheck_description;
     public static String UnionAllCheck_message;
     public static String CamelCaseStringLiteral_Regular_expression_to_skip_literal_content;
