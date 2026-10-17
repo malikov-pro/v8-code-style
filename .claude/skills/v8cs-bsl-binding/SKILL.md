@@ -66,6 +66,17 @@ description: Типовые и межмодульные BSL-проверки EDT
 
 ## Границы доказательства
 
+- Metadata handler строка `CommonModule.Module.Method` — квалифицированная
+  ссылка, не произвольное BSL-имя. Для module flags разрешать canonical FQN
+  через текущую BM-транзакцию, пропускать malformed/missing/ambiguous объект;
+  RU type-prefix канонизировать отдельно, не искать метод по тексту модуля.
+  `IBmObject.bmGetTransaction()` доступен в metadata check без нового DI-сервиса.
+- В subscription server-flag regression загрузка CommonModule.mdo не прислала
+  `COMMON_MODULE__SERVER`, но обновила `COMMON_MODULE__CONTEXT_DEF`. Generic
+  collector этих двух событий планирует model-check только ссылающихся подписок.
+  BM-флаг и file-only provider change тестировать раздельно, stamp/bytes
+  потребителя не менять. Обход подписок линейный: это адресное планирование,
+  не индексный O(1) lookup и не доказанный benchmark большой конфигурации.
 - Назначенные события формы: `EventHandler.event` — объект платформенного Event,
   не строка; в fixture безопасно сериализовать OnOpen, чтобы ссылка разрешилась
   штатным parser. `BslEventsService.getAllModuleEvents` возвращает назначения

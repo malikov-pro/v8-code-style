@@ -22,6 +22,9 @@ final class Messages
     extends NLS
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
+    public static String MissingEventSubscriptionHandlerCheck_title;
+    public static String MissingEventSubscriptionHandlerCheck_description;
+    public static String MissingEventSubscriptionHandlerCheck_message;
     public static String DbObjectRefNonRefTypesCheck_Description;
     public static String DbObjectRefNonRefTypesCheck_Ref_and_other;
     public static String DbObjectRefNonRefTypesCheck_Title;

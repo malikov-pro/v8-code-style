@@ -1,10 +1,10 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 308
+Общее количество проверок 1С:Стандарты разработки V8: 309
 
 - form: 15
-- md: 46
+- md: 47
 - bsl: 203
 - ql: 17
 - right: 27
@@ -183,6 +183,7 @@
 | [method-size](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/method-size.html) | Размер метода |
 | [method-too-many-params](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/method-too-many-params.html) | Метод содержит слишком много параметров |
 | [missed-required-parameter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missed-required-parameter.html) | Пустой обязательный аргумент |
+| [missing-event-subscription-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/missing-event-subscription-handler.html) | Обработчик подписки требует серверного модуля |
 | [missing-space](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missing-space.html) | Отсутствует пробел |
 | [missing-temp-storage-deletion](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missing-temp-storage-deletion.html) | Отсутствует удаление из временного хранилища |
 | [missing-temporary-file-deletion](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missing-temporary-file-deletion.html) | Отсутствует удаление временного файла после использования. |
