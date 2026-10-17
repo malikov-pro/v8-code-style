@@ -66,6 +66,19 @@ description: Типовые и межмодульные BSL-проверки EDT
 
 ## Границы доказательства
 
+- ScheduledJob metadata check: CommonModule.contextDef может существовать, но
+  allMethods() пуст. Это не доказательство нулевой арности. Проверенный путь —
+  module.getModule(), при proxy текущая BM-транзакция.getExternalObjectByUri,
+  затем реальный AST.allMethods()/formalParams. Требуется явный bsl.model import;
+  новую metadata→BSL зависимость закрывать полным 2026.1, не только targeted.
+- Дубли заданий: BM methodName-событие содержит старое значение в публичном
+  BmChangeEvent.getOldValues(), можно пересчитать старую/новую группы. Файловая
+  загрузка в проверенной EDT присылает только schedule/suppressObject без старого
+  обработчика. Проверенный fallback — пересчёт набора ScheduledJob проекта по
+  derived schedule, без кеша назначений. Это не адресный group lookup и может
+  стоить O(jobs²) вместе с детектором; явно фиксировать ограничение performance.
+  Проверять неизменного владельца маркера при правке ДРУГОГО задания и файловый
+  сценарий отдельно; self-rebind тест пропускал этот дефект.
 - Metadata handler строка `CommonModule.Module.Method` — квалифицированная
   ссылка, не произвольное BSL-имя. Для module flags разрешать canonical FQN
   через текущую BM-транзакцию, пропускать malformed/missing/ambiguous объект;

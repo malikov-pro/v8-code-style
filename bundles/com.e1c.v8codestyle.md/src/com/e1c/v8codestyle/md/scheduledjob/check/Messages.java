@@ -23,6 +23,11 @@ final class Messages
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
     public static String MdScheduledJobDescriptionCheck_title;
+    public static String ScheduledJobHandlerCheck_title;
+    public static String ScheduledJobHandlerCheck_description;
+    public static String ScheduledJobHandlerCheck_server;
+    public static String ScheduledJobHandlerCheck_parameters;
+    public static String ScheduledJobHandlerCheck_duplicate;
     public static String MdScheduledJobDescriptionCheck_description;
     public static String MdScheduledJobDescriptionCheck_message;
     public static String MdScheduledJobPeriodicityCheck_description;

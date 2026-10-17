@@ -1,0 +1,9 @@
+# Scheduled job handler contract
+
+Residual checks: Server flag of the assigned common module, parameters of predefined job handlers, and duplicate handler assignments. Native missing/export checks and the existing completely-empty-method check are not duplicated. Functions are permitted; handler parameter defaults still count as parameters. Enabled by default, CRITICAL/ERROR, no parameters or quick fix. Full LS parity and reference-index empty-body semantics are not certified.
+
+The common module is resolved by qualified metadata reference in the current BM transaction. The source BSL module supplies declared formal parameters; an empty exported context is not used as evidence of a zero-argument method. A non-server provider produces only the server issue. Missing module references are skipped. A missing/private method can still participate in duplicates or an independent parameter issue according to the pinned LS evaluation order; its missing/export error remains native.
+
+Duplicate keys use the resolved module name and case-sensitive method spelling, as in LS. One duplicate marker is attached to methodName of the first job sorted by name; parameter issues are independent. Use=false does not exclude a job. BM reference changes schedule old and new groups. File synchronization emits derived schedule without an old handler, so that path rechecks the project's scheduled-job subset. Detection scans the jobs per check; this can be quadratic when the subset is rechecked and large-configuration performance is not certified. Provider Server/contextDef changes recheck referencing jobs. File-only signature changes with unchanged minimum argument count are regression-tested.
+
+Extensions, cross-project scope, creation/deletion/rename invalidation and preprocessing variants are not certified. Primary location is the metadata methodName feature, not the LS project/session anchor. No related locations or empty-body reference-index emulation are supplied.

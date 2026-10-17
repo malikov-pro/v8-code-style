@@ -1,10 +1,10 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 309
+Общее количество проверок 1С:Стандарты разработки V8: 310
 
 - form: 15
-- md: 47
+- md: 48
 - bsl: 203
 - ql: 17
 - right: 27
@@ -263,6 +263,7 @@
 | [right-view-event-log](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-view-event-log.html) | Право установлено: Журнал регистрации |
 | [role-right-has-rls](../../../com.e1c.v8codestyle.right/check.descriptions/ru/role-right-has-rls.html) | Право роли содержит текст ограничения доступа (RLS) |
 | [rollback-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/rollback-transaction.html) | Проверка нарушения схемы работы с транзакциями |
+| [scheduled-job-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/scheduled-job-handler.html) | Контракт обработчика регламентного задания |
 | [scheduled-job-periodicity-too-short](../../../com.e1c.v8codestyle.md/check.descriptions/ru/scheduled-job-periodicity-too-short.html) | Периодичность выполнения регламентного задания меньше одной минуты. |
 | [secure-password-storage](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/secure-password-storage.html) | Проверка использования безопасного хранилища для паролей |
 | [security-software-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/security-software-call.html) | Безопасность программного обеспечения, вызываемого через открытые интерфейсы |

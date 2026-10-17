@@ -248,6 +248,7 @@ right-update-database-configuration
 right-view-event-log
 role-right-has-rls
 rollback-transaction
+scheduled-job-handler
 scheduled-job-periodicity-too-short
 secure-password-storage
 security-software-call
