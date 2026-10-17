@@ -25,6 +25,12 @@ final class Messages
     public static String CamelCaseStringLiteral_description;
     public static String UnionAllCheck_title;
     public static String SelectTopWithoutOrderByCheck_title;
+    public static String JoinWithVirtualTableCheck_title;
+    public static String VirtualTableCallWithoutParametersCheck_title;
+    public static String VirtualTableCallWithoutParametersCheck_description;
+    public static String VirtualTableCallWithoutParametersCheck_message;
+    public static String JoinWithVirtualTableCheck_description;
+    public static String JoinWithVirtualTableCheck_message;
     public static String SelectTopWithoutOrderByCheck_description;
     public static String SelectTopWithoutOrderByCheck_message;
     public static String SelectTopWithoutOrderByCheck_skipOne;

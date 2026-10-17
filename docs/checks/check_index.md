@@ -1,12 +1,12 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 314
+Общее количество проверок 1С:Стандарты разработки V8: 316
 
 - form: 15
 - md: 50
 - bsl: 203
-- ql: 19
+- ql: 21
 - right: 27
 
 
@@ -163,6 +163,7 @@
 | [input-field-list-choice-mode](../../../com.e1c.v8codestyle.form/check.descriptions/ru/input-field-list-choice-mode.html) | В полях форм со списками выбора следует всегда устанавливать свойство **РежимВыбораИзСписка** в значение Истина |
 | [invocation-form-event-handler](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/invocation-form-event-handler.html) | Программный вызов обработчика события формы |
 | [invocation-parameter-type-intersect](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/invocation-parameter-type-intersect.html) | Вызываемый тип пересекается с типом параметра |
+| [join-with-virtual-table](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/join-with-virtual-table.html) | Соединение с виртуальной таблицей |
 | [line-length](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/line-length.html) | Длина строки |
 | [link-part-comment-space](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/link-part-comment-space.html) | Пробел в описании метода перед ссылкой |
 | [lock-out-of-try](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/lock-out-of-try.html) | Вызов "Заблокировать()" находится вне попытки |
@@ -325,5 +326,6 @@
 | [using-service-tag](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-service-tag.html) | Служебные теги в комментариях |
 | [using-synchronous-calls](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-synchronous-calls.html) | Использование синхронных вызовов |
 | [variable-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/variable-value-type.html) | Переменная имеет тип значения |
+| [virtual-table-call-without-parameters](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/virtual-table-call-without-parameters.html) | Вызов виртуальной таблицы без параметров |
 | [wrong-http-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-http-service-handler.html) | Контракт обработчика HTTP-сервиса |
 | [wrong-web-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-web-service-handler.html) | Отсутствующий обработчик операции Web-сервиса |
