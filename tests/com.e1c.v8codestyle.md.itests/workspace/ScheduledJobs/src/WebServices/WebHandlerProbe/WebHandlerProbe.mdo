@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bef89185-df25-48ff-b34f-19f7cdffc092">
+  <name>WebHandlerProbe</name>
+  <namespace>urn:v8cs:webhandlerprobe</namespace>
+  <operations uuid="0486bc52-7ba5-49bb-88af-f50476c05f66">
+    <name>Probe</name>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>HandleWeb</procedureName>
+  </operations>
+</mdclass:WebService>

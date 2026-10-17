@@ -23,6 +23,13 @@ final class Messages
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
     public static String MissingEventSubscriptionHandlerCheck_title;
+    public static String WrongHttpServiceHandlerCheck_title;
+    public static String WrongWebServiceHandlerCheck_title;
+    public static String WrongWebServiceHandlerCheck_description;
+    public static String WrongWebServiceHandlerCheck_missing;
+    public static String WrongHttpServiceHandlerCheck_description;
+    public static String WrongHttpServiceHandlerCheck_missing;
+    public static String WrongHttpServiceHandlerCheck_parameters;
     public static String MissingEventSubscriptionHandlerCheck_description;
     public static String MissingEventSubscriptionHandlerCheck_message;
     public static String DbObjectRefNonRefTypesCheck_Description;

@@ -308,3 +308,5 @@ using-modal-windows
 using-service-tag
 using-synchronous-calls
 variable-value-type
+wrong-http-service-handler
+wrong-web-service-handler

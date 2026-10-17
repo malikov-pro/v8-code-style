@@ -39,6 +39,8 @@
     <languageCode>en</languageCode>
   </languages>
   <commonModules>CommonModule.Jobs</commonModules>
+  <httpServices>HTTPService.HandlerProbe</httpServices>
+  <webServices>WebService.WebHandlerProbe</webServices>
   <scheduledJobs>ScheduledJob.NotPredefinedJob</scheduledJobs>
   <scheduledJobs>ScheduledJob.PredefinedJob</scheduledJobs>
 </mdclass:Configuration>

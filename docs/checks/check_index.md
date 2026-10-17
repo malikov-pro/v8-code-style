@@ -1,10 +1,10 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 310
+Общее количество проверок 1С:Стандарты разработки V8: 312
 
 - form: 15
-- md: 48
+- md: 50
 - bsl: 203
 - ql: 17
 - right: 27
@@ -323,3 +323,5 @@
 | [using-service-tag](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-service-tag.html) | Служебные теги в комментариях |
 | [using-synchronous-calls](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-synchronous-calls.html) | Использование синхронных вызовов |
 | [variable-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/variable-value-type.html) | Переменная имеет тип значения |
+| [wrong-http-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-http-service-handler.html) | Контракт обработчика HTTP-сервиса |
+| [wrong-web-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-web-service-handler.html) | Отсутствующий обработчик операции Web-сервиса |
