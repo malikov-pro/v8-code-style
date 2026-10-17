@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="157f4102-3e5d-4cf5-9a5c-1bccb0c401fa">
+  <name>HandlerProbe</name>
+  <rootURL>handlerprobe</rootURL>
+  <urlTemplates uuid="e85ee22b-5b5f-47e3-a06e-ef04203b07d5">
+    <name>Probe</name>
+    <template>/probe</template>
+    <methods uuid="035d8acb-c140-4e4a-bddd-d368e7062126">
+      <name>GET</name>
+      <handler>Handle</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

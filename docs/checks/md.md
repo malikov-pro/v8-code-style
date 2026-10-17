@@ -1,7 +1,7 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 48
+Общее количество проверок: 50
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -53,3 +53,5 @@
 | [up-710-empty-tooltip](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-710-empty-tooltip.html) | Не заполнена всплывающая подсказка |
 | [up-722-ext-presentation-equals-object](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-722-ext-presentation-equals-object.html) | Расширенное представление объекта совпадает с представлением объекта |
 | [up-725-ext-presentation-equals-list](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-725-ext-presentation-equals-list.html) | Расширенное представление списка совпадает с представлением списка |
+| [wrong-http-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-http-service-handler.html) | Контракт обработчика HTTP-сервиса |
+| [wrong-web-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-web-service-handler.html) | Отсутствующий обработчик операции Web-сервиса |

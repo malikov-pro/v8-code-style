@@ -66,6 +66,20 @@ description: Типовые и межмодульные BSL-проверки EDT
 
 ## Границы доказательства
 
+- HTTP/Web metadata checks: изменение BSL не обязано менять HTTPService.module
+  или WebService.module. Для неэкспортного HTTP-метода проверено событие
+  `ModuleContextDefIndex.contextDef`, не только methods: URI из BslContextDef
+  → текущая BM-транзакция → Module.owner → metadata-check только своего сервиса.
+  Не обобщать на все события Module без proof: такой research имел startup
+  BLOCKED, причинность не установлена. Удалять исследовательские подписки.
+- Маркеры на HTTP Method.handler / Web Operation.procedureName вложены в
+  metadata-владельца. Owner-only getMarkers пропускал их: читать getNestedMarkers
+  с фильтром CheckUid, проверять feature ID и отдельный markerObjectId каждого
+  назначения. Ошибка наблюдения теста не является дефектом детектора.
+- SingleProjectReadOnlyCheckTestBase оставляет проект, но очищает ThreadLocal
+  между классами. Несколько классов одной fixture должны брать существующий
+  IDtProject через dtProjectManager, а не повторять import (resource already exists).
+  Это проверять совместным/канальным прогоном, не только каждым классом отдельно.
 - ScheduledJob metadata check: CommonModule.contextDef может существовать, но
   allMethods() пуст. Это не доказательство нулевой арности. Проверенный путь —
   module.getModule(), при proxy текущая BM-транзакция.getExternalObjectByUri,
