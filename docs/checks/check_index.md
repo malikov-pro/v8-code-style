@@ -1,12 +1,12 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 312
+Общее количество проверок 1С:Стандарты разработки V8: 313
 
 - form: 15
 - md: 50
 - bsl: 203
-- ql: 17
+- ql: 18
 - right: 27
 
 
@@ -284,6 +284,7 @@
 | [try-number](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/try-number.html) | Преобразование в число внутри Попытки |
 | [typed-value-adding-to-untyped-collection](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/typed-value-adding-to-untyped-collection.html) | Добавление типизированного значения в не типизированную коллекцию |
 | [unary-plus-in-concatenation](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unary-plus-in-concatenation.html) | Унарный плюс в конкатенации |
+| [union-all](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/union-all.html) | ОБЪЕДИНИТЬ без ВСЕ |
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
 | [unsafe-find-by-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unsafe-find-by-code.html) | Небезопасный поиск по коду |
 | [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |

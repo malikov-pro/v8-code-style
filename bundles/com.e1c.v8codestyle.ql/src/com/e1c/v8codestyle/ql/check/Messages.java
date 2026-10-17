@@ -23,6 +23,9 @@ final class Messages
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
     public static String CamelCaseStringLiteral_description;
+    public static String UnionAllCheck_title;
+    public static String UnionAllCheck_description;
+    public static String UnionAllCheck_message;
     public static String CamelCaseStringLiteral_Regular_expression_to_skip_literal_content;
     public static String CamelCaseStringLiteral_String_literal_contains_non_CamelCase_symbols__0;
     public static String CamelCaseStringLiteral_title;

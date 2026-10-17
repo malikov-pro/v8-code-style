@@ -1,0 +1,5 @@
+SELECT 1 AS Number
+UNION ALL
+SELECT 2 AS Number
+UNION
+SELECT 3 AS Number
