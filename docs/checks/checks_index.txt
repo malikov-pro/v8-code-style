@@ -252,6 +252,7 @@ scheduled-job-handler
 scheduled-job-periodicity-too-short
 secure-password-storage
 security-software-call
+select-top-without-order-by
 self-assign
 self-insertion
 semicolon-missing

@@ -15,6 +15,7 @@ Automatic-Module-Name: com.e1c.v8codestyle.ql
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
 Import-Package: com._1c.g5.v8.bm.core;version="[9.0.0,10.0.0)",
+ com._1c.g5.v8.bm.integration,
  com._1c.g5.v8.dt.dcs.model.schema,
  com._1c.g5.v8.dt.common;version="[6.0.0,7.0.0)",
  com._1c.g5.v8.dt.core.platform;version="[12.0.0,14.0.0)",

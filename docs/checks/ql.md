@@ -1,7 +1,7 @@
 # Проверки языка запросов 1С
 
 
-Общее количество проверок: 18
+Общее количество проверок: 19
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -22,4 +22,5 @@
 | [ql-temp-table-index](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-temp-table-index.html) | Временная таблица должна содержать индексы |
 | [ql-using-for-update](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-using-for-update.html) | Запрос содержит конструкцию "ДЛЯ ИЗМЕНЕНИЯ" |
 | [ql-virtual-table-filters](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-virtual-table-filters.html) | Отбор виртуальной таблицы должен быть в параметрах |
+| [select-top-without-order-by](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/select-top-without-order-by.html) | ПЕРВЫЕ без УПОРЯДОЧИТЬ ПО |
 | [union-all](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/union-all.html) | ОБЪЕДИНИТЬ без ВСЕ |

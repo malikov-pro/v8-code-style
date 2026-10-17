@@ -19,6 +19,7 @@ import org.osgi.framework.BundleContext;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com._1c.g5.wiring.ServiceInitialization;
 
 /**
  * Plugin activator. The activator class controls the plugin life cycle.
@@ -34,6 +35,7 @@ public class CorePlugin
     private static CorePlugin plugin;
 
     private Injector injector;
+    private volatile TopSettingsRevalidator topSettingsRevalidator;
 
     /**
      * Returns the shared instance
@@ -110,6 +112,18 @@ public class CorePlugin
         super.start(bundleContext);
 
         plugin = this;
+        ServiceInitialization.schedule(() -> {
+            try
+            {
+                var revalidator = getInjector().getInstance(TopSettingsRevalidator.class);
+                revalidator.start();
+                topSettingsRevalidator = revalidator;
+            }
+            catch (Exception e)
+            {
+                logError(e);
+            }
+        });
 
     }
 
@@ -120,6 +134,12 @@ public class CorePlugin
     @Override
     public void stop(BundleContext bundleContext) throws Exception
     {
+        var revalidator = topSettingsRevalidator;
+        topSettingsRevalidator = null;
+        if (revalidator != null)
+        {
+            revalidator.stop();
+        }
         plugin = null;
         injector = null;
 
