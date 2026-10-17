@@ -168,6 +168,7 @@ method-semicolon-extra
 method-size
 method-too-many-params
 missed-required-parameter
+missing-event-subscription-handler
 missing-space
 missing-temp-storage-deletion
 missing-temporary-file-deletion

@@ -1,7 +1,7 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 46
+Общее количество проверок: 47
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -43,6 +43,7 @@
 | [mdo-name-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/mdo-name-length.html) | Длина имени объекта метаданных |
 | [mdo-ru-name-unallowed-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/mdo-ru-name-unallowed-letter.html) | Проверка наличия буквы "ё" в имени, синониме или комментарии объекта метаданных |
 | [mdo-scheduled-job-description](../../../com.e1c.v8codestyle.md/check.descriptions/ru/mdo-scheduled-job-description.html) | Задано наименование предопределенного регламентного задания |
+| [missing-event-subscription-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/missing-event-subscription-handler.html) | Обработчик подписки требует серверного модуля |
 | [register-resource-precision](../../../com.e1c.v8codestyle.md/check.descriptions/ru/register-resource-precision.html) | Длина ресурса регистра накопления или бухгалтерии |
 | [scheduled-job-periodicity-too-short](../../../com.e1c.v8codestyle.md/check.descriptions/ru/scheduled-job-periodicity-too-short.html) | Периодичность выполнения регламентного задания меньше одной минуты. |
 | [subsystem-synonym-too-long](../../../com.e1c.v8codestyle.md/check.descriptions/ru/subsystem-synonym-too-long.html) | Длина названия раздела превышает 35 символов |

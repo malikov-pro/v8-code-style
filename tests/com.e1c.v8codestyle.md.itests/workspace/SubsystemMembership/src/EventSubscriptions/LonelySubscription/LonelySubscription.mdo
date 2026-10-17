@@ -5,4 +5,5 @@
     <key>en</key>
     <value>LonelySubscription</value>
   </synonym>
+  <handler>CommonModule.InSubsystemModule.Handle</handler>
 </mdclass:EventSubscription>
