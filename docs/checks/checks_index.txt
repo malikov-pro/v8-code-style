@@ -148,6 +148,7 @@ incorrect-use-of-str-template
 input-field-list-choice-mode
 invocation-form-event-handler
 invocation-parameter-type-intersect
+join-with-virtual-table
 line-length
 link-part-comment-space
 lock-out-of-try
@@ -310,5 +311,6 @@ using-modal-windows
 using-service-tag
 using-synchronous-calls
 variable-value-type
+virtual-table-call-without-parameters
 wrong-http-service-handler
 wrong-web-service-handler

@@ -75,6 +75,37 @@ Pinned-код приоритетнее формулировки: Web handler mes
 
 ## Границы доказательства
 
+- QL ВТ: resolved DbViewSelectDef покрывает обычные ВТ/FilterCriterion, но
+  бухгалтерская Субконто — DbViewTableDef под EXT_DIMENSIONS_VIEW. В JOIN она
+  входит в LS-контракт, в empty-params — исключена. Не подменять видом по имени.
+  Пустой QuerySchemaTableParameter имеет QuerySchemaExpression с EmptyExpression,
+  а не обязательно null; проверять содержимое и DCS-expression список.
+- Provider-only ВТ: InformationRegister.dbViewDefs приходит после изменения
+  периодичности и файловой загрузки. QL delegate generic BM-collector приводил
+  к повторяемым startup BLOCKED (причина не установлена); этот путь удалён.
+  Рабочий путь — lifecycle BM async listener по образцу SortService, затем
+  ICheckScheduler с хабом И обоими делегатами. СКД-кандидаты читаются заново,
+  binding к регистру искать также через parentTable: SliceLast уже может быть
+  Unresolved, а физический родитель ещё разрешён. BSL fallback перепланирует
+  модули текущего проекта; это не адресный reference index, benchmark не выполнен.
+  Исследовательский TEST-listener/scheduler удалить перед строгим повтором.
+- Lifecycle-регистрация после RESOURCE_LOADING не подключает listener к уже
+  открытым проектам: live1931 имел registrations={} при зелёном full1069.
+  После регистрации сервиса подключать уже активные IDtProject отдельным
+  идемпотентным start sweep, без кеширования неготового проекта как false;
+  дальнейшие загрузки — lifecycle init, unload/stop снимают listener.
+  Проверять fresh service ПОСЛЕ открытия fixture, start дважды, provider-only
+  цикл без query touch. Это отдельный сценарий от импорта нового проекта.
+- Однократного startup sweep также может не хватить: до готовности workspace
+  getDtProjects бывает пуст, а RESOURCE_LOADING сервиса уже пропущен. Подписаться
+  на IWorkspaceOrchestrator stateChanged ДО sweep; при active повторять attach,
+  при closing снимать listener. Тестировать empty-initial-list → готовность →
+  provider cycle и повтор готовности. INFO attach нужен для проверки live;
+  mock ready callback не заменяет реальное открытие workspace.
+- Disabled dcs-ql-hub сохраняет старые delegated markers: в regression ID и
+  createdAt совпали до/после disable и provider change. Это не новый запуск.
+  Отдельно проверять отсутствие НОВЫХ маркеров из чистого состояния без clean;
+  не выдавать guard enabled за гарантию удаления всех прежних маркеров EDT.
 - QL параметры: прямой delegate-test с новыми ICheckParameters не доказывает
   автоматический пересчёт потребителя. TOP skipSelectTopOne true→false→true
   в BSL пересчитывается штатно; СКД на EDT2026.1 требовала отдельного планирования.

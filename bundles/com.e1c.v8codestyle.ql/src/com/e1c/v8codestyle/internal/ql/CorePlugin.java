@@ -20,6 +20,7 @@ import org.osgi.framework.BundleContext;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com._1c.g5.wiring.ServiceInitialization;
+import com._1c.g5.wiring.InjectorAwareServiceRegistrator;
 
 /**
  * Plugin activator. The activator class controls the plugin life cycle.
@@ -36,6 +37,7 @@ public class CorePlugin
 
     private Injector injector;
     private volatile TopSettingsRevalidator topSettingsRevalidator;
+    private InjectorAwareServiceRegistrator registrator;
 
     /**
      * Returns the shared instance
@@ -112,7 +114,17 @@ public class CorePlugin
         super.start(bundleContext);
 
         plugin = this;
+        registrator = new InjectorAwareServiceRegistrator(bundleContext, this::getInjector);
         ServiceInitialization.schedule(() -> {
+            try
+            {
+                registrator.service(IVirtualTableDependencies.class).registerInjected();
+                getInjector().getInstance(IVirtualTableDependencies.class).start();
+            }
+            catch (Exception e)
+            {
+                logError(e);
+            }
             try
             {
                 var revalidator = getInjector().getInstance(TopSettingsRevalidator.class);
@@ -134,6 +146,9 @@ public class CorePlugin
     @Override
     public void stop(BundleContext bundleContext) throws Exception
     {
+        registrator.deactivateManagedServices(this);
+        getInjector().getInstance(IVirtualTableDependencies.class).stop();
+        registrator.unregisterServices();
         var revalidator = topSettingsRevalidator;
         topSettingsRevalidator = null;
         if (revalidator != null)

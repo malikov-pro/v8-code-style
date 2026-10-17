@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:FilterCriterion xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3e315fb2-2f4d-4caf-93f5-75000a9d43e6">
+  <name>QueryFilter</name>
+  <type><types>String</types><stringQualifiers><length>10</length></stringQualifiers></type>
+</mdclass:FilterCriterion>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfAccounts xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="db346d5a-2c4a-48fd-aa93-63ec0827d105">
+  <name>QueryAccounts</name>
+  <extDimensionTypes>ChartOfCharacteristicTypes.QueryDimensions</extDimensionTypes>
+  <maxExtDimensionCount>3</maxExtDimensionCount>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+</mdclass:ChartOfAccounts>
