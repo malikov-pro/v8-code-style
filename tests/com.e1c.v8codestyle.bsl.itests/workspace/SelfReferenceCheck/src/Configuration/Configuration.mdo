@@ -41,6 +41,7 @@
   <commonModules>CommonModule.MyCommonModule</commonModules>
   <commonForms>CommonForm.MyForm</commonForms>
   <commonForms>CommonForm.DynamicRows</commonForms>
+  <commonForms>CommonForm.ItemContracts</commonForms>
   <catalogs>Catalog.Products</catalogs>
   <chartsOfAccounts>ChartOfAccounts.Accounts</chartsOfAccounts>
   <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.Kinds</chartsOfCharacteristicTypes>

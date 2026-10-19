@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonForm xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a0676e4d-30b9-40e1-9c53-a03a7ef403b1">
+  <name>ItemContracts</name>
+  <usePurposes>PersonalComputer</usePurposes>
+</mdclass:CommonForm>

@@ -75,6 +75,30 @@ Pinned-код приоритетнее формулировки: Web handler mes
 
 ## Границы доказательства
 
+- События элементов форм: `BslEventsService.getAllModuleEvents` даёт только
+  root-form назначения. В `getEventHandlers` есть элементы/extInfo/command, но
+  ParamSet события элемента НЕ содержит первый `Элемент` (к min/max добавить1),
+  а synthetic Action имеет1 Parameter при min/max0: base command требует ровно1.
+  Считать по фактическому binding, не имени события; root-derived handlers могут
+  быть вложены в форму, но не имеют FormItem ancestor — им offset1 не добавлять.
+  Версия совместимости меняет контракт (StartChoice8.3.21 max2 event args,
+  live8.3.27 max3). Собственные formal defaults не уменьшают declared count.
+- Инкрементальность формы проверять раздельно: item name, extInfo name, command
+  name, замена action, состав items и Form.form. Общий BM-cycle скрывал stale
+  command за пересчётом соседнего item. Доказанные collectors — CommandHandler.name
+  и FORM-scoped membership; при добавлении второго item без collector маркер
+  первого исчезал, а check context не вызывался. Не лечить touch/clean.
+  Повторные назначения одного Event нельзя схлопывать Map<Event,name>.
+  Требование всем известным назначениям строже pinned LS first-by-name: это
+  прежняя политика partial check, не полная LS-эквивалентность.
+- Startup Unknown check id после upgrade воспроизведён на установленном
+  check6.0.101: ProjectCheckMetadataManager.addUpdatedContributorToDelta при смене
+  contributor version считает updated, но пропускает added из-за else. Same-version
+  addition/new-contributor контроли проходят. Research disconnected managers и
+  immutable FAIL сохранены в `_notes/evidence/startup-check-registry-20261019/`.
+  Это PLATFORM, не разрешение patch/reflection/unregister в продукт; следующий
+  restart объясняет симптом, но не исправляет алгоритм. Полный UI upgrade/2026.2
+  не проверены. Не обобщать этот диагноз на любой сбой запуска.
 - QL ВТ: resolved DbViewSelectDef покрывает обычные ВТ/FilterCriterion, но
   бухгалтерская Субконто — DbViewTableDef под EXT_DIMENSIONS_VIEW. В JOIN она
   входит в LS-контракт, в empty-params — исключена. Не подменять видом по имени.
