@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <items xsi:type="form:FormField">
+    <name>Input</name><id>1</id><visible>true</visible><enabled>true</enabled>
+    <dataPath xsi:type="form:DataPath"><segments>Value</segments></dataPath>
+    <handlers><event>OnChange</event><name>FieldChange</name></handlers>
+    <type>InputField</type>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <handlers><event>StartChoice</event><name>FieldChoice</name></handlers>
+    </extInfo>
+  </items>
+  <autoCommandBar><name>FormCommandBar</name><id>-1</id><autoFill>true</autoFill></autoCommandBar>
+  <attributes>
+    <name>Value</name><id>1</id><valueType><types>String</types></valueType>
+    <view><common>true</common></view><edit><common>true</common></edit>
+  </attributes>
+  <formCommands>
+    <name>Probe</name><id>1</id><use><common>true</common></use>
+    <action xsi:type="form:FormCommandHandlerContainer"><handler><name>CommandAction</name></handler></action>
+  </formCommands>
+</form:Form>
