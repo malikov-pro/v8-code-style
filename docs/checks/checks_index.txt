@@ -87,6 +87,7 @@ db-object-anyref-type
 db-object-max-number-length
 db-object-ref-non-ref-type
 deleting-collection-item
+deprecated-attributes-8312
 deprecated-current-date
 deprecated-find
 deprecated-method-call
