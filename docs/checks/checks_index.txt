@@ -89,6 +89,7 @@ db-object-ref-non-ref-type
 deleting-collection-item
 deprecated-current-date
 deprecated-find
+deprecated-method-call
 deprecated-procedure-outside-deprecated-region
 disable-safe-mode
 doc-comment-collection-item-type

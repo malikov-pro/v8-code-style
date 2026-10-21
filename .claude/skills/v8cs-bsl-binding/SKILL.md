@@ -75,6 +75,26 @@ Pinned-код приоритетнее формулировки: Web handler mes
 
 ## Границы доказательства
 
+- Платформенные версии: `DT-INF/PROJECT.PMF Runtime-Version` выбирает модель
+  platform_v8.x, `Configuration.compatibilityMode` — отдельная настройка. Меняя
+  только compatibilityMode, нельзя доказать смену каталога типов/методов EDT.
+  Fixture runtime должен входить в testing platform versions (на исследованном
+  2026.1:8.3.19/8.3.23/8.5.1). Для enumcompat8.1 сериализовать **8.1.0**:
+  недопустимое8.1 превращалось в defaultlatest. Сначала assert фактической BM-модели.
+- Deprecated platform properties: actual `DynamicFeatureAccessComputer.resolveObject`
+  в validation context даёт Property с VersionedItem.deprecatedSince/replacedBy.
+  Данные могут отсутствовать в старой platformmodel: PrintParametersName в8.3.19
+  безdeprecated, в8.3.23/27 deprecated8.2.9. URI платформы отличает такой Property
+  от одноимённого динамического поля Structure. Union проверять на syntax-clean
+  модуле: modulebody передmethods оставлял recoveryAST без вызова нужного контекста.
+  Native уже диагностирует obsoleteglobalmethods и NSSconstructedtype; не дублировать.
+  BM+filecompat-only пересчёт проверен штатный, лишний collector не нужен.
+- Тестовые проекты должны содержать .settings: без каталога applyChanges падал
+  ProfileStorageException при записи Default.cset; это дефект fixture, не детектора.
+- LocalMCP алиас не доказывает стенд: после перенастройки edt_rt_test оказался
+  WindowsРТ, localapk доступен отдельным127.0.0.1 endpoint. Проверять version+
+  list_projects paths перед записью; не менять remote userprojects. Токен изprefs
+  читать только в память, не включать в evidence/команды/коммиты.
 - События элементов форм: `BslEventsService.getAllModuleEvents` даёт только
   root-form назначения. В `getEventHandlers` есть элементы/extInfo/command, но
   ParamSet события элемента НЕ содержит первый `Элемент` (к min/max добавить1),
