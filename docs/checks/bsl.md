@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 203
+Общее количество проверок: 204
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -58,6 +58,7 @@
 | [deleting-collection-item](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deleting-collection-item.html) | Удаление элемента при обходе коллекции |
 | [deprecated-current-date](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-current-date.html) | Использование устаревшего метода «ТекущаяДата» |
 | [deprecated-find](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-find.html) | Использование устаревшего метода «Найти» |
+| [deprecated-method-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-method-call.html) | Устаревшее свойство платформы |
 | [deprecated-procedure-outside-deprecated-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-procedure-outside-deprecated-region.html) | Устаревшая процедура (функция) расположена вне области "УстаревшиеПроцедурыИФункции" |
 | [disable-safe-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/disable-safe-mode.html) | Отключение безопасного режима |
 | [doc-comment-collection-item-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-collection-item-type.html) | Тип коллекций в документирующем комментарии содержит тип элемента коллекции |

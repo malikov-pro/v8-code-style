@@ -730,6 +730,9 @@ final class Messages
     public static String UsingHardcodeSecretInformationCheck_Search_words;
 
     public static String DeprecatedFindCheck_title;
+    public static String DeprecatedMethodCallCheck_title;
+    public static String DeprecatedMethodCallCheck_description;
+    public static String DeprecatedMethodCallCheck_message;
     public static String DeprecatedFindCheck_description;
     public static String DeprecatedFindCheck_Use_StrFind_instead_of_Find;
 

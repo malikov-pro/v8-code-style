@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7c1e14e3-e0be-4030-a39b-85aee130ab91">
+  <name>PlatformApiModern</name>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <compatibilityMode>8.3.23</compatibilityMode>
+  <languages uuid="9f5dc26f-401e-46bb-bbd6-c548db1ea2ae"><name>English</name><languageCode>en</languageCode></languages>
+  <commonModules>CommonModule.CommonModule</commonModules>
+</mdclass:Configuration>
