@@ -75,6 +75,16 @@ Pinned-код приоритетнее формулировки: Web handler mes
 
 ## Границы доказательства
 
+- DeprecatedAttributes8312 pinned — лексический safety-net, не типизированный
+  deprecated Property: root Chart/ChartPlotArea (RU/EN), alias другого имени skip,
+  Chart=Structure может сработать. При переносе не «улучшать» контракт молча.
+  Сверять валидные chain/index/receiver-call и AccessCall отдельно от AccessProperty.
+  C-style /* */ невалидны в EDT: прямой LS-run может дать recovery-маркеры;
+  сначала syntax assertions, затем сравнение диапазонов. Проверенный valid corpus
+  совпал по9строкам, dot+property ranges включают whitespace после точки.
+  Native current-runtime удалённые enum-ветки не дублировать; это не доказательство
+  покрытия на старом runtime/других execution contexts. Совместимость >=8.3.12
+  и BM/file-only пересчёт проверены без новых collector; исходник потребителя не менять.
 - Платформенные версии: `DT-INF/PROJECT.PMF Runtime-Version` выбирает модель
   platform_v8.x, `Configuration.compatibilityMode` — отдельная настройка. Меняя
   только compatibilityMode, нельзя доказать смену каталога типов/методов EDT.

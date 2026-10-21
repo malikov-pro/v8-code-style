@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 317
+Общее количество проверок 1С:Стандарты разработки V8: 318
 
 - form: 15
 - md: 50
-- bsl: 204
+- bsl: 205
 - ql: 21
 - right: 27
 
@@ -102,6 +102,7 @@
 | [db-object-max-number-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-max-number-length.html) | Превышена максимальная длина числовых данных (31 знак) |
 | [db-object-ref-non-ref-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-ref-non-ref-type.html) | Реквизиты составного типа |
 | [deleting-collection-item](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deleting-collection-item.html) | Удаление элемента при обходе коллекции |
+| [deprecated-attributes-8312](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-attributes-8312.html) | Устаревшие свойства диаграмм до 8.3.12 |
 | [deprecated-current-date](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-current-date.html) | Использование устаревшего метода «ТекущаяДата» |
 | [deprecated-find](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-find.html) | Использование устаревшего метода «Найти» |
 | [deprecated-method-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-method-call.html) | Устаревшее свойство платформы |
