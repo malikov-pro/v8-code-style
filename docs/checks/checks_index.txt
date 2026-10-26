@@ -273,6 +273,7 @@ too-many-returns
 try-number
 typed-value-adding-to-untyped-collection
 unary-plus-in-concatenation
+unavailable-member-call
 union-all
 unknown-form-parameter-access
 unsafe-find-by-code

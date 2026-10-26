@@ -75,6 +75,18 @@ Pinned-код приоритетнее формулировки: Web handler mes
 
 ## Границы доказательства
 
+- UnavailableMemberCall scoped residual: версии появления брать из pinned
+  builtin-platform-types (ErrorCategory — 28 записей, exact-audit против JSON),
+  не из имен. Guard: resolved platform Property + URI плагина platform_v* +
+  sysEnum-владелец EnumErrorCategory; неразрешённые/Structure-поля skip;
+  compatibilityMode null = latest (skip). Native undefined globals/ctors
+  не дублировать; произвольные члены без источника версий не переносить.
+- Live после свежего старта EDT: внешние записи Configuration.mdo/Module.bsl
+  подхватываются с задержкой (догрузка воркспейса + refresh). Перед чтением
+  маркеров подтверждать фактическую BM-модель (get_configuration_properties);
+  ранние reads в период загрузки — stale, сохранять как историю и перечитывать
+  отдельным `-confirmed` ярлыком, а не форсировать revalidate/clean между
+  переходами. В спокойной сессии подхват занимал секунды.
 - DeprecatedAttributes8312 pinned — лексический safety-net, не типизированный
   deprecated Property: root Chart/ChartPlotArea (RU/EN), alias другого имени skip,
   Chart=Structure может сработать. При переносе не «улучшать» контракт молча.

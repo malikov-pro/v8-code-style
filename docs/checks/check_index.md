@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 318
+Общее количество проверок 1С:Стандарты разработки V8: 319
 
 - form: 15
 - md: 50
-- bsl: 205
+- bsl: 206
 - ql: 21
 - right: 27
 
@@ -288,6 +288,7 @@
 | [try-number](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/try-number.html) | Преобразование в число внутри Попытки |
 | [typed-value-adding-to-untyped-collection](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/typed-value-adding-to-untyped-collection.html) | Добавление типизированного значения в не типизированную коллекцию |
 | [unary-plus-in-concatenation](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unary-plus-in-concatenation.html) | Унарный плюс в конкатенации |
+| [unavailable-member-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unavailable-member-call.html) | Категория ошибки недоступна при заданной совместимости |
 | [union-all](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/union-all.html) | ОБЪЕДИНИТЬ без ВСЕ |
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
 | [unsafe-find-by-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unsafe-find-by-code.html) | Небезопасный поиск по коду |
