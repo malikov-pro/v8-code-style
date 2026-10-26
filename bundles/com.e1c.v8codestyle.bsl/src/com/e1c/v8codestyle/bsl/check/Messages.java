@@ -732,6 +732,9 @@ final class Messages
     public static String DeprecatedFindCheck_title;
     public static String DeprecatedMethodCallCheck_title;
     public static String DeprecatedAttributes8312Check_title;
+    public static String UnavailableMemberCallCheck_title;
+    public static String UnavailableMemberCallCheck_description;
+    public static String UnavailableMemberCallCheck_message;
     public static String DeprecatedAttributes8312Check_description;
     public static String DeprecatedAttributes8312Check_message;
     public static String DeprecatedMethodCallCheck_description;
