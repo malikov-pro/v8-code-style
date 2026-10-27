@@ -196,7 +196,7 @@ Worktree только по явной просьбе пользователя.
 - При удалении «неиспользуемых» импортов не удалить нужный (EcoreUtil) —
   ошибка компиляции ловится `--skip-tests` прогоном.
 - `mvn verify -pl <модули>`: реактор НЕ подтягивает таргет-модуль по -am —
-  перечислять цепочку явно (targets/edt-2026.1, все bundles, docs В КОРНЕ
+  перечислять цепочку явно (targets/default, все bundles, docs В КОРНЕ
   репо — не bundles/, feature, repository, itests-фрагмент).
 - **`-pl` без `clean` после пересборки бандлов = каскад падений itests**:
   в `tests/*/target/work/data` остаётся воркспейс прежних квалификаторов —
@@ -234,20 +234,16 @@ Worktree только по явной просьбе пользователя.
 - Точечные `-pl`-прогоны Tycho создают `.tycho-consumer-pom.xml` по модулям —
   в .gitignore, не коммитить.
 
-## itests: JVM тестов — только через useJDK=BREE (находка 05.10.2026)
+## itests: JVM тестов — Java25 SYSTEM (с 28.10.2026)
 
-- Сборка идёт на JDK 25 (Tycho 5 требует 21+), но тестовая JVM должна быть
-  **JDK 17** (BREE 2026.1): `tests/pom.xml` → tycho-surefire
-  `<useJDK>BREE</useJDK>` + `~/.m2/toolchains.xml` (jdk 17 → axiom-jdk-full-17,
-  jdk 25 → tools/jdk-25). SYSTEM-JVM (JDK 25) роняет itests: spifly 1.3.7
-  при витье классов (ServiceLoader-детекция на старте бандлов) читает файлы
-  JDK 25 (major 69) ASM'ом 9.6 — `Unsupported class file major version 69` →
-  `ClassFormatError` → LINKING-фаза падает → старт проектного контекста
-  не завершается → `waitForProjectStart`/`waitForDD` висят сотни секунд.
+- Текущая платформа только EDT2026.2.2, BREE/EE/compiler25.
+  `tests/pom.xml` → `<useJDK>SYSTEM</useJDK>`: полный JDK25 сборки, ASM9.9.1
+  в locked platform. Локальные поддельные java17 toolchains не нужны.
+- История 2026.1: spifly1.3.7 + ASM9.6 не понимали major69; поэтому тогда
+  требовалась отдельная JVM17/BREE. Не переносить это ограничение на2026.2.2.
 - Симптомы отличить: NPE `getProject()==null` / «Cannot get bundle project»
   каскадом с первых тестов — тоже из этой семьи (воркспейс не стартовал).
-- При синке с апстримом tests/pom.xml: useJDK сохранить (апстрим на 2026.2
-  с JDK 25 — там SYSTEM работает, у нас 2026.1 — нет).
+- Новый target/ASM/JVM требует полного гейта, targeted не доказывает все каналы.
 
 ## Продуктовый smoke: после установки новой версии — clean build проекта
 

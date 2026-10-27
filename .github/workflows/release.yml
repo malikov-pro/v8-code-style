@@ -1,7 +1,7 @@
 name: Релиз
 
-# Пуш тега вида 0.8.0 из master: сборка обоих профилей (EDT 2026.1 + 2026.2)
-# → GitHub Release с двумя p2-zip. Публикация релиза дёргает
+# Пуш тега X.Y.Z из master: сборка EDT 2026.2.2 / Java 25
+# → GitHub Release с одним p2-zip. Публикация релиза дёргает
 # deploy-update-site.yml (обновление Pages).
 
 on:
@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
+      EDT_P2_ARCHIVE_URL: ${{ secrets.EDT_P2_ARCHIVE_URL }}
 
     steps:
       - name: Проверка тега
@@ -57,8 +58,13 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}-${{ hashFiles('targets/edt-2026.1/edt-2026.1.target') }}
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml', 'targets/default/platform-lock.json') }}
           restore-keys: ${{ runner.os }}-m2-
+
+      - name: Проверка приватной платформы EDT 2026.2.2
+        run: |
+          PLATFORM_URI=$(python3 scripts/prepare-platform.py)
+          echo "EDT_P2_REPOSITORY=$PLATFORM_URI" >> "$GITHUB_ENV"
 
       # версия релиза = тег: снимаем -SNAPSHOT в pom и MANIFEST/feature
       # (только в рабочем дереве, коммит не делаем)
@@ -81,45 +87,15 @@ jobs:
             echo "bom/pom.xml: не удалось проставить версию ${TAG}"; exit 1
           }
 
-      # оба профиля, без itests (тесты гоняются локально перед тегом — ~35 мин).
-      # edt.1c.ru обрывает отдачу крупных нативок раннерам GitHub (Premature EOF
-      # на natives.library) — каждая сборка с ретраями (p2-кэш докачивает).
-      - name: Сборка EDT 2026.1 (основная)
-        run: |
-          for i in 1 2 3; do
-            echo "=== Попытка $i ==="
-            if mvn -B clean verify -DskipTests -Dtycho.localArtifacts=ignore -Dtycho.p2.httptransport.type=JavaUrl; then
-              break
-            elif [ "$i" = "3" ]; then
-              exit 1
-            else
-              sleep 30
-            fi
-          done
+      # Полный тестовый гейт выполняется до тега на том же source snapshot.
+      - name: Сборка EDT 2026.2.2
+        run: bash compile.sh --skip-tests
 
-      - name: Zip EDT 2026.1
+      - name: Zip EDT 2026.2.2
         run: |
           mkdir -p dist
           cp repositories/com.e1c.v8codestyle.repository/target/*.zip \
-             dist/v8codestyle-edt2026.1-${RELEASE_TAG}.zip
-
-      - name: Сборка EDT 2026.2 (пре-релиз)
-        run: |
-          for i in 1 2 3; do
-            echo "=== Попытка $i ==="
-            if mvn -B clean verify -DskipTests -Dtycho.localArtifacts=ignore -Dtycho.p2.httptransport.type=JavaUrl -Pedt-2026.2; then
-              break
-            elif [ "$i" = "3" ]; then
-              exit 1
-            else
-              sleep 30
-            fi
-          done
-
-      - name: Zip EDT 2026.2
-        run: |
-          cp repositories/com.e1c.v8codestyle.repository/target/*.zip \
-             dist/v8codestyle-edt2026.2-${RELEASE_TAG}.zip
+             dist/v8codestyle-edt2026.2.2-${RELEASE_TAG}.zip
 
       - name: Публикация релиза
         env:

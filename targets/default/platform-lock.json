@@ -1,0 +1,11 @@
+{
+  "platform": "1C:EDT 2026.2.2.21",
+  "environment": "linux/gtk/x86_64",
+  "metadata": {
+    "content.jar": "572f55bd07aae0e62789145fdf3de50af524d7f5aaa455452d9219d354801294",
+    "artifacts.jar": "ca657e497e88ae704b22889111b3713539b13144d5f8b5d65c9b3b691a210d21"
+  },
+  "artifacts": 1473,
+  "inventory_sha256": "16175e37e27eb01c4a819d3cff381817c47238c0c6d5431d9c21ce2711b4529a",
+  "provenance": "Private p2 snapshot published from installed EDT 2026.2.2.21, plus OSGi test libraries; repaired p2 ranges/source requirements. Never publish proprietary platform binaries with the plugin."
+}

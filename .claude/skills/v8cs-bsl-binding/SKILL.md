@@ -189,7 +189,7 @@ Pinned-код приоритетнее формулировки: Web handler mes
   delegate, плюс реальные DCS container IDs. Только hub UID отфильтровал делегат.
   Product listener реагирует на settingsChanged TOP, не меняет query/settings,
   уважает disabled hub/check; тестовый listener после research удалить и повторить
-  исходную строгую регрессию. Новые DI/lifecycle/пакеты требуют полного2026.1.
+   исходную строгую регрессию. Новые DI/lifecycle/пакеты требуют полного гейта текущей платформы.
 - QL UNION: enum UNION имеет и первый SELECT без объединения; использовать
   flagUnionType && !flagUnionTypeAll, а keyword брать из owned semantic leaf.
   QL keyword-range и BSL строка с продолжением `|` различаются: для `|UNION`
@@ -212,7 +212,7 @@ Pinned-код приоритетнее формулировки: Web handler mes
   allMethods() пуст. Это не доказательство нулевой арности. Проверенный путь —
   module.getModule(), при proxy текущая BM-транзакция.getExternalObjectByUri,
   затем реальный AST.allMethods()/formalParams. Требуется явный bsl.model import;
-  новую metadata→BSL зависимость закрывать полным 2026.1, не только targeted.
+   новую metadata→BSL зависимость закрывать полным гейтом текущей платформы, не только targeted.
 - Дубли заданий: BM methodName-событие содержит старое значение в публичном
   BmChangeEvent.getOldValues(), можно пересчитать старую/новую группы. Файловая
   загрузка в проверенной EDT присылает только schedule/suppressObject без старого

@@ -4,15 +4,12 @@
 #   mvn clean verify -Dtycho.localArtifacts=ignore -Dtycho.p2.httptransport.type=JavaUrl
 # затем печатает путь к готовому p2-артефакту для установки в EDT.
 #
-# Профили платформ:
-#   EDT 2026.1 (основная, по умолчанию) — targets/edt-2026.1 (ruby/2026.1)
-#   EDT 2026.2 (пре-релиз)              — targets/default (ruby/2026.2), флаг --profile edt-2026.2
-# Исходник один на обе платформы: бандлы собираются как JavaSE-17 и встают
-# в EDT 2026.1 (JVM 17) и EDT 2026.2 (JVM 25). JDK 25 — только тулчейн сборки.
+# Поддерживается только EDT 2026.2.2 (linux/gtk/x86_64), JavaSE-25.
+# Приватная платформа: scripts/prepare-platform.py, docs/build-edt-2026.2.2.md.
 #
 # Использование:
-#   bash compile.sh                    # EDT 2026.1 (основная цель)
-#   bash compile.sh --profile edt-2026.2   # EDT 2026.2 (пре-релиз)
+#   bash compile.sh                    # EDT 2026.2.2
+#   bash compile.sh --profile edt-2026.2   # совместимый алиас, та же платформа
 #   bash compile.sh --full             # в точности CI: -PSDK,find-bugs (дольше)
 #   bash compile.sh --skip-tests       # без itests (быстрая проверка сборки)
 #   bash compile.sh --java-home ... --maven-home ...
@@ -24,10 +21,10 @@ REPO_DIR="$ROOT/repositories/com.e1c.v8codestyle.repository/target"
 
 FULL=0
 SKIP_TESTS=0
-PROFILE=""
+PROFILE="edt-2026.2"
 
 usage() {
-    sed -n '2,17p' "$0" | sed 's/^# \{0,1\}//'
+    sed -n '2,/^set -euo pipefail/{ /^set -euo pipefail/d; s/^# \{0,1\}//; p; }' "$0"
     exit 0
 }
 
@@ -49,48 +46,19 @@ done
 log()  { echo "[compile] $*"; }
 die()  { echo "[compile] ОШИБКА: $*" >&2; exit 1; }
 
-# --- toolchain (без sudo; живёт в ~/tools) -----------------------------------
-if [[ -z "${JAVA_HOME_ARG:-}" ]]; then
-    for cand in "$HOME/tools/jdk-25.0.4.1+1" /opt/1C/1CE/components/axiom-jdk-full-17.0.16+12-x86_64; do
-        [[ -x "$cand/bin/java" ]] || continue
-        # EE профиля — JavaSE-25: JDK 17 не подходит, ищем только его
-        "$cand/bin/java" -version 2>&1 | grep -q 'version "25' || continue
-        JAVA_HOME_ARG="$cand"
-        break
-    done
-fi
-
-if [[ -n "${JAVA_HOME_ARG:-}" ]]; then
-    [[ -x "$JAVA_HOME_ARG/bin/java" ]] || die "bin/java не найден в --java-home: $JAVA_HOME_ARG"
-    export JAVA_HOME="$JAVA_HOME_ARG"
-    export PATH="$JAVA_HOME/bin:$PATH"
-fi
-
-if [[ -n "${MAVEN_HOME_ARG:-}" ]]; then
-    [[ -x "$MAVEN_HOME_ARG/bin/mvn" ]] || die "bin/mvn не найден в --maven-home: $MAVEN_HOME_ARG"
-    MVN="$MAVEN_HOME_ARG/bin/mvn"
-elif [[ -x "$HOME/tools/apache-maven-3.9.9/bin/mvn" ]]; then
-    MVN="$HOME/tools/apache-maven-3.9.9/bin/mvn"
-else
-    command -v mvn >/dev/null || die "mvn не найден в PATH, передайте --maven-home (нужен Maven 3.9.9+)"
-    MVN="$(command -v mvn)"
-fi
-
-JAVA_VER="$("$JAVA_HOME/bin/java" -version 2>&1 | head -n 1 || java -version 2>&1 | head -n 1)"
-log "JAVA_HOME : ${JAVA_HOME:-<из PATH>} ($JAVA_VER)"
+# Reject obsolete profiles before platform preparation/downloads.
+[[ "$PROFILE" == edt-2026.2 ]] || die "поддерживается только EDT 2026.2.2 (--profile edt-2026.2)"
+source "$ROOT/scripts/build-environment.sh"
+v8cs_build_environment
+log "JAVA_HOME : $JAVA_HOME"
 log "Maven     : $MVN"
 
 # --- build -------------------------------------------------------------------
-case "$PROFILE" in
-    ""|edt-2026.1|edt-2026.2) ;; # пусто = EDT 2026.1 (основная)
-    *) die "неизвестный профиль: $PROFILE (допустимо: edt-2026.1, edt-2026.2)" ;;
-esac
 CMD=(clean verify --batch-mode -Dtycho.localArtifacts=ignore -Dtycho.p2.httptransport.type=JavaUrl)
-[[ -n "$PROFILE" ]] && CMD+=(-P"$PROFILE")
 [[ "$SKIP_TESTS" -eq 1 ]] && CMD+=(-DskipTests)
 [[ "$FULL" -eq 1 ]] && CMD+=(-PSDK,find-bugs)
 
-log "Запуск: mvn ${CMD[*]} (профиль: ${PROFILE:-edt-2026.1})"
+log "Запуск: mvn ${CMD[*]} (EDT 2026.2.2)"
 (cd "$ROOT" && "$MVN" "${CMD[@]}")
 
 # --- artifact ----------------------------------------------------------------
@@ -99,9 +67,5 @@ ZIP="$(ls -t "$REPO_DIR"/*.zip 2>/dev/null | head -n 1 || true)"
 
 log "ГОТОВО: p2-репозиторий:"
 echo "  $ZIP"
-if [[ -n "$PROFILE" ]]; then
-    echo "  профиль: $PROFILE"
-else
-    echo "  профиль: edt-2026.1 (по умолчанию)"
-fi
+echo "  платформа: EDT 2026.2.2 / Java 25"
 echo "Установка: bash scripts/deploy-edt.sh --edt <инсталляция> --workspace <ws>"

@@ -52,7 +52,7 @@ EDT="${EDT%/}"
 [[ -x "$EDT/1cedt" ]] || die "$EDT/1cedt не найден или не исполняемый"
 
 # Сверка JavaSE: версия EE собранных бандлов не должна быть выше JVM инсталляции
-# (форк собирается как JavaSE-17 → встанет и в 2026.1 (JVM 17), и в 2026.2 (JVM 25)).
+# (текущая ветка требует JavaSE-25 / EDT 2026.2.2).
 # В собранном jar BREE превращается Tycho в Require-Capability: osgi.ee…version=N.
 TARGET_JVM="$(grep -o 'requiredJavaVersion=[0-9]*' "$EDT/1cedt.ini" 2>/dev/null | head -n 1 | cut -d= -f2 || true)"
 CORE_JAR="$(ls "$REPO"/plugins/${BUNDLE_PREFIX}_[0-9]*.jar 2>/dev/null | head -n 1 || true)"
