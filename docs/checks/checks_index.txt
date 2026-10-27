@@ -261,6 +261,7 @@ self-assign
 self-insertion
 semicolon-missing
 server-execution-safe-mode
+set-privileged-mode
 space-at-start-comment
 statement-type-change
 string-literal-type-annotation-invalid-place
@@ -268,6 +269,7 @@ structure-constructor-too-many-keys
 structure-constructor-value-type
 structure-key-modification
 subsystem-synonym-too-long
+temp-files-dir
 ternary-operator-usage
 timeouts-in-external-resources
 too-many-returns
