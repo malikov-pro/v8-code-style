@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 319
+Общее количество проверок 1С:Стандарты разработки V8: 321
 
 - form: 15
 - md: 50
-- bsl: 206
+- bsl: 208
 - ql: 21
 - right: 27
 
@@ -13,6 +13,7 @@
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [all-function-path-must-have-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/all-function-path-must-have-return.html) | Не все пути функции возвращают значение |
 | [apk-00073-functional-option-parameters-limit](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00073-functional-option-parameters-limit.html) | Ограничения на использование параметров функциональных опций |
 | [apk-00074-session-params-init](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00074-session-params-init.html) | Инициализацию параметров сеанса следует выполнять в модуле сеанса |
 | [apk-00126-md-no-yo-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00126-md-no-yo-letter.html) | Буква «ё» в имени, синониме или комментарии объекта метаданных |
@@ -291,6 +292,7 @@
 | [unavailable-member-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unavailable-member-call.html) | Категория ошибки недоступна при заданной совместимости |
 | [union-all](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/union-all.html) | ОБЪЕДИНИТЬ без ВСЕ |
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
+| [unreachable-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unreachable-code.html) | Недостижимый код после выхода из цикла или Перехода |
 | [unsafe-find-by-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unsafe-find-by-code.html) | Небезопасный поиск по коду |
 | [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |
 | [unsafe-safe-mode-method-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unsafe-safe-mode-method-call.html) | Небезопасное булево использование БезопасныйРежим |

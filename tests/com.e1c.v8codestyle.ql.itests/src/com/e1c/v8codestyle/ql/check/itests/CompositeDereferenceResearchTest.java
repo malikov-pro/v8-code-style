@@ -225,10 +225,11 @@ public class CompositeDereferenceResearchTest
         }
         List<String> catalogs = List.of("CatalogRef.Products", "CatalogRef.TargetsA", "CatalogRef.TargetsB"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         assertEquals(catalogs, expanded.get("AnyCatalogTarget")); //$NON-NLS-1$
-        // The shared fixture also contains the VT regression's chart of accounts.
-        // It expands AnyRef, but must not leak into the CatalogRef-only set above.
+        // The shared fixture also contains the VT regression's account and characteristic charts.
+        // Both expand AnyRef on EDT 2026.2.2, but not the CatalogRef-only set above.
         assertEquals(List.of("CatalogRef.Products", "CatalogRef.TargetsA", "CatalogRef.TargetsB", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-            "ChartOfAccountsRef.QueryAccounts", "DocumentRef.ProductArraival", "EnumRef.ProductType"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+            "ChartOfAccountsRef.QueryAccounts", "ChartOfCharacteristicTypesRef.QueryDimensions", //$NON-NLS-1$ //$NON-NLS-2$
+            "DocumentRef.ProductArraival", "EnumRef.ProductType"), //$NON-NLS-1$ //$NON-NLS-2$
             expanded.get("AnyTarget")); //$NON-NLS-1$
     }
 }
