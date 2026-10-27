@@ -25,6 +25,14 @@ final class Messages
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
 
+    public static String SetPrivilegedModeCheck_title;
+    public static String SetPrivilegedModeCheck_description;
+    public static String SetPrivilegedModeCheck_message;
+
+    public static String TempFilesDirCheck_title;
+    public static String TempFilesDirCheck_description;
+    public static String TempFilesDirCheck_message;
+
     public static String AccessibilityAtClientInObjectModuleCheck_Declared_variable_accessible_AtClient;
 
     public static String AccessibilityAtClientInObjectModuleCheck_description;
