@@ -32,7 +32,6 @@
   </properties>
 
   <modules>
-    <module>edt-2026.1</module>
     <module>default</module>    
   </modules>
 </project>
