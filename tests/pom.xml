@@ -78,8 +78,18 @@
           <dependency-resolution>
             <extraRequirements>
               <requirement>
-                <type>p2-installable-unit</type>
-                <id>com._1c.g5.v8.dt.rcp</id>
+                <type>eclipse-plugin</type>
+                <id>org.eclipse.equinox.launcher</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-feature</type>
+                <id>com._1c.g5.v8.dt.feature</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-feature</type>
+                <id>com._1c.g5.v8.dt.extension</id>
                 <versionRange>0.0.0</versionRange>
               </requirement>
               <requirement>
@@ -162,7 +172,11 @@
             <useUIThread>true</useUIThread>
             <argLine>${ui.test.vmargs} ${tycho-surefire-plugin.vmargs} ${debug.vmargs}</argLine>
             <work>${project.build.directory}/work</work>
-            <testRuntime>p2Installed</testRuntime>
+            <!-- 2026.2.2: локальная платформа не содержит продуктовый IU
+                 com._1c.g5.v8.dt.rcp (публичный ruby p2 удалён upstream),
+                 p2Installed-режим без него не собирает конфигурацию рантайма;
+                 возвращаем штатный default-режим (config.ini генерирует tycho) -->
+            <testRuntime>default</testRuntime>
             <!-- Тестовая JVM — по BREE бандла из toolchains.xml (JavaSE-17 →
                  JDK 17). SYSTEM (JDK 25 тулчейна сборки) ломает itests:
                  spifly 1.3.7 при витье классов читает классы JDK через ASM 9.6,

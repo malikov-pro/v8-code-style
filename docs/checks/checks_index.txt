@@ -1,3 +1,4 @@
+all-function-path-must-have-return
 apk-00073-functional-option-parameters-limit
 apk-00074-session-params-init
 apk-00126-md-no-yo-letter
@@ -276,6 +277,7 @@ unary-plus-in-concatenation
 unavailable-member-call
 union-all
 unknown-form-parameter-access
+unreachable-code
 unsafe-find-by-code
 unsafe-password-ib-storage
 unsafe-safe-mode-method-call

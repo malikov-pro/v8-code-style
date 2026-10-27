@@ -75,6 +75,16 @@ Pinned-код приоритетнее формулировки: Web handler mes
 
 ## Границы доказательства
 
+- CFG-волна (EMF vs pinned): EDT вставляет EmptyStatement-терминаторы —
+  фильтровать в блоках; `PreprocessorConditionVertex` LS не ConditionalVertex —
+  в классификаторе LS падает в default и флагает — наш preprocessor-Conditional
+  всегда flag; препроцессор уровня метода живёт в IfPreprocessorDeclareStatement
+  внутри `Block.getDeclareStatements()` (builder: declares+statements);
+  goto/метки на уровне ТЕЛА модуля грамматикой EDT не принимаются (гэпов в теле
+  не существует); after-Break/Continue LS не флагает вовсе — вариант B это
+  осознанное расширение (сироты с тегом причины сохраняются при финализации).
+  Эталон снимать дампом pinned-движка (Scoped*Test в pinned-ls-build), asserts
+  корпусов — истина, комментарии — нет.
 - UnavailableMemberCall scoped residual: версии появления брать из pinned
   builtin-platform-types (ErrorCategory — 28 записей, exact-audit против JSON),
   не из имен. Guard: resolved platform Property + URI плагина platform_v* +

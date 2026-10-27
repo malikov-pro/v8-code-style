@@ -735,6 +735,14 @@ final class Messages
     public static String UnavailableMemberCallCheck_title;
     public static String UnavailableMemberCallCheck_description;
     public static String UnavailableMemberCallCheck_message;
+    public static String AllFunctionPathMustHaveReturnCheck_title;
+    public static String AllFunctionPathMustHaveReturnCheck_description;
+    public static String AllFunctionPathMustHaveReturnCheck_message;
+    public static String AllFunctionPathMustHaveReturnCheck_Loops_executed_at_least_once;
+    public static String AllFunctionPathMustHaveReturnCheck_Ignore_missing_else_on_exit;
+    public static String UnreachableCodeCheck_title;
+    public static String UnreachableCodeCheck_message;
+    public static String UnreachableCodeCheck_description;
     public static String DeprecatedAttributes8312Check_description;
     public static String DeprecatedAttributes8312Check_message;
     public static String DeprecatedMethodCallCheck_description;

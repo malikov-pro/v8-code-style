@@ -1,10 +1,11 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 206
+Общее количество проверок: 208
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [all-function-path-must-have-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/all-function-path-must-have-return.html) | Не все пути функции возвращают значение |
 | [apk-00074-session-params-init](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00074-session-params-init.html) | Инициализацию параметров сеанса следует выполнять в модуле сеанса |
 | [apk-00150-registrar-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00150-registrar-access.html) | Самодостаточность регистров: обращение к реквизиту «Регистратор» |
 | [apk-00157-constants-write-in-txn](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00157-constants-write-in-txn.html) | Запись константы выполняется в транзакции |
@@ -182,6 +183,7 @@
 | [unary-plus-in-concatenation](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unary-plus-in-concatenation.html) | Унарный плюс в конкатенации |
 | [unavailable-member-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unavailable-member-call.html) | Категория ошибки недоступна при заданной совместимости |
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
+| [unreachable-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unreachable-code.html) | Недостижимый код после выхода из цикла или Перехода |
 | [unsafe-find-by-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unsafe-find-by-code.html) | Небезопасный поиск по коду |
 | [unsafe-safe-mode-method-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unsafe-safe-mode-method-call.html) | Небезопасное булево использование БезопасныйРежим |
 | [unused-parameters](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unused-parameters.html) | Неиспользуемый параметр метода |
