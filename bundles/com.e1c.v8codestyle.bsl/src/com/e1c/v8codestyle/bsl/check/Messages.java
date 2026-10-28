@@ -29,6 +29,12 @@ final class Messages
     public static String SetPrivilegedModeCheck_description;
     public static String SetPrivilegedModeCheck_message;
 
+    public static String UseSystemInformationCheck_title;
+    public static String InternetAccessCheck_title;
+    public static String InternetAccessCheck_description;
+    public static String InternetAccessCheck_message;
+    public static String UseSystemInformationCheck_description;
+    public static String UseSystemInformationCheck_message;
     public static String TempFilesDirCheck_title;
     public static String TempFilesDirCheck_description;
     public static String TempFilesDirCheck_message;

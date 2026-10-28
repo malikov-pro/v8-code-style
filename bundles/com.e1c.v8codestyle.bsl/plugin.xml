@@ -17,6 +17,8 @@
 <plugin>
    <extension point="com.e1c.g5.v8.dt.check.checks">
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.TempFilesDirCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UseSystemInformationCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.InternetAccessCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.SetPrivilegedModeCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DeprecatedMethodCallCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DeprecatedAttributes8312Check"/>

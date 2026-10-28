@@ -1,0 +1,30 @@
+Procedure Boundaries(TypeName, Suffix) Export
+    Value = New FTPСоединение("localhost");
+    Value = New FTPConnection("localhost");
+    Value = New HTTPСоединение("localhost");
+    Value = New HTTPConnection("localhost");
+    Value = New WSОпределения("localhost");
+    Value = New WSDefinitions("localhost");
+    Value = New WSПрокси(Undefined, "namespace", "service", "port");
+    Value = New WSProxy(Undefined, "namespace", "service", "port");
+    Value = New ИнтернетПочтовыйПрофиль;
+    Value = New InternetMailProfile;
+    Value = New ИнтернетПочта;
+    Value = New InternetMail;
+    Value = New Почта;
+    Value = New Mail;
+    Value = New HTTPЗапрос("/");
+    Value = New HTTPRequest("/");
+    Value = New ИнтернетПрокси;
+    Value = New InternetProxy;
+    Value = New("InternetMail");
+    Value = New(" HTTPЗапрос ", "/");
+    Value = New("InternetMail" + Suffix);
+    Value = New("iNtErNeTpRoXy");
+    Value = New(("InternetMail"));
+    Value = New(TypeName);
+    Value = New("InternetMail2");
+    Value = New("InternetMail""x");
+    Value = New Structure;
+EndProcedure
+Value = New HTTPRequest("/");
