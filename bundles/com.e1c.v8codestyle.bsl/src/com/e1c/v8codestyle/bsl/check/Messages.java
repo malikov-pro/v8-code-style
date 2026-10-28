@@ -31,6 +31,11 @@ final class Messages
 
     public static String UseSystemInformationCheck_title;
     public static String InternetAccessCheck_title;
+    public static String FileSystemAccessCheck_title;
+    public static String FileSystemAccessCheck_description;
+    public static String FileSystemAccessCheck_message;
+    public static String FileSystemAccessCheck_globalMethods;
+    public static String FileSystemAccessCheck_newExpression;
     public static String InternetAccessCheck_description;
     public static String InternetAccessCheck_message;
     public static String UseSystemInformationCheck_description;

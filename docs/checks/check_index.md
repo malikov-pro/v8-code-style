@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 325
+Общее количество проверок 1С:Стандарты разработки V8: 326
 
 - form: 15
 - md: 50
-- bsl: 212
+- bsl: 213
 - ql: 21
 - right: 27
 
@@ -142,6 +142,7 @@
 | [extension-method-prefix](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-method-prefix.html) | У метода отсутствует префикс расширения |
 | [extension-method-visible-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-method-visible-mode.html) | У метода в расширении модуля та же видимость, что и оригинального метода |
 | [extension-variable-prefix](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-variable-prefix.html) | У имени переменной отсутствует префикс расширения |
+| [file-system-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/file-system-access.html) | Аудит доступа к файловой системе |
 | [form-commands-single-action-handler](../../../com.e1c.v8codestyle.form/check.descriptions/ru/form-commands-single-action-handler.html) | У каждого действия команды должна быть назначена своя процедура-обработчик |
 | [form-dynamic-list-item-title](../../../com.e1c.v8codestyle.form/check.descriptions/ru/form-dynamic-list-item-title.html) | Пустой заголовок для колонок динамического списка |
 | [form-item-visible-settings-by-roles](../../../com.e1c.v8codestyle.form/check.descriptions/ru/form-item-visible-settings-by-roles.html) | Использована ролевая настройка видимости (редактирования, использования) для элемента формы |

@@ -127,6 +127,7 @@ extension-md-object-prefix
 extension-method-prefix
 extension-method-visible-mode
 extension-variable-prefix
+file-system-access
 form-commands-single-action-handler
 form-dynamic-list-item-title
 form-item-visible-settings-by-roles
