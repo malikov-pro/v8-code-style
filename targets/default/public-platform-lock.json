@@ -1,0 +1,38 @@
+{
+  "platform": "1C:EDT 2026.2.2",
+  "environment": "linux/gtk/x86_64",
+  "repositories": [
+    {
+      "id": "edt",
+      "url": "https://edt.1c.ru/downloads/releases/ruby/2026.2/",
+      "metadata": {
+        "content.xml.xz": "9a88d18a45683cc57bf8fc59b2e9f4b1aee46240781901536c28e3609b360698",
+        "artifacts.xml.xz": "a46d3fac91a60689629e37a5d35db15183cc28a0ce971b358d453a3e59e17ecb"
+      }
+    },
+    {
+      "id": "orbit",
+      "url": "https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/release/4.38.0/",
+      "metadata": {
+        "content.xml.xz": "35f6816daf6b8fb3307c323b823e082e6cc45bb5ffedb0ea94c78ebedfeb6004",
+        "artifacts.xml.xz": "1edce379b0b0637a22a8f743362bedaf78ccb77da7ec2234c33a7f43b75a511d"
+      }
+    },
+    {
+      "id": "eclipse",
+      "url": "https://download.eclipse.org/releases/2025-12/202512101000/",
+      "metadata": {
+        "content.xml.xz": "94f8d334f992eb6e59141f8f856c9e4ffc95ab9aaa1474a22917218a88de695d",
+        "artifacts.xml.xz": "7fabbbe8558241a63edcd20f41022408548819efe414ac68d7a92f27a43ebba5"
+      }
+    },
+    {
+      "id": "license",
+      "url": "https://download.eclipse.org/cbi/updates/license/2.0.2.v20181016-2210/",
+      "metadata": {
+        "content.xml.xz": "3bb5c0435265e37ab689b76466f48a011752d67a0649390c79f469e30a3e5154",
+        "artifacts.xml.xz": "b7688750fa1c9b5912aa693daeea8099749edcd76cfad8721c07087f5c446559"
+      }
+    }
+  ]
+}

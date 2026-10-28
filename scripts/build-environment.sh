@@ -26,6 +26,6 @@ v8cs_build_environment() {
   fi
   [[ -x "$MVN" ]] || { echo 'Maven 3.9.9 required' >&2; return 1; }
   "$MVN" --version 2>&1 | grep -q 'Apache Maven 3.9.9' || { echo 'Use pinned Maven 3.9.9 (Tycho/Resolver compatibility)' >&2; return 1; }
-  EDT_P2_REPOSITORY="$(python3 "$ROOT/scripts/prepare-platform.py")" || return 1
-  export EDT_P2_REPOSITORY
+  # Never silently substitute an old local snapshot for the public target.
+  python3 "$ROOT/scripts/verify-public-platform.py" || return 1
 }
