@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 323
+Общее количество проверок 1С:Стандарты разработки V8: 325
 
 - form: 15
 - md: 50
-- bsl: 210
+- bsl: 212
 - ql: 21
 - right: 27
 
@@ -164,6 +164,7 @@
 | [if-else-if-ends-with-else](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/if-else-if-ends-with-else.html) | Цепочка Если/ИначеЕсли без Иначе |
 | [incorrect-use-of-str-template](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/incorrect-use-of-str-template.html) | Неверное использование СтрШаблон |
 | [input-field-list-choice-mode](../../../com.e1c.v8codestyle.form/check.descriptions/ru/input-field-list-choice-mode.html) | В полях форм со списками выбора следует всегда устанавливать свойство **РежимВыбораИзСписка** в значение Истина |
+| [internet-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/internet-access.html) | Аудит обращения к интернет-ресурсам |
 | [invocation-form-event-handler](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/invocation-form-event-handler.html) | Программный вызов обработчика события формы |
 | [invocation-parameter-type-intersect](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/invocation-parameter-type-intersect.html) | Вызываемый тип пересекается с типом параметра |
 | [join-with-virtual-table](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/join-with-virtual-table.html) | Соединение с виртуальной таблицей |
@@ -322,6 +323,7 @@
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
 | [use-less-for-each](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-less-for-each.html) | Неиспользуемый итератор Для Каждого |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
+| [use-system-information](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-system-information.html) | Аудит использования системной информации |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |
 | [using-find-element-by-string](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-find-element-by-string.html) | Поиск элемента по литералу |
 | [using-form-data-to-value](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-form-data-to-value.html) | Использование РеквизитФормыВЗначение и ДанныеФормыВЗначение |

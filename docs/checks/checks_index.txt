@@ -149,6 +149,7 @@ if-else-duplicated-condition
 if-else-if-ends-with-else
 incorrect-use-of-str-template
 input-field-list-choice-mode
+internet-access
 invocation-form-event-handler
 invocation-parameter-type-intersect
 join-with-virtual-table
@@ -307,6 +308,7 @@ up-781-notify-handler-nonexistent
 use-goto-operator
 use-less-for-each
 use-non-recommended-method
+use-system-information
 useless-ternary-operator
 using-find-element-by-string
 using-form-data-to-value
