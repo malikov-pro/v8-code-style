@@ -13,7 +13,9 @@ description: Конвейер переноса диагностики BSL Langua
 - `../_notes/ls-registry.md` / `ls-registry.json` — поштучный актуальный учёт;
 - `ls-registry-decisions.tsv` / `build-ls-registry.py` — решения и проверка
   полноты каталога/регистраций (оба в `../_notes`);
-- `../_notes/ls-next-plan-2026-10-12.md` — принятый план после аудита;
+- `../_notes/PLAN-2026-10-17-next-wave-proposed.md` — выполненный план обработчиков;
+- Следующую очередь читать в актуальном handoff и принятом пользователем плане.
+  Решение28.10: функционал заморожен под0.10.0, новый context-план отложен;
 - `../_notes/ls-port-gap.md` — история, не очередь для слепого выбора.
 
 Не хранить текущие количества в каждом скилле: читать реестр и сверять
@@ -22,10 +24,10 @@ actual `plugin.xml`. Прямой порт !=полная эквивалентн
 
 ## 0. Выбор кандидата
 
-- Из принятого плана/поштучного реестра: сначала corrective mini-batch
-  IfConditionComplexity (+1 граница) и LogicalOrInJoin (same-field exemption),
-  затем reference/block regressions и новые BSL/QL-инкременты. Не начинать
-  реализацию нового чека, если пользователь просит только аудит/план.
+- Из актуального принятого плана/поштучного реестра. Исторические corrective
+  IfConditionComplexity/LogicalOrInJoin и handler-волна уже завершены — не
+  выбирать их повторно по старым заметкам. Предложенная очередь не считается
+  принятой: не начинать новый чек, если пользователь просит аудит/план/сохранение.
 - Дедуп руками: `grep -ri <имя>` по `bundles/*/markdown/` + `docs/checks/`.
   Token-overlap матчёр врёт в обе стороны (см. гэп-лист).
 - Выбирать действие по статусу: перенесено — corpus/regression при новых
@@ -156,8 +158,8 @@ actual `plugin.xml`. Прямой порт !=полная эквивалентн
 - Рабочая мини-пачка2–3 связанных одного канала; каждому свои tests/commit/
   строка реестра. First vertical slice неизвестного канала до live, потом
   группировать. Итерация targeted, перед integration весь затронутый
-  itests-модуль на 2026.1. Fullcompile2026.1 — раз в основную пачку и при общих
-  dependencies; обе платформы обязательны перед release (решение15.10, v8cs-build).
+  itests-модуль на 2026.2.2. Fullcompile — раз в основную пачку и при общих
+  dependencies; единственная платформа EDT2026.2.2/Java25 (решение28.10, v8cs-build).
 - Только markdown/messages-text правки: CheckDescriptionTest +generated
   index, не новый fullsuite. EP/ключи/parameters/MANIFEST — runtime изменения.
 - Сохранить p2 профиля перед следующим clean; выполнить own live smoke:
