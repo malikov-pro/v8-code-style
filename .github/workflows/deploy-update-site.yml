@@ -27,8 +27,6 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      EDT_P2_ARCHIVE_URL: ${{ secrets.EDT_P2_ARCHIVE_URL }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -68,8 +66,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml', 'targets/default/platform-lock.json') }}
-          restore-keys: ${{ runner.os }}-m2-
+          key: ${{ runner.os }}-public-p2-m2-${{ hashFiles('**/pom.xml', 'targets/default/*.target', 'targets/default/public-platform-lock.json') }}
+          restore-keys: ${{ runner.os }}-public-p2-m2-
 
       - name: Сборка EDT 2026.2.2
         run: bash compile.sh --skip-tests

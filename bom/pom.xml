@@ -112,8 +112,7 @@
               </artifact>
             </target>
             <environments>
-              <!-- 2026.2.2: local target platform staging contains Linux bundles only
-                   (the multi-OS ruby p2 repository no longer exists upstream) -->
+              <!-- Supported and tested environment for this fork. -->
               <environment>
                 <os>linux</os>
                 <ws>gtk</ws>

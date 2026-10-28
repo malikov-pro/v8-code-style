@@ -77,6 +77,23 @@
           </target>
           <dependency-resolution>
             <extraRequirements>
+              <!-- Target roots alone do not retain generic capability providers
+                   in this project's compile/test dependency closure. -->
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>org.apache.felix.scr</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>org.eclipse.swt.svg</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>org.eclipse.equinox.event</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
               <requirement>
                 <type>eclipse-plugin</type>
                 <id>org.eclipse.equinox.launcher</id>
@@ -172,13 +189,11 @@
             <useUIThread>true</useUIThread>
             <argLine>${ui.test.vmargs} ${tycho-surefire-plugin.vmargs} ${debug.vmargs}</argLine>
             <work>${project.build.directory}/work</work>
-            <!-- 2026.2.2: локальная платформа не содержит продуктовый IU
-                 com._1c.g5.v8.dt.rcp (публичный ruby p2 удалён upstream),
-                 p2Installed-режим без него не собирает конфигурацию рантайма;
-                 возвращаем штатный default-режим (config.ini генерирует tycho) -->
+            <!-- Tycho generates config.ini; compile/test dependencies include
+                 the required DS, SVG and EventAdmin providers explicitly. -->
             <testRuntime>default</testRuntime>
             <!-- The build and test runtime both require full JDK 25.
-                 The locked 2026.2.2 platform includes ASM 9.9.1. -->
+                 The public 2026.2.2 platform includes ASM 9.9.1. -->
             <useJDK>SYSTEM</useJDK>
           </configuration>
         </plugin>

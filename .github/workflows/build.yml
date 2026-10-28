@@ -10,15 +10,12 @@ on:
     secrets:
       sonar_token:
         required: true
-      EDT_P2_ARCHIVE_URL:
-        required: false
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     env:
-      EDT_P2_ARCHIVE_URL: ${{ secrets.EDT_P2_ARCHIVE_URL }}
       PR_NUMBER: "${{ github.event_name == 'pull_request_target' && format(' -Dsonar.pullrequest.key={0}', github.event.pull_request.number) || '' }}"
       PR_REF: "${{ github.event_name == 'pull_request_target' && format('refs/pull/{0}/merge', github.event.pull_request.number) || '' }}"
 

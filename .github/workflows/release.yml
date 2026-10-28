@@ -23,7 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
-      EDT_P2_ARCHIVE_URL: ${{ secrets.EDT_P2_ARCHIVE_URL }}
 
     steps:
       - name: Проверка тега
@@ -58,13 +57,11 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml', 'targets/default/platform-lock.json') }}
-          restore-keys: ${{ runner.os }}-m2-
+          key: ${{ runner.os }}-public-p2-m2-${{ hashFiles('**/pom.xml', 'targets/default/*.target', 'targets/default/public-platform-lock.json') }}
+          restore-keys: ${{ runner.os }}-public-p2-m2-
 
-      - name: Проверка приватной платформы EDT 2026.2.2
-        run: |
-          PLATFORM_URI=$(python3 scripts/prepare-platform.py)
-          echo "EDT_P2_REPOSITORY=$PLATFORM_URI" >> "$GITHUB_ENV"
+      - name: Проверка публичной платформы до изменения версии
+        run: python3 scripts/verify-public-platform.py
 
       # версия релиза = тег: снимаем -SNAPSHOT в pom и MANIFEST/feature
       # (только в рабочем дереве, коммит не делаем)

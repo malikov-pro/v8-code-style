@@ -5,7 +5,7 @@
 # затем печатает путь к готовому p2-артефакту для установки в EDT.
 #
 # Поддерживается только EDT 2026.2.2 (linux/gtk/x86_64), JavaSE-25.
-# Приватная платформа: scripts/prepare-platform.py, docs/build-edt-2026.2.2.md.
+# Публичная платформа: scripts/verify-public-platform.py, docs/build-edt-2026.2.2.md.
 #
 # Использование:
 #   bash compile.sh                    # EDT 2026.2.2
