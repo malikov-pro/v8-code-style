@@ -1,0 +1,80 @@
+name: Release candidate
+
+on:
+  push:
+    branches:
+      - 'feature/release-*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rc-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    env:
+      NO_AT_BRIDGE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Maven 3.9.9
+        uses: stCarolas/setup-maven@12eb41b233df95d49b0c11fc1b5bc8312e5d4ce0 # v5.1
+        with:
+          maven-version: '3.9.9'
+      # No actions/cache: prove public resolution on a new runner.
+      - name: Infrastructure tests
+        run: python3 -m unittest discover -s scripts/tests -v
+      - name: Record candidate inputs
+        run: |
+          mkdir -p rc-evidence
+          git rev-parse HEAD > rc-evidence/commit.txt
+          python3 - <<'PY'
+          import hashlib, json, pathlib, subprocess
+          files = subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0')
+          hashes = {p: hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+                    for p in files if p and pathlib.Path(p).is_file()}
+          pathlib.Path('rc-evidence/inputs.json').write_text(json.dumps(hashes, indent=2))
+          PY
+      - name: Full seven-module gate
+        run: xvfb-run -a -s '-screen 0 1600x1000x24 -nolisten tcp' bash compile.sh
+      - name: Verify candidate inputs and hash p2
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, pathlib
+          before = json.loads(pathlib.Path('rc-evidence/inputs.json').read_text())
+          changed = [p for p, h in before.items() if not pathlib.Path(p).is_file()
+                     or hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest() != h]
+          generated = lambda p: p.startswith('docs/checks/') or p in ('docs/changelog.md', 'docs/toc.md')
+          unexpected = [p for p in changed if not generated(p)]
+          pathlib.Path('rc-evidence/changed.json').write_text(json.dumps(changed, indent=2))
+          assert not unexpected, unexpected
+          repo = pathlib.Path('repositories/com.e1c.v8codestyle.repository/target/repository')
+          hashes = {str(p.relative_to(repo)): hashlib.sha256(p.read_bytes()).hexdigest()
+                    for p in repo.rglob('*') if p.is_file()}
+          assert hashes
+          pathlib.Path('rc-evidence/p2-hashes.json').write_text(json.dumps(hashes, indent=2))
+          PY
+      - name: Test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rc-test-reports
+          path: |
+            rc-evidence/
+            tests/**/target/surefire-reports/TEST-*.xml
+            tests/**/target/work/data/.metadata/.log
+          if-no-files-found: warn
+      - name: Saved candidate p2
+        uses: actions/upload-artifact@v4
+        with:
+          name: rc-p2
+          path: repositories/com.e1c.v8codestyle.repository/target/repository/
+          if-no-files-found: error
