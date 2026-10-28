@@ -18,7 +18,7 @@
 
   <groupId>com.e1c.v8codestyle</groupId>
   <artifactId>bom</artifactId>
-  <version>0.9.0-SNAPSHOT</version>
+  <version>0.10.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>BOM</name>
@@ -40,19 +40,13 @@
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <!-- Единый исходник на обе платформы: JavaSE-17 (EDT 2026.1 = JVM 17, EDT 2026.2 = JVM 25) -->
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-    <maven.compiler.release>17</maven.compiler.release>
-
-    <!-- Профиль платформы: default = EDT 2026.1 (основная);
-         пре-релиз EDT 2026.2 — через -Pedt-2026.2 (таргет targets/default) -->
-    <edt.target.artifact>edt-2026.1</edt.target.artifact>
-    <!-- extraRequirement вместо org.eclipse.swt.svg (появился в платформе 2025-12) -->
-    <extra.requirement.swt.svg>org.eclipse.swt</extra.requirement.swt.svg>
-    <!-- EE резолва: 2026.1 резолвится на 17 (платформа JVM 17);
-         2026.2 — на 25 (свежие bm.* в ruby/2026.2 требуют JavaSE-25) -->
-    <edt.ee>JavaSE-17</edt.ee>
+    <!-- Only EDT 2026.2.2; no backwards-compatible Java 17 runtime. -->
+    <maven.compiler.source>25</maven.compiler.source>
+    <maven.compiler.target>25</maven.compiler.target>
+    <maven.compiler.release>25</maven.compiler.release>
+    <edt.target.artifact>default</edt.target.artifact>
+    <extra.requirement.swt.svg>org.eclipse.swt.svg</extra.requirement.swt.svg>
+    <edt.ee>JavaSE-25</edt.ee>
 
     <maven.build.timestamp.format>'v'yyyyMMdd-HHmm</maven.build.timestamp.format>
     <qualifier>${maven.build.timestamp}</qualifier>
@@ -118,19 +112,10 @@
               </artifact>
             </target>
             <environments>
-              <environment>
-                <os>win32</os>
-                <ws>win32</ws>
-                <arch>x86_64</arch>
-              </environment>
+              <!-- Supported and tested environment for this fork. -->
               <environment>
                 <os>linux</os>
                 <ws>gtk</ws>
-                <arch>x86_64</arch>
-              </environment>
-              <environment>
-                <os>macosx</os>
-                <ws>cocoa</ws>
                 <arch>x86_64</arch>
               </environment>
             </environments>
@@ -385,7 +370,7 @@
     <profile>
       <id>edt-2026.2</id>
       <properties>
-        <!-- Пре-релиз EDT 2026.2: таргет targets/default (ruby/2026.2) -->
+        <!-- Compatibility alias: EDT 2026.2.2 is also the default. -->
         <edt.target.artifact>default</edt.target.artifact>
         <extra.requirement.swt.svg>org.eclipse.swt.svg</extra.requirement.swt.svg>
         <edt.ee>JavaSE-25</edt.ee>

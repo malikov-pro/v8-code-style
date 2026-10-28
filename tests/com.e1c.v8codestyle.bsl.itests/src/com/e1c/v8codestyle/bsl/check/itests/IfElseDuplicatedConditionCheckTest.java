@@ -16,12 +16,16 @@
 package com.e1c.v8codestyle.bsl.check.itests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.junit.Test;
 
 import com._1c.g5.v8.dt.validation.marker.Marker;
+import com._1c.g5.v8.dt.validation.marker.StandardExtraInfo;
 import com.e1c.v8codestyle.bsl.check.IfElseDuplicatedConditionCheck;
 
 /**
@@ -47,7 +51,7 @@ public class IfElseDuplicatedConditionCheckTest
     }
 
     /**
-     * Each duplicated ElsIf condition is reported (2 duplicates in the module).
+     * One issue is reported at the first condition of each duplicate group.
      */
     @Test
     public void testDuplicatedConditionsReported() throws Exception
@@ -55,7 +59,8 @@ public class IfElseDuplicatedConditionCheckTest
         updateModule(RESOURCE_DUPLICATES);
 
         List<Marker> markers = getModuleMarkers();
-        assertEquals(2, markers.size());
+        assertEquals(1, markers.size());
+        assertMarkerLines(List.of(3));
     }
 
     /**
@@ -68,5 +73,52 @@ public class IfElseDuplicatedConditionCheckTest
 
         List<Marker> markers = getModuleMarkers();
         assertEquals(0, markers.size());
+    }
+
+    @Test
+    public void testTokenAndStringEquality() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "duplicated-condition-tokens.bsl"); //$NON-NLS-1$
+        // LS anchors the first condition in each duplicate group.
+        assertMarkerLines(List.of(2, 17));
+    }
+
+    @Test
+    public void testIncrementalStringCase() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "duplicated-condition-token-bad.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of(2));
+        updateModule(FOLDER_RESOURCE + "duplicated-condition-token-clean.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of());
+        updateModule(FOLDER_RESOURCE + "duplicated-condition-token-bad.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of(2));
+    }
+
+    private void assertMarkerLines(List<Integer> expected)
+    {
+        for (INode leaf : NodeModelUtils.findActualNodeFor(getModule()).getLeafNodes())
+        {
+            assertNull("Syntax at line " + leaf.getStartLine(), leaf.getSyntaxErrorMessage()); //$NON-NLS-1$
+        }
+        assertEquals(expected, getModuleMarkers().stream().map(marker -> {
+            Integer line = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE);
+            return line;
+        }).sorted().toList());
+        for (var marker : getModuleMarkers())
+        {
+            Integer offset = marker.getExtraInfo().get(StandardExtraInfo.TEXT_OFFSET);
+            Integer length = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LENGTH);
+            String text = NodeModelUtils.findActualNodeFor(getModule()).getRootNode().getText()
+                .substring(offset, offset + length);
+            assertEquals(true, text.contains("=")); //$NON-NLS-1$
+            assertEquals(false, text.contains("Тогда")); //$NON-NLS-1$
+        }
+    }
+
+    @Test
+    public void testOneIssuePerGroupAndModuleBody() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "condition-token-groups.bsl"); //$NON-NLS-1$
+        assertMarkerLines(List.of(2, 4, 15));
     }
 }

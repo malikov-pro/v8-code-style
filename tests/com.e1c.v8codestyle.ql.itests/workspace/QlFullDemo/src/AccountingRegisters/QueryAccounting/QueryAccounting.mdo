@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccountingRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bd9fd842-b625-49bc-8d5b-960ba5f1c7e4">
+  <name>QueryAccounting</name>
+  <chartOfAccounts>ChartOfAccounts.QueryAccounts</chartOfAccounts>
+</mdclass:AccountingRegister>

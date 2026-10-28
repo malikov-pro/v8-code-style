@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d1e27fe8-c188-41bb-83d3-a27b4c444ea5">
+  <name>MdExtObjectPresentation</name>
+  <synonym>
+    <key>en</key>
+    <value>Md extended object presentation</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="46aa778b-6696-4c5d-b008-1a31200753b7"/>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="eeb6bfe2-5495-44ba-a7b3-deb71841a078"/>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="158a9341-bc3a-45fd-a9f7-04ff78111a26"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="90add7b5-8a9d-4ac3-b917-0d55300ce4c4"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="2603d526-2b7c-47eb-ac2d-97968750daf6"/>
+  <configurationExtensionCompatibilityMode>8.3.19</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.19</compatibilityMode>
+  <languages uuid="45d633af-785a-47e3-aaba-999e300f2e81">
+    <name>English</name>
+    <synonym>
+      <key>en</key>
+      <value>English</value>
+    </synonym>
+    <languageCode>en</languageCode>
+  </languages>
+  <catalogs>Catalog.BadObjectCatalog</catalogs>
+  <catalogs>Catalog.OkObjectCatalog</catalogs>
+  <catalogs>Catalog.EmptyExtObjectCatalog</catalogs>
+  <informationRegisters>InformationRegister.BadRecordReg</informationRegisters>
+  <informationRegisters>InformationRegister.OkRecordReg</informationRegisters>
+</mdclass:Configuration>

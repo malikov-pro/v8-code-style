@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfCharacteristicTypes xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c0315a2a-2114-4acb-87a5-bcafc9d04837">
+  <name>QueryDimensions</name>
+  <characteristicExtValues>Catalog.Products</characteristicExtValues>
+  <characteristicTypes><types>String</types><stringQualifiers><length>10</length></stringQualifiers></characteristicTypes>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+</mdclass:ChartOfCharacteristicTypes>

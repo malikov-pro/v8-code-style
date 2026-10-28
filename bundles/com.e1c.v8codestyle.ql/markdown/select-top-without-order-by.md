@@ -1,0 +1,7 @@
+# TOP without ORDER BY
+
+Pinned LS checks TOP in UNION parts even with common ORDER BY, and otherwise TOP without ordering. TOP0/1 are excluded by WHERE or, outside UNION, skipSelectTopOne=true (default). Other limits do not gain a WHERE exclusion. Enabled by default, MAJOR/CODE_STYLE, no quick fix. Exact QL TOP range and native BSL bridge line range are distinct; full LS engine parity is not certified.
+
+Limits are compared as decimal spellings, not normalized integers: 01 does not receive the 1 exemption. The range includes TOP and its decimal. Ordering is inspected on the owning select query; outer query ordering and other package statements do not order an inner query. Conservative malformed/nonliteral limits are skipped. These model-based boundaries are adapted regressions, not complete equivalence with the LS recursive parent ORDER search; unusual nested ordering and preprocessing/recovery remain uncertified.
+
+Source-only changes are tested through BSL literals and DCS datasets. Parameter-only changes revalidate BSL natively. For DCS, a product settings listener schedules the enabled hub and delegate together on current-project schema containers. It does not rewrite source or settings and respects an explicitly disabled hub or check. No startup project scan is performed. Dynamic lists, profile switching, enable/disable transitions of the delegate itself, cross-project consumers, GUI navigation and large-configuration performance are not certified.

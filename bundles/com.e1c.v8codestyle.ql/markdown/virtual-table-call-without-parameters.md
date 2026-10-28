@@ -1,0 +1,11 @@
+# Virtual table call without parameters
+
+The dependency service also attaches to already active projects on late bundle activation, not only future lifecycle loading. Start is idempotent and stop/unload detach listeners. A fresh service started after the project opens has its own provider-only regression.
+
+Follows pinned LS argument-position semantics: empty call is reported; a sole nonempty period is accepted; with multiple positions the first is ignored and a later nonempty argument is required. FilterCriterion requires its own parameter. Accounting Subconto is exempt. Resolved metadata kinds are used, not only table names. Enabled by default, MAJOR/ERROR, no parameters or quick fix. Consumer coverage, source ranges and limits are certified separately; full LS differential is not claimed.
+
+EDT represents an empty argument by QuerySchemaExpression containing EmptyExpression. The check inspects both ordinary and DCS expressions; comments alone do not make an argument nonempty. The one-position period exception is literal pinned behavior and is deliberately not tightened. FilterCriterion is recognized from its bound metadata owner. Physical/unresolved tables, including Subconto's DbViewTableDef, are not checked. QL ranges include the reference/argument list, excluding aliases; BSL consumers have native line-only markers.
+
+BSL/DCS argument changes and InformationRegister provider-only periodicity changes are regression-tested independently, including external .mdo synchronization and unchanged consumer bytes/stamps. A lifecycle listener observes derived dbViewDefs. DCS candidates are parsed and filtered by bound register/parent identity; BSL uses scoped project-module revalidation. No source/settings rewrite, stale-false cache or lexical provider-name guess is used. Parsing/scanning cost is not benchmarked on large configurations.
+
+Disabled checks/hubs are respected, but the native DCS hub can retain old delegated markers after disable. No new-marker guarantee is inferred from old counts alone. Dynamic lists, constructor UI, extensions, cross-project consumers, other metadata-provider changes, provider rename/create/delete and preprocessing/recovery are not certified. Adapted pinned fixtures are not an actual LS-engine differential.

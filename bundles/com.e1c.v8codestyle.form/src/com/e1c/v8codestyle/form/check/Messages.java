@@ -77,6 +77,10 @@ final class Messages
     public static String ApkChoiceHistoryFieldButtonsCheck_title;
     public static String ApkChoiceHistoryFieldButtonsCheck_description;
     public static String ApkChoiceHistoryFieldButtonsCheck_message;
+    public static String RedundantGroupTooltipCheck_title;
+    public static String RedundantGroupTooltipCheck_description;
+    public static String RedundantGroupTooltipCheck_message;
+
     static
     {
         // initialize resource bundle

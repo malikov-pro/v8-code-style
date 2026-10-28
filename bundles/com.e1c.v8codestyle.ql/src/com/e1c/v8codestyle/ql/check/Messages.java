@@ -23,6 +23,19 @@ final class Messages
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
     public static String CamelCaseStringLiteral_description;
+    public static String UnionAllCheck_title;
+    public static String SelectTopWithoutOrderByCheck_title;
+    public static String JoinWithVirtualTableCheck_title;
+    public static String VirtualTableCallWithoutParametersCheck_title;
+    public static String VirtualTableCallWithoutParametersCheck_description;
+    public static String VirtualTableCallWithoutParametersCheck_message;
+    public static String JoinWithVirtualTableCheck_description;
+    public static String JoinWithVirtualTableCheck_message;
+    public static String SelectTopWithoutOrderByCheck_description;
+    public static String SelectTopWithoutOrderByCheck_message;
+    public static String SelectTopWithoutOrderByCheck_skipOne;
+    public static String UnionAllCheck_description;
+    public static String UnionAllCheck_message;
     public static String CamelCaseStringLiteral_Regular_expression_to_skip_literal_content;
     public static String CamelCaseStringLiteral_String_literal_contains_non_CamelCase_symbols__0;
     public static String CamelCaseStringLiteral_title;
@@ -41,6 +54,18 @@ final class Messages
     public static String JoinToSubQuery_description;
     public static String JoinToSubQuery_Query_join_to_sub_query_not_allowed;
     public static String JoinToSubQuery_title;
+    public static String FullOuterJoinCheck_description;
+    public static String FullOuterJoinCheck_Full_outer_join_not_allowed;
+    public static String FullOuterJoinCheck_title;
+    public static String LogicalOrInJoinCheck_description;
+    public static String LogicalOrInJoinCheck_Logical_OR_in_join_condition_not_allowed;
+    public static String LogicalOrInJoinCheck_title;
+    public static String LogicalOrInWhereCheck_description;
+    public static String LogicalOrInWhereCheck_Logical_OR_in_where_section_not_allowed;
+    public static String LogicalOrInWhereCheck_title;
+    public static String AssignAliasFieldsCheck_description;
+    public static String AssignAliasFieldsCheck_Select_field_must_have_an_alias;
+    public static String AssignAliasFieldsCheck_title;
     public static String QueryArithmeticCastCheck_Average_function_result_should_be_cast_to_number;
     public static String QueryArithmeticCastCheck_description;
     public static String QueryArithmeticCastCheck_Division_result_should_be_cast_to_number;
@@ -61,6 +86,14 @@ final class Messages
     public static String VirtualTableFiltersCheck_description;
     public static String VirtualTableFiltersCheck_Filter__0_for_virtual_table__1__should_be_in_parameters;
     public static String VirtualTableFiltersCheck_title;
+    public static String CompositeReferenceDereferenceCheck_title;
+    public static String CompositeReferenceDereferenceCheck_description;
+    public static String CompositeReferenceDereferenceCheck_min_types;
+    public static String CompositeReferenceDereferenceCheck_message;
+    public static String DcsSumLiteralCheck_title;
+    public static String DcsSumLiteralCheck_description;
+    public static String DcsSumLiteralCheck_message;
+
     static
     {
         // initialize resource bundle

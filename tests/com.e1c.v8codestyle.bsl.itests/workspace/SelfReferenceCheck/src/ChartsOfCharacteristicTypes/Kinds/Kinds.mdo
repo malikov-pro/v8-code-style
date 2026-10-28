@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfCharacteristicTypes xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0bf0b6c9-70dc-42c0-b6ee-22b14370c427">
+  <producedTypes>
+    <objectType typeId="1c55a5e7-8fb8-4c46-a85e-99c1dde276e6" valueTypeId="cd4cce4f-8ba5-4441-bd18-ea716b96eace"/>
+    <refType typeId="f0ceaddd-ee5a-4afb-81ff-febdf6ff12dd" valueTypeId="a2beaaf6-92b5-49fa-8655-b11dd3d2d03e"/>
+    <selectionType typeId="4cb5c0b3-185a-40d8-aea5-a179c916a784" valueTypeId="5922c282-f848-4c97-aae1-fc72170a0019"/>
+    <listType typeId="0ab95772-3726-477a-9372-b9b49b521afb" valueTypeId="2397d3cb-578f-4b4a-8bfd-19424eb00bc8"/>
+    <managerType typeId="ae58ade3-18a4-4110-9799-bd86a83ef02f" valueTypeId="159566ea-819e-4f3b-96e7-02c651e1ab2f"/>
+    <containerType typeId="e34f133c-49b1-4281-a844-5d33483af8db" valueTypeId="74173584-c881-45e8-a685-aa29d86e72c4"/>
+  </producedTypes>
+  <name>Kinds</name>
+  <useStandardCommands>true</useStandardCommands>
+  <type><types>String</types></type>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <checkUnique>true</checkUnique>
+</mdclass:ChartOfCharacteristicTypes>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4b1a4163-7c9b-48b7-90c1-712b863cc736">
+  <producedTypes>
+    <objectType typeId="ebd3104f-0bec-4282-a807-3f868bd2c881" valueTypeId="82b54df1-83f5-453b-abb4-6a963a3a67fd"/>
+    <refType typeId="1c48dbf7-750a-467f-9e18-a70d89ea92a2" valueTypeId="e7841b34-5b48-4bb3-ab2a-d093f31dabed"/>
+    <selectionType typeId="275ce1e9-fb29-482f-b782-3b3b8b03ae75" valueTypeId="f4028be1-02c4-42d8-a84d-de2b45fccbdb"/>
+    <listType typeId="f76813a7-9af4-4c6b-85ec-93192af4609c" valueTypeId="50895ce8-2195-4fee-833b-bca9c6e02a93"/>
+    <managerType typeId="948c6114-4bc7-49c7-ac9f-2b5d2861aa4d" valueTypeId="ded4d6c7-c729-4a97-b9d1-9540d7060f99"/>
+  </producedTypes>
+  <name>BadListCatalog</name>
+  <synonym>
+    <key>ru</key>
+    <value>Номенклатура</value>
+  </synonym>
+  <listPresentation>
+    <key>ru</key>
+    <value>Номенклатура</value>
+  </listPresentation>
+  <extendedListPresentation>
+    <key>ru</key>
+    <value>номенклатура </value>
+  </extendedListPresentation>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.BadListCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.BadListCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

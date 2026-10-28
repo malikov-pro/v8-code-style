@@ -15,23 +15,21 @@
  *******************************************************************************/
 package com.e1c.v8codestyle.bsl.check;
 
-import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.METHOD;
+import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.MODULE;
+import static com._1c.g5.v8.dt.mcore.McorePackage.Literals.NAMED_ELEMENT__NAME;
 
 import java.text.MessageFormat;
-import java.util.List;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.nodemodel.ILeafNode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
-import com._1c.g5.v8.dt.bsl.model.BinaryExpression;
-import com._1c.g5.v8.dt.bsl.model.BinaryOperation;
-import com._1c.g5.v8.dt.bsl.model.Conditional;
-import com._1c.g5.v8.dt.bsl.model.IfStatement;
-import com._1c.g5.v8.dt.bsl.model.LoopStatement;
 import com._1c.g5.v8.dt.bsl.model.Method;
-import com._1c.g5.v8.dt.bsl.model.Statement;
-import com._1c.g5.v8.dt.bsl.model.TryExceptStatement;
+import com._1c.g5.v8.dt.bsl.model.Module;
+import com.e1c.g5.v8.dt.check.BslDirectLocationIssue;
 import com.e1c.g5.v8.dt.check.CheckComplexity;
+import com.e1c.g5.v8.dt.check.DirectLocation;
 import com.e1c.g5.v8.dt.check.ICheckParameters;
 import com.e1c.g5.v8.dt.check.WrongParameterException;
 import com.e1c.g5.v8.dt.check.components.BasicCheck;
@@ -41,10 +39,8 @@ import com.e1c.v8codestyle.check.CommonSenseCheckExtension;
 import com.e1c.v8codestyle.internal.bsl.BslPlugin;
 
 /**
- * Проверка: когнитивная сложность метода выше порога. Упрощённая формула
- * (полная формула Sonar/LS не переносится без CFG): каждая структура
- * «Если»/«ИначеЕсли»/цикл/«Попытка» даёт {@code 1 + (вложенность - 1)},
- * каждое «И»/«ИЛИ» даёт 1.
+ * Проверка когнитивной сложности методов и тела модуля: структурная вложенность,
+ * гибридные ветви, рекурсия, переходы и серии логических операций. CFG не требуется.
  * <p>
  * Перенос диагностики BSL Language Server CognitiveComplexity
  * (тип CODE_SMELL, серьёзность CRITICAL). Порог — параметр (по умолчанию 15,
@@ -87,69 +83,55 @@ public class CognitiveComplexityCheck
             .issueType(IssueType.WARNING)
             .extension(new CommonSenseCheckExtension(getCheckId(), BslPlugin.PLUGIN_ID))
             .module()
-            .checkedObjectType(METHOD)
+            .checkedObjectType(MODULE)
             .parameter(PARAM_THRESHOLD, Integer.class, String.valueOf(DEFAULT_THRESHOLD),
-                Messages.CognitiveComplexityCheck_Complexity_threshold);
+                Messages.CognitiveComplexityCheck_Complexity_threshold)
+            .parameter("checkModuleBody", Boolean.class, "true", Messages.CognitiveComplexityCheck_Check_module_body); //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     @Override
     protected void check(Object object, ResultAcceptor resultAceptor, ICheckParameters parameters,
         IProgressMonitor progressMonitor)
     {
-        Method method = (Method)object;
+        Module module = (Module)object;
         int threshold = threshold(parameters);
-
-        int complexity = sumStructures(method.allStatements(), 1);
-        complexity += EcoreUtil2.getAllContentsOfType(method, BinaryExpression.class).stream()
-            .filter(expression -> expression.getOperation() == BinaryOperation.AND
-                || expression.getOperation() == BinaryOperation.OR)
-            .mapToInt(expression -> 1)
-            .sum();
-
-        if (complexity > threshold)
+        for (Method method : EcoreUtil2.getAllContentsOfType(module, Method.class))
         {
-            String message = MessageFormat.format(Messages.CognitiveComplexityCheck_Cognitive_complexity,
-                Integer.valueOf(complexity), Integer.valueOf(threshold));
-            resultAceptor.addIssue(message, method);
-        }
-    }
-
-    /**
-     * Сумма по структурам: «Если»/«ИначеЕсли»/цикл/«Попытка» на глубине d
-     * добавляет d (базовая единица плюс бонус за вложенность).
-     */
-    private static int sumStructures(List<Statement> statements, int depth)
-    {
-        int sum = 0;
-        for (Statement statement : statements)
-        {
-            if (statement instanceof IfStatement ifStatement)
+            if (progressMonitor.isCanceled())
             {
-                sum += depth;
-                if (ifStatement.getIfPart() != null)
-                {
-                    sum += sumStructures(ifStatement.getIfPart().getStatements(), depth + 1);
-                }
-                for (Conditional conditional : ifStatement.getElsIfParts())
-                {
-                    sum += depth;
-                    sum += sumStructures(conditional.getStatements(), depth + 1);
-                }
-                sum += sumStructures(ifStatement.getElseStatements(), depth + 1);
+                return;
             }
-            else if (statement instanceof LoopStatement loop)
+            int complexity = LsComplexityComputer.method(method, true);
+            if (complexity > threshold)
             {
-                sum += depth;
-                sum += sumStructures(loop.getStatements(), depth + 1);
-            }
-            else if (statement instanceof TryExceptStatement tryStatement)
-            {
-                sum += depth;
-                sum += sumStructures(tryStatement.getTryStatements(), depth + 1);
-                sum += sumStructures(tryStatement.getExceptStatements(), depth + 1);
+                resultAceptor.addIssue(MessageFormat.format(Messages.CognitiveComplexityCheck_Cognitive_complexity,
+                    Integer.valueOf(complexity), Integer.valueOf(threshold)), method, NAMED_ELEMENT__NAME);
             }
         }
-        return sum;
+        if (progressMonitor.isCanceled() || !parameters.getBoolean("checkModuleBody")) //$NON-NLS-1$
+        {
+            return;
+        }
+        int body = LsComplexityComputer.body(module, true);
+        if (body > threshold && !module.allStatements().isEmpty())
+        {
+            var node = NodeModelUtils.findActualNodeFor(module.allStatements().get(0));
+            if (node == null)
+            {
+                return;
+            }
+            for (ILeafNode leaf : node.getLeafNodes())
+            {
+                if (!leaf.isHidden())
+                {
+                    resultAceptor.addIssue(new BslDirectLocationIssue(
+                        MessageFormat.format(Messages.CognitiveComplexityCheck_Cognitive_complexity,
+                            Integer.valueOf(body), Integer.valueOf(threshold)),
+                        new DirectLocation(leaf.getOffset(), leaf.getLength(), leaf.getStartLine(), module)));
+                    break;
+                }
+            }
+        }
     }
 
     private static int threshold(ICheckParameters parameters)

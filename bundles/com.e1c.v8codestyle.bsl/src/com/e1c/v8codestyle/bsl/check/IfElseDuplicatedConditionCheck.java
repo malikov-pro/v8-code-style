@@ -20,7 +20,9 @@ import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.IF_STATEMENT;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
@@ -41,7 +43,8 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
  * проверено — ветка недостижима.
  * <p>
  * Перенос диагностики BSL Language Server IfElseDuplicatedCondition
- * (тип CODE_SMELL, серьёзность MAJOR).
+ * (тип CODE_SMELL, серьёзность MAJOR). Одно замечание на первое условие
+ * каждой группы повторов; связанные диапазоны LS не переносятся.
  *
  * @author malikov-pro
  */
@@ -91,27 +94,37 @@ public class IfElseDuplicatedConditionCheck
         }
         conditionals.addAll(ifStatement.getElsIfParts());
 
-        for (int i = 1; i < conditionals.size(); i++)
+        Set<Conditional> grouped = new HashSet<>();
+        for (int i = 0; i < conditionals.size() - 1; i++)
         {
+            if (progressMonitor.isCanceled())
+            {
+                return;
+            }
             Conditional current = conditionals.get(i);
-            if (current.getPredicate() == null)
+            if (current.getPredicate() == null || grouped.contains(current))
             {
                 continue;
             }
             String currentText = predicateText(current);
-            for (int j = 0; j < i; j++)
+            boolean duplicated = false;
+            for (int j = i + 1; j < conditionals.size(); j++)
             {
                 if (conditionals.get(j).getPredicate() == null)
                 {
                     continue;
                 }
-                if (currentText.equals(predicateText(conditionals.get(j))))
+                if (BslExpressionTokens.equal(current.getPredicate(), conditionals.get(j).getPredicate()))
                 {
-                    String message = MessageFormat.format(
-                        Messages.IfElseDuplicatedConditionCheck_Duplicate_condition_of_If_statement, currentText);
-                    resultAceptor.addIssue(message, current, CONDITIONAL__PREDICATE);
-                    break;
+                    duplicated = true;
+                    grouped.add(conditionals.get(j));
                 }
+            }
+            if (duplicated)
+            {
+                String message = MessageFormat.format(
+                    Messages.IfElseDuplicatedConditionCheck_Duplicate_condition_of_If_statement, currentText);
+                resultAceptor.addIssue(message, current, CONDITIONAL__PREDICATE);
             }
         }
     }

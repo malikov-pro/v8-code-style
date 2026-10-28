@@ -15,3 +15,4 @@ target/
 
 org.sonarlint.eclipse.core.prefs
 .tycho-consumer-pom.xml
+__pycache__/

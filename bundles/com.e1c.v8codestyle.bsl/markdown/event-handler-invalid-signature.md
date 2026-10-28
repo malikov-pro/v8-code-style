@@ -1,0 +1,9 @@
+# Invalid event handler signature
+
+Compares the declared parameter count of a bound platform handler with the event's permitted signatures. Method spelling alone does not establish a form event. Missing handler methods remain native EDT validation, not duplicate issues from this check. Defaults: enabled, MAJOR/ERROR, no parameters.
+
+Checks root form events returned by EDT BslEventsService.getAllModuleEvents, base item bindings (including their extInfo), and base form-command actions. Item events add the implicit first Item parameter to the resolved platform ParamSet range; command actions require exactly one Command parameter. The platform contract depends on the configuration compatibility version. Every known event bound to a method must accept its total declared parameter count; default values of the handler's own parameters do not reduce that count. Any permitted ParamSet range of an event is accepted (including an unbounded maximum). Unbound lookalike methods are ignored. Names of parameters, compiler directives and procedure/function kind are not checked.
+
+BM name/event changes, item/handler membership, command action replacement and Form.form synchronization revalidate the module without editing BSL. Each item binding is examined independently, so two items using the same platform Event do not overwrite each other. One method gets at most one issue even if several assignments fail. Requiring all known assignments is stricter than pinned LS's first-by-name contract selection; this is a documented partial-implementation policy, not exact parity.
+
+Extension interception handlers and non-form modules are outside this increment; unknown or unresolved event contracts are skipped. Variadic and cross-project behavior is not certified. No quick fix or secondary location is supplied: unlike the LS edit, this partial implementation does not rewrite parameter lists. Full LS-engine parity and large-form performance are not certified.

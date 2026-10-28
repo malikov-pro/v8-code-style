@@ -26,6 +26,14 @@
             category="com.e1c.v8codestyle.ql"
             class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.CamelCaseStringLiteral">
       </check>
+      <check category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.UnionAllCheck"/>
+      <check category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.SelectTopWithoutOrderByCheck"/>
+      <check category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.JoinWithVirtualTableCheck"/>
+      <check category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.VirtualTableCallWithoutParametersCheck"/>
       <check
             category="com.e1c.v8codestyle.ql"
             class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.JoinToSubQuery">
@@ -48,6 +56,22 @@
       </check>
       <check
             category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.FullOuterJoinCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.LogicalOrInJoinCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.LogicalOrInWhereCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.AssignAliasFieldsCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.ql"
             class="com.e1c.v8codestyle.ql.check.LikeExpressionWithFieldCheck">
       </check>
       <check
@@ -67,5 +91,13 @@
             class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.QueryCastStringCheck">
       </check>
 </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.CompositeReferenceDereferenceCheck"/>
+   </extension>
 
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.ql"
+            class="com.e1c.v8codestyle.internal.ql.ExecutableExtensionFactory:com.e1c.v8codestyle.ql.check.DcsSumLiteralCheck"/>
+   </extension>
 </plugin>

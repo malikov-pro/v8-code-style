@@ -43,6 +43,7 @@ import com._1c.g5.v8.dt.core.platform.IBmModelManager;
 import com._1c.g5.v8.dt.core.platform.IConfigurationProvider;
 import com._1c.g5.v8.dt.core.platform.IResourceLookup;
 import com._1c.g5.v8.dt.core.platform.IV8ProjectManager;
+import com._1c.g5.v8.dt.form.service.datasourceinfo.IDataSourceInfoAssociationService;
 import com._1c.g5.v8.dt.platform.version.IRuntimeVersionSupport;
 import com._1c.g5.wiring.AbstractServiceAwareModule;
 import com.e1c.g5.dt.core.api.naming.INamingService;
@@ -101,6 +102,7 @@ class ExternalDependenciesModule
         bind(IResourceAccess.class).toService();
         bind(ResourceDescriptionsProvider.class).toService();
         bind(IConfigurationProvider.class).toService();
+        bind(IDataSourceInfoAssociationService.class).toService();
         bind(BslGrammarAccess.class).toProvider(() -> rsp.get(BslGrammarAccess.class));
         bind(BmAwareResourceSetProvider.class).toProvider(() -> rsp.get(BmAwareResourceSetProvider.class));
         bind(IStaticExpressionValueComputer.class).toProvider(() -> rsp.get(IStaticExpressionValueComputer.class));

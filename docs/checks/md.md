@@ -1,10 +1,11 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 42
+Общее количество проверок: 50
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [apk-00073-functional-option-parameters-limit](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00073-functional-option-parameters-limit.html) | Ограничения на использование параметров функциональных опций |
 | [apk-00126-md-no-yo-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00126-md-no-yo-letter.html) | Буква «ё» в имени, синониме или комментарии объекта метаданных |
 | [apk-00134-attribute-hint](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00134-attribute-hint.html) | Подсказка реквизита совпадает с синонимом |
 | [apk-00137-code-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00137-code-length.html) | Длина кода (номера) объектов конфигурации |
@@ -42,8 +43,15 @@
 | [mdo-name-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/mdo-name-length.html) | Длина имени объекта метаданных |
 | [mdo-ru-name-unallowed-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/mdo-ru-name-unallowed-letter.html) | Проверка наличия буквы "ё" в имени, синониме или комментарии объекта метаданных |
 | [mdo-scheduled-job-description](../../../com.e1c.v8codestyle.md/check.descriptions/ru/mdo-scheduled-job-description.html) | Задано наименование предопределенного регламентного задания |
+| [missing-event-subscription-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/missing-event-subscription-handler.html) | Обработчик подписки требует серверного модуля |
 | [register-resource-precision](../../../com.e1c.v8codestyle.md/check.descriptions/ru/register-resource-precision.html) | Длина ресурса регистра накопления или бухгалтерии |
+| [scheduled-job-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/scheduled-job-handler.html) | Контракт обработчика регламентного задания |
 | [scheduled-job-periodicity-too-short](../../../com.e1c.v8codestyle.md/check.descriptions/ru/scheduled-job-periodicity-too-short.html) | Периодичность выполнения регламентного задания меньше одной минуты. |
 | [subsystem-synonym-too-long](../../../com.e1c.v8codestyle.md/check.descriptions/ru/subsystem-synonym-too-long.html) | Длина названия раздела превышает 35 символов |
 | [unsafe-password-ib-storage](../../../com.e1c.v8codestyle.md/check.descriptions/ru/unsafe-password-ib-storage.html) | Небезопасное хранение паролей в информационной базе |
 | [up-701-required-roles](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-701-required-roles.html) | Отсутствует обязательная роль |
+| [up-710-empty-tooltip](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-710-empty-tooltip.html) | Не заполнена всплывающая подсказка |
+| [up-722-ext-presentation-equals-object](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-722-ext-presentation-equals-object.html) | Расширенное представление объекта совпадает с представлением объекта |
+| [up-725-ext-presentation-equals-list](../../../com.e1c.v8codestyle.md/check.descriptions/ru/up-725-ext-presentation-equals-list.html) | Расширенное представление списка совпадает с представлением списка |
+| [wrong-http-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-http-service-handler.html) | Контракт обработчика HTTP-сервиса |
+| [wrong-web-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-web-service-handler.html) | Отсутствующий обработчик операции Web-сервиса |

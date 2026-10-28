@@ -49,19 +49,27 @@ SELECT article, rule, name FROM backlog
 
 ## 3. Тест (обязательно)
 
-- `tests/<bundle>.itests`: `resources/<id>.bsl` — минимальный код с нарушением
-  И чистой вариант; тест наследует `AbstractSingleModuleTestBase`, проверяет
-  количество и строки замечаний (паттерн существующих тестов).
+- BSL: `AbstractSingleModuleTestBase` +нарушающий/чистый ресурс. QL:
+  `AbstractQueryTestBase` +`.ql`; при owner-specific инварианте нужен также
+  настоящий bridge/BM integration тест. MD/form/right: fixture или BM-тест
+  по паттерну канала, не BSL-scaffold ради формального наличия.
+- С первого теста bad→fix→bad, создание/удаление **и замена existing values**.
+  Проверять конкретные объекты, offsets/lines, отсутствие лишних markers.
+  Parent flags/command source, языковые map-entry.value и связанные типы
+  не меняют свойства якоря автоматически — incremental regression обязательна.
+- Form markers: `getNestedMarkers` +CheckUid filter для дочерних объектов,
+  не только root markers. Не совмещать root traversal с containment-якорем.
 - Локально: точечный прогон своего теста —
-  `bash scripts/test-check.sh <TestClassName>` (цепочка реактора внутри,
-  минуты, не весь suite).
+  `bash scripts/test-check.sh <TestClassName[,NeighborTest]> --module <канал>`;
+  `--profile edt-2026.2` для второй платформы. Clean reactor внутри.
+  Незнакомое API сначала javap/export/пример; research на один вопрос.
 
-## 3.5. Пример в расширение АПК.ОшибкиДляПроверки
+## 3.5. Изолированный пример в EDT
 
-Минимальный модуль-пример с нарушением (инвариант из шага 1) — через
-`create_metadata` + `write_module_source` (см. раздел выше). В шапке —
-ожидаемые позиции. Пример лежит в EDT-воркспейсе АПК: наш перенос видит его
-в этой же EDT и вешает маркеры (проверка детекции — шаг 5/smoke).
+Пример по каналу (BSL-модуль, metadata object, форма, набор СКД) создавать
+в разрешённом изолированном проекте стенда через MCP. Шапка/отчёт содержит
+ожидаемые checks/count/objects/ranges. Формы/metadata/СКД не заменять
+синтетическим модулем. В базу АПК пример не внедрять — она только источник.
 
 ## 4. Фиксация конвейера
 
@@ -76,24 +84,41 @@ SELECT article, rule, name FROM backlog
   после зелёного прогона. `master` — только под релиз: merge из `develop`
   + тег `X.Y.Z` **по явной команде пользователя** (release.yml соберёт
   Release+сайт).
-- Верификация — по радиусу поражения (полный прогон НЕ на каждый чек):
-  | Сценарий | Прогон | Время |
-  |---|---|---|
-  | итерация над чеком | `bash scripts/test-check.sh <TestClass>` | ~5–7 мин |
-  | перед merge | та же цепочка, itests-модуль своего бандла целиком
-    (bsl включает `CheckDescriptionTest` — синк карточек/доков) | ~10–15 мин |
-  | полный `bash compile.sh` (все itests-модули) | перед релизом/тегом,
-    правки общих мест (bom/targets/manifests), раз в пачку | ~35 мин |
-- Merge → smoke на стенде (скилл `v8cs-deploy`) → релиз по команде
-  пользователя (скилл `v8cs-release`: merge `develop`→`master` + тег).
+- Рабочие мини-пачки —2–3 связанных checks одного канала внутри основной
+  пачки до10. Собственный тест/учёт каждого чека; один итоговый гейт канала
+  на стабильном снимке, не весь suite после каждого правила.
+- Верификация — по радиусу поражения (v8cs-build):
+  | Шаг | Проверка |
+  |---|---|
+  | Итерация | Целевой класс и соседние tests канала |
+  | Перед merge мини-пачки | Весь затронутый itests-модуль **обеих платформ** |
+  | Только markdown/messages-тексты | CheckDescriptionTest канала +generated index |
+  | Основной batch/общая инфраструктура или dependencies/релиз | `compile.sh` всех modules **обеих платформ** |
+- Snapshot freeze/один Maven; active script/source/tests не менять.
+  Сохранять commit+diff/hash, exit code/профиль/время/XML counts, p2 профиля
+  до следующего clean. Новые ключи/EP/parameters не считать doc-only.
+- После green source-gates own live smoke на **этом артефакте** до merge:
+  initialclean/new check→bad/fix безclean→finalclean/log. Smoke defect →
+  красная regression/fix/соответствующий rerun, не «сборка уже зелёная».
+- Затем audit/merge develop/push/учёт завершения. Release master/tag —
+  только по явной команде. Feature-ready !=merged !=installed !=released.
+- Перед merge пачки — **гейт полноты** по каждому feature-коммиту:
+  `python3 scripts/audit-check-integration.py --source-commit <sha> ...`.
+  Проверяет фактические классы и регистрацию, не только ancestry (порты
+  могут быть cherry-pick). Прецедент 10.10: up-725/up-722/up-710/bad-words
+  были готовы в ветках, но отсутствовали в develop несмотря на зелёный
+  гейт и tracking «ГОТОВО». Generated docs не заменяют этот контроль.
 
-## Параллелизация
+## Учёт и независимая работа
 
-После первого прогона правила раздаются пачками (по группам тем);
-координация — таблица `ported` в apk.db (взял → внёс с notes=`в работе,
-<дата>` ДО старта реализации). Правило в работе ≠ перенесено: поле notes
-различает. Конфликты git между исполнителями маловероятны (разные файлы),
-но сборку гоняет тот, кто мержит последним.
+До реализации claim в `ported`: notes=`в работе, <дата>`, без завершённого
+SHA. Только gates/live/audit/merge переводят в ГОТОВО с sourceSHA/mergeSHA/
+ограничениями. Дедуп/runtime/отложено — не считать прямым переносом.
+Во время background build можно готовить live fixture/читать кандидата,
+но не менять snapshot. Субагентов не запускать без явного разрешения
+пользователя/применимых инструкций; если разрешены — независимый prescreen
+полезнее параллельных правок общих Messages/plugin.xml/Maven.
+Worktree только по явной просьбе пользователя.
 
 ## Скрипты конвейера (не формировать руками)
 
@@ -114,23 +139,27 @@ SELECT article, rule, name FROM backlog
   чинить. Образец — `ConsecutiveEmptyLinesFix`.
 - Messages фикса — в qfix-пакете (свой Messages/properties).
 - Регистрация — EP `com.e1c.g5.v8.dt.check.fixes` (рядом с существующими fix).
-- itest-инфры для qfix нет — smoke руками на стенде (деплой, «быстрое
-  исправление» у замечания), честно отмечать в `ported.notes`.
+- Existing fix-itests использовать, если канал поддерживает; иначе own
+  live qfix smoke и честное ограничение в `ported.notes`. Detection-pass
+  не доказывает применимость/безопасность быстрого исправления.
 - Для этой задачи: простой заменимо-механический фикс (как замена ё→е)
   делаем сразу; где исправление «только пользователем» — фикс не делаем,
   в карточке пишем рекомендацию.
 
 ## Примеры в расширении АПК.ОшибкиДляПроверки (MCP edt-apk)
 
-Конвейер использует EDT-расширение `АПК.ОшибкиДляПроверки`
-(`~/edt/apk/АПК.ОшибкиДляПроверки`, сервер `edt-apk`, EDT 2026.1): для каждой
-переносимой проверки добавляется модуль-пример с нарушением.
+Активный workspace `~/edt/apk`, MCP `edt-apk`. Actual project names читать
+через `list_projects`, не подставлять старые имена. Известные изолированные
+примеры находятся в `v8cs.Smoke1014`, `v8cs.OptionParams15`; для расширения
+использовался `apk.ПроверкаОшибок`. Выбирать native/extension owner по
+инварианту; не превращать исходную рабочую конфигурацию в набор нарушений.
 
-- Создание: `create_metadata` (projectName=`АПК.ОшибкиДляПроверки`,
+- Создание: `create_metadata` (projectName=`<разрешённый-smoke-проект>`,
   fqn=`CommonModule.ош_<Slug>`) → текст: `write_module_source`
   (objectName=`CommonModule.ош_<Имя>`, moduleType=Module, mode=replace).
-- **Имена объектов нормализуются: ё→е** («ош_ПримерЁ»→«ош_ПримерЕ») — в
-  идентификаторах ё и так запрещена; нарушение кладём в ТЕКСТ (код/строки).
+- Имена MCP по умолчанию нормализуются ё→е. Если инвариант именно о
+  metadata name/synonym/tooltip, явно задать нужное normalization поведение
+  и проверять persisted значение; не подменять metadata-тест текстом BSL.
 - В шапке примера — ожидаемое число и позиции вхождений (спецификация);
   `write_module_source` защищён от lost-update (`expectedSource`), нормализует
   символы (длинное тире и пр.), прогоняет синтакс-контроль.
@@ -158,15 +187,16 @@ SELECT article, rule, name FROM backlog
   с `DirectLocation(offset, 1, line, module)`. Образец —
   `ConsecutiveEmptyLinesCheck`. line 1-based: `leaf.getStartLine() + число
   '\n' до вхождения`.
-- **`Marker` не имеет номера строки** — itest проверяет число замечаний
-  (по вхождениям) и не сравнивает текст сообщения (локаль рантайма
-  неопределённа).
+- **`Marker` не имеет простого getLine()**: BSL-позиция через
+  `marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE)`, directQL через
+  test QueryMarker ranges. Учитывать locale, проверять объект/позицию,
+  не только count. Qfix live не заменяется зелёным detection-тестом.
 - Конструктор проверки — **public** (ExecutableExtensionFactory в другом
   пакете; private → InstantiationException).
 - При удалении «неиспользуемых» импортов не удалить нужный (EcoreUtil) —
   ошибка компиляции ловится `--skip-tests` прогоном.
 - `mvn verify -pl <модули>`: реактор НЕ подтягивает таргет-модуль по -am —
-  перечислять цепочку явно (targets/edt-2026.1, все bundles, docs В КОРНЕ
+  перечислять цепочку явно (targets/default, все bundles, docs В КОРНЕ
   репо — не bundles/, feature, repository, itests-фрагмент).
 - **`-pl` без `clean` после пересборки бандлов = каскад падений itests**:
   в `tests/*/target/work/data` остаётся воркспейс прежних квалификаторов —
@@ -196,28 +226,24 @@ SELECT article, rule, name FROM backlog
   (`XtextResource.get` не существует).
 - Точечный фикс = замена по `getIssue().getOffset()`; на позиции без ожидаемого
   символа (устаревший маркер) возвращать `null` — фикс просто не предложится.
-- `Marker` не имеет номера строки → itest по числу замечаний, позицию
-  проверять смоуком.
-- `git checkout -- <bundle>/...` откатывает и СВОИ незафиксированные вставки
-  (qfix/Messages) — вставки констант в Messages делать ПОСЛЕ экспериментов
-  с checkout, либо перезапускать вставку.
+- BSL-позицию утверждать через StandardExtraInfo.TEXT_LINE/доступный range,
+  затем own live сверка; не оставлять только count.
+- Не применять `git checkout --`/reset для очистки итерации: можно потерять
+  пользовательские и собственные незавершённые вставки. Исправлять точечным
+  patch, сохранять snapshots; временный debug dump удалить явно до commit.
 - Точечные `-pl`-прогоны Tycho создают `.tycho-consumer-pom.xml` по модулям —
   в .gitignore, не коммитить.
 
-## itests: JVM тестов — только через useJDK=BREE (находка 05.10.2026)
+## itests: JVM тестов — Java25 SYSTEM (с 28.10.2026)
 
-- Сборка идёт на JDK 25 (Tycho 5 требует 21+), но тестовая JVM должна быть
-  **JDK 17** (BREE 2026.1): `tests/pom.xml` → tycho-surefire
-  `<useJDK>BREE</useJDK>` + `~/.m2/toolchains.xml` (jdk 17 → axiom-jdk-full-17,
-  jdk 25 → tools/jdk-25). SYSTEM-JVM (JDK 25) роняет itests: spifly 1.3.7
-  при витье классов (ServiceLoader-детекция на старте бандлов) читает файлы
-  JDK 25 (major 69) ASM'ом 9.6 — `Unsupported class file major version 69` →
-  `ClassFormatError` → LINKING-фаза падает → старт проектного контекста
-  не завершается → `waitForProjectStart`/`waitForDD` висят сотни секунд.
+- Текущая платформа только EDT2026.2.2, BREE/EE/compiler25.
+  `tests/pom.xml` → `<useJDK>SYSTEM</useJDK>`: полный JDK25 сборки, ASM9.9.1
+  в locked platform. Локальные поддельные java17 toolchains не нужны.
+- История 2026.1: spifly1.3.7 + ASM9.6 не понимали major69; поэтому тогда
+  требовалась отдельная JVM17/BREE. Не переносить это ограничение на2026.2.2.
 - Симптомы отличить: NPE `getProject()==null` / «Cannot get bundle project»
   каскадом с первых тестов — тоже из этой семьи (воркспейс не стартовал).
-- При синке с апстримом tests/pom.xml: useJDK сохранить (апстрим на 2026.2
-  с JDK 25 — там SYSTEM работает, у нас 2026.1 — нет).
+- Новый target/ASM/JVM требует полного гейта, targeted не доказывает все каналы.
 
 ## Продуктовый smoke: после установки новой версии — clean build проекта
 
@@ -229,7 +255,10 @@ SELECT article, rule, name FROM backlog
 - Проверка детекции через MCP (сервер в запущенной EDT): `clean_project` →
   `get_project_errors` (опц. `checkId='apk-…'`) → сверить число/строки с
   шапкой модуля-примера. `revalidate_objects` для этой цели недостаточен.
-- Смоук-петля порта (задокументировано, скрипт по необходимости):
-  build → deploy-edt.sh (EDT закрыта) → пользователь открывает EDT →
-  MCP `clean_project` + `get_project_errors` → сравнение с ожиданиями
-  из шапки примера.
+- После initialclean изменения existing value **без clean**:
+  нарушение→fix→исчез, чистое→нарушение→появился; parent/dependencies если
+  применимо. Затем fullclean+журнал (00136: stale LocalStringMapEntry.value).
+- Pass только на правильном qualifier, объектах/позициях без дублей.
+  OURS-real чинить, known PLATFORM записать отдельно. Startup Unknown check
+  id после update не игнорировать: сохранить первый лог, restart/clean и
+  проверить latest session; только отсутствие повторения даёт pass.

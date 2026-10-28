@@ -1,10 +1,11 @@
 # Проверки Форм 1С
 
 
-Общее количество проверок: 14
+Общее количество проверок: 15
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [apk-00136-redundant-group-tooltip](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-00136-redundant-group-tooltip.html) | Бессмысленная подсказка группы формы |
 | [apk-00617-form-readonly-elements](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-00617-form-readonly-elements.html) | Свойства поля формы для объектов с отключённой историей выбора при вводе |
 | [apk-01195-french-quotes-form](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01195-french-quotes-form.html) | Французские кавычки «ёлочки» в элементах форм |
 | [apk-01214-ds-field-alias](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01214-ds-field-alias.html) | Псевдоним поля запроса динамического списка совпадает с именем класса объектов метаданных |

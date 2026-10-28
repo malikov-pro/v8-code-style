@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: com.e1c.v8codestyle.bsl;singleton:=true
-Bundle-Version: 0.9.0.qualifier
+Bundle-Version: 0.10.0.qualifier
 Bundle-Activator: com.e1c.v8codestyle.internal.bsl.BslPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -15,7 +15,7 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="[3.13.0,4.0.0)",
  org.eclipse.jdt.annotation;bundle-version="[2.2.0,3.0.0)";resolution:=optional,
  com.e1c.g5.v8.dt.check;bundle-version="[6.0.101,7.0.0)",
  com._1c.g5.v8.bm.core;bundle-version="[9.0.0,10.0.0)"
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-25
 Automatic-Module-Name: com.e1c.v8codestyle.bsl
 Bundle-ActivationPolicy: lazy
 Import-Package: com._1c.g5.v8.bm.core;version="[9.0.0,10.0.0)",
@@ -41,6 +41,7 @@ Import-Package: com._1c.g5.v8.bm.core;version="[9.0.0,10.0.0)",
  com._1c.g5.v8.dt.core.naming;version="[7.0.0,8.0.0)",
  com._1c.g5.v8.dt.core.platform;version="[12.0.0,14.0.0)",
  com._1c.g5.v8.dt.form.model;version="[15.0.0,16.0.0)",
+ com._1c.g5.v8.dt.form.service.datasourceinfo;version="[3.0.0,4.0.0)",
  com._1c.g5.v8.dt.lcore.util;version="[2.0.0,3.0.0)",
  com._1c.g5.v8.dt.mcore;version="[7.0.0,8.0.0)",
  com._1c.g5.v8.dt.mcore.util;version="[3.6.0,4.0.0)",
@@ -58,7 +59,7 @@ Import-Package: com._1c.g5.v8.bm.core;version="[9.0.0,10.0.0)",
  com.e1c.g5.v8.dt.check.qfix;version="[4.0.0,5.0.0)",
  com.e1c.g5.v8.dt.check.qfix.components;version="[1.0.0,2.0.0)",
  com.e1c.g5.v8.dt.check.settings;version="[4.0.0,5.0.0)",
- com.e1c.v8codestyle;version="[0.8.0,0.9.0]",
- com.e1c.v8codestyle.check;version="[0.8.0,0.9.0]"
-Export-Package: com.e1c.v8codestyle.bsl;version="0.9.0",
- com.e1c.v8codestyle.bsl.strict;version="0.9.0"
+ com.e1c.v8codestyle;version="[0.8.0,0.10.0]",
+ com.e1c.v8codestyle.check;version="[0.8.0,0.10.0]"
+Export-Package: com.e1c.v8codestyle.bsl;version="0.10.0",
+ com.e1c.v8codestyle.bsl.strict;version="0.10.0"

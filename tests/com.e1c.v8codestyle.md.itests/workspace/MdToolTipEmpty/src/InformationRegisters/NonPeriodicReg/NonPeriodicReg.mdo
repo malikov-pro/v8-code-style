@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c7eea83d-9381-4508-b339-3d1f4271ed43">
+  <producedTypes>
+    <selectionType typeId="e56b6cd4-42d4-45ba-bbc9-c9edd737a981" valueTypeId="c52d1519-185f-4576-b35d-bdae771cce9b"/>
+    <listType typeId="c428367f-bfe0-42ff-8c44-b5520b74ccdd" valueTypeId="6389bb4b-10ca-4bf8-9349-68ce17a0a66e"/>
+    <managerType typeId="992e1615-b571-4a52-84bd-dd0b01ff70e5" valueTypeId="9bae2293-4e70-44ec-bdf6-67e4f69b0c77"/>
+    <recordSetType typeId="4e6ea42a-6cef-4a09-9993-aafdc8841551" valueTypeId="a126444d-e057-402d-85f2-1f526c2b5c2f"/>
+    <recordKeyType typeId="56334b8f-e3c9-4799-a244-d93212a201cc" valueTypeId="1fef7eb6-9dba-4b0e-ac35-0516ae858544"/>
+    <recordType typeId="33c4301d-56c8-440b-8007-389260f6c2b4" valueTypeId="dfc2259b-d476-496f-904d-0f4cd1005067"/>
+    <recordManagerType typeId="d6ea8703-e861-4ba7-999c-ed3b59bc9346" valueTypeId="89f092a9-4224-4dfd-959e-58b178e204ed"/>
+  </producedTypes>
+  <name>NonPeriodicReg</name>
+  <synonym>
+    <key>en</key>
+    <value>NonPeriodicReg</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>en</key>
+      <value>Period</value>
+    </synonym>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+</mdclass:InformationRegister>

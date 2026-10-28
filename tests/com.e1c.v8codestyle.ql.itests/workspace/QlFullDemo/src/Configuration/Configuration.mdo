@@ -39,9 +39,16 @@
     <languageCode>en</languageCode>
   </languages>
   <catalogs>Catalog.Products</catalogs>
+  <commonModules>CommonModule.QueryWave</commonModules>
+  <catalogs>Catalog.TargetsA</catalogs>
+  <catalogs>Catalog.TargetsB</catalogs>
   <documents>Document.ProductArraival</documents>
   <enums>Enum.ProductType</enums>
   <reports>Report.QueryTestReport</reports>
   <informationRegisters>InformationRegister.Prices</informationRegisters>
+  <filterCriteria>FilterCriterion.QueryFilter</filterCriteria>
+  <chartsOfAccounts>ChartOfAccounts.QueryAccounts</chartsOfAccounts>
+  <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.QueryDimensions</chartsOfCharacteristicTypes>
+  <accountingRegisters>AccountingRegister.QueryAccounting</accountingRegisters>
   <accumulationRegisters>AccumulationRegister.Stocks</accumulationRegisters>
 </mdclass:Configuration>

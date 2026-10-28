@@ -1,10 +1,11 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 180
+Общее количество проверок: 214
 
 | Код проверки | Наименование |
 |--------------|--------------|
+| [all-function-path-must-have-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/all-function-path-must-have-return.html) | Не все пути функции возвращают значение |
 | [apk-00074-session-params-init](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00074-session-params-init.html) | Инициализацию параметров сеанса следует выполнять в модуле сеанса |
 | [apk-00150-registrar-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00150-registrar-access.html) | Самодостаточность регистров: обращение к реквизиту «Регистратор» |
 | [apk-00157-constants-write-in-txn](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00157-constants-write-in-txn.html) | Запись константы выполняется в транзакции |
@@ -36,6 +37,8 @@
 | [apk-01216-query-field-alias](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01216-query-field-alias.html) | Псевдоним в тексте запроса совпадает с именем класса объектов метаданных |
 | [apk-01219-cut-comments-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01219-cut-comments-format.html) | Оформление вырезаемых служебных комментариев |
 | [apk-01364-linux-unsupported](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01364-linux-unsupported.html) | Методы и объекты, не поддерживаемые ОС Linux |
+| [bad-exception-category](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bad-exception-category.html) | Недопустимая категория исключений |
+| [bad-words](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bad-words.html) | Запрещённые слова |
 | [begin-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/begin-transaction.html) | После начала транзакции отсуствует блок Попытка-Исключение |
 | [bsl-canonical-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-canonical-pragma.html) | Аннотация написана канонически |
 | [bsl-nstr-string-literal-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-nstr-string-literal-format.html) | НСтр формат строкового литерала |
@@ -47,14 +50,19 @@
 | [commit-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/commit-transaction.html) | Проверка нарушения схемы работы с транзакциями |
 | [common-module-missing-api](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-missing-api.html) | Общий модуль должен иметь хотя бы один экспортный метод |
 | [common-module-named-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-named-self-reference.html) | Избыточное обращение по собственному имени внутри общего модуля |
+| [compare-with-boolean](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/compare-with-boolean.html) | Избыточное сравнение с булевым литералом |
 | [constructor-function-return-section](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/constructor-function-return-section.html) | Секция возвращаемого значения функции-конструктора данных |
 | [create-query-in-cycle](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/create-query-in-cycle.html) | Создание или выполнение запроса в цикле |
+| [current-row-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/current-row-access.html) | Обращение к текущей строке динамического списка |
 | [cyclomatic-complexity](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/cyclomatic-complexity.html) | Цикломатическая сложность метода выше допустимой |
 | [data-exchange-load](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/data-exchange-load.html) | Проверка ОбменДанными.Загрузка в обработчике события |
 | [deleting-collection-item](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deleting-collection-item.html) | Удаление элемента при обходе коллекции |
+| [deprecated-attributes-8312](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-attributes-8312.html) | Устаревшие свойства диаграмм до 8.3.12 |
 | [deprecated-current-date](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-current-date.html) | Использование устаревшего метода «ТекущаяДата» |
 | [deprecated-find](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-find.html) | Использование устаревшего метода «Найти» |
+| [deprecated-method-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-method-call.html) | Устаревшее свойство платформы |
 | [deprecated-procedure-outside-deprecated-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-procedure-outside-deprecated-region.html) | Устаревшая процедура (функция) расположена вне области "УстаревшиеПроцедурыИФункции" |
+| [disable-safe-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/disable-safe-mode.html) | Отключение безопасного режима |
 | [doc-comment-collection-item-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-collection-item-type.html) | Тип коллекций в документирующем комментарии содержит тип элемента коллекции |
 | [doc-comment-complex-type-with-link](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-complex-type-with-link.html) | Поле документирующего комментария использует объявление сложного типа вместо ссылки на тип |
 | [doc-comment-description-ends-on-dot](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-description-ends-on-dot.html) | Многострочное описание документирующего комментария оканчивается на точку |
@@ -73,25 +81,35 @@
 | [doc-comment-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-type.html) | Определение типа документирующего комментария |
 | [doc-comment-use-minus](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-use-minus.html) | Использование только дефис-минуса в документирующем комментарии |
 | [dont-use-modality-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/dont-use-modality-mode.html) | Checks dont use modality call in dont use modality mode. |
+| [double-negatives](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/double-negatives.html) | Двойные отрицания |
+| [duplicate-string-literal](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/duplicate-string-literal.html) | Повторяющийся строковый литерал |
 | [dynamic-access-method-not-found](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/dynamic-access-method-not-found.html) | Метод в объекте не найден |
 | [empty-code-block](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/empty-code-block.html) | Пустой блок кода |
 | [empty-except-statement](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/empty-except-statement.html) | Конструкция "Попытка...Исключение...КонецПопытки" не содержит кода в исключении |
 | [empty-statement](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/empty-statement.html) | Пустой оператор |
 | [event-handler-boolean-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/event-handler-boolean-param.html) | Использование булевого параметра обработчика события |
+| [event-handler-invalid-signature](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/event-handler-invalid-signature.html) | Неверная сигнатура обработчика события |
 | [export-method-in-command-form-module](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/export-method-in-command-form-module.html) | Ограничения на использование экспортных процедур и функций в модуле команд и форм |
 | [export-procedure-missing-comment](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/export-procedure-missing-comment.html) | Отсутствует комментарий к экспортной процедуре (функции) |
 | [extension-method-prefix](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-method-prefix.html) | У метода отсутствует префикс расширения |
 | [extension-method-visible-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-method-visible-mode.html) | У метода в расширении модуля та же видимость, что и оригинального метода |
 | [extension-variable-prefix](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-variable-prefix.html) | У имени переменной отсутствует префикс расширения |
+| [external-app-starting](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/external-app-starting.html) | Аудит запуска внешних приложений |
+| [file-system-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/file-system-access.html) | Аудит доступа к файловой системе |
 | [form-module-missing-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-module-missing-pragma.html) | Всегда использовать директивы компиляции в модуле формы |
 | [form-module-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-module-pragma.html) | Использование директив компиляции модуля формы |
 | [form-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-self-reference.html) | Использование устаревшего псевдонима |
+| [function-out-parameter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-out-parameter.html) | Выходные параметры функций |
 | [function-return-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-return-value-type.html) | Функция возвращает типизированное значение |
+| [function-returns-same-primitive](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-returns-same-primitive.html) | Функция возвращает один примитив |
 | [function-should-have-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/function-should-have-return.html) | Функция должна содержать возврат |
 | [identical-expressions](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/identical-expressions.html) | Одинаковые выражения слева и справа от оператора |
 | [if-condition-complexity](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/if-condition-complexity.html) | Сложное условие в операторе «Если» |
 | [if-else-duplicated-code-block](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/if-else-duplicated-code-block.html) | Повторяющиеся блоки кода в операторе «Если» |
 | [if-else-duplicated-condition](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/if-else-duplicated-condition.html) | Повторяющееся условие в операторе «Если» |
+| [if-else-if-ends-with-else](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/if-else-if-ends-with-else.html) | Цепочка Если/ИначеЕсли без Иначе |
+| [incorrect-use-of-str-template](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/incorrect-use-of-str-template.html) | Неверное использование СтрШаблон |
+| [internet-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/internet-access.html) | Аудит обращения к интернет-ресурсам |
 | [invocation-form-event-handler](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/invocation-form-event-handler.html) | Программный вызов обработчика события формы |
 | [invocation-parameter-type-intersect](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/invocation-parameter-type-intersect.html) | Вызываемый тип пересекается с типом параметра |
 | [line-length](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/line-length.html) | Длина строки |
@@ -106,6 +124,7 @@
 | [method-semicolon-extra](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/method-semicolon-extra.html) | Лишняя точка с запятой в конце объявления метода |
 | [method-size](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/method-size.html) | Размер метода |
 | [method-too-many-params](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/method-too-many-params.html) | Метод содержит слишком много параметров |
+| [missed-required-parameter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missed-required-parameter.html) | Пустой обязательный аргумент |
 | [missing-space](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missing-space.html) | Отсутствует пробел |
 | [missing-temp-storage-deletion](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missing-temp-storage-deletion.html) | Отсутствует удаление из временного хранилища |
 | [missing-temporary-file-deletion](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missing-temporary-file-deletion.html) | Отсутствует удаление временного файла после использования. |
@@ -126,6 +145,7 @@
 | [module-undefined-variable](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/module-undefined-variable.html) | Переменная не определена |
 | [module-unused-local-variable](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/module-unused-local-variable.html) | Проверка неиспользуемых локальных переменных |
 | [module-unused-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/module-unused-method.html) | Проверка неиспользуемых методов |
+| [nested-constructors-in-structure-declaration](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/nested-constructors-in-structure-declaration.html) | Вложенные конструкторы при объявлении структуры |
 | [nested-statements](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/nested-statements.html) | Слишком большая вложенность операторов |
 | [nested-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/nested-ternary-operator.html) | Вложенный тернарный оператор |
 | [new-color](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/new-color.html) | Использование конструкции "Новый Цвет" |
@@ -141,6 +161,7 @@
 | [query-in-loop](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/query-in-loop.html) | Запрос в цикле |
 | [reading-attribute-from-database](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/reading-attribute-from-database.html) | Чтение отдельного реквизита объекта из базы данных |
 | [redundant-export-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/redundant-export-method.html) | Тексты модулей конфигурации не должны содержать неиспользуемые экспортные процедуры и функции. |
+| [reserved-parameter-names](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/reserved-parameter-names.html) | Зарезервированные имена параметров |
 | [restriction-execute-external-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/restriction-execute-external-code.html) | Ограничение на выполнение «внешнего» кода |
 | [restriction-execute-external-component-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/restriction-execute-external-component-code.html) | Ограничение на выполнение «внешнего» кода |
 | [rewrite-method-parameter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/rewrite-method-parameter.html) | Перезапись параметров метода |
@@ -151,16 +172,25 @@
 | [self-insertion](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/self-insertion.html) | Вставка коллекции в саму себя |
 | [semicolon-missing](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/semicolon-missing.html) | Отсутствие точки с запятой в конце оператора |
 | [server-execution-safe-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/server-execution-safe-mode.html) | Отсутствует включение безопасного режима перед вызовом метода "Выполнить" или "Вычислить" |
+| [set-privileged-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/set-privileged-mode.html) | Аудит использования привилегированного режима |
 | [space-at-start-comment](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/space-at-start-comment.html) | Пробел в начале комментария |
 | [statement-type-change](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/statement-type-change.html) | Утверждение меняет тип |
 | [string-literal-type-annotation-invalid-place](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/string-literal-type-annotation-invalid-place.html) | Теги размещены неправильно, внутри конструкции языка |
 | [structure-constructor-too-many-keys](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/structure-constructor-too-many-keys.html) | Конструктор структуры содержит слишком много ключей |
 | [structure-constructor-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/structure-constructor-value-type.html) | Типизация значений в конструкторе структуры |
 | [structure-key-modification](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/structure-key-modification.html) | Модификация ключа структуры вне функции-конструктора |
+| [temp-files-dir](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/temp-files-dir.html) | Аудит использования каталога временных файлов |
 | [ternary-operator-usage](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/ternary-operator-usage.html) | Использование тернарного оператора |
 | [timeouts-in-external-resources](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/timeouts-in-external-resources.html) | Таймауты при работе с внешними ресурсами |
+| [too-many-returns](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/too-many-returns.html) | Слишком много возвратов |
+| [try-number](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/try-number.html) | Преобразование в число внутри Попытки |
 | [typed-value-adding-to-untyped-collection](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/typed-value-adding-to-untyped-collection.html) | Добавление типизированного значения в не типизированную коллекцию |
+| [unary-plus-in-concatenation](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unary-plus-in-concatenation.html) | Унарный плюс в конкатенации |
+| [unavailable-member-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unavailable-member-call.html) | Категория ошибки недоступна при заданной совместимости |
 | [unknown-form-parameter-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unknown-form-parameter-access.html) | Обращение к несуществующему параметру формы |
+| [unreachable-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unreachable-code.html) | Недостижимый код после выхода из цикла или Перехода |
+| [unsafe-find-by-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unsafe-find-by-code.html) | Небезопасный поиск по коду |
+| [unsafe-safe-mode-method-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unsafe-safe-mode-method-call.html) | Небезопасное булево использование БезопасныйРежим |
 | [unused-parameters](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unused-parameters.html) | Неиспользуемый параметр метода |
 | [up-1068-unreachable-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1068-unreachable-code.html) | Недостижимый код |
 | [up-1353-form-parameters-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-1353-form-parameters-param.html) | Параметр метода модуля формы имеет имя «Параметры» |
@@ -175,13 +205,17 @@
 | [up-769-obsolete-refs-obsolete](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-769-obsolete-refs-obsolete.html) | Устаревшая процедура (функция) ссылается на другую устаревшую процедуру (функцию) |
 | [up-781-notify-handler-nonexistent](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-781-notify-handler-nonexistent.html) | Несуществующая процедура в параметре обработчика оповещения |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
+| [use-less-for-each](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-less-for-each.html) | Неиспользуемый итератор Для Каждого |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
+| [use-system-information](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-system-information.html) | Аудит использования системной информации |
 | [useless-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/useless-ternary-operator.html) | Бесполезный тернарный оператор |
+| [using-find-element-by-string](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-find-element-by-string.html) | Поиск элемента по литералу |
 | [using-form-data-to-value](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-form-data-to-value.html) | Использование РеквизитФормыВЗначение и ДанныеФормыВЗначение |
 | [using-hardcode-network-address](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-hardcode-network-address.html) | Хранение ip-адресов в коде |
 | [using-hardcode-path](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-hardcode-path.html) | Хранение путей к файлам в коде |
 | [using-hardcode-secret-information](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-hardcode-secret-information.html) | Хранение конфиденциальной информации в коде |
 | [using-isinrole](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-isinrole.html) | Использован метод "РольДоступна" |
 | [using-modal-windows](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-modal-windows.html) | Использование модальных окон |
+| [using-service-tag](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-service-tag.html) | Служебные теги в комментариях |
 | [using-synchronous-calls](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-synchronous-calls.html) | Использование синхронных вызовов |
 | [variable-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/variable-value-type.html) | Переменная имеет тип значения |

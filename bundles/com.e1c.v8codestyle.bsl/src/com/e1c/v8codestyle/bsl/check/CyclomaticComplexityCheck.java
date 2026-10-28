@@ -15,21 +15,21 @@
  *******************************************************************************/
 package com.e1c.v8codestyle.bsl.check;
 
-import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.METHOD;
+import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.MODULE;
+import static com._1c.g5.v8.dt.mcore.McorePackage.Literals.NAMED_ELEMENT__NAME;
 
 import java.text.MessageFormat;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.nodemodel.ILeafNode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
-import com._1c.g5.v8.dt.bsl.model.BinaryExpression;
-import com._1c.g5.v8.dt.bsl.model.BinaryOperation;
-import com._1c.g5.v8.dt.bsl.model.Conditional;
-import com._1c.g5.v8.dt.bsl.model.IfStatement;
-import com._1c.g5.v8.dt.bsl.model.Invocation;
-import com._1c.g5.v8.dt.bsl.model.LoopStatement;
 import com._1c.g5.v8.dt.bsl.model.Method;
+import com._1c.g5.v8.dt.bsl.model.Module;
+import com.e1c.g5.v8.dt.check.BslDirectLocationIssue;
 import com.e1c.g5.v8.dt.check.CheckComplexity;
+import com.e1c.g5.v8.dt.check.DirectLocation;
 import com.e1c.g5.v8.dt.check.ICheckParameters;
 import com.e1c.g5.v8.dt.check.WrongParameterException;
 import com.e1c.g5.v8.dt.check.components.BasicCheck;
@@ -39,9 +39,9 @@ import com.e1c.v8codestyle.check.CommonSenseCheckExtension;
 import com.e1c.v8codestyle.internal.bsl.BslPlugin;
 
 /**
- * Проверка: цикломатическая сложность метода выше порога. Считается как
- * {@code 1 + число ветвей «Если»/«ИначеЕсли» + число циклов + число «И»/«ИЛИ»
- * + число тернарников}.
+ * Проверка цикломатической сложности метода и тела модуля.
+ * База метода 1, тела модуля 0; ветви, циклы, Исключение, тернарники,
+ * рекурсия, переходы и логические операции дают по единице.
  * <p>
  * Перенос диагностики BSL Language Server CyclomaticComplexity
  * (тип CODE_SMELL, серьёзность CRITICAL). Порог — параметр (по умолчанию 20,
@@ -84,39 +84,54 @@ public class CyclomaticComplexityCheck
             .issueType(IssueType.WARNING)
             .extension(new CommonSenseCheckExtension(getCheckId(), BslPlugin.PLUGIN_ID))
             .module()
-            .checkedObjectType(METHOD)
+            .checkedObjectType(MODULE)
             .parameter(PARAM_THRESHOLD, Integer.class, String.valueOf(DEFAULT_THRESHOLD),
-                Messages.CyclomaticComplexityCheck_Complexity_threshold);
+                Messages.CyclomaticComplexityCheck_Complexity_threshold)
+            .parameter("checkModuleBody", Boolean.class, "true", Messages.CyclomaticComplexityCheck_Check_module_body); //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     @Override
     protected void check(Object object, ResultAcceptor resultAceptor, ICheckParameters parameters,
         IProgressMonitor progressMonitor)
     {
-        Method method = (Method)object;
+        Module module = (Module)object;
         int threshold = threshold(parameters);
-
-        int branches = 0;
-        for (IfStatement ifStatement : EcoreUtil2.getAllContentsOfType(method, IfStatement.class))
+        for (Method method : EcoreUtil2.getAllContentsOfType(module, Method.class))
         {
-            branches += 1 + ifStatement.getElsIfParts().size();
+            if (progressMonitor.isCanceled())
+            {
+                return;
+            }
+            int complexity = LsComplexityComputer.method(method, false);
+            if (complexity > threshold)
+            {
+                resultAceptor.addIssue(MessageFormat.format(Messages.CyclomaticComplexityCheck_Cyclomatic_complexity,
+                    Integer.valueOf(complexity), Integer.valueOf(threshold)), method, NAMED_ELEMENT__NAME);
+            }
         }
-        int loops = EcoreUtil2.getAllContentsOfType(method, LoopStatement.class).size();
-        int logicOps = (int) EcoreUtil2.getAllContentsOfType(method, BinaryExpression.class).stream()
-            .filter(expression -> expression.getOperation() == BinaryOperation.AND
-                || expression.getOperation() == BinaryOperation.OR)
-            .count();
-        int ternaries = EcoreUtil2.getAllContentsOfType(method, Invocation.class).stream()
-            .filter(UselessTernaryOperatorCheck::isTernaryOperator)
-            .mapToInt(expression -> 1)
-            .sum();
-
-        int complexity = 1 + branches + loops + logicOps + ternaries;
-        if (complexity > threshold)
+        if (progressMonitor.isCanceled() || !parameters.getBoolean("checkModuleBody")) //$NON-NLS-1$
         {
-            String message = MessageFormat.format(Messages.CyclomaticComplexityCheck_Cyclomatic_complexity,
-                Integer.valueOf(complexity), Integer.valueOf(threshold));
-            resultAceptor.addIssue(message, method);
+            return;
+        }
+        int body = LsComplexityComputer.body(module, false);
+        if (body > threshold && !module.allStatements().isEmpty())
+        {
+            var node = NodeModelUtils.findActualNodeFor(module.allStatements().get(0));
+            if (node == null)
+            {
+                return;
+            }
+            for (ILeafNode leaf : node.getLeafNodes())
+            {
+                if (!leaf.isHidden())
+                {
+                    resultAceptor.addIssue(new BslDirectLocationIssue(
+                        MessageFormat.format(Messages.CyclomaticComplexityCheck_Cyclomatic_complexity,
+                            Integer.valueOf(body), Integer.valueOf(threshold)),
+                        new DirectLocation(leaf.getOffset(), leaf.getLength(), leaf.getStartLine(), module)));
+                    break;
+                }
+            }
         }
     }
 

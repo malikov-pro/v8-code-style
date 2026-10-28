@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.e1c.v8codestyle</groupId>
     <artifactId>parent</artifactId>
-    <version>0.9.0-SNAPSHOT</version>
+    <version>0.10.0-SNAPSHOT</version>
   </parent>
   <artifactId>tests</artifactId>
   <packaging>pom</packaging>
@@ -77,9 +77,36 @@
           </target>
           <dependency-resolution>
             <extraRequirements>
+              <!-- Target roots alone do not retain generic capability providers
+                   in this project's compile/test dependency closure. -->
               <requirement>
-                <type>p2-installable-unit</type>
-                <id>com._1c.g5.v8.dt.rcp</id>
+                <type>eclipse-plugin</type>
+                <id>org.apache.felix.scr</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>org.eclipse.swt.svg</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>org.eclipse.equinox.event</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-plugin</type>
+                <id>org.eclipse.equinox.launcher</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-feature</type>
+                <id>com._1c.g5.v8.dt.feature</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+              <requirement>
+                <type>eclipse-feature</type>
+                <id>com._1c.g5.v8.dt.extension</id>
                 <versionRange>0.0.0</versionRange>
               </requirement>
               <requirement>
@@ -162,14 +189,12 @@
             <useUIThread>true</useUIThread>
             <argLine>${ui.test.vmargs} ${tycho-surefire-plugin.vmargs} ${debug.vmargs}</argLine>
             <work>${project.build.directory}/work</work>
-            <testRuntime>p2Installed</testRuntime>
-            <!-- Тестовая JVM — по BREE бандла из toolchains.xml (JavaSE-17 →
-                 JDK 17). SYSTEM (JDK 25 тулчейна сборки) ломает itests:
-                 spifly 1.3.7 при витье классов читает классы JDK через ASM 9.6,
-                 который не умеет major 69 (файлы JDK 25) — ClassFormatError,
-                 старт проектного контекста падает, тесты висят. Подробности —
-                 скилл v8cs-port-check, находки 30.09.2026. -->
-            <useJDK>BREE</useJDK>
+            <!-- Tycho generates config.ini; compile/test dependencies include
+                 the required DS, SVG and EventAdmin providers explicitly. -->
+            <testRuntime>default</testRuntime>
+            <!-- The build and test runtime both require full JDK 25.
+                 The public 2026.2.2 platform includes ASM 9.9.1. -->
+            <useJDK>SYSTEM</useJDK>
           </configuration>
         </plugin>
       </plugins>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="204550d4-bd0e-4a32-9bce-8d9032f355bc">
+  <producedTypes>
+    <objectType typeId="846e680b-4d4d-41b5-ba28-8341fcf6c763" valueTypeId="de81cc15-cbfb-413b-8cd4-695702f24f97"/>
+    <refType typeId="e4c502ea-0288-4f6f-9cf8-1edc3552aac1" valueTypeId="370c1e06-a2d5-4447-b82a-29f1b019d1e2"/>
+    <selectionType typeId="df2db016-3e58-4404-918a-d13c2408b623" valueTypeId="7f3870a4-a5b8-4160-b1d3-df2006cf83a0"/>
+    <listType typeId="16da11bc-0049-4b63-ad7d-8870c393a80d" valueTypeId="9f98703d-54ee-4d2b-a857-fb3d400beb54"/>
+    <managerType typeId="b32cec52-4139-45ad-9ade-0cb656f3fb5c" valueTypeId="958d112b-1317-4c12-b977-676e33921182"/>
+  </producedTypes>
+  <name>OkListCatalog</name>
+  <synonym>
+    <key>ru</key>
+    <value>Номенклатура</value>
+  </synonym>
+  <listPresentation>
+    <key>ru</key>
+    <value>Номенклатура</value>
+  </listPresentation>
+  <extendedListPresentation>
+    <key>ru</key>
+    <value>Номенклатура (товары и услуги)</value>
+  </extendedListPresentation>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.OkListCatalog.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.OkListCatalog.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

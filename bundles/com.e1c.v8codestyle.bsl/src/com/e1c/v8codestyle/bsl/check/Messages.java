@@ -25,6 +25,30 @@ final class Messages
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
 
+    public static String SetPrivilegedModeCheck_title;
+    public static String SetPrivilegedModeCheck_description;
+    public static String SetPrivilegedModeCheck_message;
+
+    public static String UseSystemInformationCheck_title;
+    public static String InternetAccessCheck_title;
+    public static String FileSystemAccessCheck_title;
+    public static String ExternalAppStartingCheck_title;
+    public static String ExternalAppStartingCheck_description;
+    public static String ExternalAppStartingCheck_message;
+    public static String ExternalAppStartingCheck_pattern;
+    public static String ExternalAppStartingCheck_navigation;
+    public static String FileSystemAccessCheck_description;
+    public static String FileSystemAccessCheck_message;
+    public static String FileSystemAccessCheck_globalMethods;
+    public static String FileSystemAccessCheck_newExpression;
+    public static String InternetAccessCheck_description;
+    public static String InternetAccessCheck_message;
+    public static String UseSystemInformationCheck_description;
+    public static String UseSystemInformationCheck_message;
+    public static String TempFilesDirCheck_title;
+    public static String TempFilesDirCheck_description;
+    public static String TempFilesDirCheck_message;
+
     public static String AccessibilityAtClientInObjectModuleCheck_Declared_variable_accessible_AtClient;
 
     public static String AccessibilityAtClientInObjectModuleCheck_description;
@@ -522,6 +546,30 @@ final class Messages
     public static String UseGotoOperatorCheck_description;
 
     public static String UseGotoOperatorCheck_title;
+    public static String TryNumberCheck_title;
+    public static String MissedRequiredParameterCheck_title;
+    public static String BadExceptionCategoryCheck_title;
+    public static String UnsafeFindByCodeCheck_title;
+    public static String CurrentRowAccessCheck_title;
+    public static String EventHandlerInvalidSignatureCheck_title;
+    public static String EventHandlerInvalidSignatureCheck_description;
+    public static String EventHandlerInvalidSignatureCheck_message;
+    public static String CurrentRowAccessCheck_description;
+    public static String CurrentRowAccessCheck_message;
+    public static String UnsafeFindByCodeCheck_description;
+    public static String UnsafeFindByCodeCheck_message;
+    public static String BadExceptionCategoryCheck_description;
+    public static String BadExceptionCategoryCheck_message;
+    public static String MissedRequiredParameterCheck_description;
+    public static String MissedRequiredParameterCheck_message;
+    public static String TryNumberCheck_description;
+    public static String TryNumberCheck_message;
+    public static String UnsafeSafeModeMethodCallCheck_title;
+    public static String UnsafeSafeModeMethodCallCheck_description;
+    public static String UnsafeSafeModeMethodCallCheck_message;
+    public static String UsingFindElementByStringCheck_title;
+    public static String UsingFindElementByStringCheck_description;
+    public static String UsingFindElementByStringCheck_message;
 
     public static String UseGotoOperatorCheck_Use_Goto_operator;
 
@@ -706,6 +754,23 @@ final class Messages
     public static String UsingHardcodeSecretInformationCheck_Search_words;
 
     public static String DeprecatedFindCheck_title;
+    public static String DeprecatedMethodCallCheck_title;
+    public static String DeprecatedAttributes8312Check_title;
+    public static String UnavailableMemberCallCheck_title;
+    public static String UnavailableMemberCallCheck_description;
+    public static String UnavailableMemberCallCheck_message;
+    public static String AllFunctionPathMustHaveReturnCheck_title;
+    public static String AllFunctionPathMustHaveReturnCheck_description;
+    public static String AllFunctionPathMustHaveReturnCheck_message;
+    public static String AllFunctionPathMustHaveReturnCheck_Loops_executed_at_least_once;
+    public static String AllFunctionPathMustHaveReturnCheck_Ignore_missing_else_on_exit;
+    public static String UnreachableCodeCheck_title;
+    public static String UnreachableCodeCheck_message;
+    public static String UnreachableCodeCheck_description;
+    public static String DeprecatedAttributes8312Check_description;
+    public static String DeprecatedAttributes8312Check_message;
+    public static String DeprecatedMethodCallCheck_description;
+    public static String DeprecatedMethodCallCheck_message;
     public static String DeprecatedFindCheck_description;
     public static String DeprecatedFindCheck_Use_StrFind_instead_of_Find;
 
@@ -766,6 +831,8 @@ final class Messages
     public static String CyclomaticComplexityCheck_Complexity_threshold;
 
     public static String CognitiveComplexityCheck_title;
+    public static String CognitiveComplexityCheck_Check_module_body;
+    public static String CyclomaticComplexityCheck_Check_module_body;
     public static String CognitiveComplexityCheck_description;
     public static String CognitiveComplexityCheck_Cognitive_complexity;
     public static String CognitiveComplexityCheck_Complexity_threshold;
@@ -928,6 +995,67 @@ final class Messages
     public static String DfioNotInPublicRegionCheck_description;
 
     public static String DfioNotInPublicRegionCheck_Region_is_not_inside_public;
+    public static String BadWordsCheck_title;
+    public static String BadWordsCheck_Find_in_comments;
+    public static String EmptyCodeBlockCheck_Try_block;
+
+    public static String BadWordsCheck_description;
+
+    public static String BadWordsCheck_Prohibited_word_found;
+
+    public static String BadWordsCheck_Words;
+
+    public static String DoubleNegativesCheck_title;
+    public static String UnaryPlusInConcatenationCheck_title;
+    public static String IncorrectUseOfStrTemplateCheck_title;
+    public static String DisableSafeModeCheck_title;
+    public static String DisableSafeModeCheck_description;
+    public static String DisableSafeModeCheck_message;
+    public static String FunctionOutParameterCheck_title;
+    public static String FunctionOutParameterCheck_description;
+    public static String FunctionOutParameterCheck_message;
+    public static String UseLessForEachCheck_title;
+    public static String IfElseIfEndsWithElseCheck_title;
+    public static String IfElseIfEndsWithElseCheck_description;
+    public static String IfElseIfEndsWithElseCheck_message;
+    public static String ReservedParameterNamesCheck_title;
+    public static String ReservedParameterNamesCheck_description;
+    public static String ReservedParameterNamesCheck_message;
+    public static String ReservedParameterNamesCheck_parameter;
+    public static String NestedConstructorsInStructureDeclarationCheck_title;
+    public static String UsingServiceTagCheck_title;
+    public static String UsingServiceTagCheck_description;
+    public static String UsingServiceTagCheck_message;
+    public static String UsingServiceTagCheck_parameter;
+    public static String TooManyReturnsCheck_title;
+    public static String TooManyReturnsCheck_description;
+    public static String TooManyReturnsCheck_message;
+    public static String TooManyReturnsCheck_parameter;
+    public static String DuplicateStringLiteralCheck_title;
+    public static String CompareWithBooleanCheck_title;
+    public static String CompareWithBooleanCheck_description;
+    public static String CompareWithBooleanCheck_message;
+    public static String FunctionReturnsSamePrimitiveCheck_title;
+    public static String FunctionReturnsSamePrimitiveCheck_description;
+    public static String FunctionReturnsSamePrimitiveCheck_message;
+    public static String FunctionReturnsSamePrimitiveCheck_attachable;
+    public static String FunctionReturnsSamePrimitiveCheck_case;
+    public static String DuplicateStringLiteralCheck_description;
+    public static String DuplicateStringLiteralCheck_message;
+    public static String DuplicateStringLiteralCheck_copies;
+    public static String DuplicateStringLiteralCheck_file;
+    public static String DuplicateStringLiteralCheck_case;
+    public static String DuplicateStringLiteralCheck_length;
+    public static String NestedConstructorsInStructureDeclarationCheck_description;
+    public static String NestedConstructorsInStructureDeclarationCheck_message;
+    public static String UseLessForEachCheck_description;
+    public static String UseLessForEachCheck_message;
+    public static String IncorrectUseOfStrTemplateCheck_description;
+    public static String IncorrectUseOfStrTemplateCheck_message;
+    public static String UnaryPlusInConcatenationCheck_description;
+    public static String UnaryPlusInConcatenationCheck_message;
+    public static String DoubleNegativesCheck_description;
+    public static String DoubleNegativesCheck_message;
 
     static
     {

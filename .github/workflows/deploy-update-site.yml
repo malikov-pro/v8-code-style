@@ -66,12 +66,11 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}-${{ hashFiles('targets/edt-2026.1/edt-2026.1.target') }}
-          restore-keys: ${{ runner.os }}-m2-
+          key: ${{ runner.os }}-public-p2-m2-${{ hashFiles('**/pom.xml', 'targets/default/*.target', 'targets/default/public-platform-lock.json') }}
+          restore-keys: ${{ runner.os }}-public-p2-m2-
 
-      # p2-репозиторий одинаков для обоих профилей (бандлы одни), собираем основную
-      - name: Сборка EDT 2026.1
-        run: mvn -B clean verify -DskipTests -Dtycho.localArtifacts=ignore -Dtycho.p2.httptransport.type=JavaUrl
+      - name: Сборка EDT 2026.2.2
+        run: bash compile.sh --skip-tests
 
       - name: Формирование сайта
         run: |

@@ -16,13 +16,17 @@
 package com.e1c.v8codestyle.bsl.check.itests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.junit.Test;
 
 import com._1c.g5.v8.dt.validation.marker.Marker;
+import com._1c.g5.v8.dt.validation.marker.StandardExtraInfo;
 import com.e1c.v8codestyle.bsl.check.RewriteMethodParameterCheck;
 
 /**
@@ -70,5 +74,45 @@ public class RewriteMethodParameterCheckTest
 
         List<Marker> markers = getModuleMarkers();
         assertEquals(markers.stream().map(Marker::getMessage).collect(Collectors.joining("; ")), 0, markers.size());
+    }
+
+    /** Reads in all expression contexts precede a rewrite; a method name is not a variable read. */
+    @Test
+    public void testReadsBeforeRewrite() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "rewrite-method-parameter-reads.bsl"); //$NON-NLS-1$
+        assertEquals(List.of(37), markerLines());
+    }
+
+    /** Identity assignments do not consume the original value, as in the LS corpus. */
+    @Test
+    public void testIdentityAssignments() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "rewrite-method-parameter-self-assignment.bsl"); //$NON-NLS-1$
+        assertEquals(List.of(7, 13), markerLines());
+    }
+
+    /** Editing an existing call argument removes and restores a marker without clean. */
+    @Test
+    public void testIncrementalReadUpdates() throws Exception
+    {
+        updateModule(FOLDER_RESOURCE + "rewrite-method-parameter-incremental-bad.bsl"); //$NON-NLS-1$
+        assertEquals(List.of(3), markerLines());
+        updateModule(FOLDER_RESOURCE + "rewrite-method-parameter-incremental-clean.bsl"); //$NON-NLS-1$
+        assertEquals(List.of(), markerLines());
+        updateModule(FOLDER_RESOURCE + "rewrite-method-parameter-incremental-bad.bsl"); //$NON-NLS-1$
+        assertEquals(List.of(3), markerLines());
+    }
+
+    private List<Integer> markerLines()
+    {
+        for (INode leaf : NodeModelUtils.findActualNodeFor(getModule()).getLeafNodes())
+        {
+            assertNull(leaf.getSyntaxErrorMessage());
+        }
+        return getModuleMarkers().stream().map(marker -> {
+            Integer line = marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE);
+            return line;
+        }).sorted().toList();
     }
 }

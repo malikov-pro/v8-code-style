@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5d6a172f-67e2-41a0-9023-190bf5449386">
+  <name>HiddenSubsystem</name>
+  <synonym>
+    <key>en</key>
+    <value>Hidden subsystem</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>false</includeInCommandInterface>
+  <content>Catalog.HiddenCatalog</content>
+</mdclass:Subsystem>

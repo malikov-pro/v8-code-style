@@ -5,34 +5,44 @@ description: Конвейер переноса диагностики BSL Langua
 
 # Конвейер: перенос диагностики BSL LS → проверка форка
 
-Смежный регламент: `v8cs-port-check` (общие правила, quick fix, верификация,
-ветки). Статус портов и гэп-лист: `_notes/ls-port-gap.md`.
-Перенесено: 2 АПК + **35 LS** (состояние — в файле). Источник: 
-`_ext_src/bsl-language-server` — ТОЛЬКО чтение; правки LS — апстрим/форк LS.
-Батчи №2-№7: merge develop 006e2205 / 19c3237e / 0465eac3 / 9c992af6 /
-5b0db929 / 27ca921b. Батч №7 (06.10, 10 проверек): missing-space,
-magic-number, magic-date, if-condition-complexity, nested-statements,
-cyclomatic-complexity, cognitive-complexity (упрощённая формула),
-using-modal-windows, missing-temp-storage-deletion (упрощённая),
-unused-parameters.
-**Пачка №8 (06.10, вечер)**: + using-synchronous-calls (клиентские модули,
-52 метода из MODALITY_METHODS LS, гейт по synchronousPlatformExtensionAndAddInCallUseMode).
-**Простые LS-переносы ИСЧЕРПАНЫ**; осталось: create-query-in-cycle
-(data-flow, большая), query-* (ql-канал), typo/bad-words (❌ словари).
-Деплой v20261005-2021+ в EDT 2026.1 + живой смоук партий 2-7 — пройден.
+Смежный регламент: `v8cs-port-check`, сборки — `v8cs-build`, приёмка —
+`v8cs-deploy`, binding/типовые зависимости — `v8cs-bsl-binding`.
+Правила приоритетов/стабильного снимка — AGENTS.md.
+Источники и реестры относительно корня проекта:
+- `../_ext_src/bsl-language-server` — ТОЛЬКО чтение, фиксировать commit;
+- `../_notes/ls-registry.md` / `ls-registry.json` — поштучный актуальный учёт;
+- `ls-registry-decisions.tsv` / `build-ls-registry.py` — решения и проверка
+  полноты каталога/регистраций (оба в `../_notes`);
+- `../_notes/PLAN-2026-10-17-next-wave-proposed.md` — выполненный план обработчиков;
+- Следующую очередь читать в актуальном handoff и принятом пользователем плане.
+  Решение28.10: функционал заморожен под0.10.0, новый context-план отложен;
+- `../_notes/ls-port-gap.md` — история, не очередь для слепого выбора.
+
+Не хранить текущие количества в каждом скилле: читать реестр и сверять
+actual `plugin.xml`. Прямой порт !=полная эквивалентность. Native overlap
+без доказательства — кандидат на пробу, не покрытая диагностика.
 
 ## 0. Выбор кандидата
 
-- Из гэп-листа («Кандидаты на следующие порты») или новый разбор.
+- Из актуального принятого плана/поштучного реестра. Исторические corrective
+  IfConditionComplexity/LogicalOrInJoin и handler-волна уже завершены — не
+  выбирать их повторно по старым заметкам. Предложенная очередь не считается
+  принятой: не начинать новый чек, если пользователь просит аудит/план/сохранение.
 - Дедуп руками: `grep -ri <имя>` по `bundles/*/markdown/` + `docs/checks/`.
   Token-overlap матчёр врёт в обе стороны (см. гэп-лист).
-- ❌ НЕ переносимы (проверено):
-  - ловит компилятор 1С (procedure-returns-value — значение в процедуре);
-  - unreachable-code — требует CFG (ControlFlowGraphIndex), нет в фреймворке;
-  - **double-negatives — битый AST EDT-парсера**: «Не Сумма <> 0» →
-    `Unary(НЕ, operand=NULL)`, «Не Не А» → внешний НЕ с operand=Binary.
-    Проверено дампами AST в itest-рантайме 05.10;
-  - typo/bad-words — словари; query-* — нужен query-канал (отдельная работа).
+- Выбирать действие по статусу: перенесено — corpus/regression при новых
+  основаниях; частично — устранить конкретное расхождение; штатный аналог —
+  не дублировать; кандидат — proof API/native и реализация; блокер — отдельно
+  инфраструктура/данные, не «никогда не переносится».
+- Полный UnreachableCode/AllFunctionPathMustHaveReturn требует CFG; lite
+  unreachable уже существует. CognitiveComplexity — parse listener, **CFG
+  не обязательная предпосылка**. Typo требует spell-service/словарей.
+- DoubleNegatives уже в develop: валидный NOT(NE)/NOT(NOT) доступен на обеих
+  платформах; NOT NOT без скобок имеет syntax errors. BadWords — configurable
+  regex, не словарный блокер. Query-канал открыт через штатные hubs.
+- QueryToMissingMetadata ordinary MDO и MultilineStringInQuery уже имеют
+  live native-диагностику. Broad QueryNestedFieldsByDot не равен typed
+  `ql-composite-reference-dereference` — сначала политика overlap/CAST scope.
 
 ## 1. Спецификация из источника
 
@@ -41,6 +51,11 @@ unused-parameters.
 - Инвариант = что ищется (не название!); severity/type; параметры; qfix в LS
   (QuickFixProvider) — оценить по критерию «механическая замена vs решение
   пользователя» (решение пользователя → фикса нет, описать в карточке).
+- Сверять код, параметры, scope/module-body и default текущего pinned LS,
+  не только markdown. Все отличия записывать в реестр/карточку; корпус LS
+  и counterpart проверять контрпримерами, не token-overlap процентом.
+- Новое API: existing example +javap/MANIFEST; research-тест отвечает на
+  один вопрос и не заменяет продуктовые regressions.
 
 ## 2. Реализация
 
@@ -125,20 +140,31 @@ unused-parameters.
 ## 4. Тест
 
 - Один объединённый тест-метод: clean-ресурс → 0, violating → N.
+- Включать обратные переходы и изменения existing value: clean→violation→
+  fix, precise objects/ranges, отсутствие дублей. Если поведение зависит от
+  родителей/типов/обращений — regression изменения зависимости без fullclean.
+  Незнакомый AST проверять на syntax-clean ресурсе отдельно от recovery.
   FixMethodOrder/MethodSorters в p2-junit ЗАПРЕЩЕНЫ (Access restriction).
 - Отладка счётчиков: дамп `Marker::getMessage` в сообщение assertTrue.
 - Ресурсы itest — синтаксически валидный BSL! Ошибка в ресурсе даёт пустые
   AST-фрагменты и фантомные маркеры (реальный кейс: «Пока … Делать» вместо
   «Цикл» = пустой WhileStatement из ниоткуда).
 - Прогон: `bash scripts/test-check.sh <TestClass[,TestClass2]>` (всегда clean).
+- QL: `--module ql`, второй профиль: `--profile edt-2026.2`. Targeted не
+  означает весь suite. Активный snapshot не редактировать; один Maven.
 
 ## 5. Сдача
 
-- Полный гейт (цепочка реактора + bsl.itests целиком, `~15 мин`) → merge
-  develop → push. Серия портов: коммит на каждый чек, гейт — периодически
-  (договорённость 05.10: порты подряд, тесты сам, UI-проверка при ~50 наших
-  портах; полный itests-гейт — перед merge партии в develop).
-- Смоук в EDT: `scripts/smoke-edt.sh` (сборка+установка+запуск EDT) →
-  MCP `clean_project` + `get_project_errors` (new checks живут только после
-  clean build — revalidate недостаточно). Пример-модуль в
-  АПК.ОшибкиДляПроверки — по желанию (для АПК-портов обязателен).
+- Рабочая мини-пачка2–3 связанных одного канала; каждому свои tests/commit/
+  строка реестра. First vertical slice неизвестного канала до live, потом
+  группировать. Итерация targeted, перед integration весь затронутый
+  itests-модуль на 2026.2.2. Fullcompile — раз в основную пачку и при общих
+  dependencies; единственная платформа EDT2026.2.2/Java25 (решение28.10, v8cs-build).
+- Только markdown/messages-text правки: CheckDescriptionTest +generated
+  index, не новый fullsuite. EP/ключи/parameters/MANIFEST — runtime изменения.
+- Сохранить p2 профиля перед следующим clean; выполнить own live smoke:
+  initial clean для нового registration, потом bad→fix→bad **без clean**,
+  затем финальный clean/log. Без live не merge: не ждать произвольных50 портов.
+- Audit integration по исходным commits; обновить ls-registry decisions
+  только по фактически merged реализации с ограничениями. Build green не
+  доказывает полноту/точность переноса. Master/tag не менять без команды.

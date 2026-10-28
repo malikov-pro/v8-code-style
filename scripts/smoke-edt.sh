@@ -14,11 +14,9 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-EDT="${EDT_HOME:-$HOME/.local/share/1C/1cedtstart/installations/1C_EDT 2026.1/1cedt}"
-WS="${WS_HOME:-$HOME/edt/apk}"
-MVN="${MVN:-$HOME/tools/apache-maven-3.9.9/bin/mvn}"
-JDK17="/opt/1C/1CE/components/axiom-jdk-full-17.0.16+12-x86_64"   # runtime EDT 2026.1
-JDK25="$HOME/tools/jdk-25.0.4.1+1"                                # тулчейн сборки (Tycho 21+)
+EDT="${EDT_HOME:-$HOME/.local/share/1C/1cedtstart/installations/1C_EDT 2026.2/1cedt}"
+WS="${WS_HOME:-$HOME/edt/apk_2026}"
+RUNTIME_JAVA_HOME="${EDT_JAVA_HOME:-/opt/1C/1CE/components/axiom-jdk-full-25.0.4+5-x86_64}"
 
 SKIP_BUILD=0; SKIP_DEPLOY=0
 for arg in "$@"; do
@@ -43,23 +41,21 @@ fi
 
 if [[ "$SKIP_BUILD" -eq 0 ]]; then
   log "Сборка (без itests — быстрый цикл; полный гейт гонять отдельно)"
-  (cd "$ROOT" && JAVA_HOME="$JDK25" "$MVN" clean verify -B -DskipTests \
-    -Dtycho.localArtifacts=ignore -Dtycho.p2.httptransport.type=JavaUrl \
-    -pl targets/edt-2026.1,bundles/com.e1c.v8codestyle,bundles/com.e1c.v8codestyle.ui,bundles/com.e1c.v8codestyle.md,bundles/com.e1c.v8codestyle.md.ui,bundles/com.e1c.v8codestyle.form,bundles/com.e1c.v8codestyle.bsl,bundles/com.e1c.v8codestyle.bsl.ui,bundles/com.e1c.v8codestyle.autosort,bundles/com.e1c.v8codestyle.autosort.ui,bundles/com.e1c.v8codestyle.ql,bundles/com.e1c.v8codestyle.right,docs,features/com.e1c.v8codestyle.feature,repositories/com.e1c.v8codestyle.repository) \
+  bash "$ROOT/compile.sh" --skip-tests \
     > /tmp/opencode/smoke-build.log 2>&1 || { tail -20 /tmp/opencode/smoke-build.log >&2; die "сборка упала (лог: /tmp/opencode/smoke-build.log)"; }
   log "Сборка OK"
 fi
 
 if [[ "$SKIP_DEPLOY" -eq 0 ]]; then
   log "Установка в EDT (p2 director)"
-  bash "$ROOT/scripts/deploy-edt.sh" --edt "$EDT" --workspace "$WS"
+  JAVA_HOME="$RUNTIME_JAVA_HOME" PATH="$RUNTIME_JAVA_HOME/bin:$PATH" bash "$ROOT/scripts/deploy-edt.sh" --edt "$EDT" --workspace "$WS"
 fi
 
 if workbench_running; then
   log "EDT уже запущена — пропускаю старт"
 else
-  log "Запуск EDT на воркспейсе $WS (JDK 17)"
-  ( cd "$EDT" && nohup ./1cedt -data "$WS" -vm "$JDK17/bin/java" \
+  log "Запуск EDT на воркспейсе $WS (полная Java 25)"
+  ( cd "$EDT" && NO_AT_BRIDGE=1 nohup ./1cedt -data "$WS" -vm "$RUNTIME_JAVA_HOME/bin/java" \
       > /tmp/opencode/smoke-edt.out 2>&1 & )
 fi
 

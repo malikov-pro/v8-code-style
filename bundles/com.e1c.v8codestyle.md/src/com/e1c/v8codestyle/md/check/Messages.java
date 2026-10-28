@@ -22,6 +22,16 @@ final class Messages
     extends NLS
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
+    public static String MissingEventSubscriptionHandlerCheck_title;
+    public static String WrongHttpServiceHandlerCheck_title;
+    public static String WrongWebServiceHandlerCheck_title;
+    public static String WrongWebServiceHandlerCheck_description;
+    public static String WrongWebServiceHandlerCheck_missing;
+    public static String WrongHttpServiceHandlerCheck_description;
+    public static String WrongHttpServiceHandlerCheck_missing;
+    public static String WrongHttpServiceHandlerCheck_parameters;
+    public static String MissingEventSubscriptionHandlerCheck_description;
+    public static String MissingEventSubscriptionHandlerCheck_message;
     public static String DbObjectRefNonRefTypesCheck_Description;
     public static String DbObjectRefNonRefTypesCheck_Ref_and_other;
     public static String DbObjectRefNonRefTypesCheck_Title;
@@ -118,6 +128,18 @@ final class Messages
     public static String CommonPictureDuplicateCheck_title;
     public static String CommonPictureDuplicateCheck_description;
     public static String CommonPictureDuplicateCheck_Duplicate_pictures;
+    public static String MdExtendedListPresentationEqualsCheck_title;
+    public static String MdExtendedListPresentationEqualsCheck_description;
+    public static String MdExtendedListPresentationEqualsCheck_message;
+    public static String MdExtendedObjectPresentationEqualsCheck_title;
+    public static String MdExtendedObjectPresentationEqualsCheck_description;
+    public static String MdExtendedObjectPresentationEqualsCheck_message;
+    public static String MdToolTipEmptyCheck_title;
+    public static String MdToolTipEmptyCheck_description;
+    public static String MdToolTipEmptyCheck_message;
+    public static String FunctionalOptionParametersLimitCheck_title;
+    public static String FunctionalOptionParametersLimitCheck_description;
+    public static String FunctionalOptionParametersLimitCheck_too_many;
 
     static
     {

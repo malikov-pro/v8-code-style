@@ -1,0 +1,11 @@
+# Join with a virtual table
+
+Dependency tracking attaches both during project loading and to already active projects when the bundle starts late. Repeated start is idempotent; unloading/stopping removes listeners. Late-start behavior has a separate unchanged-consumer regression; an import-only test does not establish coverage for an existing workspace.
+
+Reports each resolved virtual table directly participating in a join, on either side. A standalone virtual table or one inside an unjoined nested query is not an outer join source. Enabled by default, MAJOR/CODE_STYLE, no parameters or automatic fix. Virtual-table kind is resolved from metadata, not inferred only from its text. Exact ranges, consumer channels and limitations are certified separately; full LS engine differential is not certified.
+
+Resolved DbViewSelectDef identifies ordinary virtual tables and FilterCriterion; accounting Subconto is also included by its resolved extDimensionsView feature even though EDT represents it as DbViewTableDef. Physical and unresolved tables are skipped. A chain of joins produces one issue per participating virtual-table source, not one per join. QL ranges include the table reference and arguments, excluding explicit or implicit aliases; the native BSL bridge only preserves the literal-line location.
+
+BSL literals and DCS datasets have source-change cycles. InformationRegister periodicity changes and provider .mdo synchronization are tested with unchanged consumers: a lifecycle listener observes derived dbViewDefs, then schedules enabled hub/delegates. It scans current-project DCS query models and selects bound register consumers, including the physical parent of a disappearing virtual table. The BSL fallback rechecks project modules with a restricted check scope; this is not an indexed per-consumer lookup. Large-configuration performance, cross-project invalidation and changes to other provider kinds are not certified.
+
+Disabled hubs/checks are respected for new work. Native DCS hub disable can retain OLD delegated markers; matching marker ID/creation time is tracked separately from new diagnostics. Dynamic lists, query-constructor editor behavior, extensions, provider rename/create/delete, unusual preprocessing/recovery and full LS engine differential remain uncertified. No custom secondary locations or UI are supplied.

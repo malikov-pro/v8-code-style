@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a6098cfc-10a3-40e9-9722-a0b7a7d3e04e">
+  <producedTypes>
+    <objectType typeId="b70b67df-45a4-43e9-a0f5-f0fd7cf5a205" valueTypeId="398b0633-9572-44b5-bc69-f4806091b7f2"/>
+    <refType typeId="8394a6fb-abb8-4271-bfd4-bc1941c8eb70" valueTypeId="474fd498-687e-44e8-9d3a-fce1e2ab15a9"/>
+    <selectionType typeId="e8424f8a-83b6-4639-96a8-2763e8bebe48" valueTypeId="098d99bd-034a-4474-a521-ccb74ebf0d9f"/>
+    <listType typeId="3f09dee8-5e81-45fa-adbd-a04eef4e1970" valueTypeId="7e5fbd35-ed53-421b-a9ba-fa8741c8699b"/>
+    <managerType typeId="02f667c5-fcdd-42fb-af33-7e4576b3c877" valueTypeId="ea31ea33-bde8-42fe-943b-dc564166873c"/>
+  </producedTypes>
+  <name>HiddenCatalog</name>
+  <synonym>
+    <key>en</key>
+    <value>Hidden catalog</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.HiddenCatalog.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="771f5ea2-9443-48f1-a73e-5e893c587d64">
+    <name>HiddenNoToolTipAttr</name>
+    <synonym>
+      <key>en</key>
+      <value>Hidden attribute</value>
+    </synonym>
+  <type>
+    <types>String</types>
+    <stringQualifiers>
+      <length>10</length>
+    </stringQualifiers>
+  </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

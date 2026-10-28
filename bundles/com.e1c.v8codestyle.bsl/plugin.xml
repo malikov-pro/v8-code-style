@@ -15,6 +15,19 @@
  -->
 
 <plugin>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.TempFilesDirCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UseSystemInformationCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.InternetAccessCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.FileSystemAccessCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ExternalAppStartingCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.SetPrivilegedModeCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DeprecatedMethodCallCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DeprecatedAttributes8312Check"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UnavailableMemberCallCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.AllFunctionPathMustHaveReturnCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UnreachableCodeCheck"/>
+   </extension>
    <extension
          point="com.e1c.g5.v8.dt.check.checks">
 
@@ -36,10 +49,62 @@
             id="com.e1c.v8codestyle.bsl.strict"
             title="%category.bsl.strict.title">
       </category>
-      <check
-            category="com.e1c.v8codestyle.bsl"
-            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.AccessibilityAtClientInObjectModuleCheck">
-      </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.AccessibilityAtClientInObjectModuleCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UnaryPlusInConcatenationCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.IncorrectUseOfStrTemplateCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DisableSafeModeCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.FunctionOutParameterCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UseLessForEachCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.IfElseIfEndsWithElseCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ReservedParameterNamesCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.NestedConstructorsInStructureDeclarationCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UsingServiceTagCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.TooManyReturnsCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DuplicateStringLiteralCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.CompareWithBooleanCheck">
+       </check>
+       <check
+             category="com.e1c.v8codestyle.bsl"
+             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.FunctionReturnsSamePrimitiveCheck">
+       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.StructureCtorTooManyKeysCheck">
@@ -433,6 +498,38 @@
       </check>
       <check
             category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.TryNumberCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.MissedRequiredParameterCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.BadExceptionCategoryCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UnsafeFindByCodeCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.CurrentRowAccessCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.EventHandlerInvalidSignatureCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UnsafeSafeModeMethodCallCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UsingFindElementByStringCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.IsInRoleMethodRoleExistCheck">
       </check>
       <check
@@ -686,6 +783,14 @@
       <check
             category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.CreateQueryInCycleCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.BadWordsCheck">
+      </check>
+      <check
+            category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DoubleNegativesCheck">
       </check>
       <check
             category="com.e1c.v8codestyle.bsl"

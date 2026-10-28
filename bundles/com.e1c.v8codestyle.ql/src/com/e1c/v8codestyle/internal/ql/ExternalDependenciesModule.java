@@ -17,8 +17,14 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
 
 import com._1c.g5.v8.dt.core.platform.IConfigurationProvider;
+import com._1c.g5.v8.dt.core.platform.IBmModelManager;
+import com._1c.g5.v8.dt.core.platform.IDtProjectManager;
+import com._1c.g5.v8.dt.core.platform.IWorkspaceOrchestrator;
+import com.e1c.g5.v8.dt.check.ICheckScheduler;
+import com.e1c.g5.v8.dt.check.settings.ICheckRepository;
 import com._1c.g5.v8.dt.core.platform.IV8ProjectManager;
 import com._1c.g5.v8.dt.ql.typesystem.IDynamicDbViewFieldComputer;
+import com._1c.g5.v8.dt.ql.typesystem.IExpressionTypeChecker;
 import com._1c.g5.wiring.AbstractServiceAwareModule;
 
 /**
@@ -42,13 +48,20 @@ public class ExternalDependenciesModule
     @Override
     protected void doConfigure()
     {
+        bind(IVirtualTableDependencies.class).to(VirtualTableDependencies.class).in(com.google.inject.Singleton.class);
         bind(IConfigurationProvider.class).toService();
+        bind(IBmModelManager.class).toService();
+        bind(IDtProjectManager.class).toService();
+        bind(IWorkspaceOrchestrator.class).toService();
+        bind(ICheckScheduler.class).toService();
+        bind(ICheckRepository.class).toService();
         bind(IV8ProjectManager.class).toService();
 
         URI uri = URI.createURI("*.qldcs"); //$NON-NLS-1$
         final IResourceServiceProvider rsp = IResourceServiceProvider.Registry.INSTANCE.getResourceServiceProvider(uri);
 
         bind(IDynamicDbViewFieldComputer.class).toProvider(() -> rsp.get(IDynamicDbViewFieldComputer.class));
+        bind(IExpressionTypeChecker.class).toProvider(() -> rsp.get(IExpressionTypeChecker.class));
     }
 
 }
