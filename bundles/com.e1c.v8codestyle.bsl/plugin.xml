@@ -20,6 +20,7 @@
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UseSystemInformationCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.InternetAccessCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.FileSystemAccessCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ExternalAppStartingCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.SetPrivilegedModeCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DeprecatedMethodCallCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DeprecatedAttributes8312Check"/>

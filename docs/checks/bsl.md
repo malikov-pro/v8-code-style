@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 213
+Общее количество проверок: 214
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -94,6 +94,7 @@
 | [extension-method-prefix](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-method-prefix.html) | У метода отсутствует префикс расширения |
 | [extension-method-visible-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-method-visible-mode.html) | У метода в расширении модуля та же видимость, что и оригинального метода |
 | [extension-variable-prefix](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-variable-prefix.html) | У имени переменной отсутствует префикс расширения |
+| [external-app-starting](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/external-app-starting.html) | Аудит запуска внешних приложений |
 | [file-system-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/file-system-access.html) | Аудит доступа к файловой системе |
 | [form-module-missing-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-module-missing-pragma.html) | Всегда использовать директивы компиляции в модуле формы |
 | [form-module-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-module-pragma.html) | Использование директив компиляции модуля формы |

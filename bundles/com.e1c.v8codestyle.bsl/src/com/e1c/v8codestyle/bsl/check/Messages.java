@@ -32,6 +32,11 @@ final class Messages
     public static String UseSystemInformationCheck_title;
     public static String InternetAccessCheck_title;
     public static String FileSystemAccessCheck_title;
+    public static String ExternalAppStartingCheck_title;
+    public static String ExternalAppStartingCheck_description;
+    public static String ExternalAppStartingCheck_message;
+    public static String ExternalAppStartingCheck_pattern;
+    public static String ExternalAppStartingCheck_navigation;
     public static String FileSystemAccessCheck_description;
     public static String FileSystemAccessCheck_message;
     public static String FileSystemAccessCheck_globalMethods;

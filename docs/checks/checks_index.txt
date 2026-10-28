@@ -127,6 +127,7 @@ extension-md-object-prefix
 extension-method-prefix
 extension-method-visible-mode
 extension-variable-prefix
+external-app-starting
 file-system-access
 form-commands-single-action-handler
 form-dynamic-list-item-title
