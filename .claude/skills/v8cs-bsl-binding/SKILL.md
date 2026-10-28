@@ -123,10 +123,12 @@ Pinned-код приоритетнее формулировки: Web handler mes
   BM+filecompat-only пересчёт проверен штатный, лишний collector не нужен.
 - Тестовые проекты должны содержать .settings: без каталога applyChanges падал
   ProfileStorageException при записи Default.cset; это дефект fixture, не детектора.
-- LocalMCP алиас не доказывает стенд: после перенастройки edt_rt_test оказался
-  WindowsРТ, localapk доступен отдельным127.0.0.1 endpoint. Проверять version+
-  list_projects paths перед записью; не менять remote userprojects. Токен изprefs
-  читать только в память, не включать в evidence/команды/коммиты.
+- MCP алиас не доказывает стенд: после перенастройки edt_rt_test оказался
+  WindowsРТ. Перед записью проверить version + list_projects paths через
+  текущий MCP EDT; не менять remote userprojects. При доступном штатном
+  инструменте локальный HTTP-клиент не использовать (решение28.10).
+  Если endpoint действительно недоступен в каталоге, сначала выяснить доступ/
+  согласовать обход; токены не включать в evidence/команды/коммиты.
 - События элементов форм: `BslEventsService.getAllModuleEvents` даёт только
   root-form назначения. В `getEventHandlers` есть элементы/extInfo/command, но
   ParamSet события элемента НЕ содержит первый `Элемент` (к min/max добавить1),
@@ -149,8 +151,10 @@ Pinned-код приоритетнее формулировки: Web handler mes
   addition/new-contributor контроли проходят. Research disconnected managers и
   immutable FAIL сохранены в `_notes/evidence/startup-check-registry-20261019/`.
   Это PLATFORM, не разрешение patch/reflection/unregister в продукт; следующий
-  restart объясняет симптом, но не исправляет алгоритм. Полный UI upgrade/2026.2
-  не проверены. Не обобщать этот диагноз на любой сбой запуска.
+  restart объясняет симптом, но не исправляет алгоритм. На2026.2.2 при upgrade
+  также сохранён Unknown check id; после restart/clean повторов не было.
+  Это наблюдение не доказывает тождество внутренней причины версии6.0.101.
+  Не обобщать этот диагноз на любой сбой запуска.
 - QL ВТ: resolved DbViewSelectDef покрывает обычные ВТ/FilterCriterion, но
   бухгалтерская Субконто — DbViewTableDef под EXT_DIMENSIONS_VIEW. В JOIN она
   входит в LS-контракт, в empty-params — исключена. Не подменять видом по имени.
