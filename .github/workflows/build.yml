@@ -9,7 +9,7 @@ on:
         type: boolean
     secrets:
       sonar_token:
-        required: true
+        required: false
 
 jobs:
   build:
@@ -51,6 +51,7 @@ jobs:
         df -h
 
     - name: Build with Maven
+      id: maven
       working-directory: ./
       run: |
         Xvfb :5 -screen 0 1280x1024x8 -fbdir /tmp &
@@ -84,21 +85,32 @@ jobs:
         
     - name: Publish Test Report
       uses: scacap/action-surefire-report@v1
-      if: inputs.analyze
+      # Never publish checks for fork PRs or pull_request_target runs.
+      if: ${{ !cancelled() && inputs.analyze && (github.event_name == 'push' || github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)) && hashFiles('**/surefire-reports/TEST-*.xml') != '' }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Upload repo
       uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() && steps.maven.outcome == 'success' }}
       with:
         name: v8-code-style-repository
         path: repositories/com.e1c.v8codestyle.repository/target/repository/
         
     - name: Upload SDK repo
       uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() && steps.maven.outcome == 'success' }}
       with:
         name: v8-code-style-repository-sdk
         path: repositories/com.e1c.v8codestyle.repository.sdk/target/repository/
+
+    - name: Upload test XML
+      uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: test-xml
+        path: tests/**/target/surefire-reports/TEST-*.xml
+        if-no-files-found: warn
     
     - name: Upload JaCoCo exec data
       uses: actions/upload-artifact@v4
