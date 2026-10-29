@@ -10,13 +10,29 @@ on:
     branches: 
       - '**'
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Build
-    # This build will run on master,release/* push, local PR and PR from forks without label Analyze
-    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.event.repository.full_name  || !contains(github.event.pull_request.labels.*.name, 'Analyze')
+    # Write access is limited to pushes, manual runs and same-repository PRs.
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
+    permissions:
+      contents: read
+      checks: write
     uses: ./.github/workflows/build.yml
     with:
-      analyze: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.event.repository.full_name }}
+      analyze: true
     secrets:
       sonar_token: ${{ secrets.SONAR_TOKEN }}
+
+  fork-build:
+    name: Fork build (read-only)
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository && !contains(github.event.pull_request.labels.*.name, 'Analyze')
+    permissions:
+      contents: read
+      checks: none
+    uses: ./.github/workflows/build.yml
+    with:
+      analyze: false
