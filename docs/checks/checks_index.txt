@@ -121,6 +121,7 @@ empty-except-statement
 empty-statement
 event-handler-boolean-param
 event-handler-invalid-signature
+excessive-auto-test-check
 export-method-in-command-form-module
 export-procedure-missing-comment
 extension-md-object-prefix

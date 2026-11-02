@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 214
+Общее количество проверок: 215
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -89,6 +89,7 @@
 | [empty-statement](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/empty-statement.html) | Пустой оператор |
 | [event-handler-boolean-param](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/event-handler-boolean-param.html) | Использование булевого параметра обработчика события |
 | [event-handler-invalid-signature](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/event-handler-invalid-signature.html) | Неверная сигнатура обработчика события |
+| [excessive-auto-test-check](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/excessive-auto-test-check.html) | Устаревшая проверка АвтоТест |
 | [export-method-in-command-form-module](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/export-method-in-command-form-module.html) | Ограничения на использование экспортных процедур и функций в модуле команд и форм |
 | [export-procedure-missing-comment](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/export-procedure-missing-comment.html) | Отсутствует комментарий к экспортной процедуре (функции) |
 | [extension-method-prefix](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-method-prefix.html) | У метода отсутствует префикс расширения |

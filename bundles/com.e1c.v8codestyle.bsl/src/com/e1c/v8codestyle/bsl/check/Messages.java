@@ -33,6 +33,9 @@ final class Messages
     public static String InternetAccessCheck_title;
     public static String FileSystemAccessCheck_title;
     public static String ExternalAppStartingCheck_title;
+    public static String ExcessiveAutoTestCheck_title;
+    public static String ExcessiveAutoTestCheck_description;
+    public static String ExcessiveAutoTestCheck_message;
     public static String ExternalAppStartingCheck_description;
     public static String ExternalAppStartingCheck_message;
     public static String ExternalAppStartingCheck_pattern;
