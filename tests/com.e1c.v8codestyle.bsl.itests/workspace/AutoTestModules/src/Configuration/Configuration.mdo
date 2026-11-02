@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5a5b0549-d2a1-4c3b-8845-c4c138447a85">
+  <name>AutoTestModules</name>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <compatibilityMode>8.3.23</compatibilityMode>
+  <languages uuid="f5b09d91-6557-4cba-8399-4fc3f4a7ca30"><name>English</name><languageCode>en</languageCode></languages>
+  <commonModules>CommonModule.CommonModule</commonModules>
+  <catalogs>Catalog.Products</catalogs>
+  <informationRegisters>InformationRegister.Prices</informationRegisters>
+  <commonForms>CommonForm.Probe</commonForms>
+</mdclass:Configuration>
