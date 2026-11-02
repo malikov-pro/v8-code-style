@@ -34,6 +34,13 @@ final class Messages
     public static String FileSystemAccessCheck_title;
     public static String ExternalAppStartingCheck_title;
     public static String ExcessiveAutoTestCheck_title;
+    public static String UsageWriteLogEventCheck_title;
+    public static String UsageWriteLogEventCheck_description;
+    public static String UsageWriteLogEventCheck_arity;
+    public static String UsageWriteLogEventCheck_level;
+    public static String UsageWriteLogEventCheck_comment;
+    public static String UsageWriteLogEventCheck_errorLevel;
+    public static String UsageWriteLogEventCheck_details;
     public static String ExcessiveAutoTestCheck_description;
     public static String ExcessiveAutoTestCheck_message;
     public static String ExternalAppStartingCheck_description;

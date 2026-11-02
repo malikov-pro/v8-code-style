@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 328
+Общее количество проверок 1С:Стандарты разработки V8: 329
 
 - form: 15
 - md: 50
-- bsl: 215
+- bsl: 216
 - ql: 21
 - right: 27
 
@@ -323,6 +323,7 @@
 | [up-768-obsolete-refs-missing](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-768-obsolete-refs-missing.html) | Устаревшая процедура (функция) ссылается на несуществующую процедуру (функцию) |
 | [up-769-obsolete-refs-obsolete](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-769-obsolete-refs-obsolete.html) | Устаревшая процедура (функция) ссылается на другую устаревшую процедуру (функцию) |
 | [up-781-notify-handler-nonexistent](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/up-781-notify-handler-nonexistent.html) | Несуществующая процедура в параметре обработчика оповещения |
+| [usage-write-log-event](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/usage-write-log-event.html) | Полнота записи в журнал регистрации |
 | [use-goto-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-goto-operator.html) | Используется оператор Перейти |
 | [use-less-for-each](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-less-for-each.html) | Неиспользуемый итератор Для Каждого |
 | [use-non-recommended-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/use-non-recommended-method.html) | Использование не рекомендуемых методов |
