@@ -308,6 +308,7 @@ up-765-explicit-color
 up-768-obsolete-refs-missing
 up-769-obsolete-refs-obsolete
 up-781-notify-handler-nonexistent
+usage-write-log-event
 use-goto-operator
 use-less-for-each
 use-non-recommended-method
