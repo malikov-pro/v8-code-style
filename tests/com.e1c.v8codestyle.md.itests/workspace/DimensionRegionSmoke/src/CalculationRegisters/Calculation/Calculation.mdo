@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CalculationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a4c83945-066f-4180-a7da-0c53a1ff01aa">
+  <producedTypes>
+    <selectionType typeId="ddae1032-4e60-4dbd-9089-aecdde7bcc28" valueTypeId="3b679617-ec57-42b1-a214-d82d383fd2be"/>
+    <listType typeId="410e24df-9ab3-4662-8f1b-44c60546655d" valueTypeId="a98a9361-278a-4e06-8995-bc4f52b4f4ce"/>
+    <managerType typeId="99aa2153-1a48-48bc-8631-f40d03cc9820" valueTypeId="b7dd0c56-84d0-41ee-b7d2-9c033730c5d8"/>
+    <recordSetType typeId="4cb8431e-63cb-4003-895d-6c31c50dd254" valueTypeId="896c3d90-c25d-4cc3-828e-1ed4ea19dcac"/>
+    <recordKeyType typeId="87e16737-ff93-4cd6-845c-b6ca1d9a28da" valueTypeId="51dd90a6-71cd-4e3c-83fc-b3aa834b885c"/>
+    <recordType typeId="3854696f-ffdd-477f-8245-5a4cb73a7f6e" valueTypeId="4f61fb82-5bbd-4e11-81bc-15d57f7accdb"/>
+    <recalcsType typeId="1130a767-214e-4966-94d7-f374e99ff468" valueTypeId="585f3687-54bf-4125-b432-06b8951bea7b"/>
+  </producedTypes>
+  <name>Calculation</name>
+  <useStandardCommands>true</useStandardCommands>
+  <periodicity>Month</periodicity>
+  <chartOfCalculationTypes>ChartOfCalculationTypes.CalculationTypes</chartOfCalculationTypes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="e215e4ae-1e82-4a15-80f3-3bbbf60de026">
+    <name>Value</name>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="f5ffc680-9602-4cf4-8795-12dc1d303345">
+    <name>AuditValue</name>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+</mdclass:CalculationRegister>

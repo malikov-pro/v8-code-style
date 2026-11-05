@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f7f7f050-d930-4d05-b063-54b57431ab20">
+  <name>Accumulation</name>
+  <dimensions uuid="f7f7f050-d930-4d05-b063-54b57431ab21">
+    <name>Optional</name><type><types>String</types><stringQualifiers><length>20</length></stringQualifiers></type>
+    <denyIncompleteValues>false</denyIncompleteValues>
+  </dimensions>
+  <dimensions uuid="f7f7f050-d930-4d05-b063-54b57431ab22">
+    <name>Required</name><type><types>String</types><stringQualifiers><length>20</length></stringQualifiers></type>
+    <denyIncompleteValues>true</denyIncompleteValues>
+  </dimensions>
+  <resources uuid="f7f7f050-d930-4d05-b063-54b57431ab23"><name>Value</name><type><types>Number</types><numberQualifiers><precision>10</precision></numberQualifiers></type></resources>
+</mdclass:AccumulationRegister>

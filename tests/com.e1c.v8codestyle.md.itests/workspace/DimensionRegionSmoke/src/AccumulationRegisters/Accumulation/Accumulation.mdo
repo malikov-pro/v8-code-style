@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1b5892f8-6b17-481f-a92b-290a9adb2139">
+  <producedTypes>
+    <selectionType typeId="def3eb82-8b74-4776-b253-dd419e0fbe72" valueTypeId="ce1b041c-66f0-45d9-9eb8-5e181674bb7b"/>
+    <listType typeId="ef3fbde3-964d-4edc-8925-b6effcec2d38" valueTypeId="0c7df9ca-68b6-4cee-9cff-c0145fc5f2cb"/>
+    <managerType typeId="0bec69f8-655f-4e60-8df1-27cb453c04ae" valueTypeId="4802183a-19a9-4ce3-8a1f-7e43254a6e45"/>
+    <recordSetType typeId="20db4226-0e5b-496f-a55c-10ea994a43b2" valueTypeId="aadb51e5-3847-475e-9d19-dc29e8ab1729"/>
+    <recordKeyType typeId="7957a8e6-9bea-4602-ab8f-15e09cec6e14" valueTypeId="e72128bf-3313-4897-982a-b702e077354c"/>
+    <recordType typeId="92e228b9-cc10-4433-8fa9-42bfba7d50ec" valueTypeId="ad7a27da-973d-4ab8-a604-3836a699fbfc"/>
+  </producedTypes>
+  <name>Accumulation</name>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="e22ae78b-8d4d-448f-9ad5-6ed9a1ac0a14">
+    <name>Value</name>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="6ed109df-8aaa-41e7-b46b-66146b98f972">
+    <name>AuditValue</name>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

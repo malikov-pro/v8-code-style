@@ -1,7 +1,7 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 50
+Общее количество проверок: 51
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -33,6 +33,7 @@
 | [db-object-anyref-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-anyref-type.html) | Реквизиты составного типа, такие как ЛюбаяСсылка и аналогичные |
 | [db-object-max-number-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-max-number-length.html) | Превышена максимальная длина числовых данных (31 знак) |
 | [db-object-ref-non-ref-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-ref-non-ref-type.html) | Реквизиты составного типа |
+| [deny-incomplete-values](../../../com.e1c.v8codestyle.md/check.descriptions/ru/deny-incomplete-values.html) | Запрет незаполненных значений у измерений регистров |
 | [document-post-in-privileged-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/document-post-in-privileged-mode.html) | В документе, предполагающем проведение, не установлен флаг "Привилегированный режим при проведении / отмене проведения" |
 | [extension-md-object-prefix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/extension-md-object-prefix.html) | У имени объекта отсутствует префикс расширения |
 | [functional-option-privileged-get-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/functional-option-privileged-get-mode.html) | В функциональной опции не установлен флаг "Привилегированный режим при получении" |

@@ -88,6 +88,7 @@ db-object-anyref-type
 db-object-max-number-length
 db-object-ref-non-ref-type
 deleting-collection-item
+deny-incomplete-values
 deprecated-attributes-8312
 deprecated-current-date
 deprecated-find
@@ -114,6 +115,7 @@ doc-comment-use-minus
 document-post-in-privileged-mode
 dont-use-modality-mode
 double-negatives
+duplicate-region
 duplicate-string-literal
 dynamic-access-method-not-found
 empty-code-block

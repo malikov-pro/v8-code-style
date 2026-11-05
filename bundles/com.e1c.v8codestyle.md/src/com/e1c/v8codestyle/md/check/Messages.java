@@ -140,6 +140,9 @@ final class Messages
     public static String FunctionalOptionParametersLimitCheck_title;
     public static String FunctionalOptionParametersLimitCheck_description;
     public static String FunctionalOptionParametersLimitCheck_too_many;
+    public static String DenyIncompleteValuesCheck_title;
+    public static String DenyIncompleteValuesCheck_description;
+    public static String DenyIncompleteValuesCheck_message;
 
     static
     {

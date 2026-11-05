@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d6bbba51-53cf-46e2-b5f4-67088f3b8640">
+  <producedTypes>
+    <objectType typeId="7aba87bd-b424-4bfa-b177-881bde70cdce" valueTypeId="e9b863f5-436d-4100-8ca5-6486d7af64b7"/>
+    <refType typeId="628bc746-9b93-4fc6-b154-bab145fd0d27" valueTypeId="c32539d1-2d40-43e2-961b-c69d1e580036"/>
+    <selectionType typeId="799f4fa0-7dec-42bf-93be-9371caf4006f" valueTypeId="e45b479f-b34e-47af-bb3c-d1b8a3a8e8b9"/>
+    <listType typeId="e5f2a845-55e5-4e5f-b7f7-d923ec48c58b" valueTypeId="c3468909-3958-4409-bf68-ee7988b202d3"/>
+    <managerType typeId="271d866d-107f-4360-8ad6-a4aa1964e75c" valueTypeId="2ddee63f-e276-409f-a067-e7bff0b4d22d"/>
+  </producedTypes>
+  <name>Recorder</name>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.Recorder.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <registerRecords>AccumulationRegister.Accumulation</registerRecords>
+  <registerRecords>AccountingRegister.Accounting</registerRecords>
+  <registerRecords>CalculationRegister.Calculation</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+</mdclass:Document>

@@ -192,6 +192,23 @@
   DoubleNegatives опровергнут AstNegationResearchTest на обеих платформах:
   NOT(NE)/NOT(NOT) со скобками корректны; NOT NOT без скобок — syntax error.
   Исследовательский тест не заменяет tests продуктовой диагностики.
+- **Opt-in metadata check и reset профиля (05.11):** в EDT6.0.102 возврат
+  единственной customization к default-off даёт `settingsChanged`, не `disabled`.
+  Старые metadata-маркеры могут остаться после повторного планирования.
+  Для deny-incomplete-values проверены actual enabled guard + адресная очистка
+  через settings listener и `ICheckScheduler.scheduleClearance` (принимает
+  **short UID**, не symbolic id). Проверять off/on и смену профиля без clean;
+  не распространять обход на другие проверки без воспроизведения.
+- **Deny audit settings race (05.11):** в живом workspace off/on и смена
+  профиля возвращали 2–3 маркера из4 при false-флагах. Trace подтвердил4ownerIDs
+  в scheduler, но не все check invocations. Немедленный scoped reschedule не
+  помог; повтор после `AFTER_BUILD_DD` barrier через system Job дал4/0/4.
+  Root cause внутреннего DD merge не сертифицирован. Проверять итоговый код
+  без trace на saved-p2; не заменять пропущенные вызовы clean/ручным retoggle.
+- **Соседние области EDT** могут быть связаны через `RegionPreprocessor.itemAfter`:
+  containment-предок сам по себе не означает вложенность. Для top-level scope
+  использовать `getFirstParentRegion` и отдельное исключение областей методов;
+  mixed module/method fixture проверять на syntax errors до сверки маркеров.
 - data-exchange-load: не засчитывать текстовое упоминание обращения внутри
   строк/комментариев как проверку. NOT(load) доступен в AST обеих платформ;
   regex-fallback удалён после красного regression (expected2/actual0).
