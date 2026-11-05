@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "settings": {
+    "duplicate-region": {
+      "enabled": false
+    },
+    "bsl-ql-hub": {
+      "enabled": true
+    }
+  }
+}

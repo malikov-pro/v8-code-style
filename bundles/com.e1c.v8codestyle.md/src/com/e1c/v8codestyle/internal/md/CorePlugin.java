@@ -17,6 +17,9 @@ import org.eclipse.core.runtime.Plugin;
 import org.eclipse.core.runtime.Status;
 import org.osgi.framework.BundleContext;
 
+import com._1c.g5.wiring.InjectorAwareServiceRegistrator;
+import com._1c.g5.wiring.ServiceInitialization;
+
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -34,6 +37,8 @@ public class CorePlugin
     private static CorePlugin plugin;
 
     private Injector injector;
+
+    private InjectorAwareServiceRegistrator registrator;
 
     /**
      * Returns the shared instance
@@ -110,6 +115,9 @@ public class CorePlugin
         super.start(bundleContext);
 
         plugin = this;
+        registrator = new InjectorAwareServiceRegistrator(bundleContext, this::getInjector);
+        ServiceInitialization.schedule(() -> registrator.managedService(DimensionAuditSettingsListener.class)
+            .activateBeforeRegistration().registerInjected());
 
     }
 
@@ -120,6 +128,8 @@ public class CorePlugin
     @Override
     public void stop(BundleContext bundleContext) throws Exception
     {
+        registrator.deactivateManagedServices(this);
+        registrator.unregisterServices();
         plugin = null;
         injector = null;
 

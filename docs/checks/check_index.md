@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 329
+Общее количество проверок 1С:Стандарты разработки V8: 331
 
 - form: 15
-- md: 50
-- bsl: 216
+- md: 51
+- bsl: 217
 - ql: 21
 - right: 27
 
@@ -103,6 +103,7 @@
 | [db-object-max-number-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-max-number-length.html) | Превышена максимальная длина числовых данных (31 знак) |
 | [db-object-ref-non-ref-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-ref-non-ref-type.html) | Реквизиты составного типа |
 | [deleting-collection-item](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deleting-collection-item.html) | Удаление элемента при обходе коллекции |
+| [deny-incomplete-values](../../../com.e1c.v8codestyle.md/check.descriptions/ru/deny-incomplete-values.html) | Запрет незаполненных значений у измерений регистров |
 | [deprecated-attributes-8312](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-attributes-8312.html) | Устаревшие свойства диаграмм до 8.3.12 |
 | [deprecated-current-date](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-current-date.html) | Использование устаревшего метода «ТекущаяДата» |
 | [deprecated-find](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-find.html) | Использование устаревшего метода «Найти» |
@@ -129,6 +130,7 @@
 | [document-post-in-privileged-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/document-post-in-privileged-mode.html) | В документе, предполагающем проведение, не установлен флаг "Привилегированный режим при проведении / отмене проведения" |
 | [dont-use-modality-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/dont-use-modality-mode.html) | Checks dont use modality call in dont use modality mode. |
 | [double-negatives](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/double-negatives.html) | Двойные отрицания |
+| [duplicate-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/duplicate-region.html) | Повторяющиеся разделы модуля |
 | [duplicate-string-literal](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/duplicate-string-literal.html) | Повторяющийся строковый литерал |
 | [dynamic-access-method-not-found](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/dynamic-access-method-not-found.html) | Метод в объекте не найден |
 | [empty-code-block](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/empty-code-block.html) | Пустой блок кода |

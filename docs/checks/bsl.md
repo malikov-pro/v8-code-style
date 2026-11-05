@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 216
+Общее количество проверок: 217
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -82,6 +82,7 @@
 | [doc-comment-use-minus](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-use-minus.html) | Использование только дефис-минуса в документирующем комментарии |
 | [dont-use-modality-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/dont-use-modality-mode.html) | Checks dont use modality call in dont use modality mode. |
 | [double-negatives](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/double-negatives.html) | Двойные отрицания |
+| [duplicate-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/duplicate-region.html) | Повторяющиеся разделы модуля |
 | [duplicate-string-literal](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/duplicate-string-literal.html) | Повторяющийся строковый литерал |
 | [dynamic-access-method-not-found](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/dynamic-access-method-not-found.html) | Метод в объекте не найден |
 | [empty-code-block](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/empty-code-block.html) | Пустой блок кода |

@@ -1066,6 +1066,9 @@ final class Messages
     public static String UnaryPlusInConcatenationCheck_message;
     public static String DoubleNegativesCheck_description;
     public static String DoubleNegativesCheck_message;
+    public static String DuplicateRegionCheck_title;
+    public static String DuplicateRegionCheck_description;
+    public static String DuplicateRegionCheck_message;
 
     static
     {
