@@ -202,6 +202,8 @@ module-undefined-method
 module-undefined-variable
 module-unused-local-variable
 module-unused-method
+multilingual-string-has-all-declared-languages
+multilingual-string-using-with-template
 nested-constructors-in-structure-declaration
 nested-statements
 nested-ternary-operator

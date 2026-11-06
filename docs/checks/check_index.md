@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 335
+Общее количество проверок 1С:Стандарты разработки V8: 337
 
 - form: 15
 - md: 54
-- bsl: 218
+- bsl: 220
 - ql: 21
 - right: 27
 
@@ -217,6 +217,8 @@
 | [module-undefined-variable](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/module-undefined-variable.html) | Переменная не определена |
 | [module-unused-local-variable](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/module-unused-local-variable.html) | Проверка неиспользуемых локальных переменных |
 | [module-unused-method](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/module-unused-method.html) | Проверка неиспользуемых методов |
+| [multilingual-string-has-all-declared-languages](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/multilingual-string-has-all-declared-languages.html) | НСтр должна содержать все заявленные языки |
+| [multilingual-string-using-with-template](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/multilingual-string-using-with-template.html) | Частично локализованная НСтр используется в СтрШаблон |
 | [nested-constructors-in-structure-declaration](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/nested-constructors-in-structure-declaration.html) | Вложенные конструкторы при объявлении структуры |
 | [nested-statements](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/nested-statements.html) | Слишком большая вложенность операторов |
 | [nested-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/nested-ternary-operator.html) | Вложенный тернарный оператор |
