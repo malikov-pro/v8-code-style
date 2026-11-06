@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a4b38674-1032-4b4c-adbb-21a22934d817">
+  <name>CommonModuleConflicts</name><defaultRunMode>ManagedApplication</defaultRunMode>
+  <defaultLanguage>Language.English</defaultLanguage><compatibilityMode>8.3.23</compatibilityMode>
+  <languages uuid="c640681a-2771-4389-b3db-a59108ba1267"><name>English</name><languageCode>en</languageCode></languages>
+  <commonModules>CommonModule.CommonModule</commonModules>
+  <commonModules>CommonModule.ServerProvider</commonModules>
+  <commonModules>CommonModule.ClientProvider</commonModules>
+  <commonModules>CommonModule.CallProvider</commonModules>
+  <commonForms>CommonForm.Probe</commonForms>
+  <catalogs>Catalog.Products</catalogs>
+  <informationRegisters>InformationRegister.Prices</informationRegisters>
+  <constants>Constant.ProbeValue</constants>
+</mdclass:Configuration>

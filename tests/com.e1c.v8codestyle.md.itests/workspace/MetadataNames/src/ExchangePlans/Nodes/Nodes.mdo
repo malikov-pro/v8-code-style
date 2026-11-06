@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ExchangePlan xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="14bccf61-f89b-4448-8b8d-2bca6db787d4">
+  <name>Nodes</name><attributes uuid="26e02794-00c2-4192-88f9-e8431831d8d4"><name>Nodes</name><type><types>Boolean</types></type></attributes>
+</mdclass:ExchangePlan>

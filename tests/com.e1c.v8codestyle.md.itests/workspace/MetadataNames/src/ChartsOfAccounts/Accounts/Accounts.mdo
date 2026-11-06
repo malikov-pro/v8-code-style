@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfAccounts xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="232589c4-1ac7-463e-91f9-029b4f092dbe">
+  <name>Accounts</name><attributes uuid="f8e3968b-30bd-4351-8313-f4933fe8ba10"><name>Accounts</name><type><types>Boolean</types></type></attributes>
+  <accountingFlags uuid="056eeec2-0408-4bc4-a0fc-33417265e175"><name>Flag</name><type><types>Boolean</types></type></accountingFlags>
+  <extDimensionAccountingFlags uuid="583604ce-e4b9-473f-8206-df34bf2b7427"><name>ExtFlag</name><type><types>Boolean</types></type></extDimensionAccountingFlags>
+</mdclass:ChartOfAccounts>

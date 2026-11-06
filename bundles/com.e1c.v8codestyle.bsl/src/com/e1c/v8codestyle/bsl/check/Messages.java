@@ -1069,6 +1069,9 @@ final class Messages
     public static String DuplicateRegionCheck_title;
     public static String DuplicateRegionCheck_description;
     public static String DuplicateRegionCheck_message;
+    public static String CommonModuleVariableConflictCheck_issue;
+    public static String CommonModuleVariableConflictCheck_title;
+    public static String CommonModuleVariableConflictCheck_description;
 
     static
     {

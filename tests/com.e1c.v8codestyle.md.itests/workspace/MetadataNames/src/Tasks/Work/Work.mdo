@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Task xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9b90855a-3d30-469d-bbdc-222ad76ffbfb">
+  <name>Work</name><attributes uuid="b7ce3563-43c6-4bf5-8bea-1977a0ea9862"><name>Work</name><type><types>Boolean</types></type></attributes>
+</mdclass:Task>

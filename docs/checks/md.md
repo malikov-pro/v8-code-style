@@ -1,7 +1,7 @@
 # Проверки метаданных 1С
 
 
-Общее количество проверок: 51
+Общее количество проверок: 54
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -28,6 +28,7 @@
 | [common-module-name-global-client](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-global-client.html) | Глобальный клиентский общий модуль должен оканчиваться на суффикс Глобальный без суффикса Клиент |
 | [common-module-name-server-call](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-server-call.html) | Общий модуль, для которого предусмотрен вызов сервера |
 | [common-module-name-server-call-cached](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-server-call-cached.html) | Общий модуль с повторно используемыми значениями |
+| [common-module-name-words](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-words.html) | Нерекомендуемые слова в имени общего модуля |
 | [common-module-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-type.html) | Общий модуль имеет некорректный тип |
 | [configuration-data-lock-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/configuration-data-lock-mode.html) | Режим блокировки данных конфигурации |
 | [db-object-anyref-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/db-object-anyref-type.html) | Реквизиты составного типа, такие как ЛюбаяСсылка и аналогичные |
@@ -36,6 +37,7 @@
 | [deny-incomplete-values](../../../com.e1c.v8codestyle.md/check.descriptions/ru/deny-incomplete-values.html) | Запрет незаполненных значений у измерений регистров |
 | [document-post-in-privileged-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/document-post-in-privileged-mode.html) | В документе, предполагающем проведение, не установлен флаг "Привилегированный режим при проведении / отмене проведения" |
 | [extension-md-object-prefix](../../../com.e1c.v8codestyle.md/check.descriptions/ru/extension-md-object-prefix.html) | У имени объекта отсутствует префикс расширения |
+| [forbidden-metadata-name](../../../com.e1c.v8codestyle.md/check.descriptions/ru/forbidden-metadata-name.html) | Запрещённые имена метаданных |
 | [functional-option-privileged-get-mode](../../../com.e1c.v8codestyle.md/check.descriptions/ru/functional-option-privileged-get-mode.html) | В функциональной опции не установлен флаг "Привилегированный режим при получении" |
 | [md-list-object-presentation](../../../com.e1c.v8codestyle.md/check.descriptions/ru/md-list-object-presentation.html) | Не заполнено ни представление объекта, ни представление списка |
 | [md-object-attribute-comment-incorrect-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/md-object-attribute-comment-incorrect-type.html) | Реквизит «Комментарий» у документов |
@@ -46,6 +48,7 @@
 | [mdo-scheduled-job-description](../../../com.e1c.v8codestyle.md/check.descriptions/ru/mdo-scheduled-job-description.html) | Задано наименование предопределенного регламентного задания |
 | [missing-event-subscription-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/missing-event-subscription-handler.html) | Обработчик подписки требует серверного модуля |
 | [register-resource-precision](../../../com.e1c.v8codestyle.md/check.descriptions/ru/register-resource-precision.html) | Длина ресурса регистра накопления или бухгалтерии |
+| [same-metadata-object-and-child-names](../../../com.e1c.v8codestyle.md/check.descriptions/ru/same-metadata-object-and-child-names.html) | Имя поля метаданных совпадает с именем владельца |
 | [scheduled-job-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/scheduled-job-handler.html) | Контракт обработчика регламентного задания |
 | [scheduled-job-periodicity-too-short](../../../com.e1c.v8codestyle.md/check.descriptions/ru/scheduled-job-periodicity-too-short.html) | Периодичность выполнения регламентного задания меньше одной минуты. |
 | [subsystem-synonym-too-long](../../../com.e1c.v8codestyle.md/check.descriptions/ru/subsystem-synonym-too-long.html) | Длина названия раздела превышает 35 символов |

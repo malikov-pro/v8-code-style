@@ -50,6 +50,7 @@ apk-01196-french-quotes-md
 apk-01205-main-language-code
 apk-01214-ds-field-alias
 apk-01216-query-field-alias
+apk-01218-common-module-variable-conflict
 apk-01219-cut-comments-format
 apk-01364-linux-unsupported
 bad-exception-category
@@ -73,6 +74,7 @@ common-module-name-global
 common-module-name-global-client
 common-module-name-server-call
 common-module-name-server-call-cached
+common-module-name-words
 common-module-named-self-reference
 common-module-type
 compare-with-boolean
@@ -132,6 +134,7 @@ extension-method-visible-mode
 extension-variable-prefix
 external-app-starting
 file-system-access
+forbidden-metadata-name
 form-commands-single-action-handler
 form-dynamic-list-item-title
 form-item-visible-settings-by-roles
@@ -258,6 +261,7 @@ right-update-database-configuration
 right-view-event-log
 role-right-has-rls
 rollback-transaction
+same-metadata-object-and-child-names
 scheduled-job-handler
 scheduled-job-periodicity-too-short
 secure-password-storage
