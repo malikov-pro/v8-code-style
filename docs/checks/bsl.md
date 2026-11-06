@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 217
+Общее количество проверок: 218
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -35,6 +35,7 @@
 | [apk-01194-no-french-quotes](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01194-no-french-quotes.html) | Французские кавычки «ёлочки» в интерфейсных текстах |
 | [apk-01205-main-language-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01205-main-language-code.html) | Код основного языка получается через Метаданные.ОсновнойЯзык |
 | [apk-01216-query-field-alias](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01216-query-field-alias.html) | Псевдоним в тексте запроса совпадает с именем класса объектов метаданных |
+| [apk-01218-common-module-variable-conflict](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01218-common-module-variable-conflict.html) | Конфликт имени переменной и общего модуля |
 | [apk-01219-cut-comments-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01219-cut-comments-format.html) | Оформление вырезаемых служебных комментариев |
 | [apk-01364-linux-unsupported](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01364-linux-unsupported.html) | Методы и объекты, не поддерживаемые ОС Linux |
 | [bad-exception-category](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bad-exception-category.html) | Недопустимая категория исключений |

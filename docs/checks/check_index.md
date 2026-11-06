@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 331
+Общее количество проверок 1С:Стандарты разработки V8: 335
 
 - form: 15
-- md: 51
-- bsl: 217
+- md: 54
+- bsl: 218
 - ql: 21
 - right: 27
 
@@ -65,6 +65,7 @@
 | [apk-01205-main-language-code](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01205-main-language-code.html) | Код основного языка получается через Метаданные.ОсновнойЯзык |
 | [apk-01214-ds-field-alias](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-01214-ds-field-alias.html) | Псевдоним поля запроса динамического списка совпадает с именем класса объектов метаданных |
 | [apk-01216-query-field-alias](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01216-query-field-alias.html) | Псевдоним в тексте запроса совпадает с именем класса объектов метаданных |
+| [apk-01218-common-module-variable-conflict](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01218-common-module-variable-conflict.html) | Конфликт имени переменной и общего модуля |
 | [apk-01219-cut-comments-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01219-cut-comments-format.html) | Оформление вырезаемых служебных комментариев |
 | [apk-01364-linux-unsupported](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-01364-linux-unsupported.html) | Методы и объекты, не поддерживаемые ОС Linux |
 | [bad-exception-category](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bad-exception-category.html) | Недопустимая категория исключений |
@@ -88,6 +89,7 @@
 | [common-module-name-global-client](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-global-client.html) | Глобальный клиентский общий модуль должен оканчиваться на суффикс Глобальный без суффикса Клиент |
 | [common-module-name-server-call](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-server-call.html) | Общий модуль, для которого предусмотрен вызов сервера |
 | [common-module-name-server-call-cached](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-server-call-cached.html) | Общий модуль с повторно используемыми значениями |
+| [common-module-name-words](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-name-words.html) | Нерекомендуемые слова в имени общего модуля |
 | [common-module-named-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-named-self-reference.html) | Избыточное обращение по собственному имени внутри общего модуля |
 | [common-module-type](../../../com.e1c.v8codestyle.md/check.descriptions/ru/common-module-type.html) | Общий модуль имеет некорректный тип |
 | [compare-with-boolean](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/compare-with-boolean.html) | Избыточное сравнение с булевым литералом |
@@ -147,6 +149,7 @@
 | [extension-variable-prefix](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-variable-prefix.html) | У имени переменной отсутствует префикс расширения |
 | [external-app-starting](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/external-app-starting.html) | Аудит запуска внешних приложений |
 | [file-system-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/file-system-access.html) | Аудит доступа к файловой системе |
+| [forbidden-metadata-name](../../../com.e1c.v8codestyle.md/check.descriptions/ru/forbidden-metadata-name.html) | Запрещённые имена метаданных |
 | [form-commands-single-action-handler](../../../com.e1c.v8codestyle.form/check.descriptions/ru/form-commands-single-action-handler.html) | У каждого действия команды должна быть назначена своя процедура-обработчик |
 | [form-dynamic-list-item-title](../../../com.e1c.v8codestyle.form/check.descriptions/ru/form-dynamic-list-item-title.html) | Пустой заголовок для колонок динамического списка |
 | [form-item-visible-settings-by-roles](../../../com.e1c.v8codestyle.form/check.descriptions/ru/form-item-visible-settings-by-roles.html) | Использована ролевая настройка видимости (редактирования, использования) для элемента формы |
@@ -273,6 +276,7 @@
 | [right-view-event-log](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-view-event-log.html) | Право установлено: Журнал регистрации |
 | [role-right-has-rls](../../../com.e1c.v8codestyle.right/check.descriptions/ru/role-right-has-rls.html) | Право роли содержит текст ограничения доступа (RLS) |
 | [rollback-transaction](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/rollback-transaction.html) | Проверка нарушения схемы работы с транзакциями |
+| [same-metadata-object-and-child-names](../../../com.e1c.v8codestyle.md/check.descriptions/ru/same-metadata-object-and-child-names.html) | Имя поля метаданных совпадает с именем владельца |
 | [scheduled-job-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/scheduled-job-handler.html) | Контракт обработчика регламентного задания |
 | [scheduled-job-periodicity-too-short](../../../com.e1c.v8codestyle.md/check.descriptions/ru/scheduled-job-periodicity-too-short.html) | Периодичность выполнения регламентного задания меньше одной минуты. |
 | [secure-password-storage](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/secure-password-storage.html) | Проверка использования безопасного хранилища для паролей |
