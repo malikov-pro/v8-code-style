@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfCalculationTypes xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="db53d8bd-61e7-476e-b393-ab1ddb01c9d5">
+  <name>Accruals</name><attributes uuid="1269c7d8-ee5d-498f-9352-f22ded61a38f"><name>Accruals</name><type><types>Boolean</types></type></attributes>
+</mdclass:ChartOfCalculationTypes>
