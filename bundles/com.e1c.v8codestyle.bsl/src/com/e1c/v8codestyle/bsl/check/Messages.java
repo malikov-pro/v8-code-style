@@ -26,6 +26,8 @@ final class Messages
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
     public static String MultilingualStringHasAllDeclaredLanguagesCheck_title;
     public static String MultilingualStringHasAllDeclaredLanguagesCheck_description;
+    public static String MultilingualStringUsingWithTemplateCheck_title;
+    public static String MultilingualStringUsingWithTemplateCheck_description;
     public static String MultilingualStringCheck_languages;
     public static String MultilingualStringCheck_message;
 
