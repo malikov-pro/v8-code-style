@@ -48,6 +48,8 @@
             category="com.e1c.v8codestyle.md"
             class="com.e1c.v8codestyle.internal.md.ExecutableExtensionFactory:com.e1c.v8codestyle.md.commonmodule.check.CommonModuleNameClient">
       </check>
+      <check category="com.e1c.v8codestyle.md"
+            class="com.e1c.v8codestyle.internal.md.ExecutableExtensionFactory:com.e1c.v8codestyle.md.commonmodule.check.CommonModuleNameWordsCheck"/>
       <check
             category="com.e1c.v8codestyle.md"
             class="com.e1c.v8codestyle.internal.md.ExecutableExtensionFactory:com.e1c.v8codestyle.md.commonmodule.check.CommonModuleNameClientServer">
