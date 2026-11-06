@@ -24,6 +24,10 @@ final class Messages
     extends NLS
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
+    public static String MultilingualStringHasAllDeclaredLanguagesCheck_title;
+    public static String MultilingualStringHasAllDeclaredLanguagesCheck_description;
+    public static String MultilingualStringCheck_languages;
+    public static String MultilingualStringCheck_message;
 
     public static String SetPrivilegedModeCheck_title;
     public static String SetPrivilegedModeCheck_description;
