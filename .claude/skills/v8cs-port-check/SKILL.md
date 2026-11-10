@@ -61,7 +61,7 @@ SELECT article, rule, name FROM backlog
   не только root markers. Не совмещать root traversal с containment-якорем.
 - Локально: точечный прогон своего теста —
   `bash scripts/test-check.sh <TestClassName[,NeighborTest]> --module <канал>`;
-  `--profile edt-2026.2` для второй платформы. Clean reactor внутри.
+  `--profile edt-2026.2` — алиас того же режима 2026.2.2. Clean reactor внутри.
   Незнакомое API сначала javap/export/пример; research на один вопрос.
 
 ## 3.5. Изолированный пример в EDT
@@ -91,9 +91,9 @@ SELECT article, rule, name FROM backlog
   | Шаг | Проверка |
   |---|---|
   | Итерация | Целевой класс и соседние tests канала |
-  | Перед merge мини-пачки | Весь затронутый itests-модуль **обеих платформ** |
+  | Перед merge мини-пачки | Весь затронутый itests-модуль (EDT 2026.2.2 — единственная платформа) |
   | Только markdown/messages-тексты | CheckDescriptionTest канала +generated index |
-  | Основной batch/общая инфраструктура или dependencies/релиз | `compile.sh` всех modules **обеих платформ** |
+  | Основной batch/общая инфраструктура или dependencies/релиз | `compile.sh` всех modules (2026.2.2) |
 - Snapshot freeze/один Maven; active script/source/tests не менять.
   Сохранять commit+diff/hash, exit code/профиль/время/XML counts, p2 профиля
   до следующего clean. Новые ключи/EP/parameters не считать doc-only.
@@ -146,13 +146,17 @@ Worktree только по явной просьбе пользователя.
   делаем сразу; где исправление «только пользователем» — фикс не делаем,
   в карточке пишем рекомендацию.
 
-## Примеры в расширении АПК.ОшибкиДляПроверки (MCP edt-apk)
+## Примеры в расширении АПК.ОшибкиДляПроверки (MCP стенда)
 
-Активный workspace `~/edt/apk`, MCP `edt-apk`. Actual project names читать
-через `list_projects`, не подставлять старые имена. Известные изолированные
-примеры находятся в `v8cs.Smoke1014`, `v8cs.OptionParams15`; для расширения
-использовался `apk.ПроверкаОшибок`. Выбирать native/extension owner по
-инварианту; не превращать исходную рабочую конфигурацию в набор нарушений.
+Активный стенд — `~/edt/apk_2026` (проекты `apk`, `apk.ПроверкаОшибок`).
+Имя MCP-сервера и actual project names читать через `list_projects`: `edt_apk-*`
+`mcphub` подхватывает примерно через минуту после старта EDT (кратковременное
+отсутствие — норма), а `edt_rt_test-*` — чужой
+Windows-стенд. Известные изолированные примеры прежних сессий —
+`v8cs.Smoke1014`, `v8cs.OptionParams15`; для расширения использовался
+`apk.ПроверкаОшибок`. Не подставлять старые имена вслепую. Выбирать
+native/extension owner по инварианту; не превращать исходную рабочую
+конфигурацию в набор нарушений.
 
 - Создание: `create_metadata` (projectName=`<разрешённый-smoke-проект>`,
   fqn=`CommonModule.ош_<Slug>`) → текст: `write_module_source`
