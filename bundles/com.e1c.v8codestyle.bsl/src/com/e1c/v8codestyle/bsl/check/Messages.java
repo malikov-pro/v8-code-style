@@ -1089,6 +1089,12 @@ final class Messages
     public static String MissingVariablesDescriptionCheck_title;
     public static String MissingVariablesDescriptionCheck_description;
     public static String MissingVariablesDescriptionCheck_message;
+    public static String CanonicalSpellingKeywordsCheck_title;
+    public static String CanonicalSpellingKeywordsCheck_description;
+    public static String CanonicalSpellingKeywordsCheck_message;
+    public static String CrazyMultilineStringCheck_title;
+    public static String CrazyMultilineStringCheck_description;
+    public static String CrazyMultilineStringCheck_message;
 
     static
     {

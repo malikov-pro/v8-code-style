@@ -59,6 +59,7 @@ begin-transaction
 bsl-canonical-pragma
 bsl-nstr-string-literal-format
 bsl-variable-name-invalid
+canonical-spelling-keywords
 change-and-validate-instead-of-around
 code-after-async-call
 cognitive-complexity
@@ -80,6 +81,7 @@ common-module-type
 compare-with-boolean
 configuration-data-lock-mode
 constructor-function-return-section
+crazy-multiline-string
 create-query-in-cycle
 current-row-access
 cyclomatic-complexity
