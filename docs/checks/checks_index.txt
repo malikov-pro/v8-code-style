@@ -278,6 +278,7 @@ select-top-without-order-by
 self-assign
 self-insertion
 semicolon-missing
+server-calls-in-form-events
 server-execution-safe-mode
 set-privileged-mode
 space-at-start-comment
