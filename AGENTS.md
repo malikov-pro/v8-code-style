@@ -6,9 +6,9 @@
 каталога — в `../AGENTS.md`; этот файл — первоисточник по проекту.
 
 > **Состояние на 09.11.2026:** `develop` = `8645839d` (локализация NStr
-> влита и отправлена), версия `0.11.0-SNAPSHOT`, 337 проверок. Реестр LS —
-> 189 диагностик (28 ported / 117 partial / 20 builtin / 22 candidate /
-> 2 blocker; native-prescreen волны 0 выполнен 09.11). Актуальный план портов — `../_notes/PLAN-2026-11-09-porting-proposed.md`
+> влита и отправлена), версия `0.11.0-SNAPSHOT`, 340 проверок. Реестр LS —
+> 189 диагностик (28 ported / 120 partial / 20 builtin / 19 candidate /
+> 2 blocker; native-prescreen 09.11, волна A1 13.11). Актуальный план портов — `../_notes/PLAN-2026-11-09-porting-proposed.md`
 > (волны 0–D), предыдущий handoff — `../_notes/HANDOFF-2026-11-06-v8cs-localization-complete.md`.
 > Ниже — устойчивые правила; исторические блоки помечены явно.
 

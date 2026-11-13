@@ -1078,6 +1078,17 @@ final class Messages
     public static String CommonModuleVariableConflictCheck_issue;
     public static String CommonModuleVariableConflictCheck_title;
     public static String CommonModuleVariableConflictCheck_description;
+    public static String ExtraCommasCheck_title;
+    public static String ExtraCommasCheck_description;
+    public static String ExtraCommasCheck_message;
+    public static String LatinAndCyrillicSymbolInWordCheck_title;
+    public static String LatinAndCyrillicSymbolInWordCheck_description;
+    public static String LatinAndCyrillicSymbolInWordCheck_message;
+    public static String LatinAndCyrillicSymbolInWordCheck_excludeWords;
+    public static String LatinAndCyrillicSymbolInWordCheck_allowTrailing;
+    public static String MissingVariablesDescriptionCheck_title;
+    public static String MissingVariablesDescriptionCheck_description;
+    public static String MissingVariablesDescriptionCheck_message;
 
     static
     {

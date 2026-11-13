@@ -133,6 +133,7 @@ extension-method-prefix
 extension-method-visible-mode
 extension-variable-prefix
 external-app-starting
+extra-commas
 file-system-access
 forbidden-metadata-name
 form-commands-single-action-handler
@@ -161,6 +162,7 @@ internet-access
 invocation-form-event-handler
 invocation-parameter-type-intersect
 join-with-virtual-table
+latin-and-cyrillic-symbol-in-word
 line-length
 link-part-comment-space
 lock-out-of-try
@@ -185,6 +187,7 @@ missing-event-subscription-handler
 missing-space
 missing-temp-storage-deletion
 missing-temporary-file-deletion
+missing-variables-description
 module-accessibility-at-client
 module-attachable-event-handler-name
 module-consecutive-blank-lines

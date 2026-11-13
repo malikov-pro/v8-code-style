@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 220
+Общее количество проверок: 223
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -98,6 +98,7 @@
 | [extension-method-visible-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-method-visible-mode.html) | У метода в расширении модуля та же видимость, что и оригинального метода |
 | [extension-variable-prefix](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extension-variable-prefix.html) | У имени переменной отсутствует префикс расширения |
 | [external-app-starting](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/external-app-starting.html) | Аудит запуска внешних приложений |
+| [extra-commas](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/extra-commas.html) | Лишняя запятая в списке параметров вызова |
 | [file-system-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/file-system-access.html) | Аудит доступа к файловой системе |
 | [form-module-missing-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-module-missing-pragma.html) | Всегда использовать директивы компиляции в модуле формы |
 | [form-module-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/form-module-pragma.html) | Использование директив компиляции модуля формы |
@@ -115,6 +116,7 @@
 | [internet-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/internet-access.html) | Аудит обращения к интернет-ресурсам |
 | [invocation-form-event-handler](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/invocation-form-event-handler.html) | Программный вызов обработчика события формы |
 | [invocation-parameter-type-intersect](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/invocation-parameter-type-intersect.html) | Вызываемый тип пересекается с типом параметра |
+| [latin-and-cyrillic-symbol-in-word](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/latin-and-cyrillic-symbol-in-word.html) | Смешение латиницы и кириллицы в слове |
 | [line-length](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/line-length.html) | Длина строки |
 | [link-part-comment-space](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/link-part-comment-space.html) | Пробел в описании метода перед ссылкой |
 | [lock-out-of-try](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/lock-out-of-try.html) | Вызов "Заблокировать()" находится вне попытки |
@@ -131,6 +133,7 @@
 | [missing-space](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missing-space.html) | Отсутствует пробел |
 | [missing-temp-storage-deletion](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missing-temp-storage-deletion.html) | Отсутствует удаление из временного хранилища |
 | [missing-temporary-file-deletion](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missing-temporary-file-deletion.html) | Отсутствует удаление временного файла после использования. |
+| [missing-variables-description](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/missing-variables-description.html) | Переменная модуля без описания |
 | [module-accessibility-at-client](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/module-accessibility-at-client.html) | Метод или переменная доступны НаКлиенте |
 | [module-attachable-event-handler-name](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/module-attachable-event-handler-name.html) | Имя подключаемого обработчка события |
 | [module-consecutive-blank-lines](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/module-consecutive-blank-lines.html) | Проверка максимального количства пустых строк |
