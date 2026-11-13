@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 225
+Общее количество проверок: 226
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -65,6 +65,7 @@
 | [deprecated-find](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-find.html) | Использование устаревшего метода «Найти» |
 | [deprecated-method-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-method-call.html) | Устаревшее свойство платформы |
 | [deprecated-procedure-outside-deprecated-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-procedure-outside-deprecated-region.html) | Устаревшая процедура (функция) расположена вне области "УстаревшиеПроцедурыИФункции" |
+| [deprecated-type-managed-form](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/deprecated-type-managed-form.html) | Устаревшее имя типа управляемой формы |
 | [disable-safe-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/disable-safe-mode.html) | Отключение безопасного режима |
 | [doc-comment-collection-item-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-collection-item-type.html) | Тип коллекций в документирующем комментарии содержит тип элемента коллекции |
 | [doc-comment-complex-type-with-link](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/doc-comment-complex-type-with-link.html) | Поле документирующего комментария использует объявление сложного типа вместо ссылки на тип |

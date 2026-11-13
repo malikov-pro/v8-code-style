@@ -98,6 +98,7 @@ deprecated-current-date
 deprecated-find
 deprecated-method-call
 deprecated-procedure-outside-deprecated-region
+deprecated-type-managed-form
 disable-safe-mode
 doc-comment-collection-item-type
 doc-comment-complex-type-with-link
