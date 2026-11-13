@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 223
+Общее количество проверок: 225
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -44,6 +44,7 @@
 | [bsl-canonical-pragma](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-canonical-pragma.html) | Аннотация написана канонически |
 | [bsl-nstr-string-literal-format](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-nstr-string-literal-format.html) | НСтр формат строкового литерала |
 | [bsl-variable-name-invalid](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/bsl-variable-name-invalid.html) | Правила образования имен переменных |
+| [canonical-spelling-keywords](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/canonical-spelling-keywords.html) | Некорректное написание ключевого слова |
 | [change-and-validate-instead-of-around](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/change-and-validate-instead-of-around.html) | Используется аннотация &ИзменениеИКонтроль вместо &Вместо |
 | [code-after-async-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/code-after-async-call.html) | Код расположен после асинхронного вызова |
 | [cognitive-complexity](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/cognitive-complexity.html) | Когнитивная сложность метода выше допустимой |
@@ -53,6 +54,7 @@
 | [common-module-named-self-reference](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/common-module-named-self-reference.html) | Избыточное обращение по собственному имени внутри общего модуля |
 | [compare-with-boolean](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/compare-with-boolean.html) | Избыточное сравнение с булевым литералом |
 | [constructor-function-return-section](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/constructor-function-return-section.html) | Секция возвращаемого значения функции-конструктора данных |
+| [crazy-multiline-string](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/crazy-multiline-string.html) | Строка собрана из нескольких фрагментов |
 | [create-query-in-cycle](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/create-query-in-cycle.html) | Создание или выполнение запроса в цикле |
 | [current-row-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/current-row-access.html) | Обращение к текущей строке динамического списка |
 | [cyclomatic-complexity](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/cyclomatic-complexity.html) | Цикломатическая сложность метода выше допустимой |
