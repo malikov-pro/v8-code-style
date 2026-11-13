@@ -45,10 +45,6 @@
    </extension>
    <extension point="com.e1c.g5.v8.dt.check.checks">
       <check category="com.e1c.v8codestyle.bsl"
-            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DeprecatedTypeManagedFormCheck"/>
-   </extension>
-   <extension point="com.e1c.g5.v8.dt.check.checks">
-      <check category="com.e1c.v8codestyle.bsl"
             class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ServerCallsInFormEventsCheck"/>
    </extension>
    <extension point="com.e1c.g5.v8.dt.check.checks">
