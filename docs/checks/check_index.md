@@ -1,12 +1,12 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 343
+Общее количество проверок 1С:Стандарты разработки V8: 344
 
 - form: 15
 - md: 54
 - bsl: 226
-- ql: 21
+- ql: 22
 - right: 27
 
 
@@ -242,6 +242,7 @@
 | [ql-cast-to-max-number](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-cast-to-max-number.html) | Выражение к максимальному числу в запросе |
 | [ql-composite-reference-dereference](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-composite-reference-dereference.html) | Разыменование составной ссылки в запросе |
 | [ql-constants-in-binary-operation](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-constants-in-binary-operation.html) | В запросе в бинарной операции используются константные значения или параметры. |
+| [ql-fields-from-joins-without-isnull](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-fields-from-joins-without-isnull.html) | Поле внешнего соединения без ЕСТЬNULL |
 | [ql-full-outer-join](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-full-outer-join.html) | ql-full-outer-join |
 | [ql-join-to-sub-query](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-join-to-sub-query.html) | Соединение запроса с подзапросом |
 | [ql-like-expression-with-field](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-like-expression-with-field.html) | В качестве правого операнда операции сравнения "ПОДОБНО" указано поле таблицы. |
