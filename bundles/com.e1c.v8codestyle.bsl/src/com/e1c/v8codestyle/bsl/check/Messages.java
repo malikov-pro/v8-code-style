@@ -1095,6 +1095,9 @@ final class Messages
     public static String CrazyMultilineStringCheck_title;
     public static String CrazyMultilineStringCheck_description;
     public static String CrazyMultilineStringCheck_message;
+    public static String ServerCallsInFormEventsCheck_title;
+    public static String ServerCallsInFormEventsCheck_description;
+    public static String ServerCallsInFormEventsCheck_message;
 
     static
     {

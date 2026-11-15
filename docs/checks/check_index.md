@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 342
+Общее количество проверок 1С:Стандарты разработки V8: 343
 
 - form: 15
 - md: 54
-- bsl: 225
+- bsl: 226
 - ql: 21
 - right: 27
 
@@ -292,6 +292,7 @@
 | [self-assign](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/self-assign.html) | Присвоение переменной самой себе |
 | [self-insertion](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/self-insertion.html) | Вставка коллекции в саму себя |
 | [semicolon-missing](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/semicolon-missing.html) | Отсутствие точки с запятой в конце оператора |
+| [server-calls-in-form-events](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/server-calls-in-form-events.html) | Серверный вызов в событии формы |
 | [server-execution-safe-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/server-execution-safe-mode.html) | Отсутствует включение безопасного режима перед вызовом метода "Выполнить" или "Вычислить" |
 | [set-privileged-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/set-privileged-mode.html) | Аудит использования привилегированного режима |
 | [space-at-start-comment](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/space-at-start-comment.html) | Пробел в начале комментария |
