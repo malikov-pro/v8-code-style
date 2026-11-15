@@ -211,6 +211,18 @@
   через settings listener и `ICheckScheduler.scheduleClearance` (принимает
   **short UID**, не symbolic id). Проверять off/on и смену профиля без clean;
   не распространять обход на другие проверки без воспроизведения.
+- **Новая проверка и живая EDT (15.11):** metadata проверок проекта строится при
+  открытии проекта. Включение чека, которого в этих metadata ещё нет (только что
+  задеплоен), даёт на каждый BSL-файл `IllegalStateException: Unknown check id
+  "<contributor>:<checkId>"` (`CheckRepository.getCheck` → `IProjectCheckMetadataManager`),
+  маркеров нет — до рестарта EDT. Это не дефект чека: включение давно известного
+  opt-in (`apk-00429`) в той же сессии проходит без исключений. Приёмка нового
+  чека = deploy → **рестарт EDT** → включение → маркеры.
+- **MCP `project_checks set`** принимает `checkId` только в виде
+  `checkId|contributorId`; символический id отклоняется «Unknown checkId», хотя
+  `list` его показывает. `list` пагинируется (default 50): свои ql-чеки искать
+  страницами/по `checkIds`, не по первой странице.
+
 - **Deny audit settings race (05.11):** в живом workspace off/on и смена
   профиля возвращали 2–3 маркера из4 при false-флагах. Trace подтвердил4ownerIDs
   в scheduler, но не все check invocations. Немедленный scoped reschedule не
@@ -253,6 +265,19 @@
   Штатный BSL `BslQlDelegatingCheck.addIssue(message,line,offset,length)`
   сохраняет только line (StringLiteral feature index), offset/length теряет:
   QL keyword range и BSL whole-line range — разные гарантии, проверять отдельно.
+- QL-модель 2026.2.2 (15.11, волна C): `EcoreUtil2.getAllContentsOfType`
+  **не возвращает корень**. Простое поле выбора `Т.Поле` само является корнем
+  `QuerySchemaExpression.getExpression()`, а `ЕСТЬ НЕ NULL` — корнем `ГДЕ`;
+  без явной проверки `instanceof` корня проверка молча даёт 0 маркеров
+  (так было с `FieldsFromJoinsWithoutIsNull`: WHERE/условия соединений
+  работали, поля выбора — нет). Многочастный путь — цепочка multiparts через
+  `getSourceTable()`: полный текст есть только у внешнего, внутренние звенья
+  пропускать по `eContainer() instanceof MultiPartCommonExpression`.
+  `ЕСТЬNULL(...)` — `FunctionInvocationExpression`, имя в
+  `getFunctionType().getName()` приходит английским `ISNULL` (сравнивать без
+  регистра с обоими вариантами). Граница вложенного запроса — ближайший
+  `QuerySchemaOperator` (`EcoreUtil2.getContainerOfType`), иначе коррелированный
+  подзапрос даёт ложное срабатывание внешнего соединения.
 - QL-скобки не имеют отдельного EObject: границу логической группы искать
   в CST по RuleCall `LogicalExpression`, иначе соседнее AND-равенство
   загрязняет same-field OR. Multipart-поле считать целиком, не его alias-prefix.
