@@ -1,7 +1,7 @@
 # Проверки языка запросов 1С
 
 
-Общее количество проверок: 21
+Общее количество проверок: 23
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -15,11 +15,13 @@
 | [ql-cast-to-max-number](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-cast-to-max-number.html) | Выражение к максимальному числу в запросе |
 | [ql-composite-reference-dereference](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-composite-reference-dereference.html) | Разыменование составной ссылки в запросе |
 | [ql-constants-in-binary-operation](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-constants-in-binary-operation.html) | В запросе в бинарной операции используются константные значения или параметры. |
+| [ql-fields-from-joins-without-isnull](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-fields-from-joins-without-isnull.html) | Поле внешнего соединения без ЕСТЬNULL |
 | [ql-full-outer-join](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-full-outer-join.html) | ql-full-outer-join |
 | [ql-join-to-sub-query](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-join-to-sub-query.html) | Соединение запроса с подзапросом |
 | [ql-like-expression-with-field](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-like-expression-with-field.html) | В качестве правого операнда операции сравнения "ПОДОБНО" указано поле таблицы. |
 | [ql-logical-or-in-join](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-logical-or-in-join.html) | Логическое ИЛИ в условиях соединений |
 | [ql-logical-or-in-where](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-logical-or-in-where.html) | ql-logical-or-in-where |
+| [ql-ref-overuse](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-ref-overuse.html) | Избыточное использование "Ссылка" в запросе |
 | [ql-temp-table-index](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-temp-table-index.html) | Временная таблица должна содержать индексы |
 | [ql-using-for-update](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-using-for-update.html) | Запрос содержит конструкцию "ДЛЯ ИЗМЕНЕНИЯ" |
 | [ql-virtual-table-filters](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/ql-virtual-table-filters.html) | Отбор виртуальной таблицы должен быть в параметрах |

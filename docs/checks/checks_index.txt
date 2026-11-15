@@ -227,11 +227,13 @@ ql-camel-case-string-literal
 ql-cast-to-max-number
 ql-composite-reference-dereference
 ql-constants-in-binary-operation
+ql-fields-from-joins-without-isnull
 ql-full-outer-join
 ql-join-to-sub-query
 ql-like-expression-with-field
 ql-logical-or-in-join
 ql-logical-or-in-where
+ql-ref-overuse
 ql-temp-table-index
 ql-using-for-update
 ql-virtual-table-filters
