@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 227
+Общее количество проверок: 228
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -184,6 +184,7 @@
 | [server-calls-in-form-events](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/server-calls-in-form-events.html) | Серверный вызов в событии формы |
 | [server-execution-safe-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/server-execution-safe-mode.html) | Отсутствует включение безопасного режима перед вызовом метода "Выполнить" или "Вычислить" |
 | [set-privileged-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/set-privileged-mode.html) | Аудит использования привилегированного режима |
+| [several-compiler-directives](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/several-compiler-directives.html) | Несколько директив компиляции |
 | [space-at-start-comment](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/space-at-start-comment.html) | Пробел в начале комментария |
 | [statement-type-change](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/statement-type-change.html) | Утверждение меняет тип |
 | [string-literal-type-annotation-invalid-place](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/string-literal-type-annotation-invalid-place.html) | Теги размещены неправильно, внутри конструкции языка |
