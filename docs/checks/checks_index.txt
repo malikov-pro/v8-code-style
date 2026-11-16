@@ -342,4 +342,5 @@ using-synchronous-calls
 variable-value-type
 virtual-table-call-without-parameters
 wrong-http-service-handler
+wrong-use-function-proceed-with-call
 wrong-web-service-handler

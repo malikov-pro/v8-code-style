@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 345
+Общее количество проверок 1С:Стандарты разработки V8: 346
 
 - form: 15
 - md: 54
-- bsl: 226
+- bsl: 227
 - ql: 23
 - right: 27
 
@@ -357,4 +357,5 @@
 | [variable-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/variable-value-type.html) | Переменная имеет тип значения |
 | [virtual-table-call-without-parameters](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/virtual-table-call-without-parameters.html) | Вызов виртуальной таблицы без параметров |
 | [wrong-http-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-http-service-handler.html) | Контракт обработчика HTTP-сервиса |
+| [wrong-use-function-proceed-with-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/wrong-use-function-proceed-with-call.html) | Некорректное использование функции ПродолжитьВызов() |
 | [wrong-web-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-web-service-handler.html) | Отсутствующий обработчик операции Web-сервиса |

@@ -56,6 +56,7 @@ public class WrongUseFunctionProceedWithCallCheckTest
         Module module = getModule();
 
         Map<String, Integer> calls = new HashMap<>();
+        int callCount = 0;
         for (Invocation invocation : EcoreUtil2.eAllOfType(module, Invocation.class))
         {
             FeatureAccess access = invocation.getMethodAccess();
@@ -66,10 +67,14 @@ public class WrongUseFunctionProceedWithCallCheckTest
                 int line = NodeModelUtils.getLineAndColumn(
                     NodeModelUtils.findActualNodeFor(invocation).getRootNode(),
                     NodeModelUtils.findActualNodeFor(invocation).getOffset()).getLine();
-                calls.put(EcoreUtil.getURI(invocation).toString(), Integer.valueOf(line));
+                callCount++;
+                String uri = EcoreUtil.getURI(invocation).toString();
+                calls.put(uri, Integer.valueOf(line));
+                // The check anchors on the method access of the call.
+                calls.put(uri + "/@methodAccess", Integer.valueOf(line)); //$NON-NLS-1$
             }
         }
-        assertEquals(6, calls.size());
+        assertEquals(6, callCount);
 
         String id = module.eResource().getURI().toPlatformString(true);
         Marker[] markers = markerManager.getMarkers(dtProject.getWorkspaceProject(), id);

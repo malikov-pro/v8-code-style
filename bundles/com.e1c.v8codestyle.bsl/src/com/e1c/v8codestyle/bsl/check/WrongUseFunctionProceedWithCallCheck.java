@@ -109,6 +109,6 @@ public class WrongUseFunctionProceedWithCallCheck
         {
             return;
         }
-        resultAcceptor.addIssue(Messages.WrongUseFunctionProceedWithCallCheck_message, invocation);
+        resultAcceptor.addIssue(Messages.WrongUseFunctionProceedWithCallCheck_message, methodAccess);
     }
 }

@@ -1,7 +1,7 @@
 # Проверки модулей 1С
 
 
-Общее количество проверок: 226
+Общее количество проверок: 227
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -231,3 +231,4 @@
 | [using-service-tag](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-service-tag.html) | Служебные теги в комментариях |
 | [using-synchronous-calls](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/using-synchronous-calls.html) | Использование синхронных вызовов |
 | [variable-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/variable-value-type.html) | Переменная имеет тип значения |
+| [wrong-use-function-proceed-with-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/wrong-use-function-proceed-with-call.html) | Некорректное использование функции ПродолжитьВызов() |
