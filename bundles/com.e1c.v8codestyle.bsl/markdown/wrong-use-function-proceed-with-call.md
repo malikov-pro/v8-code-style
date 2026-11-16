@@ -5,8 +5,10 @@ extension. The platform has a call point for it only in a method annotated with
 `&Вместо`/`&Around`; anywhere else the call fails at run time.
 
 `&ИзменениеИКонтроль`/`&ChangeAndValidate` is the annotation for a method where
-the original is continued automatically (platform 8.3.16+), so `ПродолжитьВызов`
-must not be called there either.
+the original is continued automatically (platform 8.3.16+). Methods with this
+annotation are skipped by the current version of the check: EDT does not keep
+markers inside them (decision 16.11, a documented deviation from the BSL
+Language Server).
 
 The check reports a global `ПродолжитьВызов`/`ProceedWithCall` call when the
 enclosing method does not have exactly one `&Вместо` annotation. A call outside

@@ -93,8 +93,8 @@ public class WrongUseFunctionProceedWithCallCheckTest
             assertNotNull("Unexpected problem URI " + uriToProblem, line); //$NON-NLS-1$
             reported.add(line);
         }
-        // The &ИзменениеИКонтроль case (line 18) is a known gap: the check reaches the
-        // invocation but EDT creates no marker for it; see the wave report. TODO D1.
+        // &ИзменениеИКонтроль (line 18) is out of scope by decision 16.11: EDT does
+        // not keep markers inside such methods, so the check skips them explicitly.
         assertEquals(Set.of(8, 13, 23), reported);
 
         cleanUpProject(dtProject.getWorkspaceProject());

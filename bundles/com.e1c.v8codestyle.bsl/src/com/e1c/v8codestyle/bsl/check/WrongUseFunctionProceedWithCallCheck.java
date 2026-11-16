@@ -38,10 +38,11 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
  * original call point there, so the call fails at run time.
  * <p>
  * Port of the BSL Language Server diagnostic WrongUseFunctionProceedWithCall.
- * The pinned LS accepts only {@code &Вместо}; {@code &ИзменениеИКонтроль} is the
- * annotation for a method without {@code ПродолжитьВызов} (1C:Standard v8cs
- * change-and-validate-instead-of-around, platform 8.3.16+), so it is reported as
- * well. A call outside any method is not reported, as in the pinned LS.
+ * The pinned LS accepts only {@code &Вместо}. Methods annotated with
+ * {@code &ИзменениеИКонтроль} are skipped: EDT does not keep markers of checks
+ * inside them (reproduced 16.11), so this deviation is explicit until the
+ * platform behaves stably. A call outside any method is not reported, as in the
+ * pinned LS.
  */
 public class WrongUseFunctionProceedWithCallCheck
     extends BasicCheck
@@ -100,9 +101,16 @@ public class WrongUseFunctionProceedWithCallCheck
         long aroundCount = 0;
         for (Pragma pragma : method.getPragmas())
         {
-            if (Symbols.AROUND_ANNOTATION_SYMBOLS.contains(new CaseInsensitiveString(pragma.getSymbol())))
+            CaseInsensitiveString symbol = new CaseInsensitiveString(pragma.getSymbol());
+            if (Symbols.AROUND_ANNOTATION_SYMBOLS.contains(symbol))
             {
                 aroundCount++;
+            }
+            else if (Symbols.CHANGE_AND_VALIDATE_ANNOTATION_SYMBOLS.contains(symbol))
+            {
+                // Out of scope by decision 16.11: EDT does not keep markers of checks
+                // inside &ИзменениеИКонтроль methods, so the case is not reported.
+                return;
             }
         }
         if (aroundCount == 1)
