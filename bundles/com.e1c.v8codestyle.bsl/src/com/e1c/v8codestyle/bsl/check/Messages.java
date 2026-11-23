@@ -1116,6 +1116,23 @@ final class Messages
     public static String DuplicatedInsertionIntoCollectionCheck_description;
     public static String DuplicatedInsertionIntoCollectionCheck_message;
 
+    public static String NestedFunctionInParametersCheck_title;
+    public static String NestedFunctionInParametersCheck_description;
+    public static String NestedFunctionInParametersCheck_message;
+    public static String NestedFunctionInParametersCheck_message_without_name;
+    public static String NestedFunctionInParametersCheck_method;
+    public static String NestedFunctionInParametersCheck_constructor;
+    public static String NestedFunctionInParametersCheck_allowOneliner;
+    public static String NestedFunctionInParametersCheck_allowedMethodNames;
+
+    public static String InCorrectLineBreakCheck_title;
+    public static String InCorrectLineBreakCheck_description;
+    public static String InCorrectLineBreakCheck_message;
+    public static String InCorrectLineBreakCheck_checkFirstSymbol;
+    public static String InCorrectLineBreakCheck_listOfIncorrectFirstSymbol;
+    public static String InCorrectLineBreakCheck_checkLastSymbol;
+    public static String InCorrectLineBreakCheck_listOfIncorrectLastSymbol;
+
     static
     {
         // initialize resource bundle
