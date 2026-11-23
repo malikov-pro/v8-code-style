@@ -1112,6 +1112,10 @@ final class Messages
     public static String TransferringParametersBetweenClientAndServerCheck_description;
     public static String TransferringParametersBetweenClientAndServerCheck_message;
 
+    public static String DuplicatedInsertionIntoCollectionCheck_title;
+    public static String DuplicatedInsertionIntoCollectionCheck_description;
+    public static String DuplicatedInsertionIntoCollectionCheck_message;
+
     static
     {
         // initialize resource bundle
