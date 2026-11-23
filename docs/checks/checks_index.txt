@@ -294,6 +294,7 @@ temp-files-dir
 ternary-operator-usage
 timeouts-in-external-resources
 too-many-returns
+transferring-parameters-between-client-and-server
 try-number
 typed-value-adding-to-untyped-collection
 unary-plus-in-concatenation
