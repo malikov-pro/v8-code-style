@@ -1108,6 +1108,10 @@ final class Messages
     public static String SeveralCompilerDirectivesCheck_message_variable;
     public static String SeveralCompilerDirectivesCheck_message_method;
 
+    public static String TransferringParametersBetweenClientAndServerCheck_title;
+    public static String TransferringParametersBetweenClientAndServerCheck_description;
+    public static String TransferringParametersBetweenClientAndServerCheck_message;
+
     static
     {
         // initialize resource bundle

@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 347
+Общее количество проверок 1С:Стандарты разработки V8: 348
 
 - form: 15
 - md: 54
-- bsl: 228
+- bsl: 229
 - ql: 23
 - right: 27
 
@@ -309,6 +309,7 @@
 | [ternary-operator-usage](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/ternary-operator-usage.html) | Использование тернарного оператора |
 | [timeouts-in-external-resources](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/timeouts-in-external-resources.html) | Таймауты при работе с внешними ресурсами |
 | [too-many-returns](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/too-many-returns.html) | Слишком много возвратов |
+| [transferring-parameters-between-client-and-server](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/transferring-parameters-between-client-and-server.html) | Передача параметров между клиентом и сервером |
 | [try-number](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/try-number.html) | Преобразование в число внутри Попытки |
 | [typed-value-adding-to-untyped-collection](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/typed-value-adding-to-untyped-collection.html) | Добавление типизированного значения в не типизированную коллекцию |
 | [unary-plus-in-concatenation](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/unary-plus-in-concatenation.html) | Унарный плюс в конкатенации |
