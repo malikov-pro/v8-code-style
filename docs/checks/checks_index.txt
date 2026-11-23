@@ -121,6 +121,7 @@ dont-use-modality-mode
 double-negatives
 duplicate-region
 duplicate-string-literal
+duplicated-insertion-into-collection
 dynamic-access-method-not-found
 empty-code-block
 empty-except-statement

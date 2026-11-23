@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 348
+Общее количество проверок 1С:Стандарты разработки V8: 349
 
 - form: 15
 - md: 54
-- bsl: 229
+- bsl: 230
 - ql: 23
 - right: 27
 
@@ -136,6 +136,7 @@
 | [double-negatives](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/double-negatives.html) | Двойные отрицания |
 | [duplicate-region](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/duplicate-region.html) | Повторяющиеся разделы модуля |
 | [duplicate-string-literal](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/duplicate-string-literal.html) | Повторяющийся строковый литерал |
+| [duplicated-insertion-into-collection](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/duplicated-insertion-into-collection.html) | Повторное добавление/вставка значений в коллекцию |
 | [dynamic-access-method-not-found](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/dynamic-access-method-not-found.html) | Метод в объекте не найден |
 | [empty-code-block](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/empty-code-block.html) | Пустой блок кода |
 | [empty-except-statement](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/empty-except-statement.html) | Конструкция "Попытка...Исключение...КонецПопытки" не содержит кода в исключении |
