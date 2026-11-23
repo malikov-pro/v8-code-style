@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 345
+Общее количество проверок 1С:Стандарты разработки V8: 347
 
 - form: 15
 - md: 54
-- bsl: 226
+- bsl: 228
 - ql: 23
 - right: 27
 
@@ -297,6 +297,7 @@
 | [server-calls-in-form-events](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/server-calls-in-form-events.html) | Серверный вызов в событии формы |
 | [server-execution-safe-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/server-execution-safe-mode.html) | Отсутствует включение безопасного режима перед вызовом метода "Выполнить" или "Вычислить" |
 | [set-privileged-mode](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/set-privileged-mode.html) | Аудит использования привилегированного режима |
+| [several-compiler-directives](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/several-compiler-directives.html) | Несколько директив компиляции |
 | [space-at-start-comment](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/space-at-start-comment.html) | Пробел в начале комментария |
 | [statement-type-change](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/statement-type-change.html) | Утверждение меняет тип |
 | [string-literal-type-annotation-invalid-place](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/string-literal-type-annotation-invalid-place.html) | Теги размещены неправильно, внутри конструкции языка |
@@ -357,4 +358,5 @@
 | [variable-value-type](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/variable-value-type.html) | Переменная имеет тип значения |
 | [virtual-table-call-without-parameters](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/virtual-table-call-without-parameters.html) | Вызов виртуальной таблицы без параметров |
 | [wrong-http-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-http-service-handler.html) | Контракт обработчика HTTP-сервиса |
+| [wrong-use-function-proceed-with-call](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/wrong-use-function-proceed-with-call.html) | Некорректное использование функции ПродолжитьВызов() |
 | [wrong-web-service-handler](../../../com.e1c.v8codestyle.md/check.descriptions/ru/wrong-web-service-handler.html) | Отсутствующий обработчик операции Web-сервиса |

@@ -1099,6 +1099,15 @@ final class Messages
     public static String ServerCallsInFormEventsCheck_description;
     public static String ServerCallsInFormEventsCheck_message;
 
+    public static String WrongUseFunctionProceedWithCallCheck_title;
+    public static String WrongUseFunctionProceedWithCallCheck_description;
+    public static String WrongUseFunctionProceedWithCallCheck_message;
+
+    public static String SeveralCompilerDirectivesCheck_title;
+    public static String SeveralCompilerDirectivesCheck_description;
+    public static String SeveralCompilerDirectivesCheck_message_variable;
+    public static String SeveralCompilerDirectivesCheck_message_method;
+
     static
     {
         // initialize resource bundle
