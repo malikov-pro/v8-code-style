@@ -19,6 +19,9 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  # deploy-pages v5 fetches the uploaded artifact via the Actions API;
+  # without this scope it reports "Found 0 artifact(s)" while the artifact exists.
+  actions: read
 
 concurrency:
   group: pages
