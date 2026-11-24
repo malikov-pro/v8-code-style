@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ab9cd6e6-0c21-4714-a90c-a08075bda137">
+  <name>Localization</name><defaultRunMode>ManagedApplication</defaultRunMode>
+  <defaultLanguage>Language.Russian</defaultLanguage><compatibilityMode>8.3.23</compatibilityMode>
+  <languages uuid="9916635b-12ba-45ab-9721-28eeb2a1c5b6"><name>Russian</name><languageCode>ru</languageCode></languages>
+  <languages uuid="e0e82458-3a69-4eca-983d-dfe3dd0c368c"><name>English</name><languageCode>en</languageCode></languages>
+  <commonModules>CommonModule.CommonModule</commonModules>
+</mdclass:Configuration>

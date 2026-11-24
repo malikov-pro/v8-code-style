@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="94f05e0e-57ba-4afc-abd6-eb3c81b38baf">
+  <name>Products</name>
+  <attributes uuid="d6bb8618-9122-4667-a1fe-77f486648dc3"><name>Products</name><type><types>Boolean</types></type></attributes>
+  <tabularSections uuid="f27e8557-3669-407a-80db-933920db4bc5"><name>Lines</name>
+    <attributes uuid="7ed7924e-29c9-4ad1-be38-f2e4d5381cda"><name>Lines</name><type><types>Boolean</types></type></attributes>
+  </tabularSections>
+</mdclass:Catalog>

@@ -33,6 +33,8 @@ import com._1c.g5.v8.dt.metadata.mdclass.ScriptVariant;
 import com.e1c.g5.v8.dt.check.CheckComplexity;
 import com.e1c.g5.v8.dt.check.ICheckParameters;
 import com.e1c.g5.v8.dt.check.components.ModuleTopObjectNameFilterExtension;
+import com.e1c.g5.v8.dt.check.settings.CheckUid;
+import com.e1c.g5.v8.dt.check.settings.ICheckRepository;
 import com.e1c.g5.v8.dt.check.settings.IssueSeverity;
 import com.e1c.g5.v8.dt.check.settings.IssueType;
 import com.e1c.v8codestyle.bsl.IModuleStructureProvider;
@@ -64,6 +66,9 @@ public class ModuleStructureTopRegionCheck
     private final IModuleStructureProvider moduleStructureProvider;
 
     private final IV8ProjectManager v8ProjectManager;
+
+    @Inject
+    private ICheckRepository checkRepository;
 
     @Inject
     public ModuleStructureTopRegionCheck(IModuleStructureProvider moduleStructureProvider,
@@ -122,12 +127,16 @@ public class ModuleStructureTopRegionCheck
         Collection<String> names =
             moduleStructureProvider.getModuleStructureRegions(module.getModuleType(), scriptVariant);
 
-        check(resultAceptor, allRegions, names, parameters, scriptVariant, monitor);
+        boolean duplicateOwnerEnabled = checkRepository.getSettings(
+            new CheckUid(DuplicateRegionCheck.CHECK_ID, BslPlugin.PLUGIN_ID),
+            v8ProjectManager.getProject(module).getProject()).isEnabled();
+        check(resultAceptor, allRegions, names, parameters, scriptVariant, duplicateOwnerEnabled, monitor);
 
     }
 
     private void check(ResultAcceptor resultAceptor, List<RegionPreprocessor> allRegions, Collection<String> baseNames,
-        ICheckParameters parameters, ScriptVariant scriptVariant, IProgressMonitor monitor)
+        ICheckParameters parameters, ScriptVariant scriptVariant, boolean duplicateOwnerEnabled,
+        IProgressMonitor monitor)
     {
 
         Map<String, List<RegionPreprocessor>> countRegions = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
@@ -159,7 +168,8 @@ public class ModuleStructureTopRegionCheck
             boolean isTop = topRegions.stream().anyMatch(regionName::equalsIgnoreCase);
             boolean isDuplicate = countRegions.get(regionName).size() > 1;
 
-            if (checkDuplicates && isStandard && isDuplicate)
+            if (checkDuplicates && isStandard && isDuplicate
+                && !(duplicateOwnerEnabled && isModuleLevelRegion(region)))
             {
                 addIssueDuplicates(resultAceptor, region);
             }

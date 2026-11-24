@@ -34,6 +34,23 @@ public abstract class AbstractModuleStructureCheck
     extends BasicCheck
 {
 
+    /** Whether a region belongs directly to the module rather than to another region or method. */
+    protected boolean isModuleLevelRegion(RegionPreprocessor region)
+    {
+        if (getFirstParentRegion(region).isPresent())
+        {
+            return false;
+        }
+        for (var parent = region.eContainer(); parent != null; parent = parent.eContainer())
+        {
+            if (parent instanceof com._1c.g5.v8.dt.bsl.model.Method)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     /**
      * Checks if the region is empty and has no any code elements.
      *

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:BusinessProcess xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7593a51f-a1ca-4b80-9cdc-ed013d7354ce">
+  <name>Approval</name><attributes uuid="b0f7934e-f107-4be4-83a8-3fd76258e28e"><name>Approval</name><type><types>Boolean</types></type></attributes>
+</mdclass:BusinessProcess>

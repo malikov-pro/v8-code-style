@@ -134,6 +134,8 @@ public class BslPlugin
             registrator.service(IModuleStructureProvider.class).registerInjected();
             registrator.service(IAsyncInvocationProvider.class).registerInjected();
             registrator.managedService(MultiCheckFixRegistrator.class).activateBeforeRegistration().registerInjected();
+            registrator.managedService(RegionDuplicateSettingsRevalidator.class)
+                .activateBeforeRegistration().registerInjected();
         });
     }
 

@@ -24,6 +24,12 @@ final class Messages
     extends NLS
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
+    public static String MultilingualStringHasAllDeclaredLanguagesCheck_title;
+    public static String MultilingualStringHasAllDeclaredLanguagesCheck_description;
+    public static String MultilingualStringUsingWithTemplateCheck_title;
+    public static String MultilingualStringUsingWithTemplateCheck_description;
+    public static String MultilingualStringCheck_languages;
+    public static String MultilingualStringCheck_message;
 
     public static String SetPrivilegedModeCheck_title;
     public static String SetPrivilegedModeCheck_description;
@@ -33,6 +39,16 @@ final class Messages
     public static String InternetAccessCheck_title;
     public static String FileSystemAccessCheck_title;
     public static String ExternalAppStartingCheck_title;
+    public static String ExcessiveAutoTestCheck_title;
+    public static String UsageWriteLogEventCheck_title;
+    public static String UsageWriteLogEventCheck_description;
+    public static String UsageWriteLogEventCheck_arity;
+    public static String UsageWriteLogEventCheck_level;
+    public static String UsageWriteLogEventCheck_comment;
+    public static String UsageWriteLogEventCheck_errorLevel;
+    public static String UsageWriteLogEventCheck_details;
+    public static String ExcessiveAutoTestCheck_description;
+    public static String ExcessiveAutoTestCheck_message;
     public static String ExternalAppStartingCheck_description;
     public static String ExternalAppStartingCheck_message;
     public static String ExternalAppStartingCheck_pattern;
@@ -1056,6 +1072,66 @@ final class Messages
     public static String UnaryPlusInConcatenationCheck_message;
     public static String DoubleNegativesCheck_description;
     public static String DoubleNegativesCheck_message;
+    public static String DuplicateRegionCheck_title;
+    public static String DuplicateRegionCheck_description;
+    public static String DuplicateRegionCheck_message;
+    public static String CommonModuleVariableConflictCheck_issue;
+    public static String CommonModuleVariableConflictCheck_title;
+    public static String CommonModuleVariableConflictCheck_description;
+    public static String ExtraCommasCheck_title;
+    public static String ExtraCommasCheck_description;
+    public static String ExtraCommasCheck_message;
+    public static String LatinAndCyrillicSymbolInWordCheck_title;
+    public static String LatinAndCyrillicSymbolInWordCheck_description;
+    public static String LatinAndCyrillicSymbolInWordCheck_message;
+    public static String LatinAndCyrillicSymbolInWordCheck_excludeWords;
+    public static String LatinAndCyrillicSymbolInWordCheck_allowTrailing;
+    public static String MissingVariablesDescriptionCheck_title;
+    public static String MissingVariablesDescriptionCheck_description;
+    public static String MissingVariablesDescriptionCheck_message;
+    public static String CanonicalSpellingKeywordsCheck_title;
+    public static String CanonicalSpellingKeywordsCheck_description;
+    public static String CanonicalSpellingKeywordsCheck_message;
+    public static String CrazyMultilineStringCheck_title;
+    public static String CrazyMultilineStringCheck_description;
+    public static String CrazyMultilineStringCheck_message;
+    public static String ServerCallsInFormEventsCheck_title;
+    public static String ServerCallsInFormEventsCheck_description;
+    public static String ServerCallsInFormEventsCheck_message;
+
+    public static String WrongUseFunctionProceedWithCallCheck_title;
+    public static String WrongUseFunctionProceedWithCallCheck_description;
+    public static String WrongUseFunctionProceedWithCallCheck_message;
+
+    public static String SeveralCompilerDirectivesCheck_title;
+    public static String SeveralCompilerDirectivesCheck_description;
+    public static String SeveralCompilerDirectivesCheck_message_variable;
+    public static String SeveralCompilerDirectivesCheck_message_method;
+
+    public static String TransferringParametersBetweenClientAndServerCheck_title;
+    public static String TransferringParametersBetweenClientAndServerCheck_description;
+    public static String TransferringParametersBetweenClientAndServerCheck_message;
+
+    public static String DuplicatedInsertionIntoCollectionCheck_title;
+    public static String DuplicatedInsertionIntoCollectionCheck_description;
+    public static String DuplicatedInsertionIntoCollectionCheck_message;
+
+    public static String NestedFunctionInParametersCheck_title;
+    public static String NestedFunctionInParametersCheck_description;
+    public static String NestedFunctionInParametersCheck_message;
+    public static String NestedFunctionInParametersCheck_message_without_name;
+    public static String NestedFunctionInParametersCheck_method;
+    public static String NestedFunctionInParametersCheck_constructor;
+    public static String NestedFunctionInParametersCheck_allowOneliner;
+    public static String NestedFunctionInParametersCheck_allowedMethodNames;
+
+    public static String InCorrectLineBreakCheck_title;
+    public static String InCorrectLineBreakCheck_description;
+    public static String InCorrectLineBreakCheck_message;
+    public static String InCorrectLineBreakCheck_checkFirstSymbol;
+    public static String InCorrectLineBreakCheck_listOfIncorrectFirstSymbol;
+    public static String InCorrectLineBreakCheck_checkLastSymbol;
+    public static String InCorrectLineBreakCheck_listOfIncorrectLastSymbol;
 
     static
     {

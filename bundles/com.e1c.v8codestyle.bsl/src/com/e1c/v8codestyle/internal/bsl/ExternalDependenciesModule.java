@@ -79,6 +79,7 @@ class ExternalDependenciesModule
         bind(ITopObjectFqnGenerator.class).toService();
 
         bind(ICheckRepository.class).toService();
+        bind(com.e1c.g5.v8.dt.check.ICheckScheduler.class).toService();
         bind(IFixRepository.class).toService();
 
         URI uri = URI.createURI("*.bsl"); //$NON-NLS-1$

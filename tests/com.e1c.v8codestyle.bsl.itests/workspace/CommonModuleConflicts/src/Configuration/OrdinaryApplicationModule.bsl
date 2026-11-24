@@ -1,0 +1,2 @@
+Procedure Probe()
+EndProcedure

@@ -63,6 +63,7 @@ Pinned-код приоритетнее формулировки: Web handler mes
 для доказанных индексом потребителей. Пример в `MissedRequiredParameterCheck`.
 
 - `setLanguageResourceChangeContextCollector` в исследованном EDT2026.1/check6.0.101
+  (историческое исследование; на 2026.2.2 не перепроверялось)
   столкнулся с MODULE language collector: ClassCastException при init проектов.
   Этот путь отклонён; внутренние cast/reflection обходы не добавлять.
 - События не гарантируют мутацию каждого вложенного элемента. Проверять фактический
@@ -188,7 +189,8 @@ Pinned-код приоритетнее формулировки: Web handler mes
   не выдавать guard enabled за гарантию удаления всех прежних маркеров EDT.
 - QL параметры: прямой delegate-test с новыми ICheckParameters не доказывает
   автоматический пересчёт потребителя. TOP skipSelectTopOne true→false→true
-  в BSL пересчитывается штатно; СКД на EDT2026.1 требовала отдельного планирования.
+  в BSL пересчитывается штатно; СКД на EDT2026.1 требовала отдельного
+  планирования (историческое; на 2026.2.2 не перепроверялось).
   Проверенный публичный ICheckScheduler требует BOTH shortUID: dcs-ql-hub и
   delegate, плюс реальные DCS container IDs. Только hub UID отфильтровал делегат.
   Product listener реагирует на settingsChanged TOP, не меняет query/settings,

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a0b22490-faa5-49a7-9960-5c47d95f189e">
+  <name>States</name><enumValues uuid="03c42aac-b957-4a8b-9b50-f95dcfd3ac9c"><name>Document</name></enumValues>
+</mdclass:Enum>

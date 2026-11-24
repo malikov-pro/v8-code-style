@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfCalculationTypes xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f7f7f050-d930-4d05-b063-54b57431ab60">
+  <name>CalculationTypes</name>
+  <codeLength>9</codeLength>
+  <descriptionLength>100</descriptionLength>
+</mdclass:ChartOfCalculationTypes>

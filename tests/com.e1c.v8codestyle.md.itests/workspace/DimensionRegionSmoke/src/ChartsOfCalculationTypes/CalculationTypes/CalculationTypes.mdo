@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfCalculationTypes xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ad6113e5-6a2a-48ae-ad37-742a73e6f6a7">
+  <producedTypes>
+    <objectType typeId="06113474-0220-4fbf-91c9-cb5caf0eeded" valueTypeId="236da8da-2bb4-4221-b1a7-d7832fff47b1"/>
+    <refType typeId="1d6a37fa-42e8-49f7-ba0c-5f3e8365092b" valueTypeId="595f82f1-a4cb-4fd0-a140-901813dc3a12"/>
+    <selectionType typeId="a0ea7d4c-bfe2-43c2-868c-0a0159b1c3b4" valueTypeId="8567c3a5-ac09-4b19-bed7-cef059e52e00"/>
+    <listType typeId="d2f21e54-0d3d-443b-93d9-af33f94fce07" valueTypeId="fd77a7e2-0a94-4bb3-8230-603d1223fa61"/>
+    <managerType typeId="9251ed31-1e3a-4132-b8b3-0ec75e739f13" valueTypeId="1fc72c2c-1fc8-4815-9878-900a374518bf"/>
+    <displacingCalculationTypesType typeId="31f78b12-1cf2-4fc7-960d-cb8e1b6935b8" valueTypeId="cf349795-3e8a-4530-adba-c8a2cbdaf78a"/>
+    <displacingCalculationTypesRowType typeId="4ca49439-91b8-4b73-80f1-622054ff2df1" valueTypeId="58a48cc8-3389-4b74-8f1c-242ed2a38fa5"/>
+    <baseCalculationTypesType typeId="4ef471e6-998e-4fb6-b6d2-33581d67a899" valueTypeId="3291d7ac-8e47-42d8-bfff-a735c684bfc6"/>
+    <baseCalculationTypesRowType typeId="27841109-b89f-432c-8a22-2fc849d9f2c7" valueTypeId="e40ffa79-b15e-45b6-8170-b0664f4fe6fb"/>
+    <leadingCalculationTypesType typeId="71264803-ba6f-4539-8704-1af4221f7fe3" valueTypeId="0a99193d-dfa2-4d83-9e02-e97aaa262039"/>
+    <leadingCalculationTypesRowType typeId="8c760db5-395f-40ee-a524-ef4170423d9e" valueTypeId="d901f097-b0b7-4ac6-87de-8975ccd2adff"/>
+  </producedTypes>
+  <name>CalculationTypes</name>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>ChartOfCalculationTypes.CalculationTypes.StandardAttribute.Code</inputByString>
+  <inputByString>ChartOfCalculationTypes.CalculationTypes.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <codeLength>9</codeLength>
+  <descriptionLength>40</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:ChartOfCalculationTypes>

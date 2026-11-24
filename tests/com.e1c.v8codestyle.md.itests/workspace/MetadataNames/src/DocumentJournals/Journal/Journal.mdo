@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2b4063eb-fad3-4a8a-9339-8a343d847320">
+  <name>Journal</name><columns uuid="ecf828ae-a16d-4910-a46e-a51d79ada8ed"><name>Document</name></columns>
+</mdclass:DocumentJournal>

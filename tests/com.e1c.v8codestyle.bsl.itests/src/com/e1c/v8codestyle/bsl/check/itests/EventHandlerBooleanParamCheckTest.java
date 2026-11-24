@@ -67,6 +67,23 @@ public class EventHandlerBooleanParamCheckTest
         return PROJECT_NAME;
     }
 
+    /** The parser can expose a method placeholder without a name during editing/recovery. */
+    @Test
+    public void testUnnamedRecoveryMethodDoesNotThrow() throws Exception
+    {
+        var check = BslPlugin.getDefault().getInjector().getInstance(EventHandlerBooleanParamCheck.class);
+        var resolver = EventHandlerBooleanParamCheck.class.getDeclaredMethod("getActualEvent", //$NON-NLS-1$
+            java.util.Map.class, java.util.Map.class, java.util.Map.class, Module.class, Method.class);
+        resolver.setAccessible(true);
+        var module = com._1c.g5.v8.dt.bsl.model.BslFactory.eINSTANCE.createModule();
+        var method = com._1c.g5.v8.dt.bsl.model.BslFactory.eINSTANCE.createProcedure();
+        assertNull(method.getName());
+        module.getMethods().add(method);
+        var result = (com._1c.g5.v8.dt.common.Pair<?, ?>)resolver.invoke(check,
+            java.util.Map.of(), java.util.Map.of(), java.util.Map.of(), module, method);
+        assertNull(result.first);
+    }
+
     /**
      * Check boolean parameter in Object module reserved event handlers that use is correct.
      * Both compliant and noncompliant parameters are renamed.

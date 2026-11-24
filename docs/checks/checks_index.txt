@@ -50,6 +50,7 @@ apk-01196-french-quotes-md
 apk-01205-main-language-code
 apk-01214-ds-field-alias
 apk-01216-query-field-alias
+apk-01218-common-module-variable-conflict
 apk-01219-cut-comments-format
 apk-01364-linux-unsupported
 bad-exception-category
@@ -58,6 +59,7 @@ begin-transaction
 bsl-canonical-pragma
 bsl-nstr-string-literal-format
 bsl-variable-name-invalid
+canonical-spelling-keywords
 change-and-validate-instead-of-around
 code-after-async-call
 cognitive-complexity
@@ -73,11 +75,13 @@ common-module-name-global
 common-module-name-global-client
 common-module-name-server-call
 common-module-name-server-call-cached
+common-module-name-words
 common-module-named-self-reference
 common-module-type
 compare-with-boolean
 configuration-data-lock-mode
 constructor-function-return-section
+crazy-multiline-string
 create-query-in-cycle
 current-row-access
 cyclomatic-complexity
@@ -88,6 +92,7 @@ db-object-anyref-type
 db-object-max-number-length
 db-object-ref-non-ref-type
 deleting-collection-item
+deny-incomplete-values
 deprecated-attributes-8312
 deprecated-current-date
 deprecated-find
@@ -114,13 +119,16 @@ doc-comment-use-minus
 document-post-in-privileged-mode
 dont-use-modality-mode
 double-negatives
+duplicate-region
 duplicate-string-literal
+duplicated-insertion-into-collection
 dynamic-access-method-not-found
 empty-code-block
 empty-except-statement
 empty-statement
 event-handler-boolean-param
 event-handler-invalid-signature
+excessive-auto-test-check
 export-method-in-command-form-module
 export-procedure-missing-comment
 extension-md-object-prefix
@@ -128,7 +136,9 @@ extension-method-prefix
 extension-method-visible-mode
 extension-variable-prefix
 external-app-starting
+extra-commas
 file-system-access
+forbidden-metadata-name
 form-commands-single-action-handler
 form-dynamic-list-item-title
 form-item-visible-settings-by-roles
@@ -149,12 +159,14 @@ if-condition-complexity
 if-else-duplicated-code-block
 if-else-duplicated-condition
 if-else-if-ends-with-else
+incorrect-line-break
 incorrect-use-of-str-template
 input-field-list-choice-mode
 internet-access
 invocation-form-event-handler
 invocation-parameter-type-intersect
 join-with-virtual-table
+latin-and-cyrillic-symbol-in-word
 line-length
 link-part-comment-space
 lock-out-of-try
@@ -179,6 +191,7 @@ missing-event-subscription-handler
 missing-space
 missing-temp-storage-deletion
 missing-temporary-file-deletion
+missing-variables-description
 module-accessibility-at-client
 module-attachable-event-handler-name
 module-consecutive-blank-lines
@@ -196,7 +209,10 @@ module-undefined-method
 module-undefined-variable
 module-unused-local-variable
 module-unused-method
+multilingual-string-has-all-declared-languages
+multilingual-string-using-with-template
 nested-constructors-in-structure-declaration
+nested-function-in-parameters
 nested-statements
 nested-ternary-operator
 new-color
@@ -214,11 +230,13 @@ ql-camel-case-string-literal
 ql-cast-to-max-number
 ql-composite-reference-dereference
 ql-constants-in-binary-operation
+ql-fields-from-joins-without-isnull
 ql-full-outer-join
 ql-join-to-sub-query
 ql-like-expression-with-field
 ql-logical-or-in-join
 ql-logical-or-in-where
+ql-ref-overuse
 ql-temp-table-index
 ql-using-for-update
 ql-virtual-table-filters
@@ -246,6 +264,7 @@ right-interactive-open-external-reports
 right-interactive-set-deletion-mark-predefined-data
 right-output-to-printer-file-clipboard
 right-save-user-data
+right-set-permissions-for-new-objects
 right-start-automation
 right-start-external-connection
 right-start-thick-client
@@ -255,6 +274,7 @@ right-update-database-configuration
 right-view-event-log
 role-right-has-rls
 rollback-transaction
+same-metadata-object-and-child-names
 scheduled-job-handler
 scheduled-job-periodicity-too-short
 secure-password-storage
@@ -263,8 +283,10 @@ select-top-without-order-by
 self-assign
 self-insertion
 semicolon-missing
+server-calls-in-form-events
 server-execution-safe-mode
 set-privileged-mode
+several-compiler-directives
 space-at-start-comment
 statement-type-change
 string-literal-type-annotation-invalid-place
@@ -276,6 +298,7 @@ temp-files-dir
 ternary-operator-usage
 timeouts-in-external-resources
 too-many-returns
+transferring-parameters-between-client-and-server
 try-number
 typed-value-adding-to-untyped-collection
 unary-plus-in-concatenation
@@ -307,6 +330,7 @@ up-765-explicit-color
 up-768-obsolete-refs-missing
 up-769-obsolete-refs-obsolete
 up-781-notify-handler-nonexistent
+usage-write-log-event
 use-goto-operator
 use-less-for-each
 use-non-recommended-method
@@ -324,4 +348,5 @@ using-synchronous-calls
 variable-value-type
 virtual-table-call-without-parameters
 wrong-http-service-handler
+wrong-use-function-proceed-with-call
 wrong-web-service-handler

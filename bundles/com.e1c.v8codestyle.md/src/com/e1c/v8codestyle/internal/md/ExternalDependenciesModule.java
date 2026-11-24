@@ -41,6 +41,11 @@ public class ExternalDependenciesModule
     {
         bind(IV8ProjectManager.class).toService();
         bind(IConfigurationProvider.class).toService();
+        bind(com.e1c.g5.v8.dt.check.settings.ICheckRepository.class).toService();
+        bind(com.e1c.g5.v8.dt.check.ICheckScheduler.class).toService();
+        bind(com._1c.g5.v8.dt.core.platform.IBmModelManager.class).toService();
+        bind(com._1c.g5.v8.dt.core.platform.IDtProjectManager.class).toService();
+        bind(com._1c.g5.v8.dt.core.platform.IWorkspaceOrchestrator.class).toService();
     }
 
 }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccountingRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7e5c1349-4701-4d62-b3f6-d73791351301">
+  <name>Balances</name><attributes uuid="490440a9-d389-46f1-b6ed-e894f49259c8"><name>Balances</name><type><types>Boolean</types></type></attributes>
+</mdclass:AccountingRegister>

@@ -95,6 +95,11 @@ final class Messages
     public static String ExcludeRoleByPatternExtension_Exclude_role_name_pattern;
     public static String ExcludeRoleByNameListExtension_Exclude_role_names;
 
+    public static String RightSetPermissionsForNewObjectsCheck_title;
+    public static String RightSetPermissionsForNewObjectsCheck_description;
+    public static String RightSetPermissionsForNewObjectsCheck_message;
+    public static String RightSetPermissionsForNewObjectsCheck_NamesFullAccessRole;
+
     static
     {
         // initialize resource bundle

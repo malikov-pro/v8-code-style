@@ -140,12 +140,29 @@ public class ModuleStructureTopRegionCheckTest
     @Test
     public void testTopRegionIsDuplicated() throws Exception
     {
-        updateModule(FOLDER_RESOURCE + "module-structure-region-is-duplicated.bsl");
+        var uid = new com.e1c.g5.v8.dt.check.settings.CheckUid("duplicate-region", //$NON-NLS-1$
+            com.e1c.v8codestyle.internal.bsl.BslPlugin.PLUGIN_ID);
+        var settings = checkRepository.getSettings(uid, getProject().getWorkspaceProject());
+        boolean enabled = settings.isEnabled();
+        settings.setEnabled(false);
+        checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+        waitForDD(getProject());
+        try
+        {
+            updateModule(FOLDER_RESOURCE + "module-structure-region-is-duplicated.bsl");
 
-        List<Marker> markers = getModuleMarkers();
-        assertEquals(2, markers.size());
-        assertEquals(Messages.ModuleStructureTopRegionCheck_Region_has_duplicate, markers.get(0).getMessage());
-        assertEquals(Messages.ModuleStructureTopRegionCheck_Region_has_duplicate, markers.get(1).getMessage());
+            List<Marker> markers = getModuleMarkers();
+            assertEquals(2, markers.size());
+            assertEquals(Messages.ModuleStructureTopRegionCheck_Region_has_duplicate, markers.get(0).getMessage());
+            assertEquals(Messages.ModuleStructureTopRegionCheck_Region_has_duplicate, markers.get(1).getMessage());
+        }
+        finally
+        {
+            settings = checkRepository.getSettings(uid, getProject().getWorkspaceProject());
+            settings.setEnabled(enabled);
+            checkRepository.applyChanges(List.of(settings), getProject().getWorkspaceProject());
+            waitForDD(getProject());
+        }
     }
 
     /**

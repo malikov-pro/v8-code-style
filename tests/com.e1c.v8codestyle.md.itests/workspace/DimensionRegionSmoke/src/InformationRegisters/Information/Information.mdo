@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fb88a707-8dc6-4b8b-af1c-f5925c17524e">
+  <producedTypes>
+    <selectionType typeId="e51096d5-0a09-4404-b386-60ce050dd8cf" valueTypeId="447a719a-f6cb-46e6-a3e3-4f02cdeaaf3d"/>
+    <listType typeId="4f4e81da-6eb7-4a84-a37b-35f02cacbe5b" valueTypeId="d6e77db1-3ef4-4bfd-8ba1-ccbf48627554"/>
+    <managerType typeId="1ee38e21-c6ac-4b70-8f2b-3577b74b6e23" valueTypeId="fa66aab5-8b05-4a68-a8f8-5c2afa79ab99"/>
+    <recordSetType typeId="3a24b1e6-2823-4cc8-9498-326f0655b19b" valueTypeId="36d2f996-4a67-4dd4-bb2a-f615f47984b2"/>
+    <recordKeyType typeId="40baa22d-72d5-45ea-b5a8-ce3fbc722ccb" valueTypeId="9c716041-49ff-48d5-8e35-cf26950f9512"/>
+    <recordType typeId="59d79e35-5761-4152-99ac-06e774682909" valueTypeId="3cd5101c-924e-418e-9c70-7983b4de3c5e"/>
+    <recordManagerType typeId="7e4c9ef4-75ba-40d2-a03d-67947a95911a" valueTypeId="d7551c25-0f0e-4c54-9e1f-a5fe97a14dee"/>
+  </producedTypes>
+  <name>Information</name>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="10d0c24e-48d4-41cc-9bf2-5ca63050c28d">
+    <name>AuditValue</name>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

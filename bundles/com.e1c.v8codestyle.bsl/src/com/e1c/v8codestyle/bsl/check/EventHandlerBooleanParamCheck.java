@@ -329,6 +329,12 @@ public class EventHandlerBooleanParamCheck
         Map<CaseInsensitiveString, Event> eventHandlers, Module module, Method method)
     {
         int diff = 0;
+        // A parser recovery or an in-progress edit can expose an unnamed method placeholder.
+        // It cannot be bound to an event; leave syntax diagnostics to the parser.
+        if (method.getName() == null)
+        {
+            return Pair.newPair(null, diff);
+        }
         CaseInsensitiveString methodName = new CaseInsensitiveString(method.getName());
         Event event = eventHandlers.get(methodName);
         if (event == null && isCorrectModuleForCustomHandlers(module))

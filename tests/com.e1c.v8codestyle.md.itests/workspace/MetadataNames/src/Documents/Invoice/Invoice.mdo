@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7f2fa6da-f754-4168-be9f-c1966ac90b1e">
+  <name>Invoice</name><attributes uuid="2d15e79a-e537-47df-9f03-8cdbd54c82ac"><name>Invoice</name><type><types>Boolean</types></type></attributes>
+</mdclass:Document>

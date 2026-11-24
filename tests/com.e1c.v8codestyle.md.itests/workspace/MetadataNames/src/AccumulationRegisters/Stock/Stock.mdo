@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="386faebc-7cf2-4cec-a035-50f4f438b676">
+  <name>Stock</name><attributes uuid="50f8f66d-e122-4eb6-9096-eb663d254b16"><name>Stock</name><type><types>Boolean</types></type></attributes>
+</mdclass:AccumulationRegister>

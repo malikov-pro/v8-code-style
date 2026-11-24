@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7a26ad95-4da8-4944-ae2c-cd68e3297acc">
+  <name>Prices</name><attributes uuid="2e34ac92-fe65-44fd-b746-822b61db72b8"><name>Prices</name><type><types>Boolean</types></type></attributes>
+  <dimensions uuid="31643561-f7f1-4cdb-b169-a4d7876c9b6b"><name>PriceKey</name><type><types>Boolean</types></type></dimensions>
+  <resources uuid="b56f186b-99e1-4335-99c8-ef9f46b9caf8"><name>PriceValue</name><type><types>Boolean</types></type></resources>
+</mdclass:InformationRegister>

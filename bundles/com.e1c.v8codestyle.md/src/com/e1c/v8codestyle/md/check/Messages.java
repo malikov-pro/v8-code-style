@@ -22,6 +22,12 @@ final class Messages
     extends NLS
 {
     private static final String BUNDLE_NAME = Messages.class.getPackageName() + ".messages"; //$NON-NLS-1$
+    public static String ForbiddenMetadataNameCheck_title;
+    public static String ForbiddenMetadataNameCheck_description;
+    public static String ForbiddenMetadataNameCheck_message;
+    public static String SameMetadataObjectAndChildNamesCheck_title;
+    public static String SameMetadataObjectAndChildNamesCheck_description;
+    public static String SameMetadataObjectAndChildNamesCheck_message;
     public static String MissingEventSubscriptionHandlerCheck_title;
     public static String WrongHttpServiceHandlerCheck_title;
     public static String WrongWebServiceHandlerCheck_title;
@@ -140,6 +146,9 @@ final class Messages
     public static String FunctionalOptionParametersLimitCheck_title;
     public static String FunctionalOptionParametersLimitCheck_description;
     public static String FunctionalOptionParametersLimitCheck_too_many;
+    public static String DenyIncompleteValuesCheck_title;
+    public static String DenyIncompleteValuesCheck_description;
+    public static String DenyIncompleteValuesCheck_message;
 
     static
     {

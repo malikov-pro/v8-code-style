@@ -94,6 +94,14 @@ final class Messages
     public static String DcsSumLiteralCheck_description;
     public static String DcsSumLiteralCheck_message;
 
+    public static String FieldsFromJoinsWithoutIsNullCheck_title;
+    public static String FieldsFromJoinsWithoutIsNullCheck_description;
+    public static String FieldsFromJoinsWithoutIsNullCheck_message;
+
+    public static String RefOveruseCheck_title;
+    public static String RefOveruseCheck_description;
+    public static String RefOveruseCheck_message;
+
     static
     {
         // initialize resource bundle

@@ -15,7 +15,9 @@ description: Конвейер переноса диагностики BSL Langua
   полноты каталога/регистраций (оба в `../_notes`);
 - `../_notes/PLAN-2026-10-17-next-wave-proposed.md` — выполненный план обработчиков;
 - Следующую очередь читать в актуальном handoff и принятом пользователем плане.
-  Решение28.10: функционал заморожен под0.10.0, новый context-план отложен;
+  С 02.11 активен цикл 0.11.0-SNAPSHOT; актуальный план портов —
+  `../_notes/PLAN-2026-11-09-porting-proposed.md`. Прежняя заморозка под 0.10.0
+  историческая;
 - `../_notes/ls-port-gap.md` — история, не очередь для слепого выбора.
 
 Не хранить текущие количества в каждом скилле: читать реестр и сверять
@@ -37,8 +39,9 @@ actual `plugin.xml`. Прямой порт !=полная эквивалентн
 - Полный UnreachableCode/AllFunctionPathMustHaveReturn требует CFG; lite
   unreachable уже существует. CognitiveComplexity — parse listener, **CFG
   не обязательная предпосылка**. Typo требует spell-service/словарей.
-- DoubleNegatives уже в develop: валидный NOT(NE)/NOT(NOT) доступен на обеих
-  платформах; NOT NOT без скобок имеет syntax errors. BadWords — configurable
+- DoubleNegatives уже в develop: валидный NOT(NE)/NOT(NOT) доступен на
+  поддерживаемой платформе (2026.2.2; проверялся и на 2026.1); NOT NOT без
+  скобок имеет syntax errors. BadWords — configurable
   regex, не словарный блокер. Query-канал открыт через штатные hubs.
 - QueryToMissingMetadata ordinary MDO и MultilineStringInQuery уже имеют
   live native-диагностику. Broad QueryNestedFieldsByDot не равен typed
@@ -85,7 +88,8 @@ actual `plugin.xml`. Прямой порт !=полная эквивалентн
 - «Выкл. по умолчанию» = IBasicCheckExtension с `definition.setEnabled(false)`
   (наш OptInCheckExtension в com.e1c.v8codestyle.check); НЕ регистрировать в
   CommonCheckRegistry, чтобы не включался групповым переключателем.
-- `IDocument.getDefaultLineDelimiter()` НЕ существует в таргете 2026.1 —
+- `IDocument.getDefaultLineDelimiter()` НЕ существует в таргете (проверено на
+  2026.1, действует и для 2026.2.2) —
   `TextUtilities.getDefaultLineDelimiter(document)` (qfix-переносы строк).
 - Логика «переприсваивание до первого чтения» (rewrite-method-parameter):
   в usedParams добавлять ИМЕНА, ПРОЧИТАННЫЕ В RIGHT (все StaticFeatureAccess
@@ -150,7 +154,8 @@ actual `plugin.xml`. Прямой порт !=полная эквивалентн
   AST-фрагменты и фантомные маркеры (реальный кейс: «Пока … Делать» вместо
   «Цикл» = пустой WhileStatement из ниоткуда).
 - Прогон: `bash scripts/test-check.sh <TestClass[,TestClass2]>` (всегда clean).
-- QL: `--module ql`, второй профиль: `--profile edt-2026.2`. Targeted не
+- QL: `--module ql`; `--profile edt-2026.2` — алиас того же режима
+  EDT 2026.2.2, не вторая платформа. Targeted не
   означает весь suite. Активный snapshot не редактировать; один Maven.
 
 ## 5. Сдача
@@ -164,7 +169,8 @@ actual `plugin.xml`. Прямой порт !=полная эквивалентн
   index, не новый fullsuite. EP/ключи/parameters/MANIFEST — runtime изменения.
 - Сохранить p2 профиля перед следующим clean; выполнить own live smoke:
   initial clean для нового registration, потом bad→fix→bad **без clean**,
-  затем финальный clean/log. Без live не merge: не ждать произвольных50 портов.
+  затем финальный clean/log. Без live не merge: фиксированное число портов
+  не является условием сдачи.
 - Audit integration по исходным commits; обновить ls-registry decisions
   только по фактически merged реализации с ограничениями. Build green не
   доказывает полноту/точность переноса. Master/tag не менять без команды.

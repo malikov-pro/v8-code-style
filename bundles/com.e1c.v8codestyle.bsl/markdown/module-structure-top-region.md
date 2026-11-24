@@ -57,6 +57,11 @@ both during group development and during application customization within specif
 
 ## See
 
+When `duplicate-region` is enabled, it owns module-level duplicate diagnostics.
+This check still audits ordering, placement and nested duplicates. Disabling
+`duplicate-region` restores the original duplicate audit controlled by
+`checkDuplicates`; neither check rewrites user settings.
+
 
 - [Module structure](https://1c-dn.com/library/module_structure/)
 - [Module structure](https://support.1ci.com/hc/en-us/articles/360011002360-Module-structure)

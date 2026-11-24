@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfCharacteristicTypes xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="73996224-531e-4ee9-b7bb-ef95f523785c">
+  <name>Properties</name><type><types>Boolean</types></type><attributes uuid="22f498ee-a5dc-4ad8-b3a5-f8efb3bd8f83"><name>Properties</name><type><types>Boolean</types></type></attributes>
+</mdclass:ChartOfCharacteristicTypes>

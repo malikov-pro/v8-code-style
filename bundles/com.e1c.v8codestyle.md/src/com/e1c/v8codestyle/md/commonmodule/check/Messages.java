@@ -25,6 +25,11 @@ final class Messages
     public static String CommonModuleNameClient_description;
     public static String CommonModuleNameClient_message;
     public static String CommonModuleNameClient_title;
+    public static String CommonModuleNameWordsCheck_title;
+    public static String CommonModuleNameWordsCheck_description;
+    public static String CommonModuleNameWordsCheck_message;
+    public static String CommonModuleNameWordsCheck_words;
+    public static String CommonModuleNameWordsCheck_invalid_regex;
     public static String CommonModuleNameClientServer_description;
     public static String CommonModuleNameClientServer_message;
     public static String CommonModuleNameClientServer_title;

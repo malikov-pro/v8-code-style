@@ -2,11 +2,17 @@
 
 Форк [1C-Company/v8-code-style](https://github.com/1C-Company/v8-code-style) —
 проверки «1С:Стандарты разработки» для 1C:EDT на фреймворке
-`com.e1c.g5.v8.dt.check`. База для собственных проверок; родительский проект —
-соседний `bslls-connector-for-edt` (канал диагностик BSL LS). Общие правила
-каталога — в `../AGENTS.md`.
+`com.e1c.g5.v8.dt.check`. База для собственных проверок. Общие правила
+каталога — в `../AGENTS.md`; этот файл — первоисточник по проекту.
 
-## Процесс (обновлено 28.10)
+> **Состояние на 09.11.2026:** `develop` = `8645839d` (локализация NStr
+> влита и отправлена), версия `0.11.0-SNAPSHOT`, 343 проверки. Реестр LS —
+> 189 диагностик (28 ported / 123 partial / 20 builtin / 16 candidate /
+> 2 blocker; native-prescreen 09.11, волны A1–B 13–15.11). Актуальный план портов — `../_notes/PLAN-2026-11-09-porting-proposed.md`
+> (волны 0–D), предыдущий handoff — `../_notes/HANDOFF-2026-11-06-v8cs-localization-complete.md`.
+> Ниже — устойчивые правила; исторические блоки помечены явно.
+
+## Процесс (обновлено 09.11)
 
 - **Ветки**: `develop` — интеграция; фичи/пачки — `feature/*` от `develop`;
   merge `--no-ff` в `develop` после зелёного прогона. `master` — только под
@@ -49,6 +55,15 @@
   p2 **до** следующего clean; установить именно
   сохранённый артефакт, сверить квалификатор. Текущие скрипты не фиксируют
   всё автоматически: отчёт собирать явно, не выдумывать существующую автоматизацию.
+- **Хрупкий тест на общее число маркеров (24.11):** тест, считающий **все** маркеры объекта
+  (`markers.length`, `assertEquals(.., markers.length)`), ломается от любой новой проверки
+  того же объекта. Фильтровать по check id тех проверок, которые тест реально покрывает;
+  когда проверки пишутся на чужую фикстуру — вызывающий тест правится в том же PR.
+- **Live-находка → фикс (24.11):** дефект, найденный live-прогоном, чинится по
+  цепочке targeted → **канальный itests-модуль обязателен ДО merge**, даже если
+  новый live на пересобранном артефакте зелёный (live не заменяет канал); затем
+  в отчёте — запись composite-gate (полный гейт на исходном коммите + канальный
+  на фиксе с перечнем diff-файлов), а не «единый полный BUILD SUCCESS».
 - **Сверка снимков (урок 28.10):** `git ls-files` перечисляет и удалённые
   tracked-файлы. Стартовый и конечный наборы хешировать одинаково, только
   существующие файлы; удаления учитывать отдельно. Ложный флаг wrapper не
@@ -96,7 +111,8 @@
 - Вход — `bash compile.sh`:
   - без флагов — EDT 2026.2.2 (`targets/default`);
   - `--profile edt-2026.2` — совместимый алиас того же режима;
-  - `--skip-tests` — быстрые итерации; полный прогон itests ~35 мин;
+  - `--skip-tests` — быстрые итерации; полный прогон ~50 мин (последний
+    полный гейт 06.11: 2997.86 s, 1159/0/0/10);
   - `--full` — в точности CI апстрима (`-PSDK,find-bugs`).
 - Тулчейн без sudo: полный JDK 25 — `~/tools/jdk-25.0.4.1+1`,
   Maven 3.9.9 — `~/tools/apache-maven-3.9.9`.
@@ -142,11 +158,15 @@
   Запуск: `1cedt -vm /usr/lib/jvm/axiomjdk-java25-pro-full-amd64/bin/java`.
   На стенде 2026.2.2 используется комплектная полная JVM25 в `/opt/1C/1CE/components/`.
 - Не удалять jar из `~/.p2/pool` при работающей EDT (CNFE в рантайме).
-- **Стенд:** `~/edt/apk_2026`, EDT2026.2.2.21, MCP `edt_apk`, проекты apk и
+- **Стенд:** `~/edt/apk_2026`, EDT2026.2.2.21, проекты apk и
   apk.ПроверкаОшибок. Пользователь разрешил самостоятельно stop/start именно
   этого выделенного экземпляра; сверять PID/launch time/installation перед
   остановом. Разрешение не распространяется на остальные сессии EDT.
   BSL LS connector удалён 28.10 по просьбе пользователя; не устанавливать обратно.
+- **MCP стенда:** `edt_apk-*` привязан к `~/edt/apk_2026`; после запуска EDT
+  `mcphub` подхватывает его примерно за минуту. Отсутствие сразу после старта —
+  норма, дождаться регистрации. `edt_rt_test-*` — другой стенд (Windows,
+  `C:\edt\rt_prod`); не подменять и не выдавать чужую детекцию за свою.
 
 ## Доставка (update site) — работает
 
@@ -189,11 +209,50 @@
   из EDT); обязательны testing и extension features locked-платформы.
 - **AST-вердикты перепроверять на чистом синтаксисе**: отдельно проверять
   syntax errors node model, отдельно recovery-кейсы. 10.10 прежний отказ
-  DoubleNegatives опровергнут AstNegationResearchTest на обеих платформах:
+  DoubleNegatives опровергнут AstNegationResearchTest на обеих платформах
+  (тогда поддерживались 2026.1 и 2026.2):
   NOT(NE)/NOT(NOT) со скобками корректны; NOT NOT без скобок — syntax error.
   Исследовательский тест не заменяет tests продуктовой диагностики.
+- **Opt-in metadata check и reset профиля (05.11):** в EDT6.0.102 возврат
+  единственной customization к default-off даёт `settingsChanged`, не `disabled`.
+  Старые metadata-маркеры могут остаться после повторного планирования.
+  Для deny-incomplete-values проверены actual enabled guard + адресная очистка
+  через settings listener и `ICheckScheduler.scheduleClearance` (принимает
+  **short UID**, не symbolic id). Проверять off/on и смену профиля без clean;
+  не распространять обход на другие проверки без воспроизведения.
+- **Новая проверка и живая EDT (15.11):** metadata проверок проекта строится при
+  открытии проекта. Включение чека, которого в этих metadata ещё нет (только что
+  задеплоен), даёт на каждый BSL-файл `IllegalStateException: Unknown check id
+  "<contributor>:<checkId>"` (`CheckRepository.getCheck` → `IProjectCheckMetadataManager`),
+  маркеров нет — до рестарта EDT. Это не дефект чека: включение давно известного
+  opt-in (`apk-00429`) в той же сессии проходит без исключений. Приёмка нового
+  чека = deploy → **рестарт EDT** → включение → маркеры.
+  Уточнение 15.11 (RefOveruse, default-on): рестарта может не хватить. Симптом
+  хуже — на ql-канале неизвестный включённый чек рвёт **всю** ql-делегацию файла,
+  и пропадают маркеры остальных ql-проверок (маркеры `ql-fields-…` исчезли вместе
+  с `ql-ref-overuse`). Лечение без пересборки: `project_checks set` в форме
+  `checkId|contributorId` off→on (пишет customization и материализует metadata) +
+  `revalidate_objects`; проверить, что вернулись маркеры известного ql-чека.
+- **MCP `project_checks set`** принимает `checkId` только в виде
+  `checkId|contributorId`; символический id отклоняется «Unknown checkId», хотя
+  `list` его показывает. `list` пагинируется (default 50): свои ql-чеки искать
+  страницами/по `checkIds`, не по первой странице. Фильтр `checkIds` работает
+  только для чеков с customization — несustomized id тоже даёт «Unknown checkId»,
+  поэтому проверку наличия вести по полному списку.
+
+- **Deny audit settings race (05.11):** в живом workspace off/on и смена
+  профиля возвращали 2–3 маркера из4 при false-флагах. Trace подтвердил4ownerIDs
+  в scheduler, но не все check invocations. Немедленный scoped reschedule не
+  помог; повтор после `AFTER_BUILD_DD` barrier через system Job дал4/0/4.
+  Root cause внутреннего DD merge не сертифицирован. Проверять итоговый код
+  без trace на saved-p2; не заменять пропущенные вызовы clean/ручным retoggle.
+- **Соседние области EDT** могут быть связаны через `RegionPreprocessor.itemAfter`:
+  containment-предок сам по себе не означает вложенность. Для top-level scope
+  использовать `getFirstParentRegion` и отдельное исключение областей методов;
+  mixed module/method fixture проверять на syntax errors до сверки маркеров.
 - data-exchange-load: не засчитывать текстовое упоминание обращения внутри
-  строк/комментариев как проверку. NOT(load) доступен в AST обеих платформ;
+  строк/комментариев как проверку. NOT(load) доступен в AST обеих платформ
+  (историческая проверка 2026.1/2026.2; текущая платформа — 2026.2.2);
   regex-fallback удалён после красного regression (expected2/actual0).
   Case-insensitive TreeSet нельзя копировать Set.copyOf — comparator теряется.
 - **10.10: живой дедуп проверен через настоящий applyChanges** в EDT2026.1:
@@ -223,6 +282,30 @@
   Штатный BSL `BslQlDelegatingCheck.addIssue(message,line,offset,length)`
   сохраняет только line (StringLiteral feature index), offset/length теряет:
   QL keyword range и BSL whole-line range — разные гарантии, проверять отдельно.
+- QL-модель 2026.2.2 (15.11, волна C): `EcoreUtil2.getAllContentsOfType`
+  **не возвращает корень**. Простое поле выбора `Т.Поле` само является корнем
+  `QuerySchemaExpression.getExpression()`, а `ЕСТЬ НЕ NULL` — корнем `ГДЕ`;
+  без явной проверки `instanceof` корня проверка молча даёт 0 маркеров
+  (так было с `FieldsFromJoinsWithoutIsNull`: WHERE/условия соединений
+  работали, поля выбора — нет). Многочастный путь — цепочка multiparts через
+  `getSourceTable()`: полный текст есть только у внешнего, внутренние звенья
+  пропускать по `eContainer() instanceof MultiPartCommonExpression`.
+  `ЕСТЬNULL(...)` — `FunctionInvocationExpression`, имя в
+  `getFunctionType().getName()` приходит английским `ISNULL` (сравнивать без
+  регистра с обоими вариантами). Граница вложенного запроса — ближайший
+  `QuerySchemaOperator` (`EcoreUtil2.getContainerOfType`), иначе коррелированный
+  подзапрос даёт ложное срабатывание внешнего соединения.
+- QL-источники и разыменование (15.11, RefOveruse): источник-табличная часть
+  приходит как `QuerySchemaTable` с `getTableDbView()==null`, но
+  `IDynamicDbViewFieldComputer.computeDbView()` даёт `DbViewFieldTableDef` и
+  `mdObject=DocumentTabularSection`; виртуальная таблица — `DbViewSelectDef`;
+  объектная таблица — `DbViewTableDef` + `mdObject=Document`. Источники запроса
+  лежат не только в `QuerySchemaOperator.getSources()`, но и в
+  `QuerySchemaSource.getJoins()` (рекурсивно). Стандартное поле в английской
+  конфигурации — `Ref`, а не `Reference`: образец LS (`Ссылка|Reference`) без
+  варианта `Ref` не срабатывает на английских метаданных. `delegate(QuerySchemaSelectQuery.class)`
+  живой BSL-мост вызывает (проверено маркером), но при неизвестном чеке в
+  metadata падает вся ql-делегация файла — см. грабли про новую проверку.
 - QL-скобки не имеют отдельного EObject: границу логической группы искать
   в CST по RuleCall `LogicalExpression`, иначе соседнее AND-равенство
   загрязняет same-field OR. Multipart-поле считать целиком, не его alias-prefix.
@@ -315,7 +398,7 @@
 5. Таблица пересечений: статья v8std → проверка v8-cs ↔ код LS ↔ (будущее)
    проверка АПК. Каталоги обеих сторон уже есть.
 
-## Реализация дедупликации (09.10)**: `CheckSettingsDeduplicator` +
+## Реализация дедупликации (09.10): `CheckSettingsDeduplicator` +
 `CheckSubstitutionRegistry` в `com.e1c.v8codestyle.check`. Слушатель
 `ICheckSettingsChangeListener` стартует из `CorePlugin` в фазе
 `ServiceInitialization` (после готовности сервисов). Триггер — событие, где
@@ -356,9 +439,11 @@ create-query-in-cycle → query-in-loop. Событие только по гру
 перенесено / частично / штатный аналог / кандидат / блокер. Предполагаемый
 native-аналог без контрпримеров не засчитывать. Актуальную задачу/очередь читать
 в handoff и принятом пользователем плане, не в историческом списке 12.10.
-Решение 28.10: функционал заморожен под релиз 0.10.0, следующие контекстные
-проверки отложены. Прежде новых LS-портов регрессиями проверить выявленные
-расхождения уже реализованных checks. Старые оценки
+Релиз 0.10.0 выпущен 28.10; с 02.11 активен цикл 0.11.0-SNAPSHOT. Заморозка
+функционала снята планом `../_notes/PLAN-2026-11-09-porting-proposed.md`
+(волны 0–D); решение о старте каждой волны — отдельной командой пользователя.
+Регрессионные фиксы октября влиты в develop; повторно не перепроверять всё
+подряд, новые расхождения фиксировать отдельно. Старые оценки
 «простые порты исчерпаны» не актуальны; CognitiveComplexity не требует CFG.
 
 Форк — единый дом проверок: сюда переносятся проверки BSL LS (при этом
@@ -366,19 +451,11 @@ native-аналог без контрпримеров не засчитыват�
 задачи апстрима (1C-Company/v8-code-style issues) как бэклог. Карта
 пересечений с нормативкой — `_ext_src/v8std`.
 
-**Исторический прогресс (06.10, партия №7; не текущий учёт)**: **36 своих проверок** — 2 АПК
-(apk-00260, apk-01194, с qfix) + 34 BSL LS. Батчи №2-№7 (merge develop
-`006e2205`/`19c3237e`/`0465eac3`/`9c992af6`/`5b0db929`/`27ca921b`), гейт
-bsl.itests **368/0**. С 05.10 работа пачками по 10 правил (решение
-пользователя); ограничение «50 портов до деплоя» снято — деплой после пачки.
-**Замещение (политика 05.10)**: deprecated-find/current-date перенесены,
-Найти/ТекущаяДата убраны из дефолта use-non-recommended-method; пересмотр
-дедуп-вердиктов — `_notes/ls-port-gap.md`.
-**Деплой + смоук (06.10)**: v8-cs 0.8.0.v20261005-2021+ в EDT 2026.1
-(~/edt/apk); примеры ош_ПримерХардкод/ош_ПримерСтруктура/ош_ПримерКомментарии/
-ош_ПримерКачество в apk.ПроверкаОшибки — живая детекция ВСЕХ партий 2-7,
-qfix «yes», журнал чист. CodeRecognizer/BSLFootprint LS перенесены как
-CommentCodeRecognizer. Гэп-лист — `_notes/ls-port-gap.md`; регламенты —
+**История (06.10, не текущий учёт):** партии №2–№7 (2 порта АПК + 34 порта
+BSL LS, bsl.itests 368/0), замещение deprecated-find/current-date в
+use-non-recommended-method, живой смоук в EDT 2026.1 `~/edt/apk`;
+CodeRecognizer/BSLFootprint LS перенесены как CommentCodeRecognizer. Детали и
+merge-коммиты — `_notes/CONTEXT-2026-10-06.md`, `ls-port-gap.md`; регламенты —
 скиллы `v8cs-port-check` (АПК) и `v8cs-port-ls` (BSL LS).
 
 **Схема работы с АПК**: база АПК (`onec-apk-data`) — ТОЛЬКО источник правил
@@ -392,7 +469,7 @@ CommentCodeRecognizer. Гэп-лист — `_notes/ls-port-gap.md`; реглам
 замечаний в Sonar (связки git↔EDT↔sonar и ключи — в json-конфиге).
 
 Опорные блоки (все уже есть):
-- MCP `edt-rt-test-malikov` — агент над живой EDT: `list_projects`,
+- MCP EDT стенда (имя сервера сверять по каталогу сессии; см. «Деплой»): `list_projects`,
   `import_configuration_from_xml`, `get_project_errors` (ошибки валидации!),
   git-ветки, `get_check_description` (описание проверки → маппинг на v8std).
 - `1cedtcli` (в инсталляциях) — headless: import → validate → результат.
@@ -403,3 +480,9 @@ CommentCodeRecognizer. Гэп-лист — `_notes/ls-port-gap.md`; реглам
 
 Схема: `git pull/checkout <commit>` → проект в воркспейсе (1cedtcli/MCP) →
 валидация → выгрузка замечаний в Sonar-JSON (силами плагина) → sonar-scanner.
+
+- **MCP стенда пропал из каталога (16.11):** `edt_apk-*` может исчезнуть из
+  `mcphub` целиком (остаётся только `edt_rt_test-*` — чужой Windows-стенд).
+  Подменять стенд нельзя; live-приёмку в такой сессии не заявлять, зафиксировать
+  как открытый пункт и передать следующей сессии (EDT при этом может быть
+  поднята с уже установленным saved p2).

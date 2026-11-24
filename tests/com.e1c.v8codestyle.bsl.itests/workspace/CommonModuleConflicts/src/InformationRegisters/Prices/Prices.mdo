@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9f5de8ac-82ea-4d10-acba-5d3fd094aa09">
+  <name>Prices</name>
+  <resources uuid="e55b64e8-5dc0-4583-8585-f55b926aeb76"><name>Value</name><type><types>Boolean</types></type></resources>
+</mdclass:InformationRegister>

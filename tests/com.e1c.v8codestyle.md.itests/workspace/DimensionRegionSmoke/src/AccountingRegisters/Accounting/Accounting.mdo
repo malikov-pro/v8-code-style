@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccountingRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d4bc5d1b-76dc-4471-a32a-74424d819182">
+  <producedTypes>
+    <selectionType typeId="1ff79271-7755-430e-bc13-4631175418eb" valueTypeId="b55b3b10-8847-4bcf-ac00-74a3e6f8450f"/>
+    <listType typeId="6e733739-fd41-439e-95d6-a834d0132ccd" valueTypeId="3508bdab-f481-4bc5-9eac-b751c2bdebbf"/>
+    <managerType typeId="0dcc40f9-6ce9-4b90-aaa4-825d9574ad0c" valueTypeId="941d000f-b336-4a36-a304-4de5cadc5afa"/>
+    <recordSetType typeId="06c35563-c9dc-4a02-bad3-1cd8b5b30ef3" valueTypeId="24628f64-f77a-4e76-ab32-de980f08e825"/>
+    <recordKeyType typeId="18fd13d2-23df-4430-8c76-969f57f12bb2" valueTypeId="775a40b1-10bc-4eee-9a99-e003af93efba"/>
+    <recordType typeId="99d08b42-7076-488c-a4d2-c16ad968f039" valueTypeId="5a7300bd-c10b-4c99-8a50-a8541764ca96"/>
+    <extDimensionsType typeId="9a45f22a-ff86-4509-9cbd-5df567792992" valueTypeId="00e89e0b-2967-48c9-8c98-02655b09e779"/>
+  </producedTypes>
+  <name>Accounting</name>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <dimensions uuid="6f943e67-c9dc-4800-b11f-2737783e8982">
+    <name>AuditValue</name>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <balance>true</balance>
+  </dimensions>
+  <resources uuid="c3690bdc-54ae-4c76-82a1-a960ceed4cd5">
+    <name>Value</name>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <balance>true</balance>
+  </resources>
+</mdclass:AccountingRegister>

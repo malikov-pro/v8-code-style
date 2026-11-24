@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5e45a294-c95d-4c06-9e18-088ae461f821">
+  <name>MetadataNames</name>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <defaultLanguage>Language.English</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <compatibilityMode>8.3.23</compatibilityMode>
+  <languages uuid="01de9439-a6a8-466b-b54a-8fde665747c8"><name>English</name><languageCode>en</languageCode></languages>
+  <catalogs>Catalog.Products</catalogs>
+  <documents>Document.Invoice</documents>
+  <informationRegisters>InformationRegister.Prices</informationRegisters>
+  <accumulationRegisters>AccumulationRegister.Stock</accumulationRegisters>
+  <accountingRegisters>AccountingRegister.Balances</accountingRegisters>
+  <calculationRegisters>CalculationRegister.Payroll</calculationRegisters>
+  <businessProcesses>BusinessProcess.Approval</businessProcesses>
+  <chartsOfAccounts>ChartOfAccounts.Accounts</chartsOfAccounts>
+  <chartsOfCalculationTypes>ChartOfCalculationTypes.Accruals</chartsOfCalculationTypes>
+  <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.Properties</chartsOfCharacteristicTypes>
+  <constants>Constant.Setting</constants>
+  <documentJournals>DocumentJournal.Journal</documentJournals>
+  <enums>Enum.States</enums>
+  <exchangePlans>ExchangePlan.Nodes</exchangePlans>
+  <filterCriteria>FilterCriterion.Selection</filterCriteria>
+  <tasks>Task.Work</tasks>
+</mdclass:Configuration>

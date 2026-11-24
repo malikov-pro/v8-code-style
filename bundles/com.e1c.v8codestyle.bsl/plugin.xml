@@ -16,11 +16,76 @@
 
 <plugin>
    <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.MultilingualStringUsingWithTemplateCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.MultilingualStringHasAllDeclaredLanguagesCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ExtraCommasCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.LatinAndCyrillicSymbolInWordCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.MissingVariablesDescriptionCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.CanonicalSpellingKeywordsCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.CrazyMultilineStringCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ServerCallsInFormEventsCheck"/>
+   </extension>
+
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.WrongUseFunctionProceedWithCallCheck"/>
+   </extension>
+
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.SeveralCompilerDirectivesCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.TransferringParametersBetweenClientAndServerCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DuplicatedInsertionIntoCollectionCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.NestedFunctionInParametersCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.InCorrectLineBreakCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
+      <check category="com.e1c.v8codestyle.bsl"
+            class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.CommonModuleVariableConflictCheck"/>
+   </extension>
+   <extension point="com.e1c.g5.v8.dt.check.checks">
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.TempFilesDirCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UseSystemInformationCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.InternetAccessCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.FileSystemAccessCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ExternalAppStartingCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.ExcessiveAutoTestCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DuplicateRegionCheck"/>
+      <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.UsageWriteLogEventCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.SetPrivilegedModeCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DeprecatedMethodCallCheck"/>
       <check category="com.e1c.v8codestyle.bsl" class="com.e1c.v8codestyle.internal.bsl.ExecutableExtensionFactory:com.e1c.v8codestyle.bsl.check.DeprecatedAttributes8312Check"/>

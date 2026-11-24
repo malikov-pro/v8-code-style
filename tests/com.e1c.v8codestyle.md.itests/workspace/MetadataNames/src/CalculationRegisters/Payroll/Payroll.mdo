@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CalculationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="67d8c673-1947-4aeb-a37f-ac2cbf84f092">
+  <name>Payroll</name><attributes uuid="299f9ec7-a82c-4027-8821-eb927d79d589"><name>Payroll</name><type><types>Boolean</types></type></attributes>
+</mdclass:CalculationRegister>
