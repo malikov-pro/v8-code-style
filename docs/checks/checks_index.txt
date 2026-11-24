@@ -159,6 +159,7 @@ if-condition-complexity
 if-else-duplicated-code-block
 if-else-duplicated-condition
 if-else-if-ends-with-else
+incorrect-line-break
 incorrect-use-of-str-template
 input-field-list-choice-mode
 internet-access
@@ -211,6 +212,7 @@ module-unused-method
 multilingual-string-has-all-declared-languages
 multilingual-string-using-with-template
 nested-constructors-in-structure-declaration
+nested-function-in-parameters
 nested-statements
 nested-ternary-operator
 new-color

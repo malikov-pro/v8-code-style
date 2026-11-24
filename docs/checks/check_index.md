@@ -1,11 +1,11 @@
 # Индекс проверок
 
 
-Общее количество проверок 1С:Стандарты разработки V8: 349
+Общее количество проверок 1С:Стандарты разработки V8: 351
 
 - form: 15
 - md: 54
-- bsl: 230
+- bsl: 232
 - ql: 23
 - right: 27
 
@@ -174,6 +174,7 @@
 | [if-else-duplicated-code-block](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/if-else-duplicated-code-block.html) | Повторяющиеся блоки кода в операторе «Если» |
 | [if-else-duplicated-condition](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/if-else-duplicated-condition.html) | Повторяющееся условие в операторе «Если» |
 | [if-else-if-ends-with-else](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/if-else-if-ends-with-else.html) | Цепочка Если/ИначеЕсли без Иначе |
+| [incorrect-line-break](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/incorrect-line-break.html) | Неправильный перенос выражения |
 | [incorrect-use-of-str-template](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/incorrect-use-of-str-template.html) | Неверное использование СтрШаблон |
 | [input-field-list-choice-mode](../../../com.e1c.v8codestyle.form/check.descriptions/ru/input-field-list-choice-mode.html) | В полях форм со списками выбора следует всегда устанавливать свойство **РежимВыбораИзСписка** в значение Истина |
 | [internet-access](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/internet-access.html) | Аудит обращения к интернет-ресурсам |
@@ -226,6 +227,7 @@
 | [multilingual-string-has-all-declared-languages](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/multilingual-string-has-all-declared-languages.html) | НСтр должна содержать все заявленные языки |
 | [multilingual-string-using-with-template](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/multilingual-string-using-with-template.html) | Частично локализованная НСтр используется в СтрШаблон |
 | [nested-constructors-in-structure-declaration](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/nested-constructors-in-structure-declaration.html) | Вложенные конструкторы при объявлении структуры |
+| [nested-function-in-parameters](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/nested-function-in-parameters.html) | Инициализация параметров методов и конструкторов вызовом вложенных методов |
 | [nested-statements](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/nested-statements.html) | Слишком большая вложенность операторов |
 | [nested-ternary-operator](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/nested-ternary-operator.html) | Вложенный тернарный оператор |
 | [new-color](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/new-color.html) | Использование конструкции "Новый Цвет" |
