@@ -130,8 +130,8 @@ public final class InCorrectLineBreakCheck
         {
             return;
         }
-        String text = root.getText();
-        List<Integer> lineStarts = lineStarts(root, text);
+        List<Integer> lineStarts = new ArrayList<>();
+        String text = moduleText(root, lineStarts);
         String[] lines = lines(text);
         if (lines.length == 0)
         {
@@ -269,18 +269,32 @@ public final class InCorrectLineBreakCheck
         return starts;
     }
 
-    private static List<Integer> lineStarts(INode root, String text)
+    /**
+     * Document text and absolute line starts, both taken from the leaf nodes. Leaf offsets are the authoritative
+     * document offsets, so a byte order mark that the root node reports inconsistent with its text cannot shift the
+     * computed positions (the LS offsets are document offsets).
+     */
+    private static String moduleText(INode root, List<Integer> lineStarts)
     {
-        List<Integer> starts = new ArrayList<>();
-        starts.add(root.getOffset());
-        for (int index = 0; index < text.length(); index++)
+        StringBuilder text = new StringBuilder();
+        for (ILeafNode leaf : root.getLeafNodes())
         {
-            if (text.charAt(index) == '\n')
+            if (lineStarts.isEmpty())
             {
-                starts.add(root.getOffset() + index + 1);
+                lineStarts.add(leaf.getOffset());
+            }
+            int absolute = leaf.getOffset();
+            String leafText = leaf.getText();
+            for (int index = 0; index < leafText.length(); index++)
+            {
+                text.append(leafText.charAt(index));
+                if (leafText.charAt(index) == '\n')
+                {
+                    lineStarts.add(absolute + index + 1);
+                }
             }
         }
-        return starts;
+        return text.toString();
     }
 
     private static String[] lines(String text)
