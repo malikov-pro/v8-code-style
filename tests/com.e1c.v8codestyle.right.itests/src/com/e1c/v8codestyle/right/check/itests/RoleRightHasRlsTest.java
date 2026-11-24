@@ -17,9 +17,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 import com._1c.g5.v8.bm.core.IBmObject;
+import com.e1c.g5.v8.dt.check.settings.CheckUid;
 import com._1c.g5.v8.dt.core.platform.IDtProject;
 import com._1c.g5.v8.dt.rights.model.ObjectRight;
 import com._1c.g5.v8.dt.rights.model.ObjectRights;
@@ -84,8 +87,18 @@ public class RoleRightHasRlsTest
 
         Marker[] markers = markerManager.getNestedMarkers(dtProject.getWorkspaceProject(), top.bmGetId());
         assertNotNull(markers);
-        assertEquals(0, markers.length);
+        // Only the markers of this check: another role-level check of the same role must not break the assertion.
+        long actual = Arrays.stream(markers)
+            .filter(marker -> CHECK_ID.equals(checkIdOf(marker, dtProject)))
+            .count();
+        assertEquals(0, actual);
 
+    }
+
+    private String checkIdOf(Marker marker, IDtProject dtProject)
+    {
+        CheckUid uid = checkRepository.getUidForShortUid(marker.getCheckId(), dtProject.getWorkspaceProject());
+        return uid == null ? null : uid.getCheckId();
     }
 
     /**
