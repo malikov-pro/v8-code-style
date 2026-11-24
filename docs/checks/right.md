@@ -1,7 +1,7 @@
 # Проверки прав ролей 1С
 
 
-Общее количество проверок: 27
+Общее количество проверок: 28
 
 | Код проверки | Наименование |
 |--------------|--------------|
@@ -21,6 +21,7 @@
 | [right-interactive-set-deletion-mark-predefined-data](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-interactive-set-deletion-mark-predefined-data.html) | Установлено право "ИнтерактивноеПометкаУдаленияПредопределенныхДанных" |
 | [right-output-to-printer-file-clipboard](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-output-to-printer-file-clipboard.html) | Право установлено: Вывод |
 | [right-save-user-data](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-save-user-data.html) | Право установлено: Сохранение данных пользователя |
+| [right-set-permissions-for-new-objects](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-set-permissions-for-new-objects.html) | Флажок «Устанавливать права для новых объектов» допустим только у роли полных прав |
 | [right-start-automation](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-start-automation.html) | Право установлено: Automation |
 | [right-start-external-connection](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-start-external-connection.html) | Право установлено: Внешнее соединение |
 | [right-start-thick-client](../../../com.e1c.v8codestyle.right/check.descriptions/ru/right-start-thick-client.html) | Право установлено: Толстый клиент |

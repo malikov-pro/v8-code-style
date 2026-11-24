@@ -264,6 +264,7 @@ right-interactive-open-external-reports
 right-interactive-set-deletion-mark-predefined-data
 right-output-to-printer-file-clipboard
 right-save-user-data
+right-set-permissions-for-new-objects
 right-start-automation
 right-start-external-connection
 right-start-thick-client
