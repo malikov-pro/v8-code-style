@@ -105,6 +105,22 @@ jobs:
         with:
           path: _site
 
+      - name: Ожидание индексации артефакта
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 30); do
+            n=$(gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts?name=github-pages" --jq '.total_count' 2>/dev/null || echo 0)
+            if [ "${n:-0}" -ge 1 ]; then
+              echo "artifact github-pages visible (attempt $i)"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "::error::artifact github-pages is not visible via Actions API after 300s"
+          exit 1
+
       - name: Деплой
         id: deployment
         uses: actions/deploy-pages@v5
