@@ -13,7 +13,6 @@
 package com.e1c.v8codestyle.md.check;
 
 import static com._1c.g5.v8.dt.metadata.mdclass.MdClassPackage.Literals.MD_OBJECT;
-import static com._1c.g5.v8.dt.metadata.mdclass.MdClassPackage.Literals.MD_OBJECT__COMMENT;
 import static com._1c.g5.v8.dt.metadata.mdclass.MdClassPackage.Literals.MD_OBJECT__NAME;
 import static com._1c.g5.v8.dt.metadata.mdclass.MdClassPackage.Literals.MD_OBJECT__SYNONYM;
 
@@ -33,9 +32,10 @@ import com.e1c.v8codestyle.check.CommonSenseCheckExtension;
 import com.e1c.v8codestyle.internal.md.CorePlugin;
 
 /**
- * The letter "ё" (in any case) is not allowed in the name, synonym and comment
- * of a metadata object. The issue message tells which property contains the
- * letter; the issue is placed on the object itself.
+ * The letter "ё" (in any case) is not allowed in the name and synonym of a
+ * metadata object. The issue message tells which property contains the letter;
+ * the issue is placed on the object itself. Comments of metadata objects are not
+ * checked: the letter "ё" is allowed there (same as in module comments).
  * <p>
  * Checked are all metadata objects (top objects, attributes, tabular sections,
  * etc.) in every synonym language, except standard attributes, predefined
@@ -84,7 +84,7 @@ public class MdObjectYoLetterCheck
             .topObject(MD_OBJECT)
             .checkTop()
             .containment(MD_OBJECT)
-            .features(MD_OBJECT__NAME, MD_OBJECT__SYNONYM, MD_OBJECT__COMMENT);
+            .features(MD_OBJECT__NAME, MD_OBJECT__SYNONYM);
     }
 
     @Override
@@ -106,11 +106,6 @@ public class MdObjectYoLetterCheck
         if (hasYoLetterInSynonym(mdObject.getSynonym()))
         {
             resultAceptor.addIssue(MessageFormat.format(Messages.MdObjectYoLetterCheck_Synonym_contains_yo, name));
-        }
-
-        if (containsYoLetter(mdObject.getComment()))
-        {
-            resultAceptor.addIssue(MessageFormat.format(Messages.MdObjectYoLetterCheck_Comment_contains_yo, name));
         }
     }
 

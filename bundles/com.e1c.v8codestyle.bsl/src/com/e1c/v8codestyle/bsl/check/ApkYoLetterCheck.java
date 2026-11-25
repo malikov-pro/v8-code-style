@@ -35,11 +35,11 @@ import com.e1c.g5.v8.dt.check.settings.IssueSeverity;
 import com.e1c.g5.v8.dt.check.settings.IssueType;
 
 /**
- * Проверка: в текстах модулей не допускается использовать букву «ё».
+ * Проверка: в коде модулей не допускается использовать букву «ё».
  * <p>
  * Перенос проверки АПК_00260 (статья 598 стандарта 1С). Каждое вхождение
- * буквы «ё» (в любом регистре) — в коде, строковых литералах и комментариях —
- * помечается отдельным замечанием, как в исходном алгоритме АПК.
+ * буквы «ё» (в любом регистре) в коде и строковых литералах помечается
+ * отдельным замечанием. Комментарии исключены: в них «ё» допустима.
  *
  * @author malikov-pro
  */
@@ -83,6 +83,11 @@ public class ApkYoLetterCheck
         String moduleName = EcoreUtil.getURI(module).lastSegment();
         for (ILeafNode leafNode : node.getLeafNodes())
         {
+            if (isComment(leafNode))
+            {
+                // «ё» в комментариях допустима
+                continue;
+            }
             String text = leafNode.getText();
             if (text.isEmpty() || (text.indexOf(LETTER_YO_LOWER) < 0 && text.indexOf(LETTER_YO_UPPER) < 0))
             {
@@ -109,6 +114,11 @@ public class ApkYoLetterCheck
                 }
             }
         }
+    }
+
+    private static boolean isComment(ILeafNode leafNode)
+    {
+        return leafNode.isHidden() && leafNode.getText().strip().startsWith("//"); //$NON-NLS-1$
     }
 
     /**

@@ -23,6 +23,7 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 
 import com._1c.g5.v8.dt.validation.marker.Marker;
+import com._1c.g5.v8.dt.validation.marker.StandardExtraInfo;
 import com.e1c.v8codestyle.bsl.check.MissingSpaceCheck;
 
 /**
@@ -46,7 +47,8 @@ public class MissingSpaceCheckTest
     }
 
     /**
-     * Missing spaces around operators and after commas are reported.
+     * Missing spaces around binary operators and after commas are reported; a unary minus in front of a number and
+     * commas inside a string literal are not.
      */
     @Test
     public void testViolationsReported() throws Exception
@@ -54,7 +56,22 @@ public class MissingSpaceCheckTest
         updateModule(RESOURCE_VIOLATIONS);
 
         List<Marker> markers = getModuleMarkers();
-        assertEquals(markers.stream().map(Marker::getMessage).collect(Collectors.joining("; ")), 5, markers.size());
+        // 3 «+», 4 «>» (две стороны), 5 «*», 8 «,», 13 «=» (две стороны), 16 «-» (бинарный).
+        // Строки 11 и 12 — унарный минус, 19 — запятые внутри строкового литерала: маркеров нет.
+        assertEquals(texts(markers), List.of(3, 4, 4, 5, 8, 13, 13, 16), lines(markers));
+    }
+
+    private static List<Integer> lines(List<Marker> markers)
+    {
+        return markers.stream()
+            .map(marker -> (Integer)marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE))
+            .sorted()
+            .collect(Collectors.toList());
+    }
+
+    private static String texts(List<Marker> markers)
+    {
+        return markers.stream().map(Marker::getMessage).collect(Collectors.joining("; "));
     }
 
     /**
