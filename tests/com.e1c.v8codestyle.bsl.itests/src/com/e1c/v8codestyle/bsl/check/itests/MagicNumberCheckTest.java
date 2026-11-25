@@ -23,6 +23,7 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 
 import com._1c.g5.v8.dt.validation.marker.Marker;
+import com._1c.g5.v8.dt.validation.marker.StandardExtraInfo;
 import com.e1c.v8codestyle.bsl.check.MagicNumberCheck;
 
 /**
@@ -46,7 +47,8 @@ public class MagicNumberCheckTest
     }
 
     /**
-     * The magic number 100 is reported; authorized numbers and index access are not.
+     * The magic numbers 100, 7, -0.5 and -7 are reported with their sign; the authorized -1, the default parameter
+     * value -2 and the index access are not.
      */
     @Test
     public void testViolationsReported() throws Exception
@@ -54,7 +56,27 @@ public class MagicNumberCheckTest
         updateModule(RESOURCE_VIOLATIONS);
 
         List<Marker> markers = getModuleMarkers();
-        assertEquals(markers.stream().map(Marker::getMessage).collect(Collectors.joining("; ")), 1, markers.size());
+        assertEquals(texts(markers), List.of(4, 10, 11, 12), lines(markers));
+        assertEquals(List.of("Магическое число «-0.5»", "Магическое число «-7»", "Магическое число «100»",
+            "Магическое число «7»"), messages(markers));
+    }
+
+    private static List<Integer> lines(List<Marker> markers)
+    {
+        return markers.stream()
+            .map(marker -> (Integer)marker.getExtraInfo().get(StandardExtraInfo.TEXT_LINE))
+            .sorted()
+            .collect(Collectors.toList());
+    }
+
+    private static List<String> messages(List<Marker> markers)
+    {
+        return markers.stream().map(Marker::getMessage).sorted().collect(Collectors.toList());
+    }
+
+    private static String texts(List<Marker> markers)
+    {
+        return markers.stream().map(Marker::getMessage).collect(Collectors.joining("; "));
     }
 
     /**

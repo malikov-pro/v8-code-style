@@ -1,6 +1,6 @@
 # Magic number
 
-Checks the code for magic numbers. Use named constants instead of unexplained numbers. Authorized numbers (parameter, default -1, 0, 1), index access, method parameter defaults and flat date components of Date(...) are not reported. The check has no quick fix.
+Checks the code for magic numbers. Use named constants instead of unexplained numbers. Authorized numbers (parameter, default -1, 0, 1), index access, method parameter defaults and flat date components of Date(...) are not reported. A number with a unary minus is compared together with its sign: `-1` is authorized, `-0.5` is reported as the magic number `-0.5`. The check has no quick fix.
 
 ## See
 

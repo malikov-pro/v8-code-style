@@ -16,7 +16,7 @@
 | [all-function-path-must-have-return](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/all-function-path-must-have-return.html) | Не все пути функции возвращают значение |
 | [apk-00073-functional-option-parameters-limit](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00073-functional-option-parameters-limit.html) | Ограничения на использование параметров функциональных опций |
 | [apk-00074-session-params-init](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00074-session-params-init.html) | Инициализацию параметров сеанса следует выполнять в модуле сеанса |
-| [apk-00126-md-no-yo-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00126-md-no-yo-letter.html) | Буква «ё» в имени, синониме или комментарии объекта метаданных |
+| [apk-00126-md-no-yo-letter](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00126-md-no-yo-letter.html) | Буква «ё» в имени или синониме объекта метаданных |
 | [apk-00134-attribute-hint](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00134-attribute-hint.html) | Подсказка реквизита совпадает с синонимом |
 | [apk-00136-redundant-group-tooltip](../../../com.e1c.v8codestyle.form/check.descriptions/ru/apk-00136-redundant-group-tooltip.html) | Бессмысленная подсказка группы формы |
 | [apk-00137-code-length](../../../com.e1c.v8codestyle.md/check.descriptions/ru/apk-00137-code-length.html) | Длина кода (номера) объектов конфигурации |
@@ -29,7 +29,7 @@
 | [apk-00184-scheduled-jobs-manager](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00184-scheduled-jobs-manager.html) | Обращение в программном коде к менеджеру регламентных заданий |
 | [apk-00205-query-empty-result](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00205-query-empty-result.html) | Пустота результата запроса проверяется выборкой вместо метода Пустой |
 | [apk-00212-query-arithmetic-cast](../../../com.e1c.v8codestyle.ql/check.descriptions/ru/apk-00212-query-arithmetic-cast.html) | Округление результатов арифметических операций в запросах |
-| [apk-00260-no-yo-letter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00260-no-yo-letter.html) | Буква «ё» в текстах модулей |
+| [apk-00260-no-yo-letter](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00260-no-yo-letter.html) | Буква «ё» в коде модулей |
 | [apk-00305-type-by-metadata-name](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00305-type-by-metadata-name.html) | Тип значения переменной следует определять сравнением с типом |
 | [apk-00306-metadata-via-object](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00306-metadata-via-object.html) | Метаданные объекта получаются через свойство глобального контекста Метаданные |
 | [apk-00334-postings-write-order](../../../com.e1c.v8codestyle.bsl/check.descriptions/ru/apk-00334-postings-write-order.html) | Явная запись движений документа в обработчике проведения |
