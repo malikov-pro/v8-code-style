@@ -19,6 +19,15 @@ description: Релиз и доставка форка v8-code-style — EDT2026
 ## Процедура релиза
 
 Релиз/изменение master/тега/публикация — только по явной команде пользователя.
+
+**Release notes — из CHANGELOG.** `release.yml` берёт тело GitHub Release из
+секции `## X.Y.Z` файла `CHANGELOG.md` (шаг «Release notes из CHANGELOG»,
+вырезает секцию в `dist/RELEASE-NOTES.md`). Поэтому секция `## X.Y.Z` —
+обязательный шаг релизной процедуры: без неё workflow откатится на
+`--generate-notes` и на странице релиза будет список коммитов, а не «что
+изменилось». Заголовок пишется ровно двумя решётками (`## 0.11.1`); после
+правки секции проверь извлечение локально:
+`awk -v tag="## X.Y.Z" '$0==tag{inside=1;print;next} inside && /^## /{exit} inside{print}' CHANGELOG.md`.
 Зелёная мини-пачка develop не является разрешением выпустить версию.
 
 1. Стабильный release-кандидат: версия `X.Y.Z-SNAPSHOT`, **полный compile.sh
