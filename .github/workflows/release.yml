@@ -97,7 +97,7 @@ jobs:
       - name: Release notes из CHANGELOG
         run: |
           set -euo pipefail
-          awk -v tag="# ${RELEASE_TAG}" '
+          awk -v tag="## ${RELEASE_TAG}" '
             $0 == tag { inside = 1; print; next }
             inside && /^## / { exit }
             inside { print }
