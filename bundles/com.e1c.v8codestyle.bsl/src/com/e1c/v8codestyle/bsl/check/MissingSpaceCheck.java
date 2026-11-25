@@ -18,14 +18,20 @@ package com.e1c.v8codestyle.bsl.check;
 import static com._1c.g5.v8.dt.bsl.model.BslPackage.Literals.MODULE;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.nodemodel.ILeafNode;
+import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 import com._1c.g5.v8.dt.bsl.model.Module;
+import com._1c.g5.v8.dt.bsl.model.UnaryExpression;
+import com._1c.g5.v8.dt.bsl.model.UnaryOperation;
 import com.e1c.g5.v8.dt.check.BslDirectLocationIssue;
 import com.e1c.g5.v8.dt.check.CheckComplexity;
 import com.e1c.g5.v8.dt.check.DirectLocation;
@@ -45,7 +51,9 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
  * (тип CODE_SMELL, серьёзность INFO). Упрощение относительно LS: знаки
  * «= < > <= >= <> %» проверяются с обеих сторон, «+ - * /» — только слева
  * (правая сторона унарного знака в LS по умолчанию не проверяется),
- * «, ;» — только справа. Комментарии и строковые литералы не анализируются.
+ * «, ;» — только справа. Унарный минус и плюс перед числом пробела не требуют
+ * (пробел слева от знака унарной операции не проверяется). Комментарии и
+ * строковые литералы не анализируются.
  *
  * @author malikov-pro
  */
@@ -95,8 +103,9 @@ public class MissingSpaceCheck
     {
         Module module = (Module)object;
 
-        List<ILeafNode> leaves = new java.util.ArrayList<>();
+        List<ILeafNode> leaves = new ArrayList<>();
         NodeModelUtils.findActualNodeFor(module).getLeafNodes().forEach(leaves::add);
+        Set<Integer> unaryOperatorOffsets = unaryOperatorOffsets(module);
 
         for (int i = 0; i < leaves.size(); i++)
         {
@@ -114,7 +123,7 @@ public class MissingSpaceCheck
                 continue;
             }
 
-            if (checkLeft && !hasWhitespaceBefore(leaves, i))
+            if (checkLeft && !unaryOperatorOffsets.contains(leaf.getOffset()) && !hasWhitespaceBefore(leaves, i))
             {
                 addIssue(resultAceptor, module, leaf, true);
             }
@@ -123,6 +132,36 @@ public class MissingSpaceCheck
                 addIssue(resultAceptor, module, leaf, false);
             }
         }
+    }
+
+    /**
+     * Смещения знаков «+»/«-», которые являются унарной операцией: пробел слева от них не требуется
+     * (например, {@code -5} в начале выражения, {@code Метод(-5)}, {@code =-5}).
+     */
+    private static Set<Integer> unaryOperatorOffsets(Module module)
+    {
+        Set<Integer> offsets = new HashSet<>();
+        for (UnaryExpression unary : EcoreUtil2.getAllContentsOfType(module, UnaryExpression.class))
+        {
+            if (unary.getOperation() != UnaryOperation.MINUS && unary.getOperation() != UnaryOperation.PLUS)
+            {
+                continue;
+            }
+            INode node = NodeModelUtils.findActualNodeFor(unary);
+            if (node == null)
+            {
+                continue;
+            }
+            for (ILeafNode leaf : node.getLeafNodes())
+            {
+                if (!leaf.isHidden())
+                {
+                    offsets.add(leaf.getOffset());
+                    break;
+                }
+            }
+        }
+        return offsets;
     }
 
     /**

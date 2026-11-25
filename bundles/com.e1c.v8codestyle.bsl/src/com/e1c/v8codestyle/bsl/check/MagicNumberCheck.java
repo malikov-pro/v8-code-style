@@ -35,6 +35,8 @@ import com._1c.g5.v8.dt.bsl.model.Method;
 import com._1c.g5.v8.dt.bsl.model.NumberLiteral;
 import com._1c.g5.v8.dt.bsl.model.Statement;
 import com._1c.g5.v8.dt.bsl.model.StaticFeatureAccess;
+import com._1c.g5.v8.dt.bsl.model.UnaryExpression;
+import com._1c.g5.v8.dt.bsl.model.UnaryOperation;
 import com.e1c.g5.v8.dt.check.CheckComplexity;
 import com.e1c.g5.v8.dt.check.ICheckParameters;
 import com.e1c.g5.v8.dt.check.WrongParameterException;
@@ -52,6 +54,8 @@ import com.e1c.v8codestyle.internal.bsl.BslPlugin;
  * фиксируются разрешённые числа (параметр, по умолчанию «-1,0,1»), индексы
  * доступа «Объект[0]» (параметр allowMagicIndexes), значения по умолчанию
  * параметров методов и плоские компоненты вызова «Дата(2026, 1, 1)».
+ * Число с унарным минусом сравнивается со списком вместе со знаком
+ * ({@code -1} разрешено, {@code -0.5} — магическое число «-0.5»).
  *
  * @author malikov-pro
  */
@@ -118,7 +122,7 @@ public class MagicNumberCheck
 
         for (NumberLiteral literal : EcoreUtil2.getAllContentsOfType(method, NumberLiteral.class))
         {
-            String value = NodeText(literal);
+            String value = signedValue(literal);
             if (authorized.contains(value))
             {
                 continue;
@@ -143,6 +147,21 @@ public class MagicNumberCheck
     private static String NodeText(NumberLiteral literal)
     {
         return NodeModelUtils.findActualNodeFor(literal).getText().trim();
+    }
+
+    /**
+     * Значение литерала вместе с унарным минусом: в модели {@code -0.5} — это унарная операция над литералом
+     * {@code 0.5}, поэтому знак восстанавливается для сравнения со списком разрешённых чисел и для сообщения.
+     */
+    private static String signedValue(NumberLiteral literal)
+    {
+        String text = NodeText(literal);
+        if (literal.eContainer() instanceof UnaryExpression unary && unary.getOperation() == UnaryOperation.MINUS
+            && unary.getOperand() == literal)
+        {
+            return "-" + text; //$NON-NLS-1$
+        }
+        return text;
     }
 
     /**

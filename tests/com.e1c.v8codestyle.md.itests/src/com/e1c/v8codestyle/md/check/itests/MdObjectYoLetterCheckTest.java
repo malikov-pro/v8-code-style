@@ -13,10 +13,12 @@
 package com.e1c.v8codestyle.md.check.itests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.Set;
 
 import org.junit.Test;
@@ -79,12 +81,15 @@ public class MdObjectYoLetterCheckTest
     }
 
     /**
-     * The comment with the letter "ё" is reported.
+     * The letter "ё" in the comment of a metadata object is allowed and is not reported: only names and synonyms are
+     * checked (the module texts are covered by {@code apk-00260-no-yo-letter}, where comments are allowed too).
      */
     @Test
-    public void testCommentContainsYoLetter()
+    public void testCommentContainsYoLetterIsAllowed()
     {
-        assertSingleMarker("Catalog.СправочникДляКомментария"); //$NON-NLS-1$
+        long id = getTopObjectIdByFqn("Catalog.СправочникДляКомментария", getProject()); //$NON-NLS-1$
+        List<Marker> markers = getMarkersByCheckIds(Set.of(CHECK_ID), id, getProject());
+        assertTrue(markers.stream().map(Marker::getMessage).collect(Collectors.joining("; ")), markers.isEmpty());
     }
 
     /**
