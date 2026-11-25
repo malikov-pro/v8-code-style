@@ -94,11 +94,32 @@ jobs:
           cp repositories/com.e1c.v8codestyle.repository/target/*.zip \
              dist/v8codestyle-edt2026.2.2-${RELEASE_TAG}.zip
 
+      - name: Release notes из CHANGELOG
+        run: |
+          set -euo pipefail
+          awk -v tag="# ${RELEASE_TAG}" '
+            $0 == tag { inside = 1; print; next }
+            inside && /^## / { exit }
+            inside { print }
+          ' CHANGELOG.md > dist/RELEASE-NOTES.md
+          if ! grep -qE "^[^[:space:]]" dist/RELEASE-NOTES.md; then
+            echo "::warning::секция ${RELEASE_TAG} не найдена в CHANGELOG.md — используем сгенерированные notes"
+            : > dist/RELEASE-NOTES.md
+          fi
+          cat dist/RELEASE-NOTES.md
+
       - name: Публикация релиза
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "${RELEASE_TAG}" dist/*.zip \
-            --verify-tag \
-            --title "${RELEASE_TAG}" \
-            --generate-notes
+          if [ -s dist/RELEASE-NOTES.md ]; then
+            gh release create "${RELEASE_TAG}" dist/*.zip \
+              --verify-tag \
+              --title "${RELEASE_TAG}" \
+              --notes-file dist/RELEASE-NOTES.md
+          else
+            gh release create "${RELEASE_TAG}" dist/*.zip \
+              --verify-tag \
+              --title "${RELEASE_TAG}" \
+              --generate-notes
+          fi
